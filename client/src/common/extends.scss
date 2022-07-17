@@ -1,0 +1,16 @@
+.container{
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.flexHorizontalCenter{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.flexVertical{
+  display: flex;
+  flex-direction: column;
+
+}

@@ -1,0 +1,27 @@
+@import "src/common/extends";
+@import "src/common/variables";
+
+.headerBg {
+  background-color: $bg-colorF0F0F0;
+}
+
+header {
+  @extend .container;
+
+  .logo {
+    width: 120px;
+    height: 120px;
+    padding: 20px;
+  }
+
+  .wrapper {
+    @extend .flexHorizontalCenter
+  }
+
+  .linkWrapper {
+    @extend .flexVertical;
+    .link + .link {
+      margin-top: 15px;
+    }
+  }
+}
