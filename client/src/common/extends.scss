@@ -1,16 +1,23 @@
+.mainContainer{
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 10px;
+}
+
 .container{
   max-width: 1200px;
   margin: 0 auto;
+  padding: 0 10px;
 }
 
 .flexHorizontalCenter{
   display: flex;
   align-items: center;
   justify-content: space-between;
+  flex-wrap: wrap;
 }
 
 .flexVertical{
   display: flex;
   flex-direction: column;
-
 }

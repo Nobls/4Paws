@@ -1,0 +1,22 @@
+@import "src/common/extends";
+
+nav {
+  .container {
+    @extend .container;
+  }
+
+  .wrapper {
+    @extend .flexHorizontalCenter;
+
+    .link {
+      text-decoration: none;
+      color: wheat;
+    }
+
+    .activeLink {
+      text-decoration: none;
+      color: aquamarine;
+    }
+  }
+}
+

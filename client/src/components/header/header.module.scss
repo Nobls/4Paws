@@ -5,8 +5,13 @@
   background-color: $bg-colorF0F0F0;
 }
 
-header {
-  @extend .container;
+.navBg {
+  padding: 25px;
+  background-color: #924848;
+}
+
+.container {
+  @extend .mainContainer;
 
   .logo {
     width: 120px;
@@ -15,13 +20,22 @@ header {
   }
 
   .wrapper {
-    @extend .flexHorizontalCenter
-  }
+    @extend .flexHorizontalCenter;
 
-  .linkWrapper {
-    @extend .flexVertical;
-    .link + .link {
-      margin-top: 15px;
+    .linkWrapper {
+      @extend .flexVertical;
+
+      .link {
+        text-decoration: none;
+        color: #ffffff;
+      }
+
+      .link + .link {
+        margin-top: 15px;
+      }
+    }
+    p{
+      padding: 20px;
     }
   }
 }

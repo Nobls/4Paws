@@ -1,0 +1,54 @@
+@import "src/common/extends";
+@import "src/common/variables";
+@import "src/common/fonts";
+
+.footerBg {
+  padding: 20px 0;
+  background: #4e3b3b;
+}
+
+.wrapper {
+  @extend .container;
+  @extend .flexHorizontalCenter;
+
+  .wrapperLogo {
+    display: flex;
+    align-items: center;
+
+    .logo {
+      margin-right: 30px;
+      width: 120px;
+      height: 120px;
+    }
+    p{
+      color: $color-title;
+      margin: 0 0 10px 0;
+      font-size: 25px;
+      font-weight: bold;
+    }
+    .protection {
+      margin-top: 10px;
+      text-align: center;
+    }
+  }
+
+  .footerNav{
+    width: 450px;
+    height: 100%;
+  }
+
+  .wrapperLink {
+    @extend .flexVertical;
+
+    .link{
+      text-decoration: none;
+      color: white;
+      font-size: 15px;
+    }
+
+    .link + .link {
+      margin-top: 10px;
+    }
+  }
+
+}
