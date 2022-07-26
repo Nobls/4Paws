@@ -1,0 +1,29 @@
+@import "src/common/extends";
+
+.advantageBg {
+  background-color: #a69a9a;
+  padding: 20px 0;
+  margin: 50px 0;
+
+  .title{
+    @extend .title
+  }
+
+  .advantageWrapper {
+
+    @extend .container;
+    @extend .flexHorizontalCenter;
+
+    .advantageItems {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      .advantageIcon {
+        width: 150px;
+        height: 150px;
+      }
+    }
+  }
+}
+
