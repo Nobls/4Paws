@@ -1,0 +1,23 @@
+@import "src/common/extends";
+
+.reviewWrapper{
+  @extend .container;
+  .reviewTitle{
+    @extend .title;
+  }
+  margin-bottom: 50px;
+  .reviewInner{
+    padding: 15px;
+    .reviewElements{
+      display: flex;
+      justify-content: space-between;
+      .reviewUser{
+        display: flex;
+        align-items: center;
+      }
+      .reviewRating{
+        align-self: flex-end;
+      }
+    }
+  }
+}

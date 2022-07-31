@@ -7,7 +7,7 @@ import Navigation from "../navigation/Navigation";
 const Header = () => {
     return (
         <div className={s.headerBg}>
-            <div className={s.container}>
+            <div className={s.containerHeader}>
                 <div className={s.wrapper}>
                     <div>
                         <Link to={'/'}>

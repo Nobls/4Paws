@@ -8,7 +8,7 @@
 }
 
 .wrapper {
-  @extend .container;
+  @extend .mainContainer;
   @extend .flexHorizontalCenter;
 
   .wrapperLogo {
