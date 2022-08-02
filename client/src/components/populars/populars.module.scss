@@ -1,0 +1,15 @@
+@import "src/common/extends";
+
+
+.popularsContainer{
+  @extend .mainContainer;
+  .popularsTile{
+    @extend .title;
+  }
+  .wrapper{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 100px;
+  }
+}
