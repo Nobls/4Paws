@@ -1,9 +1,9 @@
 @import "src/common/extends";
 
 nav {
-  .container {
-    @extend .container;
-  }
+  //.container {
+  //  //@extend .container;
+  //}
 
   .wrapper {
     @extend .flexHorizontalCenter;

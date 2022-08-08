@@ -7,7 +7,7 @@ const Navigation = () => {
     // const isActive = ({isActive})=>isActive ? `${s.activeLink}`: `${s.link}`
 
     return (
-            <nav className={s.container}>
+            <nav className={s.containerNav}>
                 <div className={s.wrapper}>
                     <NavLink className={({isActive})=>isActive ? `${s.activeLink}`: `${s.link}`} to={'/'}>Главная</NavLink>
                     <NavLink className={({isActive})=>isActive ? `${s.activeLink}`: `${s.link}`} to={'/services'}>Услуги</NavLink>

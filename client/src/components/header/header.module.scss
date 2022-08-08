@@ -2,7 +2,7 @@
 @import "src/common/variables";
 
 .headerBg {
-  background-color: $bg-colorF0F0F0;
+  background-color: #F8F2F2;
 }
 
 .navBg {
@@ -19,23 +19,42 @@
     padding: 20px;
   }
 
-  .wrapper {
-    @extend .flexHorizontalCenter;
+  .wrapperHeader {
+    display: flex;
+    align-items: center;
 
-    .linkWrapper {
-      @extend .flexVertical;
+    .innerHeader {
+      width: 1050px;
 
-      .link {
-        text-decoration: none;
-        color: #ffffff;
+      .wrapperInformationBlock {
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+
+        .wrapperInformationBlock::before{
+          position: absolute;
+          content: '2222';
+          border-bottom: 1px solid black;
+          bottom: 0;
+          height: 5px;
+        }
+        .linkWrapper {
+          display: flex;
+
+          .link {
+            text-decoration: none;
+            color: #000;
+          }
+
+          .link + .link {
+            margin-left: 20px;
+          }
+        }
       }
 
-      .link + .link {
-        margin-top: 15px;
-      }
-    }
-    p{
-      padding: 20px;
+
     }
   }
 }
