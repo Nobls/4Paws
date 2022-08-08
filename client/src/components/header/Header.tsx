@@ -9,17 +9,18 @@ const Header = () => {
         <div className={s.headerBg}>
             <div className={s.containerHeader}>
                 <div className={s.wrapperHeader}>
-                    <div>
-                        <Link to={'/'}>
-                            <img className={s.logo} src={logo} alt="logo"/>
-                        </Link>
-                    </div>
+
+                    <Link className={s.innerLogo} to={'/'}>
+                        <img className={s.logo} src={logo} alt="logo"/>
+                        <p className={s.slogan}>С заботой <br/> о вашем питомце</p>
+                    </Link>
+
                     <div className={s.innerHeader}>
                         <div className={s.wrapperInformationBlock}>
-                            <div>
-                                <input type="text" placeholder={'search'}/>
-                                <button>+</button>
-                            </div>
+                            {/*<div className={s.innerSearch}>*/}
+                            {/*    <input className={s.inputSearch} type="text" placeholder={'search'}/>*/}
+                            {/*    <button className={s.buttonSearch}>Search</button>*/}
+                            {/*</div>*/}
                             <div className={s.linkWrapper}>
                                 <a className={s.link} href={'tel:+375291111111'}>+375-29-111-11-11</a>
                                 <a className={s.link} href={'tel:+375291111122'}>+375-29-111-11-22</a>
@@ -31,7 +32,7 @@ const Header = () => {
                                 </Link>
                             </div>
                         </div>
-
+                            <div className={s.line}></div>
                         <div>
                             <Navigation/>
                         </div>

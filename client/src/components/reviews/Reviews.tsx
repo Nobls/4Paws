@@ -3,7 +3,7 @@ import {reviews} from "../../data/data";
 import s from "../reviews/reviews.module.scss";
 import "slick-carousel/slick/slick.scss";
 import "slick-carousel/slick/slick-theme.scss";
-import Slider from "@ant-design/react-slick";
+import Slider from "react-slick";
 
 const Reviews = () => {
 

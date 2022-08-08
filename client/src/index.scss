@@ -1,4 +1,6 @@
+@import "normalize.css";
 @import "common/fonts";
+@import "../node_modules/normalize.css/normalize.css";
 
 body {
   *{
@@ -10,7 +12,7 @@ body {
   sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #F8F2F2;
+  background-color: #FBFBFB;
   color: #666666;
 
   h1, h2, h3, h4, h5, h6 {

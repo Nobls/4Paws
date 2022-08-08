@@ -2,7 +2,7 @@
 
 
 .popularsContainer{
-  @extend .mainContainer;
+  @extend .container;
   .popularsTile{
     @extend .title;
   }
