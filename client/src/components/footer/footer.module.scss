@@ -4,7 +4,13 @@
 
 .footerBg {
   padding: 20px 0;
-  background: #4e3b3b;
+
+  .protection {
+    margin-top: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
 }
 
 .wrapper {
@@ -16,39 +22,48 @@
     align-items: center;
 
     .logo {
-      margin-right: 30px;
-      width: 120px;
-      height: 120px;
+      margin-right: 20px;
+      width: 100px;
     }
-    p{
+
+    p {
       color: $color-title;
-      margin: 0 0 10px 0;
-      font-size: 25px;
+      font-size: 20px;
       font-weight: bold;
-    }
-    .protection {
-      margin-top: 10px;
-      text-align: center;
+      line-height: 35px;
     }
   }
 
-  .footerNav{
+  .footerNav {
     width: 450px;
     height: 100%;
   }
 
   .wrapperLink {
     @extend .flexVertical;
+    align-items: center;
 
-    .link{
+    .link {
       text-decoration: none;
-      color: white;
+      color: $color-text;
       font-size: 15px;
     }
 
     .link + .link {
       margin-top: 10px;
     }
+
+    .wrapperSocials {
+      display: flex;
+      width: 100%;
+      margin: 15px 10px 0 10px;
+      justify-content: space-around;
+
+      .socialIcon {
+        width: 30px;
+      }
+    }
   }
+
 
 }

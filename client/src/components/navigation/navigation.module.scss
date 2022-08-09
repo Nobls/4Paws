@@ -10,12 +10,25 @@ nav {
 
     .link {
       text-decoration: none;
-      color: wheat;
+      color: $color-text;
+      padding-top: 10px;
+      padding-bottom: 5px;
+      font-size: 18px;
+      font-weight: 500;
+      transition: .3s;
+    }
+    .link:hover {
+      color: $color-accent-lite;
     }
 
     .activeLink {
       text-decoration: none;
-      color: aquamarine;
+      color: $color-accent-dark;
+      border-bottom: 2px solid $color-accent-dark;
+      padding-bottom: 5px;
+      padding-top: 10px;
+      font-size: 18px;
+      font-weight: 500;
     }
   }
 }

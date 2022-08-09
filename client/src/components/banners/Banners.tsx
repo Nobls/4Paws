@@ -7,18 +7,18 @@ import {Link} from "react-router-dom";
 import Slider from "react-slick";
 
 
-
 export const Banners = () => {
 
     const settings = {
         arrows: false,
-        dots: false,
+        dots: true,
         infinite: true,
         autoplay: true,
         autoplaySpeed: 6000,
         speed: 3500,
         slidesToShow: 1,
-        slidesToScroll: 1
+        slidesToScroll: 1,
+        dotsClass: `slick-dots ${s.dots}`,
     };
 
     return (

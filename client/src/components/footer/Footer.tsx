@@ -3,6 +3,9 @@ import {Link} from "react-router-dom";
 import s from './footer.module.scss'
 import logo from "../../images/logo.png";
 import Navigation from "../navigation/Navigation";
+import iconViber from "../../images/icons/iconViber50.png";
+import iconInstagram from "../../images/icons/iconInstagram50.png";
+import iconTelegram from "../../images/icons/iconsTelegram50.png";
 
 const Footer = () => {
     return (
@@ -14,8 +17,7 @@ const Footer = () => {
                             <img className={s.logo} src={logo} alt="logo"/>
                         </Link>
                         <div>
-                            <p>Pet Friend</p>
-                            <span className={s.protection}>Все права защищены © </span>
+                            <p>С заботой о <br/> ваших питомцах</p>
                         </div>
                     </div>
                 </div>
@@ -26,11 +28,25 @@ const Footer = () => {
                     <a className={s.link} href={'tel:+375291111111'}>+375-29-111-11-11</a>
                     <a className={s.link} href={'tel:+375291111122'}>+375-29-111-11-22</a>
                     <a className={s.link} href={'mailto:revertagroup@gmail.com'}>revertagroup@gmail.com</a>
-                    <a className={s.link} href="">Instagram</a>
-                    <a className={s.link} href="">Viber</a>
-                    <a className={s.link} href="">VK</a>
+                    {/*<a className={s.link} href="">Instagram</a>*/}
+                    {/*<a className={s.link} href="">Viber</a>*/}
+                    {/*<a className={s.link} href="">VK</a>*/}
+
+                    <div className={s.wrapperSocials}>
+                        <Link to={"/"}>
+                            <img className={s.socialIcon} src={iconInstagram} alt="InstagramIcon"/>
+                        </Link>
+                        <Link to={"/"}>
+                            <img className={s.socialIcon} src={iconViber} alt="ViberIcon"/>
+                        </Link>
+                        <Link to={"/"}>
+                            <img className={s.socialIcon} src={iconTelegram} alt="TelegramIcon"/>
+                        </Link>
+                    </div>
+
                 </div>
             </div>
+            <div className={s.protection}>Все права защищены © 2022 </div>
         </div>
     );
 };

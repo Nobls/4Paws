@@ -25,22 +25,20 @@ const Header = () => {
                                 <button className={s.buttonSearch}>Поиск</button>
                             </div>
                             <div className={s.linkWrapper}>
-                                <img className={s.icon} src={iconPhone} alt="phone"/>
+
+                                    <img className={s.icon} src={iconPhone} alt="phone"/>
+
                                 <a className={s.link} href={'tel:+375291111111'}>+375-29-111-11-11</a>
                                 <a className={s.link} href={'tel:+375291111122'}>+375-29-111-11-22</a>
-                                <a className={s.link} href=''>
-                                    <img className={s.icon} src={iconInstagram} alt="instagram"/>
-                                </a>
-                                <a className={s.link} href=''>
-                                    <img className={s.icon} src={iconTelegram} alt="telegram"/>
-                                </a>
+                                <Link className={s.link} to={"/"}>
+                                    <img className={s.icon} src={iconInstagram} alt="InstagramIcon"/>
+                                </Link>
+                                <Link className={s.link} to={"/"}>
+                                    <img className={s.icon} src={iconTelegram} alt="TelegramIcon"/>
+                                </Link>
                                 {/*<a className={s.link} href={'mailto:revertagroup@gmail.com'}>revertagroup@gmail.com</a>*/}
                             </div>
-                            <div>
-                                <Link className={s.linkLogin} to={'#'}>
-                                    Войти
-                                </Link>
-                            </div>
+                            <Link className={s.linkLogin} to={'#'}>Войти</Link>
                         </div>
                         <div>
                             <Navigation/>
