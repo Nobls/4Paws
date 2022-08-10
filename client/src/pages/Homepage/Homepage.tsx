@@ -10,10 +10,10 @@ const Homepage = () => {
     return (
         <div>
             <Banners/>
-            {/*<Advantage/>
+            <Advantage/>
             <LastNews/>
             <Reviews/>
-            <Populars/>*/}
+            <Populars/>
         </div>
     );
 };

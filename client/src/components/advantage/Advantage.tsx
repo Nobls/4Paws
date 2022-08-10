@@ -13,8 +13,11 @@ export const Advantage = () => {
                     advantage.map(m=>{
                         return(
                             <div className={s.advantageItems} key={m.id}>
-                                <img className={s.advantageIcon} src={m.icon} alt={m.alt}/>
-                                <h3>{m.title}</h3>
+                                <div className={s.iconsWrapper}>
+                                    <img className={s.advantageIcon} src={m.icon} alt={m.alt}/>
+                                    <h3>{m.title}</h3>
+                                </div>
+                                <p className={s.description}>{m.description}</p>
                             </div>
                         )
                     })

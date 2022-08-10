@@ -81,14 +81,12 @@
             padding: 15px 70px 15px 15px;
             width: 350px;
             height: 35px;
-            border-radius: 20px;
           }
 
           .buttonSearch {
             position: absolute;
             height: 35px;
             border: 1px solid #e1e1e1;
-            border-radius: 0 20px 20px 0;
             right: -5px;
             color: $color-text;
             padding: 0 10px;
@@ -107,7 +105,6 @@
           height: 35px;
           background: #f0f0f0;
           border: 1px solid #e1e1e1;
-          border-radius: 20px;
           color: $color-text;
           padding: 0 10px;
           display: flex;
