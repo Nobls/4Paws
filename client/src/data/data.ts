@@ -1,9 +1,7 @@
-import icon1 from '../images/bannerImages/1.png'
-import icon2 from '../images/bannerImages/2.png'
-import icon3 from '../images/bannerImages/3.png'
-import icon4 from '../images/bannerImages/4.png'
-import icon5 from '../images/bannerImages/5.png'
-import icon6 from '../images/bannerImages/6.png'
+import icon1 from '../images/bannerImages/1.jpg'
+import icon2 from '../images/bannerImages/2.jpg'
+import icon3 from '../images/bannerImages/3.jpg'
+import icon4 from '../images/bannerImages/4.jpg'
 import assurance from '../images/advantageIcon/assurance.svg'
 import price from '../images/advantageIcon/price.svg'
 import quality from '../images/advantageIcon/quality1.svg'
@@ -85,13 +83,13 @@ export const banner: BannerType[] = [
 
     {
         id: 5,
-        image: icon5,
+        image: icon3,
         alt: 'icon5'
     },
 
     {
         id: 6,
-        image: icon6,
+        image: icon2,
         alt: 'icon6'
     },
 ];
