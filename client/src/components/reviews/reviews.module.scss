@@ -11,6 +11,10 @@
     .reviewElements{
       display: flex;
       justify-content: space-between;
+      .reviewUserImage{
+        width: 150px;
+        height: 150px;
+      }
       .reviewUser{
         display: flex;
         align-items: center;

@@ -26,7 +26,7 @@ const Reviews = () => {
                                 <div className={s.reviewInner} key={m.id}>
                                     <div className={s.reviewElements}>
                                         <div>
-                                            <img src={m.image} alt={m.alt}/>
+                                            <img className={s.reviewUserImage} src={m.image} alt={m.alt}/>
                                         </div>
                                         <div className={s.reviewUser}>
                                             <div>
