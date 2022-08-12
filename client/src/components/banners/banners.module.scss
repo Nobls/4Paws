@@ -1,6 +1,10 @@
 @import "src/common/extends";
 @import "src/common/variables";
 
+.bannerContainer{
+  @extend .container;
+}
+
 .bannerWrapper {
   width: 100%;
   height: 400px;

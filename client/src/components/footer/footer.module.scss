@@ -3,7 +3,9 @@
 @import "src/common/fonts";
 
 .footerBg {
+  background-color: rgba(219, 197, 176, 0.7);
   padding: 20px 0;
+  box-shadow: 0px -7px 5px -5px rgba(34, 60, 80, 0.6);
 
   .protection {
     margin-top: 20px;

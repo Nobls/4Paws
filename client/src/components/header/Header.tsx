@@ -12,12 +12,10 @@ const Header = () => {
         <div className={s.headerBg}>
             <div className={s.containerHeader}>
                 <div className={s.wrapperHeader}>
-
                     <Link className={s.innerLogo} to={'/'}>
                         <img className={s.logo} src={logo} alt="logo"/>
                         {/*<p className={s.slogan}>С заботой <br/> о вашем питомце</p>*/}
                     </Link>
-
                     <div className={s.innerHeader}>
                         <div className={s.wrapperInformationBlock}>
                             <div className={s.innerSearch}>
@@ -25,9 +23,7 @@ const Header = () => {
                                 <button className={s.buttonSearch}>Поиск</button>
                             </div>
                             <div className={s.linkWrapper}>
-
-                                    <img className={s.icon} src={iconPhone} alt="phone"/>
-
+                                <img className={s.icon} src={iconPhone} alt="phone"/>
                                 <a className={s.link} href={'tel:+375291111111'}>+375-29-111-11-11</a>
                                 <a className={s.link} href={'tel:+375291111122'}>+375-29-111-11-22</a>
                                 <Link className={s.link} to={"/"}>
@@ -44,7 +40,6 @@ const Header = () => {
                             <Navigation/>
                         </div>
                     </div>
-
                 </div>
             </div>
 

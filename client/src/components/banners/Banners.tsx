@@ -23,7 +23,7 @@ export const Banners = () => {
 
     return (
         <>
-            <Slider {...settings}>
+            <Slider className={s.bannerContainer} {...settings}>
                 {
                     banner.map(m => {
                             return (
