@@ -2,11 +2,13 @@
 @import "src/common/variables";
 
 .headerBg {
-
   background-color: rgba(219, 197, 176, 0.7);
   margin-bottom: 40px;
   padding-top: 10px;
   box-shadow: 0 7px 5px -5px rgba(34, 60, 80, 0.6);
+  z-index: 10;
+  //position: absolute;
+  width: 100%;
 }
 
 .containerHeader {

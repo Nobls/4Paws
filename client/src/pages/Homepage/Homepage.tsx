@@ -9,12 +9,17 @@ import s from './homepage.module.scss'
 const Homepage = () => {
 
     return (
-        <div className={s.homepageBg}>
-            <Banners/>
-            <Advantage/>
-            <LastNews/>
-            <Reviews/>
-            <Populars/>
+        <div>
+            <div className={s.homepageBg}>
+
+            </div>
+            <div>
+                <Banners/>
+                <Advantage/>
+                <LastNews/>
+                <Reviews/>
+                <Populars/>
+            </div>
         </div>
     );
 };
