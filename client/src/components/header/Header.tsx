@@ -1,6 +1,6 @@
 import React from 'react';
 import {Link} from "react-router-dom";
-import logo from "../../images/logo.png"
+import logo from "../../images/logoNew.png"
 import s from './header.module.scss'
 import Navigation from "../navigation/Navigation";
 import iconPhone from "../../images/icons/iconPhone50.png";
