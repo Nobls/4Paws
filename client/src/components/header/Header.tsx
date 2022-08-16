@@ -34,7 +34,13 @@ const Header = () => {
                                 </Link>
                                 {/*<a className={s.link} href={'mailto:revertagroup@gmail.com'}>revertagroup@gmail.com</a>*/}
                             </div>
-                            <Link className={s.linkLogin} to={'#'}>Войти</Link>
+                            <Link className={s.linkLogin}  to={'#'}>Войти</Link>
+                            {/*<Link className={s.linkLogin}  to={'#'}>
+                                <div>
+                                    <p>Войти</p>
+                                </div>
+
+                            </Link>*/}
                         </div>
                         <div>
                             <Navigation/>
