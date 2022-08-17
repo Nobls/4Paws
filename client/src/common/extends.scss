@@ -24,3 +24,34 @@
   color: $color-title;
   margin: 100px 0 70px 0;
 }
+
+.bgButton{
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  padding: 7px  30px;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  background-image: url('../images/bgButtonOpacity.png');
+  transition: background .5s ease;
+  background-size: 100% 100%;
+
+}
+.bgButtonHover{
+  background-image: url('../images/bgButton.png');
+  background-size: 100% 100%;
+  color: #eb5837;
+}
+.bgButtonActive{
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  padding: 7px  30px;
+  color: #eb5837;
+  font-size: 20px;
+  font-weight: bold;
+  background-image: url('../images/bgButton.png');
+  transition: background .5s ease;
+  background-size: 100% 100%;
+}

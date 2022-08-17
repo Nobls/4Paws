@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {Link} from "react-router-dom";
 import logo from "../../images/logoNew.png"
 import s from './header.module.scss'
@@ -6,8 +6,15 @@ import Navigation from "../navigation/Navigation";
 import iconPhone from "../../images/icons/iconPhone50.png";
 import iconInstagram from "../../images/icons/iconInstagram50.png";
 import iconTelegram from "../../images/icons/iconsTelegram50.png";
+import {Search} from "../search/Search";
 
 const Header = () => {
+
+    const [search, setSearch] = useState(false)
+    const onclickSearchHandler = () => {
+        setSearch(!search)
+    }
+
     return (
         <div className={s.headerBg}>
             <div className={s.containerHeader}>
@@ -19,8 +26,19 @@ const Header = () => {
                     <div className={s.innerHeader}>
                         <div className={s.wrapperInformationBlock}>
                             <div className={s.innerSearch}>
-                                <input className={s.inputSearch} type="text" placeholder={'Найти на сайте'}/>
-                                <button className={s.buttonSearch}>Поиск</button>
+                                {search && <Search search={search} setSearch={setSearch}/>}
+                                {/*<input className={s.inputSearch} type="text" placeholder={'Найти на сайте'}/>*/}
+                                <div  onClick={onclickSearchHandler}>
+                                    Поиск
+                                    <button>
+                                        <svg role="img" xmlns="http://www.w3.org/2000/svg" width="30px" height="30px"
+                                             viewBox="0 0 24 24" aria-labelledby="searchIconTitle" stroke="#eb5837"
+                                             fill="none" color="#2329D6"><title id="searchIconTitle">Search</title>
+                                            <path d="M14.4121122,14.4121122 L20,20"/>
+                                            <circle cx="10" cy="10" r="6"/>
+                                        </svg>
+                                    </button>
+                                </div>
                             </div>
                             <div className={s.linkWrapper}>
                                 <img className={s.icon} src={iconPhone} alt="phone"/>
@@ -34,7 +52,7 @@ const Header = () => {
                                 </Link>
                                 {/*<a className={s.link} href={'mailto:revertagroup@gmail.com'}>revertagroup@gmail.com</a>*/}
                             </div>
-                            <Link className={s.linkLogin}  to={'#'}>Войти</Link>
+                            <Link className={s.linkLogin} to={'#'}>Войти</Link>
                             {/*<Link className={s.linkLogin}  to={'#'}>
                                 <div>
                                     <p>Войти</p>

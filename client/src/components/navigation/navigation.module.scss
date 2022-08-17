@@ -1,34 +1,20 @@
 @import "src/common/extends";
 
 nav {
-  //.container {
-  //  //@extend .container;
-  //}
-
   .wrapper {
     @extend .flexHorizontalCenter;
+    margin: 20px 0;
 
     .link {
-      text-decoration: none;
-      color: $color-text;
-      padding-top: 10px;
-      padding-bottom: 5px;
-      font-size: 18px;
-      font-weight: 500;
-      transition: .3s;
+      @extend .bgButton;
     }
+
     .link:hover {
-      color: $color-accent-lite;
+      @extend .bgButtonHover;
     }
 
     .activeLink {
-      text-decoration: none;
-      color: $color-accent-dark;
-      border-bottom: 2px solid $color-accent-dark;
-      padding-bottom: 5px;
-      padding-top: 10px;
-      font-size: 18px;
-      font-weight: 500;
+      @extend .bgButtonActive;
     }
   }
 }
