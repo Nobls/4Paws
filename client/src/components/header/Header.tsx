@@ -27,7 +27,6 @@ const Header = () => {
                         <div className={s.wrapperInformationBlock}>
                             <div className={s.innerSearch}>
                                 {search && <Search search={search} setSearch={setSearch}/>}
-                                {/*<input className={s.inputSearch} type="text" placeholder={'Найти на сайте'}/>*/}
                                 <div  onClick={onclickSearchHandler}>
                                     Поиск
                                     <button>
