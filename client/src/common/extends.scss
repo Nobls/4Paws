@@ -35,11 +35,13 @@
   font-weight: bold;
   background-image: url('../images/bgButtonOpacity.png');
   transition: background .5s ease;
+  background-repeat: no-repeat;
   background-size: 100% 100%;
 
 }
 .bgButtonHover{
   background-image: url('../images/bgButton.png');
+  background-repeat: no-repeat;
   background-size: 100% 100%;
   color: #eb5837;
 }
@@ -52,6 +54,13 @@
   font-size: 20px;
   font-weight: bold;
   background-image: url('../images/bgButton.png');
+  background-repeat: no-repeat;
   transition: background .5s ease;
   background-size: 100% 100%;
+}
+.bgText{
+  background-image: url('../images/bgButton.png');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  font-weight: bold;
 }
