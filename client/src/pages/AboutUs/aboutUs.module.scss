@@ -1,4 +1,4 @@
-.aboutUsBg{
+.aboutUsBg {
   background-image: url("../../images/pagesBG/21.jpg");
   background-size: cover;
   background-position: center;
@@ -6,44 +6,61 @@
   position: relative;
   top: -200px;
 
-  a {
-    text-decoration: none;
+  .aboutUsTitle {
     position: absolute;
-    top: 500px;
+    bottom: 400px;
+    right: 65px;
+    font-size: 60px;
+    color: white;
+    line-height: 1.3;
+  }
 
+  .aboutUsButton {
+    padding: 20px 40px;
+    position: absolute;
+    background-color: #eb5837;
+    z-index: 5;
+    border-radius: 5px;
+    bottom: 350px;
+    right: 70px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: .5s;
+
+
+    span {
+      z-index: 3;
+      position: relative;
+      font-size: 20px;
+      color: white;
+    }
 
     img {
-      width: 25px;
-      height: 25px;
-      position: relative;
-      top: -50px;
-      left: 110px;
-      transition: .3s;
+      width: 50px;
+      height: 50px;
+      position: absolute;
+      z-index: 1;
+      right: 8px;
+      top: 9px;
+      transition: .5s;
+    }
+
+    &:hover {
+      background-color: white;
+      transition: .5s;
+
+      span {
+        color: #eb5837;
+        transition: .5s;
       }
 
-    p {
-      background-color: red;
-      color: white;
-      width: 150px;
-      height: 50px;
-      display: flex;
-      align-items: center;
-      justify-content: space-around;
-      transition: .3s;
+      img {
+        width: 50px;
+        height: 50px;
+        //transform: translate(-5px, 0px) rotate(-5deg);
+        transform: scale(1.1);
+      }
     }
   }
 
-  a:hover {
-
-    img {
-      width: 30px;
-      height: 30px;
-    }
-
-    p {
-      background-color: white;
-      color: #eb5837;
-      transition: .3s;
-    }
-  }
 }
