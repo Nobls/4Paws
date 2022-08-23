@@ -6,6 +6,7 @@ import Reviews from "../../components/reviews/Reviews";
 import Populars from "../../components/populars/Populars";
 import s from './homepage.module.scss'
 import {Link} from "react-router-dom";
+import paw from "../../images/Vector2.png";
 
 const Homepage = () => {
 
@@ -16,7 +17,8 @@ const Homepage = () => {
                     Tолько премиальный <br/> <span className={s.homePageSpan}>уход</span> и счастливые <br/> питомцы.
                 </h1>
                     <Link className={s.contactUs} to={'/about'}>
-                        Связаться с нами
+                        <span>Связаться с нами</span>
+                        <img src={paw} alt=""/>
                     </Link>
             </div>
             <div>

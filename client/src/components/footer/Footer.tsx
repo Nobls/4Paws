@@ -3,9 +3,9 @@ import {Link} from "react-router-dom";
 import s from './footer.module.scss'
 import logo from "../../images/logo.png";
 import Navigation from "../navigation/Navigation";
-import iconViber from "../../images/icons/iconViber50.png";
-import iconInstagram from "../../images/icons/iconInstagram50.png";
-import iconTelegram from "../../images/icons/iconsTelegram50.png";
+import iconViber from "../../images/icons/iconViber.svg";
+import iconInstagram from "../../images/icons/iconInstagram.svg";
+import iconTelegram from "../../images/icons/iconTelegram.svg";
 
 const Footer = () => {
     return (
