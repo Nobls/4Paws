@@ -1,7 +1,7 @@
 import React from 'react';
 import {Link} from "react-router-dom";
 import s from './footer.module.scss'
-import logo from "../../images/logo.png";
+import logo from "../../images/logoNew2.png";
 import Navigation from "../navigation/Navigation";
 import iconViber from "../../images/icons/iconViber.svg";
 import iconInstagram from "../../images/icons/iconInstagram.svg";
@@ -28,10 +28,6 @@ const Footer = () => {
                     <a className={s.link} href={'tel:+375291111111'}>+375-29-111-11-11</a>
                     <a className={s.link} href={'tel:+375291111122'}>+375-29-111-11-22</a>
                     <a className={s.link} href={'mailto:revertagroup@gmail.com'}>revertagroup@gmail.com</a>
-                    {/*<a className={s.link} href="">Instagram</a>*/}
-                    {/*<a className={s.link} href="">Viber</a>*/}
-                    {/*<a className={s.link} href="">VK</a>*/}
-
                     <div className={s.wrapperSocials}>
                         <Link to={"/"}>
                             <img className={s.socialIcon} src={iconInstagram} alt="InstagramIcon"/>
