@@ -1,1 +1,26 @@
 @import "src/common/extends";
+
+
+nav {
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+
+    .link {
+      text-decoration: none;
+      color: #eb5837;
+      font-weight: bold;
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+
+    .activeLink {
+      text-decoration: none;
+      color: #eb5837;
+      font-weight: bold;
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+  }
+}
+

@@ -17,32 +17,43 @@
 
 .wrapper {
   @extend .container;
-  @extend .flexHorizontalCenter;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
   height: 300px;
+
   .wrapperLogo {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
+    flex-direction: column;
 
     .logo {
       margin-right: 20px;
       width: 200px;
     }
 
-    p {
-      color: $color-title;
-      font-size: 20px;
-      font-weight: bold;
-      line-height: 35px;
+    .wrapperSocials {
+      display: flex;
+      width: 100%;
+      margin: 15px 0 0 0;
+      justify-content: space-between;
+
+      svg {
+        width: 40px;
+        height: 40px;
+      }
     }
   }
 
-  .footerNav {
-    width: 450px;
+  .galleryFooter {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 10px 10px;
   }
 
   .wrapperLink {
     @extend .flexVertical;
-    align-items: center;
 
     .link {
       text-decoration: none;
@@ -53,18 +64,5 @@
     .link + .link {
       margin-top: 10px;
     }
-
-    .wrapperSocials {
-      display: flex;
-      width: 100%;
-      margin: 15px 10px 0 10px;
-      justify-content: space-around;
-
-      .socialIcon {
-        width: 30px;
-      }
-    }
   }
-
-
 }
