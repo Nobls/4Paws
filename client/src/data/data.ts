@@ -17,13 +17,18 @@ import imageGoods3 from '../images/popularsGoods/image3.png'
 import imageGoods4 from '../images/popularsGoods/image4.jpeg'
 import imageGoods5 from '../images/popularsGoods/image5.jpeg'
 import imageGoods6 from '../images/popularsGoods/image6.jpg'
+import photoGallery1 from '../images/galleryFooter/01.jpg'
+import photoGallery2 from '../images/galleryFooter/02.jpg'
+import photoGallery3 from '../images/galleryFooter/03.jpg'
+import photoGallery4 from '../images/galleryFooter/04.jpg'
+import photoGallery5 from '../images/galleryFooter/05.jpg'
+import photoGallery6 from '../images/galleryFooter/06.jpg'
 
 export type BannerType = {
     id: number
     image: any
     alt: string
 }
-
 export type AdvantageType = {
     id: number
     icon: any
@@ -31,7 +36,6 @@ export type AdvantageType = {
     title: string
     description: string
 }
-
 export type LastNewsType = {
     id: number
     image: any
@@ -39,7 +43,6 @@ export type LastNewsType = {
     title: string
     description: string
 }
-
 export type PopularsGoodsType = {
     id?: number
     title: string
@@ -52,6 +55,11 @@ export type PopularsGoodsPriceType = {
     g100: number
     g400: number
     g1000: number
+}
+export type GalleryFooterType = {
+    id: number
+    image: any
+    alt: string
 }
 
 
@@ -325,6 +333,39 @@ export const popularsGoods: PopularsGoodsType[] = [
             g1000: 1000,
         },
         descriptions: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo, suscipit.',
+    },
+]
+
+export const galleryFooter: GalleryFooterType[] = [
+    {
+        id: 1,
+        image: photoGallery1,
+        alt: 'photoGallery',
+    },
+    {
+        id: 2,
+        image: photoGallery2,
+        alt: 'photoGallery',
+    },
+    {
+        id: 3,
+        image: photoGallery3,
+        alt: 'photoGallery',
+    },
+    {
+        id: 4,
+        image: photoGallery4,
+        alt: 'photoGallery',
+    },
+    {
+        id: 5,
+        image: photoGallery5,
+        alt: 'photoGallery',
+    },
+    {
+        id: 6,
+        image: photoGallery6,
+        alt: 'photoGallery',
     },
 ]
 

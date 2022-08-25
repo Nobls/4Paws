@@ -6,9 +6,19 @@
   background-color: rgba(0, 0, 0, 0.15);
   box-shadow: 0 -7px 5px -5px rgba(34, 60, 80, 0.6);
   padding: 20px 0;
+  position: relative;
+
+  .catBg{
+    position: absolute;
+    bottom: 0;
+    right: 50px;
+
+  }
 
   .protection {
     margin-top: 20px;
+    font-size: 16px;
+    font-weight: bold;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -32,6 +42,12 @@
       width: 200px;
     }
 
+    .sloganFooter{
+      font-size: 17px;
+      color: #4a4a4a;
+      font-weight: normal;
+    }
+
     .wrapperSocials {
       display: flex;
       width: 100%;
@@ -45,20 +61,39 @@
     }
   }
 
-  .galleryFooter {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
-    gap: 10px 10px;
+  .footerGalleryWrapper {
+    h4{
+      font-size: 21px;
+      font-weight: bold;
+    }
+    .galleryFooter {
+      position: relative;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+      gap: 15px 15px;
+      img{
+        width: 100px;
+        height: 60px;
+        border-radius: 5px;
+      }
+    }
   }
+
 
   .wrapperLink {
     @extend .flexVertical;
 
+    h4{
+      font-size: 21px;
+      font-weight: bold;
+    }
+
     .link {
       text-decoration: none;
       color: $color-text;
-      font-size: 15px;
+      font-weight: bold;
+      font-size: 16px;
     }
 
     .link + .link {

@@ -1,12 +1,26 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {Link} from "react-router-dom";
 import s from './footer.module.scss'
 import logo from "../../images/logoNew2.png";
+import catBg from "../../images/other/cat.png";
+import {galleryFooter} from "../../data/data";
 import {NavigationFooter} from "../navigationFooter/NavigationFooter";
+import {ModalGallery} from "../modalGallery/ModalGallery";
+
 
 const Footer = () => {
+
+    const [modal, setModal] = useState(false)
+
+    const onClickHandler = () => {
+        setModal(!modal)
+    }
+
     return (
         <div className={s.footerBg}>
+            <div className={s.catBg}>
+                <img src={catBg} alt="cat"/>
+            </div>
             <div className={s.wrapper}>
                 <div>
                     <div className={s.wrapperLogo}>
@@ -14,7 +28,7 @@ const Footer = () => {
                             <img className={s.logo} src={logo} alt="logo"/>
                         </Link>
                         <div className={s.sloganFooter}>
-                            <p>С заботой о ваших питомцах. <br/> Премиальный уход и <br/> счастливае питомцы.</p>
+                            <p>С заботой о ваших питомцах. <br/> Премиальный уход и <br/>счастливые питомцы.</p>
                         </div>
                         <div className={s.wrapperSocials}>
                             <Link to={"/"}>
@@ -76,16 +90,25 @@ const Footer = () => {
                 <div className={s.footerNav}>
                     <NavigationFooter/>
                 </div>
-                <div>
+                <div className={s.footerGalleryWrapper}>
                     <h4>Галерея</h4>
                     <div className={s.galleryFooter}>
+                        {/*{*/}
+                        {/*    modal && <ModalGallery modal={modal} setModal={setModal}/>*/}
+                        {/*}*/}
+                        {
+                            galleryFooter.map(m => {
+                                return (
+                                    <div onClick={onClickHandler} key={m.image}><img src={m.image} alt={m.alt}/>
+                                        {
+                                            modal && <ModalGallery id={m.id} image={m.image} alt={m.alt} modal={modal}
+                                                                   setModal={setModal}/>
+                                        }
+                                    </div>
+                                )
 
-                        <div><img src="" alt="gallery"/></div>
-                        <div><img src="" alt="gallery"/></div>
-                        <div><img src="" alt="gallery"/></div>
-                        <div><img src="" alt="gallery"/></div>
-                        <div><img src="" alt="gallery"/></div>
-                        <div><img src="" alt="gallery"/></div>
+                            })
+                        }
                     </div>
                 </div>
 
@@ -94,6 +117,7 @@ const Footer = () => {
                     <h4>Контакты</h4>
                     <a className={s.link} href={'tel:+375291111111'}>+375-29-111-11-11</a>
                     <a className={s.link} href={'tel:+375291111122'}>+375-29-111-11-22</a>
+                    <a className={s.link} href={'tel:+375291111122'}>+375-29-111-11-33</a>
                     <a className={s.link} href={'mailto:revertagroup@gmail.com'}>revertagroup@gmail.com</a>
                 </div>
             </div>
