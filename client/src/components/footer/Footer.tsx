@@ -7,13 +7,18 @@ import {galleryFooter} from "../../data/data";
 import {NavigationFooter} from "../navigationFooter/NavigationFooter";
 import {ModalGallery} from "../modalGallery/ModalGallery";
 
-
 const Footer = () => {
 
     const [modal, setModal] = useState(false)
 
     const onClickHandler = () => {
         setModal(!modal)
+    }
+
+    const allFunc = (id: number) => {
+        onClickHandler()
+        const newGallery = galleryFooter.filter(f => f.id === id)
+        console.log(newGallery)
     }
 
     return (
@@ -93,21 +98,18 @@ const Footer = () => {
                 <div className={s.footerGalleryWrapper}>
                     <h4>Галерея</h4>
                     <div className={s.galleryFooter}>
-                        {/*{*/}
-                        {/*    modal && <ModalGallery modal={modal} setModal={setModal}/>*/}
-                        {/*}*/}
                         {
                             galleryFooter.map(m => {
                                 return (
-                                    <div onClick={onClickHandler} key={m.image}><img src={m.image} alt={m.alt}/>
-                                        {
-                                            modal && <ModalGallery id={m.id} image={m.image} alt={m.alt} modal={modal}
-                                                                   setModal={setModal}/>
-                                        }
+                                    <div onClick={() => allFunc(m.id)} key={m.id}>
+                                        <img src={m.image} alt={m.alt}/>
                                     </div>
                                 )
-
                             })
+                        }
+                        {
+                            modal &&
+                            <ModalGallery modal={modal} setModal={setModal}/>
                         }
                     </div>
                 </div>
