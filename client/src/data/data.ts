@@ -2,10 +2,9 @@ import icon1 from '../images/bannerImages/1.jpg'
 import icon2 from '../images/bannerImages/2.jpg'
 import icon3 from '../images/bannerImages/3.jpg'
 import icon4 from '../images/bannerImages/4.jpg'
-import assurance from '../images/advantageIcon/iconAssurance80.png'
-import price from '../images/advantageIcon/iconPrice80.png'
-import quality from '../images/advantageIcon/iconQuality80.png'
-import time from '../images/advantageIcon/iconClock80.png'
+import assurance from '../images/adventageImages/01.png'
+import price from '../images/adventageImages/02.png'
+import quality from '../images/adventageImages/03.png'
 import newsOne from '../images/lastNews/news1.jpg'
 import newsTwo from '../images/lastNews/news2.jpeg'
 import newsThree from '../images/lastNews/news3.jpg'
@@ -126,14 +125,6 @@ export const advantage: AdvantageType[] = [
         alt: 'quality',
         title: 'Качество',
         description: 'Мы постоянно следим за уровнем подготовки наших специалистов чтобы качество наших услуг всегда было на высоком уровне',
-    },
-
-    {
-        id: 4,
-        icon: time,
-        alt: 'time',
-        title: '24/7 на связи',
-        description: 'Специалисты нашего колл-центра решат любую задачу в удобное для вас время',
     },
 ]
 

@@ -22,8 +22,8 @@ const Homepage = () => {
                     </Link>
             </div>
             <div>
-                <Banners/>
                 <Advantage/>
+                {/*<Banners/>*/}
                 <LastNews/>
                 <Reviews/>
                 <Populars/>

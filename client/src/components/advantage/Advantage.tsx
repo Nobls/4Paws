@@ -1,6 +1,7 @@
 import React from 'react';
 import {advantage} from "../../data/data";
-import s from './advantage.module.scss'
+import s from './advantage.module.scss';
+import vector from '../../images/Vector2.png'
 
 export const Advantage = () => {
     return (
@@ -9,16 +10,21 @@ export const Advantage = () => {
             <h3 className={s.title}>Наши преимущества</h3>
 
             <div className={s.advantageWrapper}>
+
                 {
-                    advantage.map(m=>{
-                        return(
+                    advantage.map(m => {
+                        return (
                             <div className={s.advantageItems} key={m.id}>
                                 <div className={s.iconsWrapper}>
                                     <img className={s.advantageIcon} src={m.icon} alt={m.alt}/>
-                                    <h3>{m.title}</h3>
+                                    <img className={s.paw} src={vector} alt="paw"/>
                                 </div>
-                                <p className={s.description}>{m.description}</p>
+                                <div>
+                                    <h3>{m.title}</h3>
+                                    <p className={s.description}>{m.description}</p>
+                                </div>
                             </div>
+
                         )
                     })
                 }

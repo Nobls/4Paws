@@ -1,33 +1,75 @@
 @import "src/common/extends";
 
 .advantageBg {
-  padding: 20px 0;
-  margin: 50px 0;
+  position: relative;
+  top: -80px;
+  padding: 0;
+  margin: 0;
 
   .title{
-    @extend .title
+    @extend .title;
+    margin: 0 0 70px 0;
   }
 
   .advantageWrapper {
-
     @extend .container;
     @extend .flexHorizontalCenter;
-    align-items: flex-start;
+    justify-content: center;
 
     .advantageItems {
-      max-width: 250px;
+      max-width: 370px;
+      height: 170px;
       display: flex;
-      flex-direction: column;
-      align-items: center;
+      flex-direction: row;
+      background-color: rgba(235, 231, 228, 0.58);
+      margin: 10px;
+      border-radius: 15px;
+      box-shadow: 0 7px 5px -5px rgba(34, 60, 80, 0.6);
+
+      &:hover {
+        .paw {
+          width: 105px;
+          opacity: 0.6;
+          transition: .3s;
+        }
+      }
+
+      .paw {
+        width: 100px;
+        left: 240px;
+        position: relative;
+        top: -110px;
+        z-index: -1;
+        opacity: 0.4;
+        transition: .3s;
+      }
+
+      div {
+
+
+        h3 {
+          font-size: 20px;
+          color: $color-text;
+          font-weight: bold;
+        }
+
+        p {
+
+        }
+      }
+
 
       .description {
-        padding: 0 10px;
+        padding: 0 10px 0 0;
         text-align: justify;
       }
 
       .advantageIcon {
-        width: 80px;
-        height: 80px;
+        height: 150px;
+        border-radius: 0 0 0 15px;
+        position: relative;
+        top: 21px;
+        opacity: 1;
       }
 
       .iconsWrapper {
