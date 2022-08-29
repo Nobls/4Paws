@@ -2,6 +2,7 @@ import icon1 from '../images/bannerImages/1.jpg'
 import icon2 from '../images/bannerImages/2.jpg'
 import icon3 from '../images/bannerImages/3.jpg'
 import icon4 from '../images/bannerImages/4.jpg'
+import icon5 from '../images/bannerImages/banner01.png'
 import assurance from '../images/adventageImages/01.png'
 import price from '../images/adventageImages/02.png'
 import quality from '../images/adventageImages/03.png'
@@ -91,7 +92,7 @@ export const banner: BannerType[] = [
 
     {
         id: 5,
-        image: icon3,
+        image: icon5,
         alt: 'icon5'
     },
 

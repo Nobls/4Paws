@@ -13,7 +13,7 @@
 
     .link {
       text-decoration: none;
-      color: #eb5837;
+      color: $color-text;
       font-weight: bold;
       font-size: 18px;
       margin-bottom: 10px;
@@ -21,10 +21,14 @@
 
     .activeLink {
       text-decoration: none;
-      color: #eb5837;
+      color: $color-text;
       font-weight: bold;
       font-size: 18px;
       margin-bottom: 10px;
+      span{
+        border-bottom: 2px solid #eb5837;
+      }
+
     }
   }
 }

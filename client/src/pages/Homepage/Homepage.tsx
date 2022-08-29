@@ -23,7 +23,7 @@ const Homepage = () => {
             </div>
             <div>
                 <Advantage/>
-                {/*<Banners/>*/}
+                <Banners/>
                 <LastNews/>
                 <Reviews/>
                 <Populars/>

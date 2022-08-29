@@ -7,12 +7,12 @@ export const NavigationFooter = () => {
         <nav className={s.containerNav}>
             <h4>Ссылки</h4>
             <div className={s.wrapper}>
-                <NavLink className={({isActive})=>isActive ? `${s.activeLink}`: `${s.link}`} to={'/'}>Главная</NavLink>
-                <NavLink className={({isActive})=>isActive ? `${s.activeLink}`: `${s.link}`} to={'/services'}>Услуги</NavLink>
-                <NavLink className={({isActive})=>isActive ? `${s.activeLink}`: `${s.link}`} to={'/shop'}>Магазин</NavLink>
-                <NavLink className={({isActive})=>isActive ? `${s.activeLink}`: `${s.link}`} to={'/news'}>Новости</NavLink>
-                <NavLink className={({isActive})=>isActive ? `${s.activeLink}`: `${s.link}`} to={'/about'}>О нас</NavLink>
-                <NavLink className={({isActive})=>isActive ? `${s.activeLink}`: `${s.link}`} to={'/contacts'}>Контакты</NavLink>
+                <NavLink className={({isActive})=>isActive ? `${s.activeLink}`: `${s.link}`} to={'/'}><span>Главная</span></NavLink>
+                <NavLink className={({isActive})=>isActive ? `${s.activeLink}`: `${s.link}`} to={'/services'}><span>Услуги</span></NavLink>
+                <NavLink className={({isActive})=>isActive ? `${s.activeLink}`: `${s.link}`} to={'/shop'}><span>Магазин</span></NavLink>
+                <NavLink className={({isActive})=>isActive ? `${s.activeLink}`: `${s.link}`} to={'/news'}><span>Новости</span></NavLink>
+                <NavLink className={({isActive})=>isActive ? `${s.activeLink}`: `${s.link}`} to={'/about'}><span>О нас</span></NavLink>
+                <NavLink className={({isActive})=>isActive ? `${s.activeLink}`: `${s.link}`} to={'/contacts'}><span>Контакты</span></NavLink>
             </div>
         </nav>
     );
