@@ -2,7 +2,7 @@
 
 .advantageBg {
   position: relative;
-  top: -80px;
+  top: -90px;
   padding: 0;
   margin: 0;
 
@@ -17,14 +17,15 @@
     justify-content: center;
 
     .advantageItems {
-      max-width: 370px;
+        max-width: 400px;
       height: 170px;
       display: flex;
       flex-direction: row;
       background-color: rgba(235, 231, 228, 0.58);
-      margin: 10px;
+      margin: 15px;
       border-radius: 15px;
-      box-shadow: 0 7px 5px -5px rgba(34, 60, 80, 0.6);
+      //box-shadow: 0 7px 5px -5px rgba(34, 60, 80, 0.6);
+      box-shadow: 0 3px 6px 0 rgba(34, 60, 80, 0.4);
       -webkit-touch-callout: none;
       -webkit-user-select: none;
       -moz-user-select: none;
@@ -53,20 +54,17 @@
 
 
         h3 {
-          font-size: 20px;
+          font-size: 25px;
+          margin: 20px 0 0 0;
           color: $color-text;
           font-weight: bold;
-        }
-
-        p {
-
         }
       }
 
 
       .description {
         padding: 0 10px 0 0;
-        text-align: justify;
+        text-align: start;
       }
 
       .advantageIcon {
