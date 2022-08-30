@@ -1,6 +1,6 @@
 import icon1 from '../images/bannerImages/banner03.png'
 import icon2 from '../images/bannerImages/banner02.png'
-import icon3 from '../images/bannerImages/banner044.png'
+import icon3 from '../images/bannerImages/banner04.png'
 import icon4 from '../images/bannerImages/banner01.png'
 import icon5 from '../images/bannerImages/banner0.png'
 import assurance from '../images/adventageImages/01.png'
@@ -86,7 +86,7 @@ export const banner: BannerType[] = [
 
     {
         id: 4,
-        image: icon5,
+        image: icon4,
         alt: 'icon4'
     },
 
