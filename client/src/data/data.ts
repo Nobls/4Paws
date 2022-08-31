@@ -1,8 +1,12 @@
-import icon1 from '../images/bannerImages/banner03.png'
-import icon2 from '../images/bannerImages/banner02.png'
-import icon3 from '../images/bannerImages/banner04.png'
-import icon4 from '../images/bannerImages/banner01.png'
-import icon5 from '../images/bannerImages/banner0.png'
+import banner1 from '../images/bannerImages/banner1.png'
+import banner2 from '../images/bannerImages/banner2.png'
+import banner3 from '../images/bannerImages/banner3.png'
+import banner4 from '../images/bannerImages/banner4.png'
+import banner11 from '../images/bannerImages/1.png'
+import banner12 from '../images/bannerImages/2.png'
+import banner13 from '../images/bannerImages/3.png'
+import banner14 from '../images/bannerImages/4.png'
+
 import assurance from '../images/adventageImages/01.png'
 import price from '../images/adventageImages/02.png'
 import quality from '../images/adventageImages/03.png'
@@ -23,10 +27,15 @@ import photoGallery3 from '../images/galleryFooter/03.jpg'
 import photoGallery4 from '../images/galleryFooter/04.jpg'
 import photoGallery5 from '../images/galleryFooter/05.jpg'
 import photoGallery6 from '../images/galleryFooter/06.jpg'
+import ourTeamPeople1 from '../images/ourTeam/people1.png'
+import ourTeamPeople2 from '../images/ourTeam/people2.png'
+import ourTeamPeople3 from '../images/ourTeam/people3.png'
+import ourTeamPeople4 from '../images/ourTeam/people4.png'
 
 export type BannerType = {
     id: number
     image: any
+    image1: any
     alt: string
 }
 export type AdvantageType = {
@@ -61,33 +70,43 @@ export type GalleryFooterType = {
     image: any
     alt: string
 }
-
+export type OurTeamType = {
+    id: number
+    image: any
+    alt: string
+    name: string
+    description: string
+}
 
 
 export const banner: BannerType[] = [
     {
         id: 1,
-        image: icon1,
-        alt: 'icon1'
+        image: banner1,
+        image1: banner11,
+        alt: 'banner1'
 
     },
 
     {
         id: 2,
-        image: icon2,
-        alt: 'icon2'
+        image: banner2,
+        image1: banner12,
+        alt: 'banner2'
     },
 
     {
         id: 3,
-        image: icon3,
-        alt: 'icon3'
+        image: banner3,
+        image1: banner13,
+        alt: 'banner3'
     },
 
     {
         id: 4,
-        image: icon4,
-        alt: 'icon4'
+        image: banner4,
+        image1: banner14,
+        alt: 'banner4'
     },
 
     /*{
@@ -109,7 +128,7 @@ export const advantage: AdvantageType[] = [
         icon: assurance,
         alt: 'assurance',
         title: 'Уверенность',
-        description:'Воспользовавшись нашими услугами вы всегда сможете наблюдать за своим питомцем удаленно.',
+        description: 'Воспользовавшись нашими услугами вы всегда сможете наблюдать за своим питомцем удаленно.',
     },
 
     {
@@ -258,7 +277,7 @@ export const popularsGoods: PopularsGoodsType[] = [
         id: 1,
         title: 'Brit',
         image: imageGoods1,
-        alt:'image',
+        alt: 'image',
         price: {
             g100: 100,
             g400: 300,
@@ -270,8 +289,8 @@ export const popularsGoods: PopularsGoodsType[] = [
         id: 2,
         title: 'Brit',
         image: imageGoods2,
-        alt:'image',
-            price: {
+        alt: 'image',
+        price: {
             g100: 100,
             g400: 300,
             g1000: 1000,
@@ -282,7 +301,7 @@ export const popularsGoods: PopularsGoodsType[] = [
         id: 3,
         title: 'Brit',
         image: imageGoods3,
-        alt:'image',
+        alt: 'image',
         price: {
             g100: 100,
             g400: 300,
@@ -294,7 +313,7 @@ export const popularsGoods: PopularsGoodsType[] = [
         id: 4,
         title: 'Brit',
         image: imageGoods4,
-        alt:'image',
+        alt: 'image',
         price: {
             g100: 100,
             g400: 300,
@@ -306,7 +325,7 @@ export const popularsGoods: PopularsGoodsType[] = [
         id: 5,
         title: 'Brit',
         image: imageGoods5,
-        alt:'image',
+        alt: 'image',
         price: {
             g100: 100,
             g400: 300,
@@ -318,7 +337,7 @@ export const popularsGoods: PopularsGoodsType[] = [
         id: 6,
         title: 'Brit',
         image: imageGoods6,
-        alt:'image',
+        alt: 'image',
         price: {
             g100: 100,
             g400: 300,
@@ -358,6 +377,51 @@ export const galleryFooter: GalleryFooterType[] = [
         id: 6,
         image: photoGallery6,
         alt: 'photoGallery',
+    },
+]
+
+export const ourTeam: OurTeamType[] = [
+    {
+        id: 1,
+        image: ourTeamPeople1,
+        alt: 'people1',
+        name: 'Захаревич А.И.',
+        description: 'Кинолог. Стаж более 10 лет.'
+    },
+    {
+        id: 2,
+        image: ourTeamPeople2,
+        alt: 'people1',
+        name: 'Клюшко В.Г.',
+        description: 'Кинолог. Стаж более 6 лет.'
+    },
+    {
+        id: 3,
+        image: ourTeamPeople3,
+        alt: 'people1',
+        name: 'Бобрик А.В.',
+        description: 'Ветеринар, кинолог. Стаж более 14 лет.'
+    },
+    {
+        id: 4,
+        image: ourTeamPeople4,
+        alt: 'people1',
+        name: 'Ждан Е.Д.',
+        description: 'Ветеринар. Стаж более 3 лет. Call-центр'
+    },
+    {
+        id: 5,
+        image: ourTeamPeople3,
+        alt: 'people1',
+        name: 'Бобрик А.В.',
+        description: 'Ветеринар, кинолог. Стаж более 14 лет.'
+    },
+    {
+        id: 6,
+        image: ourTeamPeople3,
+        alt: 'people1',
+        name: 'Бобрик А.В.',
+        description: 'Ветеринар, кинолог. Стаж более 14 лет.'
     },
 ]
 

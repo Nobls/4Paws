@@ -7,6 +7,7 @@ import Populars from "../../components/populars/Populars";
 import s from './homepage.module.scss'
 import {Link} from "react-router-dom";
 import paw from "../../images/Vector2.png";
+import OurTeam from "../../components/ ourTeam/OurTeam";
 
 const Homepage = () => {
 
@@ -25,6 +26,7 @@ const Homepage = () => {
                 <Advantage/>
                 <Banners/>
                 <LastNews/>
+                <OurTeam/>
                 <Reviews/>
                 <Populars/>
             </div>

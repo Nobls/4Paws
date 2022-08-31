@@ -26,15 +26,34 @@ export const Banners = () => {
             <Slider className={s.bannerContainer} {...settings}>
                 {
                     banner.map(m => {
-                            return (
-                                <div className={s.bannerWrapper} key={m.id}>
-                                    <Link to={'/'}>
+                        return (
+                            <div className={s.bannerWrapper} key={m.id}>
+                                <Link to={'/'}>
+                                    <picture>
+                                        <source media="(max-width:1000px)" srcSet={m.image1}/>
+                                        {/*<source media="(min-width:1200px)" srcSet={m.image}/>*/}
                                         <img className={s.bannerImage} src={m.image} alt={m.alt}/>
-                                    </Link>
-                                </div>
-                            )
-                        }
-                    )
+                                    </picture>
+                                </Link>
+                            </div>
+                        )
+
+                    })
+
+
+
+
+
+                    // banner.map(m => {
+                    //         return (
+                    //             <div className={s.bannerWrapper} key={m.id}>
+                    //                 <Link to={'/'}>
+                    //                     <img className={s.bannerImage} src={m.image} alt={m.alt}/>
+                    //                 </Link>
+                    //             </div>
+                    //         )
+                    //     }
+                    // )
                 }
             </Slider>
         </>
