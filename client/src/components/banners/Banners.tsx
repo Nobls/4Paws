@@ -14,8 +14,8 @@ export const Banners = () => {
         dots: true,
         infinite: true,
         autoplay: true,
-        autoplaySpeed: 3000,
-        speed: 500,
+        autoplaySpeed: 5000,
+        speed: 2000,
         slidesToShow: 1,
         slidesToScroll: 1,
         dotsClass: `slick-dots ${s.dots}`,
@@ -36,6 +36,7 @@ export const Banners = () => {
                                         <source media="(max-width:1440px)" srcSet={m.image1440}/>
                                         <source media="(max-width:1536px)" srcSet={m.image1536}/>
                                         <source media="(max-width:1680px)" srcSet={m.image1680}/>
+                                        <source media="(max-width:1920px)" srcSet={m.image1920}/>
                                         <source media="(max-width:2560px)" srcSet={m.image2560}/>
                                         <img className={s.bannerImage} src={m.image1920} alt={m.alt}/>
                                     </picture>

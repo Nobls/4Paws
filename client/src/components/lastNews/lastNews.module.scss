@@ -1,4 +1,5 @@
 @import "src/common/extends";
+@import "src/common/variables";
 
 .lastNewsBg {
   @extend .container;
@@ -12,35 +13,152 @@
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr;
-    gap: 10px 10px;
+    gap: 25px 25px;
     grid-auto-flow: row;
     grid-template-areas:
     "news1 news1 news2 news2 news3 news3"
     "news4 news4 news4 news5 news5 news5";
 
+    .newsTitle {
+      font-size: 27px;
+      padding: 0 15px 0 15px;
+      height: 110px;
+      margin: 20px 0 0 0;
+      line-height: 35px;
+    }
+
+    .newsText {
+      font-size: 18px;
+      padding: 0 15px 0 15px;
+      color: $color-text;
+    }
+
+    .newsItemWrapper {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 550px;
+    }
+
     .news1 {
       grid-area: news1;
-      background-color: aqua;
+      text-decoration: none;
+      background-color: rgba(235, 231, 228, 0.58);
+      border-radius: 15px;
+      transition: all .5s;
+      box-shadow: 0 7px 5px -5px rgba(34, 60, 80, 0.6);
+      overflow: hidden;
+      &:hover {
+        img {
+          filter: brightness(60%);
+          transform: scale(1.1);
+          transition: all .5s;
+        }
+      }
+
+      .lastNewsImageOne {
+        width: 420px;
+        height: 300px;
+        border-radius: 15px 15px 0 0;
+        transition: all .5s;
+      }
     }
 
     .news2 {
       grid-area: news2;
-      background-color: blueviolet;
+      text-decoration: none;
+      background-color: rgba(235, 231, 228, 0.58);
+      border-radius: 15px;
+      transition: all .5s;
+      box-shadow: 0 7px 5px -5px rgba(34, 60, 80, 0.6);
+      overflow: hidden;
+      &:hover {
+        img {
+          filter: brightness(60%);
+          transform: scale(1.1);
+          transition: all .5s;
+        }
+      }
+
+      .lastNewsImageTwo {
+        width: 420px;
+        height: 300px;
+        border-radius: 15px 15px 0 0;
+        transition: all .5s;
+      }
     }
 
     .news3 {
       grid-area: news3;
-      background-color: burlywood;
+      text-decoration: none;
+      background-color: rgba(235, 231, 228, 0.58);
+      border-radius: 15px;
+      transition: all .5s;
+      box-shadow: 0 7px 5px -5px rgba(34, 60, 80, 0.6);
+      overflow: hidden;
+      &:hover {
+        img {
+          filter: brightness(60%);
+          transform: scale(1.1);
+          transition: all .5s;
+        }
+      }
+
+      .lastNewsImageThree {
+        width: 420px;
+        height: 300px;
+        border-radius: 15px 15px 0 0;
+        transition: all .5s;
+      }
     }
 
     .news4 {
       grid-area: news4;
-      background-color: coral;
+      text-decoration: none;
+      background-color: rgba(235, 231, 228, 0.58);
+      border-radius: 15px;
+      transition: all .5s;
+      box-shadow: 0 7px 5px -5px rgba(34, 60, 80, 0.6);
+      overflow: hidden;
+      &:hover {
+        img {
+          filter: brightness(60%);
+          transform: scale(1.1);
+          transition: all .5s;
+        }
+      }
+
+      .lastNewsImageFour {
+        width: 637px;
+        height: 300px;
+        border-radius: 15px 15px 0 0;
+        transition: all .5s;
+      }
     }
 
     .news5 {
       grid-area: news5;
-      background-color: darkcyan;
+      text-decoration: none;
+      background-color: rgba(235, 231, 228, 0.58);
+      border-radius: 15px;
+      transition: all .5s;
+      box-shadow: 0 7px 5px -5px rgba(34, 60, 80, 0.6);
+      overflow: hidden;
+
+      &:hover {
+        img {
+          filter: brightness(60%);
+          transform: scale(1.1);
+          transition: all .5s;
+        }
+      }
+
+      .lastNewsImageFour {
+        width: 637px;
+        height: 300px;
+        border-radius: 15px 15px 0 0;
+        transition: all .5s;
+      }
     }
   }
 }
