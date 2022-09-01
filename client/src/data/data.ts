@@ -1,11 +1,38 @@
-import banner1 from '../images/bannerImages/banner1.png'
-import banner2 from '../images/bannerImages/banner2.png'
-import banner3 from '../images/bannerImages/banner3.png'
-import banner4 from '../images/bannerImages/banner4.png'
-import banner11 from '../images/bannerImages/1.png'
-import banner12 from '../images/bannerImages/2.png'
-import banner13 from '../images/bannerImages/3.png'
-import banner14 from '../images/bannerImages/4.png'
+import banner1_1920 from '../images/bannerImages/banner1-1920x600.png'
+import banner1_800 from '../images/bannerImages/banner1-800x600.png'
+import banner1_1280 from '../images/bannerImages/banner1-1280x600.png'
+import banner1_1366 from '../images/bannerImages/banner1-1366x600.png'
+import banner1_1440 from '../images/bannerImages/banner1-1440x600.png'
+import banner1_1536 from '../images/bannerImages/banner1-1536x600.png'
+import banner1_1680 from '../images/bannerImages/banner1-1680x600.png'
+import banner1_2560 from '../images/bannerImages/banner1-2560x600.png'
+
+import banner2_1920 from '../images/bannerImages/banner2-1920x600.png'
+import banner2_800 from '../images/bannerImages/banner2-800x600.png'
+import banner2_1280 from '../images/bannerImages/banner2-1280x600.png'
+import banner2_1366 from '../images/bannerImages/banner2-1366x600.png'
+import banner2_1440 from '../images/bannerImages/banner2-1440x600.png'
+import banner2_1536 from '../images/bannerImages/banner2-1536x600.png'
+import banner2_1680 from '../images/bannerImages/banner2-1680x600.png'
+import banner2_2560 from '../images/bannerImages/banner2-2560x600.png'
+
+import banner3_1920 from '../images/bannerImages/banner3-1920x600.png'
+import banner3_800 from '../images/bannerImages/banner3-800x600.png'
+import banner3_1280 from '../images/bannerImages/banner3-1280x600.png'
+import banner3_1366 from '../images/bannerImages/banner3-1366x600.png'
+import banner3_1440 from '../images/bannerImages/banner3-1440x600.png'
+import banner3_1536 from '../images/bannerImages/banner3-1536x600.png'
+import banner3_1680 from '../images/bannerImages/banner3-1680x600.png'
+import banner3_2560 from '../images/bannerImages/banner3-2560x600.png'
+
+
+// import banner2 from '../images/bannerImages/banner2.png'
+// import banner3 from '../images/bannerImages/banner3.png'
+// import banner4 from '../images/bannerImages/banner4.png'
+// import banner11 from '../images/bannerImages/1.png'
+// import banner12 from '../images/bannerImages/2.png'
+// import banner13 from '../images/bannerImages/3.png'
+// import banner14 from '../images/bannerImages/4.png'
 
 import assurance from '../images/adventageImages/01.png'
 import price from '../images/adventageImages/02.png'
@@ -34,8 +61,14 @@ import ourTeamPeople4 from '../images/ourTeam/people4.png'
 
 export type BannerType = {
     id: number
-    image: any
-    image1: any
+    image1920: any
+    image800: any
+    image1280: any
+    image1366: any
+    image1440: any
+    image1536: any
+    image1680: any
+    image2560: any
     alt: string
 }
 export type AdvantageType = {
@@ -82,32 +115,62 @@ export type OurTeamType = {
 export const banner: BannerType[] = [
     {
         id: 1,
-        image: banner1,
-        image1: banner11,
+        image1920: banner1_1920,
+        image800: banner1_800,
+        image1280: banner1_1280,
+        image1366: banner1_1366,
+        image1440: banner1_1440,
+        image1536: banner1_1536,
+        image1680: banner1_1680,
+        image2560: banner1_2560,
         alt: 'banner1'
-
     },
-
     {
         id: 2,
-        image: banner2,
-        image1: banner12,
+        image1920: banner2_1920,
+        image800: banner2_800,
+        image1280: banner2_1280,
+        image1366: banner2_1366,
+        image1440: banner2_1440,
+        image1536: banner2_1536,
+        image1680: banner2_1680,
+        image2560: banner2_2560,
         alt: 'banner2'
     },
-
     {
         id: 3,
-        image: banner3,
-        image1: banner13,
+        image1920: banner3_1920,
+        image800: banner3_800,
+        image1280: banner3_1280,
+        image1366: banner3_1366,
+        image1440: banner3_1440,
+        image1536: banner3_1536,
+        image1680: banner3_1680,
+        image2560: banner3_2560,
         alt: 'banner3'
+
     },
 
-    {
-        id: 4,
-        image: banner4,
-        image1: banner14,
-        alt: 'banner4'
-    },
+    // {
+    //     id: 2,
+    //     image: banner2,
+    //     image1: banner12,
+    //     alt: 'banner2'
+    // },
+    //
+    // {
+    //     id: 3,
+    //     image: banner3,
+    //     image1: banner13,
+    //     alt: 'banner3'
+    // },
+    //
+    // {
+    //     id: 4,
+    //     image: banner4,
+    //     image1: banner14,
+    //     alt: 'banner4'
+    // },
 
     /*{
         id: 5,
