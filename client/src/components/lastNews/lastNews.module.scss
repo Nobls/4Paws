@@ -4,51 +4,43 @@
   @extend .container;
   margin-bottom: 100px;
 
-  .title{
+  .title {
     @extend .title
   }
 
-  .lastNewsContainer {
+  .container {
     display: grid;
-    grid-auto-columns: 1fr;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr;
-    gap: 15px 15px;
+    gap: 10px 10px;
+    grid-auto-flow: row;
     grid-template-areas:
-    "news1 news2 news3"
-    "news1 news4 news4";
+    "news1 news1 news2 news2 news3 news3"
+    "news4 news4 news4 news5 news5 news5";
 
     .news1 {
       grid-area: news1;
-      text-decoration: none;
-      .lastNewsImageOne{
-        width: 100%;
-        height: 712px;
-      }
+      background-color: aqua;
     }
+
     .news2 {
       grid-area: news2;
-      text-decoration: none;
-      .lastNewsImageTwo{
-        width: 100%;
-        height: 300px;
-      }
+      background-color: blueviolet;
     }
-    .news3{
+
+    .news3 {
       grid-area: news3;
-      text-decoration: none;
-      .lastNewsImageThree{
-        width: 100%;
-        height: 300px;
-      }
+      background-color: burlywood;
     }
+
     .news4 {
       grid-area: news4;
-      text-decoration: none;
-      .lastNewsImageFour{
-        width: 100%;
-        height: 300px;
-      }
+      background-color: coral;
+    }
+
+    .news5 {
+      grid-area: news5;
+      background-color: darkcyan;
     }
   }
 }

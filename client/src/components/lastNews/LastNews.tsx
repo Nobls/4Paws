@@ -1,47 +1,53 @@
 import React from 'react';
 import s from './lastNews.module.scss'
-import {news1, news2, news3, news4} from "../../data/data";
 import {Link} from "react-router-dom";
+import {lastNews} from "../../data/data";
 
 export const LastNews = () => {
+
     return (
         <div className={s.lastNewsBg}>
 
             <h3 className={s.title}>Последние новости</h3>
 
-            <div className={s.lastNewsContainer}>
+            <div className={s.container}>
+
                 <Link to={'/news'} className={s.news1}>
                     <div>
-                        <img className={s.lastNewsImageOne} src={news1.image} alt={news1.alt}/>
-                        <h3>{news1.title}</h3>
-                        <p>{news1.description}</p>
+                        <img className={s.lastNewsImageOne} src={lastNews[0].image} alt={lastNews[0].alt}/>
+                        <h3>{lastNews[0].title}</h3>
+                        <p>{lastNews[0].description.substring(0, 100) + '...'}</p>
                     </div>
                 </Link>
                 <Link to={'/news'} className={s.news2}>
                     <div>
-                        <img className={s.lastNewsImageTwo} src={news2.image} alt={news2.alt}/>
-                        <h3>{news2.title}</h3>
-                        <p>{news2.description}</p>
+                        <img className={s.lastNewsImageTwo} src={lastNews[1].image} alt={lastNews[1].alt}/>
+                        <h3>{lastNews[1].title}</h3>
+                        <p>{lastNews[1].description.substring(0, 100) + '...'}</p>
                     </div>
                 </Link>
                 <Link to={'/news'} className={s.news3}>
                     <div>
-                        <img className={s.lastNewsImageThree} src={news3.image} alt={news3.alt}/>
-                        <h3>{news3.title}</h3>
-                        <p>{news3.description}</p>
+                        <img className={s.lastNewsImageThree} src={lastNews[2].image} alt={lastNews[2].alt}/>
+                        <h3>{lastNews[2].title}</h3>
+                        <p>{lastNews[2].description.substring(0, 100) + '...'}</p>
                     </div>
                 </Link>
                 <Link to={'/news'} className={s.news4}>
                     <div>
-                        <img className={s.lastNewsImageFour} src={news4.image} alt={news4.alt}/>
-                        <h3>{news4.title}</h3>
-                        <p>{news4.description}</p>
+                        <img className={s.lastNewsImageFour} src={lastNews[3].image} alt={lastNews[3].alt}/>
+                        <h3>{lastNews[3].title}</h3>
+                        <p>{lastNews[3].description.substring(0, 100) + '...'}</p>
                     </div>
                 </Link>
-
-
+                <Link to={'/news'} className={s.news5}>
+                    <div>
+                        <img className={s.lastNewsImageFour} src={lastNews[4].image} alt={lastNews[4].alt}/>
+                        <h3>{lastNews[4].title}</h3>
+                        <p>{lastNews[4].description.substring(0, 100) + '...'}</p>
+                    </div>
+                </Link>
             </div>
         </div>
     );
 };
-
