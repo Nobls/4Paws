@@ -1,10 +1,11 @@
 @import "src/common/extends";
 
-.advantageBg {
-  position: relative;
-  top: -90px;
-  padding: 0;
-  margin: 0;
+.advantage {
+  //position: relative;
+  //top: -90px;
+  //padding: 0;
+  //margin: 0;
+  padding: 70px 0 0 0;
 
   .title{
     @extend .title;
@@ -21,7 +22,8 @@
       height: 170px;
       display: flex;
       flex-direction: row;
-      background-color: rgba(235, 231, 228, 0.58);
+      //background-color: rgba(235, 231, 228, 0.58);
+      background-color: #eeece9;
       margin: 15px;
       border-radius: 15px;
       //box-shadow: 0 7px 5px -5px rgba(34, 60, 80, 0.6);
@@ -31,6 +33,7 @@
       -moz-user-select: none;
       -ms-user-select: none;
       user-select: none;
+      overflow: hidden;
 
       &:hover {
         .paw {
@@ -45,7 +48,7 @@
         left: 240px;
         position: relative;
         top: -110px;
-        z-index: -1;
+        z-index: 1;
         opacity: 0.4;
         transition: .3s;
       }

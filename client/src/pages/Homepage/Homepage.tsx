@@ -23,12 +23,19 @@ const Homepage = () => {
                     </Link>
             </div>
             <div>
-                <Advantage/>
+                <div className={s.advantageBg}>
+                    <Advantage/>
+                </div>
                 <Banners/>
+                <div className={s.popularsBg}>
+                    <Populars/>
+                </div>
                 <LastNews/>
-                <OurTeam/>
+                <div className={s.ourTeamBg}>
+                    <OurTeam/>
+                </div>
                 <Reviews/>
-                <Populars/>
+
             </div>
         </div>
     );

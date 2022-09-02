@@ -74,3 +74,21 @@
     }
   }
 }
+
+.advantageBg {
+  position: relative;
+  top: -200px;
+  padding: 0;
+  margin: 0;
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 100%;
+}
+
+.popularsBg{
+  background-image: url("../../images/background/bg1.png");
+}
+
+.ourTeamBg {
+  background-image: url("../../images/background/bg3.png");
+}

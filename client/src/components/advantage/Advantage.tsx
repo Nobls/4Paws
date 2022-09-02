@@ -5,9 +5,9 @@ import vector from '../../images/Vector2.png'
 
 export const Advantage = () => {
     return (
-        <div className={s.advantageBg}>
+        <div className={s.advantage}>
 
-            <h3 className={s.title}>Наши преимущества</h3>
+            {/*<h3 className={s.title}>Наши преимущества</h3>*/}
 
             <div className={s.advantageWrapper}>
 
