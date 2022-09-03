@@ -25,6 +25,7 @@
       height: 110px;
       margin: 20px 0 0 0;
       line-height: 35px;
+      transition: .3s;
     }
 
     .newsText {
@@ -38,6 +39,32 @@
       flex-direction: column;
       justify-content: space-between;
       height: 550px;
+
+      button {
+        position: absolute;
+        top: 130px;
+        left: 125px;
+        display: none;
+        background-color: #eb5837;
+        border: none;
+        border-radius: 5px;
+        font-weight: bold;
+        transition: all .5s;
+        font-size: 20px;
+        color: white;
+        padding: 20px 40px;
+      }
+
+      //div {
+      //  position: absolute;
+      //  background-image: url("../../images/Rectangle 123.png");
+      //  background-repeat: no-repeat;
+      //  z-index: 10;
+      //  //writing-mode: tb-rl;
+      //  //transform: rotate(180deg);
+      //  font-size: 16px;
+      //  display: none;
+      //}
     }
 
     .news1 {
@@ -48,11 +75,45 @@
       transition: all .5s;
       box-shadow: 0 7px 5px -5px rgba(34, 60, 80, 0.6);
       overflow: hidden;
+      position: relative;
+
+      //button {
+      //  position: absolute;
+      //  top: 130px;
+      //  left: 125px;
+      //  display: none;
+      //  background-color: #eb5837;
+      //  border: none;
+      //  border-radius: 5px;
+      //  font-weight: bold;
+      //  transition: all .5s;
+      //  font-size: 20px;
+      //  color: white;
+      //  padding: 20px 40px;
+      //}
+
       &:hover {
+        box-shadow: 8px 8px 8px -5px rgba(34, 60, 80, 0.6);
+        background-color: rgba(215, 215, 215, 0.8);
+
+        //div {
+        //  display: block;
+        //}
+
+        button {
+          display: block;
+          z-index: 10;
+        }
+
         img {
           filter: brightness(60%);
           transform: scale(1.1);
           transition: all .5s;
+        }
+
+        h3 {
+          color: rgba(235, 88, 55, 0.84);
+          transition: .3s;
         }
       }
 
@@ -72,11 +133,25 @@
       transition: all .5s;
       box-shadow: 0 7px 5px -5px rgba(34, 60, 80, 0.6);
       overflow: hidden;
+
       &:hover {
+        box-shadow: 8px 8px 8px -5px rgba(34, 60, 80, 0.6);
+        background-color: rgba(215, 215, 215, 0.8);
+
+        button {
+          display: block;
+          z-index: 10;
+        }
+
         img {
           filter: brightness(60%);
           transform: scale(1.1);
           transition: all .5s;
+        }
+
+        h3 {
+          color: #eb5837;
+          transition: .3s;
         }
       }
 
@@ -96,11 +171,20 @@
       transition: all .5s;
       box-shadow: 0 7px 5px -5px rgba(34, 60, 80, 0.6);
       overflow: hidden;
+
       &:hover {
+        box-shadow: 8px 8px 8px -5px rgba(34, 60, 80, 0.6);
+        background-color: rgba(215, 215, 215, 0.8);
+
         img {
           filter: brightness(60%);
           transform: scale(1.1);
           transition: all .5s;
+        }
+
+        h3 {
+          color: #eb5837;
+          transition: .3s;
         }
       }
 
@@ -120,11 +204,20 @@
       transition: all .5s;
       box-shadow: 0 7px 5px -5px rgba(34, 60, 80, 0.6);
       overflow: hidden;
+
       &:hover {
+        box-shadow: 8px 8px 8px -5px rgba(34, 60, 80, 0.6);
+        background-color: rgba(215, 215, 215, 0.8);
+
         img {
           filter: brightness(60%);
           transform: scale(1.1);
           transition: all .5s;
+        }
+
+        h3 {
+          color: #eb5837;
+          transition: .3s;
         }
       }
 
@@ -146,10 +239,18 @@
       overflow: hidden;
 
       &:hover {
+        box-shadow: 8px 8px 8px -5px rgba(34, 60, 80, 0.6);
+        background-color: rgba(215, 215, 215, 0.8);
+
         img {
           filter: brightness(60%);
           transform: scale(1.1);
           transition: all .5s;
+        }
+
+        h3 {
+          color: #eb5837;
+          transition: .3s;
         }
       }
 

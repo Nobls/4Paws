@@ -2,6 +2,7 @@ import React from 'react';
 import s from './lastNews.module.scss'
 import {Link} from "react-router-dom";
 import {lastNews} from "../../data/data";
+import paw from "../../images/pawBig.png"
 
 export const LastNews = () => {
 
@@ -14,6 +15,8 @@ export const LastNews = () => {
 
                 <Link to={'/news'} className={s.news1}>
                     <div className={s.newsItemWrapper}>
+                        <button>Открыть</button>
+                        {/*<div>21.08.2022</div>*/}
                         <img className={s.lastNewsImageOne} src={lastNews[0].image} alt={lastNews[0].alt}/>
                         <h3 className={s.newsTitle}>{lastNews[0].title}</h3>
                         <p className={s.newsText}>{lastNews[0].description.substring(0, 100) + '...'}</p>

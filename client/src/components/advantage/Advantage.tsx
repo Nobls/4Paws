@@ -1,7 +1,7 @@
 import React from 'react';
 import {advantage} from "../../data/data";
 import s from './advantage.module.scss';
-import vector from '../../images/Vector2.png'
+import paw from '../../images/adventageImages/paw.png'
 
 export const Advantage = () => {
     return (
@@ -17,7 +17,7 @@ export const Advantage = () => {
                             <div className={s.advantageItems} key={m.id}>
                                 <div className={s.iconsWrapper}>
                                     <img className={s.advantageIcon} src={m.icon} alt={m.alt}/>
-                                    <img className={s.paw} src={vector} alt="paw"/>
+                                    <img className={s.paw} src={paw} alt="paw"/>
                                 </div>
                                 <div>
                                     <h3>{m.title}</h3>
