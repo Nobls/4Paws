@@ -2,14 +2,15 @@
 @import "src/common/variables";
 
 .ourTeamTitle {
-  @extend .title
+  @extend .title;
+  margin: 0 0 40px 0;
 }
 
 .ourTeamContainer {
   @extend .container;
   display: flex;
   justify-content: center;
-  margin-top: 80px;
+  //margin-top: 80px;
   flex-wrap: wrap;
 
   .ourTeamCardWrapper {
