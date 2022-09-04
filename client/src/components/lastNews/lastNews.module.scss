@@ -41,18 +41,21 @@
       height: 550px;
 
       button {
+        @extend .bgButtonNews;
         position: absolute;
         top: 130px;
-        left: 125px;
+        left: 130px;
         display: none;
-        background-color: #eb5837;
+        background-color: transparent;
+        //background-color: #eb5837;
         border: none;
-        border-radius: 5px;
-        font-weight: bold;
+        //border-radius: 5px;
+        //font-weight: bold;
         transition: all .5s;
-        font-size: 20px;
-        color: white;
-        padding: 20px 40px;
+        //font-size: 20px;
+        //color: white;
+        //padding: 20px 40px;
+        cursor: pointer;
       }
 
       //div {
@@ -133,6 +136,7 @@
       transition: all .5s;
       box-shadow: 0 7px 5px -5px rgba(34, 60, 80, 0.6);
       overflow: hidden;
+      position: relative;
 
       &:hover {
         box-shadow: 8px 8px 8px -5px rgba(34, 60, 80, 0.6);
@@ -171,6 +175,7 @@
       transition: all .5s;
       box-shadow: 0 7px 5px -5px rgba(34, 60, 80, 0.6);
       overflow: hidden;
+      position: relative;
 
       &:hover {
         box-shadow: 8px 8px 8px -5px rgba(34, 60, 80, 0.6);
@@ -180,6 +185,11 @@
           filter: brightness(60%);
           transform: scale(1.1);
           transition: all .5s;
+        }
+
+        button {
+          display: block;
+          z-index: 10;
         }
 
         h3 {
@@ -204,6 +214,7 @@
       transition: all .5s;
       box-shadow: 0 7px 5px -5px rgba(34, 60, 80, 0.6);
       overflow: hidden;
+      position: relative;
 
       &:hover {
         box-shadow: 8px 8px 8px -5px rgba(34, 60, 80, 0.6);
@@ -213,6 +224,12 @@
           filter: brightness(60%);
           transform: scale(1.1);
           transition: all .5s;
+        }
+
+        button {
+          display: block;
+          z-index: 10;
+          left: 255px;
         }
 
         h3 {
@@ -237,6 +254,7 @@
       transition: all .5s;
       box-shadow: 0 7px 5px -5px rgba(34, 60, 80, 0.6);
       overflow: hidden;
+      position: relative;
 
       &:hover {
         box-shadow: 8px 8px 8px -5px rgba(34, 60, 80, 0.6);
@@ -246,6 +264,12 @@
           filter: brightness(60%);
           transform: scale(1.1);
           transition: all .5s;
+        }
+
+        button {
+          display: block;
+          z-index: 10;
+          left: 255px;
         }
 
         h3 {

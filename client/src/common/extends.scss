@@ -69,3 +69,17 @@
   background-size: 100% 100%;
   font-weight: bold;
 }
+
+.bgButtonNews{
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  padding: 12px  40px;
+  color: #eb5837;
+  font-size: 20px;
+  font-weight: bold;
+  background-image: url('../images/Rectangle 123.png');
+  transition: background .5s ease;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
