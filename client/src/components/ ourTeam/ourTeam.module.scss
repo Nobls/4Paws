@@ -1,65 +1,114 @@
 @import "src/common/extends";
 @import "src/common/variables";
 
-.ourTeamTitle {
+//.ourTeamTitle {
+//  @extend .title;
+//  margin: 0 0 40px 0;
+//}
+//
+//.ourTeamContainer {
+//  @extend .container;
+//  display: flex;
+//  justify-content: center;
+//  //margin-top: 80px;
+//  flex-wrap: wrap;
+//
+//  .ourTeamCardWrapper {
+//    box-shadow: 0 7px 5px -5px rgba(34, 60, 80, 0.6);
+//    width: 400px;
+//    height: 170px;
+//    margin: 15px;
+//    display: flex;
+//    background-color: #f1efed;
+//    border-radius: 15px;
+//    position: relative;
+//
+//    .paw {
+//      position: absolute;
+//      top: 15px;
+//      width: 100px;
+//      right: 60px;
+//      opacity: 0.2;
+//    }
+//
+//    .ourTeamPhotoWrapper {
+//      position: relative;
+//      align-self: end;
+//
+//      .ourTeamPhoto {
+//        width: 110px;
+//        height: 150px;
+//        margin: 5px 15px 0 5px;
+//        position: absolute;
+//        bottom: 0;
+//      }
+//    }
+//
+//    .ourTeamInformation {
+//      display: flex;
+//      flex-direction: column;
+//      padding: 0 10px 0 0;
+//      margin-left: 130px;
+//      width: 260px;
+//      margin-top: 20px;
+//
+//      h4 {
+//        font-size: 25px;
+//        margin: 30px 0 0 0;
+//      }
+//
+//      p {
+//        font-size: 18px;
+//      }
+//    }
+//  }
+//}
+
+.ourTeamTitle{
   @extend .title;
   margin: 0 0 40px 0;
 }
 
-.ourTeamContainer {
-  @extend .container;
+.ourTeamWrapper {
   display: flex;
-  justify-content: center;
-  //margin-top: 80px;
-  flex-wrap: wrap;
-
-  .ourTeamCardWrapper {
-    box-shadow: 0 7px 5px -5px rgba(34, 60, 80, 0.6);
-    width: 400px;
-    height: 170px;
-    margin: 15px;
-    display: flex;
-    background-color: #f1efed;
-    border-radius: 15px;
-    position: relative;
-
-    .paw {
-      position: absolute;
-      top: 15px;
-      width: 100px;
-      right: 60px;
-      opacity: 0.2;
+  background-color: $color-accent-dark;
+  .ourTeamImage {
+    width: 50%;
+    img{
+      width: 100%;
+      height: 100%;
     }
+  }
 
-    .ourTeamPhotoWrapper {
-      position: relative;
-      align-self: end;
+  .ourTeamTabs {
+    width: 50%;
 
-      .ourTeamPhoto {
-        width: 110px;
-        height: 150px;
-        margin: 5px 15px 0 5px;
-        position: absolute;
-        bottom: 0;
-      }
-    }
-
-    .ourTeamInformation {
+    .tabsWrapper{
       display: flex;
-      flex-direction: column;
-      padding: 0 10px 0 0;
-      margin-left: 130px;
-      width: 260px;
-      margin-top: 20px;
+      position: relative;
 
-      h4 {
-        font-size: 25px;
-        margin: 30px 0 0 0;
-      }
-
-      p {
-        font-size: 18px;
+      .tabsItems{
+        list-style: none;
+        position: absolute;
+        left: -190px;
+        top: -16px;
+        .tabsItemOne{
+          @extend .tabsItem;
+          background-color: #FF7657;
+        }
+        .tabsItemTwo{
+          @extend .tabsItem;
+          background-color: #eb5837;
+        }
+        .tabsItemThree{
+          @extend .tabsItem;
+          background-color: #cd3512;
+        }
       }
     }
   }
+
 }
+
+
+
