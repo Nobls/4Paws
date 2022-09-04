@@ -20,7 +20,7 @@
     "news4 news4 news4 news5 news5 news5";
 
     .newsTitle {
-      font-size: 27px;
+      font-size: 25px;
       padding: 0 15px 0 15px;
       height: 110px;
       margin: 20px 0 0 0;
@@ -30,8 +30,10 @@
 
     .newsText {
       font-size: 18px;
-      padding: 0 15px 0 15px;
+      padding: 15px 15px 25px 15px;
       color: $color-text;
+      border-top: 1px solid $color-text;
+      margin: 0;
     }
 
     .newsItemWrapper {
@@ -40,34 +42,43 @@
       justify-content: space-between;
       height: 550px;
 
-      button {
-        @extend .bgButtonNews;
+      .newsButtonOpen {
         position: absolute;
         top: 130px;
         left: 130px;
         display: none;
-        background-color: transparent;
-        //background-color: #eb5837;
-        border: none;
-        //border-radius: 5px;
-        //font-weight: bold;
+        background-color: #eb5837;
+        border-radius: 5px;
+        font-weight: bold;
         transition: all .5s;
-        //font-size: 20px;
-        //color: white;
-        //padding: 20px 40px;
-        cursor: pointer;
+        font-size: 20px;
+        color: white;
+        padding: 20px 40px;
+        text-decoration: none;
+        img {
+          width: 50px;
+          height: 50px;
+          position: absolute;
+          z-index: 1;
+          right: 8px;
+          top: 9px;
+          transition: .5s;
+        }
       }
 
-      //div {
-      //  position: absolute;
-      //  background-image: url("../../images/Rectangle 123.png");
-      //  background-repeat: no-repeat;
-      //  z-index: 10;
-      //  //writing-mode: tb-rl;
-      //  //transform: rotate(180deg);
-      //  font-size: 16px;
-      //  display: none;
-      //}
+      div {
+        position: absolute;
+        background-image: url("../../images/Rectangle 123.png");
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        z-index: 11;
+        font-size: 16px;
+        top: 15px;
+        left: -20px;
+        padding: 10px 15px 10px 25px;
+        color: #666666;
+        font-weight: bold;
+      }
     }
 
     .news1 {
@@ -80,30 +91,11 @@
       overflow: hidden;
       position: relative;
 
-      //button {
-      //  position: absolute;
-      //  top: 130px;
-      //  left: 125px;
-      //  display: none;
-      //  background-color: #eb5837;
-      //  border: none;
-      //  border-radius: 5px;
-      //  font-weight: bold;
-      //  transition: all .5s;
-      //  font-size: 20px;
-      //  color: white;
-      //  padding: 20px 40px;
-      //}
-
       &:hover {
         box-shadow: 8px 8px 8px -5px rgba(34, 60, 80, 0.6);
         background-color: rgba(215, 215, 215, 0.8);
 
-        //div {
-        //  display: block;
-        //}
-
-        button {
+        .newsButtonOpen {
           display: block;
           z-index: 10;
         }
@@ -142,7 +134,7 @@
         box-shadow: 8px 8px 8px -5px rgba(34, 60, 80, 0.6);
         background-color: rgba(215, 215, 215, 0.8);
 
-        button {
+        .newsButtonOpen {
           display: block;
           z-index: 10;
         }
@@ -187,7 +179,7 @@
           transition: all .5s;
         }
 
-        button {
+        .newsButtonOpen {
           display: block;
           z-index: 10;
         }
@@ -226,10 +218,10 @@
           transition: all .5s;
         }
 
-        button {
+        .newsButtonOpen {
           display: block;
           z-index: 10;
-          left: 255px;
+          left: 235px;
         }
 
         h3 {
@@ -266,10 +258,15 @@
           transition: all .5s;
         }
 
-        button {
+        .newsButtonOpen {
           display: block;
           z-index: 10;
-          left: 255px;
+          left: 235px;
+          img {
+            width: 50px;
+            height: 50px;
+            transform: scale(1.1);
+          }
         }
 
         h3 {
