@@ -74,12 +74,16 @@
   background-color: $color-accent-dark;
 
   .ourTeamImage {
+    background-image: url("../../images/pagesBG/18.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
     width: 50%;
 
-    img {
+    /*img {
       width: 100%;
       height: 100%;
-    }
+    }*/
   }
 
   .ourTeamTabs {
@@ -117,23 +121,26 @@
       .tabPanel1 {
         background-color: #FF7657;
         width: 100%;
-        height: 100%;
-
         .tabPanelItem1 {
-
+          min-height: 600px;
         }
       }
 
       .tabPanel2 {
         background-color: #eb5837;
         width: 100%;
-        height: 100%;
+        .tabPanelItem2 {
+          min-height: 600px;
+        }
       }
 
       .tabPanel3 {
         background-color: #cd3512;
         width: 100%;
-        height: 100%;
+
+        .tabPanelItem3 {
+          min-height: 600px;
+        }
       }
     }
   }

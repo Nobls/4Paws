@@ -101,8 +101,11 @@ export type GalleryFooterType = {
     image: any
     alt: string
 }
-export type OurTeamType = {
-    id: number
+export type OurTeamType = [{ cynologist: SpecializationTeamType[] }, { veterinarian: SpecializationTeamType[] }, { callCenter: SpecializationTeamType[] }]
+
+
+type SpecializationTeamType = {
+    id:number
     image: any
     alt: string
     name: string
@@ -442,49 +445,92 @@ export const galleryFooter: GalleryFooterType[] = [
     },
 ]
 
-export const ourTeam: OurTeamType[] = [
+export const ourTeam: [{ cynologist: SpecializationTeamType[] }, { veterinarian: SpecializationTeamType[] }, { callCenter: SpecializationTeamType[] }] = [
     {
-        id: 1,
-        image: ourTeamPeople1,
-        alt: 'people1',
-        name: 'Захаревич А.И.',
-        description: 'Кинолог. Стаж более 10 лет.'
+        cynologist: [
+            {
+                id:1,
+                image: ourTeamPeople1,
+                alt: 'people1',
+                name: 'Захаревич А.И.',
+                description: 'Кинолог. Стаж более 10 лет.',
+            },
+            {
+                id:2,
+                image: ourTeamPeople1,
+                alt: 'people1',
+                name: 'Захаревич А.И.',
+                description: 'Кинолог. Стаж более 10 лет.',
+            },
+            {
+                id:3,
+                image: ourTeamPeople1,
+                alt: 'people1',
+                name: 'Захаревич А.И.',
+                description: 'Кинолог. Стаж более 10 лет.',
+            },
+        ]
+
     },
     {
-        id: 2,
-        image: ourTeamPeople2,
-        alt: 'people1',
-        name: 'Клюшко В.Г.',
-        description: 'Кинолог. Стаж более 6 лет.'
+        veterinarian: [
+            {
+                id:4,
+                image: ourTeamPeople1,
+                alt: 'people1',
+                name: 'Захаревич А.И.',
+                description: 'Ветеринар. Стаж более 10 лет.',
+            },
+            {
+                id:5,
+                image: ourTeamPeople1,
+                alt: 'people1',
+                name: 'Захаревич А.И.',
+                description: 'Ветеринар. Стаж более 10 лет.',
+            },
+            {
+                id:6,
+                image: ourTeamPeople1,
+                alt: 'people1',
+                name: 'Захаревич А.И.',
+                description: 'Ветеринар. Стаж более 10 лет.',
+            },
+        ]
     },
     {
-        id: 3,
-        image: ourTeamPeople3,
-        alt: 'people1',
-        name: 'Бобрик А.В.',
-        description: 'Ветеринар, кинолог. Стаж более 14 лет.'
+        callCenter: [
+            {
+                id:7,
+                image: ourTeamPeople1,
+                alt: 'people1',
+                name: 'Захаревич А.И.',
+                description: 'Call Центр. Стаж более 10 лет.',
+            },
+            {
+                id:8,
+                image: ourTeamPeople1,
+                alt: 'people1',
+                name: 'Захаревич А.И.',
+                description: 'Call Центр. Стаж более 10 лет.',
+            },
+            {
+                id:9,
+                image: ourTeamPeople1,
+                alt: 'people1',
+                name: 'Захаревич А.И.',
+                description: 'Call Центр. Стаж более 10 лет.',
+            },
+        ]
     },
-    {
-        id: 4,
-        image: ourTeamPeople4,
-        alt: 'people1',
-        name: 'Ждан Е.Д.',
-        description: 'Ветеринар. Стаж более 3 лет. Call-центр'
-    },
-    {
-        id: 5,
-        image: ourTeamPeople3,
-        alt: 'people1',
-        name: 'Бобрик А.В.',
-        description: 'Ветеринар, кинолог. Стаж более 14 лет.'
-    },
-    {
-        id: 6,
-        image: ourTeamPeople3,
-        alt: 'people1',
-        name: 'Бобрик А.В.',
-        description: 'Ветеринар, кинолог. Стаж более 14 лет.'
-    },
+
+
 ]
 
+
+/*{
+    image: ourTeamPeople1,
+        alt: 'people1',
+    name: 'Захаревич А.И.',
+    description: 'Кинолог. Стаж более 10 лет.',
+}*/
 

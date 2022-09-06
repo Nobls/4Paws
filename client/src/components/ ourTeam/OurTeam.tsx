@@ -1,10 +1,11 @@
 import React from 'react';
 import s from './ourTeam.module.scss';
 import {Tab, TabList, TabPanel, Tabs} from "react-tabs";
-import team from '../../images/pagesBG/18.jpg'
-
+import {ourTeam} from "../../data/data";
 
 const OurTeam = () => {
+
+
     return (
         <>
             <div>
@@ -12,7 +13,6 @@ const OurTeam = () => {
             </div>
             <div className={s.ourTeamWrapper}>
                 <div className={s.ourTeamImage}>
-                    <img src={team} alt="photo team"/>
                 </div>
                 <div className={s.ourTeamTabs}>
                     <Tabs className={s.tabsWrapper}>
@@ -30,19 +30,62 @@ const OurTeam = () => {
 
                         <TabPanel className={s.tabPanel1}>
                             <div className={s.tabPanelItem1}>
-                                <h2>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium adipisci
-                                    consectetur delectus dolore facilis repellendus, ut? Ab commodi maiores unde. Autem
-                                    consequatur debitis itaque nam obcaecati optio tenetur, ullam voluptate.</h2>
+                                {
+                                   ourTeam[0].cynologist.map(m=>{
+                                       return(
+                                           <div key={m.id} className={s.ourTeamCardWrapper}>
+                                               <div className={s.ourTeamPhotoWrapper}>
+                                                   <img className={s.ourTeamPhoto} src={m.image} alt={m.alt}/>
+                                               </div>
+                                               <div className={s.ourTeamInformation}>
+                                                   <h4>{m.name}</h4>
+                                                   <p>{m.description}</p>
+                                               </div>
+
+                                           </div>
+                                       )
+                                   })
+                                }
                             </div>
                         </TabPanel>
                         <TabPanel className={s.tabPanel2}>
                             <div className={s.tabPanelItem2}>
-                                <h2>Any content 2</h2>
+                                {
+                                    ourTeam[1].veterinarian.map(m=>{
+                                        return(
+                                            <div key={m.id} className={s.ourTeamCardWrapper}>
+                                                <div className={s.ourTeamPhotoWrapper}>
+                                                    <img className={s.ourTeamPhoto} src={m.image} alt={m.alt}/>
+                                                </div>
+                                                <div className={s.ourTeamInformation}>
+                                                    <h4>{m.name}</h4>
+                                                    <p>{m.description}</p>
+                                                </div>
+
+                                            </div>
+                                        )
+                                    })
+                                }
                             </div>
                         </TabPanel>
                         <TabPanel className={s.tabPanel3}>
                             <div className={s.tabPanelItem3}>
-                                <h2>Any content 3</h2>
+                                {
+                                    ourTeam[2].callCenter.map(m=>{
+                                        return(
+                                            <div key={m.id} className={s.ourTeamCardWrapper}>
+                                                <div className={s.ourTeamPhotoWrapper}>
+                                                    <img className={s.ourTeamPhoto} src={m.image} alt={m.alt}/>
+                                                </div>
+                                                <div className={s.ourTeamInformation}>
+                                                    <h4>{m.name}</h4>
+                                                    <p>{m.description}</p>
+                                                </div>
+
+                                            </div>
+                                        )
+                                    })
+                                }
                             </div>
                         </TabPanel>
                     </Tabs>
