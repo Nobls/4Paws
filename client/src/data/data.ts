@@ -34,12 +34,12 @@ import news3 from '../images/lastNews/news3.jpeg'
 import news4 from '../images/lastNews/news4.jpeg'
 import news5 from '../images/lastNews/news5.jpeg'
 import reviewsImage from '../images/LogoPF.png'
-import imageGoods1 from '../images/popularsGoods/image1.jpg'
-import imageGoods2 from '../images/popularsGoods/image2.jpg'
-import imageGoods3 from '../images/popularsGoods/image3.png'
-import imageGoods4 from '../images/popularsGoods/image4.jpeg'
-import imageGoods5 from '../images/popularsGoods/image5.jpeg'
-import imageGoods6 from '../images/popularsGoods/image6.jpg'
+import imageGoods1 from '../images/popularsGoods/ACANABOUNTIFULCATCHCat.png'
+import imageGoods2 from '../images/popularsGoods/ACANAINDOORENTREECat.png'
+import imageGoods3 from '../images/popularsGoods/FarminaN&DCatQuinoaSkin&Coat.png'
+import imageGoods4 from '../images/popularsGoods/FarminaN&DGFAdultMini.png'
+import imageGoods5 from '../images/popularsGoods/GOSBIExclusiveGrainFree.png'
+import imageGoods6 from '../images/popularsGoods/RoyalCaninMalteseAdult.png'
 import photoGallery1 from '../images/galleryFooter/01.jpg'
 import photoGallery2 from '../images/galleryFooter/02.jpg'
 import photoGallery3 from '../images/galleryFooter/03.jpg'
@@ -84,7 +84,8 @@ export type PopularsGoodsType = {
     title: string
     image: any
     alt: string
-    price: PopularsGoodsPriceType
+    //price: PopularsGoodsPriceType
+    price: number
     descriptions: string
 }
 export type PopularsGoodsPriceType = {
@@ -159,7 +160,7 @@ export const advantage: AdvantageType[] = [
         id: 2,
         icon: price,
         alt: 'price',
-        title: 'Удобная цена',
+        title: 'Гибкая цена',
         description: 'Гибкая ценовая политика позволяет подобрать пакеты услуг наиболее подходящие для вас.',
     },
 
@@ -299,75 +300,51 @@ export const reviews = [
 export const popularsGoods: PopularsGoodsType[] = [
     {
         id: 1,
-        title: 'Brit',
+        title: 'ACANA BOUNTIFUL CATCH Cat (Рыба)',
         image: imageGoods1,
-        alt: 'image',
-        price: {
-            g100: 100,
-            g400: 300,
-            g1000: 1000,
-        },
-        descriptions: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo, suscipit.',
+        alt: 'ACANA',
+        price: 18.09,
+        descriptions: 'Низкозерновой корм для взрослых кошек всех пород.',
     },
     {
         id: 2,
-        title: 'Brit',
+        title: 'ACANA INDOOR ENTRÉE Cat (Курица, сельдь, индейка)',
         image: imageGoods2,
-        alt: 'image',
-        price: {
-            g100: 100,
-            g400: 300,
-            g1000: 1000,
-        },
-        descriptions: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo, suscipit.',
+        alt: 'ACANA',
+        price: 18.09,
+        descriptions: 'Низкозерновой корм для стерилизованных кошек.',
     },
     {
         id: 3,
-        title: 'Brit',
+        title: 'Farmina N&D Cat Quinoa Skin & Coat (Сельдь и кокос)',
         image: imageGoods3,
-        alt: 'image',
-        price: {
-            g100: 100,
-            g400: 300,
-            g1000: 1000,
-        },
-        descriptions: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo, suscipit.',
+        alt: 'Farmina',
+        price: 35.19,
+        descriptions: 'Беззерновой корм для взрослых кошек, заботящийся о здоровье кожи и шерсти. .',
     },
     {
         id: 4,
-        title: 'Brit',
+        title: 'Farmina N&D GF Adult Mini (Кабан и яблоко)',
         image: imageGoods4,
-        alt: 'image',
-        price: {
-            g100: 100,
-            g400: 300,
-            g1000: 1000,
-        },
-        descriptions: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo, suscipit.',
+        alt: 'Farmina',
+        price: 60.79,
+        descriptions: 'Беззерновой корм для взрослых собак мелких пород.',
     },
     {
         id: 5,
-        title: 'Brit',
+        title: 'GOSBI Exclusive Grain Free',
         image: imageGoods5,
-        alt: 'image',
-        price: {
-            g100: 100,
-            g400: 300,
-            g1000: 1000,
-        },
-        descriptions: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo, suscipit.',
+        alt: 'Gosbi',
+        price: 375.48,
+        descriptions: 'Корм собак всех пород, беззерновой с уткой.',
     },
     {
         id: 6,
-        title: 'Brit',
+        title: 'Royal Canin Maltese Adult',
         image: imageGoods6,
-        alt: 'image',
-        price: {
-            g100: 100,
-            g400: 300,
-            g1000: 1000,
-        },
-        descriptions: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo, suscipit.',
+        alt: 'Royal Canin',
+        price: 31.19,
+        descriptions: 'Корм для собак породы Мальтийская болонка от 10 месяцев.',
     },
 ]
 

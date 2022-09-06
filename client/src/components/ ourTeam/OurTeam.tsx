@@ -28,18 +28,20 @@ const OurTeam = () => {
                             </Tab>
                         </TabList>
 
-                        <TabPanel>
-                            <div>
-                                <h2>Any content 1</h2>
+                        <TabPanel className={s.tabPanel1}>
+                            <div className={s.tabPanelItem1}>
+                                <h2>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium adipisci
+                                    consectetur delectus dolore facilis repellendus, ut? Ab commodi maiores unde. Autem
+                                    consequatur debitis itaque nam obcaecati optio tenetur, ullam voluptate.</h2>
                             </div>
                         </TabPanel>
-                        <TabPanel>
-                            <div className="panel-content">
+                        <TabPanel className={s.tabPanel2}>
+                            <div className={s.tabPanelItem2}>
                                 <h2>Any content 2</h2>
                             </div>
                         </TabPanel>
-                        <TabPanel>
-                            <div className="panel-content">
+                        <TabPanel className={s.tabPanel3}>
+                            <div className={s.tabPanelItem3}>
                                 <h2>Any content 3</h2>
                             </div>
                         </TabPanel>

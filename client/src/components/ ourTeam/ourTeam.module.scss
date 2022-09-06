@@ -64,7 +64,7 @@
 //  }
 //}
 
-.ourTeamTitle{
+.ourTeamTitle {
   @extend .title;
   margin: 0 0 40px 0;
 }
@@ -72,9 +72,11 @@
 .ourTeamWrapper {
   display: flex;
   background-color: $color-accent-dark;
+
   .ourTeamImage {
     width: 50%;
-    img{
+
+    img {
       width: 100%;
       height: 100%;
     }
@@ -82,31 +84,60 @@
 
   .ourTeamTabs {
     width: 50%;
+    background-color: #ffffff;
 
-    .tabsWrapper{
+    .tabsWrapper {
       display: flex;
+      flex-direction: column;
       position: relative;
 
-      .tabsItems{
+      .tabsItems {
         list-style: none;
         position: absolute;
         left: -190px;
         top: -16px;
-        .tabsItemOne{
+
+        .tabsItemOne {
           @extend .tabsItem;
           background-color: #FF7657;
         }
-        .tabsItemTwo{
+
+        .tabsItemTwo {
           @extend .tabsItem;
           background-color: #eb5837;
         }
-        .tabsItemThree{
+
+        .tabsItemThree {
           @extend .tabsItem;
           background-color: #cd3512;
         }
       }
+
+
+      .tabPanel1 {
+        background-color: #FF7657;
+        width: 100%;
+        height: 100%;
+
+        .tabPanelItem1 {
+
+        }
+      }
+
+      .tabPanel2 {
+        background-color: #eb5837;
+        width: 100%;
+        height: 100%;
+      }
+
+      .tabPanel3 {
+        background-color: #cd3512;
+        width: 100%;
+        height: 100%;
+      }
     }
   }
+
 
 }
 

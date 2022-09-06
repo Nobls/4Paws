@@ -11,9 +11,8 @@ const GoodsCard = ({title,image,alt,price,descriptions}:PopularsGoodsType) => {
                     <img className={s.goodsImage} src={image} alt={alt}/>
                 </div>
                 <div className={s.goodsPriceItems}>
-                    <span className={s.goodsPriceItem}>100гр: {price.g100}</span>
-                    <span className={s.goodsPriceItem}>400гр: {price.g400}</span>
-                    <span className={s.goodsPriceItem}>1000гр: {price.g1000}</span>
+                    {/*добавить в data поля "тип корма (сухой и т.д.)", "вес" и "страна производитель"*/}
+                    <span className={s.goodsPriceItem}>{price} руб.</span>
                 </div>
             </div>
             <p className={s.goodsDescription}>{descriptions}</p>

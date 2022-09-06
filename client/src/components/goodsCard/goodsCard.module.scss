@@ -10,23 +10,33 @@
   border-radius: 15px;
   box-shadow: 0 3px 6px 0 rgba(34, 60, 80, 0.4);
 
+  .goodsTitle {
+    font-size: 18px;
+    height: 50px;
+  }
+
   .goodsInner{
     display: flex;
     justify-content: space-between;
+
     .goodsImage{
       max-width: 200px;
       max-height: 200px;
+      margin: 0 10px 5px 20px
     }
+
     .goodsPriceItems{
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
+
       .goodsPriceItem + .goodsPriceItem{
         margin-top: 15px;
       }
     }
   }
+
   .goodsButton{
     position: absolute;
     right: 15px;
