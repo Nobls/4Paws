@@ -46,10 +46,14 @@ import photoGallery3 from '../images/galleryFooter/03.jpg'
 import photoGallery4 from '../images/galleryFooter/04.jpg'
 import photoGallery5 from '../images/galleryFooter/05.jpg'
 import photoGallery6 from '../images/galleryFooter/06.jpg'
-import ourTeamPeople1 from '../images/ourTeam/people1.png'
-import ourTeamPeople2 from '../images/ourTeam/people2.png'
-import ourTeamPeople3 from '../images/ourTeam/people3.png'
-import ourTeamPeople4 from '../images/ourTeam/people4.png'
+import ourTeamPeople1 from '../images/ourTeam/people01.jpg'
+import ourTeamPeople2 from '../images/ourTeam/people02.jpg'
+import ourTeamPeople3 from '../images/ourTeam/people03.jpg'
+import ourTeamPeople4 from '../images/ourTeam/people04.jpg'
+import ourTeamPeople5 from '../images/ourTeam/people05.jpg'
+import ourTeamPeople6 from '../images/ourTeam/people06.jpg'
+import ourTeamPeople7 from '../images/ourTeam/people07.jpg'
+import ourTeamPeople8 from '../images/ourTeam/people08.jpeg'
 
 export type BannerType = {
     id: number
@@ -457,17 +461,24 @@ export const ourTeam: [{ cynologist: SpecializationTeamType[] }, { veterinarian:
             },
             {
                 id:2,
-                image: ourTeamPeople1,
-                alt: 'people1',
-                name: 'Захаревич А.И.',
-                description: 'Кинолог. Стаж более 10 лет.',
+                image: ourTeamPeople2,
+                alt: 'people2',
+                name: 'Вербицкая О.А.',
+                description: 'Кинолог. Стаж более 8 лет.',
             },
             {
                 id:3,
-                image: ourTeamPeople1,
-                alt: 'people1',
-                name: 'Захаревич А.И.',
-                description: 'Кинолог. Стаж более 10 лет.',
+                image: ourTeamPeople3,
+                alt: 'people3',
+                name: 'Клюшко Е.А.',
+                description: 'Кинолог. Стаж более 5 лет.',
+            },
+            {
+                id:4,
+                image: ourTeamPeople4,
+                alt: 'people4',
+                name: 'Елисеев Д.П.',
+                description: 'Кинолог. Стаж более 5 лет.',
             },
         ]
 
@@ -475,25 +486,18 @@ export const ourTeam: [{ cynologist: SpecializationTeamType[] }, { veterinarian:
     {
         veterinarian: [
             {
-                id:4,
-                image: ourTeamPeople1,
-                alt: 'people1',
-                name: 'Захаревич А.И.',
-                description: 'Ветеринар. Стаж более 10 лет.',
-            },
-            {
                 id:5,
-                image: ourTeamPeople1,
-                alt: 'people1',
-                name: 'Захаревич А.И.',
-                description: 'Ветеринар. Стаж более 10 лет.',
+                image: ourTeamPeople5,
+                alt: 'people5',
+                name: 'Иванов К.Е.',
+                description: 'Ветеринар. Стаж более 7 лет.',
             },
             {
                 id:6,
-                image: ourTeamPeople1,
-                alt: 'people1',
-                name: 'Захаревич А.И.',
-                description: 'Ветеринар. Стаж более 10 лет.',
+                image: ourTeamPeople6,
+                alt: 'people6',
+                name: 'Ляшко А.А.',
+                description: 'Ветеринар. Стаж более 3 лет.',
             },
         ]
     },
@@ -501,24 +505,17 @@ export const ourTeam: [{ cynologist: SpecializationTeamType[] }, { veterinarian:
         callCenter: [
             {
                 id:7,
-                image: ourTeamPeople1,
+                image: ourTeamPeople7,
                 alt: 'people1',
-                name: 'Захаревич А.И.',
-                description: 'Call Центр. Стаж более 10 лет.',
+                name: 'Левченко А.Г.',
+                description: 'Call-Центр. Стаж более 5 лет.',
             },
             {
                 id:8,
-                image: ourTeamPeople1,
+                image: ourTeamPeople8,
                 alt: 'people1',
-                name: 'Захаревич А.И.',
-                description: 'Call Центр. Стаж более 10 лет.',
-            },
-            {
-                id:9,
-                image: ourTeamPeople1,
-                alt: 'people1',
-                name: 'Захаревич А.И.',
-                description: 'Call Центр. Стаж более 10 лет.',
+                name: 'Котова К.О.',
+                description: 'Call-Центр. Стаж более 2 лет.',
             },
         ]
     },

@@ -123,6 +123,11 @@
         width: 100%;
         .tabPanelItem1 {
           min-height: 600px;
+          display: flex;
+          flex-direction: column;
+          align-content: space-around;
+          align-items: center;
+          margin: 10px 0;
         }
       }
 
@@ -131,6 +136,11 @@
         width: 100%;
         .tabPanelItem2 {
           min-height: 600px;
+          display: flex;
+          flex-direction: column;
+          align-content: space-around;
+          align-items: center;
+          margin: 10px 0;
         }
       }
 
@@ -140,11 +150,46 @@
 
         .tabPanelItem3 {
           min-height: 600px;
+          display: flex;
+          flex-direction: column;
+          align-content: space-around;
+          align-items: center;
+          margin: 10px 0;
         }
       }
     }
   }
 
+
+  .ourTeamCardWrapper {
+    display: flex;
+    width: 95%;
+    background-color: white;
+    margin: 10px 0;
+    //border-radius: 40px;
+    align-items: center;
+
+    .ourTeamPhotoWrapper {
+      margin: 20px;
+
+      .ourTeamPhoto {
+        width: 100px;
+        border-radius: 50%;
+      }
+    }
+
+    .ourTeamInformation {
+
+      h4 {
+        font-size: 20px;
+        margin: 10px 0;
+      }
+
+      p {
+        font-size: 18px;
+      }
+    }
+  }
 
 }
 
