@@ -32,7 +32,8 @@
       font-size: 18px;
       padding: 15px 15px 25px 15px;
       color: $color-text;
-      border-top: 1px solid $color-text;
+      //border-top: 1px solid $color-text;
+      border-top: 2px solid $color-accent-dark;
       margin: 0;
     }
 
@@ -94,7 +95,8 @@
       &:hover {
         box-shadow: 0 0 8px 3px rgba(34, 60, 80, 0.4);
         //background-color: rgba(215, 215, 215, 0.8);
-        background-color: $color-accent-dark;
+        //background-color: $color-accent-dark;
+        background-color: white;
 
         .newsButtonOpen {
           display: block;
@@ -109,14 +111,15 @@
 
         h3 {
           //color: rgba(235, 88, 55, 0.84);
-          color: #ffffff;
+          //color: #ffffff;
+          color: $color-accent-dark;
           transition: .3s;
-          text-shadow: 1px 2px 3px #666;
+          //text-shadow: 1px 2px 3px #666;
         }
 
-        p {
-          color: #5e2316;
-        }
+        //p {
+        //  color: #5e2316;
+        //}
       }
 
       .lastNewsImageOne {
@@ -140,7 +143,8 @@
       &:hover {
         box-shadow: 0 0 8px 3px rgba(34, 60, 80, 0.4);
         //background-color: rgba(215, 215, 215, 0.8);
-        background-color: $color-accent-dark;
+        //background-color: $color-accent-dark;
+        background-color: white;
 
         .newsButtonOpen {
           display: block;
@@ -155,14 +159,15 @@
 
         h3 {
           //color: #eb5837;
-          color: #ffffff;
+          //color: #ffffff;
+          color: $color-accent-dark;
           transition: .3s;
-          text-shadow: 1px 2px 3px #666;
+          //text-shadow: 1px 2px 3px #666;
         }
 
-        p {
-          color: #5e2316;
-        }
+        //p {
+        //  color: #5e2316;
+        //}
       }
 
       .lastNewsImageTwo {
@@ -186,7 +191,8 @@
       &:hover {
         box-shadow: 0 0 8px 3px rgba(34, 60, 80, 0.4);
         //background-color: rgba(215, 215, 215, 0.8);
-        background-color: $color-accent-dark;
+        //background-color: $color-accent-dark;
+        background-color: white;
 
         img {
           filter: brightness(60%);
@@ -201,14 +207,15 @@
 
         h3 {
           //color: #eb5837;
-          color: #ffffff;
+          //color: #ffffff;
+          color: $color-accent-dark;
           transition: .3s;
-          text-shadow: 1px 2px 3px #666;
+          //text-shadow: 1px 2px 3px #666;
         }
 
-        p {
-          color: #5e2316;
-        }
+        //p {
+        //  color: #5e2316;
+        //}
       }
 
       .lastNewsImageThree {
@@ -232,7 +239,8 @@
       &:hover {
         box-shadow: 0 0 8px 3px rgba(34, 60, 80, 0.4);
         //background-color: rgba(215, 215, 215, 0.8);
-        background-color: $color-accent-dark;
+        //background-color: $color-accent-dark;
+        background-color: white;
 
         img {
           filter: brightness(60%);
@@ -248,14 +256,15 @@
 
         h3 {
           //color: #eb5837;
-          color: #ffffff;
+          //color: #ffffff;
+          color: $color-accent-dark;
           transition: .3s;
-          text-shadow: 1px 2px 3px #666;
+          //text-shadow: 1px 2px 3px #666;
         }
 
-        p {
-          color: #5e2316;
-        }
+        //p {
+        //  color: #5e2316;
+        //}
       }
 
       .lastNewsImageFour {
@@ -279,7 +288,8 @@
       &:hover {
         box-shadow: 0 0 8px 3px rgba(34, 60, 80, 0.4);
         //background-color: rgba(215, 215, 215, 0.8);
-        background-color: $color-accent-dark;
+        //background-color: $color-accent-dark;
+        background-color: white;
 
         img {
           filter: brightness(60%);
@@ -300,14 +310,15 @@
 
         h3 {
           //color: #eb5837;
-          color: #ffffff;
+          //color: #ffffff;
+          color: $color-accent-dark;
           transition: .3s;
-          text-shadow: 1px 2px 3px #666;
+          //text-shadow: 1px 2px 3px #666;
         }
 
-        p {
-          color: #5e2316;
-        }
+        //p {
+        //  color: #5e2316;
+        //}
       }
 
       .lastNewsImageFour {

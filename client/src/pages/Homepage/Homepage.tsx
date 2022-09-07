@@ -30,10 +30,11 @@ const Homepage = () => {
                 <Banners/>
                 <div className={s.popularsBg}>
                     <Populars/>
-                </div>
-                <div className={s.lastNewsBg}>
                     <LastNews/>
                 </div>
+                {/*<div className={s.lastNewsBg}>
+                    <LastNews/>
+                </div>*/}
                 <div className={s.ourTeamBg}>
                     <OurTeam/>
                 </div>

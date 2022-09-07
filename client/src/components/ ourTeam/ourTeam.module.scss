@@ -72,7 +72,6 @@
 .ourTeamWrapper {
   display: flex;
   background-color: #ffffff;
-  //position: relative;
 
   .ourTeamImage {
     background-image: url("../../images/pagesBG/18.jpg");
@@ -81,10 +80,6 @@
     background-position: center;
     width: 50%;
 
-    /*img {
-      width: 100%;
-      height: 100%;
-    }*/
   }
 
   .ourTeamTabs {
@@ -125,7 +120,6 @@
 
         .tabPanelItem1 {
           min-height: 450px;
-          max-width: 650px;
           display: flex;
           flex-direction: row;
           flex-wrap: wrap;
@@ -146,7 +140,6 @@
 
         .tabPanelItem2 {
           min-height: 450px;
-          max-width: 650px;
           display: flex;
           flex-direction: row;
           align-content: center;
@@ -162,7 +155,6 @@
 
         .tabPanelItem3 {
           min-height: 450px;
-          max-width: 650px;
           display: flex;
           flex-direction: row;
           align-content: center;
@@ -186,7 +178,7 @@
       margin: 20px;
 
       .ourTeamPhoto {
-        width: 100px;
+        width: 120px;
         border: 5px solid #ffffff;
         border-radius: 50%;
       }
@@ -210,7 +202,6 @@
 }
 
 .tabPanelTitle {
-  max-width: 650px;
   text-align: center;
   font-size: 36px;
   color: #ffffff;
@@ -221,7 +212,6 @@
 
 
 .ourTeamButtonWrapper {
-  max-width: 650px;
   text-align: center;
 
   .inServices {
