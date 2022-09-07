@@ -8,6 +8,7 @@ import s from './homepage.module.scss';
 import {Link} from "react-router-dom";
 import paw from "../../images/Vector2.png";
 import OurTeam from "../../components/ ourTeam/OurTeam";
+import OurPartners from "../../components/ ourPartners/OurPartners";
 
 const Homepage = () => {
 
@@ -33,6 +34,9 @@ const Homepage = () => {
                 <LastNews/>
                 <div className={s.ourTeamBg}>
                     <OurTeam/>
+                </div>
+                <div className={s.ourPartnersBg}>
+                    <OurPartners/>
                 </div>
                 <Reviews/>
 

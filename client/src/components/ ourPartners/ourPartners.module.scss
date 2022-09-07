@@ -1,2 +1,39 @@
 @import "src/common/extends";
 @import "src/common/variables";
+
+
+.ourPartnersTitle {
+  @extend .title;
+  text-align: center;
+}
+
+.ourPartnersWrapper {
+  @extend .container;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  div {
+    width: 150px;
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px;
+    cursor: pointer;
+
+    .partnersLogo {
+      width: 150px;
+      opacity: 0.6;
+    }
+
+    &:hover {
+
+      .partnersLogo {
+        opacity: 1;
+      }
+    }
+  }
+
+
+}

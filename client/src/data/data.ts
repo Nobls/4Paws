@@ -55,6 +55,24 @@ import ourTeamPeople6 from '../images/ourTeam/people06.jpg'
 import ourTeamPeople7 from '../images/ourTeam/people07.jpg'
 import ourTeamPeople8 from '../images/ourTeam/people08.jpeg'
 
+import ourPartners4Paws from '../images/ourPartners/4paws.png'
+import ourPartnersAv from '../images/ourPartners/av.png'
+import ourPartnersDv from '../images/ourPartners/dv.png'
+import ourPartnersLs from '../images/ourPartners/ls.png'
+import ourPartnersGarfield from '../images/ourPartners/garfield.png'
+import ourPartnersGh from '../images/ourPartners/gh.png'
+import ourPartnersGroomIt from '../images/ourPartners/groomIt.png'
+import ourPartnersManifik from '../images/ourPartners/manifik.png'
+import ourPartnersMilord from '../images/ourPartners/milord.png'
+import ourPartnersStrelka from '../images/ourPartners/strelka.png'
+import ourPartnersVd from '../images/ourPartners/vd.png'
+import ourPartnersVm from '../images/ourPartners/vm.png'
+import ourPartnersVp from '../images/ourPartners/vp.png'
+import ourPartnersZoo from '../images/ourPartners/zoo.png'
+import ourPartnersZooFauna from '../images/ourPartners/zooFauna.png'
+import ourPartnersZooQI from '../images/ourPartners/zooQI.png'
+import ourPartnersZoobazar from '../images/ourPartners/zoobazar.png'
+
 export type BannerType = {
     id: number
     image1920: any
@@ -107,13 +125,19 @@ export type GalleryFooterType = {
 }
 export type OurTeamType = [{ cynologist: SpecializationTeamType[] }, { veterinarian: SpecializationTeamType[] }, { callCenter: SpecializationTeamType[] }]
 
-
 type SpecializationTeamType = {
     id:number
     image: any
     alt: string
     name: string
     description: string
+}
+
+export type OurParntersType = {
+    id: number
+    alt: string
+    img: any
+    link: string
 }
 
 
@@ -519,15 +543,109 @@ export const ourTeam: [{ cynologist: SpecializationTeamType[] }, { veterinarian:
             },
         ]
     },
-
-
 ]
 
-
-/*{
-    image: ourTeamPeople1,
-        alt: 'people1',
-    name: 'Захаревич А.И.',
-    description: 'Кинолог. Стаж более 10 лет.',
-}*/
-
+export const ourPartners: OurParntersType[] = [
+    {
+        id: 1,
+        alt: '4Paws',
+        img: ourPartners4Paws,
+        link: 'http://4lapy.by/',
+    },
+    {
+        id: 2,
+        alt: 'Av',
+        img: ourPartnersAv,
+        link: 'https://alfavet.by/',
+    },
+    {
+        id: 3,
+        alt: 'Dv',
+        img: ourPartnersDv,
+        link: 'http://dv.by/',
+    },
+    {
+        id: 4,
+        alt: 'Ls',
+        img: ourPartnersLs,
+        link: 'https://bestfriend.by/',
+    },
+    {
+        id: 5,
+        alt: 'Garfield',
+        img: ourPartnersGarfield,
+        link: 'https://garfield.by/',
+    },
+    {
+        id: 6,
+        alt: 'Gh',
+        img: ourPartnersGh,
+        link: 'https://glavnoehvost.by/',
+    },
+    {
+        id: 7,
+        alt: 'It',
+        img: ourPartnersGroomIt,
+        link: 'http://www.groomit.by/',
+    },
+    {
+        id: 8,
+        alt: 'Manifik',
+        img: ourPartnersManifik,
+        link: 'https://salon-manifik.by/',
+    },
+    {
+        id: 9,
+        alt: 'Milord',
+        img: ourPartnersMilord,
+        link: 'http://salon-milord.by/',
+    },
+    {
+        id: 10,
+        alt: 'Strelka',
+        img: ourPartnersStrelka,
+        link: 'https://strelka.by/',
+    },
+    {
+        id: 11,
+        alt: 'Vd',
+        img: ourPartnersVd,
+        link: 'https://drugvet.by/',
+    },
+    {
+        id: 12,
+        alt: 'Vm',
+        img: ourPartnersVm,
+        link: 'https://vetmed.by/',
+    },
+    {
+        id: 13,
+        alt: 'Vp',
+        img: ourPartnersVp,
+        link: 'https://vetprofi.by/',
+    },
+    {
+        id: 14,
+        alt: 'Zoo',
+        img: ourPartnersZoo,
+        link: 'https://e-zoo.by/',
+    },
+    {
+        id: 15,
+        alt: 'ZooFauna',
+        img: ourPartnersZooFauna,
+        link: 'https://zoofauna.by/',
+    },
+    {
+        id: 16,
+        alt: 'ZooQI',
+        img: ourPartnersZooQI,
+        link: 'https://zooqi.by/',
+    },
+    {
+        id: 17,
+        alt: 'Zoobazar',
+        img: ourPartnersZoobazar,
+        link: 'https://zoobazar.by/',
+    },
+]
