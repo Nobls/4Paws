@@ -66,12 +66,13 @@
 
 .ourTeamTitle {
   @extend .title;
-  margin: 0 0 40px 0;
+  margin: 0 0 100px 0;
 }
 
 .ourTeamWrapper {
   display: flex;
-  background-color: $color-accent-dark;
+  background-color: #ffffff;
+  //position: relative;
 
   .ourTeamImage {
     background-image: url("../../images/pagesBG/18.jpg");
@@ -121,13 +122,16 @@
       .tabPanel1 {
         background-color: #FF7657;
         width: 100%;
+
         .tabPanelItem1 {
-          min-height: 600px;
+          min-height: 450px;
+          max-width: 650px;
           display: flex;
           flex-direction: row;
           flex-wrap: wrap;
-          align-content: space-around;
+          align-content: flex-start;
           align-items: center;
+          justify-content: center;
           margin: 10px 0;
 
           .tabPanelItem1 {
@@ -139,12 +143,15 @@
       .tabPanel2 {
         background-color: #eb5837;
         width: 100%;
+
         .tabPanelItem2 {
-          min-height: 600px;
+          min-height: 450px;
+          max-width: 650px;
           display: flex;
-          flex-direction: column;
-          align-content: space-around;
-          align-items: center;
+          flex-direction: row;
+          align-content: center;
+          align-items: flex-start;
+          justify-content: center;
           margin: 10px 0;
         }
       }
@@ -154,11 +161,13 @@
         width: 100%;
 
         .tabPanelItem3 {
-          min-height: 600px;
+          min-height: 450px;
+          max-width: 650px;
           display: flex;
-          flex-direction: column;
-          align-content: space-around;
-          align-items: center;
+          flex-direction: row;
+          align-content: center;
+          align-items: flex-start;
+          justify-content: center;
           margin: 10px 0;
         }
       }
@@ -169,8 +178,7 @@
   .ourTeamCardWrapper {
     display: flex;
     width: 300px;
-    background-color: white;
-    margin: 10px 0;
+    margin: 10px;
     //border-radius: 40px;
     align-items: center;
 
@@ -179,23 +187,92 @@
 
       .ourTeamPhoto {
         width: 100px;
+        border: 5px solid #ffffff;
         border-radius: 50%;
       }
     }
 
     .ourTeamInformation {
 
-      h4 {
+      .ourTeamInformationName {
         font-size: 20px;
         margin: 10px 0;
+        color: #ffffff;
       }
 
-      p {
+      .ourTeamInformationDescription {
         font-size: 18px;
+        color: #ffffff;
       }
     }
   }
 
+}
+
+.tabPanelTitle {
+  max-width: 650px;
+  text-align: center;
+  font-size: 36px;
+  color: #ffffff;
+  margin: 50px 0 30px 0;
+  //background-image: url("../../Vector.png");
+}
+
+
+
+.ourTeamButtonWrapper {
+  max-width: 650px;
+  text-align: center;
+
+  .inServices {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    padding: 15px;
+    background-color: #ffffff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: all .5s;
+    border: none;
+    cursor: pointer;
+
+    span {
+      z-index: 3;
+      position: relative;
+      font-size: 16px;
+      color: $color-accent-dark;
+    }
+
+    img {
+      width: 35px;
+      height: 35px;
+      position: absolute;
+      z-index: 1;
+      right: 8px;
+      top: 8px;
+      transition: .5s;
+    }
+
+    &:hover {
+      background-color: #ffffff;
+      transition: all .5s;
+
+      span {
+        color: $color-accent-dark;
+        transition: .5s;
+      }
+
+      img {
+        //right: 50px;
+        //transform: scale(1.1);
+        transform: translate(-5px, 0px);
+        width: 40px;
+        height: 40px;
+        top: 5px;
+      }
+    }
+  }
 }
 
 

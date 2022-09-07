@@ -31,7 +31,9 @@ const Homepage = () => {
                 <div className={s.popularsBg}>
                     <Populars/>
                 </div>
-                <LastNews/>
+                <div className={s.lastNewsBg}>
+                    <LastNews/>
+                </div>
                 <div className={s.ourTeamBg}>
                     <OurTeam/>
                 </div>

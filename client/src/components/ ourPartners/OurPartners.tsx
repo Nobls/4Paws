@@ -15,8 +15,6 @@ const OurPartners = () => {
                                         <img className={s.partnersLogo} src={m.img} alt={m.alt}/>
                                     </div>
                                 </a>
-
-
                         )
                     })
                 }

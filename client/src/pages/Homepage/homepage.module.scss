@@ -89,7 +89,14 @@
   padding: 100px 0;
 }
 
+.lastNewsBg {
+  background-image: url("../../images/background/bg2.png");
+}
+
 .ourTeamBg {
   background-image: url("../../images/background/bg3.png");
-  padding: 100px 0;
+  padding: 50px 0 100px 0;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: bottom;
 }
