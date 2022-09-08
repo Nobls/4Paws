@@ -27,7 +27,9 @@ const Homepage = () => {
                 <div className={s.advantageBg}>
                     <Advantage/>
                 </div>
-                <Banners/>
+                <div className={s.bannersBg}>
+                    <Banners/>
+                </div>
                 <div className={s.popularsBg}>
                     <Populars/>
                     <LastNews/>
