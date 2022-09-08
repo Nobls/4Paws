@@ -99,7 +99,7 @@
 
         .tabsItemOne {
           @extend .tabsItem;
-          background-color: #FF7657;
+          background-color: #cd3512;
         }
 
         .tabsItemTwo {
@@ -109,13 +109,14 @@
 
         .tabsItemThree {
           @extend .tabsItem;
-          background-color: #cd3512;
+
+          background-color: #FF7657;
         }
       }
 
 
       .tabPanel1 {
-        background-color: #FF7657;
+        background-color: #cd3512;
         width: 100%;
 
         .tabPanelItem1 {
@@ -150,7 +151,7 @@
       }
 
       .tabPanel3 {
-        background-color: #cd3512;
+        background-color: #FF7657;
         width: 100%;
 
         .tabPanelItem3 {
@@ -171,7 +172,6 @@
     display: flex;
     width: 300px;
     margin: 10px;
-    //border-radius: 40px;
     align-items: center;
 
     .ourTeamPhotoWrapper {
@@ -198,7 +198,6 @@
       }
     }
   }
-
 }
 
 .tabPanelTitle {
@@ -206,7 +205,6 @@
   font-size: 36px;
   color: #ffffff;
   margin: 50px 0 30px 0;
-  //background-image: url("../../Vector.png");
 }
 
 
@@ -254,8 +252,6 @@
       }
 
       img {
-        //right: 50px;
-        //transform: scale(1.1);
         transform: translate(-5px, 0px);
         width: 40px;
         height: 40px;

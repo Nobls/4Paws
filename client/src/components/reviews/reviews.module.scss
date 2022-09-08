@@ -2,6 +2,7 @@
 
 .reviewWrapper{
   @extend .container;
+  padding-bottom: 100px;
   .reviewTitle{
     @extend .title;
   }

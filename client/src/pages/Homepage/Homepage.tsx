@@ -18,34 +18,24 @@ const Homepage = () => {
                 <h1 className={s.homePageTitle}>
                     Tолько премиальный <br/> <span className={s.homePageSpan}>уход</span> и счастливые <br/> питомцы.
                 </h1>
-                    <Link className={s.contactUs} to={'/about'}>
-                        <span>Связаться с нами</span>
-                        <img src={paw} alt=""/>
-                    </Link>
+                <Link className={s.contactUs} to={'/about'}>
+                    <span>Связаться с нами</span>
+                    <img src={paw} alt=""/>
+                </Link>
             </div>
-            <div>
-                <div className={s.advantageBg}>
-                    <Advantage/>
-                </div>
+            <div className={s.advantageBg}>
+                <Advantage/>
+            </div>
+            <div className={s.componentBg}>
                 <div className={s.bannersBg}>
                     <Banners/>
                 </div>
-                <div className={s.popularsBg}>
-                    <Populars/>
-                    <LastNews/>
-                </div>
-                {/*<div className={s.lastNewsBg}>
-                    <LastNews/>
-                </div>*/}
-                <div className={s.ourTeamBg}>
-                    <OurTeam/>
-                </div>
-                <div className={s.ourPartnersBg}>
-                    <OurPartners/>
-                </div>
+                <Populars/>
+                <LastNews/>
+                <OurTeam/>
                 <Reviews/>
-
             </div>
+            <OurPartners/>
         </div>
     );
 };

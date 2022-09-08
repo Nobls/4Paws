@@ -1,13 +1,7 @@
 @import "src/common/extends";
 
 .advantage {
-  //position: relative;
-  //top: -90px;
-  //padding: 0;
-  //margin: 0;
-  padding: 70px 0 0 0;
-
-  .title{
+  .title {
     @extend .title;
     margin: 0 0 70px 0;
   }
@@ -18,15 +12,13 @@
     justify-content: center;
 
     .advantageItems {
-        max-width: 400px;
+      max-width: 400px;
       height: 170px;
       display: flex;
       flex-direction: row;
-      //background-color: rgba(235, 231, 228, 0.58);
       background-color: #eeece9;
       margin: 15px;
       border-radius: 15px;
-      //box-shadow: 0 7px 5px -5px rgba(34, 60, 80, 0.6);
       box-shadow: 0 3px 6px 0 rgba(34, 60, 80, 0.4);
       -webkit-touch-callout: none;
       -webkit-user-select: none;

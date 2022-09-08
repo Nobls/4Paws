@@ -4,14 +4,29 @@ import s from "./reviews.module.scss";
 import "slick-carousel/slick/slick.scss";
 import "slick-carousel/slick/slick-theme.scss";
 import Slider from "react-slick";
+import {PrevArrow} from "../prevArrow/PrevArrow";
+import {NextArrow} from "../nextArrow/NextArrow";
 
 const Reviews = () => {
+
+    function slickNext() {
+        return function () {
+        };
+    }
+
+    function slickPrev() {
+        return function () {
+        };
+    }
 
     const settings = {
         arrows: true,
         infinite: true,
         slidesToShow: 2,
         slidesToScroll: 1,
+        nextArrow: <NextArrow className={''} onClick={slickNext()} style={ {color:'#eb5837'} } />,
+        prevArrow: <PrevArrow className={''} onClick={slickPrev()} style={ {color:'#eb5837'} }/>
+
     };
 
     return (
