@@ -33,7 +33,12 @@ import news2 from '../images/lastNews/news2.jpeg'
 import news3 from '../images/lastNews/news3.jpeg'
 import news4 from '../images/lastNews/news4.jpeg'
 import news5 from '../images/lastNews/news5.jpeg'
-import reviewsImage from '../images/LogoPF.png'
+import reviewsImage1 from '../images/reviews/user1.jpg'
+import reviewsImage2 from '../images/reviews/user2.jpeg'
+import reviewsImage3 from '../images/reviews/user3.jpg'
+import reviewsImage4 from '../images/reviews/user4.jpg'
+import reviewsImage5 from '../images/reviews/user5.jpg'
+import reviewsImage6 from '../images/reviews/user6.jpeg'
 import imageGoods1 from '../images/popularsGoods/ACANABOUNTIFULCATCHCat.png'
 import imageGoods2 from '../images/popularsGoods/ACANAINDOORENTREECat.png'
 import imageGoods3 from '../images/popularsGoods/FarminaN&DCatQuinoaSkin&Coat.png'
@@ -280,54 +285,54 @@ export const lastNews: LastNewsType[] = [
 export const reviews = [
     {
         id: 1,
-        userName: 'Name',
-        date: '12.30',
-        image: reviewsImage,
+        userName: 'Валерий',
+        date: 'Сентябрь 08, 2022',
+        image: reviewsImage1,
         alt: 'userPhoto',
         text: 'Несколько лет тому назад, когда я завел собаку, выбор сухих кормов в зоомагазинах был очень скудным. Все корма делились на две категории: обычные корма премиум класса и очень дорогие.',
         rating: 1,
     },
     {
         id: 2,
-        userName: 'Name',
-        date: '12.30',
-        image: reviewsImage,
+        userName: 'Екатерина',
+        date: 'Сентябрь 08, 2022',
+        image: reviewsImage2,
         alt: 'userPhoto',
         text: 'Несколько лет тому назад, когда я завел собаку, выбор сухих кормов в зоомагазинах был очень скудным. Все корма делились на две категории: обычные корма премиум класса и очень дорогие.',
         rating: 5,
     },
     {
         id: 3,
-        userName: 'Name',
-        date: '12.30',
-        image: reviewsImage,
+        userName: 'Виктория',
+        date: 'Сентябрь 08, 2022',
+        image: reviewsImage3,
         alt: 'userPhoto',
         text: 'Несколько лет тому назад, когда я завел собаку, выбор сухих кормов в зоомагазинах был очень скудным. Все корма делились на две категории: обычные корма премиум класса и очень дорогие.',
         rating: 1,
     },
     {
         id: 4,
-        userName: 'Name',
-        date: '12.30',
-        image: reviewsImage,
+        userName: 'Игорь',
+        date: 'Сентябрь 08, 2022',
+        image: reviewsImage4,
         alt: 'userPhoto',
         text: 'Несколько лет тому назад, когда я завел собаку, выбор сухих кормов в зоомагазинах был очень скудным. Все корма делились на две категории: обычные корма премиум класса и очень дорогие.',
         rating: 4,
     },
     {
         id: 5,
-        userName: 'Name',
-        date: '12.30',
-        image: reviewsImage,
+        userName: 'Виктор',
+        date: 'Сентябрь 08, 2022',
+        image: reviewsImage5,
         alt: 'userPhoto',
         text: 'Несколько лет тому назад, когда я завел собаку, выбор сухих кормов в зоомагазинах был очень скудным. Все корма делились на две категории: обычные корма премиум класса и очень дорогие.',
         rating: 1,
     },
     {
         id: 6,
-        userName: 'Name',
-        date: '12.30',
-        image: reviewsImage,
+        userName: 'Евгений',
+        date: 'Сентябрь 08, 2022',
+        image: reviewsImage6,
         alt: 'userPhoto',
         text: 'Несколько лет тому назад, когда я завел собаку, выбор сухих кормов в зоомагазинах был очень скудным. Все корма делились на две категории: обычные корма премиум класса и очень дорогие.',
         rating: 1,

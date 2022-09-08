@@ -1,6 +1,6 @@
 import React from 'react';
 import {reviews} from "../../data/data";
-import s from "../reviews/reviews.module.scss";
+import s from "./reviews.module.scss";
 import "slick-carousel/slick/slick.scss";
 import "slick-carousel/slick/slick-theme.scss";
 import Slider from "react-slick";
@@ -10,8 +10,8 @@ const Reviews = () => {
     const settings = {
         arrows: true,
         infinite: true,
-        slidesToShow: 3,
-        slidesToScroll: 3,
+        slidesToShow: 2,
+        slidesToScroll: 1,
     };
 
     return (
@@ -29,18 +29,23 @@ const Reviews = () => {
                                             <img className={s.reviewUserImage} src={m.image} alt={m.alt}/>
                                         </div>
                                         <div className={s.reviewUser}>
-                                            <div>
+                                            <div className={s.reviewUserName}>
                                                 {m.userName}
                                             </div>
-                                            <div>
+                                            <div className={s.reviewDate}>
                                                 {m.date}
                                             </div>
+                                            <div className={s.reviewRating}>
+                                                {m.rating}
+                                            </div>
+                                            <p className={s.reviewText}>{m.text}</p>
                                         </div>
-                                        <div className={s.reviewRating}>
+                                        {/*<div className={s.reviewRating}>
                                             {m.rating}
                                         </div>
+                                        <p>{m.text}</p>*/}
                                     </div>
-                                    <p>{m.text}</p>
+                                    {/*<p>{m.text}</p>*/}
                                 </div>
                             )
                         }

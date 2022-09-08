@@ -14,13 +14,31 @@
       .reviewUserImage{
         width: 150px;
         height: 150px;
+        margin-right: 15px;
+        border: 5px solid #eb5837;
+        border-radius: 15px;
       }
       .reviewUser{
         display: flex;
-        align-items: center;
+        justify-content: space-between;
+        flex-direction: column;
       }
+
+      .reviewUserName{
+        font-size: 24px;
+        font-weight: 900;
+        margin-bottom: 15px;
+      }
+
+      .reviewDate{
+        color: #eb5837;
+      }
+
       .reviewRating{
         align-self: flex-end;
+      }
+      .reviewText{
+        margin: 0;
       }
     }
   }

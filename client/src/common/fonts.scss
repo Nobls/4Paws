@@ -40,3 +40,17 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: 'Nunito';
+  src: url('../fonts/Nunito-Black.woff') format('woff2'), url('../fonts/Nunito-Black.woff') format('woff');
+  font-weight: 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Nunito';
+  src: url('../fonts/Nunito-Black.woff2') format('woff2'), url('../fonts/Nunito-Black.woff2') format('woff');
+  font-weight: 900;
+  font-style: normal;
+}
+
