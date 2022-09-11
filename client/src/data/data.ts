@@ -99,7 +99,7 @@ export type GalleryFooterType = {
 export type OurTeamType = [{ cynologist: SpecializationTeamType[] }, { veterinarian: SpecializationTeamType[] }, { callCenter: SpecializationTeamType[] }]
 
 type SpecializationTeamType = {
-    id:number
+    id: number
     image: any
     alt: string
     name: string
@@ -111,6 +111,13 @@ export type OurParntersType = {
     alt: string
     img: any
     link: string
+}
+
+export type ServicesType = {
+    id: number
+    title: string
+    description: string
+    descriptionModal: string
 }
 
 
@@ -423,28 +430,28 @@ export const ourTeam: [{ cynologist: SpecializationTeamType[] }, { veterinarian:
     {
         cynologist: [
             {
-                id:1,
+                id: 1,
                 image: ourTeamPeople1,
                 alt: 'people1',
                 name: 'Захаревич А.И.',
                 description: 'Кинолог. Стаж более 10 лет.',
             },
             {
-                id:2,
+                id: 2,
                 image: ourTeamPeople2,
                 alt: 'people2',
                 name: 'Вербицкая О.А.',
                 description: 'Кинолог. Стаж более 8 лет.',
             },
             {
-                id:3,
+                id: 3,
                 image: ourTeamPeople3,
                 alt: 'people3',
                 name: 'Клюшко Е.А.',
                 description: 'Кинолог. Стаж более 5 лет.',
             },
             {
-                id:4,
+                id: 4,
                 image: ourTeamPeople4,
                 alt: 'people4',
                 name: 'Елисеев Д.П.',
@@ -456,14 +463,14 @@ export const ourTeam: [{ cynologist: SpecializationTeamType[] }, { veterinarian:
     {
         veterinarian: [
             {
-                id:5,
+                id: 5,
                 image: ourTeamPeople5,
                 alt: 'people5',
                 name: 'Иванов К.Е.',
                 description: 'Ветеринар. Стаж более 7 лет.',
             },
             {
-                id:6,
+                id: 6,
                 image: ourTeamPeople6,
                 alt: 'people6',
                 name: 'Ляшко А.А.',
@@ -474,14 +481,14 @@ export const ourTeam: [{ cynologist: SpecializationTeamType[] }, { veterinarian:
     {
         callCenter: [
             {
-                id:7,
+                id: 7,
                 image: ourTeamPeople7,
                 alt: 'people1',
                 name: 'Левченко А.Г.',
                 description: 'Call-Центр. Стаж более 5 лет.',
             },
             {
-                id:8,
+                id: 8,
                 image: ourTeamPeople8,
                 alt: 'people1',
                 name: 'Котова К.О.',
@@ -593,5 +600,58 @@ export const ourPartners: OurParntersType[] = [
         alt: 'Zoobazar',
         img: ourPartnersZoobazar,
         link: 'https://zoobazar.by/',
+    },
+]
+
+export const services: ServicesType[] = [
+    {
+        id: 1,
+        title: 'Уход за питомцем 24/7',
+        description: '',
+        descriptionModal: '',
+
+    },
+    {
+        id: 2,
+        title: 'Передержка',
+        description: 'Срочно нужно уехать, а не с кем оставить своего питомца?!',
+        descriptionModal: 'PetFriends предлагает вам услуги по передержке животных ' +
+            'в Минске. Что такое передержка? Передержка — это временное содержание вашего любимца другими людьми. ' +
+            'Если нет возможности попросить друзей, ' +
+            'знакомых или родственников побыть с вашим четвероногим другом, на помощь приходит платная передержка животных, по-другому это называется ситтинг.' +
+            ' Ситтер обязуется добросовестно ухаживать за вашим питомцем, кормить, гулять, гладить и не оставлять без присмотра.',
+    },
+    {
+        id: 3,
+        title: 'Выгул собак',
+        description: 'Вам пришлось задержаться на работе, уехать на какое-то мероприятие или отлучиться по делам, а собака остается дома одна. Нужен выгул собак в Минске? Ситтеры нашей компании с удовольствием проведут время на свежем воздухе с вашим питомцем.',
+        descriptionModal: ' Как мы осуществляем сервис по выгулу собак:' +
+            'На нашем сайте вы выбираете необходимую дату, время.' +
+            'Если все критерии сходятся, то после принятия брони на выгул, с вами связывается наш сотрудник и договариваетесь о месте и времени встречи.' +
+            'Наш сотрудник берет вашу собачку и гуляет с ней 40-60 минут. ' +
+            'У каждого выгульщика компании PetFriends имеется специальное мобильное приложение (трекер), где после прогулки будет отображаться маршрут передвижения сотрудника и питомца. ' +
+            'При желании, каждому хозяину мы можем предоставить информацию с трекера, чтобы он увидел, где гулял пёсик и фотоотчет с прогулки.' +
+            'Стоимость выгула собак ситтерами нашей компании составляет от 5-ти до 15-ти белорусских рублей. ',
+    },
+    {
+        id: 4,
+        title: 'Няня для животных',
+        description: 'Каждая собака или кот отличается своим характером и поведением. Кто-то любитель портить мебель, грызть провода, разбрасывать вещи, царапать стены, а кто-то просто очень скучает и впадает в депрессию, если хозяин отсутствует. В таких ситуациях владельцам четвероногих может помочь дневная няня для животных.',
+        descriptionModal: 'Няня для животных — это человек, который присмотрит за вашим питомцем, пока вас нет дома. ' +
+            'Услуги няни для собак или кошек могут осуществляться как на территории ситтера, так и у вас дома. ' +
+            'В обоих случаях, вы можете быть уверенными, что за время вашего отсутствия ничего не случится ни с вашим животным, ни с вашим имуществом. ' +
+            'Няня для собак или кошек — это человек, который обязательно накормит вашего питомца, поиграет с ним, погладит и проследит, чтобы с животным было всё в порядке.',
+    },
+    {
+        id: 5,
+        title: 'Груминг',
+        description: 'Груминг',
+        descriptionModal: '',
+    },
+    {
+        id: 6,
+        title: 'Доставка товаров клиенту',
+        description: 'Доставка товаров клиенту',
+        descriptionModal: '',
     },
 ]

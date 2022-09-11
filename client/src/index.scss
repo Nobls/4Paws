@@ -4,6 +4,10 @@
 body {
   *{
     box-sizing: border-box;
+    &::selection{
+      background: #eb5837;
+      color: white;
+    }
   }
 
   margin: 0;
