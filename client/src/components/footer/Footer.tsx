@@ -94,14 +94,14 @@ const Footer = () => {
                     <h4>Галерея</h4>
                     <div className={s.galleryFooter}>
                         {/*{*/}
-                        {/*    modal && <ModalGallery modal={modal} setModal={setModal}/>*/}
+                        {/*    modalServices && <ModalGallery modalServices={modalServices} setModal={setModal}/>*/}
                         {/*}*/}
                         {
                             galleryFooter.map(m => {
                                 return (
                                     <div onClick={onClickHandler} key={m.image}><img src={m.image} alt={m.alt}/>
                                         {
-                                            // modal && <ModalGallery id={m.id} image={m.image} alt={m.alt} modal={modal}
+                                            // modalServices && <ModalGallery id={m.id} image={m.image} alt={m.alt} modalServices={modalServices}
                                             //                        setModal={setModal}/>
                                         }
                                     </div>

@@ -52,6 +52,12 @@ import ourPartnersZoo from '../images/ourPartners/zoo.png'
 import ourPartnersZooFauna from '../images/ourPartners/zooFauna.png'
 import ourPartnersZooQI from '../images/ourPartners/zooQI.png'
 import ourPartnersZoobazar from '../images/ourPartners/zoobazar.png'
+import servicesCare from '../images/services/servicesImage1.jpg'
+import servicesOverexposure from '../images/services/servicesImage2.jpg'
+import servicesWalking from '../images/services/servicesImage3.jpg'
+import servicesNanny from '../images/services/servicesImage4.jpg'
+import servicesGrooming from '../images/services/servicesImage5.jpg'
+import servicesDelivery from '../images/services/servicesImage6.jpg'
 
 export type BannerType = {
     id: number
@@ -118,6 +124,8 @@ export type ServicesType = {
     title: string
     description: string
     descriptionModal: string
+    image: any
+    alt: string
 }
 
 
@@ -607,8 +615,10 @@ export const services: ServicesType[] = [
     {
         id: 1,
         title: 'Уход за питомцем 24/7',
-        description: '',
-        descriptionModal: '',
+        description: 'Уход за питомцем 24/7',
+        descriptionModal: 'Уход за питомцем 24/7',
+        image: servicesCare,
+        alt: 'servicesCare',
 
     },
     {
@@ -620,38 +630,49 @@ export const services: ServicesType[] = [
             'Если нет возможности попросить друзей, ' +
             'знакомых или родственников побыть с вашим четвероногим другом, на помощь приходит платная передержка животных, по-другому это называется ситтинг.' +
             ' Ситтер обязуется добросовестно ухаживать за вашим питомцем, кормить, гулять, гладить и не оставлять без присмотра.',
+        image: servicesOverexposure,
+        alt: 'servicesOverexposure',
     },
     {
         id: 3,
         title: 'Выгул собак',
-        description: 'Вам пришлось задержаться на работе, уехать на какое-то мероприятие или отлучиться по делам, а собака остается дома одна. Нужен выгул собак в Минске? Ситтеры нашей компании с удовольствием проведут время на свежем воздухе с вашим питомцем.',
-        descriptionModal: ' Как мы осуществляем сервис по выгулу собак:' +
+        description: 'Вам пришлось задержаться на работе, уехать на какое-то мероприятие или отлучиться по делам, а собака остается дома одна.',
+        descriptionModal: 'Ситтеры нашей компании с удовольствием проведут время на свежем воздухе с вашим питомцем.' +
+            ' Как мы осуществляем сервис по выгулу собак:' +
             'На нашем сайте вы выбираете необходимую дату, время.' +
             'Если все критерии сходятся, то после принятия брони на выгул, с вами связывается наш сотрудник и договариваетесь о месте и времени встречи.' +
             'Наш сотрудник берет вашу собачку и гуляет с ней 40-60 минут. ' +
             'У каждого выгульщика компании PetFriends имеется специальное мобильное приложение (трекер), где после прогулки будет отображаться маршрут передвижения сотрудника и питомца. ' +
             'При желании, каждому хозяину мы можем предоставить информацию с трекера, чтобы он увидел, где гулял пёсик и фотоотчет с прогулки.' +
             'Стоимость выгула собак ситтерами нашей компании составляет от 5-ти до 15-ти белорусских рублей. ',
+        image: servicesWalking,
+        alt: 'servicesWalking',
     },
     {
         id: 4,
         title: 'Няня для животных',
-        description: 'Каждая собака или кот отличается своим характером и поведением. Кто-то любитель портить мебель, грызть провода, разбрасывать вещи, царапать стены, а кто-то просто очень скучает и впадает в депрессию, если хозяин отсутствует. В таких ситуациях владельцам четвероногих может помочь дневная няня для животных.',
-        descriptionModal: 'Няня для животных — это человек, который присмотрит за вашим питомцем, пока вас нет дома. ' +
+        description: 'Няня для животных — это человек, который присмотрит за вашим питомцем, пока вас нет дома.',
+        descriptionModal: 'Каждая собака или кот отличается своим характером и поведением. Кто-то любитель портить мебель, грызть провода, разбрасывать вещи, царапать стены, а кто-то просто очень скучает и впадает в депрессию, если хозяин отсутствует. В таких ситуациях владельцам четвероногих может помочь дневная няня для животных.' +
             'Услуги няни для собак или кошек могут осуществляться как на территории ситтера, так и у вас дома. ' +
             'В обоих случаях, вы можете быть уверенными, что за время вашего отсутствия ничего не случится ни с вашим животным, ни с вашим имуществом. ' +
             'Няня для собак или кошек — это человек, который обязательно накормит вашего питомца, поиграет с ним, погладит и проследит, чтобы с животным было всё в порядке.',
+        image: servicesNanny,
+        alt: 'servicesNanny',
     },
     {
         id: 5,
         title: 'Груминг',
         description: 'Груминг',
-        descriptionModal: '',
+        descriptionModal: 'Груминг',
+        image: servicesGrooming,
+        alt: 'servicesGrooming',
     },
     {
         id: 6,
         title: 'Доставка товаров клиенту',
         description: 'Доставка товаров клиенту',
-        descriptionModal: '',
+        descriptionModal: 'Доставка товаров клиенту',
+        image: servicesDelivery,
+        alt: 'servicesDelivery',
     },
 ]

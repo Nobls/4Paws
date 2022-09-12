@@ -28,7 +28,7 @@ const GoodsCard = ({title,image,alt, weight, type, country, price,descriptions}:
                 <div className={s.goodsButtonWrapper}>
                     <button className={s.addToBasket}>
                         <span>Добавить в корзину</span>
-                        <img src={paw} alt=""/>
+                        <img src={paw} alt="paw"/>
                     </button>
                 </div>
             </div>
