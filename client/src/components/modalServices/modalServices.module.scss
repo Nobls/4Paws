@@ -13,7 +13,7 @@
   align-items: center;
   justify-content: center;
   transform: scale(0);
-  z-index: 5;
+  z-index: 10;
 
   &.active {
     transform: scale(1);
@@ -22,11 +22,12 @@
 
 .modalContent {
   padding: 20px;
-  border-radius: 12px;
+  border-radius: 15px;
   background-color: #eeece9;
-  width: 950px;
-  height: 800px;
+  width: 80%;
+  height: 90vh;
   position: relative;
+  box-shadow: 0 3px 6px 0 rgba(34, 60, 80, 0.4);
 
   .modalContentInner{
     .modalImg{

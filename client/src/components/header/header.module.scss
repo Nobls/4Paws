@@ -85,7 +85,11 @@
             margin: 0 5px;
 
             &:hover {
-              fill: #4a4a4a;
+              fill: $color-accent-dark;
+
+              .iconInner {
+                fill: #ffffff;
+              }
             }
           }
         }
@@ -114,7 +118,6 @@
               fill: $color-accent-lite;
             }
           }
-
         }
 
         .linkLogin {
