@@ -20,12 +20,15 @@
   }
 
   .modalGalleryContent {
-    width: 80%;
-    height: 80vh;
+    width: 600px;
+    height: 320px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
     .imageGallery {
-      width: 100% !important;
-      height: 100% !important;
+      width: 600px !important;
+      height: 320px !important;
     }
   }
 }
