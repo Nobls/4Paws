@@ -1,9 +1,33 @@
-.modalWrapper{
-  width: 600px;
-  height: 320px;
-  position: absolute;
-  bottom: 0;
+@import "src/common/extends";
+@import "src/common/variables";
+
+
+.modal {
+  height: 100vh;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  position: fixed;
+  top: 0;
   left: 0;
-  right: 0;
-  background: red;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: scale(0);
+  z-index: 10;
+
+  &.active {
+    transform: scale(1);
+  }
+
+  .modalGalleryContent {
+    width: 80%;
+    height: 80vh;
+
+    .imageGallery {
+      width: 100% !important;
+      height: 100% !important;
+    }
+  }
 }
+
+

@@ -1,19 +1,14 @@
-import React, {useState} from 'react';
+import React from 'react';
 import {Link} from "react-router-dom";
 import s from './footer.module.scss'
 import logo from "../../images/logoNew2.png";
 import catBg from "../../images/other/cat.png";
 import {galleryFooter} from "../../data/data";
 import {NavigationFooter} from "../navigationFooter/NavigationFooter";
+import FooterGallery from "../footerGallery/FooterGallery";
 
 
 const Footer = () => {
-
-    const [modal, setModal] = useState(false)
-
-    const onClickHandler = () => {
-        setModal(!modal)
-    }
 
     return (
         <div className={s.footerBg}>
@@ -82,23 +77,46 @@ const Footer = () => {
                 <div className={s.footerGalleryWrapper}>
                     <h4>Галерея</h4>
                     <div className={s.galleryFooter}>
-                        {/*{*/}
-                        {/*    modalServices && <ModalGallery modalServices={modalServices} setModal={setModal}/>*/}
-                        {/*}*/}
                         {
                             galleryFooter.map(m => {
                                 return (
-                                    <div onClick={onClickHandler} key={m.image}><img src={m.image} alt={m.alt}/>
-                                        {
-                                            // modalServices && <ModalGallery id={m.id} image={m.image} alt={m.alt} modalServices={modalServices}
-                                            //                        setModal={setModal}/>
-                                        }
-                                    </div>
+                                    <FooterGallery
+                                        key={m.id}
+                                        id={m.id}
+                                        image={m.image}
+                                        alt={m.alt}
+                                    />
                                 )
-
                             })
                         }
                     </div>
+
+
+
+
+
+
+
+
+
+                    {/*<h4>Галерея</h4>*/}
+                    {/*<div className={s.galleryFooter}>*/}
+                    {/*    /!*{*!/*/}
+                    {/*    /!*    modalServices && <ModalGallery modalServices={modalServices} setModal={setModal}/>*!/*/}
+                    {/*    /!*}*!/*/}
+                    {/*    {*/}
+                    {/*        galleryFooter.map(m => {*/}
+                    {/*            return (*/}
+                    {/*                <div onClick={onClickHandler} key={m.image}><img src={m.image} alt={m.alt}/>*/}
+                    {/*                    {*/}
+
+                    {/*                    }*/}
+                    {/*                </div>*/}
+                    {/*            )*/}
+
+                    {/*        })*/}
+                    {/*    }*/}
+                    {/*</div>*/}
                 </div>
 
 

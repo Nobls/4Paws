@@ -3,19 +3,21 @@ import s from './modalGallery.module.scss'
 
 
 type PropsType = {
-    modal: boolean
-    setModal: any
+    modalActive: boolean
+    setModalActive: (modalActive: boolean) => void
+    id: number
+    image: any
+    alt: string
+
 }
 
-export const ModalGallery = ({ modal, setModal}: PropsType) => {
-
-    const onClickHandler = () => {
-        setModal(!modal)
-    }
+export const ModalGallery = ({ modalActive, setModalActive, image, alt}: PropsType) => {
 
     return (
-        <div className={s.modalWrapper}>
-
+        <div className={modalActive ? `${s.modal} ${s.active}` : s.modal} onClick={() => setModalActive(!modalActive)}>
+            <div className={s.modalGalleryContent} onClick={e => e.stopPropagation()}>
+                <img className={s.imageGallery} src={image} alt={alt}/>
+            </div>
         </div>
     );
 };
