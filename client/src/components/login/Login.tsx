@@ -25,7 +25,7 @@ const Login = ({modalLoginActive, setModalLoginActive}: PropsType) => {
                     </div>
                     <div className={s.buttonWrapper}>
                         <span>
-                            <Link to={"/"} className={s.register}>Зарегистрироваться</Link>
+                            <Link to={"/registration"} className={s.register} onClick={()=>setModalLoginActive(false)}>Зарегистрироваться</Link>
                         </span>
                         <button className={s.buttonLogin}>
                             <span>Войти</span>

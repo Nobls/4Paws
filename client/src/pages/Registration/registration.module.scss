@@ -1,0 +1,37 @@
+@import "../../common/extends";
+@import "../../common/variables";
+
+
+.registration {
+  @extend .container;
+
+  .userInformationBlock {
+    display: flex;
+
+    .userInformationWrapper {
+      display: flex;
+      flex-direction: column;
+
+      .userInformationItems {
+        display: flex;
+        flex-direction: column;
+      }
+    }
+  }
+
+  .userInformationPhoto {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .buttonWrapper {
+    display: flex;
+    flex-direction: column;
+
+    button {
+      width: 200px;
+    }
+  }
+}
+
+
