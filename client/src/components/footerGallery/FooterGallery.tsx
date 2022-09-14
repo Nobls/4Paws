@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import {galleryFooter} from "../../data/data";
 import {ModalGallery} from "../modalGallery/ModalGallery";
+import s from './footerGallery.module.scss'
 
 type PropsType = {
     id: number
@@ -22,7 +23,7 @@ const FooterGallery = ({id, image, alt}: PropsType) => {
     return (
             <div key={id}>
                 <div onClick={allModalFunction}>
-                    <img src={image} alt={alt}/>
+                    <img className={s.imageGallery} src={image} alt={alt}/>
                 </div>
                 <ModalGallery
                     modalActive={modalGalleryActive}
