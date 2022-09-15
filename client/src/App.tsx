@@ -8,7 +8,9 @@ import Shop from "./pages/Shop/Shop";
 import News from "./pages/News/News";
 import AboutUs from "./pages/AboutUs/AboutUs";
 import Contacts from "./pages/Contacts/Contacts";
+import UserInfo from "./pages/UserInfo/UserInfo";
 import Registration from "./pages/Registration/Registration";
+import Login from "./pages/Login/Login";
 
 function App() {
     return (
@@ -21,6 +23,8 @@ function App() {
                     <Route path='news' element={<News/>}/>
                     <Route path='about' element={<AboutUs/>}/>
                     <Route path='contacts' element={<Contacts/>}/>
+                    <Route path='userInfo' element={<UserInfo/>}/>
+                    <Route path='login' element={<Login/>}/>
                     <Route path='registration' element={<Registration/>}/>
                 </Route>
             </Routes>

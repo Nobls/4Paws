@@ -1,0 +1,61 @@
+@import "../../common/extends";
+@import "../../common/variables";
+
+
+.userInfo {
+  @extend .container;
+  margin-bottom: 100px;
+
+  .userInfoTitle {
+    @extend .title;
+  }
+
+  .userInformationBlock {
+    display: flex;
+    justify-content: center;
+
+    .userInformationWrapper {
+      display: flex;
+      flex-direction: column;
+
+      .userInformationItems {
+        display: flex;
+        flex-direction: column;
+
+        label {
+          margin-bottom: 15px;
+          input {
+            margin-left: 20px;
+          }
+        }
+      }
+      .userInformationHomeItems{
+        margin-bottom: 15px;
+        label{
+          margin-right: 15px;
+          .registrationHomeInfo{
+            width: 50px;
+            margin-left: 20px;
+          }
+        }
+
+      }
+    }
+  }
+
+  .userInformationPhoto {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .buttonWrapper {
+    display: flex;
+    flex-direction: column;
+
+    button {
+      width: 200px;
+    }
+  }
+}
+
+

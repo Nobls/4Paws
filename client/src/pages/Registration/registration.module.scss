@@ -1,37 +1,100 @@
 @import "../../common/extends";
 @import "../../common/variables";
 
-
-.registration {
-  @extend .container;
-
-  .userInformationBlock {
+  .registrationContent {
+    @extend .container;
+    width: 500px;
+    height: 300px;
     display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    background-color: #eeece9;
+    border-radius: 15px;
 
-    .userInformationWrapper {
-      display: flex;
-      flex-direction: column;
+    .formWrapper {
 
-      .userInformationItems {
+      .inputWrapper {
         display: flex;
         flex-direction: column;
+        margin-bottom: 20px;
+        width: 300px;
+
+        input {
+          width: 100%;
+          padding: 5px 10px;
+          margin: 5px 0;
+          border: solid 1px #4a4a4a;
+          border-radius: 5px;
+          color: #666666;
+          font-weight: 500;
+          outline-color: #4a4a4a;
+        }
+      }
+
+      .buttonWrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: relative;
+
+        span {
+
+          .register {
+            text-decoration: none;
+            font-weight: 700;
+            color: #e17a6b;
+          }
+        }
+
+
+        .buttonRegistration{
+          padding: 10px 20px;
+          background-color: $color-accent-dark;
+          text-decoration: none;
+          border-radius: 5px;
+          font-weight: bold;
+          transition: all .5s;
+          border: none;
+          cursor: pointer;
+
+          span {
+            z-index: 3;
+            position: relative;
+            font-size: 16px;
+            color: white;
+          }
+
+          img {
+            width: 30px;
+            height: 30px;
+            position: absolute;
+            z-index: 1;
+            right: 8px;
+            top: 5px;
+            transition: .5s;
+          }
+
+          &:hover {
+            background-color: $color-accent-lite;
+            transition: all .5s;
+
+            span {
+              color: white;
+              transition: .5s;
+            }
+
+            img {
+              //right: 50px;
+              //transform: scale(1.1);
+              transform: translate(-5px, 0px);
+              width: 35px;
+              height: 35px;
+              top: 2px;
+            }
+          }
+        }
+
       }
     }
   }
-
-  .userInformationPhoto {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .buttonWrapper {
-    display: flex;
-    flex-direction: column;
-
-    button {
-      width: 200px;
-    }
-  }
-}
-
-

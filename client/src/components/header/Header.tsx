@@ -4,14 +4,8 @@ import logo from "../../images/logoNew2.png"
 import s from './header.module.scss'
 import Navigation from "../navigation/Navigation";
 import {Search} from "../search/Search";
-import Login from "../login/Login";
 
 const Header = () => {
-
-    const [modalLoginActive, setModalLoginActive] = useState(false)
-    const modalLoginHandler = () => {
-        setModalLoginActive(!modalLoginActive)
-    }
 
     const [search, setSearch] = useState(false)
     const onclickSearchHandler = () => {
@@ -96,10 +90,7 @@ const Header = () => {
                                     </svg>
                                 </Link>
                             </div>
-                            <Link className={s.linkLogin} to={'#'} onClick={modalLoginHandler}>Войти</Link>
-                            {
-                                modalLoginActive && <Login modalLoginActive= {modalLoginActive} setModalLoginActive={setModalLoginActive}/>
-                            }
+                            <Link className={s.linkLogin} to={'/login'}>Войти</Link>
                         </div>
                         <div>
                             <Navigation/>
