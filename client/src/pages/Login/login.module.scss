@@ -3,32 +3,36 @@
 
 .loginContent {
   @extend .container;
-  width: 500px;
-  height: 300px;
   display: flex;
   justify-content: center;
   flex-direction: column;
   align-items: center;
-  background-color: #eeece9;
-  border-radius: 15px;
+  margin-bottom: 100px;
+
+  .loginContentTitle {
+    margin: 80px 0 50px 0;
+  }
 
   .formWrapper {
+    width: 50%;
 
     .inputWrapper {
       display: flex;
       flex-direction: column;
       margin-bottom: 20px;
-      width: 300px;
 
       input {
         width: 100%;
-        padding: 5px 10px;
-        margin: 5px 0;
+        padding: 10px 15px;
+        margin: 15px 0;
         border: solid 1px #4a4a4a;
         border-radius: 5px;
         color: #666666;
         font-weight: 500;
         outline-color: #4a4a4a;
+        background-image: url("../../images/background/bg1.png");
+        background-size: cover;
+        background-position-y: -130px;
       }
     }
 

@@ -8,14 +8,12 @@ const Login = () => {
     return (
         <div>
             <div className={s.loginContent}>
-                <div>
-                    <h2>Вход</h2>
-                </div>
+                    <h2 className={s.loginContentTitle}>Вход</h2>
 
                 <form action="/client/src/pages" className={s.formWrapper}>
                     <div className={s.inputWrapper}>
-                        <input type="text" placeholder="Login"/>
-                        <input type="password" placeholder="Password"/>
+                        <input type="text" placeholder="E-mail"/>
+                        <input type="password" placeholder="Пароль"/>
                     </div>
                     <div className={s.buttonWrapper}>
                         <span>
