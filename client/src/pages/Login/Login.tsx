@@ -8,7 +8,7 @@ const Login = () => {
     return (
         <div>
             <div className={s.loginContent}>
-                    <h2 className={s.loginContentTitle}>Вход</h2>
+                <h2 className={s.loginContentTitle}>Вход</h2>
 
                 <form action="/client/src/pages" className={s.formWrapper}>
                     <div className={s.inputWrapper}>
@@ -18,7 +18,9 @@ const Login = () => {
                     <div className={s.buttonWrapper}>
                         <span>
                             <Link to={"/registration"} className={s.register}>Зарегистрироваться</Link>
-
+                        </span>
+                        <span>
+                            <Link to={"/userInfo"} className={s.pageInfo}>!pageInfo</Link>
                         </span>
                         <button className={s.buttonLogin}>
                             <span>Войти</span>

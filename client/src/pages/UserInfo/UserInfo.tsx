@@ -1,38 +1,43 @@
 import React from 'react';
 import s from "./userInfo.module.scss";
+import userPhoto from "../../images/user.png";
 
 const UserInfo = () => {
     return (
         <div className={s.userInfo}>
             <h3 className={s.userInfoTitle}>Информация о Вас</h3>
-            <div className={s.userInformationBlock}>
-                <div className={s.userInformationWrapper}>
-                    <div className={s.userInformationItems}>
-                        <label>Имя<input type="text"/></label>
-                        <label>Фамилия<input type="text"/></label>
-                        <label>Отчество<input type="text"/></label>
+            <div className={s.userInfoBlock}>
+                <div className={s.userInfoWrapper}>
+                    <div className={s.userInfoItems}>
+                        <label className={s.userInfoItem}><span>Имя</span><input type="text" className={s.userInfoItemInput}/></label>
+                        <label className={s.userInfoItem}><span>Фамилия</span><input type="text" className={s.userInfoItemInput}/></label>
+                        <label className={s.userInfoItem}><span>Отчество</span><input type="text" className={s.userInfoItemInput}/></label>
                     </div>
-                    <div className={s.userInformationItems}>
-                        <label>Город<input type="text"/></label>
-                        <label>Улица<input type="text"/></label>
+                    <div className={s.userInfoItems}>
+                        <label className={s.userInfoItem}><span>Город</span><input type="text" className={s.userInfoItemInput}/></label>
+                        <label className={s.userInfoItem}><span>Улица</span><input type="text" className={s.userInfoItemInput}/></label>
                     </div>
-                    <div className={s.userInformationHomeItems}>
-                        <label>Дом<input className={s.registrationHomeInfo} type="text"/></label>
-                        <label>Корпус<input className={s.registrationHomeInfo} type="text"/></label>
-                        <label>Квартира<input className={s.registrationHomeInfo} type="text"/></label>
+                    <div className={s.userInfoHomeItems}>
+                        <label className={s.userInfoHomeItem}><span>Дом</span><input className={s.userInfoHomeInput} type="text"/></label>
+                        <label className={s.userInfoHomeItem}><span>Корпус</span><input className={s.userInfoHomeInput} type="text"/></label>
+                        <label className={s.userInfoHomeItem}><span>Квартира</span><input className={s.userInfoHomeInput} type="text"/></label>
                     </div>
                 </div>
 
-                <div className={s.userInformationPhoto}>
-                    <img src="/" alt="photo"/>
-                    <button>Загрузить фото</button>
+                <div className={s.userInfoPhoto}>
+                    <img src={userPhoto} alt="photo"/>
+                    <button className={s.downloadPhoto}>Загрузить фото</button>
+                    <div className={s.buttonWrapper}>
+                        <button className={s.addAnimal}>Мой питомец</button>
+                        <button className={s.register}>Зарегистрироваться</button>
+                    </div>
                 </div>
             </div>
 
-            <div className={s.buttonWrapper}>
-                <button>Мой питомец</button>
-                <button>Зарегистрироваться</button>
-            </div>
+            {/*<div className={s.buttonWrapper}>*/}
+            {/*    <button>Мой питомец</button>*/}
+            {/*    <button>Зарегистрироваться</button>*/}
+            {/*</div>*/}
         </div>
     );
 };
