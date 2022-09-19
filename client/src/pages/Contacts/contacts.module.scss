@@ -1,3 +1,7 @@
+@import "../../common/extends";
+@import "../../common/variables";
+
+
 .contactsBG{
   background-image: url("../../images/pagesBG/27.jpg");
   background-size: cover;
@@ -5,4 +9,25 @@
   padding-top: 920px;
   position: relative;
   top: -200px;
+
+  .writeUs {
+    @extend .container;
+
+  }
+}
+
+.contactItems {
+  @extend .container;
+  margin-bottom: 100px;
+  display: flex;
+  flex-direction: column;
+}
+
+.mapWrapper {
+
+  .map {
+    width: 100%;
+    height: 500px;
+    border: none;
+  }
 }
