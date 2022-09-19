@@ -1,11 +1,12 @@
 import React from 'react';
 import s from "./userInfo.module.scss";
 import userPhoto from "../../images/user.png";
+import paw from "../../images/Vector2.png";
 
 const UserInfo = () => {
     return (
         <div className={s.userInfo}>
-            <h3 className={s.userInfoTitle}>Информация о Вас</h3>
+            <h3 className={s.userInfoTitle}>Информация о пользователе</h3>
             <div className={s.userInfoBlock}>
                 <div className={s.userInfoWrapper}>
                     <div className={s.userInfoItems}>
@@ -26,18 +27,22 @@ const UserInfo = () => {
 
                 <div className={s.userInfoPhoto}>
                     <img src={userPhoto} alt="photo"/>
-                    <button className={s.downloadPhoto}>Загрузить фото</button>
+
                     <div className={s.buttonWrapper}>
-                        <button className={s.addAnimal}>Мой питомец</button>
-                        <button className={s.register}>Зарегистрироваться</button>
+                        <button className={s.downloadPhoto}>
+                            <span className={s.downloadPhotoTitle}>Добавить фото</span>
+                            <img src={paw} alt="paw"/>
+                        </button>
+                    </div>
+
+                    <div className={s.buttonWrapper}>
+                        <button className={s.buttonRegister}>
+                            <span>Зарегистрироваться</span>
+                            <img src={paw} alt="paw"/>
+                        </button>
                     </div>
                 </div>
             </div>
-
-            {/*<div className={s.buttonWrapper}>*/}
-            {/*    <button>Мой питомец</button>*/}
-            {/*    <button>Зарегистрироваться</button>*/}
-            {/*</div>*/}
         </div>
     );
 };
