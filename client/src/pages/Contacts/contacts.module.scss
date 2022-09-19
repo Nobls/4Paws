@@ -2,7 +2,7 @@
 @import "../../common/variables";
 
 
-.contactsBG{
+.contactsBG {
   background-image: url("../../images/pagesBG/27.jpg");
   background-size: cover;
   background-position: center;
@@ -10,21 +10,149 @@
   position: relative;
   top: -200px;
 
-  .writeUs {
-    @extend .container;
+  .contactTitle {
+    position: absolute;
+    bottom: 320px;
+    right: 40px;
+    font-size: 60px;
+    z-index: 2;
+    color: white;
+    line-height: 1.3;
 
+    .contactSpan {
+      @extend .bgButtonHover;
+      color: #eb5837;
+      padding: 0 40px 10px;
+      display: inline-flex;
+      font-size: 60px;
+    }
   }
 }
 
-.contactItems {
+.contactsWrapper {
+  position: relative;
+  top: -100px;
   @extend .container;
-  margin-bottom: 100px;
   display: flex;
-  flex-direction: column;
+
+  .contactInfo {
+    background: $color-accent-dark;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    .contactInfoTitle {
+      font-size: 35px;
+      color: white;
+    }
+
+    .contactItems {
+      margin-bottom: 100px;
+      display: flex;
+      flex-direction: column;
+      font-size: 20px;
+      color: white;
+        a{
+          margin-left: 10px;
+          text-decoration: none;
+          color: white;
+          font-size: 20px;
+      }
+    }
+  }
+
+  .writeUs {
+    display: flex;
+    background-image: url("../../images/background/bg1.png");
+    width: 50%;
+    flex-direction: column;
+    align-items: center;
+    .writeUsTitle{
+      font-size: 35px;
+    }
+    .writeUsInputWrapper {
+      width: 70%;
+      display: flex;
+      flex-direction: column;
+
+      .writeUsInput {
+        width: 100%;
+        padding: 10px 15px;
+        border: none;
+        border-radius: 5px;
+        color: #666666;
+        font-weight: 500;
+        outline-color: #4a4a4a;
+        margin-bottom: 20px;
+      }
+
+      .writeUsTextarea {
+        resize: none;
+        height: 200px;
+        padding: 10px 15px;
+        border: none;
+        border-radius: 5px;
+        color: #666666;
+        font-weight: 500;
+        outline-color: #4a4a4a;
+        margin-bottom: 20px;
+      }
+
+      .writeUsButton {
+        width: 40%;
+        align-self: flex-end;
+        padding: 10px 20px;
+        background-color: $color-accent-dark;
+        text-decoration: none;
+        border-radius: 5px;
+        font-weight: bold;
+        transition: all .5s;
+        border: none;
+        cursor: pointer;
+        position: relative;
+
+        span {
+          z-index: 3;
+          position: relative;
+          font-size: 20px;
+          color: white;
+        }
+
+        img {
+          width: 30px;
+          height: 30px;
+          position: absolute;
+          z-index: 1;
+          right: 8px;
+          top: 9px;
+          transition: .5s;
+        }
+
+        &:hover {
+          background-color: $color-accent-lite;
+          transition: all .5s;
+          border-radius: 5px;
+
+          span {
+            color: white;
+            transition: .5s;
+          }
+
+          img {
+            transform: translate(-5px, 0px);
+            width: 35px;
+            height: 35px;
+            top: 2px;
+          }
+        }
+      }
+
+    }
+  }
 }
 
 .mapWrapper {
-
   .map {
     width: 100%;
     height: 500px;

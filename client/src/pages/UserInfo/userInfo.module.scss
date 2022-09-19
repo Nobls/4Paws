@@ -142,8 +142,6 @@
         }
 
         img {
-          //right: 50px;
-          //transform: scale(1.1);
           transform: translate(-5px, 0px);
           width: 35px;
           height: 35px;
@@ -151,16 +149,6 @@
         }
       }
     }
-
-
-
-
-
-
-
-
-
-
 
     .buttonWrapper {
       display: flex;
@@ -208,28 +196,12 @@
         }
 
         img {
-          //right: 50px;
-          //transform: scale(1.1);
           transform: translate(-5px, 0px);
           width: 35px;
           height: 35px;
           top: 2px;
         }
       }
-
-
-
-
-
-
-
-
-      //.register {
-      //  height: 40px;
-      //  background-color: #fcc141;
-      //  border: 1px solid #4a4a4a;
-      //  cursor: pointer;
-      //}
     }
   }
 }
