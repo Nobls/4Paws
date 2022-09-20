@@ -2,6 +2,7 @@ import React from 'react';
 import s from "./userInfo.module.scss";
 import userPhoto from "../../images/user.png";
 import paw from "../../images/Vector2.png";
+import {Link} from "react-router-dom";
 
 const UserInfo = () => {
     return (
@@ -10,18 +11,26 @@ const UserInfo = () => {
             <div className={s.userInfoBlock}>
                 <div className={s.userInfoWrapper}>
                     <div className={s.userInfoItems}>
-                        <label className={s.userInfoItem}><span>Имя</span><input type="text" className={s.userInfoItemInput}/></label>
-                        <label className={s.userInfoItem}><span>Фамилия</span><input type="text" className={s.userInfoItemInput}/></label>
-                        <label className={s.userInfoItem}><span>Отчество</span><input type="text" className={s.userInfoItemInput}/></label>
+                        <label className={s.userInfoItem}><span>Имя</span><input type="text"
+                                                                                 className={s.userInfoItemInput}/></label>
+                        <label className={s.userInfoItem}><span>Фамилия</span><input type="text"
+                                                                                     className={s.userInfoItemInput}/></label>
+                        <label className={s.userInfoItem}><span>Отчество</span><input type="text"
+                                                                                      className={s.userInfoItemInput}/></label>
                     </div>
                     <div className={s.userInfoItems}>
-                        <label className={s.userInfoItem}><span>Город</span><input type="text" className={s.userInfoItemInput}/></label>
-                        <label className={s.userInfoItem}><span>Улица</span><input type="text" className={s.userInfoItemInput}/></label>
+                        <label className={s.userInfoItem}><span>Город</span><input type="text"
+                                                                                   className={s.userInfoItemInput}/></label>
+                        <label className={s.userInfoItem}><span>Улица</span><input type="text"
+                                                                                   className={s.userInfoItemInput}/></label>
                     </div>
                     <div className={s.userInfoHomeItems}>
-                        <label className={s.userInfoHomeItem}><span>Дом</span><input className={s.userInfoHomeInput} type="text"/></label>
-                        <label className={s.userInfoHomeItem}><span>Корпус</span><input className={s.userInfoHomeInput} type="text"/></label>
-                        <label className={s.userInfoHomeItem}><span>Квартира</span><input className={s.userInfoHomeInput} type="text"/></label>
+                        <label className={s.userInfoHomeItem}><span>Дом</span><input className={s.userInfoHomeInput}
+                                                                                     type="text"/></label>
+                        <label className={s.userInfoHomeItem}><span>Корпус</span><input className={s.userInfoHomeInput}
+                                                                                        type="text"/></label>
+                        <label className={s.userInfoHomeItem}><span>Квартира</span><input
+                            className={s.userInfoHomeInput} type="text"/></label>
                     </div>
                 </div>
 
@@ -41,6 +50,8 @@ const UserInfo = () => {
                             <img src={paw} alt="paw"/>
                         </button>
                     </div>
+
+                    <Link to={"/petInfo"}>!goToPetInfo</Link>
                 </div>
             </div>
         </div>

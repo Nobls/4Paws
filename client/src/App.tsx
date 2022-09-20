@@ -11,6 +11,7 @@ import Contacts from "./pages/Contacts/Contacts";
 import UserInfo from "./pages/UserInfo/UserInfo";
 import Registration from "./pages/Registration/Registration";
 import Login from "./pages/Login/Login";
+import PetInfo from "./pages/PetInfo/PetInfo";
 
 function App() {
     return (
@@ -26,6 +27,7 @@ function App() {
                     <Route path='userInfo' element={<UserInfo/>}/>
                     <Route path='login' element={<Login/>}/>
                     <Route path='registration' element={<Registration/>}/>
+                    <Route path='petInfo' element={<PetInfo/>}/>
                 </Route>
             </Routes>
         </div>
