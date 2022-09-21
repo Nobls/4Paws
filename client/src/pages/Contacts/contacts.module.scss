@@ -38,6 +38,7 @@
   .contactInfo {
     background: $color-accent-dark;
     width: 50%;
+    font-weight: 700;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -45,14 +46,27 @@
     .contactInfoTitle {
       font-size: 35px;
       color: white;
+      margin-top: 70px;
     }
 
     .contactItems {
-      margin-bottom: 100px;
+      margin-bottom: 50px;
       display: flex;
       flex-direction: column;
       font-size: 20px;
       color: white;
+      .contactPhones{
+        display: flex;
+        .phones{
+          margin-left: 25px;
+          .phone{
+            text-decoration: none;
+            color: white;
+            display: block;
+            margin: 20px 0;
+          }
+        }
+      }
         a{
           margin-left: 10px;
           text-decoration: none;
@@ -70,6 +84,7 @@
     align-items: center;
     .writeUsTitle{
       font-size: 35px;
+      margin-top: 70px;
     }
     .writeUsInputWrapper {
       width: 70%;
@@ -89,7 +104,7 @@
 
       .writeUsTextarea {
         resize: none;
-        height: 200px;
+        height: 410px;
         padding: 10px 15px;
         border: none;
         border-radius: 5px;
@@ -147,7 +162,6 @@
           }
         }
       }
-
     }
   }
 }

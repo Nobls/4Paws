@@ -12,12 +12,20 @@ const Contacts = () => {
                 <div className={s.contactInfo}>
                     <h3 className={s.contactInfoTitle}>Контакты</h3>
                     <div className={s.contactItems}>
+                        <p>Адес: Минск, ул. Ложинская 14</p>
+                        <p>Режим работы: Понедельник - Пятница</p>
+                        <p>Время работы: 09:00 - 18:00</p>
+                        <p>Выходные дни: Суббота, Воскресенье</p>
+                        <div className={s.contactPhones}>
+                            <p>Call Центр:</p>
+                            <div className={s.phones}>
+                                <a className={s.phone} href="tel:+375291111111">+375(29) 111-11-11</a>
+                                <a className={s.phone} href="tel:+375291111122">+375(29) 111-11-22</a>
+                            </div>
+                        </div>
                         <p className={s.contactLinkInfo}>Telegram: <a href="#">Telegram@PetFriends</a></p>
                         <p className={s.contactLinkInfo}>Instagram: <a href="#">PetFriends</a></p>
                         <p className={s.contactLinkInfo}>VK: <a href="#">vk.com/PetFriends</a></p>
-                        <p>+375(29) 111-11-11</p>
-                        <p>+375(29) 111-11-22</p>
-                        <p>+375(29) 111-11-33</p>
                     </div>
                 </div>
                 <div className={s.writeUs}>
