@@ -1,13 +1,14 @@
 import React from 'react';
 import s from './petInfo.module.scss';
 import petPhoto from '../../images/pet.png';
-import paw from "../../images/Vector2.png";
+//import paw from "../../images/Vector2.png";
 import ButtonStandart from "../../components/buttonStandart/ButtonStandart";
 
 
 const PetInfo = () => {
 
-    const buttonTitleRegister = 'Зарегистрировать';
+    const buttonTitleRegister = 'Сохранить';
+    const buttonTitleSavePhoto = 'Добавить фото';
 
     return (
         <div className={s.petInfoBg}>
@@ -41,12 +42,12 @@ const PetInfo = () => {
                 <div className={s.petPhotoWrapper}>
                     <img src={petPhoto} alt="pet"/>
                     <div className={s.buttonWrapper}>
-                        <button className={s.downloadPhoto}>
-                            <span className={s.downloadPhotoTitle}>Добавить фото</span>
-                            <img src={paw} alt="paw"/>
-                        </button>
+                        {/*<button className={s.downloadPhoto}>*/}
+                        {/*    <span className={s.downloadPhotoTitle}>Добавить фото</span>*/}
+                        {/*    <img src={paw} alt="paw"/>*/}
+                        {/*</button>*/}
+                        <ButtonStandart title={buttonTitleSavePhoto}/>
                     </div>
-
                     <div className={s.buttonWrapper}>
                         <ButtonStandart title={buttonTitleRegister}/>
                     </div>

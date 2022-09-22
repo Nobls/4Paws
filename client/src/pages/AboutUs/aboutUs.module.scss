@@ -1,3 +1,7 @@
+@import "../../common/extends";
+@import "../../common/variables";
+
+
 .aboutUsBg {
   background-image: url("../../images/pagesBG/21.jpg");
   background-size: cover;
@@ -61,5 +65,28 @@
       }
     }
   }
+}
 
+h2 {
+  @extend .container;
+  text-align: center;
+  font-size: 50px;
+  margin-bottom: 100px;
+}
+
+.aboutUsInfoWrapper {
+  @extend .container;
+
+  .aboutUsInfo {
+    margin-bottom: 100px;
+
+    h6 {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 18px;
+    }
+  }
 }
