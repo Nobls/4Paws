@@ -1,3 +1,7 @@
+@import "src/common/extends";
+@import "src/common/variables";
+
+
 .newsBg{
   background-image: url("../../images/pagesBG/12.jpg");
   background-size: cover;
@@ -5,5 +9,70 @@
   padding-top: 775px;
   position: relative;
   top: -355px;
+}
+
+.newsWrapper{
+  @extend .container;
+  position: relative;
+  top: -250px;
+  margin-bottom: 50px;
+
+  .newsItemWrapper{
+    max-width: 970px;
+    margin-bottom: 100px;
+    .lastNewsImage{
+      width: 970px;
+      height: 600px;
+    }
+
+    .newsInfo{
+      display: flex;
+
+      .newsInfoItem{
+        margin-right: 10px;
+        margin-top: 15px;
+      }
+    }
+
+    .newsTitle{
+      font-size: 35px;
+      font-weight: 900;
+      color: #666666;
+      transition: all .3s;
+      margin: 35px 0;
+      text-decoration: none;
+      display: block;
+      &:hover{
+        color: $color-accent-dark;
+        transition: all .3s;
+      }
+    }
+
+    .newsText{
+      font-size: 20px;
+    }
+
+    .newsButtonOpen {
+      display: block;
+      text-decoration: none;
+      z-index: 10;
+      left: 235px;
+      font-weight: 700;
+      font-size: 20px;
+      color: $color-accent-dark;
+      img {
+        width: 20px;
+        height: 20px;
+        margin-left: 10px;
+        transition: all .3s;
+      }
+      &:hover{
+        img{
+          transform: scale(1.2);
+          transition: all .3s;
+        }
+      }
+    }
+  }
 
 }
