@@ -2,14 +2,13 @@
 @import "src/common/variables";
 
 
-.newsBg{
+.newsLBg {
   background-image: url("../../images/pagesBG/12.jpg");
   background-size: cover;
   background-position: center;
   padding-top: 775px;
   position: relative;
   top: -355px;
-
 
   .newsTitle {
     position: absolute;
@@ -30,7 +29,7 @@
   }
 }
 
-h1 {
+.newsTitleBlock {
   font-size: 50px;
   text-align: center;
   margin: 0;
@@ -38,86 +37,152 @@ h1 {
   top: -220px;
 }
 
-.newsWrapper{
+.newsWrapper {
   @extend .container;
   position: relative;
-  top: -100px;
+  top: -250px;
   display: flex;
   flex-direction: row;
-  align-items: center;
-  flex-wrap: wrap;
   justify-content: space-between;
 
-  .newsItemWrapper{
-    max-width: 620px;
-    margin-bottom: 70px;
+  .newsBlock {
+    .newsItemWrapper {
+      width: 90%;
+      margin: 0 0 70px 0;
 
-    .newsInfoImageBlock {
-      background-position: center;
-      background-size: cover;
-      background-repeat: no-repeat;
-      width: 100%;
-      height: 500px;
-      display: flex;
-      text-align: justify;
-      align-items: flex-end;
 
-      .newsTitle{
+      .newsInfoImageBlock {
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        width: 100%;
+        height: 500px;
+        display: flex;
+        text-align: justify;
+        align-items: flex-end;
+      }
+
+      .newsTitle {
         font-size: 35px;
         font-weight: 900;
-        color: $color-accent-dark;
+        color: #666666;
         transition: all .3s;
-        padding: 50px;
-        //margin: 35px 0;
+        margin: 35px 0;
         text-decoration: none;
         display: block;
-        &:hover{
+
+        &:hover {
           color: $color-accent-lite;
           transition: all .3s;
         }
       }
-    }
 
-    .lastNewsImage{
-      width: 970px;
-      height: 600px;
-    }
-
-    .newsInfo{
-      display: flex;
-
-      .newsInfoItem{
-        margin-right: 10px;
-        margin-top: 15px;
+      .lastNewsImage {
+        width: 970px;
+        height: 600px;
       }
-    }
 
-    .newsText{
-      font-size: 20px;
-      text-align: justify;
-    }
+      .newsInfo {
+        display: flex;
 
-    .newsButtonOpen {
-      display: block;
-      text-decoration: none;
-      z-index: 10;
-      left: 235px;
-      font-weight: 700;
-      font-size: 20px;
-      color: $color-accent-dark;
-      img {
-        width: 20px;
-        height: 20px;
-        margin-left: 10px;
-        transition: all .3s;
+        .newsInfoItem {
+          margin-right: 10px;
+          margin-top: 15px;
+        }
       }
-      &:hover{
-        img{
-          transform: scale(1.2);
+
+      .newsText {
+        font-size: 20px;
+        text-align: justify;
+      }
+
+      .newsButtonOpen {
+        display: block;
+        text-decoration: none;
+        z-index: 10;
+        left: 235px;
+        font-weight: 700;
+        font-size: 20px;
+        color: $color-accent-dark;
+
+        img {
+          width: 20px;
+          height: 20px;
+          margin-left: 10px;
           transition: all .3s;
+        }
+
+        &:hover {
+          img {
+            transform: scale(1.2);
+            transition: all .3s;
+          }
         }
       }
     }
   }
 
+  .newsSideBar {
+    width: 100%;
+
+    .newsSideBarTitle {
+      text-align: center;
+      margin: 10px 0 20px 0;
+    }
+
+    .newsCategories {
+      //background-image: url("../../images/background/bgGray.png");
+      background: #b0afaf24;
+      background-size: cover;
+      padding: 10px;
+      margin-bottom: 50px;
+    }
+
+    .recentNews {
+      display: flex;
+      flex-direction: column;
+      background: #b0afaf24;
+      background-size: cover;
+      padding: 10px;
+      margin-bottom: 50px;
+
+      .recentNewsWrapper {
+        display: flex;
+        margin-bottom: 20px;
+
+
+        .recentNewsImage {
+          width: 110px;
+          height: 80px;
+          background-repeat: no-repeat;
+          background-size: cover;
+          background-position: center;
+          margin-right: 20px;
+          border-radius: 5px;
+        }
+
+        .recentNewsInner {
+          width: 90%;
+
+          .recentNewsTitle {
+            text-decoration: none;
+            color: #666666;
+            font-size: 16px;
+            padding: 20px 0;
+          }
+
+          .recentNewsDate {
+            font-size: 14px;
+            margin: 10px 0 0 0;
+          }
+        }
+      }
+    }
+
+    .newsTags {
+      background: #b0afaf24;
+      background-size: cover;
+      padding: 10px;
+    }
+  }
 }

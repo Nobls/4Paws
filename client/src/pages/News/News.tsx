@@ -7,177 +7,89 @@ import paw from "../../images/pawBig.png";
 const News = () => {
     return (
         <div>
-            <div className={s.newsBg}>
-                {/*<h1 className={s.newsTitle}>Всегда на связи<br/>с нашими <span*/}
-                {/*    className={s.newsSpan}>клиентами</span><br/>и их питомцами!</h1>*/}
+            <div className={s.newsLBg}>
+                <h1 className={s.newsTitle}>Всегда на связи<br/>с нашими <span
+                    className={s.newsSpan}>клиентами</span><br/>и их питомцами!</h1>
             </div>
 
-            {/*<div>*/}
-            {/*    <h1>Новости</h1>*/}
-            {/*</div>*/}
-
             <div className={s.newsWrapper}>
-
-                <div className={s.newsItemWrapper}>
-                    <div className={s.newsInfoImageBlock} style={{backgroundImage: `url(${lastNews[0].image})`}}>
-                        <Link to={'/news'} className={s.newsTitle}>{lastNews[0].title}</Link>
-                    </div>
-                    <div className={s.newsInfo}>
-                        <div className={s.newsInfoItem}>21.08.2022</div>
-                        <div className={s.newsInfoItem}>Author</div>
-                    </div>
-                    <p className={s.newsText}>{lastNews[0].description.substring(0, 300) + '...'}</p>
-                    <Link to={'/news'} className={s.newsButtonOpen}>
-                        Узнать больше
-                        <img src={paw} alt="paws"/>
-                    </Link>
+                <div className={s.newsBlock}>
+                    {
+                        lastNews.map(m => {
+                            return (
+                                <div className={s.newsItemWrapper} key={m.id}>
+                                    <div className={s.newsInfoImageBlock} style={{backgroundImage: `url(${m.image})`}}>
+                                    </div>
+                                    <div className={s.newsInfo}>
+                                        <div className={s.newsInfoItem}>21.08.2022</div>
+                                        <div className={s.newsInfoItem}>Author</div>
+                                        <div className={s.newsInfoItem}>Categories</div>
+                                        <div className={s.newsInfoItem}>Tags</div>
+                                    </div>
+                                    <Link to={'/news'} className={s.newsTitle}>{m.title}</Link>
+                                    <p className={s.newsText}>{m.description.substring(0, 300) + '...'}</p>
+                                    <Link to={'/news'} className={s.newsButtonOpen}>
+                                        Узнать больше
+                                        <img src={paw} alt="paws"/>
+                                    </Link>
+                                </div>
+                            )
+                        })
+                    }
                 </div>
 
-                <div className={s.newsItemWrapper}>
-                    <div className={s.newsInfoImageBlock} style={{backgroundImage: `url(${lastNews[1].image})`}}>
-                        <Link to={'/news'} className={s.newsTitle}>{lastNews[1].title}</Link>
+                <div className={s.newsSideBar}>
+                    <div className={s.newsCategories}>
+                        <h4 className={s.newsSideBarTitle}>Категории</h4>
+                        <ul>
+                            <li>1</li>
+                            <li>2</li>
+                            <li>3</li>
+                            <li>4</li>
+                            <li>5</li>
+                        </ul>
                     </div>
-                    <div className={s.newsInfo}>
-                        <div className={s.newsInfoItem}>21.08.2022</div>
-                        <div className={s.newsInfoItem}>Author</div>
+
+                    <div className={s.recentNews}>
+                        <h4 className={s.newsSideBarTitle}>Последние новости</h4>
+
+                        <div className={s.recentNewsWrapper}>
+                            <div className={s.recentNewsImage} style={{backgroundImage: `url(${lastNews[0].image})`}}>
+                            </div>
+                            <div className={s.recentNewsInner}>
+                                <Link to={'/news'} className={s.recentNewsTitle}>{lastNews[0].title}</Link>
+                                <div className={s.recentNewsDate}>21.08.2022</div>
+                            </div>
+                        </div>
+                        <div className={s.recentNewsWrapper}>
+                            <div className={s.recentNewsImage} style={{backgroundImage: `url(${lastNews[1].image})`}}>
+                            </div>
+                            <div className={s.recentNewsInner}>
+                                <Link to={'/news'} className={s.recentNewsTitle}>{lastNews[1].title}</Link>
+                                <div className={s.recentNewsDate}>21.08.2022</div>
+                            </div>
+                        </div>
+                        <div className={s.recentNewsWrapper}>
+                            <div className={s.recentNewsImage} style={{backgroundImage: `url(${lastNews[2].image})`}}>
+                            </div>
+                            <div className={s.recentNewsInner}>
+                                <Link to={'/news'} className={s.recentNewsTitle}>{lastNews[2].title}</Link>
+                                <div className={s.recentNewsDate}>21.08.2022</div>
+                            </div>
+                        </div>
                     </div>
-                    <p className={s.newsText}>{lastNews[1].description.substring(0, 300) + '...'}</p>
-                    <Link to={'/news'} className={s.newsButtonOpen}>
-                        Узнать больше
-                        <img src={paw} alt="paws"/>
-                    </Link>
+
+                    <div className={s.newsTags}>
+                        <h4 className={s.newsSideBarTitle}>Теги</h4>
+                        <ul>
+                            <li>1</li>
+                            <li>2</li>
+                            <li>3</li>
+                            <li>4</li>
+                            <li>5</li>
+                        </ul>
+                    </div>
                 </div>
-
-                <div className={s.newsItemWrapper}>
-                    <div className={s.newsInfoImageBlock} style={{backgroundImage: `url(${lastNews[2].image})`}}>
-                        <Link to={'/news'} className={s.newsTitle}>{lastNews[2].title}</Link>
-                    </div>
-                    <div className={s.newsInfo}>
-                        <div className={s.newsInfoItem}>21.08.2022</div>
-                        <div className={s.newsInfoItem}>Author</div>
-                    </div>
-                    <p className={s.newsText}>{lastNews[2].description.substring(0, 300) + '...'}</p>
-                    <Link to={'/news'} className={s.newsButtonOpen}>
-                        Узнать больше
-                        <img src={paw} alt="paws"/>
-                    </Link>
-                </div>
-
-                <div className={s.newsItemWrapper}>
-                    <div className={s.newsInfoImageBlock} style={{backgroundImage: `url(${lastNews[3].image})`}}>
-                        <Link to={'/news'} className={s.newsTitle}>{lastNews[3].title}</Link>
-                    </div>
-                    <div className={s.newsInfo}>
-                        <div className={s.newsInfoItem}>21.08.2022</div>
-                        <div className={s.newsInfoItem}>Author</div>
-                    </div>
-                    <p className={s.newsText}>{lastNews[3].description.substring(0, 300) + '...'}</p>
-                    <Link to={'/news'} className={s.newsButtonOpen}>
-                        Узнать больше
-                        <img src={paw} alt="paws"/>
-                    </Link>
-                </div>
-
-                <div className={s.newsItemWrapper}>
-                    <div className={s.newsInfoImageBlock} style={{backgroundImage: `url(${lastNews[4].image})`}}>
-                        <Link to={'/news'} className={s.newsTitle}>{lastNews[4].title}</Link>
-                    </div>
-                    <div className={s.newsInfo}>
-                        <div className={s.newsInfoItem}>21.08.2022</div>
-                        <div className={s.newsInfoItem}>Author</div>
-                    </div>
-                    <p className={s.newsText}>{lastNews[4].description.substring(0, 300) + '...'}</p>
-                    <Link to={'/news'} className={s.newsButtonOpen}>
-                        Узнать больше
-                        <img src={paw} alt="paws"/>
-                    </Link>
-                </div>
-
-
-                {/*<div className={s.newsItemWrapper}>*/}
-                {/*    <img className={s.lastNewsImage} src={lastNews[0].image} alt={lastNews[0].alt}/>*/}
-                {/*    <div className={s.newsInfo}>*/}
-                {/*        /!*<div className={s.newsInfoItem}>Author</div>*!/*/}
-                {/*        <div className={s.newsInfoItem}>21.08.2022</div>*/}
-                {/*        <div className={s.newsInfoItem}>Author</div>*/}
-                {/*        /!*<div className={s.newsInfoItem}>Categories</div>*!/*/}
-                {/*        /!*<div className={s.newsInfoItem}>Tags</div>*!/*/}
-                {/*    </div>*/}
-                {/*    <Link to={'/news'} className={s.newsTitle}>{lastNews[0].title}</Link>*/}
-                {/*    <p className={s.newsText}>{lastNews[0].description.substring(0, 300) + '...'}</p>*/}
-                {/*    <Link to={'/news'} className={s.newsButtonOpen}>*/}
-                {/*        Узнать больше*/}
-                {/*        <img src={paw} alt="paws"/>*/}
-                {/*    </Link>*/}
-                {/*</div>*/}
-
-                {/*<div className={s.newsItemWrapper}>*/}
-                {/*    <img className={s.lastNewsImage} src={lastNews[1].image} alt={lastNews[1].alt}/>*/}
-                {/*    <div className={s.newsInfo}>*/}
-                {/*        /!*<div className={s.newsInfoItem}>Author</div>*!/*/}
-                {/*        <div className={s.newsInfoItem}>21.08.2022</div>*/}
-                {/*        <div className={s.newsInfoItem}>Author</div>*/}
-                {/*        /!*<div className={s.newsInfoItem}>Categories</div>*!/*/}
-                {/*        /!*<div className={s.newsInfoItem}>Tags</div>*!/*/}
-                {/*    </div>*/}
-                {/*    <Link to={'/news'} className={s.newsTitle}>{lastNews[1].title}</Link>*/}
-                {/*    <p className={s.newsText}>{lastNews[1].description.substring(0, 300) + '...'}</p>*/}
-                {/*    <Link to={'/news'} className={s.newsButtonOpen}>*/}
-                {/*        Узнать больше*/}
-                {/*        <img src={paw} alt="paws"/>*/}
-                {/*    </Link>*/}
-                {/*</div>*/}
-
-                {/*<div className={s.newsItemWrapper}>*/}
-                {/*    <img className={s.lastNewsImage} src={lastNews[2].image} alt={lastNews[2].alt}/>*/}
-                {/*    <div className={s.newsInfo}>*/}
-                {/*        /!*<div className={s.newsInfoItem}>Author</div>*!/*/}
-                {/*        <div className={s.newsInfoItem}>21.08.2022</div>*/}
-                {/*        <div className={s.newsInfoItem}>Author</div>*/}
-                {/*        /!*<div className={s.newsInfoItem}>Categories</div>*!/*/}
-                {/*        /!*<div className={s.newsInfoItem}>Tags</div>*!/*/}
-                {/*    </div>*/}
-                {/*    <Link to={'/news'} className={s.newsTitle}>{lastNews[2].title}</Link>*/}
-                {/*    <p className={s.newsText}>{lastNews[2].description.substring(0, 300) + '...'}</p>*/}
-                {/*    <Link to={'/news'} className={s.newsButtonOpen}>*/}
-                {/*        Узнать больше*/}
-                {/*        <img src={paw} alt="paws"/>*/}
-                {/*    </Link>*/}
-                {/*</div>*/}
-
-                {/*<div className={s.newsItemWrapper}>*/}
-                {/*    <img className={s.lastNewsImage} src={lastNews[3].image} alt={lastNews[3].alt}/>*/}
-                {/*    <div className={s.newsInfo}>*/}
-                {/*        /!*<div className={s.newsInfoItem}>Author</div>*!/*/}
-                {/*        <div className={s.newsInfoItem}>21.08.2022</div>*/}
-                {/*        <div className={s.newsInfoItem}>Author</div>*/}
-                {/*        /!*<div className={s.newsInfoItem}>Categories</div>*!/*/}
-                {/*        /!*<div className={s.newsInfoItem}>Tags</div>*!/*/}
-                {/*    </div>*/}
-                {/*    <Link to={'/news'} className={s.newsTitle}>{lastNews[3].title}</Link>*/}
-                {/*    <p className={s.newsText}>{lastNews[3].description.substring(0, 300) + '...'}</p>*/}
-                {/*    <Link to={'/news'} className={s.newsButtonOpen}>*/}
-                {/*        Узнать больше*/}
-                {/*        <img src={paw} alt="paws"/>*/}
-                {/*    </Link>*/}
-                {/*</div>*/}
-
-                {/*<div className={s.newsItemWrapper}>*/}
-                {/*    <img className={s.lastNewsImage} src={lastNews[4].image} alt={lastNews[4].alt}/>*/}
-                {/*    <div className={s.newsInfo}>*/}
-                {/*        /!*<div className={s.newsInfoItem}>Author</div>*!/*/}
-                {/*        <div className={s.newsInfoItem}>21.08.2022</div>*/}
-                {/*        <div className={s.newsInfoItem}>Author</div>*/}
-                {/*        /!*<div className={s.newsInfoItem}>Categories</div>*!/*/}
-                {/*        /!*<div className={s.newsInfoItem}>Tags</div>*!/*/}
-                {/*    </div>*/}
-                {/*    <Link to={'/news'} className={s.newsTitle}>{lastNews[4].title}</Link>*/}
-                {/*    <p className={s.newsText}>{lastNews[4].description.substring(0, 300) + '...'}</p>*/}
-                {/*    <Link to={'/news'} className={s.newsButtonOpen}>*/}
-                {/*        Узнать больше*/}
-                {/*        <img src={paw} alt="paws"/>*/}
-                {/*    </Link>*/}
-                {/*</div>*/}
             </div>
         </div>
     );
