@@ -1,15 +1,15 @@
-import React, {useState} from 'react';
+import React from 'react';
 import s from './news.module.scss';
-import {lastNews, LastNewsType} from "../../data/data";
+import {lastNews} from "../../data/data";
 import {Link} from "react-router-dom";
 import paw from "../../images/pawBig.png";
+import Sidebar from "../../components/sidebar/Sidebar";
 
 const News = () => {
     return (
         <div>
             <div className={s.newsLBg}>
-                <h1 className={s.newsTitle}>Всегда на связи<br/>с нашими <span
-                    className={s.newsSpan}>клиентами</span><br/>и их питомцами!</h1>
+                <h1 className={s.newsTitle}>Самые главные<br/>и актуальные новости</h1>
             </div>
 
             <div className={s.newsWrapper}>
@@ -28,7 +28,7 @@ const News = () => {
                                     </div>
                                     <Link to={'/news'} className={s.newsTitle}>{m.title}</Link>
                                     <p className={s.newsText}>{m.description.substring(0, 300) + '...'}</p>
-                                    <Link to={'/news'} className={s.newsButtonOpen}>
+                                    <Link to={'/newsPost'} className={s.newsButtonOpen}>
                                         Узнать больше
                                         <img src={paw} alt="paws"/>
                                         {/*<svg xmlns="http://www.w3.org/2000/svg" width="19" height="19"
@@ -50,112 +50,7 @@ const News = () => {
                         })
                     }
                 </div>
-
-                <div className={s.newsSideBar}>
-                    <div className={s.newsCategories}>
-                        <h4 className={s.newsSideBarTitle}>Категории</h4>
-                        <ul className={s.newsCategoriesItems}>
-                            <li className={s.newsCategoriesItem}>
-                                <Link to={'/news'} className={s.newsCategoriesLink}>
-                                    Аксессуары
-                                    <span className={s.newsCategoriesDots}>
-
-                                    </span>
-                                    <span className={s.newsCategoriesCount}>
-                                        25
-                                    </span>
-                                </Link>
-                            </li>
-                            <li className={s.newsCategoriesItem}>
-                                <Link to={'/news'} className={s.newsCategoriesLink}>
-                                    Коты
-                                    <span className={s.newsCategoriesDots}>
-
-                                    </span>
-                                    <span className={s.newsCategoriesCount}>
-                                        6
-                                    </span>
-                                </Link>
-                            </li>
-                            <li className={s.newsCategoriesItem}>
-                                <Link to={'/news'} className={s.newsCategoriesLink}>
-                                    Собаки
-                                    <span className={s.newsCategoriesDots}>
-
-                                    </span>
-                                    <span className={s.newsCategoriesCount}>
-                                        4
-                                    </span>
-                                </Link>
-                            </li>
-                            <li className={s.newsCategoriesItem}>
-                                <Link to={'/news'} className={s.newsCategoriesLink}>
-                                    Домашние питомцы
-                                    <span className={s.newsCategoriesDots}>
-
-                                    </span>
-                                    <span className={s.newsCategoriesCount}>
-                                        8
-                                    </span>
-                                </Link>
-                            </li>
-                            <li className={s.newsCategoriesItem}>
-                                <Link to={'/news'} className={s.newsCategoriesLink}>
-                                    Питание
-                                    <span className={s.newsCategoriesDots}>
-
-                                    </span>
-                                    <span className={s.newsCategoriesCount}>
-                                        2
-                                    </span>
-                                </Link>
-                            </li>
-                        </ul>
-                    </div>
-
-                    <div className={s.recentNews}>
-                        <h4 className={s.newsSideBarTitle}>Последние новости</h4>
-
-                        <div className={s.recentNewsWrapper}>
-                            <div className={s.recentNewsImage} style={{backgroundImage: `url(${lastNews[0].image})`}}>
-                            </div>
-                            <div className={s.recentNewsInner}>
-                                <Link to={'/news'} className={s.recentNewsTitle}>{lastNews[0].title}</Link>
-                                <div className={s.recentNewsDate}>21.08.2022</div>
-                            </div>
-                        </div>
-                        <div className={s.recentNewsWrapper}>
-                            <div className={s.recentNewsImage} style={{backgroundImage: `url(${lastNews[1].image})`}}>
-                            </div>
-                            <div className={s.recentNewsInner}>
-                                <Link to={'/news'} className={s.recentNewsTitle}>{lastNews[1].title}</Link>
-                                <div className={s.recentNewsDate}>21.08.2022</div>
-                            </div>
-                        </div>
-                        <div className={s.recentNewsWrapper}>
-                            <div className={s.recentNewsImage} style={{backgroundImage: `url(${lastNews[2].image})`}}>
-                            </div>
-                            <div className={s.recentNewsInner}>
-                                <Link to={'/news'} className={s.recentNewsTitle}>{lastNews[2].title}</Link>
-                                <div className={s.recentNewsDate}>21.08.2022</div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div className={s.newsTags}>
-                        <h4 className={s.newsSideBarTitle}>Теги</h4>
-                        <div className={s.newsTagsItems}>
-                            {
-                                lastNews.map(m=>{
-                                    return (
-                                       <span key={m.id}>{m.tags}</span>
-                                    )
-                                })
-                            }
-                        </div>
-
-                    </div>
-                </div>
+                <Sidebar/>
             </div>
         </div>
     );
