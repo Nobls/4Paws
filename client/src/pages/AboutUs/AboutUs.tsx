@@ -4,6 +4,22 @@ import paw from '../../images/Vector2.png';
 import {Link} from "react-router-dom";
 import Reviews from "../../components/reviews/Reviews";
 
+
+const images = [
+    {
+        original: 'https://picsum.photos/id/1018/1000/600/',
+        thumbnail: 'https://picsum.photos/id/1018/250/150/',
+    },
+    {
+        original: 'https://picsum.photos/id/1015/1000/600/',
+        thumbnail: 'https://picsum.photos/id/1015/250/150/',
+    },
+    {
+        original: 'https://picsum.photos/id/1019/1000/600/',
+        thumbnail: 'https://picsum.photos/id/1019/250/150/',
+    },
+];
+
 const AboutUs = () => {
     return (
         <div>
