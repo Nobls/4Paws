@@ -2007,6 +2007,13 @@
   dependencies:
     "@types/react" "*"
 
+"@types/react-image-gallery@^1.0.5":
+  "integrity" "sha512-CjIjFXmV7zGRO/FkdtPK31Rwj0ud7Xz/9e5o4DCX2Lx96jR8+0xCmKeUAQQVN3pKc6jUjOC0f/aEylhKg8vhAw=="
+  "resolved" "https://registry.npmjs.org/@types/react-image-gallery/-/react-image-gallery-1.0.5.tgz"
+  "version" "1.0.5"
+  dependencies:
+    "@types/react" "*"
+
 "@types/react-slick@^0.23.10":
   "integrity" "sha512-ZiqdencANDZy6sWOWJ54LDvebuXFEhDlHtXU9FFipQR2BcYU2QJxZhvJPW6YK7cocibUiNn+YvDTbt1HtCIBVA=="
   "resolved" "https://registry.npmjs.org/@types/react-slick/-/react-slick-0.23.10.tgz"

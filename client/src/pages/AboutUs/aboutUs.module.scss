@@ -90,3 +90,18 @@ h2 {
     }
   }
 }
+
+.aboutUsGalleryWrapper {
+  @extend .container;
+  display: flex;
+  justify-content: center;
+  width: 1200px;
+  margin-bottom: 100px;
+}
+
+
+
+
+
+
+
