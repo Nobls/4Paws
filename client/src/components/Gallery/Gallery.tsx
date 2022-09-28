@@ -22,7 +22,6 @@ const Gallery = () => {
         if (action === 'next-image'){
             //setData({img: galleryFooter[i + 1] , i: i + 1})
         }
-        console.log(tempImage)
 
     }
 

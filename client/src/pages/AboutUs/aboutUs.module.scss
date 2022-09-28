@@ -91,29 +91,6 @@ h2 {
   }
 }
 
-.aboutUsGalleryWrapper {
-  @extend .container;
-  display: flex;
-  justify-content: center;
-  width: 1200px;
-  margin-bottom: 100px;
-  //position: relative;
-}
-
-.aboutUsArrowLeft{
-  position: absolute;
-  bottom: 265px;
-  left: 50px;
-  z-index: 5;
-}
-
-.aboutUsArrowRight{
-  position: absolute;
-  bottom: 265px;
-  right: 50px;
-  z-index: 5;
-}
-
 
 
 
