@@ -133,6 +133,8 @@ export type ServicesType = {
     alt: string
 }
 
+export type Gallery = string[]
+
 
 export const banner: BannerType[] = [
     {
@@ -457,6 +459,15 @@ export const galleryFooter: GalleryFooterType[] = [
         image: photoGallery6,
         alt: 'photoGallery',
     },
+]
+
+export const gallery: string[] = [
+    'https://cdn.pixabay.com/photo/2018/10/01/09/21/pets-3715733_960_720.jpg',
+    'https://cdn.pixabay.com/photo/2018/01/09/11/04/dog-3071334_960_720.jpg',
+    'https://cdn.pixabay.com/photo/2018/03/27/17/25/cat-3266673_960_720.jpg',
+    'https://cdn.pixabay.com/photo/2019/08/25/13/34/dogs-4429513_960_720.jpg',
+    'https://cdn.pixabay.com/photo/2017/08/29/01/22/dogs-2691871_960_720.jpg',
+    'https://cdn.pixabay.com/photo/2020/04/09/11/42/dogs-5021084_960_720.jpg',
 ]
 
 export const ourTeam: [{ cynologist: SpecializationTeamType[] }, { veterinarian: SpecializationTeamType[] }, { callCenter: SpecializationTeamType[] }] = [
