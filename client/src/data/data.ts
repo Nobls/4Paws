@@ -1,5 +1,5 @@
-import banner1 from '../images/bannerImages/b1.png'
-import banner2 from '../images/bannerImages/b2.png'
+import banner1 from '../images/bannerImages/bannerNew01.png'
+import banner2 from '../images/bannerImages/bannerNew02.png'
 import assurance from '../images/adventageImages/01.png'
 import price from '../images/adventageImages/02.png'
 import quality from '../images/adventageImages/03.png'

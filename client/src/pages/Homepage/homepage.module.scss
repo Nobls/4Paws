@@ -85,7 +85,8 @@
 }
 
 .bannersBg {
-  background-image: url("../../images/background/bg03.png");
+  //background-image: url("../../images/background/bg03.png");
+  background: $color-accent-dark;
 }
 
 .componentBg{
