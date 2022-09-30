@@ -1,5 +1,7 @@
 import banner1 from '../images/bannerImages/bannerNew01.png'
 import banner2 from '../images/bannerImages/bannerNew02.png'
+import banner3 from '../images/bannerImages/bannerNew03.png'
+import banner4 from '../images/bannerImages/bannerNew04.png'
 import assurance from '../images/adventageImages/01.png'
 import price from '../images/adventageImages/02.png'
 import quality from '../images/adventageImages/03.png'
@@ -146,6 +148,16 @@ export const banner: BannerType[] = [
         id: 2,
         image: banner2,
         alt: 'banner2'
+    },
+    {
+        id: 3,
+        image: banner3,
+        alt: 'banner3'
+    },
+    {
+        id: 4,
+        image: banner4,
+        alt: 'banner4'
     },
 ];
 
