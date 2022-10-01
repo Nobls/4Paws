@@ -6,7 +6,7 @@ import {Link} from "react-router-dom";
 
 const GoodsCard = ({title,image,alt, weight, type, country, price,descriptions}:PopularsGoodsType) => {
     return (
-        <div className={s.cardWrapper}>
+        <div className={s.goodsCardWrapper}>
             <Link className={s.goodsTitleWrapper} to={"/"}>
                 <h4 className={s.goodsTitle}>{title}</h4>
             </Link>

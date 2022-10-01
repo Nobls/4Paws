@@ -1,17 +1,19 @@
 @import "src/common/extends";
 @import "src/common/variables";
 
-.cardWrapper {
+.goodsCardWrapper {
   position: relative;
   width: 400px;
   height: 400px;
   //border: 2px solid #666666;
   margin: 10px;
   padding: 15px;
-  background-color: #eeece9;
-  border-radius: 15px;
-  box-shadow: 0 0 6px 1px rgba(34, 60, 80, 0.4);
-  transition: .3s all;
+  //background-color: #eeece9;
+  background-color: $backgroundCart;
+  border-radius: $borderRadius;
+  //box-shadow: 0 0 6px 1px rgba(34, 60, 80, 0.4);
+  box-shadow: $boxShadow;
+  transition: $transition03;
 
   .goodsTitleWrapper {
     text-decoration: none;
@@ -52,7 +54,7 @@
         text-decoration: none;
         border-radius: 5px;
         font-weight: bold;
-        transition: all .5s;
+        transition: $transition05;
         border: none;
         cursor: pointer;
 
@@ -70,16 +72,16 @@
           z-index: 1;
           right: 8px;
           top: 8px;
-          transition: .5s;
+          transition: $transition05;
         }
 
         &:hover {
           background-color: $color-accent-lite;
-          transition: all .5s;
+          transition: $transition05;
 
           span {
             color: white;
-            transition: .5s;
+            transition: $transition05;
           }
 
           img {
@@ -118,15 +120,16 @@
 
   &:hover {
     //background-color: #ffffff;
-    background-color: white;
+    //background-color: white;
+    background-color: $backgroundCartHover;
     box-shadow: 0 0 8px 3px rgba(34, 60, 80, 0.4);
-    transition: .3s all;
+    transition: $transition03;
 
     .goodsTitleWrapper {
 
       .goodsTitle {
         color: $color-accent-dark;
-        transition: .3s all;
+        transition: $transition03;
 
         &:hover {
           color: $color-accent-lite;
