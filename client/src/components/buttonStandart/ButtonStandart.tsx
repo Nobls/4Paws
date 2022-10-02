@@ -4,17 +4,15 @@ import paw from "../../images/Vector2.png";
 
 export type PropsType = {
     title: string;
-    //onclick: () => void;
+    onclick?: () => void;
 }
 
-const ButtonStandart = ({title}:PropsType) => {
+const ButtonStandart = ({title,onclick}:PropsType) => {
     return (
-        <div className={s.buttonWrapper}>
-            <button className={s.button}>
+            <button className={s.button} onClick={onclick}>
                 <span>{title}</span>
                 <img src={paw} alt="paw"/>
             </button>
-        </div>
     );
 };
 

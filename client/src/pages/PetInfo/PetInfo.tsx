@@ -10,6 +10,13 @@ const PetInfo = () => {
     const buttonTitleRegister = 'Сохранить';
     const buttonTitleSavePhoto = 'Добавить фото';
 
+    const addText = () => {
+        console.log('Add Text')
+    }
+    const addText2 = () => {
+        console.log('Add Text2')
+    }
+
     return (
         <div className={s.petInfoBg}>
             <h1>Электронная карта питомца</h1>
@@ -46,10 +53,10 @@ const PetInfo = () => {
                         {/*    <span className={s.downloadPhotoTitle}>Добавить фото</span>*/}
                         {/*    <img src={paw} alt="paw"/>*/}
                         {/*</button>*/}
-                        <ButtonStandart title={buttonTitleSavePhoto}/>
+                        <ButtonStandart title={buttonTitleSavePhoto} onclick={addText}/>
                     </div>
                     <div className={s.buttonWrapper}>
-                        <ButtonStandart title={buttonTitleRegister}/>
+                        <ButtonStandart title={buttonTitleRegister} onclick={addText2}/>
                     </div>
                 </div>
             </div>

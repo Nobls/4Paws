@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import s from './servicesCard.module.scss';
 import {ServicesType} from "../../data/data";
 import {ModalServices} from "../modalServices/ModalServices";
-import paw from "../../images/Vector2.png";
+import paw from "../../images/pawBig.png";
 import ButtonStandart from "../buttonStandart/ButtonStandart";
 
 type PropsType = {
@@ -11,11 +11,13 @@ type PropsType = {
     image: any
     alt: string
     description: string
-    descriptionModal:string
+    descriptionModal: string
     services: ServicesType[]
 }
 
-export const ServicesCard = ({id, alt, image, title, description, services,descriptionModal}: PropsType) => {
+export const ServicesCard = ({id, alt, image, title, description, services, descriptionModal}: PropsType) => {
+
+    const order = 'Заказать'
 
     const [modalActive, setModalActive] = useState(false)
     const modalFilter = () => {
@@ -29,27 +31,11 @@ export const ServicesCard = ({id, alt, image, title, description, services,descr
     return (
         <div key={id} className={s.servicesItem}>
             <h4 className={s.servicesItemTitle}>{title}</h4>
-            <div className={s.servicesImage} style={{backgroundImage: `url(${image})`}}>
-                {/*<img className={s.servicesImage} src={image} alt={alt}/>*/}
-            </div>
-
+            <div className={s.servicesImage} style={{backgroundImage: `url(${image})`}}></div>
             <p className={s.servicesDescription}>{description}</p>
-
             <div className={s.buttonBlock}>
-                    {/*<button className={s.learnMore} onClick={allModalFunction}>*/}
-                    {/*    <span>Узнать больше</span>*/}
-                    {/*    <img src={paw} alt="paw"/>*/}
-                    {/*</button>*/}
-                <div style={{display:'flex'}}>
-                    <div style={{display:'block'}}>
-                        <ButtonStandart title={'Заказать'} />
-                    </div>
-                    <div style={{display:'block'}}>
-                        <ButtonStandart title={'Узнать больше'} />
-                    </div>
-                </div>
-
-
+                <div className={s.learnMore} onClick={allModalFunction}>Узнать больше <img src={paw} alt="paws"/></div>
+                <ButtonStandart title={order}/>
             </div>
 
             <ModalServices
@@ -61,43 +47,5 @@ export const ServicesCard = ({id, alt, image, title, description, services,descr
                 description={descriptionModal}
             />
         </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        // <div key={id} className={s.servicesItem}>
-        //     <h4 className={s.servicesItemTitle}>{title}</h4>
-        //     <img className={s.servicesImage} src={image} alt={alt}/>
-        //     <p className={s.servicesDescription}>{description}</p>
-        //     <ModalServices
-        //         modalActive={modalActive}
-        //         setModalActive={setModalActive}
-        //         alt={alt}
-        //         image={image}
-        //         title={title}
-        //         description={descriptionModal}
-        //     />
-        //     <button className={s.learnMore} onClick={allModalFunction}>
-        //         <span>Узнать больше об услуге</span>
-        //         <img src={paw} alt="paw"/>
-        //     </button>
-        // </div>
     );
 };
