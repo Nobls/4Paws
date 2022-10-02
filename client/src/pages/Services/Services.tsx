@@ -32,19 +32,19 @@ const Services = () => {
                             )
                         })
                     }
-                    <div className={s.servicesFeedbackWrapper}>
-                        <h3 className={s.servicesFeedbackTitle}>Оставить отзыв</h3>
-                        <form className={s.servicesFeedbackFrom} action="">
-                            <textarea className={s.servicesFeedbackTextarea} name="Ваш отзыв" rows={5} placeholder={'Ваш отзыв'}></textarea>
-                            <button className={s.servicesFeedbackButton}>
-                                <span>Оставить отзыв</span>
-                                <img src={paw} alt="paw"/>
-                            </button>
-                        </form>
-                    </div>
+                    {/*<div className={s.servicesFeedbackWrapper}>*/}
+                    {/*    <h3 className={s.servicesFeedbackTitle}>Оставить отзыв</h3>*/}
+                    {/*    <form className={s.servicesFeedbackFrom} action="">*/}
+                    {/*        <textarea className={s.servicesFeedbackTextarea} name="Ваш отзыв" rows={5} placeholder={'Ваш отзыв'}></textarea>*/}
+                    {/*        <button className={s.servicesFeedbackButton}>*/}
+                    {/*            <span>Оставить отзыв</span>*/}
+                    {/*            <img src={paw} alt="paw"/>*/}
+                    {/*        </button>*/}
+                    {/*    </form>*/}
+                    {/*</div>*/}
                 </div>
             </div>
-            <Reviews/>
+            {/*<Reviews/>*/}
         </div>
     );
 };

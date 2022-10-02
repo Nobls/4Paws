@@ -4,6 +4,7 @@ import paw from "../../images/Vector2.png";
 
 export type PropsType = {
     title: string;
+    //onclick: () => void;
 }
 
 const ButtonStandart = ({title}:PropsType) => {
