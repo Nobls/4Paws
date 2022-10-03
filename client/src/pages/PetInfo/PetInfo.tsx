@@ -3,16 +3,13 @@ import s from './petInfo.module.scss';
 import petPhoto from '../../images/pet.png';
 //import paw from "../../images/Vector2.png";
 import ButtonStandart from "../../components/buttonStandart/ButtonStandart";
+import paw from "../../images/pawBig.png";
 
 
 const PetInfo = () => {
 
     const buttonTitleRegister = 'Сохранить';
-    const buttonTitleSavePhoto = 'Добавить фото';
-
-    const addText = () => {
-        console.log('Add Text')
-    }
+    
     const addText2 = () => {
         console.log('Add Text2')
     }
@@ -30,7 +27,7 @@ const PetInfo = () => {
                     <div className={s.petInfoAgeBlockItems}>
                         <label className={s.petInfoAgeBlockItemsWrapper}>
                             <span className={s.petInfoAgeBlockItemTitle}>Возраст</span>
-                            <input className={s.petInfoAgeBlockItemInput} type="text"/>
+                            <input className={s.petInfoAgeBlockItemInput} type="number"/>
                         </label>
                         <label className={s.petInfoAgeBlockItemsWrapper}>
                             <span className={s.petInfoSexBlockItemTitle}>Пол</span>
@@ -40,20 +37,21 @@ const PetInfo = () => {
                             </select>
                         </label>
                     </div>
-                    <label className={s.electronicCardWrapper}>
-                        <input className={s.electronicCardInput} type="checkbox"/>
-                        <span className={s.electronicCardTitle}>Завести электронную карту</span>
-                    </label>
+                    <div className={s.electronicCardWrapper}>
+                        <label className={s.electronicCardLabel}>
+                            <input className={s.electronicCardInput} type="checkbox"/>
+                            <span className={s.electronicCardTitle}>Завести электронную карту</span>
+                        </label>
+                    </div>
+
                 </div>
 
                 <div className={s.petPhotoWrapper}>
-                    <img src={petPhoto} alt="pet"/>
+                    <img className={s.petPhoto} src={petPhoto} alt="pet"/>
                     <div className={s.buttonWrapper}>
-                        <ButtonStandart title={buttonTitleSavePhoto} onclick={addText}/>
+                        <div className={s.addPhoto}>Добавить фото<img src={paw} alt="paws"/></div>
                     </div>
-                    <div className={s.buttonWrapper}>
                         <ButtonStandart title={buttonTitleRegister} onclick={addText2}/>
-                    </div>
                 </div>
             </div>
         </div>
