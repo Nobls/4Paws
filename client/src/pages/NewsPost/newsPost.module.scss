@@ -10,20 +10,13 @@
   top: -355px;
 
   .newsPostTitle {
-    position: absolute;
+    @extend .pageTitle;
     bottom: 60px;
     right: 80px;
-    font-size: 60px;
-    z-index: 2;
-    color: white;
-    line-height: 1.3;
 
     .newsPostSpan {
       @extend .bgButtonHover;
-      color: #eb5837;
-      padding: 0 40px 10px;
-      display: inline-flex;
-      font-size: 60px;
+      @extend .spanTitle;
     }
   }
 }
@@ -49,20 +42,21 @@
         background-repeat: no-repeat;
         width: 100%;
         height: 500px;
+        border-radius: $borderRadius5;
       }
 
       .newsPostTitle {
         font-size: 35px;
         font-weight: 900;
-        color: #666666;
-        transition: all .3s;
+        color: $color-text;
+        transition: $transition03;
         margin: 35px 0;
         text-decoration: none;
         display: block;
 
         &:hover {
           color: $color-accent-lite;
-          transition: all .3s;
+          transition: $transition03;
         }
       }
 
@@ -81,7 +75,8 @@
       }
 
       .newsPostButtonOpen {
-        display: block;
+        display: flex;
+        align-items: center;
         text-decoration: none;
         z-index: 10;
         left: 235px;
@@ -93,13 +88,13 @@
           width: 20px;
           height: 20px;
           margin-left: 10px;
-          transition: all .3s;
+          transition: $transition03;
         }
 
         &:hover {
           img {
             transform: scale(1.2);
-            transition: all .3s;
+            transition: $transition03;
           }
         }
       }
@@ -114,7 +109,7 @@
 
   .commentsTitle {
     font-size: 40px;
-    color: #666666;
+    color: $color-text;
     margin: 50px 0 50px 0;
   }
 
@@ -124,7 +119,7 @@
     margin-bottom: 50px;
     .commentsUserPhoto{
       margin-right: 25px;
-      border-radius: 5px;
+      border-radius: $borderRadius5;
     }
 
     .commentsWrapper{
@@ -154,7 +149,7 @@
 
   .postCommentTitle{
     font-size: 40px;
-    color: #666666;
+    color: $color-text;
     margin: 30px 0 30px 0;
   }
 
@@ -166,9 +161,6 @@
     .postCommentTextarea{
       margin-bottom: 25px;
       padding: 15px;
-      border-radius: 5px;
-      border: solid 1px #4a4a4a;
-      outline-color: #4a4a4a;
       @extend .bgInput;
     }
 
@@ -176,14 +168,7 @@
       margin-bottom: 25px;
       height: 50px;
       padding: 10px;
-      border-radius: 5px;
-      border: solid 1px #4a4a4a;
-      outline-color: #4a4a4a;
       @extend .bgInput;
-    }
-
-    .postCommentButton{
-
     }
   }
 }

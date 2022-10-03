@@ -12,11 +12,11 @@
   }
 
   .newsCategories {
-    //background-image: url("../../images/background/bgGray.png");
-    background: #b0afaf24;
+    background: $backgroundSidebar;
     background-size: cover;
     padding: 10px;
     margin-bottom: 50px;
+    border-radius: $borderRadius5;
 
     .newsCategoriesItems {
       padding: 0;
@@ -33,9 +33,9 @@
 
         .newsCategoriesLink{
           text-decoration: none;
-          color: #666666;
+          color: $color-text;
           font-size: 20px;
-          transition: all .3s;
+          transition: $transition03;
 
           .newsCategoriesDots{
             width: 100%;
@@ -47,32 +47,28 @@
             background-size: 8px 1px;
             background-repeat: repeat-x;
             position: absolute;
-            transition: all .3s;
+            transition: $transition03;
           }
 
           .newsCategoriesCount{
             font-size: 20px;
             float: right;
-            color: #666666;
+            color: $color-text;
             position: relative;
             padding-left: 2px;
             bottom: 0;
-            transition: all .3s;
+            transition: $transition03;
           }
         }
 
         &:hover{
-          .newsCategoriesLink{
+          .newsCategoriesLink .newsCategoriesCount{
             color: $color-accent-dark;
-            transition: all .3s;
+            transition: $transition03;
           }
           .newsCategoriesDots{
             background-image: linear-gradient(to right,$color-accent-dark 10%,rgba(255,255,255,0) 0);
-            transition: all .3s;
-          }
-          .newsCategoriesCount{
-            color: $color-accent-dark;
-            transition: all .3s;
+            transition: $transition03;
           }
         }
       }
@@ -83,10 +79,11 @@
   .recentNews {
     display: flex;
     flex-direction: column;
-    background: #b0afaf24;
+    background: $backgroundSidebar;
     background-size: cover;
     padding: 10px;
     margin-bottom: 50px;
+    border-radius: $borderRadius5;
 
     .recentNewsWrapper {
       display: flex;
@@ -100,7 +97,7 @@
         background-size: cover;
         background-position: center;
         margin-right: 20px;
-        border-radius: 5px;
+        border-radius: $borderRadius5;
       }
 
       .recentNewsInner {
@@ -108,7 +105,7 @@
 
         .recentNewsTitle {
           text-decoration: none;
-          color: #666666;
+          color: $color-text;
           font-size: 16px;
           padding: 20px 0;
           font-weight: 700;
@@ -123,9 +120,10 @@
   }
 
   .newsTags {
-    background: #b0afaf24;
+    background: $backgroundSidebar;
     background-size: cover;
     padding: 10px;
+    border-radius: $borderRadius5;
 
     .newsTagsItems{
       display: flex;

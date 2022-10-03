@@ -3,6 +3,7 @@ import s from './ourTeam.module.scss';
 import {Tab, TabList, TabPanel, Tabs} from "react-tabs";
 import {ourTeam} from "../../data/data";
 import paw from "../../images/Vector2.png";
+import {Link} from "react-router-dom";
 
 const OurTeam = () => {
 
@@ -48,10 +49,10 @@ const OurTeam = () => {
                                     })
                                 }
                                 <div className={s.ourTeamButtonWrapper}>
-                                    <button className={s.inServices}>
+                                    <Link to={'/services'} className={s.inServices}>
                                         <span>Перейти к услугам</span>
                                         <img src={paw} alt=""/>
-                                    </button>
+                                    </Link>
                                 </div>
                             </div>
                         </TabPanel>

@@ -31,18 +31,13 @@
         span {
           width: 75px;
         }
+
         input {
-          padding: 10px 15px;
-          border: solid 1px #4a4a4a;
-          border-radius: 5px;
-          color: #666666;
-          font-weight: 500;
-          outline-color: #4a4a4a;
-          background-image: url("../../images/background/bg1.png");
-          background-size: cover;
-          background-position-y: -130px;
+          width: 80%;
+          @extend .bgInput;
         }
       }
+
       .petInfoAgeBlockItems {
         display: flex;
         justify-content: space-between;
@@ -65,42 +60,18 @@
           .petInfoSexBlockItemInput {
             width: 70px;
             height: 41px;
-            padding: 10px 15px;
-            border: solid 1px #4a4a4a;
-            border-radius: 5px;
-            color: #666666;
-            font-weight: 500;
-            outline-color: #4a4a4a;
-            background-image: url("../../images/background/bg1.png");
-            background-size: cover;
-            background-position-y: -130px;
+            @extend .bgInput;
             font-size: 16px;
           }
 
           .petInfoAgeBlockItemInput {
             width: 70px;
-            padding: 10px 15px;
-            border: solid 1px #4a4a4a;
-            border-radius: 5px;
-            color: #666666;
-            font-weight: 500;
-            outline-color: #4a4a4a;
-            background-image: url("../../images/background/bg1.png");
-            background-size: cover;
-            background-position-y: -130px;
+            @extend .bgInput;
           }
         }
 
         input {
-          padding: 10px 15px;
-          border: solid 1px #4a4a4a;
-          border-radius: 5px;
-          color: #666666;
-          font-weight: 500;
-          outline-color: #4a4a4a;
-          background-image: url("../../images/background/bg1.png");
-          background-size: cover;
-          background-position-y: -130px;
+          @extend .bgInput;
         }
       }
 
@@ -111,6 +82,7 @@
           width: 15px;
           height: 15px;
         }
+
         .electronicCardTitle {
           margin-left: 10px;
           width: 100%;
@@ -118,30 +90,23 @@
       }
     }
   }
-
-  .petPhotoWrapper {
-    //margin-left: 100px;
-  }
 }
-
 
 .buttonWrapper {
   display: flex;
   justify-content: space-between;
   align-items: center;
   position: relative;
-  margin: 100px 0 100px 0;
-  border-radius: 5px;
+  margin: 25px 0 25px 0;
+  border-radius: $borderRadius5;
 
   .downloadPhoto {
     padding: 10px 20px;
-    //background-color: $color-accent-dark;
     background-color: white;
     text-decoration: none;
     font-weight: bold;
-    transition: all .5s;
+    transition: $transition05;
     border: 1px solid $color-accent-dark;
-    border-radius: 5px;
     cursor: pointer;
   }
 
@@ -159,17 +124,16 @@
     z-index: 1;
     right: 8px;
     top: 5px;
-    transition: .5s;
+    transition: $transition05;
   }
 
   &:hover {
-    //background-color: $color-accent-lite;
-    transition: all .5s;
-    border-radius: 5px;
+    transition: $transition05;
+    border-radius: $borderRadius5;
 
     .downloadPhotoTitle {
       color: $color-accent-dark;
-      transition: .5s;
+      transition: $transition05;
     }
 
     img {

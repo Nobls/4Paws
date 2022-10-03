@@ -1,28 +1,10 @@
-import React, {MouseEventHandler} from 'react';
+import React from 'react';
 import s from './aboutUs.module.scss';
 import paw from '../../images/Vector2.png';
 import {Link} from "react-router-dom";
 import Reviews from "../../components/reviews/Reviews";
-import ImageGallery from 'react-image-gallery';
 import "react-image-gallery/styles/scss/image-gallery.scss";
 import Gallery from "../../components/Gallery/Gallery";
-
-
-const images = [
-    {
-        original: 'https://picsum.photos/id/1018/1000/600/',
-        thumbnail: 'https://picsum.photos/id/1018/250/150/',
-
-    },
-    {
-        original: 'https://picsum.photos/id/1015/1000/600/',
-        thumbnail: 'https://picsum.photos/id/1015/250/150/',
-    },
-    {
-        original: 'https://picsum.photos/id/1019/1000/600/',
-        thumbnail: 'https://picsum.photos/id/1019/250/150/',
-    },
-];
 
 
 const AboutUs = () => {

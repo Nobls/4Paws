@@ -34,16 +34,7 @@
           }
 
           .userInfoItemInput {
-            width: 100%;
-            padding: 10px 15px;
-            border: solid 1px #4a4a4a;
-            border-radius: 5px;
-            color: #666666;
-            font-weight: 500;
-            outline-color: #4a4a4a;
-            background-image: url("../../images/background/bg1.png");
-            background-size: cover;
-            background-position-y: -130px;
+            @extend .bgInput;
           }
         }
       }
@@ -66,17 +57,9 @@
         }
 
         .userInfoHomeInput {
+          @extend .bgInput;
           width: 70px;
           margin-left: 10px;
-          padding: 10px 15px;
-          border: solid 1px #4a4a4a;
-          border-radius: 5px;
-          color: #666666;
-          font-weight: 500;
-          outline-color: #4a4a4a;
-          background-image: url("../../images/background/bg1.png");
-          background-size: cover;
-          background-position-y: -130px;
         }
       }
     }
@@ -91,7 +74,6 @@
     img {
       width: 150px;
       height: 150px;
-      //border: 1px solid #4a4a4a;
       margin-bottom: 30px;
     }
 
@@ -101,19 +83,19 @@
       align-items: center;
       position: relative;
       margin-bottom: 50px;
-      border-radius: 5px;
+      border-radius: $borderRadius5;
 
       .downloadPhoto {
         padding: 10px 20px;
-        //background-color: $color-accent-dark;
         background-color: white;
         text-decoration: none;
         font-weight: bold;
-        transition: all .5s;
+        transition: $transition05;
         border: 1px solid $color-accent-dark;
-        border-radius: 5px;
+        border-radius: $borderRadius5;
         cursor: pointer;
       }
+
       .downloadPhotoTitle {
         z-index: 3;
         position: relative;
@@ -128,17 +110,16 @@
         z-index: 1;
         right: 8px;
         top: 5px;
-        transition: .5s;
+        transition: $transition05;
       }
 
       &:hover {
-        //background-color: $color-accent-lite;
-        transition: all .5s;
+        transition: $transition05;
         border-radius: 5px;
 
         .downloadPhotoTitle {
           color: $color-accent-dark;
-          transition: .5s;
+          transition: $transition05;
         }
 
         img {
@@ -155,15 +136,15 @@
       justify-content: space-between;
       align-items: center;
       position: relative;
-      border-radius: 5px;
+      border-radius: $borderRadius5;
 
       .buttonRegister {
         padding: 10px 20px;
         background-color: $color-accent-dark;
         text-decoration: none;
-        border-radius: 5px;
+        border-radius: $borderRadius5;
         font-weight: bold;
-        transition: all .5s;
+        transition: $transition05;
         border: none;
         cursor: pointer;
       }
@@ -182,17 +163,17 @@
         z-index: 1;
         right: 8px;
         top: 5px;
-        transition: .5s;
+        transition: $transition05;
       }
 
       &:hover {
         background-color: $color-accent-lite;
-        transition: all .5s;
-        border-radius: 5px;
+        transition: $transition05;
+        border-radius: $borderRadius5;
 
         span {
           color: white;
-          transition: .5s;
+          transition: $transition05;
         }
 
         img {

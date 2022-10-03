@@ -49,10 +49,6 @@ const PetInfo = () => {
                 <div className={s.petPhotoWrapper}>
                     <img src={petPhoto} alt="pet"/>
                     <div className={s.buttonWrapper}>
-                        {/*<button className={s.downloadPhoto}>*/}
-                        {/*    <span className={s.downloadPhotoTitle}>Добавить фото</span>*/}
-                        {/*    <img src={paw} alt="paw"/>*/}
-                        {/*</button>*/}
                         <ButtonStandart title={buttonTitleSavePhoto} onclick={addText}/>
                     </div>
                     <div className={s.buttonWrapper}>

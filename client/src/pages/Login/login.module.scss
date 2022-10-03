@@ -22,17 +22,8 @@
       margin-bottom: 20px;
 
       input {
-        width: 100%;
-        padding: 10px 15px;
+        @extend .bgInput;
         margin: 15px 0;
-        border: solid 1px #4a4a4a;
-        border-radius: 5px;
-        color: #666666;
-        font-weight: 500;
-        outline-color: #4a4a4a;
-        background-image: url("../../images/background/bg1.png");
-        background-size: cover;
-        background-position-y: -130px;
       }
     }
 
@@ -56,9 +47,9 @@
         padding: 10px 20px;
         background-color: $color-accent-dark;
         text-decoration: none;
-        border-radius: 5px;
+        border-radius: $borderRadius5;
         font-weight: bold;
-        transition: all .5s;
+        transition: $transition05;
         border: none;
         cursor: pointer;
 
@@ -76,21 +67,19 @@
           z-index: 1;
           right: 8px;
           top: 5px;
-          transition: .5s;
+          transition: $transition05;
         }
 
         &:hover {
           background-color: $color-accent-lite;
-          transition: all .5s;
+          transition: $transition05;
 
           span {
             color: white;
-            transition: .5s;
+            transition: $transition05;
           }
 
           img {
-            //right: 50px;
-            //transform: scale(1.1);
             transform: translate(-5px, 0px);
             width: 35px;
             height: 35px;

@@ -14,42 +14,42 @@
   justify-content: center;
   transform: scale(0);
   z-index: 10;
-  transition: all .3s ease;
+  transition: $transition03 ease;
 
   &.active {
     transform: scale(1);
-    transition: all .3s ease;
+    transition: $transition03;
   }
 }
 
 .modalContent {
   padding: 20px;
-  border-radius: 15px;
-  background-color: #eeece9;
+  border-radius: $borderRadius;
+  background-color: $backgroundCart;
   width: 80%;
   height: 90vh;
   position: relative;
-  box-shadow: 0 3px 6px 0 rgba(34, 60, 80, 0.4);
+  box-shadow: $boxShadow;
 
-  .modalContentInner{
-    .modalImg{
-      width: 70%;
+  .modalContentInner {
+    .modalImg {
+      width: 65%;
       float: left;
       margin: 4px 15px 5px 0;
     }
 
-    .modalDescription{
+    .modalDescription {
       font-size: 20px;
     }
   }
 
-  .modalTitle{
+  .modalTitle {
     @extend .title;
     margin: 50px 0;
     font-size: 30px;
   }
 
-  .orderService{
+  .orderService {
     position: absolute;
     bottom: 20px;
     right: 20px;
@@ -58,7 +58,7 @@
     text-decoration: none;
     border-radius: 5px;
     font-weight: bold;
-    transition: all .5s;
+    transition: $transition05;
     border: none;
     cursor: pointer;
 
@@ -81,16 +81,14 @@
 
     &:hover {
       background-color: $color-accent-lite;
-      transition: all .5s;
+      transition: $transition05;
 
       span {
         color: white;
-        transition: .5s;
+        transition: $transition05;
       }
 
       img {
-        //right: 50px;
-        //transform: scale(1.1);
         transform: translate(-5px, 0px);
         width: 40px;
         height: 40px;
@@ -98,5 +96,4 @@
       }
     }
   }
-
 }

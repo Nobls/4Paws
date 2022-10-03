@@ -10,10 +10,10 @@
     height: 520px;
     margin: 15px;
     padding: 15px;
-    background-color: #eeece9;
-    border-radius: 15px;
-    box-shadow: 0 0 6px 1px rgba(34, 60, 80, 0.4);
-    transition: .3s all ease;
+    background-color: $backgroundCart;
+    border-radius: $borderRadius;
+    box-shadow: $boxShadow;
+    transition: $transition03 ease;
 
     .servicesItemTitle{
       font-size: 25px;
@@ -53,23 +53,23 @@
         width: 20px;
         height: 20px;
         margin-left: 7px;
-        transition: all .3s;
+        transition: $transition03;
       }
       &:hover {
         img {
           transform: scale(1.2);
-          transition: all .3s;
+          transition: $transition03;
         }
       }
     }
 
     &:hover{
-      background-color: white;
-      box-shadow: 0 0 8px 3px rgba(34, 60, 80, 0.4);
+      background-color: $backgroundCartHover;
+      box-shadow: $boxShadowHover;
       transition: .3s all;
       .servicesItemTitle{
         color: $color-accent-dark;
-        transition: .3s all;
+        transition: $transition03;
       }
     }
   }

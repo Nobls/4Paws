@@ -27,7 +27,7 @@ const NewsPost = () => {
                         </div>
                         <Link to={'/news'} className={s.newsPostTitle}>{lastNews[4].title}</Link>
                         <p className={s.newsPostText}>{lastNews[4].description}</p>
-                        <Link to={'/newsPost'} className={s.newsPostButtonOpen}>
+                        <Link to={'/news'} className={s.newsPostButtonOpen}>
                             Назад
                             <img src={paw} alt="paws"/>
                         </Link>
@@ -58,7 +58,7 @@ const NewsPost = () => {
                             <span className={s.commentsDate}>{reviews[1].date}</span>
                         </div>
                         <p className={s.commentsText}>
-                            {reviews[1 ].text}
+                            {reviews[1].text}
                         </p>
                     </div>
                 </div>
@@ -67,13 +67,15 @@ const NewsPost = () => {
             <div className={s.postComment}>
                 <h3 className={s.postCommentTitle}>Оставить комментарий</h3>
                 <form className={s.postCommentForm}>
-                    <textarea className={s.postCommentTextarea} cols={30} rows={7} placeholder={'Ваш комментарий'}></textarea>
+                    <textarea className={s.postCommentTextarea} cols={30} rows={7}
+                              placeholder={'Ваш комментарий'}></textarea>
                     <input className={s.postCommentInput} type="text" placeholder={'Ваше Имя'}/>
                     <input className={s.postCommentInput} type="text" placeholder={'Ваш e-mail'}/>
-                    <ButtonStandart title={'Оставить комментарий'}/>
+                    <div>
+                        <ButtonStandart title={'Оставить комментарий'}/>
+                    </div>
                 </form>
             </div>
-
         </div>
     );
 };

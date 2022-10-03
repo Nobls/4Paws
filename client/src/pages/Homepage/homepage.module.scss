@@ -11,20 +11,14 @@
   top: -200px;
 
   .homePageTitle {
-    position: absolute;
+    @extend .pageTitle;
     bottom: 450px;
     right: 36px;
-    font-size: 60px;
-    z-index: 2;
-    color: white;
-    line-height: 1.3;
+
 
     .homePageSpan {
       @extend .bgButtonHover;
-      color: #eb5837;
-      padding: 0 40px 10px;
-      display: inline-flex;
-      font-size: 60px;
+      @extend .spanTitle;
     }
   }
 

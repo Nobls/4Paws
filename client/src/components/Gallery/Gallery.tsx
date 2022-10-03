@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import s from './gallery.module.scss'
-import {gallery, galleryFooter} from "../../data/data";
+import {gallery} from "../../data/data";
 
 
 const Gallery = () => {
@@ -39,15 +39,15 @@ const Gallery = () => {
                         <svg role="img" xmlns="http://www.w3.org/2000/svg" width="48px" height="48px"
                              viewBox="0 0 24 24"
                              aria-labelledby="backAltIconTitle" stroke="#eb5837"
-                             stroke-linejoin="miter" fill="none" color="#2329D6">
+                             fill="none" color="#2329D6">
                             <path d="M4 12l15-9v18z"/>
                         </svg>
                     </div>
                     <img className={s.modalImg} src={data.img} alt="image"/>
                     <div className={s.arrowNext} onClick={() => imageAction('next-image')}>
-                        <svg role="img" xmlns="http://www.w3.org/2000/svg" width="48px" height="48px" viewBox="0 0 24 24"
+                        <svg role="img" xmlns="http://www.w3.org/2000/svg" width="48px" height="48px"
+                             viewBox="0 0 24 24"
                              aria-labelledby="playIconTitle" stroke="#eb5837"
-                             stroke-width="1" stroke-linecap="square" stroke-linejoin="miter"
                              fill="none" color="#2329D6">
                             <path d="M20 12L5 21V3z"/>
                         </svg>
