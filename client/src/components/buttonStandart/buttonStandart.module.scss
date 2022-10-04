@@ -5,12 +5,12 @@
 .button {
   position: relative;
   padding: 15px 20px;
-  background-color: #eb5837;
+  background-color: $color-accent-dark;
   text-decoration: none;
-  border-radius: 5px;
+  border-radius: $borderRadius;
   border: none;
   font-weight: bold;
-  transition: all .5s;
+  transition: $transition03;
   cursor: pointer;
 
   span {
@@ -27,16 +27,16 @@
     z-index: 1;
     right: 8px;
     top: 7px;
-    transition: .5s;
+    transition: $transition03;
   }
 
   &:hover {
     background-color: $color-accent-lite;
-    transition: all .5s;
+    transition: $transition03;
 
     span {
       color: white;
-      transition: .5s;
+      transition: $transition03;
     }
 
     img {

@@ -41,28 +41,6 @@
 
     }
 
-    .learnMore{
-      color: $color-accent-dark;
-      font-size: 18px;
-      font-weight: 700;
-      align-self: center;
-      display: flex;
-      cursor: pointer;
-
-      img{
-        width: 20px;
-        height: 20px;
-        margin-left: 7px;
-        transition: $transition03;
-      }
-      &:hover {
-        img {
-          transform: scale(1.2);
-          transition: $transition03;
-        }
-      }
-    }
-
     &:hover{
       background-color: $backgroundCartHover;
       box-shadow: $boxShadowHover;

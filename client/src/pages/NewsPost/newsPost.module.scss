@@ -42,7 +42,7 @@
         background-repeat: no-repeat;
         width: 100%;
         height: 500px;
-        border-radius: $borderRadius5;
+        border-radius: $borderRadius;
       }
 
       .newsPostTitle {
@@ -74,7 +74,7 @@
         text-align: justify;
       }
 
-      .newsPostButtonOpen {
+      .newsPostButton {
         display: flex;
         align-items: center;
         text-decoration: none;
@@ -119,7 +119,7 @@
     margin-bottom: 50px;
     .commentsUserPhoto{
       margin-right: 25px;
-      border-radius: $borderRadius5;
+      border-radius: $borderRadius;
     }
 
     .commentsWrapper{

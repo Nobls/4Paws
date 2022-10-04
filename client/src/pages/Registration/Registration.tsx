@@ -1,6 +1,6 @@
 import React from 'react';
 import s from "./registration.module.scss";
-import paw from "../../images/Vector2.png";
+import ButtonStandart from "../../components/buttonStandart/ButtonStandart";
 
 
 const Registration = () => {
@@ -27,10 +27,7 @@ const Registration = () => {
                             <label className={s.labelObligatoryStar}> Я принимаю условия лицензионного соглашения <span
                                 className={s.obligatoryStar}>*</span></label>
                         </div>
-                        <button className={s.buttonRegistration}>
-                            <span>Зарегистрироваться</span>
-                            <img src={paw} alt="paw"/>
-                        </button>
+                        <ButtonStandart title={'Зарегистрироваться'}/>
                     </div>
                 </form>
             </div>

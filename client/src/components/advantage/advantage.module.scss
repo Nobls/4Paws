@@ -16,10 +16,9 @@
       height: 170px;
       display: flex;
       flex-direction: row;
-      background-color: #eeece9;
+      background-color: $backgroundCartHover;
       margin: 15px;
       border-radius: $borderRadius;
-      //box-shadow: 0 3px 6px 0 rgba(34, 60, 80, 0.4);
       box-shadow: $boxShadow;
       -webkit-touch-callout: none;
       -webkit-user-select: none;

@@ -1,8 +1,8 @@
 import React from 'react';
 import s from './goodsCard.module.scss'
 import {PopularsGoodsType} from "../../data/data";
-import paw from "../../images/Vector2.png";
 import {Link} from "react-router-dom";
+import ButtonStandart from "../buttonStandart/ButtonStandart";
 
 const GoodsCard = ({title,image,alt, weight, type, country, price,descriptions}:PopularsGoodsType) => {
     return (
@@ -26,10 +26,7 @@ const GoodsCard = ({title,image,alt, weight, type, country, price,descriptions}:
             <div className={s.goodsButtonPriceBlock}>
                 <p>{price} руб.</p>
                 <div className={s.goodsButtonWrapper}>
-                    <button className={s.addToBasket}>
-                        <span>Добавить в корзину</span>
-                        <img src={paw} alt="paw"/>
-                    </button>
+                    <ButtonStandart title={'Добавить в корзину'}/>
                 </div>
             </div>
             {/*<p className={s.goodsDescription}>{descriptions}</p>*/}

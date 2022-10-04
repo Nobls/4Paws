@@ -37,6 +37,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+
     .contactInfoTitle {
       font-size: 35px;
       color: white;
@@ -49,11 +50,14 @@
       flex-direction: column;
       font-size: 20px;
       color: white;
-      .contactPhones{
+
+      .contactPhones {
         display: flex;
-        .phones{
+
+        .phones {
           margin-left: 25px;
-          .phone{
+
+          .phone {
             text-decoration: none;
             color: white;
             display: block;
@@ -61,11 +65,12 @@
           }
         }
       }
-        a{
-          margin-left: 10px;
-          text-decoration: none;
-          color: white;
-          font-size: 20px;
+
+      a {
+        margin-left: 10px;
+        text-decoration: none;
+        color: white;
+        font-size: 20px;
       }
     }
   }
@@ -76,10 +81,12 @@
     width: 50%;
     flex-direction: column;
     align-items: center;
-    .writeUsTitle{
+
+    .writeUsTitle {
       font-size: 35px;
       margin-top: 70px;
     }
+
     .writeUsInputWrapper {
       width: 70%;
       display: flex;
@@ -89,7 +96,7 @@
         width: 100%;
         padding: 10px 15px;
         border: none;
-        border-radius: $borderRadius5;
+        border-radius: $borderRadius;
         color: $color-text;
         font-weight: 500;
         outline-color: $color-input;
@@ -101,60 +108,11 @@
         height: 410px;
         padding: 10px 15px;
         border: none;
-        border-radius: $borderRadius5;
+        border-radius: $borderRadius;
         color: $color-text;
         font-weight: 500;
         outline-color: $color-input;
         margin-bottom: 20px;
-      }
-
-      .writeUsButton {
-        width: 40%;
-        align-self: flex-end;
-        padding: 10px 20px;
-        background-color: $color-accent-dark;
-        text-decoration: none;
-        border-radius: $borderRadius5;
-        font-weight: bold;
-        transition: $transition05;
-        border: none;
-        cursor: pointer;
-        position: relative;
-
-        span {
-          z-index: 3;
-          position: relative;
-          font-size: 20px;
-          color: white;
-        }
-
-        img {
-          width: 30px;
-          height: 30px;
-          position: absolute;
-          z-index: 1;
-          right: 8px;
-          top: 9px;
-          transition: $transition05;
-        }
-
-        &:hover {
-          background-color: $color-accent-lite;
-          transition: $transition05;
-          border-radius: $borderRadius5;
-
-          span {
-            color: white;
-            transition: $transition05;
-          }
-
-          img {
-            transform: translate(-5px, 0px);
-            width: 35px;
-            height: 35px;
-            top: 2px;
-          }
-        }
       }
     }
   }

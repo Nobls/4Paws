@@ -99,10 +99,33 @@
   background-image: url("../images/background/bg1.png");
   background-size: cover;
   padding: 10px 15px;
-  border-radius: $borderRadius5;
+  border-radius: $borderRadius;
   border: solid 1px $color-input;
   outline-color: $color-input;
   color: $color-text;
   font-weight: 500;
-  //background-position-y: -130px;
+}
+.lastNewsContainer{
+  text-decoration: none;
+  background-color: $backgroundCart;
+  border-radius: $borderRadius;
+  transition: $transition03;
+  box-shadow: $boxShadow;
+  overflow: hidden;
+  position: relative;
+}
+.lastNewsTitle{
+  color: $color-accent-dark;
+  transition: $transition03;
+}
+
+.tabPanelItem{
+  min-height: 450px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  align-items: center;
+  justify-content: center;
+  margin: 10px 0;
 }

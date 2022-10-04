@@ -2,8 +2,8 @@ import React, {useState} from 'react';
 import s from './servicesCard.module.scss';
 import {ServicesType} from "../../data/data";
 import {ModalServices} from "../modalServices/ModalServices";
-import paw from "../../images/pawBig.png";
 import ButtonStandart from "../buttonStandart/ButtonStandart";
+import LowercaseButton from "../lowercaseButton/LowercaseButton";
 
 type PropsType = {
     id: number
@@ -34,7 +34,7 @@ export const ServicesCard = ({id, alt, image, title, description, services, desc
             <div className={s.servicesImage} style={{backgroundImage: `url(${image})`}}></div>
             <p className={s.servicesDescription}>{description}</p>
             <div className={s.buttonBlock}>
-                <div className={s.learnMore} onClick={allModalFunction}>Узнать больше <img src={paw} alt="paws"/></div>
+                <LowercaseButton title={'Узнать больше'} allModalFunction={allModalFunction}/>
                 <ButtonStandart title={order}/>
             </div>
 

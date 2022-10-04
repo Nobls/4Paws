@@ -1,6 +1,6 @@
 import React from 'react';
 import s from './modalServices.module.scss'
-import paw from "../../images/Vector2.png";
+import ButtonStandart from "../buttonStandart/ButtonStandart";
 
 type PropsType = {
     alt: string
@@ -20,10 +20,9 @@ export const ModalServices = ({alt, image, title, description, modalActive, setM
                     <img className={s.modalImg} src={image} alt={alt}/>
                     <p className={s.modalDescription}>{description}</p>
                 </div>
-                <button className={s.orderService}>
-                    <span>Заказать услугу</span>
-                    <img src={paw} alt="paw"/>
-                </button>
+                <div className={s.orderService}>
+                    <ButtonStandart title={'Заказать услугу'}/>
+                </div>
             </div>
         </div>
     );

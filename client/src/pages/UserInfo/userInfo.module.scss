@@ -71,118 +71,15 @@
     margin: 0 0 0 100px;
     align-items: center;
 
-    img {
+
+    .userPhoto {
       width: 150px;
       height: 150px;
       margin-bottom: 30px;
     }
 
-    .buttonWrapper {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      position: relative;
-      margin-bottom: 50px;
-      border-radius: $borderRadius5;
-
-      .downloadPhoto {
-        padding: 10px 20px;
-        background-color: white;
-        text-decoration: none;
-        font-weight: bold;
-        transition: $transition05;
-        border: 1px solid $color-accent-dark;
-        border-radius: $borderRadius5;
-        cursor: pointer;
-      }
-
-      .downloadPhotoTitle {
-        z-index: 3;
-        position: relative;
-        font-size: 16px;
-        color: $color-accent-lite;
-      }
-
-      img {
-        width: 30px;
-        height: 30px;
-        position: absolute;
-        z-index: 1;
-        right: 8px;
-        top: 5px;
-        transition: $transition05;
-      }
-
-      &:hover {
-        transition: $transition05;
-        border-radius: 5px;
-
-        .downloadPhotoTitle {
-          color: $color-accent-dark;
-          transition: $transition05;
-        }
-
-        img {
-          transform: translate(-5px, 0px);
-          width: 35px;
-          height: 35px;
-          top: 2px;
-        }
-      }
-    }
-
-    .buttonWrapper {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      position: relative;
-      border-radius: $borderRadius5;
-
-      .buttonRegister {
-        padding: 10px 20px;
-        background-color: $color-accent-dark;
-        text-decoration: none;
-        border-radius: $borderRadius5;
-        font-weight: bold;
-        transition: $transition05;
-        border: none;
-        cursor: pointer;
-      }
-
-      span {
-        z-index: 3;
-        position: relative;
-        font-size: 16px;
-        color: white;
-      }
-
-      img {
-        width: 30px;
-        height: 30px;
-        position: absolute;
-        z-index: 1;
-        right: 8px;
-        top: 5px;
-        transition: $transition05;
-      }
-
-      &:hover {
-        background-color: $color-accent-lite;
-        transition: $transition05;
-        border-radius: $borderRadius5;
-
-        span {
-          color: white;
-          transition: $transition05;
-        }
-
-        img {
-          transform: translate(-5px, 0px);
-          width: 35px;
-          height: 35px;
-          top: 2px;
-        }
-      }
+    .buttonWrapper{
+      margin-bottom: 25px;
     }
   }
 }

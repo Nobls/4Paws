@@ -43,13 +43,13 @@
       }
 
 
-      .buttonLogin {
+      /*.buttonLogin {
         padding: 10px 20px;
         background-color: $color-accent-dark;
         text-decoration: none;
-        border-radius: $borderRadius5;
+        border-radius: $borderRadius;
         font-weight: bold;
-        transition: $transition05;
+        transition: $transition03;
         border: none;
         cursor: pointer;
 
@@ -67,16 +67,16 @@
           z-index: 1;
           right: 8px;
           top: 5px;
-          transition: $transition05;
+          transition: $transition03;
         }
 
         &:hover {
           background-color: $color-accent-lite;
-          transition: $transition05;
+          transition: $transition03;
 
           span {
             color: white;
-            transition: $transition05;
+            transition: $transition03;
           }
 
           img {
@@ -86,7 +86,7 @@
             top: 2px;
           }
         }
-      }
+      }*/
     }
   }
 }

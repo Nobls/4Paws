@@ -78,7 +78,6 @@
         width: 270px;
 
         .electronicCardLabel {
-          //display: flex;
 
           .electronicCardInput {
             width: 15px;
@@ -112,39 +111,8 @@
         align-items: center;
         position: relative;
         margin: 25px 0 25px 0;
-        border-radius: $borderRadius5;
+        border-radius: $borderRadius;
 
-        .downloadPhoto {
-          padding: 10px 20px;
-          background-color: white;
-          text-decoration: none;
-          font-weight: bold;
-          transition: $transition05;
-          border: 1px solid $color-accent-dark;
-          cursor: pointer;
-        }
-
-        .addPhoto {
-          color: $color-accent-dark;
-          font-size: 18px;
-          font-weight: 700;
-          align-self: center;
-          display: flex;
-          cursor: pointer;
-
-          img{
-            width: 20px;
-            height: 20px;
-            margin-left: 7px;
-            transition: $transition03;
-          }
-          &:hover {
-            img {
-              transform: scale(1.2);
-              transition: $transition03;
-            }
-          }
-        }
       }
     }
   }

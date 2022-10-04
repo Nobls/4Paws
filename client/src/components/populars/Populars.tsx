@@ -9,10 +9,19 @@ const Populars = () => {
             <h3 className={s.popularsTile}>Популярные товары</h3>
             <div className={s.wrapper}>
                 {
-                    popularsGoods.map(m=>{
+                    popularsGoods.map(m => {
                         return (
-                            <GoodsCard key={m.id} title={m.title} image={m.image} alt={m.alt} weight={m.weight} type={m.type} country={m.country} compound={m.compound} price={m.price}
-                                       descriptions={m.descriptions}/>
+                            <GoodsCard key={m.id}
+                                       title={m.title}
+                                       image={m.image}
+                                       alt={m.alt}
+                                       weight={m.weight}
+                                       type={m.type}
+                                       country={m.country}
+                                       compound={m.compound}
+                                       price={m.price}
+                                       descriptions={m.descriptions}
+                            />
                         );
                     })
                 }

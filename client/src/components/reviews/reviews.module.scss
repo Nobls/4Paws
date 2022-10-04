@@ -16,7 +16,7 @@
         width: 150px;
         height: 150px;
         margin-right: 15px;
-        border: 5px solid #eb5837;
+        border: 5px solid $color-accent-dark;
         border-radius: 15px;
       }
       .reviewUser{
@@ -32,7 +32,7 @@
       }
 
       .reviewDate{
-        color: #eb5837;
+        color: $color-accent-dark;
       }
 
       .reviewRating{

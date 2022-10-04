@@ -1,7 +1,7 @@
 import React from 'react';
 import s from "./login.module.scss";
 import {Link} from "react-router-dom";
-import paw from "../../images/Vector2.png";
+import ButtonStandart from "../../components/buttonStandart/ButtonStandart";
 
 const Login = () => {
 
@@ -22,10 +22,13 @@ const Login = () => {
                         <span>
                             <Link to={"/userInfo"} className={s.pageInfo}>!pageInfo</Link>
                         </span>
-                        <button className={s.buttonLogin}>
+                        {/*<button className={s.buttonLogin}>
                             <span>Войти</span>
                             <img src={paw} alt="paw"/>
-                        </button>
+                        </button>*/}
+                        <div className={s.buttonLogin}>
+                            <ButtonStandart title={'Войти'}/>
+                        </div>
                     </div>
                 </form>
             </div>

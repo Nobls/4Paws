@@ -50,17 +50,9 @@ const Reviews = () => {
                                             <div className={s.reviewDate}>
                                                 {m.date}
                                             </div>
-                                            <div className={s.reviewRating}>
-                                                {m.rating}
-                                            </div>
                                             <p className={s.reviewText}>{m.text}</p>
                                         </div>
-                                        {/*<div className={s.reviewRating}>
-                                            {m.rating}
-                                        </div>
-                                        <p>{m.text}</p>*/}
                                     </div>
-                                    {/*<p>{m.text}</p>*/}
                                 </div>
                             )
                         }

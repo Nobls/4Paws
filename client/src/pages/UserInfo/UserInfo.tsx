@@ -1,8 +1,9 @@
 import React from 'react';
 import s from "./userInfo.module.scss";
 import userPhoto from "../../images/user.png";
-import paw from "../../images/Vector2.png";
 import {Link} from "react-router-dom";
+import LowercaseButton from "../../components/lowercaseButton/LowercaseButton";
+import ButtonStandart from "../../components/buttonStandart/ButtonStandart";
 
 const UserInfo = () => {
     return (
@@ -35,22 +36,11 @@ const UserInfo = () => {
                 </div>
 
                 <div className={s.userInfoPhoto}>
-                    <img src={userPhoto} alt="photo"/>
-
+                    <img className={s.userPhoto} src={userPhoto} alt="photo"/>
                     <div className={s.buttonWrapper}>
-                        <button className={s.downloadPhoto}>
-                            <span className={s.downloadPhotoTitle}>Добавить фото</span>
-                            <img src={paw} alt="paw"/>
-                        </button>
+                        <LowercaseButton title={'Добавить фото'}/>
                     </div>
-
-                    <div className={s.buttonWrapper}>
-                        <button className={s.buttonRegister}>
-                            <span>Зарегистрироваться</span>
-                            <img src={paw} alt="paw"/>
-                        </button>
-                    </div>
-
+                    <ButtonStandart title={'Зарегистрироваться'}/>
                     <Link to={"/petInfo"}>!goToPetInfo</Link>
                 </div>
             </div>

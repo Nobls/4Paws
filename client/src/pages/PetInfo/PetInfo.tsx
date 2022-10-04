@@ -1,15 +1,14 @@
 import React from 'react';
 import s from './petInfo.module.scss';
 import petPhoto from '../../images/pet.png';
-//import paw from "../../images/Vector2.png";
 import ButtonStandart from "../../components/buttonStandart/ButtonStandart";
-import paw from "../../images/pawBig.png";
+import LowercaseButton from "../../components/lowercaseButton/LowercaseButton";
 
 
 const PetInfo = () => {
 
     const buttonTitleRegister = 'Сохранить';
-    
+
     const addText2 = () => {
         console.log('Add Text2')
     }
@@ -49,9 +48,9 @@ const PetInfo = () => {
                 <div className={s.petPhotoWrapper}>
                     <img className={s.petPhoto} src={petPhoto} alt="pet"/>
                     <div className={s.buttonWrapper}>
-                        <div className={s.addPhoto}>Добавить фото<img src={paw} alt="paws"/></div>
+                        <LowercaseButton title={'Добавить фото'}/>
                     </div>
-                        <ButtonStandart title={buttonTitleRegister} onclick={addText2}/>
+                    <ButtonStandart title={buttonTitleRegister} onclick={addText2}/>
                 </div>
             </div>
         </div>

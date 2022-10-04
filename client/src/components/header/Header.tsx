@@ -39,7 +39,7 @@ const Header = () => {
                             <div className={s.linkWrapper}>
                                 <div className={s.phoneWrapper}>
                                     <a className={s.linkPhone} href={'tel:+375291111111'}>+375-29-111-11-11</a>
-                                    <a className={s.linkPhone} href={'tel:+375291111122'}>revertaGroup@gmail.com</a> //Изменить на e-mail + размер!
+                                    <p className={s.email}>revertaGroup@gmail.com</p>
                                 </div>
 
                                 <Link className={s.link} to={"/"}>

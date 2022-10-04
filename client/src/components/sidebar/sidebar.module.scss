@@ -16,7 +16,7 @@
     background-size: cover;
     padding: 10px;
     margin-bottom: 50px;
-    border-radius: $borderRadius5;
+    border-radius: $borderRadius;
 
     .newsCategoriesItems {
       padding: 0;
@@ -83,7 +83,7 @@
     background-size: cover;
     padding: 10px;
     margin-bottom: 50px;
-    border-radius: $borderRadius5;
+    border-radius: $transition03;
 
     .recentNewsWrapper {
       display: flex;
@@ -97,7 +97,7 @@
         background-size: cover;
         background-position: center;
         margin-right: 20px;
-        border-radius: $borderRadius5;
+        border-radius: $transition03;
       }
 
       .recentNewsInner {
@@ -123,7 +123,7 @@
     background: $backgroundSidebar;
     background-size: cover;
     padding: 10px;
-    border-radius: $borderRadius5;
+    border-radius: $borderRadius;
 
     .newsTagsItems{
       display: flex;

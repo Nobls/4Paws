@@ -27,7 +27,7 @@ const NewsPost = () => {
                         </div>
                         <Link to={'/news'} className={s.newsPostTitle}>{lastNews[4].title}</Link>
                         <p className={s.newsPostText}>{lastNews[4].description}</p>
-                        <Link to={'/news'} className={s.newsPostButtonOpen}>
+                        <Link to={'/news'} className={s.newsPostButton}>
                             Назад
                             <img src={paw} alt="paws"/>
                         </Link>

@@ -32,7 +32,6 @@
       font-size: 18px;
       padding: 15px 15px 25px 15px;
       color: $color-text;
-      //border-top: 1px solid $color-text;
       border-top: 2px solid $color-accent-dark;
       margin: 0;
     }
@@ -48,8 +47,8 @@
         top: 130px;
         left: 130px;
         display: none;
-        background-color: #eb5837;
-        border-radius: 5px;
+        background-color: $color-accent-dark;
+        border-radius: $borderRadius;
         font-weight: bold;
         transition: $transition03;
         font-size: 20px;
@@ -77,27 +76,17 @@
         top: 15px;
         left: -20px;
         padding: 10px 15px 10px 25px;
-        color: #666666;
+        color: $color-text;
         font-weight: bold;
       }
     }
 
     .news1 {
       grid-area: news1;
-      text-decoration: none;
-      //background-color: #f3f1ef;
-      background-color: $backgroundCart;
-      border-radius: $borderRadius;
-      transition: $transition03;
-      box-shadow: $boxShadow;
-      overflow: hidden;
-      position: relative;
+      @extend .lastNewsContainer;
 
       &:hover {
-        box-shadow: 0 0 8px 3px rgba(34, 60, 80, 0.4);
-        //background-color: rgba(215, 215, 215, 0.8);
-        //background-color: $color-accent-dark;
-        //background-color: white;
+        box-shadow: $boxShadowHover;
         background-color: $backgroundCartHover;
 
         .newsButtonOpen {
@@ -108,44 +97,28 @@
         img {
           filter: brightness(60%);
           transform: scale(1.1);
-          transition: $transition05;
+          transition: $transition03;
         }
 
         h3 {
-          //color: rgba(235, 88, 55, 0.84);
-          //color: #ffffff;
-          color: $color-accent-dark;
-          transition: $transition03;
-          //text-shadow: 1px 2px 3px #666;
+          @extend .lastNewsTitle;
         }
-
-        //p {
-        //  color: #5e2316;
-        //}
       }
 
       .lastNewsImageOne {
         width: 420px;
         height: 300px;
         border-radius: $borderRadius $borderRadius 0 0;
-        transition: $transition05;
+        transition: $transition03;
       }
     }
 
     .news2 {
       grid-area: news2;
-      text-decoration: none;
-      background-color: $backgroundCart;
-      border-radius: $borderRadius;
-      transition: $transition05;
-      box-shadow: $boxShadow;
-      overflow: hidden;
-      position: relative;
+      @extend .lastNewsContainer;
 
       &:hover {
-        box-shadow: 0 0 8px 3px rgba(34, 60, 80, 0.4);
-        //background-color: rgba(215, 215, 215, 0.8);
-        //background-color: $color-accent-dark;
+        box-shadow: $boxShadowHover;
         background-color: $backgroundCartHover;
 
         .newsButtonOpen {
@@ -156,50 +129,34 @@
         img {
           filter: brightness(60%);
           transform: scale(1.1);
-          transition: $transition05;
+          transition: $transition03;
         }
 
         h3 {
-          //color: #eb5837;
-          //color: #ffffff;
-          color: $color-accent-dark;
-          transition: $transition03;
-          //text-shadow: 1px 2px 3px #666;
+          @extend .lastNewsTitle;
         }
-
-        //p {
-        //  color: #5e2316;
-        //}
       }
 
       .lastNewsImageTwo {
         width: 420px;
         height: 300px;
         border-radius: $borderRadius $borderRadius 0 0;
-        transition: $transition05;
+        transition: $transition03;
       }
     }
 
     .news3 {
       grid-area: news3;
-      text-decoration: none;
-      background-color: $backgroundCart;
-      border-radius: $borderRadius;
-      transition: $transition05;
-      box-shadow: $boxShadow;
-      overflow: hidden;
-      position: relative;
+      @extend .lastNewsContainer;
 
       &:hover {
-        box-shadow: 0 0 8px 3px rgba(34, 60, 80, 0.4);
-        //background-color: rgba(215, 215, 215, 0.8);
-        //background-color: $color-accent-dark;
+        box-shadow: $boxShadowHover;
         background-color: $backgroundCartHover;
 
         img {
           filter: brightness(60%);
           transform: scale(1.1);
-          transition: $transition05;
+          transition: $transition03;
         }
 
         .newsButtonOpen {
@@ -208,46 +165,30 @@
         }
 
         h3 {
-          //color: #eb5837;
-          //color: #ffffff;
-          color: $color-accent-dark;
-          transition: $transition03;
-          //text-shadow: 1px 2px 3px #666;
+          @extend .lastNewsTitle;
         }
-
-        //p {
-        //  color: #5e2316;
-        //}
       }
 
       .lastNewsImageThree {
         width: 420px;
         height: 300px;
         border-radius: $borderRadius $borderRadius 0 0;
-        transition: $transition05;
+        transition: $transition03;
       }
     }
 
     .news4 {
       grid-area: news4;
-      text-decoration: none;
-      background-color: $backgroundCart;
-      border-radius: $borderRadius;
-      transition: $transition05;
-      box-shadow: $boxShadow;
-      overflow: hidden;
-      position: relative;
+      @extend .lastNewsContainer;
 
       &:hover {
-        box-shadow: 0 0 8px 3px rgba(34, 60, 80, 0.4);
-        //background-color: rgba(215, 215, 215, 0.8);
-        //background-color: $color-accent-dark;
+        box-shadow: $boxShadowHover;
         background-color: $backgroundCartHover;
 
         img {
           filter: brightness(60%);
           transform: scale(1.1);
-          transition: $transition05;
+          transition: $transition03;
         }
 
         .newsButtonOpen {
@@ -257,46 +198,30 @@
         }
 
         h3 {
-          //color: #eb5837;
-          //color: #ffffff;
-          color: $color-accent-dark;
-          transition: $transition03;
-          //text-shadow: 1px 2px 3px #666;
+          @extend .lastNewsTitle;
         }
-
-        //p {
-        //  color: #5e2316;
-        //}
       }
 
       .lastNewsImageFour {
         width: 637px;
         height: 300px;
         border-radius: $borderRadius $borderRadius 0 0;
-        transition: $transition05;
+        transition: $transition03;
       }
     }
 
     .news5 {
       grid-area: news5;
-      text-decoration: none;
-      background-color: $backgroundCart;
-      border-radius: $borderRadius;
-      transition: $transition05;
-      box-shadow: $boxShadow;
-      overflow: hidden;
-      position: relative;
+      @extend .lastNewsContainer;
 
       &:hover {
-        box-shadow: 0 0 8px 3px rgba(34, 60, 80, 0.4);
-        //background-color: rgba(215, 215, 215, 0.8);
-        //background-color: $color-accent-dark;
+        box-shadow: $boxShadowHover;
         background-color: $backgroundCartHover;
 
         img {
           filter: brightness(60%);
           transform: scale(1.1);
-          transition: $transition05;
+          transition: $transition03;
         }
 
         .newsButtonOpen {
@@ -311,23 +236,16 @@
         }
 
         h3 {
-          //color: #eb5837;
-          //color: #ffffff;
-          color: $color-accent-dark;
-          transition: $transition03;
-          //text-shadow: 1px 2px 3px #666;
+         @extend .lastNewsTitle;
         }
 
-        //p {
-        //  color: #5e2316;
-        //}
       }
 
       .lastNewsImageFour {
         width: 637px;
         height: 300px;
         border-radius: $borderRadius $borderRadius 0 0;
-        transition: $transition05;
+        transition: $transition03;
       }
     }
   }

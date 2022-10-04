@@ -42,13 +42,13 @@
 
         .tabsItemTwo {
           @extend .tabsItem;
-          background-color: #eb5837;
+          background-color: $color-accent-dark;
         }
 
         .tabsItemThree {
           @extend .tabsItem;
 
-          background-color: #FF7657;
+          background-color: $color-accent-lite;
         }
       }
 
@@ -58,48 +58,25 @@
         width: 100%;
 
         .tabPanelItem1 {
-          min-height: 450px;
-          display: flex;
-          flex-direction: row;
-          flex-wrap: wrap;
-          align-content: flex-start;
-          align-items: center;
-          justify-content: center;
-          margin: 10px 0;
-
-          .tabPanelItem1 {
-            @extend .container;
-          }
+          @extend .tabPanelItem;
         }
       }
 
       .tabPanel2 {
-        background-color: #eb5837;
+        background-color: $color-accent-dark;
         width: 100%;
 
         .tabPanelItem2 {
-          min-height: 450px;
-          display: flex;
-          flex-direction: row;
-          align-content: center;
-          align-items: flex-start;
-          justify-content: center;
-          margin: 10px 0;
+          @extend .tabPanelItem;
         }
       }
 
       .tabPanel3 {
-        background-color: #FF7657;
+        background-color: $color-accent-lite;
         width: 100%;
 
         .tabPanelItem3 {
-          min-height: 450px;
-          display: flex;
-          flex-direction: row;
-          align-content: center;
-          align-items: flex-start;
-          justify-content: center;
-          margin: 10px 0;
+          @extend .tabPanelItem;
         }
       }
     }
@@ -157,9 +134,9 @@
     padding: 15px;
     background-color: #ffffff;
     text-decoration: none;
-    border-radius: 5px;
+    border-radius: $borderRadius;
     font-weight: bold;
-    transition: all .5s;
+    transition: $transition03;
     border: none;
     cursor: pointer;
 
@@ -177,16 +154,16 @@
       z-index: 1;
       right: 8px;
       top: 8px;
-      transition: .5s;
+      transition: $transition03;
     }
 
     &:hover {
       background-color: #ffffff;
-      transition: all .5s;
+      transition: $transition03;
 
       span {
         color: $color-accent-dark;
-        transition: .5s;
+        transition: $transition03;
       }
 
       img {
