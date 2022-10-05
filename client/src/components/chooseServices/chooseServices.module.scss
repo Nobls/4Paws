@@ -1,0 +1,41 @@
+@import "src/common/extends";
+@import "src/common/variables";
+
+.chooseServicesContainer{
+  @extend .container;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .chooseServicesTitle{
+    @extend .title;
+    margin-top: 0;
+  }
+
+  .chooseServicesWrapper{
+    position: relative;
+    width: 80%;
+    height: 400px;
+    margin-bottom: 100px;
+    background-color: $backgroundSidebar;
+    border-radius: $borderRadius;
+
+    .chooseServicesItems{
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      .chooseServicesForm{
+        display: flex;
+        flex-direction: column;
+      }
+    }
+
+    .chooseServicesButton{
+      position: absolute;
+      right: 20px;
+      bottom: 20px;
+    }
+  }
+}

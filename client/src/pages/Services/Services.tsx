@@ -4,6 +4,7 @@ import {services} from "../../data/data";
 import {ServicesCard} from "../../components/servicesCard/ServicesCard";
 import Reviews from "../../components/reviews/Reviews";
 import paw from "../../images/Vector2.png";
+import ChooseServices from "../../components/chooseServices/ChooseServices";
 
 const Services = () => {
 
@@ -15,9 +16,9 @@ const Services = () => {
             </div>
             <div>
                 <h3 className={s.servicesSubTitle}>Наши Услуги</h3>
-                <div className={s.servicesItems} >
+                <div className={s.servicesItems}>
                     {
-                        services.map(m=>{
+                        services.map(m => {
                             return (
                                 <ServicesCard
                                     key={m.id}
@@ -43,6 +44,7 @@ const Services = () => {
                     {/*    </form>*/}
                     {/*</div>*/}
                 </div>
+                <ChooseServices/>
             </div>
             {/*<Reviews/>*/}
         </div>
