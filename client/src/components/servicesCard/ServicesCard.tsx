@@ -9,13 +9,14 @@ type PropsType = {
     id: number
     title: string
     image: any
+    date: boolean
     alt: string
     description: string
     descriptionModal: string
     services: ServicesType[]
 }
 
-export const ServicesCard = ({id, alt, image, title, description, services, descriptionModal}: PropsType) => {
+export const ServicesCard = ({id, alt, image, date,title, description, services, descriptionModal,}: PropsType) => {
 
     const order = 'Заказать'
 
@@ -31,7 +32,8 @@ export const ServicesCard = ({id, alt, image, title, description, services, desc
     return (
         <div key={id} className={s.servicesItem}>
             <h4 className={s.servicesItemTitle}>{title}</h4>
-            <div className={s.servicesImage} style={{backgroundImage: `url(${image})`}}></div>
+            <div className={s.servicesImage} style={{backgroundImage: `url(${image})`}}>
+            </div>
             <p className={s.servicesDescription}>{description}</p>
             <div className={s.buttonBlock}>
                 <LowercaseButton title={'Узнать больше'} allModalFunction={allModalFunction}/>
@@ -43,6 +45,7 @@ export const ServicesCard = ({id, alt, image, title, description, services, desc
                 setModalActive={setModalActive}
                 alt={alt}
                 image={image}
+                date={date}
                 title={title}
                 description={descriptionModal}
             />

@@ -25,6 +25,7 @@ const Services = () => {
                                     id={m.id}
                                     title={m.title}
                                     image={m.image}
+                                    date={m.date}
                                     alt={m.alt}
                                     description={m.description}
                                     descriptionModal={m.descriptionModal}

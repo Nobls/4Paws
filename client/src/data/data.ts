@@ -132,6 +132,7 @@ export type ServicesType = {
     description: string
     descriptionModal: string
     image: any
+    date: boolean,
     alt: string
 }
 
@@ -666,6 +667,7 @@ export const services: ServicesType[] = [
         description: 'Уход за питомцем 24/7',
         descriptionModal: 'Уход за питомцем 24/7',
         image: servicesCare,
+        date: true,
         alt: 'servicesCare',
 
     },
@@ -679,6 +681,7 @@ export const services: ServicesType[] = [
             'знакомых или родственников побыть с вашим четвероногим другом, на помощь приходит платная передержка животных, по-другому это называется ситтинг.' +
             ' Ситтер обязуется добросовестно ухаживать за вашим питомцем, кормить, гулять, гладить и не оставлять без присмотра.',
         image: servicesOverexposure,
+        date: true,
         alt: 'servicesOverexposure',
     },
     {
@@ -694,6 +697,7 @@ export const services: ServicesType[] = [
             'При желании, каждому хозяину мы можем предоставить информацию с трекера, чтобы он увидел, где гулял пёсик и фотоотчет с прогулки.' +
             'Стоимость выгула собак ситтерами нашей компании составляет от 5-ти до 15-ти белорусских рублей. ',
         image: servicesWalking,
+        date: false,
         alt: 'servicesWalking',
     },
     {
@@ -705,6 +709,7 @@ export const services: ServicesType[] = [
             'В обоих случаях, вы можете быть уверенными, что за время вашего отсутствия ничего не случится ни с вашим животным, ни с вашим имуществом. ' +
             'Няня для собак или кошек — это человек, который обязательно накормит вашего питомца, поиграет с ним, погладит и проследит, чтобы с животным было всё в порядке.',
         image: servicesNanny,
+        date: true,
         alt: 'servicesNanny',
     },
     {
@@ -713,6 +718,7 @@ export const services: ServicesType[] = [
         description: 'Груминг',
         descriptionModal: 'Груминг',
         image: servicesGrooming,
+        date: false,
         alt: 'servicesGrooming',
     },
     {
@@ -721,6 +727,7 @@ export const services: ServicesType[] = [
         description: 'Доставка товаров клиенту',
         descriptionModal: 'Доставка товаров клиенту',
         image: servicesDelivery,
+        date: false,
         alt: 'servicesDelivery',
     },
 ]
