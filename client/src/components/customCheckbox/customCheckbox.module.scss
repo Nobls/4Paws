@@ -1,0 +1,36 @@
+@import "src/common/extends";
+@import "src/common/variables";
+
+.customCheckbox {
+  display:none;
+  &+label {
+    display: inline-block;
+    height: 22px;
+    width: 22px;
+    border-radius: 3px;
+    background-color: $bg-colorF0F0F0;
+    border: 1px solid $color-accent-dark;
+    cursor: pointer;
+    position: relative;
+
+    &::before {
+      content: url('../../images/icons/plus.svg');
+      color: #fff;
+      position: absolute;
+      top: 0;
+      left: 0;
+      opacity: 0;
+      transform: scale(0);
+      transition: all 0.3s cubic-bezier(0.465, 0.183, 0.153, 0.946);
+    }
+  }
+  &:checked {
+    &+label {
+      background-color: $color-accent-dark;
+      &::before {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+  }
+}

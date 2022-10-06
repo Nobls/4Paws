@@ -24,9 +24,21 @@ export const ModalServices = ({alt, image, title, date, description, modalActive
 
                 {
                     date ?
-                        <div>OLOLO</div>
+                        <div>
+                            <form className={s.dateWrapper}>
+                                <p className={s.dateText}>Дата</p>
+                                <label>C <input className={s.dateFrom} type="date"/></label>
+                            </form>
+                        </div>
                         :
-                        <div>TROLOLO</div>
+                        <div>
+                            <form className={s.dateWrapper}>
+                                <p className={s.dateText}>Дата</p>
+                                <label>C <input className={s.dateFrom} type="date"/> По <input className={s.dateTo}
+                                                                                               type="date"/>
+                                </label>
+                            </form>
+                        </div>
                 }
 
 
