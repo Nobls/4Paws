@@ -104,9 +104,12 @@ const ChooseServices = () => {
                                 <div className={s.petBreed}>Хаски</div>
                             </div>
                         </div>
+
+                        <textarea className={s.servicesComment} cols={25} rows={5}
+                                  placeholder={'Комментарий'}>
+                        </textarea>
+
                     </div>
-                   {/* <textarea className={s.servicesComment} cols={25} rows={5}
-                              placeholder={'Комментарий'}></textarea>*/}
                 </div>
                 <div className={s.chooseServicesButton}>
                     <ButtonStandart title={'Заказать'}/>

@@ -1,36 +1,37 @@
 @import "src/common/extends";
 @import "src/common/variables";
 
-.customCheckbox {
-  display:none;
-  &+label {
-    display: inline-block;
-    height: 22px;
-    width: 22px;
-    border-radius: 3px;
-    background-color: $bg-colorF0F0F0;
-    border: 1px solid $color-accent-dark;
-    cursor: pointer;
-    position: relative;
 
-    &::before {
-      content: url('../../images/icons/plus.svg');
-      color: #fff;
-      position: absolute;
-      top: 0;
-      left: 0;
-      opacity: 0;
-      transform: scale(0);
-      transition: all 0.3s cubic-bezier(0.465, 0.183, 0.153, 0.946);
-    }
+.check {
+  padding-left: 1.2em;
+
+  .checkInput {
+    position: absolute;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
   }
-  &:checked {
-    &+label {
-      background-color: $color-accent-dark;
-      &::before {
-        opacity: 1;
-        transform: scale(1);
-      }
-    }
+
+  .checkBox {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    margin-left: -1.2em;
+    background-image: url("../../images/pawBig.png");
+    //background-size: cover;
+    background-color: #666666;
+    border: 2px solid #666666;
+    border-radius: 5px;
   }
+}
+
+.checkInput:checked + .checkBox {
+  background-image: url("../../images/pawBig.png");
+  background-size: 80%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.checkInput:focus + .checkBox {
+  border: 2px solid #000000;
 }
