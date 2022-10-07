@@ -8,16 +8,16 @@ export type PropsType = {
 
 const CustomCheckbox = ({checked, setChecked}:PropsType) => {
 
-    const abc = (e:ChangeEvent<HTMLInputElement>) => {
-        let changeABC = e.target.checked;
-        setChecked(changeABC)
-        checked = changeABC;
+    const onChangeHandler = (e:ChangeEvent<HTMLInputElement>) => {
+        let changeCheckbox = e.target.checked;
+        setChecked(changeCheckbox)
+        checked = changeCheckbox;
         console.log(checked)
     }
 
     return (
         <label className={s.check}>
-            <input className={s.checkInput} type="checkbox" onChange={abc}/>
+            <input className={s.checkInput} type="checkbox" onChange={onChangeHandler}/>
             <span className={s.checkBox}>
             </span>
         </label>
