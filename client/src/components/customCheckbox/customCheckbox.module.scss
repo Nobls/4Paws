@@ -3,7 +3,7 @@
 
 
 .check {
-  padding-left: 1.2em;
+  padding-left: 25px;
 
   .checkInput {
     position: absolute;
@@ -16,22 +16,22 @@
     position: absolute;
     width: 25px;
     height: 25px;
-    margin-left: -1.2em;
+    margin-left: -25px;
     background-image: url("../../images/pawBig.png");
     //background-size: cover;
-    background-color: #666666;
-    border: 2px solid #666666;
-    border-radius: 5px;
+    //background-color: $backgroundSidebar;
+    border: 2px solid $color-text;
+    border-radius: 4px;
   }
 }
 
 .checkInput:checked + .checkBox {
   background-image: url("../../images/pawBig.png");
-  background-size: 80%;
+  background-size: 70%;
   background-position: center;
   background-repeat: no-repeat;
 }
 
 .checkInput:focus + .checkBox {
-  border: 2px solid #000000;
+  border: 2px solid $color-title;
 }

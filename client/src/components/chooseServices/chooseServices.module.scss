@@ -19,6 +19,8 @@
     margin-bottom: 100px;
     background-color: $backgroundSidebar;
     border-radius: $borderRadius;
+    display: flex;
+    flex-direction: column;
 
     .dateWrapper {
       position: relative;
@@ -104,18 +106,40 @@
             display: flex;
           }
 
-          .labelAmount{
+          .labelAmountActive{
             font-size: 18px;
             font-weight: 700;
             display: flex;
             align-items: center;
+            margin: 10px 0 0 35px;
 
-            select{
+            .servicesSelect{
               @extend .bgInput;
               margin-left: 25px;
               width: 50px;
               height: 30px;
-              color: $color-accent-dark;
+              color: $color-text;
+              padding: 5px 5px;
+              font-size: 14px;
+            }
+          }
+
+          .labelAmountDisabled {
+            font-size: 18px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            margin: 10px 0 0 35px;
+            opacity: 0.5;
+
+            .servicesSelect{
+              @extend .bgInput;
+              margin-left: 25px;
+              width: 50px;
+              height: 30px;
+              color: $color-text;
+              padding: 5px 5px;
+              font-size: 14px;
             }
           }
 
@@ -183,16 +207,22 @@
 
         }
       }
+    }
+
+    .servicesCommentWrapper {
+      width: 100%;
+
       .servicesComment {
         @extend .bgInput;
         resize: none;
+        width: 100%;
+        margin: 20px 0;
       }
-    }
 
-    .chooseServicesButton {
-      position: absolute;
-      right: 20px;
-      bottom: 20px;
+      .chooseServicesButton {
+        display: flex;
+        justify-content: flex-end;
+      }
     }
   }
 }
