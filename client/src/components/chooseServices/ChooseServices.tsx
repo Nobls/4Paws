@@ -1,12 +1,32 @@
-import React, {useState} from 'react';
+import React, {ChangeEvent, useState} from 'react';
 import s from './chooseServices.module.scss'
 import ButtonStandart from "../buttonStandart/ButtonStandart";
-import dogPhoto from '../../images/other/dog.png'
-import CustomCheckbox from "../customCheckbox/CustomCheckbox";
+import dogPhoto from '../../images/other/dog.png';
+
 
 const ChooseServices = () => {
 
-    const [checked, setChecked] = useState(false)
+   let [paddock, setPaddock] = useState(true)
+
+    const paddockHandler = (e:ChangeEvent<HTMLInputElement>) => {
+        let changeCheckboxPaddock = e.target.checked;
+        setPaddock(!changeCheckboxPaddock)
+        paddock = changeCheckboxPaddock
+    }
+
+    let [feeding, setFeeding] = useState(true)
+    const feedingHandler = (e:ChangeEvent<HTMLInputElement>) => {
+        let changeCheckboxFeeding = e.target.checked;
+        setFeeding(!changeCheckboxFeeding)
+        feeding = changeCheckboxFeeding
+    }
+
+    let [cleaning, setCleaning] = useState(true)
+    const cleaningHandler = (e:ChangeEvent<HTMLInputElement>) => {
+        let changeCheckboxCleaning = e.target.checked;
+        setCleaning(!changeCheckboxCleaning)
+        cleaning = changeCheckboxCleaning
+    }
 
     return (
         <div className={s.chooseServicesContainer}>
@@ -21,11 +41,17 @@ const ChooseServices = () => {
                     <div className={s.chooseServicesForm}>
                         <form className={s.labelWrapper}>
                             <label className={s.label}>
-                                <CustomCheckbox checked={checked} setChecked={setChecked}/>
+                                <label className={s.check}>
+                                    <input className={s.checkInput} type="checkbox" onChange={paddockHandler}/>
+                                    <span className={s.checkBox}>
+                                    </span>
+                                </label>
                                 <span className={s.labelTitle}>Выгул</span>
                             </label>
-                            <label className={checked ? `${s.labelAmountActive}` : `${s.labelAmountDisabled}`}> количество раз
-                                <select className={s.servicesSelect} name={'amount'}>
+                            <label
+                                className={paddock ? `${s.labelAmountDisabled}` : `${s.labelAmountActive}`}> количество
+                                раз
+                                <select className={s.servicesSelect} name={'amount'} disabled={paddock}>
                                     <option value="1">1</option>
                                     <option value="2">2</option>
                                     <option value="3">3</option>
@@ -33,11 +59,18 @@ const ChooseServices = () => {
                         </form>
                         <form className={s.labelWrapper}>
                             <label className={s.label}>
-                                <CustomCheckbox checked={checked} setChecked={setChecked}/>
+
+                                <label className={s.check}>
+                                    <input className={s.checkInput} type="checkbox" onChange={feedingHandler}/>
+                                    <span className={s.checkBox}>
+                                    </span>
+                                </label>
+                                {/*<CustomCheckbox checked={checked} setChecked={setChecked}/>*/}
                                 <span className={s.labelTitle}>Кормление</span>
                             </label>
-                            <label className={checked ? `${s.labelAmountActive}` : `${s.labelAmountDisabled}`}> количество раз
-                                <select className={s.servicesSelect} name={'amount'}>
+                            <label className = {feeding ? `${s.labelAmountDisabled}` : `${s.labelAmountActive}`}> количество
+                                раз
+                                <select className={s.servicesSelect} name={'amount'} disabled={feeding}>
                                     <option value="1">1</option>
                                     <option value="2">2</option>
                                     <option value="3">3</option>
@@ -46,46 +79,71 @@ const ChooseServices = () => {
                         </form>
                         <div className={s.labelWrapper}>
                             <label className={s.label}>
-                                <CustomCheckbox checked={checked} setChecked={setChecked}/>
+
+                                <label className={s.check}>
+                                    <input className={s.checkInput} type="checkbox" onChange={cleaningHandler}/>
+                                    <span className={s.checkBox}>
+                                    </span>
+                                </label>
                                 <span className={s.labelTitle}>Уборка</span>
                             </label>
-                            <label className={checked ? `${s.labelAmountActive}` : `${s.labelAmountDisabled}`}> количество раз
-                                <select className={s.servicesSelect} name={'amount'}>
+                            <label className = {cleaning ? `${s.labelAmountDisabled}` : `${s.labelAmountActive}`}> количество
+                                раз
+                                <select className={s.servicesSelect} name={'amount'} disabled={cleaning}>
                                     <option value="1">1</option>
                                     <option value="2">2</option>
                                     <option value="3">3</option>
                                 </select></label>
-
                         </div>
                         <div className={s.labelWrapper}>
                             <label className={s.label}>
-                                <CustomCheckbox checked={checked} setChecked={setChecked}/>
+                                <label className={s.check}>
+                                    <input className={s.checkInput} type="checkbox"/>
+                                    <span className={s.checkBox}>
+                                    </span>
+                                </label>
                                 <span className={s.labelTitle}>Сопровождение на груминг</span>
                             </label>
                         </div>
                         <div className={s.veterinarian}>
                             <div className={s.labelWrapper}>
                                 <label className={s.label}>
-                                    <CustomCheckbox checked={checked} setChecked={setChecked}/>
+                                    <label className={s.check}>
+                                        <input className={s.checkInput} type="checkbox"/>
+                                        <span className={s.checkBox}>
+                                    </span>
+                                    </label>
                                     <span className={s.labelTitle}>Сопровождение к ветеринару</span>
                                 </label>
                             </div>
                             <div className={s.veterinarianWrapper}>
                                 <div className={s.labelWrapper}>
                                     <label className={s.label}>
-                                        <CustomCheckbox checked={checked} setChecked={setChecked}/>
+                                        <label className={s.check}>
+                                            <input className={s.checkInput} type="checkbox"/>
+                                            <span className={s.checkBox}>
+                                    </span>
+                                        </label>
                                         <span className={s.labelTitle}>Операция</span>
                                     </label>
                                 </div>
                                 <div className={s.labelWrapper}>
                                     <label className={s.label}>
-                                        <CustomCheckbox checked={checked} setChecked={setChecked}/>
+                                        <label className={s.check}>
+                                            <input className={s.checkInput} type="checkbox"/>
+                                            <span className={s.checkBox}>
+                                    </span>
+                                        </label>
                                         <span className={s.labelTitle}>Прививка</span>
                                     </label>
                                 </div>
                                 <div className={s.labelWrapper}>
                                     <label className={s.label}>
-                                        <CustomCheckbox checked={checked} setChecked={setChecked}/>
+                                        <label className={s.check}>
+                                            <input className={s.checkInput} type="checkbox"/>
+                                            <span className={s.checkBox}>
+                                    </span>
+                                        </label>
                                         <span className={s.labelTitle}>Другие процедуры</span>
                                     </label>
                                 </div>
@@ -113,7 +171,6 @@ const ChooseServices = () => {
                     </div>
                 </div>
 
-
                 <div className={s.servicesCommentWrapper}>
                     <textarea className={s.servicesComment} cols={25} rows={5}
                               placeholder={'Комментарий'}>
@@ -122,7 +179,6 @@ const ChooseServices = () => {
                         <ButtonStandart title={'Заказать'}/>
                     </div>
                 </div>
-
 
             </div>
         </div>
