@@ -1,9 +1,15 @@
 import React from 'react';
 import s from "./login.module.scss";
-import {Link} from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
 import ButtonStandart from "../../components/buttonStandart/ButtonStandart";
 
 const Login = () => {
+
+    const navigate = useNavigate()
+
+    const userAccount = () => {
+        navigate('/usersAccount')
+    }
 
     return (
         <div>
@@ -26,7 +32,7 @@ const Login = () => {
                             <span>Войти</span>
                             <img src={paw} alt="paw"/>
                         </button>*/}
-                        <div className={s.buttonLogin}>
+                        <div className={s.buttonLogin} onClick={userAccount}>
                             <ButtonStandart title={'Войти'}/>
                         </div>
                     </div>

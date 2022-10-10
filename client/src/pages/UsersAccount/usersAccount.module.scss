@@ -1,0 +1,45 @@
+@import "src/common/extends";
+@import "src/common/variables";
+
+.pageContainer {
+  @extend .container;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 100px;
+
+  .userAccountTitle {
+    @extend .title;
+  }
+
+  .userInfo{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    .userInfoWrapper{
+      display: flex;
+
+      .userAccountPhoto{
+
+      }
+
+      .userAccountInfo{
+
+      }
+    }
+  }
+
+  .userPetsTitle{
+    @extend .title;
+  }
+
+  .userPetsWrapper{
+    display: flex;
+
+    .userPetsInner{
+
+    }
+  }
+}
+

@@ -13,6 +13,7 @@ import Registration from "./pages/Registration/Registration";
 import Login from "./pages/Login/Login";
 import PetInfo from "./pages/PetInfo/PetInfo";
 import NewsPost from "./pages/NewsPost/NewsPost";
+import UsersAccount from "./pages/UsersAccount/UsersAccount";
 
 function App() {
     return (
@@ -30,6 +31,7 @@ function App() {
                     <Route path='registration' element={<Registration/>}/>
                     <Route path='petInfo' element={<PetInfo/>}/>
                     <Route path='newsPost' element={<NewsPost/>}/>
+                    <Route path='usersAccount' element={<UsersAccount/>}/>
                 </Route>
             </Routes>
         </div>
