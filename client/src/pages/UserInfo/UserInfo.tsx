@@ -42,6 +42,7 @@ const UserInfo = () => {
                     </div>
                     <ButtonStandart title={'Зарегистрироваться'}/>
                     <Link to={"/petInfo"}>!goToPetInfo</Link>
+                    <Link to={"/usersAccount"}>!goToUsersAccount</Link>
                 </div>
             </div>
         </div>

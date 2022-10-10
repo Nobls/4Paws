@@ -65,7 +65,6 @@ const ChooseServices = () => {
                                     <span className={s.checkBox}>
                                     </span>
                                 </label>
-                                {/*<CustomCheckbox checked={checked} setChecked={setChecked}/>*/}
                                 <span className={s.labelTitle}>Кормление</span>
                             </label>
                             <label className = {feeding ? `${s.labelAmountDisabled}` : `${s.labelAmountActive}`}> количество
