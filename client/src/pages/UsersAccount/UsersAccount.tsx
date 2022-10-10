@@ -17,15 +17,15 @@ const UsersAccount = () => {
                             <div className={s.email}>exampleEmail@gmail.com</div>
                         </div>
                     </div>
-                    <div className={s.userPersonalCard}>
-                        <div>
+                    <div className={s.userPersonalCardWrapper}>
+                        <div className={s.userPersonalCardName}>
                             Леонид Мизнов
                         </div>
-                        <div>
+                        <div className={s.userPersonalCardSaleWrapper}>
                             <div>Бонусы: 19</div>
                             <div>Скидка: 3%</div>
                         </div>
-                        <div>1555 1511 1511 2222</div>
+                        <div className={s.userPersonalCardNumber}>1555 1511 1511 2222</div>
                     </div>
                 </div>
 
