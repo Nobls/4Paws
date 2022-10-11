@@ -1,6 +1,7 @@
 import React, {useEffect} from 'react';
 import s from './usersAccount.module.scss'
 import user from '../../images/reviews/user4.jpg'
+import paw from '../../images/pawBig.png'
 
 const UsersAccount = () => {
 
@@ -17,16 +18,18 @@ const UsersAccount = () => {
 
                 <div className={s.userInfo}>
                     <div className={s.userInfoWrapper}>
-                        <img className={s.userAccountPhoto} src={user} alt="userPhoto"/>
+                        <div className={s.userAccountPhoto} style={{backgroundImage: `url(${user})`}}>
+                        </div>
                         <div className={s.userAccountInfo}>
-                            <div className={s.name}>Леонид Мизнов</div>
-                            <div className={s.address}>Минск, Ложинская д.19</div>
-                            <div className={s.email}>exampleEmail@gmail.com</div>
+                            <div className={s.userAccountName}>Леонид Иванович Мизнов</div>
+                            <div className={s.userAccountAddress}>Минск, Ложинская д.19</div>
+                            <div className={s.userAccountEmail}>exampleEmail@gmail.com</div>
                         </div>
                     </div>
                     <div className={s.userPersonalCardWrapper}>
+                        <img className={s.userPersonalCardPaw} src={paw} alt="paw"/>
                         <div className={s.userPersonalCardName}>
-                            Леонид Мизнов
+                            Леонид Иванович Мизнов
                         </div>
                         <div className={s.userPersonalCardSaleWrapper}>
                             <div>Бонусы: 19</div>
