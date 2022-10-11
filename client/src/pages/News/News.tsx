@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import s from './news.module.scss';
 import {lastNews} from "../../data/data";
 import {Link} from "react-router-dom";
@@ -6,6 +6,12 @@ import paw from "../../images/pawBig.png";
 import Sidebar from "../../components/sidebar/Sidebar";
 
 const News = () => {
+
+    useEffect(()=>{
+        window.scrollTo(0,0);
+    },[])
+
+
     return (
         <div>
             <div className={s.newsLBg}>

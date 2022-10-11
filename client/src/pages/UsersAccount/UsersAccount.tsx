@@ -1,8 +1,15 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import s from './usersAccount.module.scss'
 import user from '../../images/reviews/user4.jpg'
 
 const UsersAccount = () => {
+
+    useEffect(()=>{
+        window.scrollTo(0,0);
+    },[])
+
+
+
     return (
         <div>
             <div className={s.pageContainer}>

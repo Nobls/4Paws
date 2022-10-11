@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import s from "./newsPost.module.scss";
 import {lastNews, reviews} from "../../data/data";
 import {Link} from "react-router-dom";
@@ -7,6 +7,11 @@ import Sidebar from "../../components/sidebar/Sidebar";
 import ButtonStandart from "../../components/buttonStandart/ButtonStandart";
 
 const NewsPost = () => {
+
+    useEffect(()=>{
+        window.scrollTo(0,0);
+    },[])
+
     return (
         <div>
             <div className={s.newsPostLBg}>
