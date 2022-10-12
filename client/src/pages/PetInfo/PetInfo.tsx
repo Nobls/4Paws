@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import s from './petInfo.module.scss';
 import petPhoto from '../../images/pet.png';
 import ButtonStandart from "../../components/buttonStandart/ButtonStandart";
@@ -6,6 +6,10 @@ import LowercaseButton from "../../components/lowercaseButton/LowercaseButton";
 
 
 const PetInfo = () => {
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, [])
 
     const buttonTitleRegister = 'Сохранить';
 
