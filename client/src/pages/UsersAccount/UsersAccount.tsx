@@ -5,6 +5,7 @@ import petPhoto from '../../images/pagesBG/04.jpg'
 import paw from '../../images/pawBig.png'
 import bgPetCard from '../../images/background/bg1.png'
 import {useNavigate} from "react-router-dom";
+import YourOrders from "../../components/yourOrders/YourOrders";
 
 const UsersAccount = () => {
 
@@ -53,7 +54,8 @@ const UsersAccount = () => {
                 <div className={s.userAccountPets}>
 
                     <div className={s.userPetsWrapper}>
-                        <div className={s.userAccountPetPhoto} style={{backgroundImage: `url(${petPhoto})`}}></div>
+                        <div className={s.userAccountPetPhoto} style={{backgroundImage: `url(${petPhoto})`}}>
+                        </div>
                         <div className={s.userAccountPetInfo}>
                             <div className={s.userAccountPetName}>Чапа</div>
                             <div className={s.userAccountAge}>6 лет</div>
@@ -65,7 +67,8 @@ const UsersAccount = () => {
                     </div>
 
                     <div className={s.userPetsWrapper}>
-                        <div className={s.userAccountPetPhoto} style={{backgroundImage: `url(${petPhoto})`}}></div>
+                        <div className={s.userAccountPetPhoto} style={{backgroundImage: `url(${petPhoto})`}}>
+                        </div>
                         <div className={s.userAccountPetInfo}>
                             <div className={s.userAccountPetName}>Чапа</div>
                             <div className={s.userAccountAge}>6 лет</div>
@@ -77,7 +80,8 @@ const UsersAccount = () => {
                     </div>
 
                     <div className={s.userPetsWrapper}>
-                        <div className={s.userAccountPetPhoto} style={{backgroundImage: `url(${petPhoto})`}}></div>
+                        <div className={s.userAccountPetPhoto} style={{backgroundImage: `url(${petPhoto})`}}>
+                        </div>
                         <div className={s.userAccountPetInfo}>
                             <div className={s.userAccountPetName}>Чапа</div>
                             <div className={s.userAccountAge}>6 лет</div>
@@ -90,12 +94,15 @@ const UsersAccount = () => {
 
                     <button className={s.userAccountAddPets} onClick={addPet}>
                         <svg xmlns="http://www.w3.org/2000/svg" width="55px" height="55px" viewBox="0 0 24 24"
-                             aria-labelledby="plusIconTitle" stroke="#ffffff" stroke-width="2"
+                             aria-labelledby="plusIconTitle" stroke="#ffffff" strokeWidth="2"
                              color="#2329D6">
                             <path d="M20 12L4 12M12 4L12 20"/>
                         </svg>
                     </button>
                 </div>
+
+                <h2>Ваши заказы</h2>
+                <YourOrders/>
             </div>
         </div>
 
