@@ -1,0 +1,14 @@
+@import "src/common/extends";
+@import "src/common/variables";
+
+
+.yourOrdersContainer {
+  @extend .container;
+
+  .yourOrdersWrapper {
+    background-color: #b0afaf;
+    display: flex;
+    align-items: center
+
+  }
+}
