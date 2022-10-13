@@ -48,7 +48,7 @@
           margin-bottom: 15px;
         }
 
-        .userAccountPhone{
+        .userAccountPhone {
           font-size: 20px;
           font-weight: 700;
           margin-bottom: 15px;
@@ -169,7 +169,7 @@
         }
       }
 
-      .personalPetCard{
+      .personalPetCard {
         width: 150px;
         height: 150px;
         display: flex;
@@ -180,14 +180,14 @@
         margin-left: 25px;
         border-radius: $borderRadius;
 
-        .personalPetCardText{
+        .personalPetCardText {
           font-size: 25px;
           font-weight: 700;
         }
       }
     }
 
-    .userAccountAddPets{
+    .userAccountAddPets {
       width: 100px;
       height: 100px;
 
@@ -197,9 +197,95 @@
       border: inherit;
       transition: $transition03;
 
-      &:hover{
+      &:hover {
         transform: scale(1.1);
         transition: $transition03;
+      }
+    }
+  }
+
+  .userAccountOrders {
+    width: 100%;
+
+    .userAccountOrdersItems {
+
+      .userAccountOrdersItem + .userAccountOrdersItem {
+        margin-top: 25px;
+      }
+
+      .userAccountOrdersItem {
+        position: relative;
+        display: flex;
+        align-items: center;
+        width: 100%;
+        background-color: $backgroundCartHover;
+        border-radius: $borderRadius;
+        padding: 30px 15px;
+        list-style: $color-accent-dark;
+
+        font-size: 20px;
+        font-weight: 900;
+
+        .userQuantity {
+          position: absolute;
+          right: 350px;
+          font-weight: 500;
+          display: flex;
+          align-items: center;
+
+          .quantityInput {
+            @extend .bgInput;
+            width: 70px;
+            height: 50px;
+            text-align: center;
+            margin-right: 15px;
+            font-weight: 900;
+          }
+
+          .quantityButtonMinus{
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            margin-right: 10px;
+            background-color: $color-accent-dark;
+            border: inherit;
+          }
+          .quantityButtonPlus{
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            background-color: $color-accent-dark;
+            border: inherit;
+
+          }
+        }
+
+        .userOrderPrice {
+          position: absolute;
+          right: 170px;
+          font-weight: 700;
+        }
+
+        .deleteOrder {
+          position: absolute;
+          right: 30px;
+          font-weight: 500;
+          width: 40px;
+          height: 40px;
+          border-radius: 50%;
+          background-color: $color-accent-dark;
+          display: flex;
+          align-items: center;
+          border: inherit;
+          transition: $transition03;
+
+          &:hover {
+            transform: scale(1.1);
+            transition: $transition03;
+          }
+        }
       }
     }
   }
