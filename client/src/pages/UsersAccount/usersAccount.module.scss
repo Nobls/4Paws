@@ -242,7 +242,7 @@
             font-weight: 900;
           }
 
-          .quantityButtonMinus{
+          .quantityButtonMinus {
             width: 40px;
             height: 40px;
             display: flex;
@@ -251,14 +251,24 @@
             background-color: $color-accent-dark;
             border: inherit;
           }
-          .quantityButtonPlus{
+
+          .quantityButtonPlus {
             width: 40px;
             height: 40px;
             display: flex;
             align-items: center;
             background-color: $color-accent-dark;
             border: inherit;
+            transition: $transition03;
 
+            &:hover {
+              background-color: white;
+              transition: $transition03;
+
+              path {
+                stroke: $color-accent-dark;
+              }
+            }
           }
         }
 
