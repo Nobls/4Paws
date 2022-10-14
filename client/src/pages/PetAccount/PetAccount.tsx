@@ -8,7 +8,8 @@ const PetAccount = () => {
         <div className={s.pageContainer}>
             <div className={s.petAccountInfo}>
                 <div className={s.petAccountInfoWrapper}>
-                    <div className={s.petAccountPhoto} style={{backgroundImage: `url(${petPhoto})`}}></div>
+                    <div className={s.petAccountPhoto} style={{backgroundImage: `url(${petPhoto})`}}>
+                    </div>
                     <div className={s.petAccountPersonalInfo}>
                         <div className={s.personalPetName}>Чапа</div>
                         <div>
@@ -26,15 +27,17 @@ const PetAccount = () => {
             <div className={s.petVaccinations}>
                 <h3 className={s.petVaccinationsTitle}>Прививки</h3>
                 <ol className={s.petVaccinationsItems}>
-                    <li>От бешенства <span>Novak2000</span> <span>21.03.2022</span></li>
-                    <li>От бешенства <span>Novak2000</span> <span>21.03.2022</span></li>
-                    <li>От бешенства <span>Novak2000</span> <span>21.03.2022</span></li>
+                    <li className={s.petVaccinationsItem}>От бешенства <span>Novak2000</span> <span>21.03.2022</span></li>
+                    <li className={s.petVaccinationsItem}>От бешенства <span>Novak2000</span> <span>21.03.2022</span></li>
+                    <li className={s.petVaccinationsItem}>От бешенства <span>Novak2000</span> <span>21.03.2022</span></li>
                 </ol>
                 <form className={s.petVaccinationsForm}>
-                    <label htmlFor="">Тип прививки<input type="text"/></label>
-                    <label htmlFor="">Дата<input type="text"/></label>
-                    <label htmlFor="">Название препарата<input type="text"/></label>
-                    <label htmlFor="">Название клиники<input type="text"/></label>
+                    <div className={s.petVaccinationsFormItemBlock}>
+                        <label className={s.petVaccinationsFormItemType} htmlFor="">Тип прививки<input className={s.petVaccinationsFormItemTypeInp} type="text"/></label>
+                        <label className={s.petVaccinationsFormItemDate} htmlFor="">Дата<input className={s.petVaccinationsFormItemDateInp} type="date"/></label>
+                    </div>
+                    <label className={s.petVaccinationsFormItem} htmlFor="">Название препарата<input type="text"/></label>
+                    <label className={s.petVaccinationsFormItem} htmlFor="">Название клиники<input type="text"/></label>
                 </form>
                 <button>Добавить</button>
             </div>

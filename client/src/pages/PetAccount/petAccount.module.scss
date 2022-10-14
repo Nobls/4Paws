@@ -1,7 +1,7 @@
 @import "../../common/extends";
 @import "../../common/variables";
 
-.pageContainer{
+.pageContainer {
   @extend .container;
   display: flex;
   justify-content: center;
@@ -9,52 +9,58 @@
   align-items: center;
   margin-bottom: 100px;
 
-  .petAccountInfo{
+  .petAccountInfo {
     width: 100%;
     display: flex;
     justify-content: space-around;
     margin-top: 100px;
-    .petAccountInfoWrapper{
+
+    .petAccountInfoWrapper {
       display: flex;
       align-items: center;
-      .petAccountPhoto{
+
+      .petAccountPhoto {
         width: 150px;
         height: 150px;
         border-radius: $borderRadius;
         background-size: cover;
         margin-right: 40px;
       }
-      .petAccountPersonalInfo{
-        .personalPetName{
+
+      .petAccountPersonalInfo {
+        .personalPetName {
           font-size: 30px;
           font-weight: 900;
           margin-bottom: 15px;
         }
-        .personalPetAge{
+
+        .personalPetAge {
           margin-right: 15px;
           font-size: 20px;
           font-weight: 700;
         }
 
-        .personalPetGender{
+        .personalPetGender {
           margin-right: 15px;
           font-size: 20px;
           font-weight: 700;
         }
 
-        .personalPetBreed{
+        .personalPetBreed {
           margin-top: 15px;
           font-size: 25px;
           font-weight: 700;
         }
       }
     }
-    .petAccountPersonalCard{
-      .petPersonalCard{
+
+    .petAccountPersonalCard {
+      .petPersonalCard {
         font-size: 25px;
         font-weight: 900;
       }
-      .petPersonalCardNumber{
+
+      .petPersonalCardNumber {
         font-size: 18px;
         font-weight: 700;
         letter-spacing: 10px;
@@ -63,38 +69,89 @@
     }
   }
 
-  .petVaccinations{
-    .petVaccinationsTitle{
+  .petVaccinations {
+    width: 70%;
+
+    .petVaccinationsTitle {
       @extend .title;
     }
-    .petVaccinationsItems{
+
+    .petVaccinationsItems {
+      padding-left: 0;
+
+      .petVaccinationsItem + .petVaccinationsItem {
+        margin-top: 25px;
+      }
+
+      .petVaccinationsItem {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        background-color: $backgroundCartHover;
+        border-radius: $borderRadius;
+        padding: 30px 15px;
+        list-style-type: none;
+        font-size: 20px;
+        font-weight: 900;
+        justify-content: space-between;
+      }
+    }
+
+    .petVaccinationsForm {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+
+      .petVaccinationsFormItemBlock {
+        display: flex;
+        margin: 50px 0 0 0;
+
+        .petVaccinationsFormItemType {
+          margin-right: 50px;
+
+
+          .petVaccinationsFormItemTypeInp {
+            margin-left: 10px;
+          }
+        }
+
+        .petVaccinationsFormItemDate {
+
+          .petVaccinationsFormItemDateInp {
+            margin-left: 10px;
+          }
+        }
+      }
+
+      .petVaccinationsFormItem {
+        margin: 30px 0 0 0;
+      }
+    }
+  }
+
+  .petProcedures {
+    .petProceduresTitle {
+      @extend .title;
+    }
+
+    .petProceduresItems {
 
     }
-    .petVaccinationsForm{
+
+    .petProceduresForm {
       display: flex;
       flex-direction: column;
     }
   }
 
-  .petProcedures{
-    .petProceduresTitle{
-      @extend .title;
-    }
-    .petProceduresItems{
-
-    }
-    .petProceduresForm{
-      display: flex;
-      flex-direction: column;
-    }
-  }
-
-  .petAccountInstruction{
+  .petAccountInstruction {
     display: flex;
-    .petAccountInstructionWrapper{
+
+    .petAccountInstructionWrapper {
 
     }
-    .savePetInfo{
+
+    .savePetInfo {
 
     }
   }

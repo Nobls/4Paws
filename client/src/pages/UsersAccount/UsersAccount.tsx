@@ -73,7 +73,8 @@ const UsersAccount = () => {
             <div className={s.userAccountPets}>
 
                 <div className={s.userPetsWrapper} onClick={onPagePetAccount}>
-                    <div className={s.userAccountPetPhoto} style={{backgroundImage: `url(${petPhoto})`}}></div>
+                    <div className={s.userAccountPetPhoto} style={{backgroundImage: `url(${petPhoto})`}}>
+                    </div>
                     <div className={s.userAccountPetInfo}>
                         <div className={s.userAccountPetName}>Чапа</div>
                         <div className={s.userAccountAge}>6 лет</div>
@@ -85,7 +86,8 @@ const UsersAccount = () => {
                 </div>
 
                 <div className={s.userPetsWrapper} onClick={onPagePetAccount}>
-                    <div className={s.userAccountPetPhoto} style={{backgroundImage: `url(${petPhoto})`}}></div>
+                    <div className={s.userAccountPetPhoto} style={{backgroundImage: `url(${petPhoto})`}}>
+                    </div>
                     <div className={s.userAccountPetInfo}>
                         <div className={s.userAccountPetName}>Чапа</div>
                         <div className={s.userAccountAge}>6 лет</div>
@@ -97,7 +99,8 @@ const UsersAccount = () => {
                 </div>
 
                 <div className={s.userPetsWrapper} onClick={onPagePetAccount}>
-                    <div className={s.userAccountPetPhoto} style={{backgroundImage: `url(${petPhoto})`}}></div>
+                    <div className={s.userAccountPetPhoto} style={{backgroundImage: `url(${petPhoto})`}}>
+                    </div>
                     <div className={s.userAccountPetInfo}>
                         <div className={s.userAccountPetName}>Чапа</div>
                         <div className={s.userAccountAge}>6 лет</div>
