@@ -1,0 +1,101 @@
+@import "../../common/extends";
+@import "../../common/variables";
+
+.pageContainer{
+  @extend .container;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 100px;
+
+  .petAccountInfo{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    margin-top: 100px;
+    .petAccountInfoWrapper{
+      display: flex;
+      align-items: center;
+      .petAccountPhoto{
+        width: 150px;
+        height: 150px;
+        border-radius: $borderRadius;
+        background-size: cover;
+        margin-right: 40px;
+      }
+      .petAccountPersonalInfo{
+        .personalPetName{
+          font-size: 30px;
+          font-weight: 900;
+          margin-bottom: 15px;
+        }
+        .personalPetAge{
+          margin-right: 15px;
+          font-size: 20px;
+          font-weight: 700;
+        }
+
+        .personalPetGender{
+          margin-right: 15px;
+          font-size: 20px;
+          font-weight: 700;
+        }
+
+        .personalPetBreed{
+          margin-top: 15px;
+          font-size: 25px;
+          font-weight: 700;
+        }
+      }
+    }
+    .petAccountPersonalCard{
+      .petPersonalCard{
+        font-size: 25px;
+        font-weight: 900;
+      }
+      .petPersonalCardNumber{
+        font-size: 18px;
+        font-weight: 700;
+        letter-spacing: 10px;
+        text-align: center;
+      }
+    }
+  }
+
+  .petVaccinations{
+    .petVaccinationsTitle{
+      @extend .title;
+    }
+    .petVaccinationsItems{
+
+    }
+    .petVaccinationsForm{
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  .petProcedures{
+    .petProceduresTitle{
+      @extend .title;
+    }
+    .petProceduresItems{
+
+    }
+    .petProceduresForm{
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  .petAccountInstruction{
+    display: flex;
+    .petAccountInstructionWrapper{
+
+    }
+    .savePetInfo{
+
+    }
+  }
+}

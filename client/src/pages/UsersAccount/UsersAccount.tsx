@@ -17,6 +17,9 @@ const UsersAccount = () => {
     const addPet = () => {
         navigate('/petInfo')
     }
+    const onPagePetAccount = () => {
+      navigate('/petAccount')
+    }
 
     let [quantity, setQuantity] = useState(0)
 
@@ -69,7 +72,7 @@ const UsersAccount = () => {
 
             <div className={s.userAccountPets}>
 
-                <div className={s.userPetsWrapper}>
+                <div className={s.userPetsWrapper} onClick={onPagePetAccount}>
                     <div className={s.userAccountPetPhoto} style={{backgroundImage: `url(${petPhoto})`}}></div>
                     <div className={s.userAccountPetInfo}>
                         <div className={s.userAccountPetName}>Чапа</div>
@@ -81,7 +84,7 @@ const UsersAccount = () => {
                     </div>
                 </div>
 
-                <div className={s.userPetsWrapper}>
+                <div className={s.userPetsWrapper} onClick={onPagePetAccount}>
                     <div className={s.userAccountPetPhoto} style={{backgroundImage: `url(${petPhoto})`}}></div>
                     <div className={s.userAccountPetInfo}>
                         <div className={s.userAccountPetName}>Чапа</div>
@@ -93,7 +96,7 @@ const UsersAccount = () => {
                     </div>
                 </div>
 
-                <div className={s.userPetsWrapper}>
+                <div className={s.userPetsWrapper} onClick={onPagePetAccount}>
                     <div className={s.userAccountPetPhoto} style={{backgroundImage: `url(${petPhoto})`}}></div>
                     <div className={s.userAccountPetInfo}>
                         <div className={s.userAccountPetName}>Чапа</div>

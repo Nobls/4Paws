@@ -14,6 +14,7 @@ import Login from "./pages/Login/Login";
 import PetInfo from "./pages/PetInfo/PetInfo";
 import NewsPost from "./pages/NewsPost/NewsPost";
 import UsersAccount from "./pages/UsersAccount/UsersAccount";
+import PetAccount from "./pages/PetAccount/PetAccount";
 
 function App() {
     return (
@@ -32,6 +33,7 @@ function App() {
                     <Route path='petInfo' element={<PetInfo/>}/>
                     <Route path='newsPost' element={<NewsPost/>}/>
                     <Route path='usersAccount' element={<UsersAccount/>}/>
+                    <Route path='petAccount' element={<PetAccount/>}/>
                 </Route>
             </Routes>
         </div>
