@@ -36,13 +36,17 @@ const PetAccount = () => {
                         <label className={s.petVaccinationsFormItemType} htmlFor="">Тип прививки<input className={s.petVaccinationsFormItemTypeInp} type="text"/></label>
                         <label className={s.petVaccinationsFormItemDate} htmlFor="">Дата<input className={s.petVaccinationsFormItemDateInp} type="date"/></label>
                     </div>
-                    <label className={s.petVaccinationsFormItem} htmlFor="">Название препарата<input type="text"/></label>
-                    <label className={s.petVaccinationsFormItem} htmlFor="">Название клиники<input type="text"/></label>
+                    <label className={s.petVaccinationsFormItem} htmlFor="">Название препарата<input className={s.petVaccinationsFormItemDrugName} type="text"/></label>
+                    <label className={s.petVaccinationsFormItem} htmlFor="">Название клиники<input className={s.petVaccinationsFormItemClinicName} type="text"/></label>
                 </form>
-                <button>Добавить</button>
+                {/*<button className={s.petVaccinationsAddBtn}>Добавить</button>*/}
+                <div className={s.petAccountInfoBtnWrapper}>
+                    <ButtonStandart title={"Добавить"}/>
+                </div>
+
             </div>
             <div className={s.petProcedures}>
-                <h3 className={s.petProceduresTitle}>Прививки</h3>
+                <h3 className={s.petProceduresTitle}>Процедуры</h3>
                 <ol className={s.petProceduresItems}>
                     <li>Кастрация <span>Доктор Вет</span> <span>21.03.2022</span></li>
                     <li>Кастрация <span>Доктор Вет</span> <span>21.03.2022</span></li>
@@ -53,7 +57,9 @@ const PetAccount = () => {
                     <label htmlFor="">Дата<input type="text"/></label>
                     <label htmlFor="">Название клиники<input type="text"/></label>
                 </form>
-                <button>Добавить</button>
+                <div className={s.petAccountInfoBtnWrapper}>
+                    <ButtonStandart title={"Добавить"}/>
+                </div>
             </div>
             <div className={s.petAccountInstruction}>
                 <div className={s.petAccountInstructionWrapper}>

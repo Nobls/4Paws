@@ -111,6 +111,7 @@
 
 
           .petVaccinationsFormItemTypeInp {
+            @extend .bgInput;
             margin-left: 10px;
           }
         }
@@ -118,6 +119,7 @@
         .petVaccinationsFormItemDate {
 
           .petVaccinationsFormItemDateInp {
+            @extend .bgInput;
             margin-left: 10px;
           }
         }
@@ -125,7 +127,21 @@
 
       .petVaccinationsFormItem {
         margin: 30px 0 0 0;
+
+        .petVaccinationsFormItemDrugName {
+          @extend .bgInput;
+        }
+
+        .petVaccinationsFormItemClinicName {
+          @extend .bgInput;
+        }
       }
+    }
+
+    .petAccountInfoBtnWrapper {
+      text-align: right;
+      margin: 30px 0;
+
     }
   }
 
