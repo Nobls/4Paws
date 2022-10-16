@@ -77,6 +77,7 @@
       0 12px 24px rgba(0, 0, 0, 0.3);
       position: relative;
       overflow: hidden;
+      box-shadow: $boxShadow;
 
       .userPersonalCardPaw {
         position: absolute;
@@ -104,6 +105,15 @@
         line-height: 20px;
         z-index: 1;
         font-weight: 500;
+
+        .userPersonalCardBonus {
+          letter-spacing: 3px;
+          margin-bottom: 5px;
+        }
+
+        .userPersonalCardSale {
+          letter-spacing: 3px;
+        }
       }
 
       .userPersonalCardNumber {
@@ -132,15 +142,23 @@
     .userPetsWrapper {
       display: flex;
       background-color: $backgroundCartHover;
-      padding: 15px 35px;
+      padding: 15px;
       border-radius: $borderRadius;
       margin: 0 40px 30px 0;
       box-shadow: $boxShadow;
+      cursor: pointer;
+
+      &:hover {
+        background-color: $backgroundCart;
+        box-shadow: $boxShadowHover;
+      }
 
       .userAccountPetPhoto {
         width: 150px;
         height: 150px;
         background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
         border-radius: $borderRadius;
         margin-right: 25px;
       }
@@ -169,20 +187,25 @@
         }
       }
 
-      .personalPetCard {
-        width: 150px;
-        height: 150px;
+      .personalPetCardWrapper {
         display: flex;
-        align-items: center;
-        text-align: center;
-        background-size: cover;
-        align-self: center;
-        margin-left: 25px;
-        border-radius: $borderRadius;
 
-        .personalPetCardText {
-          font-size: 25px;
-          font-weight: 700;
+        .personalPetCard {
+          width: 90px;
+          height: 130px;
+          display: flex;
+          align-items: center;
+          text-align: center;
+          background-size: contain;
+          background-repeat: no-repeat;
+          align-self: center;
+          margin-left: 25px;
+          //border-radius: $borderRadius;
+
+          .personalPetCardText {
+            font-size: 25px;
+            font-weight: 700;
+          }
         }
       }
     }

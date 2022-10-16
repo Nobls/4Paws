@@ -3,7 +3,7 @@ import s from './usersAccount.module.scss'
 import user from '../../images/reviews/user4.jpg'
 import petPhoto from '../../images/pagesBG/04.jpg'
 import paw from '../../images/pawBig.png'
-import bgPetCard from '../../images/background/bg1.png'
+import petCard1 from '../../images/petCard1.png';
 import {useNavigate} from "react-router-dom";
 
 const UsersAccount = () => {
@@ -61,8 +61,8 @@ const UsersAccount = () => {
                         Леонид Иванович Мизнов
                     </div>
                     <div className={s.userPersonalCardSaleWrapper}>
-                        <div>Бонусы: 19</div>
-                        <div>Скидка: 3%</div>
+                        <div className={s.userPersonalCardBonus}>Бонусы: 19</div>
+                        <div className={s.userPersonalCardSale}>Скидка: 3%</div>
                     </div>
                     <div className={s.userPersonalCardNumber}>1555 1511 1511 2222</div>
                 </div>
@@ -76,12 +76,28 @@ const UsersAccount = () => {
                     <div className={s.userAccountPetPhoto} style={{backgroundImage: `url(${petPhoto})`}}>
                     </div>
                     <div className={s.userAccountPetInfo}>
+                        <div className={s.userAccountPetName}>Тузик</div>
+                        <div className={s.userAccountAge}>6 лет</div>
+                        <div className={s.userAccountBreed}>Лабрадор</div>
+                    </div>
+                    <div className={s.personalPetCardWrapper}>
+                        <div className={s.personalPetCard} style={{backgroundImage: `url(${petCard1})`}}>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div className={s.userPetsWrapper} onClick={onPagePetAccount}>
+                    <div className={s.userAccountPetPhoto} style={{backgroundImage: `url(${petPhoto})`}}>
+                    </div>
+                    <div className={s.userAccountPetInfo}>
                         <div className={s.userAccountPetName}>Чапа</div>
                         <div className={s.userAccountAge}>6 лет</div>
                         <div className={s.userAccountBreed}>Лабрадор</div>
                     </div>
-                    <div className={s.personalPetCard} style={{backgroundImage: `url(${bgPetCard})`}}>
-                        <p className={s.personalPetCardText}>Личная карта</p>
+                    <div className={s.personalPetCardWrapper}>
+                        <div className={s.personalPetCard} style={{backgroundImage: `url(${petCard1})`}}>
+                        </div>
                     </div>
                 </div>
 
@@ -93,21 +109,9 @@ const UsersAccount = () => {
                         <div className={s.userAccountAge}>6 лет</div>
                         <div className={s.userAccountBreed}>Лабрадор</div>
                     </div>
-                    <div className={s.personalPetCard} style={{backgroundImage: `url(${bgPetCard})`}}>
-                        <p className={s.personalPetCardText}>Личная карта</p>
-                    </div>
-                </div>
-
-                <div className={s.userPetsWrapper} onClick={onPagePetAccount}>
-                    <div className={s.userAccountPetPhoto} style={{backgroundImage: `url(${petPhoto})`}}>
-                    </div>
-                    <div className={s.userAccountPetInfo}>
-                        <div className={s.userAccountPetName}>Чапа</div>
-                        <div className={s.userAccountAge}>6 лет</div>
-                        <div className={s.userAccountBreed}>Лабрадор</div>
-                    </div>
-                    <div className={s.personalPetCard} style={{backgroundImage: `url(${bgPetCard})`}}>
-                        <p className={s.personalPetCardText}>Личная карта</p>
+                    <div className={s.personalPetCardWrapper}>
+                        <div className={s.personalPetCard} style={{backgroundImage: `url(${petCard1})`}}>
+                        </div>
                     </div>
                 </div>
 
