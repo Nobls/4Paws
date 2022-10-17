@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {Link} from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
 import logo from "../../images/logoNew2.png"
 import s from './header.module.scss'
 import Navigation from "../navigation/Navigation";
@@ -11,6 +11,12 @@ const Header = () => {
     const onclickSearchHandler = () => {
         setSearch(!search)
     }
+    const [userLogin, setUserLogin] = useState(true)
+    const navigate = useNavigate()
+    const navigateUserAccount = () => {
+        navigate('usersAccount')
+    }
+
 
     return (
         <div className={s.headerBg}>
@@ -90,7 +96,16 @@ const Header = () => {
                                     </svg>
                                 </Link>
                             </div>
-                            <Link className={s.linkLogin} to={'/login'}>Войти</Link>
+                            {
+                                userLogin ?
+                                    <div className={s.userLoginWrapper} onClick={navigateUserAccount}>
+                                        <div className={s.userLogin}></div>
+                                        <span className={s.userName}>User</span>
+                                    </div>
+                                    :
+                                    <Link className={s.linkLogin} to={'/login'}>Войти</Link>
+                            }
+
                         </div>
                         <div>
                             <Navigation/>

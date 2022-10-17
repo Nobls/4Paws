@@ -147,6 +147,24 @@
             @extend .bgButtonHover;
           }
         }
+
+        .userLoginWrapper{
+          display: flex;
+          align-items: center;
+          cursor: pointer;
+          .userLogin{
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background-color: $backgroundCartHover;
+            border: 5px solid $color-text;
+            margin-right: 15px;
+          }
+          .userName{
+            font-size: 20px;
+            font-weight: 900;
+          }
+        }
       }
     }
   }
