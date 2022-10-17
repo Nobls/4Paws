@@ -39,7 +39,6 @@ const PetAccount = () => {
                     <label className={s.petVaccinationsFormItem} htmlFor="">Название препарата<input className={s.petVaccinationsFormItemDrugName} type="text"/></label>
                     <label className={s.petVaccinationsFormItem} htmlFor="">Название клиники<input className={s.petVaccinationsFormItemClinicName} type="text"/></label>
                 </form>
-                {/*<button className={s.petVaccinationsAddBtn}>Добавить</button>*/}
                 <div className={s.petAccountInfoBtnWrapper}>
                     <ButtonStandart title={"Добавить"}/>
                 </div>
@@ -63,8 +62,8 @@ const PetAccount = () => {
             </div>
             <div className={s.petAccountInstruction}>
                 <div className={s.petAccountInstructionWrapper}>
-                    <p>* Медицинская карта заполняется автоматически при обращение к нам за услугами сопровождения в клинику.</p>
-                    <p>Во всех других случаях карта заполняется пользователем.</p>
+                    <p className={s.petAccountInstructionDescription}><span className={s.petAccountInstructionDescriptionStar}>*</span> Медицинская карта заполняется автоматически при обращение к нам за услугами сопровождения в клинику.</p>
+                    <p className={s.petAccountInstructionDescription}>Во всех других случаях карта заполняется пользователем.</p>
                 </div>
                 <ButtonStandart title={'Сохранить'}/>
             </div>
