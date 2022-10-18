@@ -108,69 +108,122 @@
 
         .petVaccinationsFormItemType {
           margin-right: 50px;
+          font-weight: 700;
 
 
           .petVaccinationsFormItemTypeInp {
             @extend .bgInput;
-            margin-left: 10px;
+            //margin-left: 10px;
+            margin-top: 10px;
           }
         }
 
         .petVaccinationsFormItemDate {
+          font-weight: 700;
 
           .petVaccinationsFormItemDateInp {
             @extend .bgInput;
-            margin-left: 10px;
+            margin-top: 10px;
           }
         }
       }
 
       .petVaccinationsFormItem {
         margin: 30px 0 0 0;
+        font-weight: 700;
 
         .petVaccinationsFormItemDrugName {
           @extend .bgInput;
+          margin-top: 10px;
         }
 
         .petVaccinationsFormItemClinicName {
           @extend .bgInput;
+          margin-top: 10px;
         }
       }
     }
 
     .petAccountInfoBtnWrapper {
       text-align: right;
-      margin: 30px 0;
-
+      margin: 30px 0 50px 0;
     }
   }
 
   .petProcedures {
-    width: 100%;
+    width: 70%;
+
     .petProceduresTitle {
       @extend .title;
     }
 
+    .petProceduresItem + .petProceduresItem {
+      margin-top: 25px;
+    }
+
     .petProceduresItems {
       width: 100%;
-      background-color: $bg-colorF0F0F0;
+      margin-bottom: 50px;
+      padding-left: 0;
 
+      .petProceduresItem {
+        background-color: $backgroundCartHover;
+        display: flex;
+        align-items: center;
+        width: 100%;
+        border-radius: $borderRadius;
+        padding: 30px 15px;
+        list-style-type: none;
+        font-size: 20px;
+        font-weight: 900;
+        justify-content: space-between;
+      }
     }
 
     .petProceduresForm {
       display: flex;
       flex-direction: column;
+
+      .petProceduresFormItem {
+        margin: 30px 0 0 0;
+        font-weight: 700;
+
+        .petProceduresFormInput {
+          @extend .bgInput;
+          margin-top: 10px;
+        }
+
+        .petProceduresFormItemDateInp {
+          @extend .bgInput;
+          margin-top: 10px;
+          width: 200px;
+          display: flex;
+        }
+      }
+    }
+
+    .petAccountInfoBtnWrapper {
+      text-align: right;
+      margin: 30px 0 100px 0;
     }
   }
 
   .petAccountInstruction {
     display: flex;
+    width: 70%;
 
     .petAccountInstructionWrapper {
+      margin-right: 25px;
+
+      .petAccountInstructionDescription + .petAccountInstructionDescription {
+        margin-top: 15px;
+      }
 
       .petAccountInstructionDescription {
         font-size: 16px;
         font-weight: 600;
+        margin: 0;
+
 
         .petAccountInstructionDescriptionStar {
           color: #cd3512;
@@ -178,8 +231,8 @@
       }
     }
 
-    .savePetInfo {
-
+    .petAccountInfoBtnWrapper {
+      align-self: flex-end;
     }
   }
 }

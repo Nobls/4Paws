@@ -47,14 +47,14 @@ const PetAccount = () => {
             <div className={s.petProcedures}>
                 <h3 className={s.petProceduresTitle}>Процедуры</h3>
                 <ol className={s.petProceduresItems}>
-                    <li>Кастрация <span>Доктор Вет</span> <span>21.03.2022</span></li>
-                    <li>Кастрация <span>Доктор Вет</span> <span>21.03.2022</span></li>
-                    <li>Кастрация <span>Доктор Вет</span> <span>21.03.2022</span></li>
+                    <li className={s.petProceduresItem}>Кастрация <span>Доктор Вет</span> <span>21.03.2022</span></li>
+                    <li className={s.petProceduresItem}>Кастрация <span>Доктор Вет</span> <span>21.03.2022</span></li>
+                    <li className={s.petProceduresItem}>Кастрация <span>Доктор Вет</span> <span>21.03.2022</span></li>
                 </ol>
                 <form className={s.petProceduresForm}>
-                    <label htmlFor="">Процедура<input type="text"/></label>
-                    <label htmlFor="">Дата<input type="text"/></label>
-                    <label htmlFor="">Название клиники<input type="text"/></label>
+                    <label htmlFor="" className={s.petProceduresFormItem}>Дата<input type="date" className={s.petProceduresFormItemDateInp}/></label>
+                    <label htmlFor="" className={s.petProceduresFormItem}>Процедура<input type="text" className={s.petProceduresFormInput}/></label>
+                    <label htmlFor="" className={s.petProceduresFormItem}>Название клиники<input type="text" className={s.petProceduresFormInput}/></label>
                 </form>
                 <div className={s.petAccountInfoBtnWrapper}>
                     <ButtonStandart title={"Добавить"}/>
@@ -65,7 +65,9 @@ const PetAccount = () => {
                     <p className={s.petAccountInstructionDescription}><span className={s.petAccountInstructionDescriptionStar}>*</span> Медицинская карта заполняется автоматически при обращение к нам за услугами сопровождения в клинику.</p>
                     <p className={s.petAccountInstructionDescription}>Во всех других случаях карта заполняется пользователем.</p>
                 </div>
-                <ButtonStandart title={'Сохранить'}/>
+                <div className={s.petAccountInfoBtnWrapper}>
+                    <ButtonStandart title={'Сохранить'}/>
+                </div>
             </div>
         </div>
     );
