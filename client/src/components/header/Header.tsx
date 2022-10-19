@@ -4,6 +4,7 @@ import logo from "../../images/logoNew2.png"
 import s from './header.module.scss'
 import Navigation from "../navigation/Navigation";
 import {Search} from "../search/Search";
+import paw from '../../images/pawBig.png'
 
 const Header = () => {
 
@@ -99,7 +100,7 @@ const Header = () => {
                             {
                                 userLogin ?
                                     <div className={s.userLoginWrapper} onClick={navigateUserAccount}>
-                                        <div className={s.userLogin}></div>
+                                        <div className={s.userLogin}><img className={s.userLoginIcon} src={paw} alt="paw"/></div>
                                         <span className={s.userName}>User</span>
                                     </div>
                                     :
