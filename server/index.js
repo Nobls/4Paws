@@ -17,6 +17,48 @@ const app = express();
 
 app.use(express.json());
 
+app.post('/auth/login', async (req, res) => {
+    try {
+        const user = await UserModel.findOne({email: req.body.email})
+
+        if (!user){
+            return res.status(400).json({
+                message: "Не верный логин или пароль"
+            })
+        }
+
+        const isValidPass = await bcrypt.compare(req.body.password, user._doc.passwordHash);
+
+        if (!isValidPass){
+            return res.status(400).json({
+                massage: 'Не верный логин или пароль'
+            })
+        }
+
+        const token = jwt.sign(
+            {
+                _id: user._id,
+            },
+            'secretKey1234',
+            {
+                expiresIn: '30d'
+            },
+        );
+
+        const {passwordHash, ...userData} = user._doc;
+
+        res.json({
+            userData,
+            token,
+        });
+    } catch (err) {
+        console.log(err)
+        res.status(500).json({
+            message: 'Не удалось авторизоваться',
+        })
+    }
+})
+
 app.post('/auth/registration', registerValidation, async (req, res) => {
     try {
         const errors = validationResult(req);
@@ -26,11 +68,11 @@ app.post('/auth/registration', registerValidation, async (req, res) => {
 
         const password = req.body.password;
         const salt = await bcrypt.genSalt(10);
-        const passwordHash = await bcrypt.hash(password, salt);
+        const hash = await bcrypt.hash(password, salt);
 
         const doc = new UserModel({
             email: req.body.email,
-            passwordHash,
+            passwordHash: hash,
             avatarUrl: req.body.avatarUrl,
             fullName: req.body.fullName,
         });
@@ -43,13 +85,14 @@ app.post('/auth/registration', registerValidation, async (req, res) => {
             },
             'secretKey1234',
             {
-                expressIn: '30d'
+                expiresIn: '30d'
             },
-            {}
         );
 
+        const {passwordHash, ...userData} = user._doc;
+
         res.json({
-            ...user,
+            userData,
             token,
         });
     } catch (err) {
