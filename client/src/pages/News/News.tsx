@@ -1,17 +1,17 @@
-import React, {useEffect} from 'react';
+import React, {useEffect} from "react";
 import s from './news.module.scss';
+import Sidebar from "../../components/sidebar/Sidebar";
+import paw from '../../images/pawBig.png'
 import {lastNews} from "../../data/data";
 import {Link} from "react-router-dom";
-import paw from "../../images/pawBig.png";
-import Sidebar from "../../components/sidebar/Sidebar";
-import {useDispatch, useSelector} from "react-redux";
+import {useAppDispatch, useAppSelector} from "../../redux/hook/hook";
 import {fetchNews} from "../../redux/slices/posts";
-import {RootState} from "../../redux/store";
 
 const News = () => {
 
-    const dispatch = useDispatch()
-    const {post, tags} = useSelector((state:RootState) => state.news)
+    const dispatch = useAppDispatch()
+    const {post} = useAppSelector((state) => state.news)
+
 
     useEffect(() => {
         window.scrollTo(0, 0);
@@ -22,6 +22,7 @@ const News = () => {
     }, [])
     console.log(post)
 
+
     return (
         <div>
             <div className={s.newsLBg}>
@@ -31,19 +32,19 @@ const News = () => {
             <div className={s.newsWrapper}>
                 <div className={s.newsBlock}>
                     {
-                        lastNews.map(m => {
+                        post.map(m => {
                             return (
-                                <div className={s.newsItemWrapper} key={m.id}>
-                                    <div className={s.newsInfoImageBlock} style={{backgroundImage: `url(${m.image})`}}>
+                                <div className={s.newsItemWrapper} key={m._id}>
+                                    <div className={s.newsInfoImageBlock} style={{backgroundImage: `url(${m.imageUrl})`}}>
                                     </div>
                                     <div className={s.newsInfo}>
-                                        <div className={s.newsInfoItem}>{m.date}</div>
-                                        <div className={s.newsInfoItem}>{m.author}</div>
-                                        <div className={s.newsInfoItem}>{m.categories}</div>
+                                        {/*<div className={s.newsInfoItem}>{m.date}</div>*/}
+                                        <div className={s.newsInfoItem}>{m.user.fullName}</div>
+                                        {/*<div className={s.newsInfoItem}>{m.categories}</div>*/}
                                         <div className={s.newsInfoItem}>{m.tags}</div>
                                     </div>
                                     <Link to={'/news'} className={s.newsTitle}>{m.title}</Link>
-                                    <p className={s.newsText}>{m.description.substring(0, 300) + '...'}</p>
+                                    <p className={s.newsText}>{m.text.substring(0, 300) + '...'}</p>
                                     <Link to={'/newsPost'} className={s.newsButtonOpen}>
                                         Узнать больше
                                         <img src={paw} alt="paws"/>
@@ -64,6 +65,8 @@ const News = () => {
                                 </div>
                             )
                         })
+
+
                     }
                 </div>
                 <Sidebar/>
