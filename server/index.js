@@ -1,6 +1,7 @@
 import express from 'express';
 import mongoose from "mongoose";
 import multer from "multer";
+import cors from 'cors'
 
 import {registerValidation, loginValidation, postCreateValidation} from './validations/validations.js'
 
@@ -27,6 +28,7 @@ const storage = multer.diskStorage({
 const upload = multer({storage})
 
 app.use(express.json());
+app.use(cors());
 app.use('/uploads', express.static('uploads'));
 
 app.post('/auth/login', loginValidation, handleValidationErrors, UserController.login);
@@ -41,16 +43,17 @@ app.post('/upload', checkAuth, upload.single('image'),(req, res)=>{
     })
 } )
 
+//заманил posts на news
 
-app.get('/posts', PostController.getAll);
+app.get('/news', PostController.getAll);
 
-app.get('/posts/:id', PostController.getOne);
+app.get('/news/:id', PostController.getOne);
 
-app.post('/posts', checkAuth, postCreateValidation, handleValidationErrors, PostController.create);
+app.post('/news', checkAuth, postCreateValidation, handleValidationErrors, PostController.create);
 
-app.delete('/posts/:id', checkAuth, PostController.remove);
+app.delete('/news/:id', checkAuth, PostController.remove);
 
-app.patch('/posts/:id', checkAuth, postCreateValidation, handleValidationErrors, PostController.update);
+app.patch('/news/:id', checkAuth, postCreateValidation, handleValidationErrors, PostController.update);
 
 app.listen(3157, (err) => {
     if (err) {

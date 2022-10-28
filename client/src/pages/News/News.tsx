@@ -4,13 +4,23 @@ import {lastNews} from "../../data/data";
 import {Link} from "react-router-dom";
 import paw from "../../images/pawBig.png";
 import Sidebar from "../../components/sidebar/Sidebar";
+import {useDispatch, useSelector} from "react-redux";
+import {fetchNews} from "../../redux/slices/posts";
+import {RootState} from "../../redux/store";
 
 const News = () => {
 
-    useEffect(()=>{
-        window.scrollTo(0,0);
-    },[])
+    const dispatch = useDispatch()
+    const {post, tags} = useSelector((state:RootState) => state.news)
 
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, [])
+
+    useEffect(() => {
+        dispatch(fetchNews())
+    }, [])
+    console.log(post)
 
     return (
         <div>
