@@ -1,12 +1,15 @@
 import React, {useEffect} from 'react';
 import s from "./newsPost.module.scss";
 import {lastNews, reviews} from "../../data/data";
-import {Link} from "react-router-dom";
+import {Link, useParams} from "react-router-dom";
 import paw from "../../images/pawBig.png";
 import Sidebar from "../../components/sidebar/Sidebar";
 import ButtonStandart from "../../components/buttonStandart/ButtonStandart";
 
 const NewsPost = () => {
+
+    const params = useParams()
+    console.log(params)
 
     useEffect(()=>{
         window.scrollTo(0,0);

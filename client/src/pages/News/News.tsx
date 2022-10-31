@@ -41,9 +41,9 @@ const News = () => {
                                         {/*<div className={s.newsInfoItem}>{m.categories}</div>*/}
                                         <div className={s.newsInfoItem}>{m.tags}</div>
                                     </div>
-                                    <Link to={'/news'} className={s.newsTitle}>{m.title}</Link>
+                                    <Link to={`/news/${m._id}`} className={s.newsTitle}>{m.title}</Link>
                                     <p className={s.newsText}>{m.text.substring(0, 300) + '...'}</p>
-                                    <Link to={'/newsPost'} className={s.newsButtonOpen}>
+                                    <Link to={`/newsPost/${m._id}`} className={s.newsButtonOpen}>
                                         Узнать больше
                                         <img src={paw} alt="paws"/>
                                         {/*<svg xmlns="http://www.w3.org/2000/svg" width="19" height="19"*/}
