@@ -1,9 +1,20 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import s from "./sidebar.module.scss";
 import {Link} from "react-router-dom";
 import {lastNews} from "../../data/data";
+import {useAppDispatch, useAppSelector} from "../../redux/hook/hook";
+import {fetchTags} from "../../redux/slices/posts";
 
 const Sidebar = () => {
+
+    const dispatch = useAppDispatch()
+
+    const { tags } = useAppSelector((state)=> state.news)
+
+    useEffect(()=>{
+        dispatch(fetchTags())
+    }, [])
+
     return (
         <div className={s.sideBar}>
             <div className={s.newsCategories}>
@@ -99,13 +110,12 @@ const Sidebar = () => {
             <div className={s.newsTags}>
                 <h4 className={s.sideBarTitle}>Теги</h4>
                 <div className={s.newsTagsItems}>
-                    {
-                        lastNews.map(m => {
-                            return (
-                                <span key={m.id}>{m.tags}</span>
-                            )
-                        })
-                    }
+                    <span>{tags.slice(0,1)}</span>
+                    <span>{tags.slice(1,2)}</span>
+                    <span>{tags.slice(2,3)}</span>
+                    <span>{tags.slice(3,4)}</span>
+                    <span>{tags.slice(4,5)}</span>
+                    {/*походу костыль получился!!!*/}
                 </div>
 
             </div>

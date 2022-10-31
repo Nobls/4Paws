@@ -49,6 +49,10 @@ app.get('/news', PostController.getAll);
 
 app.get('/news/:id', PostController.getOne);
 
+app.get('/tags', PostController.getLastTags);
+
+app.get('/news/tags', PostController.getLastTags);
+
 app.post('/news', checkAuth, postCreateValidation, handleValidationErrors, PostController.create);
 
 app.delete('/news/:id', checkAuth, PostController.remove);

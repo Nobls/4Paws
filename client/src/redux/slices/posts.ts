@@ -15,9 +15,14 @@ interface User {
     fullName:string
 }
 
+/*interface Tags {
+    tags: string
+}*/
+
 
 type TypeState = {
     post: Post[]
+    tags: []
     loading: boolean;
     errors: any
 
@@ -25,6 +30,7 @@ type TypeState = {
 
 const initialState: TypeState = {
     post: [],
+    tags: [],
     loading: false,
     errors: null
 }
@@ -32,10 +38,17 @@ const initialState: TypeState = {
 export const fetchNews = createAsyncThunk<Post[]>(
     'news/fetchNews',
     async () => {
-            const response = await axios.get('/news')
-            return response.data
+            const {data} = await axios.get('/news')
+            return data
     })
-//добавить типизацию санок!!!
+
+export const fetchTags = createAsyncThunk<[]>(
+    'news/fetchTags',
+    async () => {
+        const {data} = await axios.get('/tags')
+        return data
+    })
+
 
 const newsSlice = createSlice({
     name: 'news',
@@ -50,6 +63,16 @@ const newsSlice = createSlice({
             state.loading = false;
         })
         builder.addCase(fetchNews.rejected, (state) => {
+            state.loading = false;
+        })
+        builder.addCase(fetchTags.pending, (state) => {
+            state.loading = true;
+        })
+        builder.addCase(fetchTags.fulfilled, (state, action) => {
+            state.tags = action.payload
+            state.loading = false;
+        })
+        builder.addCase(fetchTags.rejected, (state) => {
             state.loading = false;
         })
 

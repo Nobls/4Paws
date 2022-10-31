@@ -2,7 +2,6 @@ import React, {useEffect} from "react";
 import s from './news.module.scss';
 import Sidebar from "../../components/sidebar/Sidebar";
 import paw from '../../images/pawBig.png'
-import {lastNews} from "../../data/data";
 import {Link} from "react-router-dom";
 import {useAppDispatch, useAppSelector} from "../../redux/hook/hook";
 import {fetchNews} from "../../redux/slices/posts";
@@ -20,7 +19,6 @@ const News = () => {
     useEffect(() => {
         dispatch(fetchNews())
     }, [])
-    console.log(post)
 
 
     return (
@@ -34,8 +32,8 @@ const News = () => {
                     {
                         post.map(m => {
                             return (
-                                <div className={s.newsItemWrapper} key={m._id}>
-                                    <div className={s.newsInfoImageBlock} style={{backgroundImage: `url(${m.imageUrl})`}}>
+                                <div className={s.newsItemWrapper} key={m._id} >
+                                    <div className={s.newsInfoImageBlock} style={{backgroundImage: `url(http://localhost:3157/uploads/servicesImage1.jpg)`}}>
                                     </div>
                                     <div className={s.newsInfo}>
                                         {/*<div className={s.newsInfoItem}>{m.date}</div>*/}
