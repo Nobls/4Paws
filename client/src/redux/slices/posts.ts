@@ -1,13 +1,13 @@
 import {createAsyncThunk, createSlice} from "@reduxjs/toolkit";
 import axios from "../../axios/axios";
 
-interface Post {
+export interface PostType {
     _id?: string
     title: string
     text: string
     tags: []
     user:User
-    imageUrl: string
+    imageUrl?: string
 }
 
 interface User {
@@ -21,7 +21,7 @@ interface User {
 
 
 type TypeState = {
-    post: Post[]
+    post: PostType[]
     tags: []
     loading: boolean;
     errors: any
@@ -35,7 +35,7 @@ const initialState: TypeState = {
     errors: null
 }
 
-export const fetchNews = createAsyncThunk<Post[]>(
+export const fetchNews = createAsyncThunk<PostType[]>(
     'news/fetchNews',
     async () => {
             const {data} = await axios.get('/news')

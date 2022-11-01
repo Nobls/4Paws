@@ -1,18 +1,29 @@
-import React, {useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 import s from "./newsPost.module.scss";
-import {lastNews, reviews} from "../../data/data";
-import {Link, useParams} from "react-router-dom";
-import paw from "../../images/pawBig.png";
+import {reviews} from "../../data/data";
+import {useParams} from "react-router-dom";
 import Sidebar from "../../components/sidebar/Sidebar";
 import ButtonStandart from "../../components/buttonStandart/ButtonStandart";
+import axios from "../../axios/axios";
 
 const NewsPost = () => {
 
-    const params = useParams()
-    console.log(params)
+    const [data, setData] = useState()
+
+    const {_id} = useParams()
+    console.log(data)
 
     useEffect(()=>{
         window.scrollTo(0,0);
+
+    },[])
+    useEffect(()=>{
+        axios.get(`news/${_id}`).then(res=>{
+            setData(res.data)
+            console.log(data)
+        }).catch(err=>{
+            console.warn(err)
+        })
     },[])
 
     return (
@@ -22,7 +33,11 @@ const NewsPost = () => {
                     className={s.newsPostSpan}>клиентами</span><br/>и их питомцами!</h1>
             </div>
             <div className={s.newsPostWrapper}>
-                <div className={s.newsPostBlock}>
+
+
+                {/*<Post _id={_id} title={title} text={data.text} tags={data.tags} user={data.user}/>*/}
+
+                {/*<div className={s.newsPostBlock}>
                     <div className={s.newsPostItemWrapper} key={lastNews[4].id}>
                         <div className={s.newsPostInfoImageBlock}
                              style={{backgroundImage: `url(${lastNews[4].image})`}}>
@@ -40,7 +55,7 @@ const NewsPost = () => {
                             <img src={paw} alt="paws"/>
                         </Link>
                     </div>
-                </div>
+                </div>*/}
                 <Sidebar/>
             </div>
 
