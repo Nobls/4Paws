@@ -5,26 +5,33 @@ import {useParams} from "react-router-dom";
 import Sidebar from "../../components/sidebar/Sidebar";
 import ButtonStandart from "../../components/buttonStandart/ButtonStandart";
 import axios from "../../axios/axios";
+import Post from "../../components/post/Post";
 
 const NewsPost = () => {
 
-    const [data, setData] = useState()
+    const [data, setData] = useState<any>()
+    const [loading, setLoading] = useState<any>(true)
 
     const {_id} = useParams()
     console.log(data)
 
-    useEffect(()=>{
-        window.scrollTo(0,0);
+    useEffect(() => {
+        window.scrollTo(0, 0);
 
-    },[])
-    useEffect(()=>{
-        axios.get(`news/${_id}`).then(res=>{
+    }, [])
+    useEffect(() => {
+        axios.get(`news/${_id}`).then(res => {
             setData(res.data)
+            setLoading(false)
             console.log(data)
-        }).catch(err=>{
+        }).catch(err => {
             console.warn(err)
         })
-    },[])
+    }, [])
+
+    if (loading) {
+        return <div>Загрузка</div>
+    }
 
     return (
         <div>
@@ -33,29 +40,17 @@ const NewsPost = () => {
                     className={s.newsPostSpan}>клиентами</span><br/>и их питомцами!</h1>
             </div>
             <div className={s.newsPostWrapper}>
-
-
-                {/*<Post _id={_id} title={title} text={data.text} tags={data.tags} user={data.user}/>*/}
-
-                {/*<div className={s.newsPostBlock}>
-                    <div className={s.newsPostItemWrapper} key={lastNews[4].id}>
-                        <div className={s.newsPostInfoImageBlock}
-                             style={{backgroundImage: `url(${lastNews[4].image})`}}>
-                        </div>
-                        <div className={s.newsPostInfo}>
-                            <div className={s.newsPostInfoItem}>{lastNews[4].date}</div>
-                            <div className={s.newsPostInfoItem}>{lastNews[4].author}</div>
-                            <div className={s.newsPostInfoItem}>{lastNews[4].categories}</div>
-                            <div className={s.newsPostInfoItem}>{lastNews[4].tags}</div>
-                        </div>
-                        <Link to={'/news'} className={s.newsPostTitle}>{lastNews[4].title}</Link>
-                        <p className={s.newsPostText}>{lastNews[4].description}</p>
-                        <Link to={'/news'} className={s.newsPostButton}>
-                            Назад
-                            <img src={paw} alt="paws"/>
-                        </Link>
-                    </div>
-                </div>*/}
+                <div className={s.newsBlock}>
+                    <Post
+                        _id={data._id}
+                        title={data.title}
+                        text={data.text}
+                        tags={data.tags}
+                        user={data.user}
+                        imageUrl={data.imageUrl}
+                        fullPost={true}
+                    />
+                </div>
                 <Sidebar/>
             </div>
 

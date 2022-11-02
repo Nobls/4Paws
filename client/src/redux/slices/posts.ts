@@ -8,6 +8,7 @@ export interface PostType {
     tags: []
     user:User
     imageUrl?: string
+    fullPost?: boolean
 }
 
 interface User {
