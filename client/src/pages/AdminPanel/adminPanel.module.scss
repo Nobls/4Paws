@@ -1,0 +1,60 @@
+@import "../../common/extends";
+@import "../../common/variables";
+
+
+.adminPanelContainer {
+  @extend .container;
+
+  .adminPanelTitle {
+    @extend .title;
+  }
+
+  .addPostWrapper {
+    background-color: #b0afaf;
+    margin: 0 0 50px 0;
+
+    .adminPanelSubtitle {
+      font-size: 24px;
+      text-align: center;
+      padding: 20px 0;
+    }
+
+    .addPostForm {
+      display: flex;
+      flex-direction: column;
+      width: 50%;
+      justify-content: center;
+      margin: 0 auto;
+      padding-bottom: 50px;
+
+      .changeTitleNews {
+        margin-bottom: 20px;
+      }
+
+      .changeTextNews {
+          height: 100px;
+      }
+
+      .titleImage {
+
+      }
+
+      .addImageButton {
+        margin-bottom: 20px;
+        width: 200px;
+        align-self: flex-start;
+        cursor: pointer;
+      }
+
+      .altImage {
+        margin-bottom: 20px;
+      }
+
+      .addNewsButton {
+        width: 200px;
+        align-self: flex-end;
+        cursor: pointer;
+      }
+    }
+  }
+}

@@ -43,6 +43,7 @@ const UserInfo = () => {
                     <ButtonStandart title={'Зарегистрироваться'}/>
                     <Link to={"/petInfo"}>!goToPetInfo</Link>
                     <Link to={"/usersAccount"}>!goToUsersAccount</Link>
+                    <Link to={"/AdminPanel"}>!AdminPanel</Link>
                 </div>
             </div>
         </div>

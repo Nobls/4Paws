@@ -15,6 +15,7 @@ import PetInfo from "./pages/PetInfo/PetInfo";
 import NewsPost from "./pages/NewsPost/NewsPost";
 import UsersAccount from "./pages/UsersAccount/UsersAccount";
 import PetAccount from "./pages/PetAccount/PetAccount";
+import AdminPanel from "./pages/AdminPanel/AdminPanel";
 
 function App() {
     return (
@@ -34,6 +35,7 @@ function App() {
                     <Route path='news/:_id' element={<NewsPost/>}/>
                     <Route path='usersAccount' element={<UsersAccount/>}/>
                     <Route path='petAccount' element={<PetAccount/>}/>
+                    <Route path='adminPanel' element={<AdminPanel/>}/>
                 </Route>
             </Routes>
         </div>
