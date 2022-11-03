@@ -5,7 +5,6 @@ export type StateType = {
     data: {  } | null
     loading: boolean
     errors: any
-
 }
 
 const initialState:StateType = {
@@ -15,16 +14,19 @@ const initialState:StateType = {
 
 }
 
-export const fetchAuth = createAsyncThunk<StateType>('auth/fetchAuth', async (params:any)=>{
+export const fetchAuth = createAsyncThunk('auth/fetchAuth', async (params:any)=>{
     const {data} = await axios.post('/auth/login',params )
-    console.log(params)
     return data
 })
 
 const authSlice = createSlice({
     name: 'auth',
     initialState,
-    reducers: {},
+    reducers: {
+        logout: (state)=>{
+            state.data = null
+        }
+    },
     extraReducers: (builder)=>{
         builder.addCase(fetchAuth.pending, (state) => {
             state.loading = true;
@@ -42,3 +44,5 @@ const authSlice = createSlice({
 export const selectedIsAuth = (state:any) => Boolean(state.auth.data)
 
 export const authReducer = authSlice.reducer
+
+export const { logout } = authSlice.actions

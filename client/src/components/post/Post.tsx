@@ -5,8 +5,6 @@ import {Link} from "react-router-dom";
 
 const Post = ({_id,user,tags,title,text,fullPost}:PostType) => {
 
-    console.log(fullPost)
-
     return (
             <div className={s.postItemWrapper} key={_id} >
                 <div className={s.postInfoImageBlock} style={{backgroundImage: `url(http://localhost:3157/uploads/servicesImage1.jpg)`}}>

@@ -5,21 +5,30 @@ import s from './header.module.scss'
 import Navigation from "../navigation/Navigation";
 import {Search} from "../search/Search";
 import user from '../../images/user.png';
-import {useAppSelector} from "../../redux/hook/hook";
-import {selectedIsAuth} from "../../redux/slices/auth";
+import {useAppDispatch, useAppSelector} from "../../redux/hook/hook";
+import {logout, selectedIsAuth} from "../../redux/slices/auth";
+import ButtonStandart from "../buttonStandart/ButtonStandart";
 
 const Header = () => {
 
     const [search, setSearch] = useState(false)
+
     const onclickSearchHandler = () => {
         setSearch(!search)
     }
-    const [userLogin, setUserLogin] = useState(false)
 
     const isAuth = useAppSelector(selectedIsAuth)
+
+    const dispatch = useAppDispatch()
+
     const navigate = useNavigate()
+
     const navigateUserAccount = () => {
         navigate('usersAccount')
+    }
+
+    const onClickLogout = ()=>{
+        dispatch(logout())
     }
 
 
@@ -103,9 +112,13 @@ const Header = () => {
                             </div>
                             {
                                 isAuth ?
-                                    <div className={s.userLoginWrapper} onClick={navigateUserAccount}>
-                                        <div className={s.userLogin}><img className={s.userLoginIcon} src={user} alt="user"/></div>
-                                        <span className={s.userName}>Александр</span>
+                                    <div>
+                                        <div className={s.userLoginWrapper} onClick={navigateUserAccount}>
+                                            <div className={s.userLogin}><img className={s.userLoginIcon} src={user} alt="user"/></div>
+                                            <span className={s.userName}>Александр</span>
+
+                                        </div>
+                                        <ButtonStandart title={'Выйти'} onclick={onClickLogout}/>
                                     </div>
                                     :
                                     <Link className={s.linkLogin} to={'/login'}>Войти</Link>

@@ -6,7 +6,7 @@ import {SubmitHandler, useForm} from "react-hook-form";
 import {useAppDispatch, useAppSelector} from "../../redux/hook/hook";
 import {fetchAuth, selectedIsAuth} from "../../redux/slices/auth";
 
-export type FormValues = {
+export interface FormValues  {
     email: string
     password: string
 }
@@ -34,20 +34,20 @@ const Login = () => {
     })
 
     const onSubmit:SubmitHandler<FormValues> = (values)=>{
-        /*dispatch(fetchAuth(values))*/
+        dispatch(fetchAuth(values))
         /*console.log(values)*/
     }
 
     /*const onSubmit: SubmitHandler<FormValues> = data => dispatch(fetchAuth(values));*/
 
-    /*console.log(errors,
-        isValid)*/
+    console.log(errors,
+        isValid)
 
     const navigate = useNavigate()
 
-    const userAccount = () => {
+    /*const userAccount = () => {
         navigate('/usersAccount')
-    }
+    }*/
 
     if (isAuth){
         return <Navigate to={'/'}/>
