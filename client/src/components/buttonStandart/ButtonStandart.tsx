@@ -9,7 +9,7 @@ export type PropsType = {
 
 const ButtonStandart = ({title,onclick}:PropsType) => {
     return (
-            <button className={s.button} onClick={onclick}>
+            <button type={'submit'} className={s.button} onClick={onclick}>
                 <span>{title}</span>
                 <img src={paw} alt="paw"/>
             </button>

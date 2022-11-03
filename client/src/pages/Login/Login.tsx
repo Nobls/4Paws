@@ -1,9 +1,47 @@
 import React from 'react';
 import s from "./login.module.scss";
-import {Link, useNavigate} from "react-router-dom";
+import {Link, useNavigate, Navigate} from "react-router-dom";
 import ButtonStandart from "../../components/buttonStandart/ButtonStandart";
+import {SubmitHandler, useForm} from "react-hook-form";
+import {useAppDispatch, useAppSelector} from "../../redux/hook/hook";
+import {fetchAuth, selectedIsAuth} from "../../redux/slices/auth";
+
+export type FormValues = {
+    email: string
+    password: string
+}
 
 const Login = () => {
+
+    const dispatch = useAppDispatch()
+
+    const isAuth = useAppSelector(selectedIsAuth)
+
+    const {
+        register,
+        handleSubmit,
+        setError,
+        formState: {
+            errors,
+            isValid
+        }
+    } = useForm({
+        defaultValues: {
+            email: 'mail@mail.com',
+            password: '12345',
+        },
+        mode: 'onChange'
+    })
+
+    const onSubmit:SubmitHandler<FormValues> = (values)=>{
+        /*dispatch(fetchAuth(values))*/
+        /*console.log(values)*/
+    }
+
+    /*const onSubmit: SubmitHandler<FormValues> = data => dispatch(fetchAuth(values));*/
+
+    /*console.log(errors,
+        isValid)*/
 
     const navigate = useNavigate()
 
@@ -11,15 +49,19 @@ const Login = () => {
         navigate('/usersAccount')
     }
 
+    if (isAuth){
+        return <Navigate to={'/'}/>
+    }
+
     return (
         <div>
             <div className={s.loginContent}>
                 <h2 className={s.loginContentTitle}>Вход</h2>
 
-                <form action="/client/src/pages" className={s.formWrapper}>
+                <form action="/client/src/pages" className={s.formWrapper} onSubmit={handleSubmit(onSubmit)}>
                     <div className={s.inputWrapper}>
-                        <input type="text" placeholder="E-mail"/>
-                        <input type="password" placeholder="Пароль"/>
+                        <input type={"text"} placeholder="E-mail" {... register('email', {required: 'Укажите почту'})}/>
+                        <input type={"text"}  placeholder="Пароль" {... register('password', {required: 'Укажите пароль'})}/>
                     </div>
                     <div className={s.buttonWrapper}>
                         <span>
@@ -32,7 +74,7 @@ const Login = () => {
                             <span>Войти</span>
                             <img src={paw} alt="paw"/>
                         </button>*/}
-                        <div className={s.buttonLogin} onClick={userAccount}>
+                        <div className={s.buttonLogin}>
                             <ButtonStandart title={'Войти'}/>
                         </div>
                     </div>

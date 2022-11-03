@@ -5,6 +5,8 @@ import s from './header.module.scss'
 import Navigation from "../navigation/Navigation";
 import {Search} from "../search/Search";
 import user from '../../images/user.png';
+import {useAppSelector} from "../../redux/hook/hook";
+import {selectedIsAuth} from "../../redux/slices/auth";
 
 const Header = () => {
 
@@ -12,7 +14,9 @@ const Header = () => {
     const onclickSearchHandler = () => {
         setSearch(!search)
     }
-    const [userLogin, setUserLogin] = useState(true)
+    const [userLogin, setUserLogin] = useState(false)
+
+    const isAuth = useAppSelector(selectedIsAuth)
     const navigate = useNavigate()
     const navigateUserAccount = () => {
         navigate('usersAccount')
@@ -98,7 +102,7 @@ const Header = () => {
                                 </Link>
                             </div>
                             {
-                                userLogin ?
+                                isAuth ?
                                     <div className={s.userLoginWrapper} onClick={navigateUserAccount}>
                                         <div className={s.userLogin}><img className={s.userLoginIcon} src={user} alt="user"/></div>
                                         <span className={s.userName}>Александр</span>
