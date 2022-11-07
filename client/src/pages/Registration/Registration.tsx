@@ -1,9 +1,52 @@
 import React from 'react';
 import s from "./registration.module.scss";
 import ButtonStandart from "../../components/buttonStandart/ButtonStandart";
+import {useAppDispatch} from "../../redux/hook/hook";
+import {fetchRegister} from "../../redux/slices/auth";
+import {SubmitHandler, useForm} from "react-hook-form";
 
+interface FormValues {
+    fullName: string
+    email: string
+    password: string
+}
 
 const Registration = () => {
+
+    const dispatch = useAppDispatch()
+
+
+    const {
+        register,
+        handleSubmit,
+        formState: {
+            errors,
+            isValid
+        }
+    } = useForm({
+        defaultValues: {
+            fullName: 'Иван Иванов',
+            email: 'gmail@mail.com',
+            password: '12345',
+        },
+        mode: 'onChange'
+    })
+
+    const onSubmit: SubmitHandler<FormValues> = async (values) => {
+        const data = await dispatch(fetchRegister(values))
+
+        if (!data.payload) {
+            return alert('Не удалось зарегистрироваться!')
+        }
+
+        if ('token' in data.payload) {
+            window.localStorage.setItem('token', data.payload.token)
+        }
+    }
+
+    console.log(errors,
+        isValid)
+
     return (
         <div>
             <div className={s.registrationContent}>
@@ -11,12 +54,12 @@ const Registration = () => {
                     <h2>Регистрация</h2>
                 </div>
 
-                <form action="/client/src/pages" className={s.formWrapper}>
+                <form action="/client/src/pages" className={s.formWrapper} onSubmit={handleSubmit(onSubmit)}>
                     <div className={s.inputWrapper}>
-                        <input type="text" placeholder="Имя"/>
-                        <input type="text" placeholder="E-mail"/>
-                        <input type="text" placeholder="Пароль"/>
-                        <input type="password" placeholder="Проверка пароля"/>
+                        <input type="text" placeholder="Имя" {...register('fullName', {required: 'Укажите имя'})}/>
+                        <input type="text" placeholder="E-mail" {...register('email', {required: 'Укажите почту'})}/>
+                        <input type="text" placeholder="Пароль" {...register('password', {required: 'Укажите пароль'})}/>
+                        {/*<input type="password" placeholder="Проверка пароля"/>*/}
                     </div>
                     <div className={s.buttonWrapper}>
                         {/*<span>*/}

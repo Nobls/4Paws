@@ -2,25 +2,33 @@ import React from 'react';
 import {PostType} from "../../redux/slices/posts";
 import s from "./post.module.scss";
 import {Link} from "react-router-dom";
+import EditButtons from "../editPostButtons/EditButtuons";
 
-const Post = ({_id,user,tags,title,text,fullPost}:PostType) => {
+const Post = ({_id, user, tags, title, text, fullPost}: PostType) => {
 
     return (
-            <div className={s.postItemWrapper} key={_id} >
-                <div className={s.postInfoImageBlock} style={{backgroundImage: `url(http://localhost:3157/uploads/servicesImage1.jpg)`}}>
-                </div>
-                <div className={s.postInfo}>
-                    {/*<div className={s.postInfoItem}>{m.date}</div>*/}
-                    <div className={s.postInfoItem}>{user.fullName}</div>
-                    {/*<div className={s.postInfoItem}>{m.categories}</div>*/}
-                    <div className={s.postInfoItem}>{tags}</div>
-                </div>
-                <Link to={`/news/${_id}`} className={s.postTitle}>{title}</Link>
-                {
-                    fullPost ? <p className={s.postText}>{text}</p> : <p className={s.postText}>{text.substring(0, 300) + '...'}</p>
-                }
-                {/*<p className={s.postText}>{text.substring(0, 300) + '...'}</p>*/}
-                {/*<Link to={`/news/${_id}`} className={s.newsButtonOpen}>
+        <div className={s.postItemWrapper} key={_id}>
+            <div className={s.postInfoImageBlock}
+                 style={{backgroundImage: `url(http://localhost:3157/uploads/servicesImage1.jpg)`}}>
+            </div>
+            <div className={s.postInfo}>
+                {/*<div className={s.postInfoItem}>{m.date}</div>*/}
+                <div className={s.postInfoItem}>{user.fullName}</div>
+                {/*<div className={s.postInfoItem}>{m.categories}</div>*/}
+                <div className={s.postInfoItem}>{tags}</div>
+            </div>
+            <Link to={`/news/${_id}`} className={s.postTitle}>{title}</Link>
+            {
+                fullPost ? <p className={s.postText}>{text}</p> :
+                    <p className={s.postText}>{text.substring(0, 300) + '...'}</p>
+            }
+            <EditButtons fullName={user.fullName} user={user}/>
+            {/*<div>
+                    <button>Удалить</button>
+                    <button>Редактировать</button>
+                </div>*/}
+            {/*<p className={s.postText}>{text.substring(0, 300) + '...'}</p>*/}
+            {/*<Link to={`/news/${_id}`} className={s.newsButtonOpen}>
                     Узнать больше
                     <img src={paw} alt="paws"/>
                     <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19"
@@ -37,7 +45,7 @@ const Post = ({_id,user,tags,title,text,fullPost}:PostType) => {
                               d="M10.9 15.4c-0.6 0-1.3 0.3-1.7 0.8 -1.4 2.1 2.2 3.6 3.7 3.5 1.9-0.1 2.5-2 1.2-3.3C13.4 15.6 12 15.3 10.9 15.4z"></path>
                     </svg>
                 </Link>*/}
-            </div>
+        </div>
     );
 };
 

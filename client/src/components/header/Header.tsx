@@ -7,7 +7,6 @@ import {Search} from "../search/Search";
 import user from '../../images/user.png';
 import {useAppDispatch, useAppSelector} from "../../redux/hook/hook";
 import {logout, selectedIsAuth} from "../../redux/slices/auth";
-import ButtonStandart from "../buttonStandart/ButtonStandart";
 
 const Header = () => {
 
@@ -29,6 +28,7 @@ const Header = () => {
 
     const onClickLogout = ()=>{
         dispatch(logout())
+        window.localStorage.removeItem('token')
     }
 
 
@@ -112,13 +112,13 @@ const Header = () => {
                             </div>
                             {
                                 isAuth ?
-                                    <div>
+                                    <div className={s.userWrapper}>
                                         <div className={s.userLoginWrapper} onClick={navigateUserAccount}>
                                             <div className={s.userLogin}><img className={s.userLoginIcon} src={user} alt="user"/></div>
                                             <span className={s.userName}>Александр</span>
 
                                         </div>
-                                        <ButtonStandart title={'Выйти'} onclick={onClickLogout}/>
+                                        <button className={s.userLogout} type={'submit'} onClick={onClickLogout}>Выйти</button>
                                     </div>
                                     :
                                     <Link className={s.linkLogin} to={'/login'}>Войти</Link>

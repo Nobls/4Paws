@@ -31,7 +31,15 @@ const News = () => {
                     {
                         post.map(m => {
                             return (
-                                <Post key={m._id} _id={m._id} title={m.title} text={m.text} tags={m.tags} user={m.user} imageUrl={m.imageUrl}/>
+                                <Post
+                                    key={m._id}
+                                    _id={m._id}
+                                    title={m.title}
+                                    text={m.text}
+                                    tags={m.tags}
+                                    user={m.user}
+                                    imageUrl={m.imageUrl}
+                                />
                             )
                         })
                     }

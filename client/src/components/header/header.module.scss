@@ -152,28 +152,48 @@
           }
         }
 
-        .userLoginWrapper{
+        .userWrapper {
           display: flex;
           align-items: center;
-          cursor: pointer;
-          .userLogin{
-            width: 60px;
-            height: 60px;
-            border-radius: 10px;
-            background-color: white;
-            margin-right: 15px;
+
+          .userLoginWrapper {
             display: flex;
             align-items: center;
-            justify-content: center;
-            .userLoginIcon{
-              width: 45px;
-              height: 45px;
+            cursor: pointer;
+
+            .userLogin {
+              width: 60px;
+              height: 60px;
+              border-radius: 10px;
+              background-color: white;
+              margin-right: 15px;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+
+              .userLoginIcon {
+                width: 45px;
+                height: 45px;
+              }
+            }
+
+            .userName {
+              font-size: 20px;
+              font-weight: 900;
+              color: white;
             }
           }
-          .userName{
-            font-size: 20px;
-            font-weight: 900;
+
+          .userLogout {
+            width: 65px;
+            height: 35px;
+            border-radius: $borderRadius;
+            outline: transparent;
+            border: transparent;
+            margin-left: 10px;
             color: white;
+            font-weight: 700;
+            background-color: $color-accent-dark;
           }
         }
       }

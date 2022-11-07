@@ -11,7 +11,7 @@ export interface PostType {
     fullPost?: boolean
 }
 
-interface User {
+export interface User {
     avatarUrl: string
     fullName:string
 }

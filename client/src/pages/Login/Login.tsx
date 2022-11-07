@@ -6,7 +6,7 @@ import {SubmitHandler, useForm} from "react-hook-form";
 import {useAppDispatch, useAppSelector} from "../../redux/hook/hook";
 import {fetchAuth, selectedIsAuth} from "../../redux/slices/auth";
 
-export interface FormValues {
+interface FormValues {
     email: string
     password: string
 }
