@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import './App.scss';
 import {Route, Routes} from "react-router-dom";
 import Layout from "./components/layout/Layout";
@@ -16,8 +16,18 @@ import NewsPost from "./pages/NewsPost/NewsPost";
 import UsersAccount from "./pages/UsersAccount/UsersAccount";
 import PetAccount from "./pages/PetAccount/PetAccount";
 import AdminPanel from "./pages/AdminPanel/AdminPanel";
+import {useAppDispatch, useAppSelector} from "./redux/hook/hook";
+import {fetchAuthMe, selectedIsAuth} from "./redux/slices/auth";
 
 function App() {
+
+    const dispatch = useAppDispatch()
+    const isAuth = useAppSelector(selectedIsAuth)
+
+    useEffect(()=>{
+        dispatch(fetchAuthMe())
+    }, [])
+
     return (
         <div className="App">
             <Routes>

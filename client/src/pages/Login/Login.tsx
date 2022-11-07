@@ -6,7 +6,7 @@ import {SubmitHandler, useForm} from "react-hook-form";
 import {useAppDispatch, useAppSelector} from "../../redux/hook/hook";
 import {fetchAuth, selectedIsAuth} from "../../redux/slices/auth";
 
-export interface FormValues  {
+export interface FormValues {
     email: string
     password: string
 }
@@ -33,9 +33,16 @@ const Login = () => {
         mode: 'onChange'
     })
 
-    const onSubmit:SubmitHandler<FormValues> = (values)=>{
-        dispatch(fetchAuth(values))
-        /*console.log(values)*/
+    const onSubmit: SubmitHandler<FormValues> = async (values) => {
+        const data = await dispatch(fetchAuth(values))
+        console.log(data)
+        if (!data.payload) {
+            return alert('Не удалось авторизоваться!')
+        }
+
+        if ('token' in data.payload) {
+            window.localStorage.setItem('token', data.payload.token)
+        }
     }
 
     /*const onSubmit: SubmitHandler<FormValues> = data => dispatch(fetchAuth(values));*/
@@ -49,7 +56,7 @@ const Login = () => {
         navigate('/usersAccount')
     }*/
 
-    if (isAuth){
+    if (isAuth) {
         return <Navigate to={'/'}/>
     }
 
@@ -60,8 +67,9 @@ const Login = () => {
 
                 <form action="/client/src/pages" className={s.formWrapper} onSubmit={handleSubmit(onSubmit)}>
                     <div className={s.inputWrapper}>
-                        <input type={"text"} placeholder="E-mail" {... register('email', {required: 'Укажите почту'})}/>
-                        <input type={"text"}  placeholder="Пароль" {... register('password', {required: 'Укажите пароль'})}/>
+                        <input type={"text"} placeholder="E-mail" {...register('email', {required: 'Укажите почту'})}/>
+                        <input type={"text"}
+                               placeholder="Пароль" {...register('password', {required: 'Укажите пароль'})}/>
                     </div>
                     <div className={s.buttonWrapper}>
                         <span>

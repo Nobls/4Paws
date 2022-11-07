@@ -19,6 +19,11 @@ export const fetchAuth = createAsyncThunk('auth/fetchAuth', async (params:any)=>
     return data
 })
 
+export const fetchAuthMe = createAsyncThunk('auth/fetchAuthMe', async ()=>{
+    const {data} = await axios.get('auth/me')
+    return data
+})
+
 const authSlice = createSlice({
     name: 'auth',
     initialState,
@@ -36,6 +41,16 @@ const authSlice = createSlice({
             state.loading = false;
         })
         builder.addCase(fetchAuth.rejected, (state) => {
+            state.loading = false;
+        })
+        builder.addCase(fetchAuthMe.pending, (state) => {
+            state.loading = true;
+        })
+        builder.addCase(fetchAuthMe.fulfilled, (state, action) => {
+            state.data = action.payload
+            state.loading = false;
+        })
+        builder.addCase(fetchAuthMe.rejected, (state) => {
             state.loading = false;
         })
     }
