@@ -4,7 +4,7 @@ import user from '../../images/reviews/user4.jpg'
 import petPhoto from '../../images/pagesBG/04.jpg'
 import paw from '../../images/pawBig.png'
 import petCard1 from '../../images/petCard1.png';
-import {useNavigate} from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
 
 const UsersAccount = () => {
 
@@ -231,6 +231,8 @@ const UsersAccount = () => {
                     </li>
                 </ol>
             </div>
+
+            <Link to={'/adminPanel'}>Admin Panel</Link>
         </div>
     );
 };
