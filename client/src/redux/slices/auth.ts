@@ -2,7 +2,7 @@ import {createAsyncThunk, createSlice} from "@reduxjs/toolkit";
 import axios from "../../axios/axios";
 
 export type StateType = {
-    data: {  } | null
+    data: {} | null
     loading: boolean
     errors: any
 }

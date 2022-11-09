@@ -3,15 +3,15 @@ import axios from "../../axios/axios";
 
 export interface PostType {
     _id?: string
-    title: string
+    title?: string
     text: string
-    tags: []
+    tags?: []
     user:User
     imageUrl?: string
-    fullPost?: boolean
 }
 
 export interface User {
+    _id?: string
     avatarUrl: string
     fullName:string
 }

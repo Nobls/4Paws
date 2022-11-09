@@ -1,11 +1,22 @@
 import React from 'react';
-import {PostType} from "../../redux/slices/posts";
+import {User} from "../../redux/slices/posts";
 import s from "./post.module.scss";
 import {Link} from "react-router-dom";
 import EditButtons from "../editPostButtons/EditButtuons";
 
-const Post = ({_id, user, tags, title, text, fullPost}: PostType) => {
+type PropsType = {
+    _id?: string
+    title?: string
+    text: string
+    tags?: []
+    user:User
+    imageUrl?: string
+    fullPost?: boolean
+    isEditable?: boolean
+    userData?: any
+}
 
+const Post = ({_id, user, tags, title, text, fullPost,userData}: PropsType) => {
     return (
         <div className={s.postItemWrapper} key={_id}>
             <div className={s.postInfoImageBlock}
@@ -22,11 +33,7 @@ const Post = ({_id, user, tags, title, text, fullPost}: PostType) => {
                 fullPost ? <p className={s.postText}>{text}</p> :
                     <p className={s.postText}>{text.substring(0, 300) + '...'}</p>
             }
-            <EditButtons fullName={user.fullName} user={user}/>
-            {/*<div>
-                    <button>Удалить</button>
-                    <button>Редактировать</button>
-                </div>*/}
+            <EditButtons userData={userData} user={user}/>
             {/*<p className={s.postText}>{text.substring(0, 300) + '...'}</p>*/}
             {/*<Link to={`/news/${_id}`} className={s.newsButtonOpen}>
                     Узнать больше

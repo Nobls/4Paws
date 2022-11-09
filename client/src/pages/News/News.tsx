@@ -9,6 +9,7 @@ const News = () => {
 
     const dispatch = useAppDispatch()
     const {post} = useAppSelector((state) => state.news)
+    const userData = useAppSelector((state) => state.auth.data)
 
 
     useEffect(() => {
@@ -39,6 +40,7 @@ const News = () => {
                                     tags={m.tags}
                                     user={m.user}
                                     imageUrl={m.imageUrl}
+                                    userData={userData}
                                 />
                             )
                         })

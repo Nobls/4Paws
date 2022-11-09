@@ -13,7 +13,6 @@ const NewsPost = () => {
     const [loading, setLoading] = useState<any>(true)
 
     const {_id} = useParams()
-    console.log(data)
 
     useEffect(() => {
         window.scrollTo(0, 0);
@@ -23,14 +22,13 @@ const NewsPost = () => {
         axios.get(`news/${_id}`).then(res => {
             setData(res.data)
             setLoading(false)
-            console.log(data)
         }).catch(err => {
             console.warn(err)
         })
     }, [])
 
     if (loading) {
-        return <div>Загрузка</div>
+        return <div>Загрузка...</div>
     }
 
     return (

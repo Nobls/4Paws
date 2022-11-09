@@ -2,27 +2,22 @@ import React from 'react';
 import {User} from "../../redux/slices/posts";
 
 type PropsType = {
-    userData?: any
-    _id?: string | undefined
-    fullName? : string
     user: User
+    _id?: string | undefined
+    userData: any//???
 }
 
-const EditButtons = ({_id, fullName, user}:PropsType) => {
-    console.log(fullName)
+const EditButtons = ({_id,user,userData}: PropsType) => {
+    console.log(userData)
     return (
-        <div>
+        <>
             {
-                user.fullName === fullName ?
-                    <div>
+                userData?._id === user._id ? <div>
                     <button>Удалить</button>
                     <button>Редактировать</button>
-                </div>  : <div>нет доступа</div>//не работает через id нужно разобраться!!!
+                </div> : <div></div>
             }
-
-            {/*<button>Удалить</button>
-            <button>Редактировать</button>*/}
-        </div>
+        </>
     );
 };
 
