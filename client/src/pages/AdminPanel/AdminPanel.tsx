@@ -1,4 +1,4 @@
-import React, {ChangeEvent, MutableRefObject, useRef, useState} from 'react';
+import React, {ChangeEvent, useState} from 'react';
 import s from './adminPanel.module.scss';
 import {useAppSelector} from "../../redux/hook/hook";
 import {selectedIsAuth} from "../../redux/slices/auth";
@@ -13,16 +13,13 @@ const AdminPanel = () => {
     const [text, setText] = useState('')
     const [tags, setTags] = useState('')
     const [imageTitle, setImageTitle] = useState('')
-    const [file, setFile] = useState<any>('')
-    //const inputFileRef = useRef<HTMLInputElement>(null) /*as MutableRefObject<HTMLInputElement>*/ // при начальном значении null нужна другая типизация
+    //const inputFileRef = useRef<HTMLInputElement>(null)
 
-    //console.log(file)
     if (!window.localStorage.getItem('token') && !isAuth) {
         return <Navigate to={'/'}/>
     }
 
-    /*const handleChangeFile = async (event: ChangeEvent<HTMLInputElement>) => {
-
+    const handleChangeFile = async (event: ChangeEvent<HTMLInputElement>) => {
         try {
             if (event.target.files !== null){
                 console.log(event.target.files[0])
@@ -37,27 +34,14 @@ const AdminPanel = () => {
             console.warn(err)
             alert('Ошибка при загрузке изображения!')
         }
-    }*/
+    }
 
     /*const onClickRef = ()=> {
         if (inputFileRef.current !== null){
             inputFileRef.current.click()
         }
     }*/
-    const onChangeFix = async (event: ChangeEvent<HTMLInputElement>)=>{
-        if (event.target.files !== null){
-            setFile(event.target.files)
-            console.log(file)
-            try {
-                const formData = new FormData()
-                formData.append('image', file)
-                const {data} = await axios.post('/upload', formData)
-                console.log(data)
-            }catch (err){
-                console.log(err)
-            }
-        }
-    }
+    // через ref не работает, работает через обычный input!!!
 
     return (
         <div className={s.adminPanelContainer}>
@@ -79,7 +63,7 @@ const AdminPanel = () => {
                         <p className={s.titleImage}>image.jpg
                         </p>
                         {/*<input ref={inputFileRef} type={'file'} onChange={handleChangeFile} hidden accept=".jpg, .jpeg, .png"/>*/}
-                        <input  type={'file'} onChange={onChangeFix} accept=".jpg, .jpeg, .png"/>
+                        <input  type={'file'} onChange={handleChangeFile} accept=".jpg, .jpeg, .png"/>
                         <button  className={s.addImageButton}>Добавить
                             картинку
                         </button>
