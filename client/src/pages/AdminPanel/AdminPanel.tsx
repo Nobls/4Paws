@@ -2,18 +2,21 @@ import React, {ChangeEvent, useState} from 'react';
 import s from './adminPanel.module.scss';
 import {useAppSelector} from "../../redux/hook/hook";
 import {selectedIsAuth} from "../../redux/slices/auth";
-import {Navigate} from "react-router-dom";
+import {Navigate, useNavigate} from "react-router-dom";
 import axios from "../../axios/axios";
 
 const AdminPanel = () => {
 
     const isAuth = useAppSelector(selectedIsAuth)
 
+    const navigate = useNavigate()
+
     const [title, setTitle] = useState('')
     const [text, setText] = useState('')
     const [tags, setTags] = useState('')
     const [imageTitle, setImageTitle] = useState('')
     const [imageUrl, setImageUrl] = useState('')
+    const [loading, setLoading] = useState(false)
     //const inputFileRef = useRef<HTMLInputElement>(null)
 
     if (!window.localStorage.getItem('token') && !isAuth) {
@@ -28,7 +31,7 @@ const AdminPanel = () => {
                 formData.append('image', file)
                 const {data} = await axios.post('upload', formData)
                 setImageUrl(data.url)
-                setImageTitle(data.url.replace(/uploads\d?/, ''))
+                setImageTitle(data.url.replace(/uploads\s?/, '').replace(/['/']\s?/, '').replace(/['/']\s?/, ''))
             }
         } catch (err) {
             console.warn(err)
@@ -37,7 +40,29 @@ const AdminPanel = () => {
     }
 
     const removeImageHandler = () => {
+        setImageUrl('')
+        setImageTitle('')
+    }
 
+    const onSubmit = async ()=> {
+        try {
+            setLoading(true)
+            const fields = {
+                title,
+                text,
+                imageUrl,
+                tags,
+            }
+
+            const { data } = await axios.post('/news', fields)
+            console.log(data)
+
+            const id = data._id
+
+            navigate(`/news/${id}`)
+        }catch (err){
+            console.log(err)
+        }
     }
 
     /*const onClickRef = ()=> {
@@ -64,28 +89,27 @@ const AdminPanel = () => {
                                type="text" placeholder={'изменить тег'}/>
                         <textarea value={text} onChange={e => setText(e.currentTarget.value)}
                                   className={s.changeTextNews} placeholder={'изменить текст'}/>
-                        <p >image.jpg
-                        </p>
+                        <p>{imageTitle}</p>
                         {/*<input ref={inputFileRef} type={'file'} onChange={handleChangeFile} hidden accept=".jpg, .jpeg, .png"/>*/}
 
                         {
                             imageUrl && (
                                 <>
-                                    <button className={s.removeImageBtn} onClick={removeImageHandler}>Удалить</button>
                                     <img className={s.previewImage} src={`http://localhost:3157${imageUrl}`}
                                          alt="uploaded"/>
+                                    <button className={s.removeImageBtn} onClick={removeImageHandler}>Удалить</button>
                                 </>
                             )
                         }
 
-                        <input type={'file'} onChange={handleChangeFile} accept=".jpg, .jpeg, .png"/>
-                        <button className={s.addImageButton}>Добавить
+                        <input className={s.addImageButton} type={'file'} onChange={handleChangeFile}/>
+                        {/*<button className={s.addImageButton}>Добавить
                             картинку
-                        </button>
-                        <input  value={imageTitle} onChange={e => setImageTitle(e.currentTarget.value)}
+                        </button>*/}
+                        <input value={imageTitle} onChange={e => setImageTitle(e.currentTarget.value)}
                                className={s.altImage} type="text" placeholder={'название картинки'}/>
 
-                        <button className={s.addNewsButton}>Добавить новость</button>
+                        <button onClick={onSubmit} className={s.addNewsButton}>Добавить новость</button>
                         {/*<div>Курсинг — это полевые испытания с приманкой, имитирующие преследование и поимку зверя в
                             поле, что позволяет собакам демонстрировать свои рабочие качества. Проще говоря, это бега за
                             механическим зайцем. Трассы бывают ломаные и прямые. Собак оценивают по пяти критериям:

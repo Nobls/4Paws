@@ -1,26 +1,36 @@
 import React from 'react';
-import {User} from "../../redux/slices/posts";
+import {fetchRemoveNews, User} from "../../redux/slices/posts";
 import s from "./post.module.scss";
 import {Link} from "react-router-dom";
 import EditButtons from "../editPostButtons/EditButtuons";
+import {useAppDispatch} from "../../redux/hook/hook";
 
 type PropsType = {
     _id?: string
     title?: string
     text: string
     tags?: []
-    user:User
+    user: User
     imageUrl?: string
     fullPost?: boolean
     isEditable?: boolean
     userData?: any
 }
 
-const Post = ({_id, user, tags, title, text, fullPost,userData}: PropsType) => {
+const Post = ({_id, user, tags, title, text, fullPost, userData, imageUrl}: PropsType) => {
+
+    const dispath = useAppDispatch()
+
+    const removeNewsHandle = () => {
+        if (window.confirm('Вы действительно хотите удалить новость')) {
+            dispath(fetchRemoveNews(_id))
+        }
+    }
+
     return (
         <div className={s.postItemWrapper} key={_id}>
             <div className={s.postInfoImageBlock}
-                 style={{backgroundImage: `url(http://localhost:3157/uploads/servicesImage1.jpg)`}}>
+                 style={{backgroundImage: `url(http://localhost:3157${imageUrl})`}}>
             </div>
             <div className={s.postInfo}>
                 {/*<div className={s.postInfoItem}>{m.date}</div>*/}
@@ -33,7 +43,7 @@ const Post = ({_id, user, tags, title, text, fullPost,userData}: PropsType) => {
                 fullPost ? <p className={s.postText}>{text}</p> :
                     <p className={s.postText}>{text.substring(0, 300) + '...'}</p>
             }
-            <EditButtons userData={userData} user={user}/>
+            <EditButtons userData={userData} user={user} removeNewsHandle={removeNewsHandle}/>
             {/*<p className={s.postText}>{text.substring(0, 300) + '...'}</p>*/}
             {/*<Link to={`/news/${_id}`} className={s.newsButtonOpen}>
                     Узнать больше

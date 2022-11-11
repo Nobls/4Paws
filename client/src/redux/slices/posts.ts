@@ -50,6 +50,13 @@ export const fetchTags = createAsyncThunk<[]>(
         return data
     })
 
+export const fetchRemoveNews = createAsyncThunk(
+    'news/fetchRemoveNews',
+    async (_id:any) => {
+        const {data} = await axios.delete(`/news/${_id}`)
+        return data
+    })
+
 
 const newsSlice = createSlice({
     name: 'news',
@@ -75,6 +82,11 @@ const newsSlice = createSlice({
         })
         builder.addCase(fetchTags.rejected, (state) => {
             state.loading = false;
+        })
+
+
+        builder.addCase(fetchRemoveNews.pending, (state, action) => {
+            state.post = state.post.filter(f=> f._id !== action.meta.arg);
         })
 
     }
