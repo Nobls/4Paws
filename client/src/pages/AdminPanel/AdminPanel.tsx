@@ -13,6 +13,7 @@ const AdminPanel = () => {
     const [text, setText] = useState('')
     const [tags, setTags] = useState('')
     const [imageTitle, setImageTitle] = useState('')
+    const [imageUrl, setImageUrl] = useState('')
     //const inputFileRef = useRef<HTMLInputElement>(null)
 
     if (!window.localStorage.getItem('token') && !isAuth) {
@@ -21,19 +22,22 @@ const AdminPanel = () => {
 
     const handleChangeFile = async (event: ChangeEvent<HTMLInputElement>) => {
         try {
-            if (event.target.files !== null){
-                console.log(event.target.files[0])
+            if (event.target.files !== null) {
                 const formData = new FormData()
                 const file = event.target.files[0]
-                console.log(file)
                 formData.append('image', file)
                 const {data} = await axios.post('upload', formData)
-                console.log(data)
+                setImageUrl(data.url)
+                setImageTitle(data.url.replace(/uploads\d?/, ''))
             }
         } catch (err) {
             console.warn(err)
             alert('Ошибка при загрузке изображения!')
         }
+    }
+
+    const removeImageHandler = () => {
+
     }
 
     /*const onClickRef = ()=> {
@@ -60,14 +64,25 @@ const AdminPanel = () => {
                                type="text" placeholder={'изменить тег'}/>
                         <textarea value={text} onChange={e => setText(e.currentTarget.value)}
                                   className={s.changeTextNews} placeholder={'изменить текст'}/>
-                        <p className={s.titleImage}>image.jpg
+                        <p >image.jpg
                         </p>
                         {/*<input ref={inputFileRef} type={'file'} onChange={handleChangeFile} hidden accept=".jpg, .jpeg, .png"/>*/}
-                        <input  type={'file'} onChange={handleChangeFile} accept=".jpg, .jpeg, .png"/>
-                        <button  className={s.addImageButton}>Добавить
+
+                        {
+                            imageUrl && (
+                                <>
+                                    <button className={s.removeImageBtn} onClick={removeImageHandler}>Удалить</button>
+                                    <img className={s.previewImage} src={`http://localhost:3157${imageUrl}`}
+                                         alt="uploaded"/>
+                                </>
+                            )
+                        }
+
+                        <input type={'file'} onChange={handleChangeFile} accept=".jpg, .jpeg, .png"/>
+                        <button className={s.addImageButton}>Добавить
                             картинку
                         </button>
-                        <input value={imageTitle} onChange={e => setImageTitle(e.currentTarget.value)}
+                        <input  value={imageTitle} onChange={e => setImageTitle(e.currentTarget.value)}
                                className={s.altImage} type="text" placeholder={'название картинки'}/>
 
                         <button className={s.addNewsButton}>Добавить новость</button>
