@@ -17,7 +17,6 @@ const AdminPanel = () => {
     const [imageTitle, setImageTitle] = useState('')
     const [imageUrl, setImageUrl] = useState('')
     const [loading, setLoading] = useState(false)
-    //const inputFileRef = useRef<HTMLInputElement>(null)
 
     if (!window.localStorage.getItem('token') && !isAuth) {
         return <Navigate to={'/'}/>
@@ -65,13 +64,6 @@ const AdminPanel = () => {
         }
     }
 
-    /*const onClickRef = ()=> {
-        if (inputFileRef.current !== null){
-            inputFileRef.current.click()
-        }
-    }*/
-    // через ref не работает, работает через обычный input!!!
-
     return (
         <div className={s.adminPanelContainer}>
             <div>
@@ -90,8 +82,6 @@ const AdminPanel = () => {
                         <textarea value={text} onChange={e => setText(e.currentTarget.value)}
                                   className={s.changeTextNews} placeholder={'изменить текст'}/>
                         <p>{imageTitle}</p>
-                        {/*<input ref={inputFileRef} type={'file'} onChange={handleChangeFile} hidden accept=".jpg, .jpeg, .png"/>*/}
-
                         {
                             imageUrl && (
                                 <>

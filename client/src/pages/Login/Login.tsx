@@ -20,7 +20,6 @@ const Login = () => {
     const {
         register,
         handleSubmit,
-        setError,
         formState: {
             errors,
             isValid
@@ -45,16 +44,8 @@ const Login = () => {
         }
     }
 
-    /*const onSubmit: SubmitHandler<FormValues> = data => dispatch(fetchAuth(values));*/
-
     console.log(errors,
         isValid)
-
-    const navigate = useNavigate()
-
-    /*const userAccount = () => {
-        navigate('/usersAccount')
-    }*/
 
     if (isAuth) {
         return <Navigate to={'/'}/>
@@ -78,10 +69,6 @@ const Login = () => {
                         <span>
                             <Link to={"/userInfo"} className={s.pageInfo}>!pageInfo</Link>
                         </span>
-                        {/*<button className={s.buttonLogin}>
-                            <span>Войти</span>
-                            <img src={paw} alt="paw"/>
-                        </button>*/}
                         <div className={s.buttonLogin}>
                             <ButtonStandart title={'Войти'}/>
                         </div>
