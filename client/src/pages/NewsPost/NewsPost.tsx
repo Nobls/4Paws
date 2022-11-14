@@ -12,14 +12,14 @@ const NewsPost = () => {
     const [data, setData] = useState<any>()
     const [loading, setLoading] = useState<any>(true)
 
-    const {_id} = useParams()
+    const {id} = useParams()
 
     useEffect(() => {
         window.scrollTo(0, 0);
 
     }, [])
     useEffect(() => {
-        axios.get(`news/${_id}`).then(res => {
+        axios.get(`news/${id}`).then(res => {
             setData(res.data)
             setLoading(false)
         }).catch(err => {
@@ -40,7 +40,7 @@ const NewsPost = () => {
             <div className={s.newsPostWrapper}>
                 <div className={s.newsBlock}>
                     <Post
-                        _id={data._id}
+                        id={data.id}
                         title={data.title}
                         text={data.text}
                         tags={data.tags}

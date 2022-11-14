@@ -5,17 +5,17 @@ type PropsType = {
     user: User
     _id?: string | undefined
     userData: any//???
-    removeNewsHandle: ()=> void
+    removeNewsHandle?: ()=> void
+    titleButton: string
 }
 
-const EditButtons = ({_id,user,userData, removeNewsHandle}: PropsType) => {
+const EditButtons = ({_id,user,userData, removeNewsHandle, titleButton}: PropsType) => {
     console.log(userData)
     return (
         <>
             {
                 userData?._id === user._id ? <div>
-                    <button onClick={removeNewsHandle}>Удалить</button>
-                    <button>Редактировать</button>
+                    <button onClick={removeNewsHandle}>{titleButton}</button>
                 </div> : <div></div>
             }
         </>

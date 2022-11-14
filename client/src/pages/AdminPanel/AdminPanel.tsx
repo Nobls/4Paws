@@ -1,8 +1,8 @@
-import React, {ChangeEvent, useState} from 'react';
+import React, {ChangeEvent, useEffect, useState} from 'react';
 import s from './adminPanel.module.scss';
 import {useAppSelector} from "../../redux/hook/hook";
 import {selectedIsAuth} from "../../redux/slices/auth";
-import {Navigate, useNavigate} from "react-router-dom";
+import {Navigate, useNavigate, useParams} from "react-router-dom";
 import axios from "../../axios/axios";
 
 const AdminPanel = () => {
@@ -11,12 +11,28 @@ const AdminPanel = () => {
 
     const navigate = useNavigate()
 
+    const {id} = useParams()
+
+    const isEditing = !!(id) // или вот так можно Boolean(_id)
+
     const [title, setTitle] = useState('')
     const [text, setText] = useState('')
     const [tags, setTags] = useState('')
     const [imageTitle, setImageTitle] = useState('')
     const [imageUrl, setImageUrl] = useState('')
     const [loading, setLoading] = useState(false)
+
+    useEffect(() => {
+        if (id) {
+            axios.get(`/news/${id}`).then(({data}) => {
+                setTitle(data.title)
+                setText(data.text)
+                setTags(data.tags.join(','))
+                setImageUrl(data.imageUrl)
+            })
+        }
+    }, [])
+
 
     if (!window.localStorage.getItem('token') && !isAuth) {
         return <Navigate to={'/'}/>
@@ -43,7 +59,7 @@ const AdminPanel = () => {
         setImageTitle('')
     }
 
-    const onSubmit = async ()=> {
+    const onSubmit = async () => {
         try {
             setLoading(true)
             const fields = {
@@ -53,17 +69,20 @@ const AdminPanel = () => {
                 tags,
             }
 
-            const { data } = await axios.post('/news', fields)
-            console.log(data)
+            const {data} = isEditing
+                ? await axios.patch(`/news/${id}`, fields)
+                : await axios.post('/news', fields)
 
-            const id = data._id
+            const _id = isEditing ? id : data._id
 
-            navigate(`/news/${id}`)
-        }catch (err){
+            navigate(`/news/${_id}`)
+        } catch (err) {
             console.log(err)
         }
     }
 
+
+    //Добавление и редактирование будет в одной форме
     return (
         <div className={s.adminPanelContainer}>
             <div>
@@ -76,11 +95,11 @@ const AdminPanel = () => {
                     </h3>
                     <form className={s.addPostForm}>
                         <input value={title} onChange={e => setTitle(e.currentTarget.value)}
-                               className={s.changeTitleNews} type="text" placeholder={'изменить заголовок'}/>
+                               className={s.changeTitleNews} type="text" placeholder={'Добавить заголовок'}/>
                         <input value={tags} onChange={e => setTags(e.currentTarget.value)} className={s.changeTitleTags}
-                               type="text" placeholder={'изменить тег'}/>
+                               type="text" placeholder={'Добавить тег'}/>
                         <textarea value={text} onChange={e => setText(e.currentTarget.value)}
-                                  className={s.changeTextNews} placeholder={'изменить текст'}/>
+                                  className={s.changeTextNews} placeholder={'Добавить текст'}/>
                         <p>{imageTitle}</p>
                         {
                             imageUrl && (
@@ -93,19 +112,12 @@ const AdminPanel = () => {
                         }
 
                         <input className={s.addImageButton} type={'file'} onChange={handleChangeFile}/>
-                        {/*<button className={s.addImageButton}>Добавить
-                            картинку
-                        </button>*/}
-                        <input value={imageTitle} onChange={e => setImageTitle(e.currentTarget.value)}
-                               className={s.altImage} type="text" placeholder={'название картинки'}/>
 
-                        <button onClick={onSubmit} className={s.addNewsButton}>Добавить новость</button>
-                        {/*<div>Курсинг — это полевые испытания с приманкой, имитирующие преследование и поимку зверя в
-                            поле, что позволяет собакам демонстрировать свои рабочие качества. Проще говоря, это бега за
-                            механическим зайцем. Трассы бывают ломаные и прямые. Собак оценивают по пяти критериям:
-                            скорость, энтузиазм, интеллект, маневренность и выносливость. В идеале животное должно
-                            поймать приманку. Наш фотограф отправился на мероприятие и сделал подборку азартных собак.
-                        </div>*/}
+                        <input value={imageTitle} onChange={e => setImageTitle(e.currentTarget.value)}
+                               className={s.altImage} type="text" placeholder={'Название картинки'}/>
+
+                        <button onClick={onSubmit} className={s.addNewsButton}>{ isEditing ? 'Сохранить' : 'Добавить новость'}</button>
+
                     </form>
                 </div>
             </div>

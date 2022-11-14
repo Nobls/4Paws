@@ -6,7 +6,7 @@ import EditButtons from "../editPostButtons/EditButtuons";
 import {useAppDispatch} from "../../redux/hook/hook";
 
 type PropsType = {
-    _id?: string
+    id?: string
     title?: string
     text: string
     tags?: []
@@ -17,18 +17,18 @@ type PropsType = {
     userData?: any
 }
 
-const Post = ({_id, user, tags, title, text, fullPost, userData, imageUrl}: PropsType) => {
+const Post = ({id, user, tags, title, text, fullPost, userData, imageUrl}: PropsType) => {
 
     const dispath = useAppDispatch()
 
     const removeNewsHandle = () => {
         if (window.confirm('Вы действительно хотите удалить новость')) {
-            dispath(fetchRemoveNews(_id))
+            dispath(fetchRemoveNews(id))
         }
     }
 
     return (
-        <div className={s.postItemWrapper} key={_id}>
+        <div className={s.postItemWrapper} key={id}>
             <div className={s.postInfoImageBlock}
                  style={{backgroundImage: `url(http://localhost:3157${imageUrl})`}}>
             </div>
@@ -38,12 +38,28 @@ const Post = ({_id, user, tags, title, text, fullPost, userData, imageUrl}: Prop
                 {/*<div className={s.postInfoItem}>{m.categories}</div>*/}
                 <div className={s.postInfoItem}>{tags}</div>
             </div>
-            <Link to={`/news/${_id}`} className={s.postTitle}>{title}</Link>
+            <Link to={`/news/${id}`} className={s.postTitle}>{title}</Link>
             {
                 fullPost ? <p className={s.postText}>{text}</p> :
                     <p className={s.postText}>{text.substring(0, 300) + '...'}</p>
             }
-            <EditButtons userData={userData} user={user} removeNewsHandle={removeNewsHandle}/>
+            <div className={s.postAdminButton}>
+                <EditButtons
+                    userData={userData}
+                    user={user}
+                    removeNewsHandle={removeNewsHandle}
+                    titleButton={'Удалить'}
+                />
+
+                <a href={`/news/${id}/edit`}>
+                    <EditButtons
+                        userData={userData}
+                        user={user}
+                        titleButton={'Редактировать'}
+                    />
+                </a>
+            </div>
+
             {/*<p className={s.postText}>{text.substring(0, 300) + '...'}</p>*/}
             {/*<Link to={`/news/${_id}`} className={s.newsButtonOpen}>
                     Узнать больше

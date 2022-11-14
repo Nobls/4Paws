@@ -34,7 +34,7 @@ const News = () => {
                             return (
                                 <Post
                                     key={m._id}
-                                    _id={m._id}
+                                    id={m._id}
                                     title={m.title}
                                     text={m.text}
                                     tags={m.tags}
