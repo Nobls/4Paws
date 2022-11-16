@@ -3,8 +3,13 @@ import s from './lastNews.module.scss'
 import {Link} from "react-router-dom";
 import {lastNews} from "../../data/data";
 import paw from "../../images/Vector2.png"
+import {PostType} from "../../redux/slices/posts";
 
-export const LastNews = () => {
+type PropsType = {
+    post: PostType[]
+}
+
+export const LastNews = ({post}:PropsType) => {
 
     return (
         <div className={s.lastNewsBg}>
@@ -15,62 +20,62 @@ export const LastNews = () => {
 
                 <div className={s.news1}>
                     <div className={s.newsItemWrapper}>
-                        <Link to={'/news'} className={s.newsButtonOpen}>
+                        <Link to={`/news/${post[0]._id}`} className={s.newsButtonOpen}>
                             Открыть
                             <img src={paw} alt=""/>
                         </Link>
                         <div>21.08.2022</div>
-                        <img className={s.lastNewsImageOne} src={lastNews[0].image} alt={lastNews[0].alt}/>
-                        <h3 className={s.newsTitle}>{lastNews[0].title}</h3>
-                        <p className={s.newsText}>{lastNews[0].description.substring(0, 100) + '...'}</p>
+                        <img className={s.lastNewsImageOne} src={`http://localhost:3157${post[0]?.imageUrl}`} alt={'imageNews'}/>
+                        <h3 className={s.newsTitle}>{post[0]?.title}</h3>
+                        <p className={s.newsText}>{post[0]?.text.substring(0, 100) + '...'}</p>
                     </div>
                 </div>
                 <div className={s.news2}>
                     <div className={s.newsItemWrapper}>
-                        <Link to={'/news'} className={s.newsButtonOpen}>
+                        <Link to={`/news/${post[1]._id}`} className={s.newsButtonOpen}>
                             Открыть
                             <img src={paw} alt="paws"/>
                         </Link>
                         <div>21.08.2022</div>
-                        <img className={s.lastNewsImageTwo} src={lastNews[1].image} alt={lastNews[1].alt}/>
-                        <h3 className={s.newsTitle}>{lastNews[1].title}</h3>
-                        <p className={s.newsText}>{lastNews[1].description.substring(0, 100) + '...'}</p>
+                        <img className={s.lastNewsImageTwo} src={`http://localhost:3157${post[1]?.imageUrl}`} alt={lastNews[1].alt}/>
+                        <h3 className={s.newsTitle}>{post[1]?.title}</h3>
+                        <p className={s.newsText}>{post[1]?.text.substring(0, 100) + '...'}</p>
                     </div>
                 </div>
                 <div className={s.news3}>
                     <div className={s.newsItemWrapper}>
-                        <Link to={'/news'} className={s.newsButtonOpen}>
+                        <Link to={`/news/${post[2]._id}`} className={s.newsButtonOpen}>
                             Открыть
                             <img src={paw} alt="paws"/>
                         </Link>
                         <div>21.08.2022</div>
-                        <img className={s.lastNewsImageThree} src={lastNews[2].image} alt={lastNews[2].alt}/>
-                        <h3 className={s.newsTitle}>{lastNews[2].title}</h3>
-                        <p className={s.newsText}>{lastNews[2].description.substring(0, 100) + '...'}</p>
+                        <img className={s.lastNewsImageThree} src={`http://localhost:3157${post[2]?.imageUrl}`} alt={lastNews[2].alt}/>
+                        <h3 className={s.newsTitle}>{post[2]?.title}</h3>
+                        <p className={s.newsText}>{post[2]?.text.substring(0, 100) + '...'}</p>
                     </div>
                 </div>
                 <div className={s.news4}>
                     <div className={s.newsItemWrapper}>
-                        <Link to={'/news'} className={s.newsButtonOpen}>
+                        <Link to={`/news/${post[3]._id}`} className={s.newsButtonOpen}>
                             Открыть
                             <img src={paw} alt="paws"/>
                         </Link>
                         <div>21.08.2022</div>
-                        <img className={s.lastNewsImageFour} src={lastNews[3].image} alt={lastNews[3].alt}/>
-                        <h3 className={s.newsTitle}>{lastNews[3].title}</h3>
-                        <p className={s.newsText}>{lastNews[3].description.substring(0, 100) + '...'}</p>
+                        <img className={s.lastNewsImageFour} src={`http://localhost:3157${post[3]?.imageUrl}`} alt={lastNews[3].alt}/>
+                        <h3 className={s.newsTitle}>{post[3]?.title}</h3>
+                        <p className={s.newsText}>{post[3]?.text.substring(0, 100) + '...'}</p>
                     </div>
                 </div>
                 <div className={s.news5}>
                     <div className={s.newsItemWrapper}>
-                        <Link to={'/news'} className={s.newsButtonOpen}>
+                        <Link to={`/news/${post[4]._id}`} className={s.newsButtonOpen}>
                             Открыть
                             <img src={paw} alt="paws"/>
                         </Link>
                         <div>21.08.2022</div>
-                        <img className={s.lastNewsImageFour} src={lastNews[4].image} alt={lastNews[4].alt}/>
-                        <h3 className={s.newsTitle}>{lastNews[4].title}</h3>
-                        <p className={s.newsText}>{lastNews[4].description.substring(0, 100) + '...'}</p>
+                        <img className={s.lastNewsImageFour} src={`http://localhost:3157${post[4]?.imageUrl}`} alt={lastNews[4].alt}/>
+                        <h3 className={s.newsTitle}>{post[4]?.title}</h3>
+                        <p className={s.newsText}>{post[4]?.text.substring(0, 100) + '...'}</p>
                     </div>
                 </div>
             </div>

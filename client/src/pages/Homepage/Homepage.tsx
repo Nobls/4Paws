@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {Banners} from "../../components/banners/Banners";
 import {Advantage} from "../../components/advantage/Advantage";
 import {LastNews} from "../../components/lastNews/LastNews";
@@ -9,8 +9,18 @@ import {Link} from "react-router-dom";
 import paw from "../../images/Vector2.png";
 import OurTeam from "../../components/ ourTeam/OurTeam";
 import OurPartners from "../../components/ ourPartners/OurPartners";
+import {useAppDispatch, useAppSelector} from "../../redux/hook/hook";
+import {fetchNews} from "../../redux/slices/posts";
 
 const Homepage = () => {
+
+    const dispatch = useAppDispatch()
+
+    const {post} = useAppSelector((state) => state.news)
+
+    useEffect(() => {
+        dispatch(fetchNews())
+    }, [])
 
     return (
         <div>
@@ -31,7 +41,7 @@ const Homepage = () => {
                     <Banners/>
                 </div>
                 <Populars/>
-                <LastNews/>
+                <LastNews post={post}/>
                 <OurTeam/>
                 <Reviews/>
             </div>
