@@ -20,7 +20,7 @@ export const LastNews = ({post}:PropsType) => {
 
                 <div className={s.news1}>
                     <div className={s.newsItemWrapper}>
-                        <Link to={`/news/${post[0]._id}`} className={s.newsButtonOpen}>
+                        <Link to={`/news/${post[0]?._id}`} className={s.newsButtonOpen}>
                             Открыть
                             <img src={paw} alt=""/>
                         </Link>
@@ -32,7 +32,7 @@ export const LastNews = ({post}:PropsType) => {
                 </div>
                 <div className={s.news2}>
                     <div className={s.newsItemWrapper}>
-                        <Link to={`/news/${post[1]._id}`} className={s.newsButtonOpen}>
+                        <Link to={`/news/${post[1]?._id}`} className={s.newsButtonOpen}>
                             Открыть
                             <img src={paw} alt="paws"/>
                         </Link>
@@ -44,7 +44,7 @@ export const LastNews = ({post}:PropsType) => {
                 </div>
                 <div className={s.news3}>
                     <div className={s.newsItemWrapper}>
-                        <Link to={`/news/${post[2]._id}`} className={s.newsButtonOpen}>
+                        <Link to={`/news/${post[2]?._id}`} className={s.newsButtonOpen}>
                             Открыть
                             <img src={paw} alt="paws"/>
                         </Link>
@@ -56,7 +56,7 @@ export const LastNews = ({post}:PropsType) => {
                 </div>
                 <div className={s.news4}>
                     <div className={s.newsItemWrapper}>
-                        <Link to={`/news/${post[3]._id}`} className={s.newsButtonOpen}>
+                        <Link to={`/news/${post[3]?._id}`} className={s.newsButtonOpen}>
                             Открыть
                             <img src={paw} alt="paws"/>
                         </Link>
@@ -68,7 +68,7 @@ export const LastNews = ({post}:PropsType) => {
                 </div>
                 <div className={s.news5}>
                     <div className={s.newsItemWrapper}>
-                        <Link to={`/news/${post[4]._id}`} className={s.newsButtonOpen}>
+                        <Link to={`/news/${post[4]?._id}`} className={s.newsButtonOpen}>
                             Открыть
                             <img src={paw} alt="paws"/>
                         </Link>

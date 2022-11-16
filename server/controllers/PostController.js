@@ -2,7 +2,7 @@ import PostModel from '../models/Post.js'
 
 export const getAll = async (req, res) => {
     try {
-        const posts = await PostModel.find().populate('user').exec();
+        const posts = await PostModel.find().sort({createdAt: -1}).populate('user').exec();// добавил .sort({createdAt: -1}) чтобы показывало последние новости
 
         res.json(posts);
     } catch (err) {
@@ -119,6 +119,7 @@ export const update = async (req, res) => {
                 text: req.body.text,
                 imageUrl: req.body.imageUrl,
                 tags: req.body.tags,
+                date: req.body.date
             }
         )
 
@@ -141,6 +142,7 @@ export const create = async (req, res) => {
             imageUrl: req.body.imageUrl,
             tags: req.body.tags.split(','),
             user: req.userId,
+            date: req.body.date
         });
 
         const post = await doc.save();
