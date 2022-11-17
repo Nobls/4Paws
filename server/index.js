@@ -3,11 +3,16 @@ import mongoose from "mongoose";
 import multer from "multer";
 import cors from 'cors'
 
-import {registerValidation, loginValidation, postCreateValidation} from './validations/validations.js'
+import {
+    registerValidation,
+    loginValidation,
+    postCreateValidation,
+    servicesCreateValidation
+} from './validations/validations.js'
 
 import {checkAuth, handleValidationErrors} from "./utils/index.js";
 
-import {UserController, PostController} from './controllers/index.js'
+import {UserController, PostController,ServicesController} from './controllers/index.js'
 
 mongoose
     .connect('mongodb+srv://AdminS:QQQwww444@pf.9ipuej5.mongodb.net/PF?retryWrites=true&w=majority')
@@ -29,13 +34,9 @@ const upload = multer({storage})
 
 app.use(express.json());
 app.use(cors());
+
+// загрузка изображений
 app.use('/uploads', express.static('uploads'));
-
-app.post('/auth/login', loginValidation, handleValidationErrors, UserController.login);
-
-app.post('/auth/registration', registerValidation, handleValidationErrors, UserController.registration);
-
-app.get('/auth/me', checkAuth, UserController.getMe);
 
 app.post('/upload', checkAuth, upload.single('image'),(req, res)=>{
     res.json({
@@ -43,9 +44,17 @@ app.post('/upload', checkAuth, upload.single('image'),(req, res)=>{
     })
 } )
 
-//заманил posts на news
+// регистрация авторизация
 
-app.get('/news', PostController.getAll);
+app.post('/auth/login', loginValidation, handleValidationErrors, UserController.login);
+
+app.post('/auth/registration', registerValidation, handleValidationErrors, UserController.registration);
+
+app.get('/auth/me', checkAuth, UserController.getMe);
+
+// получение, создание, редактирование, удаление новостей + получение тегов
+
+app.get('/news', PostController.getAll); //заманил posts на news
 
 app.get('/news/:id', PostController.getOne);
 
@@ -58,6 +67,12 @@ app.post('/news', checkAuth, postCreateValidation, handleValidationErrors, PostC
 app.delete('/news/:id', checkAuth, PostController.remove);
 
 app.patch('/news/:id', checkAuth, postCreateValidation, handleValidationErrors, PostController.update);
+
+// получение, создание, редактирование, удаление услуг
+
+app.get('/services', ServicesController.getAll)
+
+/*app.post('/services', checkAuth, servicesCreateValidation, handleValidationErrors, ServicesController.create)*/
 
 app.listen(3157, (err) => {
     if (err) {

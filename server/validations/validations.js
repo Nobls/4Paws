@@ -18,3 +18,10 @@ export const postCreateValidation = [
     body('tags', 'Не верный формат тегов (укажите массив)').optional().isString(),
     body('imageUrl', 'Неверная ссылка на изображение').optional().isString(),
 ];
+
+export const servicesCreateValidation = [
+    body('title', 'Введите заголовок статьи').isLength({min: 3}).isString(),
+    body('description', 'Введите текс услуги').isLength({min: 10}).isString(),
+    body('descriptionModal', 'Введите текс услуги модального окна').isLength({min: 10}).isString(),
+    body('imageUrl', 'Неверная ссылка на изображение').optional().isString(),
+];
