@@ -67,4 +67,63 @@
       }
     }
   }
+
+  .addServicesWrapper {
+    background-color: #b0afaf;
+    margin: 0 0 50px 0;
+
+    .adminPanelSubtitle {
+      font-size: 24px;
+      text-align: center;
+      padding: 20px 0;
+    }
+
+    .addServicesForm {
+      display: flex;
+      flex-direction: column;
+      width: 50%;
+      justify-content: center;
+      margin: 0 auto;
+      padding-bottom: 50px;
+
+      .changeTitleServices {
+        margin-bottom: 20px;
+      }
+
+      .changeTitleTags{
+        margin-bottom: 20px;
+      }
+
+      .changeTextServices {
+        height: 100px;
+      }
+
+      .titleImage {
+
+      }
+
+      .removeImageBtn{
+        margin-bottom: 20px;
+      }
+
+      .previewImage{
+        margin-bottom: 20px;
+        width: 100%;
+      }
+
+      .addImageButton {
+        margin-bottom: 20px;
+      }
+
+      .altImage {
+        margin-bottom: 20px;
+      }
+
+      .addServicesButton {
+        width: 200px;
+        align-self: flex-end;
+        cursor: pointer;
+      }
+    }
+  }
 }

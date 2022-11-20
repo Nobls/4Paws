@@ -72,7 +72,13 @@ app.patch('/news/:id', checkAuth, postCreateValidation, handleValidationErrors, 
 
 app.get('/services', ServicesController.getAll)
 
-/*app.post('/services', checkAuth, servicesCreateValidation, handleValidationErrors, ServicesController.create)*/
+app.get('/services/:id', ServicesController.getOne)
+
+app.post('/services', checkAuth, servicesCreateValidation, handleValidationErrors, ServicesController.create)
+
+app.delete('/services/:id', ServicesController.remove)
+
+app.patch('/services/:id', ServicesController.update)
 
 app.listen(3157, (err) => {
     if (err) {

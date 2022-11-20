@@ -1,12 +1,19 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import s from "./services.module.scss";
-import {services} from "../../data/data";
-import {ServicesCard} from "../../components/servicesCard/ServicesCard";
-import Reviews from "../../components/reviews/Reviews";
-import paw from "../../images/Vector2.png";
 import ChooseServices from "../../components/chooseServices/ChooseServices";
+import {useAppDispatch, useAppSelector} from "../../redux/hook/hook";
+import {ServicesCard} from "../../components/servicesCard/ServicesCard";
+import {fetchServices} from "../../redux/slices/services";
 
 const Services = () => {
+
+    const dispatch = useAppDispatch()
+    const {services} = useAppSelector((state)=> state.services)
+    const userData = useAppSelector((state)=> state.auth.data)
+
+    useEffect(()=>{
+        dispatch(fetchServices())
+    },[])
 
     return (
         <div>
@@ -18,18 +25,16 @@ const Services = () => {
                 <h3 className={s.servicesSubTitle}>Наши Услуги</h3>
                 <div className={s.servicesItems}>
                     {
-                        services.map(m => {
+                        services.map((m, index) => {
                             return (
                                 <ServicesCard
-                                    key={m.id}
-                                    id={m.id}
+                                    key = {index}
+                                    id={m._id}
                                     title={m.title}
-                                    image={m.image}
-                                    date={m.date}
-                                    alt={m.alt}
                                     description={m.description}
                                     descriptionModal={m.descriptionModal}
-                                    services={services}
+                                    imageUrl={m.imageUrl}
+                                    userData={userData}
                                 />
                             )
                         })
