@@ -18,6 +18,7 @@ import PetAccount from "./pages/PetAccount/PetAccount";
 import AdminPanel from "./pages/AdminPanel/AdminPanel";
 import {useAppDispatch, useAppSelector} from "./redux/hook/hook";
 import {fetchAuthMe, selectedIsAuth} from "./redux/slices/auth";
+import {ModalServices} from "./components/modalServices/ModalServices";
 
 function App() {
 
@@ -34,6 +35,7 @@ function App() {
                 <Route path='/' element={<Layout/>}>
                     <Route index element={<Homepage/>}/>
                     <Route path='services' element={<Services/>}/>
+                    <Route path='services/:id' element={<ModalServices/>}/>
                     <Route path='shop' element={<Shop/>}/>
                     <Route path='news' element={<News/>}/>
                     <Route path='about' element={<AboutUs/>}/>
@@ -47,6 +49,7 @@ function App() {
                     <Route path='petAccount' element={<PetAccount/>}/>
                     <Route path='adminPanel' element={<AdminPanel/>}/>
                     <Route path='news/:id/edit' element={<AdminPanel/>}/>
+                    <Route path='services/:id/edit' element={<AdminPanel/>}/>
                 </Route>
             </Routes>
         </div>

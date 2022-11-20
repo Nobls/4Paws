@@ -1,8 +1,9 @@
-import React, {useState} from 'react';
+import React from 'react';
 import s from './servicesCard.module.scss';
-import {ServicesType} from "../../data/data";
-import {ModalServices} from "../modalServices/ModalServices";
 import ButtonStandart from "../buttonStandart/ButtonStandart";
+import EditButtons from "../editPostButtons/EditButtuons";
+import {User} from "../../redux/slices/posts";
+import {Link} from "react-router-dom";
 import LowercaseButton from "../lowercaseButton/LowercaseButton";
 
 type PropsType = {
@@ -12,22 +13,13 @@ type PropsType = {
     date?: boolean
     description?: string
     descriptionModal?: string
+    user: User
     userData?: any
-    services?: ServicesType[]
 }
 
-export const ServicesCard = ({id, imageUrl, date,title,services, description, descriptionModal}: PropsType) => {
+export const ServicesCard = ({id, imageUrl, title, description, userData, user}: PropsType) => {
 
     const order = 'Заказать'
-
-    const [modalActive, setModalActive] = useState(false)
-    /*const modalFilter = () => {
-        services.filter(f => f.id === id)
-    }*/
-    /*const allModalFunction = () => {
-        setModalActive(!modalActive)
-        modalFilter()
-    }*/
 
     return (
         <div key={id} className={s.servicesItem}>
@@ -36,19 +28,18 @@ export const ServicesCard = ({id, imageUrl, date,title,services, description, de
             </div>
             <p className={s.servicesDescription}>{description}</p>
             <div className={s.buttonBlock}>
-                {/*<LowercaseButton title={'Узнать больше'} allModalFunction={allModalFunction}/>*/}
+                <Link to={`/services/${id}`}>
+                    <LowercaseButton title={'Узнать больше'}/>
+                </Link>
                 <ButtonStandart title={order}/>
             </div>
-
-            {/*<ModalServices
-                modalActive={modalActive}
-                setModalActive={setModalActive}
-                alt={alt}
-                image={image}
-                date={date}
-                title={title}
-                description={descriptionModal}
-            />*/}
+            <a href={`/services/${id}/edit`}>
+                <EditButtons
+                    userData={userData}
+                    user={user}
+                    titleButton={'Редактировать'}
+                />
+            </a>
         </div>
     );
 };

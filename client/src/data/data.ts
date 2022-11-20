@@ -126,7 +126,7 @@ export type OurParntersType = {
     link: string
 }
 
-export type ServicesType = {
+/*export type ServicesType = {
     id: number
     title: string
     description: string
@@ -134,7 +134,7 @@ export type ServicesType = {
     image: any
     date: boolean,
     alt: string
-}
+}*/
 
 export type Gallery = string[]
 
@@ -660,7 +660,7 @@ export const ourPartners: OurParntersType[] = [
     },
 ]
 
-export const services: ServicesType[] = [
+export const services = [
     {
         id: 1,
         title: 'Уход за питомцем 24/7',

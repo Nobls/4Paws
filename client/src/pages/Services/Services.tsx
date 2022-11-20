@@ -34,6 +34,7 @@ const Services = () => {
                                     description={m.description}
                                     descriptionModal={m.descriptionModal}
                                     imageUrl={m.imageUrl}
+                                    user={m.user}
                                     userData={userData}
                                 />
                             )

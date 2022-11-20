@@ -7,17 +7,17 @@ export interface ServicesType {
     title?: string
     description?: string
     descriptionModal?: string
-    user?: User
+    user: User
     imageUrl?: string
 }
 
-type TypeState = {
+type TypeStateServices = {
     services: ServicesType[]
     loading: boolean
     errors: any
 }
 
-const initialState: TypeState = {
+const initialState: TypeStateServices = {
     services: [],
     loading: false,
     errors: null
