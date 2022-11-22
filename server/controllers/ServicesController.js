@@ -1,7 +1,7 @@
 import ServicesModel from "../models/Services.js";
 
 
-export const getAll = async (req, res) => {
+export const getAllServices = async (req, res) => {
     try {
         const services = await ServicesModel.find().populate('user').exec();
 
@@ -14,12 +14,12 @@ export const getAll = async (req, res) => {
     }
 };
 
-export const getOne = async (req, res) => {
+export const getOneServices = async (req, res) => {
     try {
 
         const servicesId = req.params.id
 
-        ServicesModel.findOne(
+        ServicesModel.findOneAndUpdate(
             {
                 _id: servicesId
             },
@@ -54,28 +54,7 @@ export const getOne = async (req, res) => {
     }
 }
 
-export const create = async (req, res) => {
-    try {
-        const doc = new ServicesModel({
-            title: req.body.title,
-            description: req.body.description,
-            descriptionModal: req.body.descriptionModal,
-            imageUrl: req.body.imageUrl,
-            user: req.userId,
-        })
-
-        const services = await doc.save()
-
-        res.json(services)
-    } catch (err) {
-        console.log(err)
-        res.status(500).json({
-            message: 'Не удалось создать услугу',
-        })
-    }
-}
-
-export const remove = async (req, res) => {
+export const removeServices = async (req, res) => {
     try {
 
         const servicesId = req.params.id
@@ -112,7 +91,7 @@ export const remove = async (req, res) => {
     }
 }
 
-export const update = async (req, res) => {
+export const updateServices = async (req, res) => {
     try {
 
         const servicesId = req.params.id
@@ -137,6 +116,27 @@ export const update = async (req, res) => {
         console.log(err)
         res.status(500).json({
             message: 'Не удалось обновить услугу',
+        })
+    }
+}
+
+export const createServices = async (req, res) => {
+    try {
+        const doc = new ServicesModel({
+            title: req.body.title,
+            description: req.body.description,
+            descriptionModal: req.body.descriptionModal,
+            imageUrl: req.body.imageUrl,
+            user: req.userId,
+        })
+
+        const services = await doc.save()
+
+        res.json(services)
+    } catch (err) {
+        console.log(err)
+        res.status(500).json({
+            message: 'Не удалось создать услугу',
         })
     }
 }

@@ -22,7 +22,7 @@ export const ServicesCard = ({id, imageUrl, title, description, userData, user}:
     const order = 'Заказать'
 
     return (
-        <div key={id} className={s.servicesItem}>
+        <div className={s.servicesItem}>
             <h4 className={s.servicesItemTitle}>{title}</h4>
             <div className={s.servicesImage} style={{backgroundImage: `url(http://localhost:3157${imageUrl})`}}>
             </div>

@@ -1,19 +1,19 @@
 import React, {ChangeEvent, useEffect, useState} from 'react';
 import s from "../pages/AdminPanel/adminPanel.module.scss";
-import {Navigate, useNavigate, useParams} from "react-router-dom";
+import {useNavigate, useParams} from "react-router-dom";
 import axios from "../axios/axios";
+import {useAppDispatch} from "../redux/hook/hook";
 
-type PropsType = {
-    isAuth : boolean
-}
 
-export const AdminServices = ({isAuth}:PropsType) => {
+export const AdminServices = () => {
 
     const navigate = useNavigate()
 
     const {id} = useParams()
 
     const isEditing = !!(id)
+
+    const dispatch = useAppDispatch()
 
     const [titleServices, setTitleServices] = useState('')
     const [descriptionServices, setDescriptionServices] = useState('')
@@ -26,17 +26,14 @@ export const AdminServices = ({isAuth}:PropsType) => {
     useEffect(() => {
         if (id) {
             axios.get(`/services/${id}`).then(({data}) => {
-                setTitleServices(data.titleServices)
-                setDescriptionServices(data.descriptionServices)
-                setDescriptionModalServices(data.descriptionModalServices)
-                setImageUrlServices(data.imageUrlServices)
+                setTitleServices(data.title)
+                setDescriptionServices(data.description)
+                setDescriptionModalServices(data.descriptionModal)
+                setImageUrlServices(data.imageUrl)
             })
         }
     }, [])
 
-    if (!window.localStorage.getItem('token') && !isAuth) {
-        return <Navigate to={'/'}/>
-    }
 
     const handleChangeFileServices = async (event: ChangeEvent<HTMLInputElement>) => {
         try {
@@ -68,14 +65,12 @@ export const AdminServices = ({isAuth}:PropsType) => {
                 imageUrlServices,
                 descriptionModalServices,
             }
-
+            navigate('/adminPanel')
             const {data} = isEditing
                 ? await axios.patch(`/services/${id}`, fieldsServices)
                 : await axios.post('/services', fieldsServices)
 
             const _id = isEditing ? id : data._id
-
-            navigate(`/services/${_id}`)
         } catch (err) {
             console.log(err)
         }
@@ -87,13 +82,13 @@ export const AdminServices = ({isAuth}:PropsType) => {
                 Добавить услугу
             </h3>
             <form className={s.addServicesForm}>
-                <input value={titleServices} onChange={e => setTitleServices(e.currentTarget.value)}
+                <input value={titleServices || ''} onChange={e => setTitleServices(e.currentTarget.value)}
                        className={s.changeTitleServices} type="text" placeholder={'Добавить заголовок'}/>
                 {/*<input value={tags} onChange={e => setTags(e.currentTarget.value)} className={s.changeTitleTags}
                                type="text" placeholder={'Добавить тег'}/>*/}
-                <textarea value={descriptionServices} onChange={e => setDescriptionServices(e.currentTarget.value)}
+                <textarea value={descriptionServices || ''} onChange={e => setDescriptionServices(e.currentTarget.value)}
                           className={s.changeTextServices} placeholder={'Добавить текст'}/>
-                <textarea value={descriptionModalServices} onChange={e => setDescriptionModalServices(e.currentTarget.value)}
+                <textarea value={descriptionModalServices || ''} onChange={e => setDescriptionModalServices(e.currentTarget.value)}
                           className={s.changeTextServices} placeholder={'Добавить текст для модально окна'}/>
                 <p>{imageTitleServices}</p>
                 {
@@ -108,10 +103,10 @@ export const AdminServices = ({isAuth}:PropsType) => {
 
                 <input className={s.addImageButton} type={'file'} onChange={handleChangeFileServices}/>
 
-                <input value={imageTitleServices} onChange={e => setImageTitleServices(e.currentTarget.value)}
+                <input value={imageTitleServices || ''} onChange={e => setImageTitleServices(e.currentTarget.value)}
                        className={s.altImage} type="text" placeholder={'Название картинки'}/>
 
-                <button onClick={onSubmitServices}
+                <button type={'submit'} onClick={onSubmitServices}
                         className={s.addServicesButton}>{isEditing ? 'Сохранить' : 'Добавить услугу'}</button>
 
             </form>

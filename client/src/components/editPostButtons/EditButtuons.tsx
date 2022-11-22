@@ -10,7 +10,6 @@ type PropsType = {
 }
 
 const EditButtons = ({_id,user,userData, removeNewsHandle, titleButton}: PropsType) => {
-    console.log(userData)
     return (
         <>
             {

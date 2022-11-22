@@ -5,12 +5,13 @@ import {selectedIsAuth} from "../../redux/slices/auth";
 import {Navigate, useNavigate, useParams} from "react-router-dom";
 import axios from "../../axios/axios";
 import {AdminServices} from "../../admin/AdminServices";
+import {AdminNews} from "../../admin/AdminNews";
 
 const AdminPanel = () => {
 
     const isAuth = useAppSelector(selectedIsAuth)
 
-    const navigate = useNavigate()
+    /*const navigate = useNavigate()
 
     const {id} = useParams()
 
@@ -33,13 +34,13 @@ const AdminPanel = () => {
                 setImageUrl(data.imageUrl)
             })
         }
-    }, [])
+    }, [])*/
 
     if (!window.localStorage.getItem('token') && !isAuth) {
         return <Navigate to={'/'}/>
     }
 
-    const handleChangeFile = async (event: ChangeEvent<HTMLInputElement>) => {
+    /*const handleChangeFile = async (event: ChangeEvent<HTMLInputElement>) => {
         try {
             if (event.target.files !== null) {
                 const formData = new FormData()
@@ -80,7 +81,7 @@ const AdminPanel = () => {
         } catch (err) {
             console.log(err)
         }
-    }
+    }*/
 
 
     //Добавление и редактирование будет в одной форме
@@ -90,7 +91,7 @@ const AdminPanel = () => {
                 <h1 className={s.adminPanelTitle}>
                     Админ панель
                 </h1>
-                <div className={s.addPostWrapper}>
+                {/*<div className={s.addPostWrapper}>
                     <h3 className={s.adminPanelSubtitle}>
                         Добавить новость
                     </h3>
@@ -121,9 +122,9 @@ const AdminPanel = () => {
                                 className={s.addNewsButton}>{isEditing ? 'Сохранить' : 'Добавить новость'}</button>
 
                     </form>
-                </div>
-
-                {/*<AdminServices isAuth={isAuth}/>*/}
+                </div>*/}
+                <AdminNews/>
+                <AdminServices/>
             </div>
         </div>
     );

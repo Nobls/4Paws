@@ -70,15 +70,15 @@ app.patch('/news/:id', checkAuth, postCreateValidation, handleValidationErrors, 
 
 // получение, создание, редактирование, удаление услуг
 
-app.get('/services', ServicesController.getAll)
+app.get('/services', ServicesController.getAllServices)
 
-app.get('/services/:id', ServicesController.getOne)
+app.get('/services/:id', ServicesController.getOneServices)
 
-app.post('/services', checkAuth, servicesCreateValidation, handleValidationErrors, ServicesController.create)
+app.post('/services', checkAuth, servicesCreateValidation , handleValidationErrors, ServicesController.createServices)
 
-app.delete('/services/:id', ServicesController.remove)
+app.delete('/services/:id', checkAuth, ServicesController.removeServices)
 
-app.patch('/services/:id', ServicesController.update)
+app.patch('/services/:id', checkAuth, ServicesController.updateServices)
 
 app.listen(3157, (err) => {
     if (err) {

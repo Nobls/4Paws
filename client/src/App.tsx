@@ -19,6 +19,8 @@ import AdminPanel from "./pages/AdminPanel/AdminPanel";
 import {useAppDispatch, useAppSelector} from "./redux/hook/hook";
 import {fetchAuthMe, selectedIsAuth} from "./redux/slices/auth";
 import {ModalServices} from "./components/modalServices/ModalServices";
+import {AdminNews} from "./admin/AdminNews";
+import {AdminServices} from "./admin/AdminServices";
 
 function App() {
 
@@ -48,8 +50,8 @@ function App() {
                     <Route path='usersAccount' element={<UsersAccount/>}/>
                     <Route path='petAccount' element={<PetAccount/>}/>
                     <Route path='adminPanel' element={<AdminPanel/>}/>
-                    <Route path='news/:id/edit' element={<AdminPanel/>}/>
-                    <Route path='services/:id/edit' element={<AdminPanel/>}/>
+                    <Route path='news/:id/edit' element={<AdminNews/>}/>
+                    <Route path='services/:id/edit' element={<AdminServices/>}/>
                 </Route>
             </Routes>
         </div>
