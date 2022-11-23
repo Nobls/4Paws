@@ -2,7 +2,6 @@ import React, {ChangeEvent, useEffect, useState} from 'react';
 import s from "../pages/AdminPanel/adminPanel.module.scss";
 import {useNavigate, useParams} from "react-router-dom";
 import axios from "../axios/axios";
-import {useAppDispatch} from "../redux/hook/hook";
 
 
 export const AdminServices = () => {
@@ -13,7 +12,6 @@ export const AdminServices = () => {
 
     const isEditing = !!(id)
 
-    const dispatch = useAppDispatch()
 
     const [titleServices, setTitleServices] = useState('')
     const [descriptionServices, setDescriptionServices] = useState('')
@@ -65,12 +63,13 @@ export const AdminServices = () => {
                 imageUrlServices,
                 descriptionModalServices,
             }
-            navigate('/adminPanel')
             const {data} = isEditing
                 ? await axios.patch(`/services/${id}`, fieldsServices)
                 : await axios.post('/services', fieldsServices)
 
             const _id = isEditing ? id : data._id
+
+            navigate(`/services${_id}`)
         } catch (err) {
             console.log(err)
         }

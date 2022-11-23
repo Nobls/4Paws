@@ -68,7 +68,7 @@ export const AdminNews = () => {
 
             const _id = isEditing ? id : data._id
 
-            navigate(`/news/${id}`)
+            navigate(`/news/${_id}`)
         } catch (err) {
             console.log(err)
         }

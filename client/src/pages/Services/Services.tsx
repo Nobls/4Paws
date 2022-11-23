@@ -10,7 +10,7 @@ const Services = () => {
     const dispatch = useAppDispatch()
     const {services} = useAppSelector((state)=> state.services)
     const userData = useAppSelector((state)=> state.auth.data)
-    console.log(services)
+
     useEffect(()=>{
         dispatch(fetchServices())
     },[])
