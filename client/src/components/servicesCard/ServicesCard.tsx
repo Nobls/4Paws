@@ -5,6 +5,8 @@ import EditButtons from "../editPostButtons/EditButtuons";
 import {User} from "../../redux/slices/posts";
 import {Link} from "react-router-dom";
 import LowercaseButton from "../lowercaseButton/LowercaseButton";
+import {useAppDispatch} from "../../redux/hook/hook";
+import {fetchRemoveServices} from "../../redux/slices/services";
 
 type PropsType = {
     id?: string
@@ -19,7 +21,15 @@ type PropsType = {
 
 export const ServicesCard = ({id, imageUrl, title, description, userData, user}: PropsType) => {
 
+    const dispatch = useAppDispatch()
+
     const order = 'Заказать'
+
+    const removeServicesHandle = () => {
+        if (window.confirm('Вы действительно хотите удалить новость')) {
+            dispatch(fetchRemoveServices(id))
+        }
+    }
 
     return (
         <div className={s.servicesItem}>
@@ -40,6 +50,12 @@ export const ServicesCard = ({id, imageUrl, title, description, userData, user}:
                     titleButton={'Редактировать'}
                 />
             </a>
+            <EditButtons
+                userData={userData}
+                user={user}
+                removeNewsHandle={removeServicesHandle}
+                titleButton={'Удалить'}
+            />
         </div>
     );
 };

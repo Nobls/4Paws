@@ -13,21 +13,21 @@ export const AdminServices = () => {
     const isEditing = !!(id)
 
 
-    const [titleServices, setTitleServices] = useState('')
-    const [descriptionServices, setDescriptionServices] = useState('')
-    const [descriptionModalServices, setDescriptionModalServices] = useState('')
-    const [imageUrlServices, setImageUrlServices] = useState('')
-    const [imageTitleServices, setImageTitleServices] = useState('')
+    const [title, setTitle] = useState('')
+    const [description, setDescription] = useState('')
+    const [descriptionModal, setDescriptionModal] = useState('')
+    const [imageUrl, setImageUrl] = useState('')
+    const [imageTitle, setImageTitle] = useState('')
 
     const [loading, setLoading] = useState(false)
 
     useEffect(() => {
         if (id) {
             axios.get(`/services/${id}`).then(({data}) => {
-                setTitleServices(data.title)
-                setDescriptionServices(data.description)
-                setDescriptionModalServices(data.descriptionModal)
-                setImageUrlServices(data.imageUrl)
+                setTitle(data.title)
+                setDescription(data.description)
+                setDescriptionModal(data.descriptionModal)
+                setImageUrl(data.imageUrl)
             })
         }
     }, [])
@@ -40,8 +40,8 @@ export const AdminServices = () => {
                 const file = event.target.files[0]
                 formData.append('image', file)
                 const {data} = await axios.post('upload', formData)
-                setImageUrlServices(data.url)
-                setImageTitleServices(data.url.replace(/uploads\s?/, '').replace(/['/']\s?/, '').replace(/['/']\s?/, ''))
+                setImageUrl(data.url)
+                setImageTitle(data.url.replace(/uploads\s?/, '').replace(/['/']\s?/, '').replace(/['/']\s?/, ''))
             }
         } catch (err) {
             console.warn(err)
@@ -50,18 +50,18 @@ export const AdminServices = () => {
     }
 
     const removeImageHandlerServices = () => {
-        setImageUrlServices('')
-        setImageTitleServices('')
+        setImageUrl('')
+        setImageTitle('')
     }
 
     const onSubmitServices = async () => {
         try {
             setLoading(true)
             const fieldsServices = {
-                titleServices,
-                descriptionServices,
-                imageUrlServices,
-                descriptionModalServices,
+                title,
+                description,
+                imageUrl,
+                descriptionModal,
             }
             const {data} = isEditing
                 ? await axios.patch(`/services/${id}`, fieldsServices)
@@ -81,19 +81,19 @@ export const AdminServices = () => {
                 Добавить услугу
             </h3>
             <form className={s.addServicesForm}>
-                <input value={titleServices || ''} onChange={e => setTitleServices(e.currentTarget.value)}
+                <input value={title || ''} onChange={e => setTitle(e.currentTarget.value)}
                        className={s.changeTitleServices} type="text" placeholder={'Добавить заголовок'}/>
                 {/*<input value={tags} onChange={e => setTags(e.currentTarget.value)} className={s.changeTitleTags}
                                type="text" placeholder={'Добавить тег'}/>*/}
-                <textarea value={descriptionServices || ''} onChange={e => setDescriptionServices(e.currentTarget.value)}
+                <textarea value={description || ''} onChange={e => setDescription(e.currentTarget.value)}
                           className={s.changeTextServices} placeholder={'Добавить текст'}/>
-                <textarea value={descriptionModalServices || ''} onChange={e => setDescriptionModalServices(e.currentTarget.value)}
+                <textarea value={descriptionModal || ''} onChange={e => setDescriptionModal(e.currentTarget.value)}
                           className={s.changeTextServices} placeholder={'Добавить текст для модально окна'}/>
-                <p>{imageTitleServices}</p>
+                <p>{imageTitle}</p>
                 {
-                    imageUrlServices && (
+                    imageUrl && (
                         <>
-                            <img className={s.previewImage} src={`http://localhost:3157${imageUrlServices}`}
+                            <img className={s.previewImage} src={`http://localhost:3157${imageUrl}`}
                                  alt="uploaded"/>
                             <button className={s.removeImageBtn} onClick={removeImageHandlerServices}>Удалить</button>
                         </>
@@ -102,7 +102,7 @@ export const AdminServices = () => {
 
                 <input className={s.addImageButton} type={'file'} onChange={handleChangeFileServices}/>
 
-                <input value={imageTitleServices || ''} onChange={e => setImageTitleServices(e.currentTarget.value)}
+                <input value={imageTitle || ''} onChange={e => setImageTitle(e.currentTarget.value)}
                        className={s.altImage} type="text" placeholder={'Название картинки'}/>
 
                 <button type={'submit'} onClick={onSubmitServices}

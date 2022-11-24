@@ -19,11 +19,11 @@ type PropsType = {
 
 const Post = ({id, user, tags, title, text, fullPost, userData, imageUrl}: PropsType) => {
 
-    const dispath = useAppDispatch()
+    const dispatch = useAppDispatch()
 
     const removeNewsHandle = () => {
         if (window.confirm('Вы действительно хотите удалить новость')) {
-            dispath(fetchRemoveNews(id))
+            dispatch(fetchRemoveNews(id))
         }
     }
 

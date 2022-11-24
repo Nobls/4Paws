@@ -31,6 +31,14 @@ export const fetchServices = createAsyncThunk<ServicesType[]>(
         return data
     })
 
+export const fetchRemoveServices = createAsyncThunk(
+    'services/fetchRemoveServices',
+    async (_id:any)=>{
+        const {data} = await axios.delete(`/services/${_id}`)
+        return data
+    }
+)
+
 
 const servicesSlice = createSlice({
     name: 'services',
@@ -46,6 +54,10 @@ const servicesSlice = createSlice({
         })
         builder.addCase(fetchServices.rejected, (state) => {
             state.loading = true
+        })
+
+        builder.addCase(fetchRemoveServices.pending, (state, action) => {
+            state.services = state.services.filter(f=> f._id !== action.meta.arg);
         })
     }
 })

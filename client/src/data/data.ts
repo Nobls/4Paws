@@ -715,7 +715,7 @@ export const services = [
     {
         id: 5,
         title: 'Груминг',
-        description: 'Груминг',
+        description: 'Груминг ',
         descriptionModal: 'Груминг',
         image: servicesGrooming,
         date: false,
