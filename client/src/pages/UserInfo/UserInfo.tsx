@@ -12,26 +12,42 @@ const UserInfo = () => {
             <div className={s.userInfoBlock}>
                 <div className={s.userInfoWrapper}>
                     <div className={s.userInfoItems}>
-                        <label className={s.userInfoItem}><span>Имя</span><input type="text"
-                                                                                 className={s.userInfoItemInput}/></label>
-                        <label className={s.userInfoItem}><span>Фамилия</span><input type="text"
-                                                                                     className={s.userInfoItemInput}/></label>
-                        <label className={s.userInfoItem}><span>Отчество</span><input type="text"
-                                                                                      className={s.userInfoItemInput}/></label>
+                        <label className={s.userInfoItem}>
+                            <span>Имя</span>
+                            <input type="text" className={s.userInfoItemInput}/>
+                        </label>
+                        <label className={s.userInfoItem}>
+                            <span>Фамилия</span>
+                            <input type="text" className={s.userInfoItemInput}/>
+                        </label>
+                        <label className={s.userInfoItem}>
+                            <span>Отчество</span>
+                            <input type="text" className={s.userInfoItemInput}/>
+                        </label>
                     </div>
                     <div className={s.userInfoItems}>
-                        <label className={s.userInfoItem}><span>Город</span><input type="text"
-                                                                                   className={s.userInfoItemInput}/></label>
-                        <label className={s.userInfoItem}><span>Улица</span><input type="text"
-                                                                                   className={s.userInfoItemInput}/></label>
+                        <label className={s.userInfoItem}>
+                            <span>Город</span>
+                            <input type="text" className={s.userInfoItemInput}/>
+                        </label>
+                        <label className={s.userInfoItem}>
+                            <span>Улица</span>
+                            <input type="text" className={s.userInfoItemInput}/>
+                        </label>
                     </div>
                     <div className={s.userInfoHomeItems}>
-                        <label className={s.userInfoHomeItem}><span>Дом</span><input className={s.userInfoHomeInput}
-                                                                                     type="text"/></label>
-                        <label className={s.userInfoHomeItem}><span>Корпус</span><input className={s.userInfoHomeInput}
-                                                                                        type="text"/></label>
-                        <label className={s.userInfoHomeItem}><span>Квартира</span><input
-                            className={s.userInfoHomeInput} type="text"/></label>
+                        <label className={s.userInfoHomeItem}>
+                            <span>Дом</span>
+                            <input className={s.userInfoHomeInput} type="text"/>
+                        </label>
+                        <label className={s.userInfoHomeItem}>
+                            <span>Корпус</span>
+                            <input className={s.userInfoHomeInput} type="text"/>
+                        </label>
+                        <label className={s.userInfoHomeItem}>
+                            <span>Квартира</span>
+                            <input className={s.userInfoHomeInput} type="text"/>
+                        </label>
                     </div>
                 </div>
 
@@ -40,7 +56,7 @@ const UserInfo = () => {
                     <div className={s.buttonWrapper}>
                         <LowercaseButton title={'Добавить фото'}/>
                     </div>
-                    <ButtonStandart title={'Зарегистрироваться'}/>
+                    <ButtonStandart title={'Сохранить'}/>
                     <Link to={"/petInfo"}>!goToPetInfo</Link>
                     <Link to={"/usersAccount"}>!goToUsersAccount</Link>
                     <Link to={"/AdminPanel"}>!AdminPanel</Link>

@@ -47,7 +47,7 @@ function App() {
                     <Route path='registration' element={<Registration/>}/>
                     <Route path='petInfo' element={<PetInfo/>}/>
                     <Route path='news/:id' element={<NewsPost/>}/>
-                    <Route path='usersAccount' element={<UsersAccount/>}/>
+                    <Route path='auth/user/:id' element={<UsersAccount/>}/>
                     <Route path='petAccount' element={<PetAccount/>}/>
                     <Route path='adminPanel' element={<AdminPanel/>}/>
                     <Route path='news/:id/edit' element={<AdminNews/>}/>

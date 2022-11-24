@@ -50,7 +50,11 @@ app.post('/auth/login', loginValidation, handleValidationErrors, UserController.
 
 app.post('/auth/registration', registerValidation, handleValidationErrors, UserController.registration);
 
-app.get('/auth/me', checkAuth, UserController.getMe);
+app.patch('/auth/user/:id', handleValidationErrors, UserController.updateUserInfo)
+
+app.get('/auth/user', checkAuth, UserController.getMe);
+
+app.get('/auth/user/:id',checkAuth, handleValidationErrors, UserController.getUserId)
 
 // получение, создание, редактирование, удаление новостей + получение тегов
 

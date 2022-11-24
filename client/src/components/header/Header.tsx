@@ -1,34 +1,24 @@
 import React, {useState} from 'react';
-import {Link, useNavigate} from "react-router-dom";
+import {Link} from "react-router-dom";
 import logo from "../../images/logoNew2.png"
 import s from './header.module.scss'
 import Navigation from "../navigation/Navigation";
 import {Search} from "../search/Search";
-import user from '../../images/user.png';
-import {useAppDispatch, useAppSelector} from "../../redux/hook/hook";
-import {logout, selectedIsAuth} from "../../redux/slices/auth";
+import {useAppSelector} from "../../redux/hook/hook";
+import {selectedIsAuth} from "../../redux/slices/auth";
+import {User} from "../user/User";
 
 const Header = () => {
 
-    const [search, setSearch] = useState(false)
-
-    const onclickSearchHandler = () => {
-        setSearch(!search)
-    }
-
     const isAuth = useAppSelector(selectedIsAuth)
 
-    const dispatch = useAppDispatch()
+    const userData = useAppSelector((state)=> state.auth.data)
 
-    const navigate = useNavigate()
+    const [search, setSearch] = useState(false)
 
-    const navigateUserAccount = () => {
-        navigate('usersAccount')
-    }
-
-    const onClickLogout = ()=>{
-        dispatch(logout())
-        window.localStorage.removeItem('token')
+    console.log(userData)
+    const onclickSearchHandler = () => {
+        setSearch(!search)
     }
 
 
@@ -111,19 +101,8 @@ const Header = () => {
                                 </Link>
                             </div>
                             {
-                                isAuth ?
-                                    <div className={s.userWrapper}>
-                                        <div className={s.userLoginWrapper} onClick={navigateUserAccount}>
-                                            <div className={s.userLogin}><img className={s.userLoginIcon} src={user} alt="user"/></div>
-                                            <span className={s.userName}>Александр</span>
-
-                                        </div>
-                                        <button className={s.userLogout} type={'submit'} onClick={onClickLogout}>Выйти</button>
-                                    </div>
-                                    :
-                                    <Link className={s.linkLogin} to={'/login'}>Войти</Link>
+                                isAuth ? <User userData={userData}/> : <Link className={s.linkLogin} to={'/login'}>Войти</Link>
                             }
-
                         </div>
                         <div>
                             <Navigation/>

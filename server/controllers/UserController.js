@@ -41,6 +41,40 @@ export const registration = async (req, res) => {
     }
 };
 
+export const updateUserInfo = async (req, res) => {
+    try {
+
+        const userId = req.params.id
+
+        await UserModel.updateOne(
+            {
+                _id: userId
+            },
+            {
+                $addToSet: {
+                    name: req.body.name,
+                    lastName: req.body.lastName,
+                    surName: req.body.surName,
+                    city: req.body.city,
+                    street: req.body.street,
+                    houseNumber: req.body.houseNumber,
+                    corpsHouse: req.body.corpsHouse,
+                    apartmentNumber: req.body.apartmentNumber,
+                }
+            }
+        )
+        res.json({
+            success: true
+        })
+
+    } catch (err) {
+        console.log(err)
+        res.status(500).json({
+            message: 'Не удалось обновить данные пользователя',
+        })
+    }
+}
+
 export const login = async (req, res) => {
     try {
         const user = await UserModel.findOne({email: req.body.email})
@@ -103,3 +137,43 @@ export const getMe = async (req, res) => {
         })
     }
 };
+
+export const getUserId = async (req, res) => {
+    try {
+
+        const userId = req.params
+
+        UserModel.findOne(
+            {
+                _id: userId
+            },
+            {},
+            {
+                returnDocument: 'after',
+            },
+            (err, doc) => {
+                if (err) {
+                    console.log(err)
+                    return res.status(500).json({
+                        message: 'Не удалось получить',
+                    })
+                }
+
+                if (!doc) {
+                    return res.status(404).json({
+                        message: 'Пользователь не найден'
+                    })
+                }
+
+                res.json(doc)
+            }
+        )
+
+
+    } catch (err) {
+        console.log(err)
+        res.status(500).json({
+            message: 'Не удалось получить ID пользователя',
+        })
+    }
+}
