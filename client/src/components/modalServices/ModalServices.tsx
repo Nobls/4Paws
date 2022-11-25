@@ -42,9 +42,15 @@ export const ModalServices = () => {
                 </div>
 
                 <div className={s.orderService}>
-                    <Link to={`/services`}>
+                    {/*<Link to={`/services`}>*/}
                         <ButtonStandart title={'Заказать услугу'}/>
                         {/*временно на этой кнопке закрытие модалки*/}
+                    {/*</Link>*/}
+                </div>
+
+                <div className={s.closeModal}>
+                    <Link to={'/services'}>
+                        <button className={s.buttonClose}>x</button>
                     </Link>
                 </div>
             </div>
