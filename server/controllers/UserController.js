@@ -51,16 +51,17 @@ export const updateUserInfo = async (req, res) => {
                 _id: userId
             },
             {
-                $addToSet: {
-                    name: req.body.name,
-                    lastName: req.body.lastName,
-                    surName: req.body.surName,
-                    city: req.body.city,
-                    street: req.body.street,
-                    houseNumber: req.body.houseNumber,
-                    corpsHouse: req.body.corpsHouse,
-                    apartmentNumber: req.body.apartmentNumber,
-                }
+
+                name: req.body.name,
+                lastName: req.body.lastName,
+                surName: req.body.surName,
+                city: req.body.city,
+                street: req.body.street,
+                houseNumber: req.body.houseNumber,
+                corpsHouse: req.body.corpsHouse,
+                apartmentNumber: req.body.apartmentNumber,
+                avatarUrl: req.body.avatarUrl
+                //для обновления
             }
         )
         res.json({
@@ -74,6 +75,40 @@ export const updateUserInfo = async (req, res) => {
         })
     }
 }
+
+/*export const saveUserInfo = async (req, res) => {
+    try {
+
+        const userId = req.params.id
+
+        await UserModel.insertOne(
+            {
+                _id: userId
+            },
+            {
+
+                name: req.body.name,
+                lastName: req.body.lastName,
+                surName: req.body.surName,
+                city: req.body.city,
+                street: req.body.street,
+                houseNumber: req.body.houseNumber,
+                corpsHouse: req.body.corpsHouse,
+                apartmentNumber: req.body.apartmentNumber,
+                //для обновления
+            }
+        )
+        res.json({
+            success: true
+        })
+
+    } catch (err) {
+        console.log(err)
+        res.status(500).json({
+            message: 'Не удалось обновить данные пользователя',
+        })
+    }
+}*/
 
 export const login = async (req, res) => {
     try {
@@ -141,7 +176,7 @@ export const getMe = async (req, res) => {
 export const getUserId = async (req, res) => {
     try {
 
-        const userId = req.params
+        const userId = req.params.id
 
         UserModel.findOne(
             {

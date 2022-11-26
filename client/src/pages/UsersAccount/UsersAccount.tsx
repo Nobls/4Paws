@@ -4,13 +4,32 @@ import user from '../../images/reviews/user4.jpg'
 import petPhoto from '../../images/pagesBG/04.jpg'
 import paw from '../../images/pawBig.png'
 import petCard1 from '../../images/petCard1.png';
-import {Link, useNavigate} from "react-router-dom";
+import {Link, useNavigate, useParams} from "react-router-dom";
+import axios from "../../axios/axios";
 
 const UsersAccount = () => {
+
+    const [data, setData] = useState<any>()
+    const [loading, setLoading] = useState<any>(true)
+
+
+    const {id} = useParams()
 
     useEffect(() => {
         window.scrollTo(0, 0);
     }, [])
+
+    useEffect(() => {
+        axios.get(`/auth/user/${id}`)
+            .then(res => {
+                setData(res.data)
+                setLoading(false)
+                console.log(data)
+            }).catch((err) => {
+            console.warn(err)
+        })
+    }, [])
+
 
     const navigate = useNavigate()
 
@@ -18,7 +37,7 @@ const UsersAccount = () => {
         navigate('/petInfo')
     }
     const onPagePetAccount = () => {
-      navigate('/petAccount')
+        navigate('/petAccount')
     }
 
     let [quantity, setQuantity] = useState(0)
@@ -39,6 +58,9 @@ const UsersAccount = () => {
         }
     }
 
+    if (loading) {
+        return <div>Загрузка...</div>
+    }
 
     return (
         <div className={s.pageContainer}>
@@ -49,16 +71,19 @@ const UsersAccount = () => {
                     <div className={s.userAccountPhoto} style={{backgroundImage: `url(${user})`}}>
                     </div>
                     <div className={s.userAccountInfo}>
-                        <div className={s.userAccountName}>Леонид Иванович Мизнов</div>
+                        <div className={s.userAccountName}>{data.fullName}</div>
                         <div className={s.userAccountAddress}> Адрес: Минск, Ложинская д.19</div>
                         <a className={s.userAccountPhone} href={'tel:375291112233'}>Телефон: +375-29-111-22-33</a>
                         <div className={s.userAccountEmail}>E-mail: exampleEmail@gmail.com</div>
                     </div>
+                    <a href={`/auth/user/${id}/userInfo`}>
+                        <button>Данные о пользователе</button>
+                    </a>
                 </div>
                 <div className={s.userPersonalCardWrapper}>
                     <img className={s.userPersonalCardPaw} src={paw} alt="paw"/>
                     <div className={s.userPersonalCardName}>
-                        Леонид Иванович Мизнов
+                        {data.fullName}
                     </div>
                     <div className={s.userPersonalCardSaleWrapper}>
                         <div className={s.userPersonalCardBonus}>Бонусы: 19</div>

@@ -42,7 +42,7 @@ function App() {
                     <Route path='news' element={<News/>}/>
                     <Route path='about' element={<AboutUs/>}/>
                     <Route path='contacts' element={<Contacts/>}/>
-                    <Route path='userInfo' element={<UserInfo/>}/>
+                    <Route path='auth/user/:id/userInfo' element={<UserInfo/>}/>
                     <Route path='login' element={<Login/>}/>
                     <Route path='registration' element={<Registration/>}/>
                     <Route path='petInfo' element={<PetInfo/>}/>

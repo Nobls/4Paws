@@ -69,7 +69,7 @@ export const AdminServices = () => {
 
             const _id = isEditing ? id : data._id
 
-            navigate(`/services${_id}`)
+            navigate(`/services/${_id}`)
         } catch (err) {
             console.log(err)
         }
