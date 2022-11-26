@@ -41,6 +41,9 @@ const UserSchema = new mongoose.Schema(
         apartmentNumber:{
             type: Number,
         },
+        userPhoneNumber: {
+            type: String
+        },
         avatarUrl: String,
     },
     {

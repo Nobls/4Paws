@@ -1,4 +1,4 @@
-import React, {ChangeEvent, useState} from 'react';
+import React, {ChangeEvent, useEffect, useState} from 'react';
 import s from "./userInfo.module.scss";
 import userPhoto from "../../images/user.png";
 import {Link, useNavigate, useParams} from "react-router-dom";
@@ -22,9 +22,27 @@ const UserInfo = () => {
     const [houseNumber, setHouseNumber] = useState('')
     const [corpsHouse, setCorpsHouse] = useState('')
     const [apartmentNumber, setApartmentNumber] = useState('')
+    const [userPhoneNumber, setUserPhoneNumber] = useState('')
     const [avatarUrl, setAvatarUrl] = useState('')
 
     const [loading, setLoading] = useState(false)
+
+    useEffect(() => {
+        if (id) {
+            axios.get(`/auth/user/${id}`).then(({data}) => {
+                setName(data.name)
+                setLastName(data.lastName)
+                setSurName(data.surName)
+                setCity(data.city)
+                setStreet(data.street)
+                setHouseNumber(data.houseNumber)
+                setCorpsHouse(data.corpsHouse)
+                setApartmentNumber(data.apartmentNumber)
+                setUserPhoneNumber(data.userPhoneNumber)
+                setAvatarUrl(data.avatarUrl)
+            })
+        }
+    }, [])
 
     const handleChangeFile = async (event: ChangeEvent<HTMLInputElement>) => {
         try {
@@ -56,6 +74,7 @@ const UserInfo = () => {
                 houseNumber,
                 corpsHouse,
                 apartmentNumber,
+                userPhoneNumber,
                 avatarUrl,
             }
             const {data} = isEditing
@@ -77,12 +96,12 @@ const UserInfo = () => {
                 <div className={s.userInfoWrapper}>
                     <div className={s.userInfoItems}>
                         <label className={s.userInfoItem}>
-                            <span>Имя</span>
-                            <input value={name || ''} type="text" className={s.userInfoItemInput} onChange={e => setName(e.currentTarget.value)}/>
-                        </label>
-                        <label className={s.userInfoItem}>
                             <span>Фамилия</span>
                             <input value={lastName || ''} type="text" className={s.userInfoItemInput} onChange={e => setLastName(e.currentTarget.value)}/>
+                        </label>
+                        <label className={s.userInfoItem}>
+                            <span>Имя</span>
+                            <input value={name || ''} type="text" className={s.userInfoItemInput} onChange={e => setName(e.currentTarget.value)}/>
                         </label>
                         <label className={s.userInfoItem}>
                             <span>Отчество</span>
@@ -97,6 +116,10 @@ const UserInfo = () => {
                         <label className={s.userInfoItem}>
                             <span>Улица</span>
                             <input value={street || ''} type="text" className={s.userInfoItemInput} onChange={e => setStreet(e.currentTarget.value)}/>
+                        </label>
+                        <label className={s.userInfoItem}>
+                            <span>Телефон</span>
+                            <input value={userPhoneNumber || ''} type="tel" className={s.userInfoItemInput} onChange={e => setUserPhoneNumber(e.currentTarget.value)}/>
                         </label>
                     </div>
                     <div className={s.userInfoHomeItems}>

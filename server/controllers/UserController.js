@@ -60,6 +60,7 @@ export const updateUserInfo = async (req, res) => {
                 houseNumber: req.body.houseNumber,
                 corpsHouse: req.body.corpsHouse,
                 apartmentNumber: req.body.apartmentNumber,
+                userPhoneNumber: req.body.userPhoneNumber,
                 avatarUrl: req.body.avatarUrl
                 //для обновления
             }

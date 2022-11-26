@@ -1,6 +1,6 @@
 import React, {ChangeEvent, useEffect, useState} from 'react';
 import s from './usersAccount.module.scss'
-import user from '../../images/reviews/user4.jpg'
+import user from '../../images/user.png'
 import petPhoto from '../../images/pagesBG/04.jpg'
 import paw from '../../images/pawBig.png'
 import petCard1 from '../../images/petCard1.png';
@@ -68,22 +68,38 @@ const UsersAccount = () => {
 
             <div className={s.userInfo}>
                 <div className={s.userInfoWrapper}>
-                    <div className={s.userAccountPhoto} style={{backgroundImage: `url(${user})`}}>
+                    <div className={s.userAccountPhoto}
+                         style={{backgroundImage: data.avatarUrl ? `url(http://localhost:3157${data.avatarUrl})` : `url(${user})`}}>
                     </div>
                     <div className={s.userAccountInfo}>
-                        <div className={s.userAccountName}>{data.fullName}</div>
-                        <div className={s.userAccountAddress}> Адрес: Минск, Ложинская д.19</div>
-                        <a className={s.userAccountPhone} href={'tel:375291112233'}>Телефон: +375-29-111-22-33</a>
-                        <div className={s.userAccountEmail}>E-mail: exampleEmail@gmail.com</div>
+                        {
+                            data.name
+                                ?
+                                <div className={s.userNameWrapper}>
+                                    <span className={s.userAccountName}>{data.lastName}</span>
+                                    <span className={s.userAccountName}>{data.name}</span>
+                                    <span className={s.userAccountName}>{data.surName}</span>
+                                </div>
+                                :
+                                <div className={s.userAccountName}>{data.fullName}</div>
+                        }
+                        <div className={s.userAccountAddress}>
+                            Адрес: {data.city}, {data.street} д.{data.houseNumber} к.{data.corpsHouse} кв.{data.apartmentNumber}
+                        </div>
+                        <a className={s.userAccountPhone} href={'tel:375291112233'}>Телефон: {data.userPhoneNumber}</a>
+                        <div className={s.userAccountEmail}>E-mail: {data.email}</div>
                     </div>
-                    <a href={`/auth/user/${id}/userInfo`}>
-                        <button>Данные о пользователе</button>
-                    </a>
                 </div>
                 <div className={s.userPersonalCardWrapper}>
                     <img className={s.userPersonalCardPaw} src={paw} alt="paw"/>
                     <div className={s.userPersonalCardName}>
-                        {data.fullName}
+                        {
+                            data.name
+                                ?
+                                `${data.lastName} ${data.name}`
+                                :
+                                data.fullName
+                        }
                     </div>
                     <div className={s.userPersonalCardSaleWrapper}>
                         <div className={s.userPersonalCardBonus}>Бонусы: 19</div>
@@ -92,6 +108,10 @@ const UsersAccount = () => {
                     <div className={s.userPersonalCardNumber}>1555 1511 1511 2222</div>
                 </div>
             </div>
+
+            <a className={s.linkChangeUserinfoBtn} href={`/auth/user/${id}/userInfo`}>
+                <button className={s.changeUserinfoBtn}>Данные о пользователе</button>
+            </a>
 
             <h3 className={s.userPetsTitle}>Питомцы</h3>
 

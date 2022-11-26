@@ -41,6 +41,14 @@
           font-weight: 900;
           margin-bottom: 20px;
         }
+        .userAccountName + .userAccountName{
+          margin-left: 15px;
+        }
+
+        .userNameWrapper{
+          display: flex;
+          flex-direction: row;
+        }
 
         .userAccountAddress {
           font-size: 20px;
@@ -126,6 +134,20 @@
       }
     }
   }
+
+  .linkChangeUserinfoBtn{
+    margin-top: 20px;
+    .changeUserinfoBtn{
+      padding: 10px;
+      color: white;
+      background-color: $color-accent-dark;
+      border-radius: $borderRadius;
+      border: none;
+      cursor: pointer;
+    }
+  }
+
+
 
   .userPetsTitle {
     margin: 60px 0;
