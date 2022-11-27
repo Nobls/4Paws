@@ -1,5 +1,5 @@
-import React, {useState} from 'react';
-import {Link} from "react-router-dom";
+import React, {useEffect, useState} from 'react';
+import {Link, useLocation, useNavigate} from "react-router-dom";
 import logo from "../../images/logoNew2.png"
 import s from './header.module.scss'
 import Navigation from "../navigation/Navigation";
@@ -16,7 +16,6 @@ const Header = () => {
 
     const [search, setSearch] = useState(false)
 
-    console.log(userData)
     const onclickSearchHandler = () => {
         setSearch(!search)
     }

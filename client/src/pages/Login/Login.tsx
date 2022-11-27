@@ -1,6 +1,6 @@
 import React from 'react';
 import s from "./login.module.scss";
-import {Link, useNavigate, Navigate} from "react-router-dom";
+import {Link, Navigate} from "react-router-dom";
 import ButtonStandart from "../../components/buttonStandart/ButtonStandart";
 import {SubmitHandler, useForm} from "react-hook-form";
 import {useAppDispatch, useAppSelector} from "../../redux/hook/hook";

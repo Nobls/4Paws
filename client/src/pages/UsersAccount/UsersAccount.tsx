@@ -24,7 +24,6 @@ const UsersAccount = () => {
             .then(res => {
                 setData(res.data)
                 setLoading(false)
-                console.log(data)
             }).catch((err) => {
             console.warn(err)
         })
