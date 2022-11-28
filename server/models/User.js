@@ -32,14 +32,14 @@ const UserSchema = new mongoose.Schema(
         },
 
         houseNumber:{
-            type: Number,
+            type: String,
 
         },
         corpsHouse: {
-            type: Number,
+            type: String,
         },
         apartmentNumber:{
-            type: Number,
+            type: String,
         },
         userPhoneNumber: {
             type: String
