@@ -7,12 +7,12 @@ import {
     registerValidation,
     loginValidation,
     postCreateValidation,
-    servicesCreateValidation
+    servicesCreateValidation, userInfoValidation
 } from './validations/validations.js'
 
 import {checkAuth, handleValidationErrors} from "./utils/index.js";
 
-import {UserController, PostController,ServicesController} from './controllers/index.js'
+import {UserController, PostController, ServicesController} from './controllers/index.js'
 
 mongoose
     .connect('mongodb+srv://AdminS:QQQwww444@pf.9ipuej5.mongodb.net/PF?retryWrites=true&w=majority')
@@ -38,11 +38,11 @@ app.use(cors());
 // загрузка изображений
 app.use('/uploads', express.static('uploads'));
 
-app.post('/upload', checkAuth, upload.single('image'),(req, res)=>{
+app.post('/upload', checkAuth, upload.single('image'), (req, res) => {
     res.json({
         url: `/uploads/${req.file.originalname}`,
     })
-} )
+})
 
 // регистрация авторизация
 
@@ -50,11 +50,11 @@ app.post('/auth/login', loginValidation, handleValidationErrors, UserController.
 
 app.post('/auth/registration', registerValidation, handleValidationErrors, UserController.registration);
 
-app.patch('/auth/user/:id', handleValidationErrors, UserController.updateUserInfo)
+app.patch('/auth/user/:id', userInfoValidation, handleValidationErrors, UserController.updateUserInfo)
 
 app.get('/auth/user', checkAuth, UserController.getMe);
 
-app.get('/auth/user/:id',checkAuth, handleValidationErrors, UserController.getUserId)
+app.get('/auth/user/:id', checkAuth, handleValidationErrors, UserController.getUserId)
 
 // получение, создание, редактирование, удаление новостей + получение тегов
 
@@ -78,11 +78,11 @@ app.get('/services', ServicesController.getAllServices)
 
 app.get('/services/:id', ServicesController.getOneServices)
 
-app.post('/services', checkAuth, servicesCreateValidation , handleValidationErrors, ServicesController.createServices)
+app.post('/services', checkAuth, servicesCreateValidation, handleValidationErrors, ServicesController.createServices)
 
 app.delete('/services/:id', checkAuth, ServicesController.removeServices)
 
-app.patch('/services/:id', checkAuth, ServicesController.updateServices)
+app.patch('/services/:id', checkAuth, servicesCreateValidation, ServicesController.updateServices)
 
 app.listen(3157, (err) => {
     if (err) {
