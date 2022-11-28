@@ -11,6 +11,7 @@ import OurTeam from "../../components/ ourTeam/OurTeam";
 import OurPartners from "../../components/ ourPartners/OurPartners";
 import {useAppDispatch, useAppSelector} from "../../redux/hook/hook";
 import {fetchNews} from "../../redux/slices/posts";
+import {fetchAuthMe} from "../../redux/slices/auth";
 
 const Homepage = () => {
 
@@ -20,6 +21,7 @@ const Homepage = () => {
 
     useEffect(() => {
         dispatch(fetchNews())
+        dispatch(fetchAuthMe())
     }, [])
 
     return (

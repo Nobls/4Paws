@@ -25,7 +25,7 @@ export const User = ({userData}:PropsType) => {
     return (
         <div className={s.userWrapper}>
             <div className={s.userLoginWrapper}>
-                <Link className={s.linkUser} to={`/auth/user/${userData._id}`}>
+                <Link className={s.linkUser} to={`/auth/user/${userData._id}`} reloadDocument={true}>
                     <div className={s.linkUserWrapper}>
                         <div className={s.userLogin}><img className={s.userLoginIcon} src={userData.avatarUrl ? `http://localhost:3157${userData.avatarUrl}` : user} alt="user"/></div>
                         <span className={s.userName}>{userData.name ? userData.name : userData.fullName}</span>
