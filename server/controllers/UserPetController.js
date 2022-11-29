@@ -126,6 +126,7 @@ export const createUserPet = async (req,res)=>{
             agePet:req.body.agePet,
             petGender:req.body.petGender,
             petAvatarUrl:req.body.petAvatarUrl,
+            petPersonalCard: req.body.petPersonalCard,
             user: req.userId
         })
 

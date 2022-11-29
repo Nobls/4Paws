@@ -7,7 +7,7 @@ import {
     registerValidation,
     loginValidation,
     postCreateValidation,
-    servicesCreateValidation, userInfoValidation, UserPetValidation
+    servicesCreateValidation, userInfoValidation, userPetValidation
 } from './validations/validations.js'
 
 import {checkAuth, handleValidationErrors} from "./utils/index.js";
@@ -90,7 +90,7 @@ app.get('/petAccount', UserPetController.getAll)
 
 app.get('/petAccount/:id', UserPetController.getOne)
 
-app.post('/petAccount/:id', checkAuth, userPetValidation, handleValidationErrors, UserPetController.createUserPet)
+app.post('/petAccount', checkAuth, userPetValidation, handleValidationErrors, UserPetController.createUserPet)
 
 app.delete('/petAccount/:id', checkAuth, UserPetController.removeUserPet)
 
