@@ -39,7 +39,7 @@ export const servicesCreateValidation = [
     body('imageUrl', 'Неверная ссылка на изображение').optional().isString(),
 ];
 
-export const UserPetValidation = [
+export const userPetValidation = [
     body('petName', 'Введите имя питомца').isLength({min:1}).isString(),
     body('petBreed', 'Укажите пароду питомца').isLength({min:1}).isString(),
     body('agePet', 'Укажите возраст питомца').isLength({min:1}).isString(),
