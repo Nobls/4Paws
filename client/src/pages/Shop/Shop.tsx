@@ -1,6 +1,7 @@
 import React from 'react';
 import s from './shop.module.scss';
-import {Link} from "react-router-dom";
+import ShopSidebar from "../../components/shopSidebar/ShopSidebar";
+import ShopCategory from "../../components/shopCategory/ShopCategory";
 
 const Shop = () => {
     return (
@@ -9,36 +10,23 @@ const Shop = () => {
                 <div className={s.shopWrapper}>
 
                     <div className={s.shopSidebar}>
-                        <ul>
-                            <li>
-                                <Link to={'/'}>
-                                    Для собак
-                                </Link>
-                            </li>
-                            <li>
-                                <Link to={'/'}>
-                                    Для котов
-                                </Link>
-                            </li>
-                            <li>
-                                <Link to={'/'}>
-                                    Для грызунов
-                                </Link>
-                            </li>
-                            <li>
-                                <Link to={'/'}>
-                                    Для птиц
-                                </Link>
-                            </li>
-                            <li>
-                                <Link to={'/'}>
-                                    Для рыб
-                                </Link>
-                            </li>
-                        </ul>
+                        <ShopSidebar/>
                     </div>
 
-                    <div className={s.shopCategory}>
+                    <div className={s.shopCategoryWrapper}>
+
+                        <div className={s.shopCategoryTitle}>
+                            <h2>Для собак</h2>
+                        </div>
+
+                        <div className={s.shopCategory}>
+                            <ShopCategory/>
+                            <ShopCategory/>
+                            <ShopCategory/>
+                            <ShopCategory/>
+                            <ShopCategory/>
+                            <ShopCategory/>
+                        </div>
 
                     </div>
 

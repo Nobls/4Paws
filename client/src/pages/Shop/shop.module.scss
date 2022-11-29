@@ -1,2 +1,34 @@
 @import "src/common/extends";
 @import "src/common/variables";
+
+
+.shopBg {
+
+  .shopContainer {
+    @extend .container;
+
+    .shopWrapper {
+      display: flex;
+
+      .shopSidebar {
+        background-color: $color-accent-dark;
+        width: 30%;
+      }
+
+      .shopCategoryWrapper {
+        margin-bottom: 100px;
+        width: 100%;
+
+        .shopCategoryTitle {
+          margin-top: 100px;
+        }
+
+        .shopCategory {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: center;
+        }
+      }
+    }
+  }
+}

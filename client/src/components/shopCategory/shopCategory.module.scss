@@ -1,0 +1,24 @@
+@import "src/common/extends";
+@import "src/common/variables";
+
+
+.shopCategoryCardWrapper {
+  box-shadow: $boxShadow;
+  background-color: $backgroundCart;
+  width: 35%;
+  height: 200px;
+  margin: 20px;
+
+  &:hover {
+    box-shadow: $boxShadowHover;
+    background-color: $backgroundCartHover;
+  }
+
+  .shopCategoryCardLink {
+
+
+    .shopCategoryCardTitle {
+      color: $color-text;
+    }
+  }
+}

@@ -1,0 +1,25 @@
+@import "src/common/extends";
+@import "src/common/variables";
+
+
+.shopSidebar {
+  width: 100%;
+
+  .shopSidebarItems {
+    list-style: none;
+    margin-top: 100px;
+
+    .sidebarItemLink {
+      text-decoration: none;
+      color: white;
+      font-size: 20px;
+      font-weight: 900;
+
+      .shopSidebarItem {
+        list-style: none;
+        margin: 20px 0;
+
+      }
+    }
+  }
+}
