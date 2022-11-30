@@ -48,7 +48,7 @@ function App() {
                     <Route path='petInfo' element={<PetInfo/>}/>
                     <Route path='news/:id' element={<NewsPost/>}/>
                     <Route path='auth/user/:id' element={<UsersAccount/>}/>
-                    <Route path='petAccount' element={<PetAccount/>}/>
+                    <Route path='petAccount/:id' element={<PetAccount/>}/>
                     <Route path='adminPanel' element={<AdminPanel/>}/>
                     <Route path='news/:id/edit' element={<AdminNews/>}/>
                     <Route path='services/:id/edit' element={<AdminServices/>}/>

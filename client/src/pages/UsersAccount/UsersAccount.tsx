@@ -1,13 +1,17 @@
 import React, {ChangeEvent, useEffect, useState} from 'react';
 import s from './usersAccount.module.scss'
 import user from '../../images/user.png'
-import petPhoto from '../../images/pagesBG/04.jpg'
 import paw from '../../images/pawBig.png'
 import petCard1 from '../../images/petCard1.png';
 import {Link, useNavigate, useParams} from "react-router-dom";
 import axios from "../../axios/axios";
+import {useAppDispatch, useAppSelector} from "../../redux/hook/hook";
+import {fetchUserPet} from "../../redux/slices/userPet";
 
 const UsersAccount = () => {
+
+    const dispatch = useAppDispatch()
+    const {userPet} = useAppSelector((state)=>state.userPet)
 
     const [data, setData] = useState<any>()
     const [loading, setLoading] = useState<any>(true)
@@ -18,6 +22,12 @@ const UsersAccount = () => {
     useEffect(() => {
         window.scrollTo(0, 0);
     }, [])
+
+    useEffect(()=>{
+        dispatch(fetchUserPet())
+    },[])
+
+    console.log(userPet)
 
     useEffect(() => {
         axios.get(`/auth/user/${id}`)
@@ -34,9 +44,6 @@ const UsersAccount = () => {
 
     const addPet = () => {
         navigate('/petInfo')
-    }
-    const onPagePetAccount = () => {
-        navigate('/petAccount')
     }
 
     let [quantity, setQuantity] = useState(0)
@@ -116,7 +123,30 @@ const UsersAccount = () => {
 
             <div className={s.userAccountPets}>
 
-                <div className={s.userPetsWrapper} onClick={onPagePetAccount}>
+                {
+                    userPet.map((m, index)=>{
+                        return (
+                            <Link key={index} className={s.userPetsLink} to={`/petAccount/${m._id}`}>
+                                <div className={s.userPetsWrapper}>
+                                    <div className={s.userAccountPetPhoto} style={{backgroundImage: `url(http://localhost:3157${m.petAvatarUrl})`}}>
+                                    </div>
+                                    <div className={s.userAccountPetInfo}>
+                                        <div className={s.userAccountPetName}>{m.petName}</div>
+                                        <div className={s.userAccountAge}>{m.agePet} лет</div>
+                                        <div className={s.userAccountBreed}>{m.petBreed}</div>
+                                    </div>
+                                    <div className={s.personalPetCardWrapper}>
+                                        <div className={s.personalPetCard} style={{backgroundImage: `url(${petCard1})`}}>
+                                        </div>
+                                    </div>
+                                </div>
+                            </Link>
+                        )
+
+                    })
+                }
+
+                {/*<div className={s.userPetsWrapper} onClick={onPagePetAccount}>
                     <div className={s.userAccountPetPhoto} style={{backgroundImage: `url(${petPhoto})`}}>
                     </div>
                     <div className={s.userAccountPetInfo}>
@@ -157,7 +187,7 @@ const UsersAccount = () => {
                         <div className={s.personalPetCard} style={{backgroundImage: `url(${petCard1})`}}>
                         </div>
                     </div>
-                </div>
+                </div>*/}
 
                 <button className={s.userAccountAddPets} onClick={addPet}>
                     <svg xmlns="http://www.w3.org/2000/svg" width="55px" height="55px" viewBox="0 0 24 24"
