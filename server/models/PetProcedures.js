@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 
-const PetVaccinationSchema = new mongoose.Schema(
+const PetProceduresSchema = new mongoose.Schema(
     {
         typeVaccination: {
             type: String,
@@ -13,6 +13,14 @@ const PetVaccinationSchema = new mongoose.Schema(
         nameOfVaccine: {
             type: String,
             required: true,
+        },
+        dateProcedure: {
+            type: Date,
+            required: true,
+        },
+        nameOfProcedure: {
+            type:String,
+            required: true
         },
         nameClinic: {
             type: String,
@@ -29,4 +37,4 @@ const PetVaccinationSchema = new mongoose.Schema(
     }
 )
 
-export default mongoose.model('PetVaccination', PetVaccinationSchema)
+export default mongoose.model('PetVaccination', PetProceduresSchema)

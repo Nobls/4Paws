@@ -7,12 +7,12 @@ import {
     registerValidation,
     loginValidation,
     postCreateValidation,
-    servicesCreateValidation, userInfoValidation, userPetValidation
+    servicesCreateValidation, userInfoValidation, userPetValidation, petProceduresValidation
 } from './validations/validations.js'
 
 import {checkAuth, handleValidationErrors} from "./utils/index.js";
 
-import {UserController, PostController, ServicesController, UserPetController, PetVaccinationController} from './controllers/index.js'
+import {UserController, PostController, ServicesController, UserPetController, PetProceduresController} from './controllers/index.js'
 
 mongoose
     .connect('mongodb+srv://AdminS:QQQwww444@pf.9ipuej5.mongodb.net/PF?retryWrites=true&w=majority')
@@ -95,6 +95,17 @@ app.post('/petAccount', checkAuth, userPetValidation, handleValidationErrors, Us
 app.delete('/petAccount/:id', checkAuth, UserPetController.removeUserPet)
 
 app.patch('/petAccount/:id', checkAuth, userPetValidation, UserPetController.updateUserPet)
+
+// получение, создание, редактирование, удаление процедур питомцев
+
+app.get('/petAccount', PetProceduresController.getAll)
+
+app.post('/petAccount', checkAuth, petProceduresValidation, handleValidationErrors, PetProceduresController.createPetProcedures)
+
+app.delete('/petAccount/:id', checkAuth, PetProceduresController.removePetProcedures)
+
+app.patch('/petAccount/:id', checkAuth, petProceduresValidation, PetProceduresController.updatePetProcedures)
+
 
 app.listen(3157, (err) => {
     if (err) {

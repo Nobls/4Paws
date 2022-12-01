@@ -48,7 +48,7 @@ export const userPetValidation = [
 
 ]
 
-export const PetVaccinationValidation = [
+export const petProceduresValidation = [
     body('typeVaccination', 'Укажите тип вакцины').isLength({min:1}).isString(),
     body('dateVaccination', 'Укажите дату вакцинации').isDate(),
     body('nameOfVaccine', 'Укажите название вакцины').isLength({min:1}).isString(),
