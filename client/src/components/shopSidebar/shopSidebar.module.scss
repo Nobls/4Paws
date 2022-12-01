@@ -19,6 +19,17 @@
         list-style: none;
         margin: 20px 0;
 
+        &:hover {
+          .shopSidebarPaw {
+            display: initial;
+            width: 15px;
+            height: 15px;
+          }
+        }
+
+        .shopSidebarPaw {
+          display: none;
+        }
       }
     }
   }
