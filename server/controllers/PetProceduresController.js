@@ -1,10 +1,10 @@
-import PetProceduresModel from "../models/UserPet.js";
+import PetProceduresModel from "../models/PetProcedures.js";
 
 export const getAll = async (req, res) => {
     try {
-        const userPet = await PetProceduresModel.find().populate('user').exec()
+        const petProcedures = await PetProceduresModel.find().populate('userPet').exec()
 
-        res.json(userPet)
+        res.json(petProcedures)
     } catch (err) {
         console.log(err)
         res.status(500).json({
@@ -90,12 +90,12 @@ export const createPetProcedures = async (req,res)=>{
             dateProcedure:req.body.dateProcedure,
             nameOfProcedure:req.body.nameOfProcedure,
             nameClinic: req.body.nameClinic,
-            userPet: req.userId
+            userPet: req.user.userPet._id,//нужно получить ID userPet!!!
         })
 
-        const userPet = await doc.save()
+        const petProcedures = await doc.save()
 
-        res.json(userPet)
+        res.json(petProcedures)
 
     }catch (err){
         console.log(err)

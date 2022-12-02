@@ -98,14 +98,14 @@ app.patch('/petAccount/:id', checkAuth, userPetValidation, UserPetController.upd
 
 // получение, создание, редактирование, удаление процедур питомцев
 
-app.get('/petAccount', PetProceduresController.getAll)
+app.get('/petAccount/procedures', PetProceduresController.getAll)
 
-app.post('/petAccount', checkAuth, petProceduresValidation, handleValidationErrors, PetProceduresController.createPetProcedures)
+app.post('/petAccount/procedures', checkAuth, petProceduresValidation, handleValidationErrors, PetProceduresController.createPetProcedures)
 
-app.delete('/petAccount/:id', checkAuth, PetProceduresController.removePetProcedures)
+app.delete('/petAccount/:id/procedures', checkAuth, PetProceduresController.removePetProcedures)
 
-app.patch('/petAccount/:id', checkAuth, petProceduresValidation, PetProceduresController.updatePetProcedures)
-
+app.patch('/petAccount/:id/procedures', checkAuth, petProceduresValidation, PetProceduresController.updatePetProcedures)
+// нужно поработать с путями
 
 app.listen(3157, (err) => {
     if (err) {
