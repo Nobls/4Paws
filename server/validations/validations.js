@@ -53,4 +53,6 @@ export const petProceduresValidation = [
     body('dateVaccination', 'Укажите дату вакцинации').isDate(),
     body('nameOfVaccine', 'Укажите название вакцины').isLength({min:1}).isString(),
     body('nameClinic', 'Укажите название клиники').isLength({min:1}).isString(),
+    body('dateProcedure', 'Укажите дату процедуры').isLength({min:1}).isString(),
+    body('nameOfProcedure', 'Укажите название процедуры').isLength({min:1}).isString(),
 ]

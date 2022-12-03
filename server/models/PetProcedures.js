@@ -29,7 +29,7 @@ const PetProceduresSchema = new mongoose.Schema(
         userPet: {
             type: mongoose.Schema.Types.ObjectId,
             ref: 'UserPet',
-            required: true,
+
         }
     },
     {
@@ -37,4 +37,4 @@ const PetProceduresSchema = new mongoose.Schema(
     }
 )
 
-export default mongoose.model('PetVaccination', PetProceduresSchema)
+export default mongoose.model('PetProcedures', PetProceduresSchema)
