@@ -1,6 +1,6 @@
 import React, {ChangeEvent, useEffect, useState} from 'react';
 import s from './usersAccount.module.scss'
-import user from '../../images/user.png'
+import userIcon from '../../images/user.png'
 import paw from '../../images/pawBig.png'
 import petCard1 from '../../images/petCard1.png';
 import {Link, useNavigate, useParams} from "react-router-dom";
@@ -12,8 +12,7 @@ const UsersAccount = () => {
 
     const dispatch = useAppDispatch()
     const {userPet} = useAppSelector((state)=>state.userPet)
-    const userData = useAppSelector((state) => state.auth.data)
-    console.log(userData)
+    //const userData = useAppSelector((state) => state.auth.data)
 
     const [data, setData] = useState<any>()
     const [loading, setLoading] = useState<any>(true)
@@ -28,8 +27,6 @@ const UsersAccount = () => {
     useEffect(()=>{
         dispatch(fetchUserPet())
     },[])
-
-    console.log(userPet)
 
     useEffect(() => {
         axios.get(`/auth/user/${id}`)
@@ -77,7 +74,7 @@ const UsersAccount = () => {
             <div className={s.userInfo}>
                 <div className={s.userInfoWrapper}>
                     <div className={s.userAccountPhoto}
-                         style={{backgroundImage: data.avatarUrl ? `url(http://localhost:3157${data.avatarUrl})` : `url(${user})`}}>
+                         style={{backgroundImage: data.avatarUrl ? `url(http://localhost:3157${data.avatarUrl})` : `url(${userIcon})`}}>
                     </div>
                     <div className={s.userAccountInfo}>
                         {
@@ -124,8 +121,9 @@ const UsersAccount = () => {
             <h3 className={s.userPetsTitle}>Питомцы</h3>
 
             <div className={s.userAccountPets}>
-
                 {
+                    userPet.find(f=> f.user._id) === data._id
+                        ?
                     userPet.map((m, index)=>{
                         return (
                             <Link key={index} className={s.userPetsLink} to={`/petAccount/${m._id}`}>
@@ -146,6 +144,8 @@ const UsersAccount = () => {
                         )
 
                     })
+                        :
+                        <div></div>
                 }
 
                 <button className={s.userAccountAddPets} onClick={addPet}>

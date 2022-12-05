@@ -21,11 +21,11 @@ const Shop = () => {
             <div className={s.shopContainer}>
                 <div className={s.shopWrapper}>
 
-                    <div className={s.shopPetsCardWrapper} style={{backgroundImage: `url(${dogCard})`}} onClick={changeCategory}>
+                    <div className={s.shopPetsCardWrapper} style={{backgroundImage: `url($)`}} onClick={changeCategory}>
                         <p className={s.shopPetsTitle}>Для собак</p>
                     </div>
 
-                    <div className={s.shopPetsCardWrapper} style={{backgroundImage: `url(${catCard})`}}>
+                    <div className={s.shopPetsCardWrapper} style={{backgroundImage: `url($)`}}>
                         <p className={s.shopPetsTitle}>Для котов</p>
                     </div>
 
