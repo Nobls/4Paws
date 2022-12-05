@@ -12,6 +12,8 @@ const UsersAccount = () => {
 
     const dispatch = useAppDispatch()
     const {userPet} = useAppSelector((state)=>state.userPet)
+    const userData = useAppSelector((state) => state.auth.data)
+    console.log(userData)
 
     const [data, setData] = useState<any>()
     const [loading, setLoading] = useState<any>(true)
@@ -145,49 +147,6 @@ const UsersAccount = () => {
 
                     })
                 }
-
-                {/*<div className={s.userPetsWrapper} onClick={onPagePetAccount}>
-                    <div className={s.userAccountPetPhoto} style={{backgroundImage: `url(${petPhoto})`}}>
-                    </div>
-                    <div className={s.userAccountPetInfo}>
-                        <div className={s.userAccountPetName}>Тузик</div>
-                        <div className={s.userAccountAge}>6 лет</div>
-                        <div className={s.userAccountBreed}>Лабрадор</div>
-                    </div>
-                    <div className={s.personalPetCardWrapper}>
-                        <div className={s.personalPetCard} style={{backgroundImage: `url(${petCard1})`}}>
-                        </div>
-                    </div>
-
-                </div>
-
-                <div className={s.userPetsWrapper} onClick={onPagePetAccount}>
-                    <div className={s.userAccountPetPhoto} style={{backgroundImage: `url(${petPhoto})`}}>
-                    </div>
-                    <div className={s.userAccountPetInfo}>
-                        <div className={s.userAccountPetName}>Чапа</div>
-                        <div className={s.userAccountAge}>6 лет</div>
-                        <div className={s.userAccountBreed}>Лабрадор</div>
-                    </div>
-                    <div className={s.personalPetCardWrapper}>
-                        <div className={s.personalPetCard} style={{backgroundImage: `url(${petCard1})`}}>
-                        </div>
-                    </div>
-                </div>
-
-                <div className={s.userPetsWrapper} onClick={onPagePetAccount}>
-                    <div className={s.userAccountPetPhoto} style={{backgroundImage: `url(${petPhoto})`}}>
-                    </div>
-                    <div className={s.userAccountPetInfo}>
-                        <div className={s.userAccountPetName}>Чапа</div>
-                        <div className={s.userAccountAge}>6 лет</div>
-                        <div className={s.userAccountBreed}>Лабрадор</div>
-                    </div>
-                    <div className={s.personalPetCardWrapper}>
-                        <div className={s.personalPetCard} style={{backgroundImage: `url(${petCard1})`}}>
-                        </div>
-                    </div>
-                </div>*/}
 
                 <button className={s.userAccountAddPets} onClick={addPet}>
                     <svg xmlns="http://www.w3.org/2000/svg" width="55px" height="55px" viewBox="0 0 24 24"

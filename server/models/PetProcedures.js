@@ -19,7 +19,7 @@ const PetProceduresSchema = new mongoose.Schema(
             required: true,
         },
         nameOfProcedure: {
-            type:String,
+            type: String,
             required: true
         },
         nameClinic: {
@@ -29,7 +29,7 @@ const PetProceduresSchema = new mongoose.Schema(
         userPet: {
             type: mongoose.Schema.Types.ObjectId,
             ref: 'UserPet',
-
+            //required: true
         }
     },
     {

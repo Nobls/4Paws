@@ -90,7 +90,7 @@ export const createPetProcedures = async (req,res)=>{
             dateProcedure:req.body.dateProcedure,
             nameOfProcedure:req.body.nameOfProcedure,
             nameClinic: req.body.nameClinic,
-            userPet: req.user.userPet._id,//нужно получить ID userPet!!!
+            //userPet: //нужно получить ID userPet!!!
         })
 
         const petProcedures = await doc.save()

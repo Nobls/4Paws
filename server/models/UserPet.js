@@ -25,17 +25,6 @@ const UserPetSchema = new mongoose.Schema(
             required: true,
         },
 
-        procedures: [
-            {
-                typeVaccination: String,
-                dateVaccination: Date,
-                nameOfVaccine: String,
-                dateProcedure: Date,
-                nameOfProcedure: String,
-                nameClinic: String,
-            }//нужно тестить
-        ],
-
         petAvatarUrl: String,
 
         petPersonalCard: String,
