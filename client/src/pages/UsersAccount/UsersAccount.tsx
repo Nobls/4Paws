@@ -2,17 +2,17 @@ import React, {ChangeEvent, useEffect, useState} from 'react';
 import s from './usersAccount.module.scss'
 import userIcon from '../../images/user.png'
 import paw from '../../images/pawBig.png'
-import petCard1 from '../../images/petCard1.png';
 import {Link, useNavigate, useParams} from "react-router-dom";
 import axios from "../../axios/axios";
 import {useAppDispatch, useAppSelector} from "../../redux/hook/hook";
 import {fetchUserPet} from "../../redux/slices/userPet";
+import {Pets} from "../../components/pets/Pets";
 
 const UsersAccount = () => {
 
     const dispatch = useAppDispatch()
     const {userPet} = useAppSelector((state)=>state.userPet)
-    //const userData = useAppSelector((state) => state.auth.data)
+    const userData = useAppSelector((state) => state.auth.data)
 
     const [data, setData] = useState<any>()
     const [loading, setLoading] = useState<any>(true)
@@ -122,32 +122,22 @@ const UsersAccount = () => {
 
             <div className={s.userAccountPets}>
                 {
-                    userPet.find(f=> f.user._id) === data._id
-                        ?
                     userPet.map((m, index)=>{
                         return (
-                            <Link key={index} className={s.userPetsLink} to={`/petAccount/${m._id}`}>
-                                <div className={s.userPetsWrapper}>
-                                    <div className={s.userAccountPetPhoto} style={{backgroundImage: `url(http://localhost:3157${m.petAvatarUrl})`}}>
-                                    </div>
-                                    <div className={s.userAccountPetInfo}>
-                                        <div className={s.userAccountPetName}>{m.petName}</div>
-                                        <div className={s.userAccountAge}>{m.agePet} лет</div>
-                                        <div className={s.userAccountBreed}>{m.petBreed}</div>
-                                    </div>
-                                    <div className={s.personalPetCardWrapper}>
-                                        <div className={s.personalPetCard} style={{backgroundImage: `url(${petCard1})`}}>
-                                        </div>
-                                    </div>
-                                </div>
-                            </Link>
+                            <Pets
+                                _id={m._id}
+                                agePet={m.agePet}
+                                petName={m.petName}
+                                user={m.user}
+                                petBreed={m.petBreed}
+                                petAvatarUrl={m.petAvatarUrl}
+                                userData={userData}
+                                petGender={m.petGender}
+                                key={index}
+                            />
                         )
-
                     })
-                        :
-                        <div></div>
                 }
-
                 <button className={s.userAccountAddPets} onClick={addPet}>
                     <svg xmlns="http://www.w3.org/2000/svg" width="55px" height="55px" viewBox="0 0 24 24"
                          aria-labelledby="plusIconTitle" stroke="#ffffff" strokeWidth="2"
