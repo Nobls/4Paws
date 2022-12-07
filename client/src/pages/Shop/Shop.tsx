@@ -21,8 +21,12 @@ const Shop = () => {
             <div className={s.shopContainer}>
                 <div className={s.shopWrapper}>
 
-                    <div className={s.shopPetsCardWrapper} style={{backgroundImage: `url($)`}} onClick={changeCategory}>
+                    <div className={`${s.shopPetsCardWrapper} ${s.shopGogs}`} style={{backgroundColor: `coral`}} onClick={changeCategory}>
                         <p className={s.shopPetsTitle}>Для собак</p>
+
+                        <div className={s.dogEat}>
+                            <p>ЫЫЫыыыыы!!!</p>
+                        </div>
                     </div>
 
                     <div className={s.shopPetsCardWrapper} style={{backgroundImage: `url($)`}}>

@@ -37,11 +37,12 @@
         height: 200px;
         background-size: cover;
         //margin: 50px 0;
-        //border-radius: 50%;
+        border-radius: $borderRadius;
         cursor: pointer;
         display: flex;
         justify-content: center;
         align-items: flex-end;
+        transition: all .3s;
 
         .shopPetsTitle {
           font-size: 25px;
@@ -49,6 +50,29 @@
           color: $color-accent-dark;
           margin-bottom: 30px;
           text-align: center;
+        }
+      }
+
+      .shopGogs {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .dogEat {
+          //display: none;
+          color: transparent;
+          transition: all .3s;
+        }
+
+        &:hover {
+          width: 250px;
+          height: 250px;
+          transition: all .3s;
+          .dogEat {
+            //display: block;
+            color: $color-text;
+            transition: all .3s;
+          }
         }
       }
     }
