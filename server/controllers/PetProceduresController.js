@@ -1,4 +1,6 @@
 import PetProceduresModel from "../models/PetProcedures.js";
+import userPet from "../models/UserPet.js";
+import UserPet from "../models/UserPet.js";
 
 export const getAll = async (req, res) => {
     try {
@@ -8,7 +10,7 @@ export const getAll = async (req, res) => {
     } catch (err) {
         console.log(err)
         res.status(500).json({
-            message: 'Не удалось получить процедуры',
+            message: 'Не удалось получить процедуры!',
         })
     }
 }
@@ -60,11 +62,11 @@ export const updatePetProcedures = async (req, res) => {
                 _id: petProceduresId
             },
             {
-                typeVaccination:req.body.typeVaccination,
-                dateVaccination:req.body.dateVaccination,
-                nameOfVaccine:req.body.nameOfVaccine,
-                dateProcedure:req.body.dateProcedure,
-                nameOfProcedure:req.body.nameOfProcedure,
+                typeVaccination: req.body.typeVaccination,
+                dateVaccination: req.body.dateVaccination,
+                nameOfVaccine: req.body.nameOfVaccine,
+                dateProcedure: req.body.dateProcedure,
+                nameOfProcedure: req.body.nameOfProcedure,
                 nameClinic: req.body.nameClinic,
             }
         )
@@ -80,24 +82,34 @@ export const updatePetProcedures = async (req, res) => {
     }
 }
 
-export const createPetProcedures = async (req,res)=>{
+export const createPetProcedures = async (req, res) => {
+
+    const userPetId = await UserPet.findById(req.params.id)
     try {
 
         const doc = new PetProceduresModel({
-            typeVaccination:req.body.typeVaccination,
-            dateVaccination:req.body.dateVaccination,
-            nameOfVaccine:req.body.nameOfVaccine,
-            dateProcedure:req.body.dateProcedure,
-            nameOfProcedure:req.body.nameOfProcedure,
+            typeVaccination: req.body.typeVaccination,
+            dateVaccination: req.body.dateVaccination,
+            nameOfVaccine: req.body.nameOfVaccine,
+            dateProcedure: req.body.dateProcedure,
+            nameOfProcedure: req.body.nameOfProcedure,
             nameClinic: req.body.nameClinic,
-            //userPet: //нужно получить ID userPet!!!
+            /*userPet: userPetId*/
         })
 
         const petProcedures = await doc.save()
 
+        try {
+            await UserPet.findByIdAndUpdate(userPetId,{
+                $push: { procedures: petProcedures}
+            })
+        } catch (error) {
+            console.log(error)
+        }
+
         res.json(petProcedures)
 
-    }catch (err){
+    } catch (err) {
         console.log(err)
         res.status(500).json({
             message: 'Не удалось создать процедуру',

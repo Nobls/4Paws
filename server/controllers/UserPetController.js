@@ -103,6 +103,7 @@ export const updateUserPet = async (req, res) => {
                 agePet:req.body.agePet,
                 petGender:req.body.petGender,
                 petAvatarUrl:req.body.petAvatarUrl,
+                procedures: req.body.procedures,
             }
         )
         res.json({
@@ -127,6 +128,7 @@ export const createUserPet = async (req,res)=>{
             petGender:req.body.petGender,
             petAvatarUrl:req.body.petAvatarUrl,
             petPersonalCard: req.body.petPersonalCard,
+            procedures: req.body.procedures,
             user: req.userId
         })
 

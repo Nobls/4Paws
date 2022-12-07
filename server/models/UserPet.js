@@ -25,6 +25,13 @@ const UserPetSchema = new mongoose.Schema(
             required: true,
         },
 
+        procedures: [
+            {
+                type: mongoose.Schema.Types.ObjectId,
+                ref: 'PetProcedures'
+            }
+        ],
+
         petAvatarUrl: String,
 
         petPersonalCard: String,

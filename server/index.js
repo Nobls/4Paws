@@ -100,7 +100,7 @@ app.patch('/petAccount/:id', checkAuth, userPetValidation, UserPetController.upd
 
 app.get('/petAccount/procedures', PetProceduresController.getAll)
 
-app.post('/petAccount/procedures', checkAuth, petProceduresValidation, handleValidationErrors, PetProceduresController.createPetProcedures)
+app.post('/petAccount/:id/procedures', checkAuth, petProceduresValidation, handleValidationErrors, PetProceduresController.createPetProcedures)
 
 app.delete('/petAccount/:id/procedures', checkAuth, PetProceduresController.removePetProcedures)
 

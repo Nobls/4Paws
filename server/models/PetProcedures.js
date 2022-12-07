@@ -26,11 +26,11 @@ const PetProceduresSchema = new mongoose.Schema(
             type: String,
             required: true,
         },
-        userPet: {
+        /*userPet: {
             type: mongoose.Schema.Types.ObjectId,
             ref: 'UserPet',
-            //required: true
-        }
+            //required: true,
+        },*/
     },
     {
         timestamps: true,
