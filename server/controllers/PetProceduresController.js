@@ -84,7 +84,6 @@ export const updatePetProcedures = async (req, res) => {
 
 export const createPetProcedures = async (req, res) => {
 
-    const userPetId = await UserPet.findById(req.params.id)
     try {
 
         const doc = new PetProceduresModel({
@@ -94,15 +93,20 @@ export const createPetProcedures = async (req, res) => {
             dateProcedure: req.body.dateProcedure,
             nameOfProcedure: req.body.nameOfProcedure,
             nameClinic: req.body.nameClinic,
-            /*userPet: userPetId*/
         })
 
         const petProcedures = await doc.save()
 
         try {
-            await UserPet.findByIdAndUpdate(userPetId,{
-                $push: { procedures: petProcedures}
-            })
+            const userPetId = req.params.id
+            await UserPet.updateOne(
+                {
+                    _id : userPetId
+                },
+                {
+                    $push: {procedures: petProcedures.id}
+                }
+            )
         } catch (error) {
             console.log(error)
         }
