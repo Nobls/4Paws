@@ -51,30 +51,40 @@
           margin-bottom: 30px;
           text-align: center;
         }
-      }
-
-      .shopGogs {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-
-        .dogEat {
-          //display: none;
-          color: transparent;
-          transition: all .3s;
-        }
 
         &:hover {
-          width: 250px;
-          height: 250px;
-          transition: all .3s;
-          .dogEat {
-            //display: block;
-            color: $color-text;
-            transition: all .3s;
+          .shopDogs {
+            top: 10px;
+            color: #cd3512;
           }
         }
       }
+
+      //.shopGogs {
+      //  display: flex;
+      //  flex-direction: column;
+      //  align-items: center;
+      //  position: relative;
+      //
+      //  .dogEat {
+      //    //display: none;
+      //    //color: transparent;
+      //    transition: all .3s;
+      //    position: absolute;
+      //  }
+      //
+      //  &:hover {
+      //    width: 250px;
+      //    height: 250px;
+      //    transition: all .3s;
+      //    .dogEat {
+      //      //display: block;
+      //      color: $color-text;
+      //      transition: all .3s;
+      //    }
+      //  }
+      //}
+
     }
   }
 }
