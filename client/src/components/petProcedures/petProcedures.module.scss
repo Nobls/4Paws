@@ -1,0 +1,60 @@
+@import "src/common/extends";
+@import "src/common/variables";
+
+.petProcedures {
+  width: 70%;
+
+  .petProceduresTitle {
+    @extend .title;
+  }
+
+  .petProceduresItem + .petProceduresItem {
+    margin-top: 25px;
+  }
+
+  .petProceduresItems {
+    width: 100%;
+    margin-bottom: 50px;
+    padding-left: 0;
+
+    .petProceduresItem {
+      background-color: $backgroundCartHover;
+      display: flex;
+      align-items: center;
+      width: 100%;
+      border-radius: $borderRadius;
+      padding: 30px 15px;
+      list-style-type: none;
+      font-size: 20px;
+      font-weight: 900;
+      justify-content: space-between;
+    }
+  }
+
+  .petProceduresForm {
+    display: flex;
+    flex-direction: column;
+
+    .petProceduresFormItem {
+      margin: 30px 0 0 0;
+      font-weight: 700;
+
+      .petProceduresFormInput {
+        @extend .bgInput;
+        margin-top: 10px;
+      }
+
+      .petProceduresFormItemDateInp {
+        @extend .bgInput;
+        margin-top: 10px;
+        width: 200px;
+        display: flex;
+      }
+    }
+  }
+
+  .petAccountInfoBtnWrapper {
+    text-align: right;
+    margin: 30px 0 100px 0;
+  }
+}

@@ -3,6 +3,8 @@ import s from './petAccount.module.scss'
 import ButtonStandart from "../../components/buttonStandart/ButtonStandart";
 import {useParams} from "react-router-dom";
 import axios from "../../axios/axios";
+import {PetVaccines} from "../../components/petVaccines/PetVaccines";
+import {PetProcedures} from "../../components/petProcedures/PetProcedures";
 
 const PetAccount = () => {
 
@@ -46,7 +48,7 @@ const PetAccount = () => {
                     <p className={s.petPersonalCardNumber}>000000001</p>
                 </div>
             </div>
-            <div className={s.petVaccinations}>
+            {/*<div className={s.petVaccinations}>
                 <h3 className={s.petVaccinationsTitle}>Прививки</h3>
                 <ol className={s.petVaccinationsItems}>
                     <li className={s.petVaccinationsItem}>От бешенства <span>Novak2000</span> <span>21.03.2022</span>
@@ -72,8 +74,8 @@ const PetAccount = () => {
                     <ButtonStandart title={"Добавить"}/>
                 </div>
 
-            </div>
-            <div className={s.petProcedures}>
+            </div>*/}
+            {/*<div className={s.petProcedures}>
                 <h3 className={s.petProceduresTitle}>Процедуры</h3>
                 <ol className={s.petProceduresItems}>
                     <li className={s.petProceduresItem}>Кастрация <span>Доктор Вет</span> <span>21.03.2022</span></li>
@@ -91,7 +93,12 @@ const PetAccount = () => {
                 <div className={s.petAccountInfoBtnWrapper}>
                     <ButtonStandart title={"Добавить"}/>
                 </div>
-            </div>
+            </div>*/}
+
+            <PetVaccines data={data} id={id}/>
+
+            <PetProcedures data={data}/>
+
             <div className={s.petAccountInstruction}>
                 <div className={s.petAccountInstructionWrapper}>
                     <p className={s.petAccountInstructionDescription}><span

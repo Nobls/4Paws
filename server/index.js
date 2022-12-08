@@ -98,7 +98,7 @@ app.patch('/petAccount/:id', checkAuth, userPetValidation, UserPetController.upd
 
 // получение, создание, редактирование, удаление процедур питомцев
 
-app.get('/petAccount/procedures', PetProceduresController.getAll)
+app.get('/petAccount/:id/procedures', PetProceduresController.getAll)
 
 app.post('/petAccount/:id/procedures', checkAuth, petProceduresValidation, handleValidationErrors, PetProceduresController.createPetProcedures)
 

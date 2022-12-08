@@ -8,6 +8,7 @@ export interface UserPetType {
     petBreed: string
     agePet: string
     petGender: string
+    procedures: []
     user: User
     petAvatarUrl?: string
 }

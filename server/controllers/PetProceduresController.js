@@ -104,7 +104,7 @@ export const createPetProcedures = async (req, res) => {
                     _id : userPetId
                 },
                 {
-                    $push: {procedures: petProcedures.id}
+                    $push: {procedures: petProcedures}
                 }
             )
         } catch (error) {
