@@ -8,10 +8,11 @@ import catCard from '../../images/shopPetCard/cat002.png';
 
 const Shop = () => {
 
-    const [ascent, setAscent] = useState(false)
+    const [menu, setMenu] = useState(false);
 
-    const changeCategory = () => {
-      setAscent(ascent)
+    const changeMenu = () => {
+        setMenu(!menu);
+        console.log(menu)
     }
 
 
@@ -21,16 +22,13 @@ const Shop = () => {
             <div className={s.shopContainer}>
                 <div className={s.shopWrapper}>
 
-                    <div className={s.shopPetsCardWrapper} style={{backgroundColor: `coral`}} onClick={changeCategory}>
+                    <div className={s.shopPetsCardWrapperDog} style= {menu ? {backgroundColor: 'coral'} : {backgroundImage: `url(${dogCard})`}} onClick={changeMenu}>
 
-                        <div className={s.shopGogs}>
-                            {/*<p className={s.shopPetsTitle}>Для собак</p>*/}
-                            Для собак
+                        <div className={menu ? `${s.shopDogsActive}` : `${s.shopDogs}`}>
+                            <p className={s.shopPetsTitle}>Для собак</p>
                         </div>
 
-                        <div className={s.dogEat}>
-                            <p>ЫЫЫыыыыы!!!</p>
-                            <p>ЫЫЫыыыыы!!!</p>
+                        <div className={menu ? `${s.dogEatActive} ${s.shopDogsActive}` : `${s.dogEat} ${s.shopDogs}`}>
                             <p>ЫЫЫыыыыы!!!</p>
                             <p>ЫЫЫыыыыы!!!</p>
                             <p>ЫЫЫыыыыы!!!</p>
@@ -38,7 +36,8 @@ const Shop = () => {
                         </div>
                     </div>
 
-                    <div className={s.shopPetsCardWrapper} style={{backgroundImage: `url($)`}}>
+
+                    <div className={s.shopPetsCardWrapperCat} style={{backgroundColor: `brown`}}>
                         <p className={s.shopPetsTitle}>Для котов</p>
                     </div>
 

@@ -11,80 +11,56 @@
       display: flex;
       justify-content: space-between;
       margin: 150px 0;
+      flex-wrap: wrap;
 
-      //.shopSidebar {
-      //  background-color: $color-accent-dark;
-      //  width: 30%;
-      //}
-      //
-      //.shopCategoryWrapper {
-      //  margin-bottom: 100px;
-      //  width: 100%;
-      //
-      //  .shopCategoryTitle {
-      //    margin-top: 100px;
-      //  }
-      //
-      //  .shopCategory {
-      //    display: flex;
-      //    flex-wrap: wrap;
-      //    justify-content: center;
-      //  }
-      //}
-
-      .shopPetsCardWrapper {
-        width: 200px;
-        height: 200px;
+      .shopPetsCardWrapperDog {
+        width: 400px;
+        height: 300px;
         background-size: cover;
-        //margin: 50px 0;
+        //margin: 0 200px 0 0;
         border-radius: $borderRadius;
         cursor: pointer;
         display: flex;
         justify-content: center;
         align-items: flex-end;
         transition: all .3s;
+        position: relative;
 
-        .shopPetsTitle {
-          font-size: 25px;
-          font-weight: 900;
-          color: $color-accent-dark;
-          margin-bottom: 30px;
-          text-align: center;
+        .shopDogs {
+          display: block;
+          transition: all .3s;
+
+          .shopPetsTitle {
+            font-size: 25px;
+            font-weight: 900;
+            color: $color-accent-dark;
+            margin-bottom: 30px;
+            text-align: center;
+          }
         }
 
-        &:hover {
-          .shopDogs {
-            top: 10px;
-            color: #cd3512;
-          }
+        .shopDogsActive {
+          display: none;
+          transition: all .3s;
+        }
+
+        .dogEatActive {
+          font-size: 20px;
+          display: block;
+          position: absolute;
+          transition: all .3s;
+        }
+
+
+
+        .dogEat {
+          display: none;
+          transition: all .3s;
         }
       }
 
-      //.shopGogs {
-      //  display: flex;
-      //  flex-direction: column;
-      //  align-items: center;
-      //  position: relative;
-      //
-      //  .dogEat {
-      //    //display: none;
-      //    //color: transparent;
-      //    transition: all .3s;
-      //    position: absolute;
-      //  }
-      //
-      //  &:hover {
-      //    width: 250px;
-      //    height: 250px;
-      //    transition: all .3s;
-      //    .dogEat {
-      //      //display: block;
-      //      color: $color-text;
-      //      transition: all .3s;
-      //    }
-      //  }
-      //}
-
     }
+
+
   }
 }
