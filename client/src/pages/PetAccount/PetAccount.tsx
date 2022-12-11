@@ -5,17 +5,21 @@ import {useParams} from "react-router-dom";
 import axios from "../../axios/axios";
 import {PetVaccines} from "../../components/petVaccines/PetVaccines";
 import {PetProcedures} from "../../components/petProcedures/PetProcedures";
+import {useAppDispatch, useAppSelector} from "../../redux/hook/hook";
+import {fetchPetProcedures} from "../../redux/slices/procedures";
 
 const PetAccount = () => {
 
+    const dispatch = useAppDispatch()
     const [data, setData] = useState<any>()
     const [loading, setLoading] = useState<any>(true)
 
-    const {id} = useParams()
-
+    const {userPet} = useAppSelector((state)=> state.userPet)
+    const {procedures} = useAppSelector((state)=>state.procedures)
+    const params = useParams()
 
     useEffect(() => {
-        axios.get(`petAccount/${id}`)
+        axios.get(`petAccount/${params.id}`)
             .then(res => {
                 setData(res.data)
                 setLoading(false)
@@ -23,6 +27,9 @@ const PetAccount = () => {
             console.warn(err)
         })
     }, [])
+    useEffect(()=>{
+        dispatch(fetchPetProcedures(params.id))
+    },[])
 
     if (loading) {
         return <div>Загрузка...</div>
@@ -95,9 +102,9 @@ const PetAccount = () => {
                 </div>
             </div>*/}
 
-            <PetVaccines data={data} id={id}/>
+            <PetVaccines  procedures={procedures}/>
 
-            <PetProcedures data={data}/>
+            <PetProcedures procedures={procedures}/>
 
             <div className={s.petAccountInstruction}>
                 <div className={s.petAccountInstructionWrapper}>

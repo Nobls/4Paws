@@ -1,10 +1,9 @@
 import PetProceduresModel from "../models/PetProcedures.js";
-import userPet from "../models/UserPet.js";
 import UserPet from "../models/UserPet.js";
 
 export const getAll = async (req, res) => {
     try {
-        const petProcedures = await PetProceduresModel.find().populate('userPet').exec()
+        const petProcedures = await PetProceduresModel.find().exec()
 
         res.json(petProcedures)
     } catch (err) {
@@ -101,10 +100,10 @@ export const createPetProcedures = async (req, res) => {
             const userPetId = req.params.id
             await UserPet.updateOne(
                 {
-                    _id : userPetId
+                    _id: userPetId
                 },
                 {
-                    $push: {procedures: petProcedures}
+                    $push: {procedures: petProcedures._id}
                 }
             )
         } catch (error) {

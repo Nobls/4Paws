@@ -1,14 +1,14 @@
 import React from 'react';
 import s from "./petProcedures.module.scss";
 import ButtonStandart from "../buttonStandart/ButtonStandart";
+import {PetProceduresType} from "../../redux/slices/procedures";
 
 type PropsType = {
-    data: any
+    procedures: PetProceduresType[]
 }
 
-export const PetProcedures = ({data}:PropsType) => {
+export const PetProcedures = ({procedures}:PropsType) => {
 
-    console.log(data)
     return (
         <div className={s.petProcedures}>
             <h3 className={s.petProceduresTitle}>Процедуры</h3>

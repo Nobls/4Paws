@@ -10,6 +10,7 @@ type PetsType = {
     petBreed: string
     agePet: string
     petGender: string
+    procedures: []
     user: User
     userData: any
     petAvatarUrl?: string

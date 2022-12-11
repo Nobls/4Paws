@@ -1,8 +1,8 @@
 import {createAsyncThunk, createSlice} from "@reduxjs/toolkit";
 import axios from "../../axios/axios";
-import {fetchUserPet} from "./userPet";
 
-export interface PetProcedures {
+export interface PetProceduresType {
+    _id?:any
     typeVaccination: string
     dateVaccination: any
     nameOfVaccine: string
@@ -12,7 +12,7 @@ export interface PetProcedures {
 }
 
 type StatePetProceduresType = {
-    procedures: PetProcedures[]
+    procedures: PetProceduresType[]
     loading: boolean
     errors: any
 }
@@ -23,7 +23,7 @@ const initialState: StatePetProceduresType = {
     errors: null
 }
 
-export const fetchPetProcedures = createAsyncThunk<PetProcedures[]>(
+export const fetchPetProcedures = createAsyncThunk(
     'procedures/fetchPetProcedures',
     async (id:any) => {
         const {data} = await axios.get(`/petAccount/${id}/procedures`)

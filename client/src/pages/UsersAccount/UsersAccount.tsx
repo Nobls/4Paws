@@ -132,6 +132,7 @@ const UsersAccount = () => {
                                 petBreed={m.petBreed}
                                 petAvatarUrl={m.petAvatarUrl}
                                 userData={userData}
+                                procedures={m.procedures}
                                 petGender={m.petGender}
                                 key={index}
                             />
