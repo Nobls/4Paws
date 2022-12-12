@@ -49,6 +49,13 @@
           display: block;
           position: absolute;
           transition: all .3s;
+
+          .dogItems {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            flex-direction: column;
+          }
         }
 
 

@@ -3,7 +3,9 @@ import s from './shop.module.scss';
 // import ShopSidebar from "../../components/shopSidebar/ShopSidebar";
 // import ShopCategory from "../../components/shopCategory/ShopCategory";
 import dogCard from '../../images/shopPetCard/dog001.png';
-import catCard from '../../images/shopPetCard/cat002.png';
+//import catCard from '../../images/shopPetCard/cat002.png';
+import {Link} from "react-router-dom";
+import dogEat from '../../images/user.png';
 
 
 const Shop = () => {
@@ -29,10 +31,18 @@ const Shop = () => {
                         </div>
 
                         <div className={menu ? `${s.dogEatActive} ${s.shopDogsActive}` : `${s.dogEat} ${s.shopDogs}`}>
-                            <p>ЫЫЫыыыыы!!!</p>
-                            <p>ЫЫЫыыыыы!!!</p>
-                            <p>ЫЫЫыыыыы!!!</p>
-                            <p>ЫЫЫыыыыы!!!</p>
+                            <div className={s.dogItems}>
+                                <Link to={'/'}>
+                                    <img src={dogEat} alt="dogEat"/>
+                                    <p>Корма</p>
+                                </Link>
+                                <Link to={'/'}>
+                                    <img src={dogEat} alt="dogEat"/>
+                                    <p>Наполнители</p>
+                                </Link>
+                                <Link to={'/'}>Аксессуары</Link>
+                                <Link to={'/'}>Игрушки</Link>
+                            </div>
                         </div>
                     </div>
 
