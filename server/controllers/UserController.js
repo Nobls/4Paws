@@ -2,7 +2,7 @@ import bcrypt from "bcrypt";
 import UserModel from "../models/User.js";
 import jwt from "jsonwebtoken";
 
-export const registration = async (req, res) => {
+/*export const registration = async (req, res) => {
     try {
         const password = req.body.password;
         const salt = await bcrypt.genSalt(10);
@@ -32,6 +32,53 @@ export const registration = async (req, res) => {
         res.json({
             userData,
             token,
+        });
+    } catch (err) {
+        console.log(err)
+        res.status(500).json({
+            message: 'Не удалось зарегистрироваться',
+        })
+    }
+};*/
+
+export const registration = async (req, res) => {
+    try {
+        const { fullName,email, password } = req.body
+
+        const isUsed = await UserModel.findOne({fullName})
+
+        if (isUsed){
+            return res.json({
+                message: 'Данное имя уже занято.'
+            })
+        }
+
+        const salt = bcrypt.genSaltSync(10)
+
+        const hash = bcrypt.hashSync(password, salt)
+
+        const newUser = new UserModel({
+            fullName,
+            password: hash,
+            email,
+        })
+
+        const token = jwt.sign(
+            {
+                _id: newUser._id,
+            },
+            'secretKey1234',
+            {
+                expiresIn: '30d'
+            }
+        )
+
+        await newUser.save()
+
+        res.json({
+            newUser,
+            token,
+            message: 'Регистрация прошла успешно.'
         });
     } catch (err) {
         console.log(err)
@@ -77,40 +124,6 @@ export const updateUserInfo = async (req, res) => {
     }
 }
 
-/*export const saveUserInfo = async (req, res) => {
-    try {
-
-        const userId = req.params.id
-
-        await UserModel.insertOne(
-            {
-                _id: userId
-            },
-            {
-
-                name: req.body.name,
-                lastName: req.body.lastName,
-                surName: req.body.surName,
-                city: req.body.city,
-                street: req.body.street,
-                houseNumber: req.body.houseNumber,
-                corpsHouse: req.body.corpsHouse,
-                apartmentNumber: req.body.apartmentNumber,
-                //для обновления
-            }
-        )
-        res.json({
-            success: true
-        })
-
-    } catch (err) {
-        console.log(err)
-        res.status(500).json({
-            message: 'Не удалось обновить данные пользователя',
-        })
-    }
-}*/
-
 export const login = async (req, res) => {
     try {
         const user = await UserModel.findOne({email: req.body.email})
@@ -121,7 +134,7 @@ export const login = async (req, res) => {
             })
         }
 
-        const isValidPass = await bcrypt.compare(req.body.password, user._doc.passwordHash);
+        const isValidPass = await bcrypt.compare(req.body.password, user._doc.password);
 
         if (!isValidPass) {
             return res.status(400).json({
@@ -139,7 +152,7 @@ export const login = async (req, res) => {
             },
         );
 
-        const {passwordHash, ...userData} = user._doc;
+        const {password, ...userData} = user._doc;
 
         res.json({
             userData,
@@ -163,7 +176,7 @@ export const getMe = async (req, res) => {
             })
         }
 
-        const {passwordHash, ...userData} = user._doc;
+        const {password, ...userData} = user._doc;
 
         res.json(userData);
     } catch (err) {

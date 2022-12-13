@@ -21,6 +21,8 @@ import {fetchAuthMe, selectedIsAuth} from "./redux/slices/auth";
 import {ModalServices} from "./components/modalServices/ModalServices";
 import {AdminNews} from "./admin/AdminNews";
 import {AdminServices} from "./admin/AdminServices";
+import {ToastContainer} from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
 
@@ -54,6 +56,8 @@ function App() {
                     <Route path='services/:id/edit' element={<AdminServices/>}/>
                 </Route>
             </Routes>
+
+                <ToastContainer position='bottom-right' />
         </div>
     );
 }
