@@ -1,10 +1,11 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import s from "./login.module.scss";
-import {Link, Navigate} from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
 import ButtonStandart from "../../components/buttonStandart/ButtonStandart";
 import {SubmitHandler, useForm} from "react-hook-form";
 import {useAppDispatch, useAppSelector} from "../../redux/hook/hook";
-import {fetchAuth, selectedIsAuth} from "../../redux/slices/auth";
+import {fetchLogin, selectedIsAuth} from "../../redux/slices/auth";
+import {toast} from "react-toastify";
 
 interface FormValues {
     email: string
@@ -15,7 +16,18 @@ const Login = () => {
 
     const dispatch = useAppDispatch()
 
+    const {status} = useAppSelector((state) => state.auth)
+
     const isAuth = useAppSelector(selectedIsAuth)
+
+    const navigate = useNavigate()
+
+    useEffect(() => {
+        if (status) {
+            toast(status)
+        }
+        if (isAuth) navigate('/')
+    }, [status, isAuth, navigate])
 
     const {
         register,
@@ -33,23 +45,19 @@ const Login = () => {
     })
 
     const onSubmit: SubmitHandler<FormValues> = async (values) => {
-        const data = await dispatch(fetchAuth(values))
+        const data = await dispatch(fetchLogin(values))
         console.log(data)
         if (!data.payload) {
             return alert('Не удалось авторизоваться!')
         }
 
-        if ('token' in data.payload) {
+        /*if ('token' in data.payload) {
             window.localStorage.setItem('token', data.payload.token)
-        }
+        }*/
     }
 
     console.log(errors,
         isValid)
-
-    if (isAuth) {
-        return <Navigate to={'/'}/>
-    }
 
     return (
         <div>

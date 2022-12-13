@@ -49,9 +49,9 @@ const Registration = () => {
     const onSubmit: SubmitHandler<FormValues> = async (values) => {
         const data = await dispatch(fetchRegister(values))
 
-        if (!data.payload) {
+        /*if (!data.payload) {
             return toast('Не удалось зарегистрироваться!')
-        }
+        }*/
     }
 
     console.log(errors,

@@ -124,7 +124,7 @@ export const updateUserInfo = async (req, res) => {
     }
 }
 
-export const login = async (req, res) => {
+/*export const login = async (req, res) => {
     try {
         const user = await UserModel.findOne({email: req.body.email})
 
@@ -158,6 +158,48 @@ export const login = async (req, res) => {
             userData,
             token,
         });
+    } catch (err) {
+        console.log(err)
+        res.status(500).json({
+            message: 'Не удалось авторизоваться',
+        })
+    }
+};*/
+
+export const login = async (req, res) => {
+    try {
+        const {email, password} = req.body
+
+        const user = await UserModel.findOne({email})
+
+        if (!user){
+            return res.json({
+                message: 'Такого юзера не существует.'
+            })
+        }
+
+        const isPasswordCorrect = await bcrypt.compare(password, user._doc.password)
+
+        if (!isPasswordCorrect) {
+            return res.json({
+                message: 'Неверный пароль'
+            })
+        }
+
+        const token = jwt.sign(
+            {
+                _id: user._id
+            },
+            'secretKey1234',
+            {expiresIn: '30d'}
+        )
+
+        res.json({
+            token,
+            user,
+            message: 'Вы авторизовались'
+        })
+
     } catch (err) {
         console.log(err)
         res.status(500).json({

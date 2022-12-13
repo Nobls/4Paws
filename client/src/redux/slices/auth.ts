@@ -16,9 +16,9 @@ export type StateType = {
 }
 
 export interface DataType  {
-    fullName: string
-    email: string
-    password: string
+    fullName?: string
+    email?: string
+    password?: string
 }
 
 
@@ -31,9 +31,27 @@ const initialState: StateType = {
 
 }
 
-export const fetchAuth = createAsyncThunk('auth/fetchAuth', async (params: any) => {
+/*export const fetchAuth = createAsyncThunk('auth/fetchAuth', async (params: any) => {
     const {data} = await axios.post('/auth/login', params)
     return data
+})*/
+
+export const fetchLogin = createAsyncThunk(
+    'auth/fetchLogin',
+    async ({email, password}:DataType) => {
+    try {
+        const {data} = await axios.post('/auth/login',{
+            email,
+            password,
+        })
+        if (data.token){
+            window.localStorage.setItem('token', data.token)
+        }
+
+        return data
+    } catch(error){
+        console.log(error)
+    }
 })
 
 /*export const fetchRegister = createAsyncThunk('auth/fetchRegister', async (params:any)=>{
@@ -76,16 +94,22 @@ const authSlice = createSlice({
         }
     },
     extraReducers: (builder) => {
-        builder.addCase(fetchAuth.pending, (state) => {
+        //Login user
+        builder.addCase(fetchLogin.pending, (state) => {
             state.loading = true;
+            state.status = null
         })
-        builder.addCase(fetchAuth.fulfilled, (state, action) => {
-            state.data = action.payload.data
+        builder.addCase(fetchLogin.fulfilled, (state, action) => {
+            state.loading = false;
+            state.status = action.payload.message
+            state.data = action.payload
+            state.token = action.payload.token
+        })
+        builder.addCase(fetchLogin.rejected, (state,action:any) => {
+            state.status = action.payload.message
             state.loading = false;
         })
-        builder.addCase(fetchAuth.rejected, (state) => {
-            state.loading = false;
-        })
+        //Fetch authMe
         builder.addCase(fetchAuthMe.pending, (state) => {
             state.loading = true;
         })
@@ -96,8 +120,10 @@ const authSlice = createSlice({
         builder.addCase(fetchAuthMe.rejected, (state) => {
             state.loading = false;
         })
+        //Register user
         builder.addCase(fetchRegister.pending, (state) => {
             state.loading = true;
+            state.status = null
         })
         builder.addCase(fetchRegister.fulfilled, (state, action) => {
             state.data = action.payload
@@ -111,6 +137,6 @@ const authSlice = createSlice({
 
 export const selectedIsAuth = (state: any) => Boolean(state.auth.data)
 
-export const authReducer = authSlice.reducer
-
 export const {logout} = authSlice.actions
+
+export const authReducer = authSlice.reducer
