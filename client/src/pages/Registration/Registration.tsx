@@ -23,12 +23,12 @@ const Registration = () => {
 
     const navigate = useNavigate()
 
-    /*useEffect(() => {
+    useEffect(() => {
         if (status) {
             toast(status)
         }
-        //if (isAuth) navigate('/')
-    }, [])*/
+        if (isAuth) navigate('/')
+    }, [status, isAuth, navigate])
 
     const {
         register,
