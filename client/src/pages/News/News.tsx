@@ -18,7 +18,7 @@ const News = () => {
 
     useEffect(() => {
         dispatch(fetchNews())
-    }, [])
+    }, [dispatch])
 
 
     return (

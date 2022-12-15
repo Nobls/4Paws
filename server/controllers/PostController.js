@@ -1,7 +1,7 @@
 import PostModel from '../models/Post.js'
 import UserModel from "../models/User.js";
 
-/*export const getAll = async (req, res) => {
+export const getAll = async (req, res) => {
     try {
         const posts = await PostModel.find().sort({createdAt: -1}).populate('user').exec();// добавил .sort({createdAt: -1}) чтобы показывало последние новости
 
@@ -12,9 +12,9 @@ import UserModel from "../models/User.js";
             message: 'Не удалось получить статьи',
         })
     }
-};*/
+};
 
-export const getAll = async (req, res) => {
+/*export const getAll = async (req, res) => {
     try {
         const posts = await PostModel.find().sort({createdAt: -1}).exec();// добавил .sort({createdAt: -1}) чтобы показывало последние новости
 
@@ -31,7 +31,7 @@ export const getAll = async (req, res) => {
             message: 'Не удалось получить статьи',
         })
     }
-};
+};*/
 
 export const getLastTags = async (req, res) => {
     try {
@@ -48,7 +48,7 @@ export const getLastTags = async (req, res) => {
     }
 };
 
-/*export const getOne = async (req, res) => {
+export const getOne = async (req, res) => {
     try {
 
         const postId = req.params.id
@@ -87,9 +87,9 @@ export const getLastTags = async (req, res) => {
             message: 'Не удалось получить статью',
         })
     }
-};*/
+};
 
-export const getOne = async (req, res) => {
+/*export const getOne = async (req, res) => {
     try {
 
         const postId = req.params.id
@@ -128,9 +128,9 @@ export const getOne = async (req, res) => {
             message: 'Не удалось получить статью',
         })
     }
-};
+};*/
 
-/*export const remove = async (req, res) => {
+export const remove = async (req, res) => {
     try {
 
         const postId = req.params.id;
@@ -165,9 +165,9 @@ export const getOne = async (req, res) => {
             message: 'Не удалось получить статью',
         })
     }
-};*/
+};
 
-export const remove = async (req, res) => {
+/*export const remove = async (req, res) => {
     try {
         const post = await PostModel.findByIdAndDelete(req.params.id)
         if (!post) return res.json({ message: 'Такого поста не существует' })
@@ -180,9 +180,9 @@ export const remove = async (req, res) => {
     } catch (error) {
         res.json({ message: 'Что-то пошло не так.' })
     }
-};
+};*/
 
-/*export const update = async (req, res) => {
+export const update = async (req, res) => {
     try {
         const postId = req.params.id;
 
@@ -208,9 +208,9 @@ export const remove = async (req, res) => {
             message: 'Не удалось обновить статью',
         })
     }
-}*/
+}
 
-export const update = async (req, res) => {
+/*export const update = async (req, res) => {
     try {
         const { title, text, tags, imageUrl, id } = req.body
         const post = await PostModel.findById(id)
@@ -226,7 +226,7 @@ export const update = async (req, res) => {
     } catch (error) {
         res.json({ message: 'Что-то пошло не так.' })
     }
-}
+}*/
 
 export const create = async (req, res) => {
     try {
@@ -249,3 +249,30 @@ export const create = async (req, res) => {
         })
     }
 };
+
+/*export const create = async (req, res) => {
+   try {
+       const {title, text, tags, imageUrl} = req.body
+       const user = await UserModel.findById(req.userId)
+
+       const newPost = new PostModel({
+           user: user.fullName,
+           title,
+           text,
+           tags,
+           imageUrl,
+       })
+
+       await newPost.save()
+       await UserModel.findByIdAndUpdate(req.userId,{
+           $push: {
+               posts: newPost
+           }
+       })
+
+       return res.json(newPost)
+
+   } catch(error){
+       console.log(error)
+   }
+};*/

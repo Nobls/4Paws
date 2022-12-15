@@ -2,9 +2,13 @@ import React, {ChangeEvent, useEffect, useState} from 'react';
 import {useNavigate, useParams} from "react-router-dom";
 import axios from "../axios/axios";
 import s from "../pages/AdminPanel/adminPanel.module.scss";
+import {fetchCreatePost, fetchUpdatePost} from "../redux/slices/posts";
+import {useAppDispatch} from "../redux/hook/hook";
 
 
 export const AdminNews = () => {
+
+    const dispatch = useAppDispatch()
 
     const navigate = useNavigate()
 
@@ -61,14 +65,22 @@ export const AdminNews = () => {
                 imageUrl,
                 tags,
             }
+            const updateFields = {
+                title,
+                text,
+                imageUrl,
+                tags,
+                id: id,// для обновления нужно передать id
+            }
 
-            const {data} = isEditing
-                ? await axios.patch(`/news/${id}`, fields)
-                : await axios.post('/news', fields)
+            isEditing
+                /*? await axios.patch(`/news/${id}`, fields)
+                : await axios.post('/news', fields)*/
+                ? dispatch(fetchUpdatePost(updateFields))
+                : dispatch(fetchCreatePost(fields))
 
-            const _id = isEditing ? id : data._id
 
-            navigate(`/news/${_id}`)
+            navigate(`/news`)
         } catch (err) {
             console.log(err)
         }
