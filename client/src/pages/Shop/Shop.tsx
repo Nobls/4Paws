@@ -33,11 +33,11 @@ const Shop = () => {
                         <div className={menu ? `${s.dogEatActive} ${s.shopDogsActive}` : `${s.dogEat} ${s.shopDogs}`}>
                             <div className={s.dogItems}>
                                 <Link to={'/'}>
-                                    <img src={dogEat} alt="dogEat"/>
+                                    <img className={s.shopCategoryIcon} src={dogEat} alt="dogEat"/>
                                     <p>Корма</p>
                                 </Link>
                                 <Link to={'/'}>
-                                    <img src={dogEat} alt="dogEat"/>
+                                    <img className={s.shopCategoryIcon} src={dogEat} alt="dogEat"/>
                                     <p>Наполнители</p>
                                 </Link>
                                 <Link to={'/'}>Аксессуары</Link>
