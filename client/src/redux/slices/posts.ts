@@ -53,9 +53,21 @@ export const fetchTags = createAsyncThunk<[]>(
 export const fetchRemoveNews = createAsyncThunk(
     'news/fetchRemoveNews',
     async (_id:any) => {
-        const {data} = await axios.delete(`/news/${_id}`)
+        const {data} = await axios.delete(`/news/${_id}`, _id)
         return data
     })
+
+export const fetchUpdatePost = createAsyncThunk(
+    'news/fetchUpdatePost',
+    async (updatePost:any)=>{
+        try {
+            const {data} = await axios.put(`/news/${updatePost.id}`, updatePost)
+
+        } catch(error){
+            console.log(error)
+        }
+    }
+)
 
 
 const newsSlice = createSlice({
