@@ -18,7 +18,6 @@ const Shop = () => {
     }
 
 
-
     return (
         <div className={s.shopBg}>
             <div className={s.shopContainer}>
@@ -40,8 +39,14 @@ const Shop = () => {
                                     <img className={s.shopCategoryIcon} src={dogEat} alt="dogEat"/>
                                     <p>Наполнители</p>
                                 </Link>
-                                <Link to={'/'}>Аксессуары</Link>
-                                <Link to={'/'}>Игрушки</Link>
+                                <Link to={'/'}>
+                                    <img className={s.shopCategoryIcon} src={dogEat} alt="dogEat"/>
+                                    <p>Аксессуары</p>
+                                </Link>
+                                <Link to={'/'}>
+                                    <img className={s.shopCategoryIcon} src={dogEat} alt="dogEat"/>
+                                    <p>Аксессуары</p>
+                                </Link>
                             </div>
                         </div>
                     </div>

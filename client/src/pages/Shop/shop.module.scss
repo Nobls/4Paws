@@ -27,9 +27,9 @@
         cursor: pointer;
         display: flex;
         justify-content: center;
-        align-items: flex-end;
         transition: all .3s;
         position: relative;
+        align-items: center;
 
         .shopDogs {
           display: block;
@@ -59,10 +59,9 @@
             display: flex;
             align-items: center;
             flex-wrap: wrap;
+            justify-content: space-around;
           }
         }
-
-
 
         .dogEat {
           display: none;
