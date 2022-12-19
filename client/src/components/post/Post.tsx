@@ -1,9 +1,10 @@
 import React from 'react';
 import {fetchRemoveNews, User} from "../../redux/slices/posts";
 import s from "./post.module.scss";
-import {Link} from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
 import EditButtons from "../editPostButtons/EditButtuons";
 import {useAppDispatch} from "../../redux/hook/hook";
+import {toast} from "react-toastify";
 
 type PropsType = {
     id?: string
@@ -21,10 +22,19 @@ const Post = ({id, user, tags, title, text, fullPost, userData, imageUrl}: Props
 
     const dispatch = useAppDispatch()
 
+    const navigate = useNavigate()
+
     const removeNewsHandle = () => {
-        if (window.confirm('Вы действительно хотите удалить новость')) {
+        try {
             dispatch(fetchRemoveNews(id))
+            toast('Новость была удалена.')
+            navigate('/news')
+        } catch(error){
+            console.log(error)
         }
+        /*if (window.confirm('Вы действительно хотите удалить новость')) {
+            dispatch(fetchRemoveNews(id))
+        }*/
     }
 
     return (

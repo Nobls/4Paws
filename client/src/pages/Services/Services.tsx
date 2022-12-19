@@ -13,7 +13,7 @@ const Services = () => {
 
     useEffect(()=>{
         dispatch(fetchServices())
-    },[])
+    },[dispatch])
 
     return (
         <div>

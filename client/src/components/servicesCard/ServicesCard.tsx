@@ -3,10 +3,11 @@ import s from './servicesCard.module.scss';
 import ButtonStandart from "../buttonStandart/ButtonStandart";
 import EditButtons from "../editPostButtons/EditButtuons";
 import {User} from "../../redux/slices/posts";
-import {Link} from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
 import LowercaseButton from "../lowercaseButton/LowercaseButton";
 import {useAppDispatch} from "../../redux/hook/hook";
 import {fetchRemoveServices} from "../../redux/slices/services";
+import {toast} from "react-toastify";
 
 type PropsType = {
     id?: string
@@ -23,11 +24,17 @@ export const ServicesCard = ({id, imageUrl, title, description, userData, user}:
 
     const dispatch = useAppDispatch()
 
+    const navigate = useNavigate()
+
     const order = 'Заказать'
 
     const removeServicesHandle = () => {
-        if (window.confirm('Вы действительно хотите удалить новость')) {
-            dispatch(fetchRemoveServices(id))
+        try {
+        dispatch(fetchRemoveServices(id))
+            toast('Услуга была удалена.')
+            navigate('/services')
+        } catch(error){
+            console.log(error)
         }
     }
 

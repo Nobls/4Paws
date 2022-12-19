@@ -58,7 +58,7 @@ export const AdminNews = () => {
 
     const onSubmit = async () => {
         try {
-            setLoading(true)
+            setLoading(!loading)
             const fields = {
                 title,
                 text,
@@ -79,6 +79,7 @@ export const AdminNews = () => {
                 ? dispatch(fetchUpdatePost(updateFields))
                 : dispatch(fetchCreatePost(fields))
 
+            /*const _id = isEditing ? id : data._id*/
 
             navigate(`/news`)
         } catch (err) {

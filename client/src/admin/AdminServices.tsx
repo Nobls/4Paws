@@ -2,9 +2,13 @@ import React, {ChangeEvent, useEffect, useState} from 'react';
 import s from "../pages/AdminPanel/adminPanel.module.scss";
 import {useNavigate, useParams} from "react-router-dom";
 import axios from "../axios/axios";
+import {useAppDispatch} from "../redux/hook/hook";
+import {fetchCreateServices, fetchUpdateServices} from "../redux/slices/services";
 
 
 export const AdminServices = () => {
+
+    const dispatch = useAppDispatch()
 
     const navigate = useNavigate()
 
@@ -56,20 +60,27 @@ export const AdminServices = () => {
 
     const onSubmitServices = async () => {
         try {
-            setLoading(true)
+            setLoading(!loading)
             const fieldsServices = {
                 title,
                 description,
                 imageUrl,
                 descriptionModal,
             }
-            const {data} = isEditing
-                ? await axios.patch(`/services/${id}`, fieldsServices)
-                : await axios.post('/services', fieldsServices)
 
-            const _id = isEditing ? id : data._id
+            const updateServicesFields = {
+                title,
+                description,
+                imageUrl,
+                descriptionModal,
+                id: id,
+            }
 
-            navigate(`/services/${_id}`)
+            isEditing
+                ? dispatch(fetchUpdateServices(updateServicesFields))
+                : dispatch(fetchCreateServices(fieldsServices))
+
+            navigate(`/services`)
         } catch (err) {
             console.log(err)
         }
