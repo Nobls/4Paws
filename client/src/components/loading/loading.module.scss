@@ -1,0 +1,50 @@
+@import "src/common/extends";
+@import "src/common/variables";
+
+$size: 14px;
+$no-of-el: 5;
+$delay: .25s;
+$color: $color-accent-dark;
+$duration: $no-of-el * ($delay * 1);
+$radius: -200%;
+
+
+@keyframes followTheLeaderLine {
+  0% {
+    transform: rotate(0deg) translateY($radius);
+  }
+  60%,
+  100% {
+    transform: rotate(360deg) translateY($radius);
+  }
+
+}
+
+.loadingContainer{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 90vh;
+
+  .followTheLeaderLine {
+    height: $size;
+    position: relative;
+    width: $size;
+
+    div {
+      animation: followTheLeaderLine $duration infinite backwards;
+      background-color: $color;
+      border-radius: 100%;
+      height: 100%;
+      width: 100%;
+
+      @for $el from 1 through $no-of-el {
+        &:nth-child(#{$el}) {
+          animation-delay: #{$el * .15s};
+          background-color: transparentize($color, (($el / 2) * 20) / 100);
+        }
+      }
+    }
+  }
+}

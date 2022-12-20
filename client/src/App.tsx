@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 import './App.scss';
 import {Route, Routes} from "react-router-dom";
 import Layout from "./components/layout/Layout";
@@ -23,15 +23,22 @@ import {AdminNews} from "./admin/AdminNews";
 import {AdminServices} from "./admin/AdminServices";
 import {ToastContainer} from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
+import {Loading} from "./components/loading/Loading";
 
 function App() {
 
     const dispatch = useAppDispatch()
     const isAuth = useAppSelector(selectedIsAuth)
+    const [loading, setLoading] = useState<any>(true)
 
     useEffect(()=>{
         dispatch(fetchAuthMe())
-    }, [])
+            .then(()=> setLoading(false))
+    }, [dispatch])
+
+    if (loading) {
+        return <Loading/>
+    }
 
     return (
         <div className="App">

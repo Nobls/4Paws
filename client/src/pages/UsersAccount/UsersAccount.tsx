@@ -7,6 +7,7 @@ import axios from "../../axios/axios";
 import {useAppDispatch, useAppSelector} from "../../redux/hook/hook";
 import {fetchUserPet} from "../../redux/slices/userPet";
 import {Pets} from "../../components/pets/Pets";
+import {Loading} from "../../components/loading/Loading";
 
 const UsersAccount = () => {
 
@@ -26,7 +27,7 @@ const UsersAccount = () => {
 
     useEffect(()=>{
         dispatch(fetchUserPet())
-    },[])
+    },[dispatch])
 
     useEffect(() => {
         axios.get(`/auth/user/${id}`)
@@ -64,7 +65,7 @@ const UsersAccount = () => {
     }
 
     if (loading) {
-        return <div>Загрузка...</div>
+        return <Loading/>
     }
 
     return (
