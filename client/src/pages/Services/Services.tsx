@@ -1,19 +1,28 @@
-import React, {useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 import s from "./services.module.scss";
 import ChooseServices from "../../components/chooseServices/ChooseServices";
 import {useAppDispatch, useAppSelector} from "../../redux/hook/hook";
 import {ServicesCard} from "../../components/servicesCard/ServicesCard";
 import {fetchServices} from "../../redux/slices/services";
+import {Loading} from "../../components/loading/Loading";
+import {fetchAuthMe} from "../../redux/slices/auth";
 
 const Services = () => {
 
     const dispatch = useAppDispatch()
-    const {services} = useAppSelector((state)=> state.services)
-    const userData = useAppSelector((state)=> state.auth.data)
+    const {services} = useAppSelector((state) => state.services)
+    const userData = useAppSelector((state) => state.auth.data)
+    const [loading, setLoading] = useState<any>(true)
 
-    useEffect(()=>{
+    useEffect(() => {
+        dispatch(fetchAuthMe())
         dispatch(fetchServices())
-    },[dispatch])
+            .then(() => setLoading(false))
+    }, [dispatch])
+
+    if (loading) {
+        return <Loading/>
+    }
 
     return (
         <div>
@@ -28,7 +37,7 @@ const Services = () => {
                         services.map((m, index) => {
                             return (
                                 <ServicesCard
-                                    key = {index}
+                                    key={index}
                                     id={m._id}
                                     title={m.title}
                                     description={m.description}

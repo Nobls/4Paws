@@ -3,6 +3,7 @@ import s from './modalServices.module.scss'
 import ButtonStandart from "../buttonStandart/ButtonStandart";
 import {Link, useParams} from "react-router-dom";
 import axios from "../../axios/axios";
+import {Loading} from "../loading/Loading";
 
 export const ModalServices = () => {
     const [data, setData] = useState<any>()
@@ -17,10 +18,10 @@ export const ModalServices = () => {
         }).catch(err => {
             console.warn(err)
         })
-    }, [])
+    }, [id])
 
     if (loading) {
-        return <div>Загрузка...</div>
+        return <Loading/>
     }
 
     return (

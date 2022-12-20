@@ -37,7 +37,7 @@ const UsersAccount = () => {
             }).catch((err) => {
             console.warn(err)
         })
-    }, [])
+    }, [id])
 
 
     const navigate = useNavigate()

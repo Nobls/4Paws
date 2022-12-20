@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 import {Banners} from "../../components/banners/Banners";
 import {Advantage} from "../../components/advantage/Advantage";
 import {LastNews} from "../../components/lastNews/LastNews";
@@ -12,17 +12,24 @@ import OurPartners from "../../components/ ourPartners/OurPartners";
 import {useAppDispatch, useAppSelector} from "../../redux/hook/hook";
 import {fetchNews} from "../../redux/slices/posts";
 import {fetchAuthMe} from "../../redux/slices/auth";
+import {Loading} from "../../components/loading/Loading";
 
 const Homepage = () => {
 
     const dispatch = useAppDispatch()
 
     const {post} = useAppSelector((state) => state.news)
+    const [loading, setLoading] = useState<boolean>(true)
 
     useEffect(() => {
         dispatch(fetchNews())
         dispatch(fetchAuthMe())
-    }, [])
+            .then(() => setLoading(false))
+    }, [dispatch])
+
+    if (loading) {
+        return <Loading/>
+    }
 
     return (
         <div>
