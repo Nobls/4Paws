@@ -25,7 +25,7 @@ const UserPetSchema = new mongoose.Schema(
             required: true,
         },
 
-        procedures: [
+        petProcedures: [
             {
                 type: mongoose.Schema.Types.ObjectId,
                 ref: 'PetProcedures'

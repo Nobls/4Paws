@@ -81,6 +81,7 @@ export const updatePetProcedures = async (req, res) => {
     }
 }
 
+/*
 export const createPetProcedures = async (req, res) => {
 
     try {
@@ -117,5 +118,29 @@ export const createPetProcedures = async (req, res) => {
         res.status(500).json({
             message: 'Не удалось создать процедуру',
         })
+    }
+}*/
+
+export const createPetProcedures = async (req, res) => {
+    try {
+        const { userPetId, procedures } = req.body
+
+        if (!procedures)
+            return res.json({ message: 'Комментарий не может быть пустым' })
+
+        const newProcedures = new PetProceduresModel({ procedures })
+        await newProcedures.save()
+
+        try {
+            await UserPet.findByIdAndUpdate(userPetId, {
+                $push: { petProcedures: newProcedures._id },
+            })
+        } catch (error) {
+            console.log(error)
+        }
+
+        res.json(newProcedures)
+    } catch (error) {
+        res.json({ message: 'Что-то пошло не так.' })
     }
 }

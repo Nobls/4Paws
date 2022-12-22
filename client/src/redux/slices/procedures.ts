@@ -31,6 +31,13 @@ export const fetchPetProcedures = createAsyncThunk(
     }
 )
 
+export const fetchCreateProcedures = createAsyncThunk(
+    'procedures/fetchCreateProcedures',
+    async () => {
+
+    }
+)
+
 const petProceduresSlice = createSlice({
     name: 'petProcedures',
     initialState,
