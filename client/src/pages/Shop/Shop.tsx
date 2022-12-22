@@ -31,21 +31,21 @@ const Shop = () => {
 
                         <div className={menu ? `${s.dogEatActive} ${s.shopDogsActive}` : `${s.dogEat} ${s.shopDogs}`}>
                             <div className={s.dogItems}>
-                                <Link to={'/'}>
+                                <Link className={s.dogItem} to={'/'}>
                                     <img className={s.shopCategoryIcon} src={dogEat} alt="dogEat"/>
-                                    <p>Корма</p>
+                                    <p className={s.dogItemTitle}>Корма</p>
                                 </Link>
-                                <Link to={'/'}>
+                                <Link className={s.dogItem} to={'/'}>
                                     <img className={s.shopCategoryIcon} src={dogEat} alt="dogEat"/>
-                                    <p>Наполнители</p>
+                                    <p className={s.dogItemTitle}>Наполнители</p>
                                 </Link>
-                                <Link to={'/'}>
+                                <Link className={s.dogItem} to={'/'}>
                                     <img className={s.shopCategoryIcon} src={dogEat} alt="dogEat"/>
-                                    <p>Аксессуары</p>
+                                    <p className={s.dogItemTitle}>Аксессуары</p>
                                 </Link>
-                                <Link to={'/'}>
+                                <Link className={s.dogItem} to={'/'}>
                                     <img className={s.shopCategoryIcon} src={dogEat} alt="dogEat"/>
-                                    <p>Аксессуары</p>
+                                    <p className={s.dogItemTitle}>Аксессуары</p>
                                 </Link>
                             </div>
                         </div>

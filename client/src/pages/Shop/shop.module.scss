@@ -60,6 +60,17 @@
             align-items: center;
             flex-wrap: wrap;
             justify-content: space-around;
+
+            .dogItem {
+              width: 150px;
+              text-align: center;
+              text-decoration: none;
+
+              .dogItemTitle {
+                color: $color-text;
+                font-weight: 600;
+              }
+            }
           }
         }
 
