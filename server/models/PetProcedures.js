@@ -4,27 +4,27 @@ const PetProceduresSchema = new mongoose.Schema(
     {
         typeVaccination: {
             type: String,
-            required: true,
+            //required: true,
         },
         dateVaccination: {
             type: Date,
-            required: true,
+            //required: true,
         },
         nameOfVaccine: {
             type: String,
-            required: true,
+            //required: true,
         },
         dateProcedure: {
             type: Date,
-            required: true,
+            //required: true,
         },
         nameOfProcedure: {
             type: String,
-            required: true
+            //required: true
         },
         nameClinic: {
             type: String,
-            required: true,
+            //required: true,
         },
         /*userPet: {
             type: mongoose.Schema.Types.ObjectId,

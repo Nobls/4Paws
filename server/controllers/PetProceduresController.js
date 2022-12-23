@@ -1,5 +1,5 @@
 import PetProceduresModel from "../models/PetProcedures.js";
-import UserPet from "../models/UserPet.js";
+import UserPetModel from "../models/UserPet.js";
 
 export const getAll = async (req, res) => {
     try {
@@ -81,7 +81,6 @@ export const updatePetProcedures = async (req, res) => {
     }
 }
 
-/*
 export const createPetProcedures = async (req, res) => {
 
     try {
@@ -95,23 +94,23 @@ export const createPetProcedures = async (req, res) => {
             nameClinic: req.body.nameClinic,
         })
 
-        const petProcedures = await doc.save()
+        const newPetProcedures = await doc.save()
 
         try {
             const userPetId = req.params.id
-            await UserPet.updateOne(
+            await UserPetModel.updateOne(
                 {
                     _id: userPetId
                 },
                 {
-                    $push: {procedures: petProcedures._id}
+                    $push: {petProcedures: newPetProcedures._id}
                 }
             )
         } catch (error) {
             console.log(error)
         }
 
-        res.json(petProcedures)
+        res.json(newPetProcedures)
 
     } catch (err) {
         console.log(err)
@@ -119,20 +118,24 @@ export const createPetProcedures = async (req, res) => {
             message: 'Не удалось создать процедуру',
         })
     }
-}*/
+}
 
-export const createPetProcedures = async (req, res) => {
+/*export const createPetProcedures = async (req, res) => {
     try {
         const { userPetId, procedures } = req.body
 
         if (!procedures)
-            return res.json({ message: 'Комментарий не может быть пустым' })
+            return res.json({ message: '' })
 
         const newProcedures = new PetProceduresModel({ procedures })
         await newProcedures.save()
 
         try {
-            await UserPet.findByIdAndUpdate(userPetId, {
+            await UserPetModel.updateOne(
+                {
+                    userPetId
+                },
+                {
                 $push: { petProcedures: newProcedures._id },
             })
         } catch (error) {
@@ -143,4 +146,4 @@ export const createPetProcedures = async (req, res) => {
     } catch (error) {
         res.json({ message: 'Что-то пошло не так.' })
     }
-}
+}*/

@@ -96,11 +96,13 @@ app.delete('/petAccount/:id', checkAuth, UserPetController.removeUserPet)
 
 app.patch('/petAccount/:id', checkAuth, userPetValidation, UserPetController.updateUserPet)
 
+//app.get('/petAccount/:id/procedures/:id', UserPetController.getPetProcedures)
+
 // получение, создание, редактирование, удаление процедур питомцев
 
 app.get('/petAccount/:id/procedures', PetProceduresController.getAll)
 
-app.post('/petAccount/:id/procedures', checkAuth, petProceduresValidation, handleValidationErrors, PetProceduresController.createPetProcedures)
+app.post('/procedures/:id', checkAuth, handleValidationErrors, PetProceduresController.createPetProcedures)
 
 app.delete('/petAccount/:id/procedures', checkAuth, PetProceduresController.removePetProcedures)
 

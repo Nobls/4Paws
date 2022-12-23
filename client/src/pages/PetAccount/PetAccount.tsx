@@ -1,12 +1,12 @@
 import React, {useEffect, useState} from 'react';
 import s from './petAccount.module.scss'
 import ButtonStandart from "../../components/buttonStandart/ButtonStandart";
-import {useParams} from "react-router-dom";
+import {Link, useParams} from "react-router-dom";
 import axios from "../../axios/axios";
 import {PetVaccines} from "../../components/petVaccines/PetVaccines";
 import {PetProcedures} from "../../components/petProcedures/PetProcedures";
 import {useAppDispatch, useAppSelector} from "../../redux/hook/hook";
-import {fetchPetProcedures} from "../../redux/slices/procedures";
+import {fetchCreateProcedures, fetchPetProcedures} from "../../redux/slices/procedures";
 
 const PetAccount = () => {
 
@@ -14,8 +14,13 @@ const PetAccount = () => {
     const [data, setData] = useState<any>()
     const [loading, setLoading] = useState<any>(true)
 
-    const {userPet} = useAppSelector((state)=> state.userPet)
-    const {procedures} = useAppSelector((state)=>state.procedures)
+    const [typeVaccination, setTypeVaccination] = useState('')
+    const [dateVaccination, setDateVaccination] = useState('')
+    const [nameOfVaccine, setNameOfVaccine] = useState('')
+    const [nameClinic, setNameClinic] = useState('')
+
+    //const {userPet} = useAppSelector((state)=> state.userPet)
+    //const {procedures} = useAppSelector((state)=>state.procedures)
     const params = useParams()
 
     useEffect(() => {
@@ -26,10 +31,28 @@ const PetAccount = () => {
             }).catch(err => {
             console.warn(err)
         })
-    }, [])
+    }, [params.id])
     useEffect(()=>{
-        dispatch(fetchPetProcedures(params.id))
+
     },[])
+
+    const onSubmitVaccine = () => {
+        try {
+            setLoading(!loading)
+            const fieldsProcedures = {
+                typeVaccination,
+                dateVaccination,
+                nameOfVaccine,
+                nameClinic,
+            }
+
+            const userPetId = params.id
+            dispatch(fetchCreateProcedures({userPetId, fieldsProcedures}))
+
+        } catch (error) {
+            console.log(error)
+        }
+    }
 
     if (loading) {
         return <div>Загрузка...</div>
@@ -55,6 +78,36 @@ const PetAccount = () => {
                     <p className={s.petPersonalCardNumber}>000000001</p>
                 </div>
             </div>
+
+            <div className={s.petVaccinations}>
+                <h3 className={s.petVaccinationsTitle}>Прививки</h3>
+                {/*{
+                procedures.map((m,index)=> (
+                    <ol key={index} className={s.petVaccinationsItems}>
+                        <li className={s.petVaccinationsItem}>{m.typeVaccination} <span>{m.nameOfVaccine}</span> <span>{m.dateVaccination}</span>
+                        </li>
+                    </ol>
+                ))
+            }*/}
+                <form className={s.petVaccinationsForm}>
+                    <div className={s.petVaccinationsFormItemBlock}>
+                        <label className={s.petVaccinationsFormItemType} htmlFor="">Тип прививки<input
+                            className={s.petVaccinationsFormItemTypeInp} type="text" onChange={e => setTypeVaccination(e.currentTarget.value)}/></label>
+                        <label className={s.petVaccinationsFormItemDate} htmlFor="">Дата<input
+                            className={s.petVaccinationsFormItemDateInp} type="date" onChange={e => setDateVaccination(e.currentTarget.value)}/></label>
+                    </div>
+                    <label className={s.petVaccinationsFormItem} htmlFor="">Название препарата<input
+                        className={s.petVaccinationsFormItemDrugName} type="text"
+                        onChange={e => setNameOfVaccine(e.currentTarget.value)}/></label>
+                    <label className={s.petVaccinationsFormItem} htmlFor="">Название клиники<input
+                        className={s.petVaccinationsFormItemClinicName} type="text" onChange={e => setNameClinic(e.currentTarget.value)}/></label>
+                </form>
+                <div className={s.petAccountInfoBtnWrapper}>
+                    <ButtonStandart title={"Добавить"} onclick={onSubmitVaccine}/>
+                </div>
+
+            </div>
+
             {/*<div className={s.petVaccinations}>
                 <h3 className={s.petVaccinationsTitle}>Прививки</h3>
                 <ol className={s.petVaccinationsItems}>
@@ -102,9 +155,9 @@ const PetAccount = () => {
                 </div>
             </div>*/}
 
-            <PetVaccines  procedures={procedures}/>
+            {/*<PetVaccines  procedures={procedures}/>*/}
 
-            <PetProcedures procedures={procedures}/>
+            {/*<PetProcedures procedures={procedures}/>*/}
 
             <div className={s.petAccountInstruction}>
                 <div className={s.petAccountInstructionWrapper}>

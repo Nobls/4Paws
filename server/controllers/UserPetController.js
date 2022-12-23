@@ -129,7 +129,7 @@ export const createUserPet = async (req,res)=>{
             petGender:req.body.petGender,
             petAvatarUrl:req.body.petAvatarUrl,
             petPersonalCard: req.body.petPersonalCard,
-            procedures: req.body.procedures,
+            petProcedures: req.body.petProcedures,
             user: req.userId
         })
 
@@ -145,9 +145,10 @@ export const createUserPet = async (req,res)=>{
     }
 }
 
+/*
 export const getPetProcedures = async (req, res) => {
     try {
-        const userPet = await UserPetModel.findById(req.params.id)
+        const userPet = await UserPetModel.findOne(req.params.id)
         const list = await Promise.all(
             userPet.petProcedures.map((procedures) => {
                 return PetProceduresModel.findById(procedures)
@@ -158,3 +159,4 @@ export const getPetProcedures = async (req, res) => {
         res.json({ message: 'Что-то пошло не так.' })
     }
 }
+*/
