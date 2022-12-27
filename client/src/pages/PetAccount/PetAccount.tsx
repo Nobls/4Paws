@@ -49,7 +49,7 @@ const PetAccount = () => {
                 </div>
             </div>
 
-            <PetVaccines id={data.id}/>
+            <PetVaccines/>
 
             <PetProcedure/>
 

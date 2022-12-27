@@ -5,11 +5,8 @@ import {fetchCreateProcedures, fetchPetProcedures} from "../../redux/slices/proc
 import {useParams} from "react-router-dom";
 import {useAppDispatch, useAppSelector} from "../../redux/hook/hook";
 
-type PropsType = {
-    id?: any
-}
 
-export const PetVaccines = ({id}:PropsType) => {
+export const PetVaccines = () => {
 
     const params = useParams()
 
@@ -43,7 +40,7 @@ export const PetVaccines = ({id}:PropsType) => {
     }
 
     useEffect(()=>{
-        dispatch(fetchPetProcedures(id))
+        dispatch(fetchPetProcedures(params.id))
     },[dispatch])
 
     return (
