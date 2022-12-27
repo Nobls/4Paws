@@ -74,6 +74,7 @@ export const fetchCreatePost = createAsyncThunk(
     async (params:any) => {
         try {
             const {data} = await axios.post('/news', params)
+            console.log(data)
             return data
         } catch(error){
             console.log(error)

@@ -12,33 +12,22 @@ export interface PetProceduresType {
 }
 
 type StatePetProceduresType = {
-    procedures: PetProceduresType[]
+    petProcedures: PetProceduresType[]
     loading: boolean
     errors: any
 }
 
 const initialState: StatePetProceduresType = {
-    procedures: [],
+    petProcedures: [],
     loading: false,
     errors: null
 }
 
-/*export const fetchPetProcedures = createAsyncThunk(
-    'procedures/fetchPetProcedures',
-    async (id:any) => {
-        const {data} = await axios.get(`/petAccount/${id}/procedures`)
-        return data
-    }
-)*/
-
 export const fetchCreateProcedures = createAsyncThunk(
     'procedures/fetchCreateProcedures',
-    async ({userPetId, fieldsProcedures}: any) => {
+    async ({userPetId, procedures}: any) => {
         try {
-            const {data} = await axios.post(`/procedures/${userPetId}`, {
-                userPetId,
-                fieldsProcedures,
-            })
+            const {data} = await axios.post(`/procedures/${userPetId}`, procedures)
             return data
         } catch (error) {
             console.log(error)
@@ -50,7 +39,7 @@ export const fetchPetProcedures = createAsyncThunk(
     'procedures/fetchPetProcedures',
     async (userPetId: any) => {
         try {
-            const {data} = await axios.get(`/petAccount/${userPetId}/procedures/${userPetId}`)
+            const {data} = await axios.get(`/petAccount/procedures/${userPetId}`)
             return data
         } catch (error) {
             console.log(error)
@@ -67,8 +56,8 @@ const petProceduresSlice = createSlice({
             state.loading = true
         })
         builder.addCase(fetchPetProcedures.fulfilled, (state, action) => {
-            state.procedures = action.payload
             state.loading = false
+            state.petProcedures = action.payload
         })
         builder.addCase(fetchPetProcedures.rejected, (state) => {
             state.loading = true
@@ -78,7 +67,9 @@ const petProceduresSlice = createSlice({
         })
         builder.addCase(fetchCreateProcedures.fulfilled, (state, action) => {
             state.loading = false
-            state.procedures.push(action.payload)
+            //state.procedures.push(action.payload)
+            console.log(action.payload)
+            state.petProcedures = action.payload
         })
         builder.addCase(fetchCreateProcedures.rejected, (state) => {
             state.loading = true

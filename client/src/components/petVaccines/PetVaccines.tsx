@@ -1,20 +1,21 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import s from "./petVaccines.module.scss";
 import ButtonStandart from "../buttonStandart/ButtonStandart";
-import {fetchCreateProcedures, PetProceduresType} from "../../redux/slices/procedures";
+import {fetchCreateProcedures, fetchPetProcedures} from "../../redux/slices/procedures";
 import {useParams} from "react-router-dom";
-import {useAppDispatch} from "../../redux/hook/hook";
+import {useAppDispatch, useAppSelector} from "../../redux/hook/hook";
 
 type PropsType = {
-    procedures: PetProceduresType[]
+    id?: any
 }
 
-
-export const PetVaccines = ({procedures}: PropsType) => {
+export const PetVaccines = ({id}:PropsType) => {
 
     const params = useParams()
 
     const dispatch = useAppDispatch()
+
+    const {petProcedures} = useAppSelector((state)=>state.procedures)
 
     const [typeVaccination, setTypeVaccination] = useState('')
     const [dateVaccination, setDateVaccination] = useState('')
@@ -41,17 +42,21 @@ export const PetVaccines = ({procedures}: PropsType) => {
         }
     }
 
+    useEffect(()=>{
+        dispatch(fetchPetProcedures(id))
+    },[dispatch])
+
     return (
         <div className={s.petVaccinations}>
             <h3 className={s.petVaccinationsTitle}>Прививки</h3>
-            {/*{
-                procedures.map((m,index)=> (
+            {
+                petProcedures?.map((m,index)=> (
                     <ol key={index} className={s.petVaccinationsItems}>
                         <li className={s.petVaccinationsItem}>{m.typeVaccination} <span>{m.nameOfVaccine}</span> <span>{m.dateVaccination}</span>
                         </li>
                     </ol>
                 ))
-            }*/}
+            }
             <form className={s.petVaccinationsForm}>
                 <div className={s.petVaccinationsFormItemBlock}>
                     <label className={s.petVaccinationsFormItemType} htmlFor="">Тип прививки<input

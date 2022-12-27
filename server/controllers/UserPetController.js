@@ -1,5 +1,4 @@
 import UserPetModel from "../models/UserPet.js";
-import PetProceduresModel from "../models/PetProcedures.js";
 
 export const getAll = async (req, res) => {
     try {
@@ -156,7 +155,7 @@ export const getPetProcedures = async (req, res) => {
         )
         res.json(list)
     } catch (error) {
-        res.json({ message: 'Что-то пошло не так.' })
+        res.json({message: 'Что-то пошло не так.'})
     }
 }
 */

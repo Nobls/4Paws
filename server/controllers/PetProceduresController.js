@@ -119,31 +119,3 @@ export const createPetProcedures = async (req, res) => {
         })
     }
 }
-
-/*export const createPetProcedures = async (req, res) => {
-    try {
-        const { userPetId, procedures } = req.body
-
-        if (!procedures)
-            return res.json({ message: '' })
-
-        const newProcedures = new PetProceduresModel({ procedures })
-        await newProcedures.save()
-
-        try {
-            await UserPetModel.updateOne(
-                {
-                    userPetId
-                },
-                {
-                $push: { petProcedures: newProcedures._id },
-            })
-        } catch (error) {
-            console.log(error)
-        }
-
-        res.json(newProcedures)
-    } catch (error) {
-        res.json({ message: 'Что-то пошло не так.' })
-    }
-}*/
