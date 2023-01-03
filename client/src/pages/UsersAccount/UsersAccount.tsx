@@ -133,7 +133,7 @@ const UsersAccount = () => {
                                 petBreed={m.petBreed}
                                 petAvatarUrl={m.petAvatarUrl}
                                 userData={userData}
-                                procedures={m.procedures}
+                                procedures={m.petProcedures}
                                 petGender={m.petGender}
                                 key={index}
                             />

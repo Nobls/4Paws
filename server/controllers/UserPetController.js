@@ -1,4 +1,6 @@
 import UserPetModel from "../models/UserPet.js";
+import PetProceduresModel from "../models/PetProcedures.js";
+import petProcedures from "../models/PetProcedures.js";
 
 export const getAll = async (req, res) => {
     try {
@@ -144,12 +146,11 @@ export const createUserPet = async (req,res)=>{
     }
 }
 
-/*
 export const getPetProcedures = async (req, res) => {
     try {
-        const userPet = await UserPetModel.findOne(req.params.id)
+        const userPet = await UserPetModel.findById(req.params.id)
         const list = await Promise.all(
-            userPet.petProcedures.map((procedures) => {
+            {userPet}.petProcedures.map((procedures) => {
                 return PetProceduresModel.findById(procedures)
             }),
         )
@@ -158,4 +159,29 @@ export const getPetProcedures = async (req, res) => {
         res.json({message: 'Что-то пошло не так.'})
     }
 }
-*/
+
+
+// typeVaccination: {
+//             type: String,
+//             //required: true,
+//         },
+//         dateVaccination: {
+//             type: Date,
+//             //required: true,
+//         },
+//         nameOfVaccine: {
+//             type: String,
+//             //required: true,
+//         },
+//         dateProcedure: {
+//             type: Date,
+//             //required: true,
+//         },
+//         nameOfProcedure: {
+//             type: String,
+//             //required: true
+//         },
+//         nameClinic: {
+//             type: String,
+//             //required: true,
+//         },

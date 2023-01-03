@@ -40,6 +40,7 @@ export const fetchPetProcedures = createAsyncThunk(
     async (userPetId: any) => {
         try {
             const {data} = await axios.get(`/petAccount/procedures/${userPetId}`)
+            console.log(data)
             return data
         } catch (error) {
             console.log(error)

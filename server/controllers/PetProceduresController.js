@@ -1,7 +1,7 @@
 import PetProceduresModel from "../models/PetProcedures.js";
 import UserPetModel from "../models/UserPet.js";
 
-export const getAll = async (req, res) => {
+/*export const getAll = async (req, res) => {
     try {
         const petProcedures = await PetProceduresModel.find().exec()
 
@@ -12,7 +12,26 @@ export const getAll = async (req, res) => {
             message: 'Не удалось получить процедуры!',
         })
     }
+}*/
+
+export const getAll = async (req, res) => {
+    try {
+
+        const procedures = await UserPetModel.findById(req.params.id)
+        const list = await Promise.all(
+            procedures.petProcedures.map((p)=>{
+                return PetProceduresModel.findById(p)
+            })
+        )
+        res.json(list)
+    } catch (err) {
+        console.log(err)
+        res.status(500).json({
+            message: 'Не удалось получить процедуры!',
+        })
+    }
 }
+
 
 export const removePetProcedures = async (req, res) => {
     try {
