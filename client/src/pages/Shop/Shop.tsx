@@ -52,21 +52,26 @@ const Shop = () => {
                     </div>
 
 
-                    <div className={s.shopPetsCardWrapperCat} style={{backgroundColor: `brown`}}>
-                        <p className={s.shopPetsTitle}>Для котов</p>
-                    </div>
+                    {/*<div className={s.shopPetsCardWrapperCat} style={{backgroundColor: `brown`}}>*/}
+                    {/*    <p className={s.shopPetsTitle}>Для котов</p>*/}
+                    {/*</div>*/}
 
-                    <div className={s.shopPetsCardWrapper} style={{backgroundColor: 'yellow'}}>
-                        <p className={s.shopPetsTitle}>Для <br/>грызунов</p>
-                    </div>
+                    {/*<div className={s.shopPetsCardWrapper} style={{backgroundColor: 'yellow'}}>*/}
+                    {/*    <p className={s.shopPetsTitle}>Для <br/>грызунов</p>*/}
+                    {/*</div>*/}
 
-                    <div className={s.shopPetsCardWrapper} style={{backgroundColor: 'blue'}}>
-                        <p className={s.shopPetsTitle}>Для птиц</p>
-                    </div>
+                    {/*<div className={s.shopPetsCardWrapper} style={{backgroundColor: 'blue'}}>*/}
+                    {/*    <p className={s.shopPetsTitle}>Для птиц</p>*/}
+                    {/*</div>*/}
 
-                    <div className={s.shopPetsCardWrapper} style={{backgroundColor: 'green'}}>
-                        <p className={s.shopPetsTitle}>Для рыб</p>
-                    </div>
+                    {/*<div className={s.shopPetsCardWrapper} style={{backgroundColor: 'green'}}>*/}
+                    {/*    <p className={s.shopPetsTitle}>Для рыб</p>*/}
+                    {/*</div>*/}
+
+
+
+
+
 
 
                     {/*<div className={s.shopSidebar}>*/}
