@@ -1,15 +1,15 @@
 import React, {useEffect, useState} from 'react';
 import s from "./petVaccines.module.scss";
 import ButtonStandart from "../buttonStandart/ButtonStandart";
-import {fetchCreateProcedures, fetchPetProcedures, PetProceduresType,} from "../../redux/slices/procedures";
+import {fetchCreateVaccines, fetchPetVaccines, PetVaccinesType,} from "../../redux/slices/procedures";
 import {useParams} from "react-router-dom";
 import {useAppDispatch} from "../../redux/hook/hook";
 
 type PropsType = {
-    petProcedures: PetProceduresType[]
+    petVaccines: PetVaccinesType[]
 }
 
-export const PetVaccines = ({petProcedures}: PropsType) => {
+export const PetVaccines = ({petVaccines}:PropsType) => {
 
     const params = useParams()
 
@@ -25,7 +25,7 @@ export const PetVaccines = ({petProcedures}: PropsType) => {
     const onSubmitVaccine = () => {
         try {
             setLoading(!loading)
-            const procedures = {
+            const vaccines = {
                 typeVaccination,
                 dateVaccination,
                 nameOfVaccine,
@@ -33,7 +33,7 @@ export const PetVaccines = ({petProcedures}: PropsType) => {
             }
 
             const userPetId = params.id
-            dispatch(fetchCreateProcedures({userPetId, procedures}))
+            dispatch(fetchCreateVaccines({userPetId, vaccines}))
 
         } catch (error) {
             console.log(error)
@@ -41,17 +41,17 @@ export const PetVaccines = ({petProcedures}: PropsType) => {
     }
 
     useEffect(() => {
-        dispatch(fetchPetProcedures(params.id))
+        dispatch(fetchPetVaccines(params.id))
     }, [dispatch, params.id])
 
     return (
         <div className={s.petVaccinations}>
             <h3 className={s.petVaccinationsTitle}>Прививки</h3>
             {
-                petProcedures.map((m, index) => (
+                petVaccines.map((m, index) => (
                     <ol key={index} className={s.petVaccinationsItems}>
-                        <li className={s.petVaccinationsItem}>{m.typeVaccination}<span>{m.nameOfVaccine}</span>
-                            <span>{m.dateVaccination?.toLowerCase().toString().slice(0, 10)}</span>
+                        <li className={s.petVaccinationsItem}>{m.typeVaccination}<span>{m.nameOfVaccine}</span><span>{m.nameClinic}</span>
+                            <span>{m.dateVaccination?.toLowerCase().toString().slice(0,10)}</span>
                         </li>
                     </ol>
                 ))

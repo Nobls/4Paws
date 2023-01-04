@@ -3,22 +3,29 @@ import axios from "../../axios/axios";
 
 export interface PetProceduresType {
     _id?: any
-    typeVaccination: string
-    dateVaccination: any
-    nameOfVaccine: string
     dateProcedure: any
     nameOfProcedure: string
     nameClinic: string
 }
 
+export interface PetVaccinesType {
+    _id?: any
+    typeVaccination: string
+    dateVaccination: any
+    nameOfVaccine: string
+    nameClinic: string
+}
+
 type StatePetProceduresType = {
     petProcedures: PetProceduresType[]
+    petVaccines: PetVaccinesType[]
     loading: boolean
     errors: any
 }
 
 const initialState: StatePetProceduresType = {
     petProcedures: [],
+    petVaccines: [],
     loading: false,
     errors: null
 }
@@ -35,11 +42,35 @@ export const fetchCreateProcedures = createAsyncThunk(
     },
 )
 
+export const fetchCreateVaccines = createAsyncThunk(
+    'procedures/fetchCreateVaccines',
+    async ({userPetId, vaccines}: any) => {
+        try {
+            const {data} = await axios.post(`/vaccines/${userPetId}`, vaccines)
+            return data
+        } catch (error) {
+            console.log(error)
+        }
+    },
+)
+
 export const fetchPetProcedures = createAsyncThunk(
     'procedures/fetchPetProcedures',
     async (userPetId: any) => {
         try {
             const {data} = await axios.get(`/petAccount/procedures/${userPetId}`)
+            console.log(data)
+            return data
+        } catch (error) {
+            console.log(error)
+        }
+    }
+)
+export const fetchPetVaccines = createAsyncThunk(
+    'procedures/fetchPetVaccines',
+    async (userPetId: any) => {
+        try {
+            const {data} = await axios.get(`/petAccount/vaccines/${userPetId}`)
             console.log(data)
             return data
         } catch (error) {
@@ -63,16 +94,34 @@ const petProceduresSlice = createSlice({
         builder.addCase(fetchPetProcedures.rejected, (state) => {
             state.loading = true
         })
+        builder.addCase(fetchPetVaccines.pending, (state) => {
+            state.loading = true
+        })
+        builder.addCase(fetchPetVaccines.fulfilled, (state, action) => {
+            state.loading = false
+            state.petVaccines = action.payload
+        })
+        builder.addCase(fetchPetVaccines.rejected, (state, action) => {
+            state.loading = true
+        })
         builder.addCase(fetchCreateProcedures.pending, (state) => {
             state.loading = true
         })
         builder.addCase(fetchCreateProcedures.fulfilled, (state, action) => {
             state.loading = false
-            //state.procedures.push(action.payload)
-            console.log(action.payload)
             state.petProcedures = action.payload
         })
         builder.addCase(fetchCreateProcedures.rejected, (state) => {
+            state.loading = true
+        })
+        builder.addCase(fetchCreateVaccines.pending, (state) => {
+            state.loading = true
+        })
+        builder.addCase(fetchCreateVaccines.fulfilled, (state, action) => {
+            state.loading = false
+            state.petVaccines = action.payload
+        })
+        builder.addCase(fetchCreateVaccines.rejected, (state) => {
             state.loading = true
         })
     }

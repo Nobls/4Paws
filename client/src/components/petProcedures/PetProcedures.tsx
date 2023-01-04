@@ -46,19 +46,14 @@ export const PetProcedure = ({petProcedures}:PropsType) => {
         <div className={s.petProcedures}>
             <h3 className={s.petProceduresTitle}>Процедуры</h3>
             {
-                petProcedures.map(m=>{
+                petProcedures?.map((m,index)=>{
                     return (
-                        <ol className={s.petProceduresItems}>
+                        <ol key={index} className={s.petProceduresItems}>
                             <li className={s.petProceduresItem}>{m.nameOfProcedure}<span>{m.nameClinic}</span> <span>{m.dateProcedure?.toLowerCase().toString().slice(0,10)}</span></li>
                         </ol>
                     )
                 })
             }
-            {/*<ol className={s.petProceduresItems}>
-                <li className={s.petProceduresItem}>Кастрация <span>Доктор Вет</span> <span>21.03.2022</span></li>
-                <li className={s.petProceduresItem}>Кастрация <span>Доктор Вет</span> <span>21.03.2022</span></li>
-                <li className={s.petProceduresItem}>Кастрация <span>Доктор Вет</span> <span>21.03.2022</span></li>
-            </ol>*/}
             <form className={s.petProceduresForm}>
                 <label htmlFor="" className={s.petProceduresFormItem}>
                     Дата

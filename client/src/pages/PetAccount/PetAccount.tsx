@@ -12,7 +12,7 @@ const PetAccount = () => {
     const [data, setData] = useState<any>()
     const [loading, setLoading] = useState<any>(true)
 
-    const {petProcedures} = useAppSelector((state)=>state.procedures)
+    const {petProcedures, petVaccines} = useAppSelector((state)=>state.procedures)
 
     const params = useParams()
 
@@ -52,7 +52,7 @@ const PetAccount = () => {
                 </div>
             </div>
 
-            <PetVaccines petProcedures={petProcedures}/>
+            <PetVaccines petVaccines={petVaccines}/>
 
             <PetProcedure petProcedures={petProcedures}/>
 

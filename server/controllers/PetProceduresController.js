@@ -1,25 +1,30 @@
 import PetProceduresModel from "../models/PetProcedures.js";
 import UserPetModel from "../models/UserPet.js";
 
-/*export const getAll = async (req, res) => {
+export const getProcedures = async (req, res) => {
     try {
-        const petProcedures = await PetProceduresModel.find().exec()
 
-        res.json(petProcedures)
+        const procedures = await UserPetModel.findById(req.params.id)
+        const list = await Promise.all(
+            procedures.petProcedures.map((p)=>{
+                return PetProceduresModel.findById(p)
+            })
+        )
+        res.json(list)
     } catch (err) {
         console.log(err)
         res.status(500).json({
             message: 'Не удалось получить процедуры!',
         })
     }
-}*/
+}
 
-export const getAll = async (req, res) => {
+export const getVaccines = async (req, res) => {
     try {
 
-        const procedures = await UserPetModel.findById(req.params.id)
+        const vaccines = await UserPetModel.findById(req.params.id)
         const list = await Promise.all(
-            procedures.petProcedures.map((p)=>{
+            vaccines.petVaccines.map((p)=>{
                 return PetProceduresModel.findById(p)
             })
         )
@@ -105,9 +110,6 @@ export const createPetProcedures = async (req, res) => {
     try {
 
         const doc = new PetProceduresModel({
-            typeVaccination: req.body.typeVaccination,
-            dateVaccination: req.body.dateVaccination,
-            nameOfVaccine: req.body.nameOfVaccine,
             dateProcedure: req.body.dateProcedure,
             nameOfProcedure: req.body.nameOfProcedure,
             nameClinic: req.body.nameClinic,
@@ -130,6 +132,43 @@ export const createPetProcedures = async (req, res) => {
         }
 
         res.json(newPetProcedures)
+
+    } catch (err) {
+        console.log(err)
+        res.status(500).json({
+            message: 'Не удалось создать процедуру',
+        })
+    }
+}
+
+export const createPetVaccines = async (req, res) => {
+
+    try {
+
+        const doc = new PetProceduresModel({
+            typeVaccination: req.body.typeVaccination,
+            dateVaccination: req.body.dateVaccination,
+            nameOfVaccine: req.body.nameOfVaccine,
+            nameClinic: req.body.nameClinic,
+        })
+
+        const newPetVaccines = await doc.save()
+
+        try {
+            const userPetId = req.params.id
+            await UserPetModel.updateOne(
+                {
+                    _id: userPetId
+                },
+                {
+                    $push: {petVaccines: newPetVaccines._id}
+                }
+            )
+        } catch (error) {
+            console.log(error)
+        }
+
+        res.json(newPetVaccines)
 
     } catch (err) {
         console.log(err)

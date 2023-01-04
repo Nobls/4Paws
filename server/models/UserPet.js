@@ -31,6 +31,12 @@ const UserPetSchema = new mongoose.Schema(
                 ref: 'PetProcedures'
             }
         ],
+        petVaccines: [
+            {
+                type: mongoose.Schema.Types.ObjectId,
+                ref: 'PetProcedures'
+            }
+        ],
 
         petAvatarUrl: String,
 
