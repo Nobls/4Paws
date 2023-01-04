@@ -78,4 +78,6 @@ const petProceduresSlice = createSlice({
     }
 })
 
+//export const selectedIsProcedures = (state: any) => Boolean(state.petProcedures.petProcedures)
+
 export const petProceduresReducer = petProceduresSlice.reducer

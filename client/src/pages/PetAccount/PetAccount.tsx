@@ -5,11 +5,14 @@ import {useParams} from "react-router-dom";
 import axios from "../../axios/axios";
 import {PetVaccines} from "../../components/petVaccines/PetVaccines";
 import {PetProcedure,} from "../../components/petProcedures/PetProcedures";
+import {useAppSelector} from "../../redux/hook/hook";
 
 const PetAccount = () => {
 
     const [data, setData] = useState<any>()
     const [loading, setLoading] = useState<any>(true)
+
+    const {petProcedures} = useAppSelector((state)=>state.procedures)
 
     const params = useParams()
 
@@ -49,9 +52,9 @@ const PetAccount = () => {
                 </div>
             </div>
 
-            <PetVaccines/>
+            <PetVaccines petProcedures={petProcedures}/>
 
-            <PetProcedure/>
+            <PetProcedure petProcedures={petProcedures}/>
 
             <div className={s.petAccountInstruction}>
                 <div className={s.petAccountInstructionWrapper}>

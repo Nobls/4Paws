@@ -1,34 +1,80 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import s from "./petProcedures.module.scss";
 import ButtonStandart from "../buttonStandart/ButtonStandart";
-import {PetProceduresType} from "../../redux/slices/procedures";
+import {fetchCreateProcedures, fetchPetProcedures, PetProceduresType} from "../../redux/slices/procedures";
+import {useParams} from "react-router-dom";
+import {useAppDispatch} from "../../redux/hook/hook";
 
-/*
 type PropsType = {
-    procedures: PetProceduresType[]
+    petProcedures: PetProceduresType[]
 }
-*/
 
-export const PetProcedure = () => {
+export const PetProcedure = ({petProcedures}:PropsType) => {
+
+    const params = useParams()
+
+    const dispatch = useAppDispatch()
+
+    const [dateProcedure, setDateProcedure] = useState('')
+    const [nameOfProcedure, setNameOfProcedure] = useState('')
+    const [nameClinic, setNameClinic] = useState('')
+
+    const [loading, setLoading] = useState(false)
+
+    const onSubmitProcedures = () => {
+        try {
+            setLoading(!loading)
+            const procedures = {
+                dateProcedure,
+                nameOfProcedure,
+                nameClinic
+            }
+
+            const userPetId = params.id
+            dispatch(fetchCreateProcedures({userPetId, procedures}))
+
+        } catch (error) {
+            console.log(error)
+        }
+    }
+
+    useEffect(()=>{
+        dispatch(fetchPetProcedures(params.id))
+    },[dispatch, params.id])
 
     return (
         <div className={s.petProcedures}>
             <h3 className={s.petProceduresTitle}>Процедуры</h3>
-            <ol className={s.petProceduresItems}>
+            {
+                petProcedures.map(m=>{
+                    return (
+                        <ol className={s.petProceduresItems}>
+                            <li className={s.petProceduresItem}>{m.nameOfProcedure}<span>{m.nameClinic}</span> <span>{m.dateProcedure?.toLowerCase().toString().slice(0,10)}</span></li>
+                        </ol>
+                    )
+                })
+            }
+            {/*<ol className={s.petProceduresItems}>
                 <li className={s.petProceduresItem}>Кастрация <span>Доктор Вет</span> <span>21.03.2022</span></li>
                 <li className={s.petProceduresItem}>Кастрация <span>Доктор Вет</span> <span>21.03.2022</span></li>
                 <li className={s.petProceduresItem}>Кастрация <span>Доктор Вет</span> <span>21.03.2022</span></li>
-            </ol>
+            </ol>*/}
             <form className={s.petProceduresForm}>
-                <label htmlFor="" className={s.petProceduresFormItem}>Дата<input type="date"
-                                                                                 className={s.petProceduresFormItemDateInp}/></label>
-                <label htmlFor="" className={s.petProceduresFormItem}>Процедура<input type="text"
-                                                                                      className={s.petProceduresFormInput}/></label>
-                <label htmlFor="" className={s.petProceduresFormItem}>Название клиники<input type="text"
-                                                                                             className={s.petProceduresFormInput}/></label>
+                <label htmlFor="" className={s.petProceduresFormItem}>
+                    Дата
+                    <input type="date" className={s.petProceduresFormItemDateInp} onChange={e => setDateProcedure(e.currentTarget.value)}/>
+                </label>
+                <label htmlFor="" className={s.petProceduresFormItem}>
+                    Процедура
+                    <input type="text" className={s.petProceduresFormInput} onChange={e => setNameOfProcedure(e.currentTarget.value)}/>
+                </label>
+                <label htmlFor="" className={s.petProceduresFormItem}>
+                    Название клиники
+                    <input type="text" className={s.petProceduresFormInput} onChange={e => setNameClinic(e.currentTarget.value)}/>
+                </label>
             </form>
             <div className={s.petAccountInfoBtnWrapper}>
-                <ButtonStandart title={"Добавить"}/>
+                <ButtonStandart title={"Добавить"} onclick={onSubmitProcedures}/>
             </div>
         </div>
     );
