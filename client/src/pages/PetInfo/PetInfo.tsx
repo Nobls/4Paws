@@ -5,11 +5,15 @@ import ButtonStandart from "../../components/buttonStandart/ButtonStandart";
 import LowercaseButton from "../../components/lowercaseButton/LowercaseButton";
 import {useNavigate, useParams} from "react-router-dom";
 import axios from "../../axios/axios";
+import {useAppDispatch, useAppSelector} from "../../redux/hook/hook";
+import {fetchCreatePet} from "../../redux/slices/userPet";
 
 
 const PetInfo = () => {
 
     const params = useParams()
+
+    const dispatch = useAppDispatch()
 
     const navigate = useNavigate()
 
@@ -52,7 +56,9 @@ const PetInfo = () => {
 
             }
 
-            //navigate(`/auth/user`)
+            dispatch(fetchCreatePet(fieldsPet))
+
+            //navigate(`/auth/user/`)
         } catch (err) {
             console.log(err)
         }
@@ -87,8 +93,8 @@ const PetInfo = () => {
                             <span className={s.petInfoSexBlockItemTitle}>Пол</span>
                             <select value={petGender || ''} className={s.petInfoSexBlockItemInput} name="pet"
                                     onChange={e => setPetGender(e.currentTarget.value)}>
-                                <option value="m">М</option>
-                                <option value="w">Ж</option>
+                                <option>М</option>
+                                <option>Ж</option>
                             </select>
                         </label>
                     </div>

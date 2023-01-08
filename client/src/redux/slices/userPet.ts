@@ -33,6 +33,14 @@ export const fetchUserPet = createAsyncThunk<UserPetType[]>(
     }
 )
 
+export const fetchCreatePet = createAsyncThunk(
+    'petAccount/fetchCreatePet',
+    async (fieldsPet: any)=>{
+        const {data} = await axios.post('petAccount', fieldsPet)
+        return data
+    }
+)
+
 /*export const fetchUserPetId = createAsyncThunk(
     'petAccount/fetchUserPetId',
     async (_id:any)=>{
@@ -55,6 +63,17 @@ const userPetSlice = createSlice({
         })
         builder.addCase(fetchUserPet.rejected, (state) => {
             state.loading = true
+        })
+
+        builder.addCase(fetchCreatePet.pending, (state) => {
+            state.loading = true;
+        })
+        builder.addCase(fetchCreatePet.fulfilled, (state, action) => {
+            state.loading = false;
+            state.userPet = action.payload
+        })
+        builder.addCase(fetchCreatePet.rejected, (state) => {
+            state.loading = false;
         })
         /*builder.addCase(fetchUserPetId.pending, (state) => {
             state.loading = true
