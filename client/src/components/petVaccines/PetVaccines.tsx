@@ -4,6 +4,7 @@ import ButtonStandart from "../buttonStandart/ButtonStandart";
 import {fetchCreateVaccines, fetchPetVaccines, PetVaccinesType,} from "../../redux/slices/procedures";
 import {useParams} from "react-router-dom";
 import {useAppDispatch} from "../../redux/hook/hook";
+import {fetchUserPet} from "../../redux/slices/userPet";
 
 type PropsType = {
     petVaccines: PetVaccinesType[]
@@ -42,6 +43,7 @@ export const PetVaccines = ({petVaccines}:PropsType) => {
 
     useEffect(() => {
         dispatch(fetchPetVaccines(params.id))
+        dispatch(fetchUserPet())
     }, [dispatch, params.id])
 
     return (

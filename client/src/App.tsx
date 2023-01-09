@@ -54,7 +54,7 @@ function App() {
                     <Route path='auth/user/:id/userInfo' element={<UserInfo/>}/>
                     <Route path='login' element={<Login/>}/>
                     <Route path='registration' element={<Registration/>}/>
-                    <Route path='petInfo' element={<PetInfo/>}/>
+                    <Route path='petInfo/:id' element={<PetInfo/>}/>
                     <Route path='news/:id' element={<NewsPost/>}/>
                     <Route path='auth/user/:id' element={<UsersAccount/>}/>
                     <Route path='petAccount/:id' element={<PetAccount/>}/>

@@ -109,7 +109,8 @@ const petProceduresSlice = createSlice({
         })
         builder.addCase(fetchCreateProcedures.fulfilled, (state, action) => {
             state.loading = false
-            state.petProcedures = action.payload
+            //state.petProcedures = action.payload
+            state.petProcedures.push(action.payload)
         })
         builder.addCase(fetchCreateProcedures.rejected, (state) => {
             state.loading = true
@@ -119,7 +120,8 @@ const petProceduresSlice = createSlice({
         })
         builder.addCase(fetchCreateVaccines.fulfilled, (state, action) => {
             state.loading = false
-            state.petVaccines = action.payload
+            //state.petVaccines = action.payload
+            state.petVaccines.push(action.payload)
         })
         builder.addCase(fetchCreateVaccines.rejected, (state) => {
             state.loading = true

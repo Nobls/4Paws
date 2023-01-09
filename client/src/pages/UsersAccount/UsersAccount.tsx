@@ -43,7 +43,7 @@ const UsersAccount = () => {
     const navigate = useNavigate()
 
     const addPet = () => {
-        navigate('/petInfo')
+        navigate(`/petInfo/${id}`)
     }
 
     let [quantity, setQuantity] = useState(0)

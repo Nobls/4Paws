@@ -4,6 +4,7 @@ import ButtonStandart from "../buttonStandart/ButtonStandart";
 import {fetchCreateProcedures, fetchPetProcedures, PetProceduresType} from "../../redux/slices/procedures";
 import {useParams} from "react-router-dom";
 import {useAppDispatch} from "../../redux/hook/hook";
+import {fetchUserPet} from "../../redux/slices/userPet";
 
 type PropsType = {
     petProcedures: PetProceduresType[]
@@ -40,6 +41,7 @@ export const PetProcedure = ({petProcedures}:PropsType) => {
 
     useEffect(()=>{
         dispatch(fetchPetProcedures(params.id))
+        dispatch(fetchUserPet())
     },[dispatch, params.id])
 
     return (

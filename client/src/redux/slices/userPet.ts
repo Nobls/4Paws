@@ -70,7 +70,8 @@ const userPetSlice = createSlice({
         })
         builder.addCase(fetchCreatePet.fulfilled, (state, action) => {
             state.loading = false;
-            state.userPet = action.payload
+            //state.userPet = action.payload
+            state.userPet.push(action.payload)
         })
         builder.addCase(fetchCreatePet.rejected, (state) => {
             state.loading = false;
