@@ -19,8 +19,8 @@
       flex-wrap: wrap;
 
       .shopPetsCardWrapperDog {
-        width: 400px;
-        height: 300px;
+        width: 360px;
+        height: 350px;
         background-size: cover;
         //margin: 0 200px 0 0;
         border-radius: $borderRadius;
@@ -63,8 +63,11 @@
 
             .dogItem {
               width: 150px;
+              margin: 10px;
+              padding: 5px;
               text-align: center;
               text-decoration: none;
+              border: 1px black solid;
 
               .dogItemTitle {
                 color: $color-text;
