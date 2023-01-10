@@ -51,7 +51,7 @@ export const PetProcedure = ({petProcedures}:PropsType) => {
                 petProcedures?.map((m,index)=>{
                     return (
                         <ol key={index} className={s.petProceduresItems}>
-                            <li className={s.petProceduresItem}>{m.nameOfProcedure}<span>{m.nameClinic}</span> <span>{m.dateProcedure?.toLowerCase().toString().slice(0,10)}</span></li>
+                            <li className={s.petProceduresItem}>{m.nameOfProcedure}<span>{m.nameClinic}</span> <span>{m.dateProcedure?.toLowerCase().toString().slice(0,10)}</span><button>X</button></li>
                         </ol>
                     )
                 })

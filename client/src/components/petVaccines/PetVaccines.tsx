@@ -50,7 +50,7 @@ export const PetVaccines = ({petVaccines}:PropsType) => {
         <div className={s.petVaccinations}>
             <h3 className={s.petVaccinationsTitle}>Прививки</h3>
             {
-                petVaccines.map((m, index) => (
+                petVaccines?.map((m, index) => (
                     <ol key={index} className={s.petVaccinationsItems}>
                         <li className={s.petVaccinationsItem}>{m.typeVaccination}<span>{m.nameOfVaccine}</span><span>{m.nameClinic}</span>
                             <span>{m.dateVaccination?.toLowerCase().toString().slice(0,10)}</span>

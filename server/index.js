@@ -106,7 +106,11 @@ app.post('/procedures/:id', checkAuth, handleValidationErrors, PetProceduresCont
 
 app.post('/vaccines/:id', checkAuth, handleValidationErrors, PetProceduresController.createPetVaccines)
 
-app.delete('/petAccount/:id/procedures', checkAuth, PetProceduresController.removePetProcedures)
+app.delete('/procedures/:id', checkAuth, handleValidationErrors, PetProceduresController.removePetProcedures)
+
+app.delete('/vaccines/:id', checkAuth, handleValidationErrors, PetProceduresController.removePetProcedures)
+
+//app.delete('/petAccount/:id/procedures', checkAuth, PetProceduresController.removePetProcedures)
 
 app.patch('/petAccount/:id/procedures', checkAuth, petProceduresValidation, PetProceduresController.updatePetProcedures)
 

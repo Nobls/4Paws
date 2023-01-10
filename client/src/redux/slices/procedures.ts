@@ -79,6 +79,20 @@ export const fetchPetVaccines = createAsyncThunk(
     }
 )
 
+export const fetchRemoveProcedures = createAsyncThunk(
+    'news/fetchRemoveNews',
+    async (_id: any) => {
+        const {data} = await axios.delete(`/news/${_id}`, _id)
+        return data
+    })
+
+export const fetchRemoveVaccines = createAsyncThunk(
+    'news/fetchRemoveNews',
+    async (_id: any) => {
+        const {data} = await axios.delete(`/news/${_id}`, _id)
+        return data
+    })
+
 const petProceduresSlice = createSlice({
     name: 'petProcedures',
     initialState,
