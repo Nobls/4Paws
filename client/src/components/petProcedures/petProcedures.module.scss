@@ -29,6 +29,23 @@
       font-weight: 900;
       justify-content: space-between;
     }
+
+    .deleteProcedures {
+      font-weight: 500;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background-color: $color-accent-dark;
+      display: flex;
+      align-items: center;
+      border: inherit;
+      transition: $transition03;
+
+      &:hover {
+        transform: scale(1.1);
+        transition: $transition03;
+      }
+    }
   }
 
   .petProceduresForm {

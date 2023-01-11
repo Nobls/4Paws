@@ -1,7 +1,12 @@
 import React, {useEffect, useState} from 'react';
 import s from "./petVaccines.module.scss";
 import ButtonStandart from "../buttonStandart/ButtonStandart";
-import {fetchCreateVaccines, fetchPetVaccines, PetVaccinesType,} from "../../redux/slices/procedures";
+import {
+    fetchCreateVaccines,
+    fetchPetVaccines,
+    fetchRemoveVaccines,
+    PetVaccinesType,
+} from "../../redux/slices/procedures";
 import {useParams} from "react-router-dom";
 import {useAppDispatch} from "../../redux/hook/hook";
 import {fetchUserPet} from "../../redux/slices/userPet";
@@ -10,7 +15,7 @@ type PropsType = {
     petVaccines: PetVaccinesType[]
 }
 
-export const PetVaccines = ({petVaccines}:PropsType) => {
+export const PetVaccines = ({petVaccines}: PropsType) => {
 
     const params = useParams()
 
@@ -46,6 +51,14 @@ export const PetVaccines = ({petVaccines}:PropsType) => {
         dispatch(fetchUserPet())
     }, [dispatch, params.id])
 
+    const removeVaccineHandler = (id: string) => {
+        try {
+            dispatch(fetchRemoveVaccines(id))
+        } catch (error) {
+            console.log(error)
+        }
+    }
+
     return (
         <div className={s.petVaccinations}>
             <h3 className={s.petVaccinationsTitle}>Прививки</h3>
@@ -53,7 +66,15 @@ export const PetVaccines = ({petVaccines}:PropsType) => {
                 petVaccines?.map((m, index) => (
                     <ol key={index} className={s.petVaccinationsItems}>
                         <li className={s.petVaccinationsItem}>{m.typeVaccination}<span>{m.nameOfVaccine}</span><span>{m.nameClinic}</span>
-                            <span>{m.dateVaccination?.toLowerCase().toString().slice(0,10)}</span>
+                            <span>{m.dateVaccination?.toLowerCase().toString().slice(0, 10)}</span>
+                            <button className={s.deleteProcedures} onClick={() => removeVaccineHandler(m._id)}>
+                                <svg role="img" xmlns="http://www.w3.org/2000/svg" width="48px" height="48px"
+                                     viewBox="0 0 24 24"
+                                     aria-labelledby="closeIconTitle" stroke="#ffffff" strokeWidth={3}>
+                                    <path
+                                        d="M6.34314575 6.34314575L17.6568542 17.6568542M6.34314575 17.6568542L17.6568542 6.34314575"/>
+                                </svg>
+                            </button>
                         </li>
                     </ol>
                 ))

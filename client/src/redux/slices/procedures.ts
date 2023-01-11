@@ -80,16 +80,16 @@ export const fetchPetVaccines = createAsyncThunk(
 )
 
 export const fetchRemoveProcedures = createAsyncThunk(
-    'news/fetchRemoveNews',
+    'petProcedures/fetchRemoveProcedures',
     async (_id: any) => {
-        const {data} = await axios.delete(`/news/${_id}`, _id)
+        const {data} = await axios.delete(`/procedures/${_id}`, _id)
         return data
     })
 
 export const fetchRemoveVaccines = createAsyncThunk(
-    'news/fetchRemoveNews',
+    'petProcedures/fetchRemoveVaccines',
     async (_id: any) => {
-        const {data} = await axios.delete(`/news/${_id}`, _id)
+        const {data} = await axios.delete(`/vaccines/${_id}`, _id)
         return data
     })
 
@@ -139,6 +139,28 @@ const petProceduresSlice = createSlice({
         })
         builder.addCase(fetchCreateVaccines.rejected, (state) => {
             state.loading = true
+        })
+
+        builder.addCase(fetchRemoveProcedures.pending, (state) => {
+            state.loading = true;
+        })
+        builder.addCase(fetchRemoveProcedures.fulfilled, (state, action) => {
+            state.loading = false;
+            state.petProcedures = state.petProcedures.filter((proc) => proc._id !== action.payload._id)
+        })
+        builder.addCase(fetchRemoveProcedures.rejected, (state) => {
+            state.loading = false;
+        })
+
+        builder.addCase(fetchRemoveVaccines.pending, (state) => {
+            state.loading = true;
+        })
+        builder.addCase(fetchRemoveVaccines.fulfilled, (state, action) => {
+            state.loading = false;
+            state.petVaccines = state.petVaccines.filter((vac) => vac._id !== action.payload._id)
+        })
+        builder.addCase(fetchRemoveVaccines.rejected, (state) => {
+            state.loading = false;
         })
     }
 })

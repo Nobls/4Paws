@@ -13,6 +13,7 @@ import {
 import {checkAuth, handleValidationErrors} from "./utils/index.js";
 
 import {UserController, PostController, ServicesController, UserPetController, PetProceduresController} from './controllers/index.js'
+import {removePetVaccines} from "./controllers/PetProceduresController.js";
 
 mongoose
     .connect('mongodb+srv://AdminS:QQQwww444@pf.9ipuej5.mongodb.net/PF?retryWrites=true&w=majority')
@@ -108,9 +109,7 @@ app.post('/vaccines/:id', checkAuth, handleValidationErrors, PetProceduresContro
 
 app.delete('/procedures/:id', checkAuth, handleValidationErrors, PetProceduresController.removePetProcedures)
 
-app.delete('/vaccines/:id', checkAuth, handleValidationErrors, PetProceduresController.removePetProcedures)
-
-//app.delete('/petAccount/:id/procedures', checkAuth, PetProceduresController.removePetProcedures)
+app.delete('/vaccines/:id', checkAuth, handleValidationErrors, PetProceduresController.removePetVaccines)
 
 app.patch('/petAccount/:id/procedures', checkAuth, petProceduresValidation, PetProceduresController.updatePetProcedures)
 

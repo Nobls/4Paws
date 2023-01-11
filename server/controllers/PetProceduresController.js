@@ -37,41 +37,33 @@ export const getVaccines = async (req, res) => {
     }
 }
 
-
 export const removePetProcedures = async (req, res) => {
     try {
+        const proc = await PetProceduresModel.findByIdAndDelete(req.params.id)
+        if (!proc) return res.json({ message: 'Такой процедуры не существует' })
 
-        const petProceduresId = req.params.id
-
-        PetProceduresModel.findByIdAndDelete(
-            {
-                _id: petProceduresId
-            },
-            (err, doc) => {
-                if (err) {
-                    console.log(err)
-                    return res.status(500).json({
-                        message: 'Не удалось удалить питомца'
-                    })
-                }
-
-                if (!doc) {
-                    return res.status(404).json({
-                        message: 'Питомцы не найдены'
-                    })
-                }
-
-                res.json({
-                    success: true
-                })
-            }
-        )
-
-    } catch (err) {
-        console.log(err)
-        res.status(500).json({
-            message: 'Не удалось получить питомцев',
+        await UserPetModel.updateOne(req.id, {
+            $pull: { petProcedures: req.params.id },
         })
+
+        res.json({ message: 'Процедура была удалена.' })
+    } catch (error) {
+        res.json({ message: 'Что-то пошло не так.' })
+    }
+}
+
+export const removePetVaccines = async (req, res) => {
+    try {
+        const vac = await PetProceduresModel.findByIdAndDelete(req.params.id)
+        if (!vac) return res.json({ message: 'Такой процедуры не существует' })
+
+        await UserPetModel.updateOne(req.id, {
+            $pull: { petVaccines: req.params.id },
+        })
+
+        res.json({ message: 'Процедура была удалена.' })
+    } catch (error) {
+        res.json({ message: 'Что-то пошло не так.' })
     }
 }
 

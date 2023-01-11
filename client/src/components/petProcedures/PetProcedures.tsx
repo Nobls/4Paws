@@ -1,7 +1,12 @@
 import React, {useEffect, useState} from 'react';
 import s from "./petProcedures.module.scss";
 import ButtonStandart from "../buttonStandart/ButtonStandart";
-import {fetchCreateProcedures, fetchPetProcedures, PetProceduresType} from "../../redux/slices/procedures";
+import {
+    fetchCreateProcedures,
+    fetchPetProcedures,
+    fetchRemoveProcedures,
+    PetProceduresType
+} from "../../redux/slices/procedures";
 import {useParams} from "react-router-dom";
 import {useAppDispatch} from "../../redux/hook/hook";
 import {fetchUserPet} from "../../redux/slices/userPet";
@@ -39,10 +44,19 @@ export const PetProcedure = ({petProcedures}:PropsType) => {
         }
     }
 
+    const removeProceduresHandler = (id:string)=>{
+        try {
+            dispatch(fetchRemoveProcedures(id))
+        } catch(error){
+            console.log(error)
+        }
+    }
+
     useEffect(()=>{
         dispatch(fetchPetProcedures(params.id))
         dispatch(fetchUserPet())
     },[dispatch, params.id])
+
 
     return (
         <div className={s.petProcedures}>
@@ -51,7 +65,16 @@ export const PetProcedure = ({petProcedures}:PropsType) => {
                 petProcedures?.map((m,index)=>{
                     return (
                         <ol key={index} className={s.petProceduresItems}>
-                            <li className={s.petProceduresItem}>{m.nameOfProcedure}<span>{m.nameClinic}</span> <span>{m.dateProcedure?.toLowerCase().toString().slice(0,10)}</span><button>X</button></li>
+                            <li className={s.petProceduresItem}>{m.nameOfProcedure}<span>{m.nameClinic}</span> <span>{m.dateProcedure?.toLowerCase().toString().slice(0,10)}</span>
+                                <button className={s.deleteProcedures} onClick={()=>removeProceduresHandler(m._id)}>
+                                    <svg role="img" xmlns="http://www.w3.org/2000/svg" width="48px" height="48px"
+                                         viewBox="0 0 24 24"
+                                         aria-labelledby="closeIconTitle" stroke="#ffffff" strokeWidth={3}>
+                                        <path
+                                            d="M6.34314575 6.34314575L17.6568542 17.6568542M6.34314575 17.6568542L17.6568542 6.34314575"/>
+                                    </svg>
+                                </button>
+                            </li>
                         </ol>
                     )
                 })
