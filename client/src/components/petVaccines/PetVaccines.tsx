@@ -7,7 +7,7 @@ import {
     fetchRemoveVaccines,
     PetVaccinesType,
 } from "../../redux/slices/procedures";
-import {useParams} from "react-router-dom";
+import {useNavigate, useParams} from "react-router-dom";
 import {useAppDispatch} from "../../redux/hook/hook";
 import {fetchUserPet} from "../../redux/slices/userPet";
 
@@ -20,6 +20,8 @@ export const PetVaccines = ({petVaccines}: PropsType) => {
     const params = useParams()
 
     const dispatch = useAppDispatch()
+
+    const navigate = useNavigate()
 
     const [typeVaccination, setTypeVaccination] = useState('')
     const [dateVaccination, setDateVaccination] = useState('')
@@ -48,12 +50,12 @@ export const PetVaccines = ({petVaccines}: PropsType) => {
 
     useEffect(() => {
         dispatch(fetchPetVaccines(params.id))
-        dispatch(fetchUserPet())
     }, [dispatch, params.id])
 
     const removeVaccineHandler = (id: string) => {
         try {
             dispatch(fetchRemoveVaccines(id))
+            navigate(0)
         } catch (error) {
             console.log(error)
         }
@@ -63,7 +65,7 @@ export const PetVaccines = ({petVaccines}: PropsType) => {
         <div className={s.petVaccinations}>
             <h3 className={s.petVaccinationsTitle}>Прививки</h3>
             {
-                petVaccines?.map((m, index) => (
+                petVaccines.map((m, index) => (
                     <ol key={index} className={s.petVaccinationsItems}>
                         <li className={s.petVaccinationsItem}>{m.typeVaccination}<span>{m.nameOfVaccine}</span><span>{m.nameClinic}</span>
                             <span>{m.dateVaccination?.toLowerCase().toString().slice(0, 10)}</span>

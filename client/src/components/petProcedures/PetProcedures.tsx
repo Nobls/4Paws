@@ -7,7 +7,7 @@ import {
     fetchRemoveProcedures,
     PetProceduresType
 } from "../../redux/slices/procedures";
-import {useParams} from "react-router-dom";
+import {useNavigate, useParams} from "react-router-dom";
 import {useAppDispatch} from "../../redux/hook/hook";
 import {fetchUserPet} from "../../redux/slices/userPet";
 
@@ -20,6 +20,8 @@ export const PetProcedure = ({petProcedures}:PropsType) => {
     const params = useParams()
 
     const dispatch = useAppDispatch()
+
+    const navigate = useNavigate()
 
     const [dateProcedure, setDateProcedure] = useState('')
     const [nameOfProcedure, setNameOfProcedure] = useState('')
@@ -47,6 +49,7 @@ export const PetProcedure = ({petProcedures}:PropsType) => {
     const removeProceduresHandler = (id:string)=>{
         try {
             dispatch(fetchRemoveProcedures(id))
+            navigate(0)
         } catch(error){
             console.log(error)
         }
@@ -54,7 +57,6 @@ export const PetProcedure = ({petProcedures}:PropsType) => {
 
     useEffect(()=>{
         dispatch(fetchPetProcedures(params.id))
-        dispatch(fetchUserPet())
     },[dispatch, params.id])
 
 
