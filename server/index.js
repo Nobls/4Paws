@@ -12,8 +12,7 @@ import {
 
 import {checkAuth, handleValidationErrors} from "./utils/index.js";
 
-import {UserController, PostController, ServicesController, UserPetController, PetProceduresController} from './controllers/index.js'
-import {removePetVaccines} from "./controllers/PetProceduresController.js";
+import {UserController, PostController, ServicesController, UserPetController, PetProceduresController, CommentController} from './controllers/index.js'
 
 mongoose
     .connect('mongodb+srv://AdminS:QQQwww444@pf.9ipuej5.mongodb.net/PF?retryWrites=true&w=majority')
@@ -61,7 +60,7 @@ app.get('/auth/user/:id', checkAuth, handleValidationErrors, UserController.getU
 
 app.get('/news', PostController.getAll); //заманил posts на news
 
-app.get('/news/:id', PostController.getOne);
+app.get('/news/:id', checkAuth, PostController.getOne);
 
 app.get('/tags', PostController.getLastTags);
 
@@ -112,6 +111,12 @@ app.delete('/procedures/:id', checkAuth, handleValidationErrors, PetProceduresCo
 app.delete('/vaccines/:id', checkAuth, handleValidationErrors, PetProceduresController.removePetVaccines)
 
 app.patch('/petAccount/:id/procedures', checkAuth, petProceduresValidation, PetProceduresController.updatePetProcedures)
+
+// добавить, получить комментарии
+
+app.post('/comments/:id', checkAuth, CommentController.createComment)
+
+app.get('/news/comments/:id', checkAuth, PostController.getComments)
 
 app.listen(3157, (err) => {
     if (err) {

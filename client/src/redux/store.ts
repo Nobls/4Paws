@@ -4,6 +4,7 @@ import {authReducer} from "./slices/auth";
 import {servicesReducer} from "./slices/services";
 import {userPetReducer} from "./slices/userPet";
 import {petProceduresReducer} from "./slices/procedures";
+import {commentReducer} from "./slices/comment";
 
 const store = configureStore({
     reducer: {
@@ -12,6 +13,7 @@ const store = configureStore({
         services: servicesReducer,
         userPet: userPetReducer,
         procedures: petProceduresReducer,
+        comments: commentReducer,
     },
 })
 

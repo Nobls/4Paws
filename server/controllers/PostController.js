@@ -1,5 +1,5 @@
 import PostModel from '../models/Post.js'
-import UserModel from "../models/User.js";
+import CommentModel from "../models/Comment.js";
 
 export const getAll = async (req, res) => {
     try {
@@ -276,3 +276,17 @@ export const create = async (req, res) => {
        console.log(error)
    }
 };*/
+
+export const getComments = async (req, res) => {
+    try {
+        const post = await PostModel.findById(req.params.id)
+        const list = await Promise.all(
+            post.comments.map((comment) => {
+                return CommentModel.findById(comment)
+            }),
+        )
+        res.json(list)
+    } catch (error) {
+        res.json({ message: 'Что-то пошло не так.' })
+    }
+}
