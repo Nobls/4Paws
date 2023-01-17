@@ -8,7 +8,7 @@ import axios from "../../axios/axios";
 import Post from "../../components/post/Post";
 import {useAppDispatch, useAppSelector} from "../../redux/hook/hook";
 import {createComment, getComments} from "../../redux/slices/comment";
-import CommentItem from "../../components/commentItem/Commentitem";
+import CommentItem from "../../components/commentItem/CommentItem";
 
 const NewsPost = () => {
 
@@ -83,35 +83,10 @@ const NewsPost = () => {
 
             <div className={s.comments}>
                 <h3 className={s.commentsTitle}>Комментарии</h3>
-                {/*<div className={s.commentsItems}>
-                    <img className={s.commentsUserPhoto} src={reviews[0].image} alt={reviews[0].alt}/>
-                    <div className={s.commentsWrapper}>
-                        <div className={s.commentsInfo}>
-                            <span className={s.commentsUser}>{reviews[0].userName}</span>
-                            <span className={s.commentsDate}>{reviews[0].date}</span>
-                        </div>
-                        <p className={s.commentsText}>
-                            {reviews[0].text}
-                        </p>
-                    </div>
-                </div>
-                <div className={s.commentsItems}>
-                    <img className={s.commentsUserPhoto} src={reviews[1].image} alt={reviews[1].alt}/>
-                    <div className={s.commentsWrapper}>
-                        <div className={s.commentsInfo}>
-                            <span className={s.commentsUser}>{reviews[1].userName}</span>
-                            <span className={s.commentsDate}>{reviews[1].date}</span>
-                        </div>
-                        <p className={s.commentsText}>
-                            {reviews[1].text}
-                        </p>
-                    </div>
-                </div>*/}
-
                 {
-                    comments.map(com=> {
+                    comments.map((com,index)=> {
                         return (
-                            <CommentItem com={com} userData={userData}/>
+                            <CommentItem key={index} com={com} userData={userData}/>
                         )
                     })
                 }

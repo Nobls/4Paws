@@ -9,7 +9,7 @@ type PropsType = {
 
 const CommentItem = ({userData, com}: PropsType) => {
     return (
-        <>
+        <div className={s.commentsItems}>
             <img className={s.commentsUserPhoto} src={`http://localhost:3157${userData.avatarUrl}`}
                  alt={'user avatar'}/>
             <div className={s.commentsWrapper}>
@@ -21,7 +21,7 @@ const CommentItem = ({userData, com}: PropsType) => {
                     {com.comment}
                 </p>
             </div>
-        </>
+        </div>
     );
 };
 
