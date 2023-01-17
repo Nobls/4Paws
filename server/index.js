@@ -116,7 +116,7 @@ app.patch('/petAccount/:id/procedures', checkAuth, petProceduresValidation, PetP
 
 app.post('/comments/:id', checkAuth, CommentController.createComment)
 
-app.get('/news/comments/:id', checkAuth, PostController.getComments)
+app.get('/news/comments/:id', checkAuth, CommentController.getComments)
 
 app.listen(3157, (err) => {
     if (err) {

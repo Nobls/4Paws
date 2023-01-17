@@ -8,6 +8,7 @@ import axios from "../../axios/axios";
 import Post from "../../components/post/Post";
 import {useAppDispatch, useAppSelector} from "../../redux/hook/hook";
 import {createComment, getComments} from "../../redux/slices/comment";
+import CommentItem from "../../components/commentItem/Commentitem";
 
 const NewsPost = () => {
 
@@ -19,6 +20,8 @@ const NewsPost = () => {
     const [comment, setComment] = useState('')
 
     const {comments} = useAppSelector((state) => state.comments)
+
+    const userData = useAppSelector((state)=> state.auth.data)
 
     const params = useParams()
 
@@ -80,7 +83,7 @@ const NewsPost = () => {
 
             <div className={s.comments}>
                 <h3 className={s.commentsTitle}>Комментарии</h3>
-                <div className={s.commentsItems}>
+                {/*<div className={s.commentsItems}>
                     <img className={s.commentsUserPhoto} src={reviews[0].image} alt={reviews[0].alt}/>
                     <div className={s.commentsWrapper}>
                         <div className={s.commentsInfo}>
@@ -103,7 +106,15 @@ const NewsPost = () => {
                             {reviews[1].text}
                         </p>
                     </div>
-                </div>
+                </div>*/}
+
+                {
+                    comments.map(com=> {
+                        return (
+                            <CommentItem com={com} userData={userData}/>
+                        )
+                    })
+                }
             </div>
 
             <div className={s.postComment}>
@@ -118,8 +129,8 @@ const NewsPost = () => {
                     >
 
                     </textarea>
-                    <input className={s.postCommentInput} type="text" placeholder={'Ваше Имя'}/>
-                    <input className={s.postCommentInput} type="text" placeholder={'Ваш e-mail'}/>
+                    {/*<input className={s.postCommentInput} type="text" placeholder={'Ваше Имя'}/>
+                    <input className={s.postCommentInput} type="text" placeholder={'Ваш e-mail'}/>*/}
                     <div>
                         <ButtonStandart title={'Оставить комментарий'} onclick={handleSubmit}/>
                     </div>

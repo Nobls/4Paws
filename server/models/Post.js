@@ -62,10 +62,12 @@ const PostSchema = new mongoose.Schema(
             required: true,
         },
 
-        comments: {
-          type: mongoose.Schema.Types.ObjectId,
-          ref: 'Comment'
-        },
+        comments: [
+            {
+                type: mongoose.Schema.Types.ObjectId,
+                ref: 'Comment'
+            }
+        ],
 
         imageUrl: String,
     },

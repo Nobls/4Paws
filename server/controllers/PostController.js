@@ -277,7 +277,7 @@ export const create = async (req, res) => {
    }
 };*/
 
-export const getComments = async (req, res) => {
+/*export const getComments = async (req, res) => {
     try {
         const post = await PostModel.findById(req.params.id)
         const list = await Promise.all(
@@ -289,4 +289,4 @@ export const getComments = async (req, res) => {
     } catch (error) {
         res.json({ message: 'Что-то пошло не так.' })
     }
-}
+}*/

@@ -1,0 +1,31 @@
+@import "src/common/extends";
+@import "src/common/variables";
+
+
+.commentsItems{
+  display: flex;
+  width: 80%;
+  margin-bottom: 50px;
+  .commentsUserPhoto{
+    margin-right: 25px;
+    border-radius: $borderRadius;
+  }
+
+  .commentsWrapper{
+    .commentsInfo{
+      margin-top: 10px;
+      .commentsUser{
+        font-size: 25px;
+        font-weight: 900;
+        margin-right: 15px;
+        color: $color-accent-dark;
+      }
+      .commentsDate{
+        font-size: 20px;
+      }
+    }
+    .commentsText{
+      font-size: 18px;
+    }
+  }
+}
