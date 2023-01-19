@@ -41,11 +41,12 @@
           font-weight: 900;
           margin-bottom: 20px;
         }
-        .userAccountName + .userAccountName{
+
+        .userAccountName + .userAccountName {
           margin-left: 15px;
         }
 
-        .userNameWrapper{
+        .userNameWrapper {
           display: flex;
           flex-direction: row;
         }
@@ -135,9 +136,10 @@
     }
   }
 
-  .linkChangeUserinfoBtn{
+  .linkChangeUserinfoBtn {
     margin-top: 20px;
-    .changeUserinfoBtn{
+
+    .changeUserinfoBtn {
       padding: 10px;
       color: white;
       background-color: $color-accent-dark;
@@ -146,7 +148,6 @@
       cursor: pointer;
     }
   }
-
 
 
   .userPetsTitle {
@@ -160,9 +161,6 @@
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
-
-
-
 
 
     .userAccountAddPets {
@@ -275,6 +273,17 @@
         }
       }
     }
+  }
+
+  .adminBtn {
+    margin-top: 25px;
+    padding: 10px;
+    text-decoration: none;
+    color: white;
+    background-color: $color-accent-dark;
+    border-radius: $borderRadius;
+    border: none;
+    cursor: pointer;
   }
 }
 

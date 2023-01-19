@@ -256,8 +256,11 @@ const UsersAccount = () => {
                     </li>
                 </ol>
             </div>
-
-            <Link to={'/adminPanel'}>Admin Panel</Link>
+            {
+                data.fullName === 'admin' && (
+                    <Link className={s.adminBtn} to={'/adminPanel'}>Admin Panel</Link>
+                )
+            }
         </div>
     );
 };
