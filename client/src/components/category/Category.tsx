@@ -1,14 +1,16 @@
-import React, {useState} from 'react';
+import React from 'react';
 import s from './category.module.scss';
 import CategoryList from "../categoryList/CategoryList";
 
 type PropsType = {
+    title?: string
+    icon?: any
     category: boolean,
     setCategory: any,
 }
 
 
-const Category = ({category, setCategory}:PropsType) => {
+const Category = ({title, category, setCategory}:PropsType) => {
 
 
 
@@ -19,7 +21,7 @@ const Category = ({category, setCategory}:PropsType) => {
     return (
         <div className={s.categoryWrapper} onClick={categoryHandler}>
             <div className={s.categoryTitle}>
-                <p>Для собак</p>
+                <p>{title}</p>
             </div>
             <div className={s.categoryImage}>
                 <img src="/" alt="dog"/>
