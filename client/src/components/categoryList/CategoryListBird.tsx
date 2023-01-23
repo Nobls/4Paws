@@ -1,7 +1,7 @@
 import React from 'react';
 import s from './categoryList.module.scss';
 
-const CategoryList = () => {
+const CategoryListDog = () => {
     return (
         <div className={s.categoryListWrapper}>
             <ul className={s.listItems}>
@@ -13,4 +13,4 @@ const CategoryList = () => {
     );
 };
 
-export default CategoryList;
+export default CategoryListDog;
