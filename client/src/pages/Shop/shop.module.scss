@@ -102,6 +102,26 @@
     display: flex;
     justify-content: space-around;
     margin-bottom: 100px;
+
+
+
+    .categoryWrapper{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      width: 200px;
+      height: 200px;
+      border: 2px solid $color-text;
+      margin-left: 15px;
+      border-radius: $borderRadius;
+      box-shadow: $boxShadow;
+
+      .categoryTitle{
+        font-size: 25px;
+        font-weight: bold;
+      }
+    }
   }
 }
 

@@ -54,8 +54,8 @@ const Shop = () => {
                     <div className={s.shopCategoryWrapper}>
                         <div>
                             <div className={s.categoryWrapper} onClick={categoryDogHandler}>
-                                <div className={s.categoryTitle}>
-                                    <p>Собаки</p>
+                                <div >
+                                    <p className={s.categoryTitle}>Собаки</p>
                                 </div>
                                 <div className={s.categoryImage}>
                                     <img src="/" alt="dog"/>
@@ -73,8 +73,8 @@ const Shop = () => {
 
                         <div>
                             <div className={s.categoryWrapper} onClick={categoryCatHandler}>
-                                <div className={s.categoryTitle}>
-                                    <p>Коты</p>
+                                <div >
+                                    <p className={s.categoryTitle}>Коты</p>
                                 </div>
                                 <div className={s.categoryImage}>
                                     <img src="/" alt="cat"/>
@@ -91,8 +91,8 @@ const Shop = () => {
 
                         <div>
                             <div className={s.categoryWrapper} onClick={categoryBirdHandler}>
-                                <div className={s.categoryTitle}>
-                                    <p>Птицы</p>
+                                <div >
+                                    <p className={s.categoryTitle}>Птицы</p>
                                 </div>
                                 <div className={s.categoryImage}>
                                     <img src="/" alt="bird"/>
@@ -109,8 +109,8 @@ const Shop = () => {
 
                         <div>
                             <div className={s.categoryWrapper} onClick={categoryRodentsHandler}>
-                                <div className={s.categoryTitle}>
-                                    <p>Грызуны</p>
+                                <div >
+                                    <p className={s.categoryTitle}>Грызуны</p>
                                 </div>
                                 <div className={s.categoryImage}>
                                     <img src="/" alt="rodents"/>
@@ -127,8 +127,8 @@ const Shop = () => {
 
                         <div>
                             <div className={s.categoryWrapper} onClick={categoryFishHandler}>
-                                <div className={s.categoryTitle}>
-                                    <p>Рыбки</p>
+                                <div >
+                                    <p className={s.categoryTitle}>Рыбки</p>
                                 </div>
                                 <div className={s.categoryImage}>
                                     <img src="/" alt="fish"/>
