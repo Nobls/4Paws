@@ -84,7 +84,7 @@ const Shop = () => {
                                     <img className={s.categoryIcon} src={iconCat} alt="cat"/>
                                 </div>
                             </div>
-                            <div>
+                            <div className={s.categoryList}>
                                 {
                                     categoryCat && (
                                         <CategoryListCat/>

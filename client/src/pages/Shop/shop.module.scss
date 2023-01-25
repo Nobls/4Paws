@@ -101,9 +101,11 @@
   .shopCategoryWrapper{
     display: flex;
     justify-content: space-around;
-    margin-bottom: 100px;
+    margin-bottom: 300px;
 
     .category{
+
+      position: relative;
 
       .categoryWrapper{
         z-index: 0;
@@ -137,6 +139,12 @@
           transition: .3s all;
         }
       }
+
+      .categoryList {
+        //position: absolute;
+
+      }
+
     }
   }
 }
