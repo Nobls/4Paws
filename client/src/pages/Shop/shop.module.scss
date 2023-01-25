@@ -103,23 +103,39 @@
     justify-content: space-around;
     margin-bottom: 100px;
 
+    .category{
 
+      .categoryWrapper{
+        z-index: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        width: 250px;
+        height: 250px;
+        border: 2px solid $color-text;
+        border-radius: $borderRadius;
+        box-shadow: $boxShadow;
+        background-color:$color-accent-dark;
+        transition: $transition03 ease;
 
-    .categoryWrapper{
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-direction: column;
-      width: 200px;
-      height: 200px;
-      border: 2px solid $color-text;
-      margin-left: 15px;
-      border-radius: $borderRadius;
-      box-shadow: $boxShadow;
+        .categoryTitle{
+          font-size: 25px;
+          font-weight: bold;
+        }
 
-      .categoryTitle{
-        font-size: 25px;
-        font-weight: bold;
+        .categoryImage{
+
+          .categoryIcon{
+            width: 205px;
+          }
+        }
+
+        &:hover{
+          background-color: $backgroundCartHover;
+          box-shadow: $boxShadowHover;
+          transition: .3s all;
+        }
       }
     }
   }

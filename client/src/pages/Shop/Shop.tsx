@@ -5,6 +5,11 @@ import CategoryListCat from "../../components/categoryList/CategoryListCat";
 import CategoryListBird from "../../components/categoryList/CategoryListBird";
 import CategoryListRodents from "../../components/categoryList/CategoryListRodents";
 import CategoryListFish from "../../components/categoryList/CategoryListFish";
+import iconDog from '../../images/icons/dog.svg'
+import iconCat from '../../images/icons/cat.svg'
+import iconBird from '../../images/icons/bird.svg'
+import iconRodents from '../../images/icons/rodent.svg'
+import iconFish from '../../images/icons/fish.svg'
 
 const Shop = () => {
 
@@ -41,7 +46,7 @@ const Shop = () => {
 
     useEffect(()=>{
         window.addEventListener('mousedown', closeCategoryHandler)
-        return ()=> window.removeEventListener('click', closeCategoryHandler)
+        return ()=> window.removeEventListener('mousedown', closeCategoryHandler)
     },[closeCategoryHandler])
 
     return (
@@ -52,94 +57,93 @@ const Shop = () => {
                         <h1 className={s.shopTitle}>Выберете товары для вашего питомца</h1>
                     </div>
                     <div className={s.shopCategoryWrapper}>
-                        <div>
+                        <div className={s.category}>
                             <div className={s.categoryWrapper} onClick={categoryDogHandler}>
                                 <div >
                                     <p className={s.categoryTitle}>Собаки</p>
                                 </div>
                                 <div className={s.categoryImage}>
-                                    <img src="/" alt="dog"/>
-                                </div>
-                                <div>
-                                    {
-                                        categoryDog && (
-                                            <CategoryListDog/>
-                                        )
-                                    }
+                                    <img className={s.categoryIcon} src={iconDog} alt="dog"/>
                                 </div>
                             </div>
-
+                            <div>
+                                {
+                                    categoryDog && (
+                                        <CategoryListDog/>
+                                    )
+                                }
+                            </div>
                         </div>
 
-                        <div>
+                        <div className={s.category}>
                             <div className={s.categoryWrapper} onClick={categoryCatHandler}>
                                 <div >
                                     <p className={s.categoryTitle}>Коты</p>
                                 </div>
                                 <div className={s.categoryImage}>
-                                    <img src="/" alt="cat"/>
+                                    <img className={s.categoryIcon} src={iconCat} alt="cat"/>
                                 </div>
-                                <div>
-                                    {
-                                        categoryCat && (
-                                            <CategoryListCat/>
-                                        )
-                                    }
-                                </div>
+                            </div>
+                            <div>
+                                {
+                                    categoryCat && (
+                                        <CategoryListCat/>
+                                    )
+                                }
                             </div>
                         </div>
 
-                        <div>
+                        <div className={s.category}>
                             <div className={s.categoryWrapper} onClick={categoryBirdHandler}>
                                 <div >
                                     <p className={s.categoryTitle}>Птицы</p>
                                 </div>
                                 <div className={s.categoryImage}>
-                                    <img src="/" alt="bird"/>
+                                    <img className={s.categoryIcon} src={iconBird} alt="bird"/>
                                 </div>
-                                <div>
-                                    {
-                                        categoryBird && (
-                                            <CategoryListBird/>
-                                        )
-                                    }
-                                </div>
+                            </div>
+                            <div>
+                                {
+                                    categoryBird && (
+                                        <CategoryListBird/>
+                                    )
+                                }
                             </div>
                         </div>
 
-                        <div>
+                        <div className={s.category}>
                             <div className={s.categoryWrapper} onClick={categoryRodentsHandler}>
                                 <div >
                                     <p className={s.categoryTitle}>Грызуны</p>
                                 </div>
                                 <div className={s.categoryImage}>
-                                    <img src="/" alt="rodents"/>
+                                    <img className={s.categoryIcon} src={iconRodents} alt="rodents"/>
                                 </div>
-                                <div>
-                                    {
-                                        categoryRodents && (
-                                            <CategoryListRodents/>
-                                        )
-                                    }
-                                </div>
+                            </div>
+                            <div>
+                                {
+                                    categoryRodents && (
+                                        <CategoryListRodents/>
+                                    )
+                                }
                             </div>
                         </div>
 
-                        <div>
+                        <div className={s.category}>
                             <div className={s.categoryWrapper} onClick={categoryFishHandler}>
                                 <div >
                                     <p className={s.categoryTitle}>Рыбки</p>
                                 </div>
                                 <div className={s.categoryImage}>
-                                    <img src="/" alt="fish"/>
+                                    <img className={s.categoryIcon} src={iconFish} alt="fish"/>
                                 </div>
-                                <div>
-                                    {
-                                        categoryFish && (
-                                            <CategoryListFish/>
-                                        )
-                                    }
-                                </div>
+                            </div>
+                            <div>
+                                {
+                                    categoryFish && (
+                                        <CategoryListFish/>
+                                    )
+                                }
                             </div>
                         </div>
                     </div>
