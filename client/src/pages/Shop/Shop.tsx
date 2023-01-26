@@ -45,8 +45,8 @@ const Shop = () => {
     }
 
     useEffect(()=>{
-        window.addEventListener('mousedown', closeCategoryHandler)
-        return ()=> window.removeEventListener('mousedown', closeCategoryHandler)
+        window.addEventListener('onmousedown', closeCategoryHandler)
+        return ()=> window.removeEventListener('onmousedown', closeCategoryHandler)
     },[closeCategoryHandler])
 
     return (

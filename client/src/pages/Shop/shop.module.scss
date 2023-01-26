@@ -122,6 +122,7 @@
         transition: $transition03 ease;
 
         .categoryTitle{
+          color: white;
           font-size: 25px;
           font-weight: bold;
         }
@@ -137,6 +138,9 @@
           background-color: $backgroundCartHover;
           box-shadow: $boxShadowHover;
           transition: .3s all;
+          .categoryTitle{
+            color: $color-text;
+          }
         }
       }
 

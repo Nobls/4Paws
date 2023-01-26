@@ -1,13 +1,51 @@
 import React from 'react';
 import s from './categoryList.module.scss';
+import {Link} from "react-router-dom";
 
 const CategoryListDog = () => {
     return (
         <div className={s.categoryListWrapper}>
             <ul className={s.listItems}>
-                <li className={s.listItem}>Корм</li>
-                <li className={s.listItem}>Наполнители</li>
-                <li className={s.listItem}>Аксессуары</li>
+                <li className={s.listItem}>
+                    <Link className={s.listItemLink} to={'/'}>
+                        Сухие корма
+                    </Link>
+                </li>
+                <li className={s.listItem}>
+                    <Link className={s.listItemLink} to={'/'}>
+                        Витамины и добавки
+                    </Link>
+                </li>
+                <li className={s.listItem}>
+                    <Link className={s.listItemLink} to={'/'}>
+                        Аксессуары
+                    </Link>
+                </li>
+                <li className={s.listItem}>
+                    <Link className={s.listItemLink} to={'/'}>
+                        Клетки
+                    </Link>
+                </li>
+                <li className={s.listItem}>
+                    <Link className={s.listItemLink} to={'/'}>
+                        Купалки
+                    </Link>
+                </li>
+                <li className={s.listItem}>
+                    <Link className={s.listItemLink} to={'/'}>
+                        Игрушки
+                    </Link>
+                </li>
+                <li className={s.listItem}>
+                    <Link className={s.listItemLink} to={'/'}>
+                        Наполнители и подстилки
+                    </Link>
+                </li>
+                <li className={s.listItem}>
+                    <Link className={s.listItemLink} to={'/'}>
+                        Посуда
+                    </Link>
+                </li>
             </ul>
         </div>
     );

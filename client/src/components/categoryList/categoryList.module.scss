@@ -1,23 +1,36 @@
 @import "src/common/extends";
 @import "src/common/variables";
 
-.categoryListWrapper{
+.categoryListWrapper {
   position: absolute;
   top: 0;
   width: 250px;
-  height: 400px;
+  height: 500px;
   background-color: $color-accent-dark;
   border-radius: $borderRadius;
 
   .listItems {
+    list-style: none;
+    padding: 0 5px;
 
     .listItem {
+      padding: 10px;
+
+      &:hover {
+        border-radius: 15px;
+        background-color: $color-accent-lite;
+      }
+    }
+
+    /*.listItem + .listItem {
+      margin-top: 15px;
+    }*/
+
+    .listItemLink {
+      text-decoration: none;
       color: white;
       font-weight: 700;
       font-size: 20px;
-    }
-    .listItem + .listItem {
-      margin-top: 15px;
     }
 
   }
