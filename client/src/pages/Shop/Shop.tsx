@@ -1,5 +1,5 @@
 import s from './shop.module.scss';
-import React, {useEffect, useState} from "react";
+import React, {useState} from "react";
 import CategoryListDog from "../../components/categoryList/CategoryListDog";
 import CategoryListCat from "../../components/categoryList/CategoryListCat";
 import CategoryListBird from "../../components/categoryList/CategoryListBird";
@@ -13,138 +13,106 @@ import iconFish from '../../images/icons/fish.svg'
 
 const Shop = () => {
 
+    const [activeCategory, setActiveCategory] = useState<string | null>(null);
 
-    const [categoryDog, setCategoryDog] = useState(false);
-    const [categoryCat, setCategoryCat] = useState(false);
-    const [categoryBird, setCategoryBird] = useState(false);
-    const [categoryRodents, setCategoryRodents] = useState(false);
-    const [categoryFish, setCategoryFish] = useState(false);
-
-    const categoryDogHandler = () => {
-        setCategoryDog(!categoryDog)
+    const categoryHandler = (category: string | null) => {
+        setActiveCategory(category === activeCategory ? null : category);
     }
-    const categoryCatHandler = () => {
-        setCategoryCat(!categoryCat)
-    }
-    const categoryBirdHandler = () => {
-        setCategoryBird(!categoryBird)
-    }
-    const categoryRodentsHandler = () => {
-        setCategoryRodents(!categoryRodents)
-    }
-    const categoryFishHandler = () => {
-        setCategoryFish(!categoryFish)
-    }
-
-    const closeCategoryHandler = () => {
-        setCategoryDog(false)
-        setCategoryCat(false)
-        setCategoryBird(false)
-        setCategoryRodents(false)
-        setCategoryFish(false)
-    }
-
-    useEffect(()=>{
-        window.addEventListener('onmousedown', closeCategoryHandler)
-        return ()=> window.removeEventListener('onmousedown', closeCategoryHandler)
-    },[closeCategoryHandler])
 
     return (
         <div className={s.shop}>
             <div>
                 <div>
-                    <div onClick={closeCategoryHandler}>
-                        <h1 className={s.shopTitle}>Выберете товары для вашего питомца</h1>
+                    <h1 className={s.shopTitle}>Выберете товары для вашего питомца</h1>
+                </div>
+                <div className={s.shopCategoryWrapper}>
+                    <div className={s.category}>
+                        <div className={s.categoryWrapper} onClick={() => categoryHandler('dog')}>
+                            <div>
+                                <p className={s.categoryTitle}>Собаки</p>
+                            </div>
+                            <div className={s.categoryImage}>
+                                <img className={s.categoryIcon} src={iconDog} alt="dog"/>
+                            </div>
+                        </div>
+                        <div className={s.categoryList}>
+                            {
+                                activeCategory === 'dog' && (
+                                    <CategoryListDog/>
+                                )
+                            }
+                        </div>
                     </div>
-                    <div className={s.shopCategoryWrapper}>
-                        <div className={s.category}>
-                            <div className={s.categoryWrapper} onClick={categoryDogHandler}>
-                                <div >
-                                    <p className={s.categoryTitle}>Собаки</p>
-                                </div>
-                                <div className={s.categoryImage}>
-                                    <img className={s.categoryIcon} src={iconDog} alt="dog"/>
-                                </div>
-                            </div>
+
+                    <div className={s.category}>
+                        <div className={s.categoryWrapper} onClick={() => categoryHandler('cat')}>
                             <div>
-                                {
-                                    categoryDog && (
-                                        <CategoryListDog/>
-                                    )
-                                }
+                                <p className={s.categoryTitle}>Коты</p>
+                            </div>
+                            <div className={s.categoryImage}>
+                                <img className={s.categoryIcon} src={iconCat} alt="cat"/>
                             </div>
                         </div>
+                        <div className={s.categoryList}>
+                            {
+                                activeCategory === 'cat' && (
+                                    <CategoryListCat/>
+                                )
+                            }
+                        </div>
+                    </div>
 
-                        <div className={s.category}>
-                            <div className={s.categoryWrapper} onClick={categoryCatHandler}>
-                                <div >
-                                    <p className={s.categoryTitle}>Коты</p>
-                                </div>
-                                <div className={s.categoryImage}>
-                                    <img className={s.categoryIcon} src={iconCat} alt="cat"/>
-                                </div>
+                    <div className={s.category}>
+                        <div className={s.categoryWrapper} onClick={() => categoryHandler('bird')}>
+                            <div>
+                                <p className={s.categoryTitle}>Птицы</p>
                             </div>
-                            <div className={s.categoryList}>
-                                {
-                                    categoryCat && (
-                                        <CategoryListCat/>
-                                    )
-                                }
+                            <div className={s.categoryImage}>
+                                <img className={s.categoryIcon} src={iconBird} alt="bird"/>
                             </div>
                         </div>
+                        <div>
+                            {
+                                activeCategory === 'bird' && (
+                                    <CategoryListBird/>
+                                )
+                            }
+                        </div>
+                    </div>
 
-                        <div className={s.category}>
-                            <div className={s.categoryWrapper} onClick={categoryBirdHandler}>
-                                <div >
-                                    <p className={s.categoryTitle}>Птицы</p>
-                                </div>
-                                <div className={s.categoryImage}>
-                                    <img className={s.categoryIcon} src={iconBird} alt="bird"/>
-                                </div>
-                            </div>
+                    <div className={s.category}>
+                        <div className={s.categoryWrapper} onClick={() => categoryHandler('rodents')}>
                             <div>
-                                {
-                                    categoryBird && (
-                                        <CategoryListBird/>
-                                    )
-                                }
+                                <p className={s.categoryTitle}>Грызуны</p>
+                            </div>
+                            <div className={s.categoryImage}>
+                                <img className={s.categoryIcon} src={iconRodents} alt="rodents"/>
                             </div>
                         </div>
+                        <div>
+                            {
+                                activeCategory === 'rodents' && (
+                                    <CategoryListRodents/>
+                                )
+                            }
+                        </div>
+                    </div>
 
-                        <div className={s.category}>
-                            <div className={s.categoryWrapper} onClick={categoryRodentsHandler}>
-                                <div >
-                                    <p className={s.categoryTitle}>Грызуны</p>
-                                </div>
-                                <div className={s.categoryImage}>
-                                    <img className={s.categoryIcon} src={iconRodents} alt="rodents"/>
-                                </div>
-                            </div>
+                    <div className={s.category}>
+                        <div className={s.categoryWrapper} onClick={() => categoryHandler('fish')}>
                             <div>
-                                {
-                                    categoryRodents && (
-                                        <CategoryListRodents/>
-                                    )
-                                }
+                                <p className={s.categoryTitle}>Рыбки</p>
+                            </div>
+                            <div className={s.categoryImage}>
+                                <img className={s.categoryIcon} src={iconFish} alt="fish"/>
                             </div>
                         </div>
-
-                        <div className={s.category}>
-                            <div className={s.categoryWrapper} onClick={categoryFishHandler}>
-                                <div >
-                                    <p className={s.categoryTitle}>Рыбки</p>
-                                </div>
-                                <div className={s.categoryImage}>
-                                    <img className={s.categoryIcon} src={iconFish} alt="fish"/>
-                                </div>
-                            </div>
-                            <div>
-                                {
-                                    categoryFish && (
-                                        <CategoryListFish/>
-                                    )
-                                }
-                            </div>
+                        <div>
+                            {
+                                activeCategory === 'fish' && (
+                                    <CategoryListFish/>
+                                )
+                            }
                         </div>
                     </div>
                 </div>
