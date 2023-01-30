@@ -1,6 +1,5 @@
 import React, {useEffect, useState} from 'react';
 import s from "./newsPost.module.scss";
-import {reviews} from "../../data/data";
 import {useParams} from "react-router-dom";
 import Sidebar from "../../components/sidebar/Sidebar";
 import ButtonStandart from "../../components/buttonStandart/ButtonStandart";

@@ -2,12 +2,13 @@ import React from 'react';
 import s from './categoryList.module.scss';
 import {Link} from "react-router-dom";
 
+
 const CategoryListDog = () => {
     return (
         <div className={s.categoryListWrapper}>
             <ul className={s.listItems}>
                 <li className={s.listItem}>
-                    <Link className={s.listItemLink} to={'/'}>
+                    <Link className={s.listItemLink} to='/Product'>
                         Сухие корма
                     </Link>
                 </li>
