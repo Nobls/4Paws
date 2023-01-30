@@ -24,6 +24,7 @@ import {AdminServices} from "./admin/AdminServices";
 import {ToastContainer} from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 import {Loading} from "./components/loading/Loading";
+import Product from "./pages/Product/Product";
 
 function App() {
 
@@ -61,6 +62,8 @@ function App() {
                     <Route path='adminPanel' element={<AdminPanel/>}/>
                     <Route path='news/:id/edit' element={<AdminNews/>}/>
                     <Route path='services/:id/edit' element={<AdminServices/>}/>
+                    <Route path='product' element={<Product/>}/>
+
                 </Route>
             </Routes>
 
