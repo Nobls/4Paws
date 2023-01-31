@@ -6,13 +6,13 @@ const ProductsSchima = new mongoose.Schema (
         productDogs: [
             {
                 type: mongoose.Schema.Types.ObjectId,
-                ref: 'ссылка на схему ВсёДляСобак',
+                ref: 'ProductsForDogs',
             }
         ],
         productCats: [
             {
                 type: mongoose.Schema.Types.ObjectId,
-                ref: 'ссылка на схему ВсёДляКотов',
+                ref: 'ProductsForCats',
             }
         ],
         productBirds: [
