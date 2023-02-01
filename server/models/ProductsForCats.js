@@ -15,6 +15,9 @@ const ProductsForCatsSchema = new mongoose.Schema (
             type: mongoose.Schema.Types.ObjectId,
             ref: 'Ссылка на схему витамины для котов'
         },
+
+        //добавить наполнители
+
         homeForCats: {
             type: mongoose.Schema.Types.ObjectId,
             ref: 'Ссылка на схему домики для котов'
