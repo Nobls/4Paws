@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
 
 
-const ProductsForDogsSchima = new mongoose.Schema (
+const ProductsForDogsSchema = new mongoose.Schema (
     {
         dryFoodForDogs: {
             type: mongoose.Schema.Types.ObjectId,
@@ -50,4 +50,4 @@ const ProductsForDogsSchima = new mongoose.Schema (
     }
 );
 
-export default mongoose.model('ProductsForDogs', ProductsForDogsSchima)
+export default mongoose.model('ProductsForDogs', ProductsForDogsSchema)

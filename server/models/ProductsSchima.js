@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
 
 
-const ProductsSchima = new mongoose.Schema (
+const ProductsSchema = new mongoose.Schema (
     {
         productDogs: [
             {
@@ -36,4 +36,4 @@ const ProductsSchima = new mongoose.Schema (
     }
 );
 
-export default mongoose.model('Products', ProductsSchima);
+export default mongoose.model('Products', ProductsSchema);
