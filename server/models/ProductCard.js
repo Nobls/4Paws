@@ -9,6 +9,7 @@ const ProductCardSchema = new mongoose.Schema(
         type: String,
         countryOfManufacture: String,
         description: String,
+        size: String,
         price: Number,
     }
 )
