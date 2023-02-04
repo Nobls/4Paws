@@ -107,13 +107,95 @@ const ProductsSchema = new mongoose.Schema(
             ],
 
         },
-        productCats: [
-            {
-                type: mongoose.Schema.Types.ObjectId,
-                ref: 'ProductsForCats',
-            }
-        ],
-        productBirds: [
+
+        productCats: {
+            dryFoodForCats: [
+                {
+                    type: mongoose.Schema.Types.ObjectId,
+                    ref: 'ProductsForCats',
+                }
+            ],
+            preservesForCats: [
+                {
+                    type: mongoose.Schema.Types.ObjectId,
+                    ref: 'ProductsForCats',
+                }
+            ],
+            vitaminsForCats: [
+                {
+                    type: mongoose.Schema.Types.ObjectId,
+                    ref: 'ProductsForCats',
+                }
+            ],
+            fillerForCats: [
+                {
+                    type: mongoose.Schema.Types.ObjectId,
+                    ref: 'ProductsForCats',
+                }
+            ],
+            homeForCats: [
+                {
+                    type: mongoose.Schema.Types.ObjectId,
+                    ref: 'ProductsForCats',
+                }
+            ],
+            toysForCats: [
+                {
+                    type: mongoose.Schema.Types.ObjectId,
+                    ref: 'ProductsForCats',
+                }
+            ],
+            carryingForCats: [
+                {
+                    type: mongoose.Schema.Types.ObjectId,
+                    ref: 'ProductsForCats',
+                }
+            ],
+            cosmeticsForCats: [
+                {
+                    type: mongoose.Schema.Types.ObjectId,
+                    ref: 'ProductsForCats',
+                }
+            ],
+            scratchingPostsForCats: [
+                {
+                    type: mongoose.Schema.Types.ObjectId,
+                    ref: 'ProductsForCats',
+                }
+            ],
+            dishesForCats: [
+                {
+                    type: mongoose.Schema.Types.ObjectId,
+                    ref: 'ProductsForCats',
+                }
+            ],
+            ammunitionForCats: [
+                {
+                    type: mongoose.Schema.Types.ObjectId,
+                    ref: 'ProductsForCats',
+                }
+            ],
+            toiletsForCats: [
+                {
+                    type: mongoose.Schema.Types.ObjectId,
+                    ref: 'ProductsForCats',
+                }
+            ],
+        },
+
+
+
+
+
+
+
+
+
+
+
+
+
+        preservesForCats111: [
             {
                 type: mongoose.Schema.Types.ObjectId,
                 ref: 'ссылка на схему ВсёДляПтиц',

@@ -6,10 +6,10 @@ const ProductCardSchema = new mongoose.Schema(
         title: String,
         productImage: String,
         weight: String,
+        size: String,
         type: String,
         countryOfManufacture: String,
         description: String,
-        size: String,
         price: Number,
     }
 )
