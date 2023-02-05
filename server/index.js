@@ -1,7 +1,7 @@
 import express from 'express';
 import mongoose from "mongoose";
 import multer from "multer";
-import cors from 'cors'
+import cors from 'cors';
 
 import {
     registerValidation,
@@ -12,7 +12,7 @@ import {
 
 import {checkAuth, handleValidationErrors} from "./utils/index.js";
 
-import {UserController, PostController, ServicesController, UserPetController, PetProceduresController, CommentController} from './controllers/index.js'
+import {UserController, PostController, ServicesController, UserPetController, PetProceduresController, CommentController, CategoryDogController} from './controllers/index.js'
 
 mongoose
     .connect('mongodb+srv://AdminS:QQQwww444@pf.9ipuej5.mongodb.net/PF?retryWrites=true&w=majority')
@@ -117,6 +117,13 @@ app.patch('/petAccount/:id/procedures', checkAuth, petProceduresValidation, PetP
 app.post('/comments/:id', checkAuth, CommentController.createComment)
 
 app.get('/news/comments/:id', checkAuth, CommentController.getComments)
+
+// магазин
+
+app.post('/shop/dog/dryFoodForDogs', checkAuth, CategoryDogController.createDryFood)
+
+
+
 
 app.listen(3157, (err) => {
     if (err) {
