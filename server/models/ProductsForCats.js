@@ -1,55 +1,77 @@
 import mongoose from "mongoose";
 
 
-const ProductsForCatsSchema = new mongoose.Schema (
+const ProductsForCatsSchema = new mongoose.Schema(
     {
-        dryFoodForCats: {
-            type: mongoose.Schema.Types.ObjectId,
-            ref: 'Ссылка на схему сухих кормов для котов'
-        },
-        preservesForCats: {
-            type: mongoose.Schema.Types.ObjectId,
-            ref: 'Ссылка на схему консервы для котов'
-        },
-        vitaminsForCats: {
-            type: mongoose.Schema.Types.ObjectId,
-            ref: 'Ссылка на схему витамины для котов'
-        },
+        dryFoodForCats: [
+            {
+                type: mongoose.Schema.Types.ObjectId,
+                ref: 'ProductCard'
+            }
+        ],
+        preservesForCats: [
+            {
+                type: mongoose.Schema.Types.ObjectId,
+                ref: 'ProductCard'
+            }
+        ],
+        vitaminsForCats: [
+            {
+                type: mongoose.Schema.Types.ObjectId,
+                ref: 'ProductCard'
+            }
+        ],
 
         //добавить наполнители
 
-        homeForCats: {
-            type: mongoose.Schema.Types.ObjectId,
-            ref: 'Ссылка на схему домики для котов'
-        },
-        toysForCats: {
-            type: mongoose.Schema.Types.ObjectId,
-            ref: 'Ссылка на схему игрушки для котов'
-        },
-        carryingForCats: {
-            type: mongoose.Schema.Types.ObjectId,
-            ref: 'Ссылка на схему переноски для котов'
-        },
-        cosmeticsForCats: {
-            type: mongoose.Schema.Types.ObjectId,
-            ref: 'Ссылка на схему косметика для котов'
-        },
-        scratchingPostsForCats: {
-            type: mongoose.Schema.Types.ObjectId,
-            ref: 'Ссылка на схему когтеточки для котов'
-        },
-        dishesForCats: {
-            type: mongoose.Schema.Types.ObjectId,
-            ref: 'Ссылка на схему посуда для котов'
-        },
-        ammunitionForCats: {
-            type: mongoose.Schema.Types.ObjectId,
-            ref: 'Ссылка на схему амуниция для котов'
-        },
-        toiletsForCats: {
-            type: mongoose.Schema.Types.ObjectId,
-            ref: 'Ссылка на схему туалеты для котов'
-        }
+        homeForCats: [
+            {
+                type: mongoose.Schema.Types.ObjectId,
+                ref: 'ProductCard'
+            }
+        ],
+        toysForCats: [
+            {
+                type: mongoose.Schema.Types.ObjectId,
+                ref: 'ProductCard'
+            }
+        ],
+        carryingForCats: [
+            {
+                type: mongoose.Schema.Types.ObjectId,
+                ref: 'ProductCard'
+            }
+        ],
+        cosmeticsForCats: [
+            {
+                type: mongoose.Schema.Types.ObjectId,
+                ref: 'ProductCard'
+            }
+        ],
+        scratchingPostsForCats: [
+            {
+                type: mongoose.Schema.Types.ObjectId,
+                ref: 'ProductCard'
+            }
+        ],
+        dishesForCats: [
+            {
+                type: mongoose.Schema.Types.ObjectId,
+                ref: 'ProductCard'
+            }
+        ],
+        ammunitionForCats: [
+            {
+                type: mongoose.Schema.Types.ObjectId,
+                ref: 'ProductCard'
+            }
+        ],
+        toiletsForCats: [
+            {
+                type: mongoose.Schema.Types.ObjectId,
+                ref: 'ProductCard'
+            }
+        ],
     }
 );
 

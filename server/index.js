@@ -12,7 +12,9 @@ import {
 
 import {checkAuth, handleValidationErrors} from "./utils/index.js";
 
-import {UserController, PostController, ServicesController, UserPetController, PetProceduresController, CommentController, CategoryDogController} from './controllers/index.js'
+import {UserController, PostController, ServicesController, UserPetController, PetProceduresController, CommentController, CategoryDogController, ShopCategory} from './controllers/index.js'
+import {createDogCategory} from "./controllers/ShopCategory.js";
+import {createDryFood} from "./controllers/CategoryDogController.js";
 
 mongoose
     .connect('mongodb+srv://AdminS:QQQwww444@pf.9ipuej5.mongodb.net/PF?retryWrites=true&w=majority')
@@ -120,7 +122,10 @@ app.get('/news/comments/:id', checkAuth, CommentController.getComments)
 
 // магазин
 
-app.post('/shop/dog/dryFoodForDogs', checkAuth, CategoryDogController.createDryFood)
+app.post('/shop/dog', checkAuth, ShopCategory.createDogCategory)
+app.post('/shop/cat', checkAuth, ShopCategory.createCatCategory)
+
+app.post('/shop/dog/dryFoodDog', checkAuth, CategoryDogController.createDryFood)
 
 
 
