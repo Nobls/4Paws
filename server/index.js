@@ -123,8 +123,8 @@ app.get('/news/comments/:id', checkAuth, CommentController.getComments)
 app.post('/shop/dog', checkAuth, ShopCategory.createDogCategory)
 app.post('/shop/cat', checkAuth, ShopCategory.createCatCategory)
 
-app.post('/dryFoodDog', checkAuth, CategoryDogController.createDryFood)
-app.post('/shop/dog/preservesForDogs', checkAuth, CategoryDogController.preservesForDogs)
+app.post('/shop/dog/:id/dryFoodDog', checkAuth, CategoryDogController.createDryFood)
+app.post('/shop/dog/:id/preservesForDogs', checkAuth, CategoryDogController.preservesForDogs)
 
 
 

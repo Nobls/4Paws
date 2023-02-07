@@ -1,7 +1,7 @@
 import ProductCardModel from "../models/ProductCard.js";
-//import ProductsForDogsModel from "../models/ProductsForDogs.js";
+import ProductsForDogsModel from "../models/ProductsForDogs.js";
 
-/*export const createDryFood = async (req, res) => {
+export const createDryFood = async (req, res) => {
 
     try {
 
@@ -40,12 +40,12 @@ import ProductCardModel from "../models/ProductCard.js";
             message: 'Не удалось создать процедуру',
         })
     }
-}*/
+}
 
-export const createDryFood = async (req, res) => {
+/*export const createDryFood = async (req, res) => {
     try {
 
-        const doc = new ProductCardModel({
+        const doc = new CardProductModel({
             title: req.body.title,
             productImage: req.body.productImage,
             weight: req.body.weight,
@@ -66,7 +66,7 @@ export const createDryFood = async (req, res) => {
             message: 'Не удалось создать категорию'
         })
     }
-}
+}*/
 
 export const preservesForDogs = async (req, res) => {
     try {
