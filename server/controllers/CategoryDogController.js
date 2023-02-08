@@ -84,6 +84,20 @@ export const preservesForDogs = async (req, res) => {
 
         const newProductCard = await doc.save()
 
+        try {
+            const productDogId = req.params.id
+            await ProductsForDogsModel.updateOne(
+                {
+                    _id: productDogId
+                },
+                {
+                    $push: {preservesForCats: newProductCard._id}
+                }
+            )
+        } catch (error) {
+            console.log(error)
+        }
+
         res.json(newProductCard)
 
     } catch(error){
