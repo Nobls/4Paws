@@ -122,6 +122,7 @@ app.get('/news/comments/:id', checkAuth, CommentController.getComments)
 
 app.post('/shop/dog', checkAuth, ShopCategory.createDogCategory)
 app.post('/shop/cat', checkAuth, ShopCategory.createCatCategory)
+app.post('/shop/bird', checkAuth, ShopCategory.createBirdCategory)
 
 
 // категории для собак

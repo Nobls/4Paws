@@ -74,9 +74,9 @@ export const createBirdCategory = async (req, res) => {
             dishesForBird: req.body.dishesForBird,
         })
 
-        const catCategory = await doc.save()
+        const birdCategory = await doc.save()
 
-        res.json(catCategory)
+        res.json(birdCategory)
 
     } catch(error){
         console.log(error)
