@@ -1,8 +1,8 @@
 import ProductCardModel from "../models/ProductCard.js";
-import ProductsForDogsModel from "../models/ProductsForDogs.js";
+import ProductsForCatsModel from "../models/ProductsForCats.js";
 
-export const createDryFood = async (req, res) => {
 
+export const dryFoodForCats = async (req, res) => {
     try {
 
         const doc = new ProductCardModel({
@@ -19,76 +19,10 @@ export const createDryFood = async (req, res) => {
         const newProductCard = await doc.save()
 
         try {
-            const productDogId = req.params.id
-            await ProductsForDogsModel.updateOne(
+            const productCatId = req.params.id
+            await ProductsForCatsModel.updateOne(
                 {
-                    _id: productDogId
-                },
-                {
-                    $push: {dryFoodForDogs: newProductCard._id}
-                }
-            )
-        } catch (error) {
-            console.log(error)
-        }
-
-        res.json(newProductCard)
-
-    } catch (err) {
-        console.log(err)
-        res.status(500).json({
-            message: 'Не удалось создать процедуру',
-        })
-    }
-}
-
-/*export const createDryFood = async (req, res) => {
-    try {
-
-        const doc = new CardProductModel({
-            title: req.body.title,
-            productImage: req.body.productImage,
-            weight: req.body.weight,
-            size: req.body.size,
-            type: req.body.type,
-            countryOfManufacture: req.body.countryOfManufacture,
-            description: req.body.description,
-            price: req.body.price,
-        })
-
-        const newProductCard = await doc.save()
-
-        res.json(newProductCard)
-
-    } catch(error){
-        console.log(error)
-        res.status(500).json({
-            message: 'Не удалось создать категорию'
-        })
-    }
-}*/
-
-export const preservesForDogs = async (req, res) => {
-    try {
-
-        const doc = new ProductCardModel({
-            title: req.body.title,
-            productImage: req.body.productImage,
-            weight: req.body.weight,
-            size: req.body.size,
-            type: req.body.type,
-            countryOfManufacture: req.body.countryOfManufacture,
-            description: req.body.description,
-            price: req.body.price,
-        })
-
-        const newProductCard = await doc.save()
-
-        try {
-            const productDogId = req.params.id
-            await ProductsForDogsModel.updateOne(
-                {
-                    _id: productDogId
+                    _id: productCatId
                 },
                 {
                     $push: {preservesForCats: newProductCard._id}
@@ -108,7 +42,7 @@ export const preservesForDogs = async (req, res) => {
     }
 }
 
-export const vitaminsForDogs = async (req, res) => {
+export const preservesForCats = async (req, res) => {
     try {
 
         const doc = new ProductCardModel({
@@ -125,13 +59,13 @@ export const vitaminsForDogs = async (req, res) => {
         const newProductCard = await doc.save()
 
         try {
-            const productDogId = req.params.id
-            await ProductsForDogsModel.updateOne(
+            const productCatId = req.params.id
+            await ProductsForCatsModel.updateOne(
                 {
-                    _id: productDogId
+                    _id: productCatId
                 },
                 {
-                    $push: {vitaminsForDogs: newProductCard._id}
+                    $push: {preservesForCats: newProductCard._id}
                 }
             )
         } catch (error) {
@@ -148,7 +82,7 @@ export const vitaminsForDogs = async (req, res) => {
     }
 }
 
-export const homeForDogs = async (req, res) => {
+export const vitaminsForCats = async (req, res) => {
     try {
 
         const doc = new ProductCardModel({
@@ -165,13 +99,13 @@ export const homeForDogs = async (req, res) => {
         const newProductCard = await doc.save()
 
         try {
-            const productDogId = req.params.id
-            await ProductsForDogsModel.updateOne(
+            const productCatId = req.params.id
+            await ProductsForCatsModel.updateOne(
                 {
-                    _id: productDogId
+                    _id: productCatId
                 },
                 {
-                    $push: {homeForDogs: newProductCard._id}
+                    $push: {vitaminsForCats: newProductCard._id}
                 }
             )
         } catch (error) {
@@ -188,7 +122,7 @@ export const homeForDogs = async (req, res) => {
     }
 }
 
-export const toysForDogs = async (req, res) => {
+export const homeForCats = async (req, res) => {
     try {
 
         const doc = new ProductCardModel({
@@ -205,13 +139,13 @@ export const toysForDogs = async (req, res) => {
         const newProductCard = await doc.save()
 
         try {
-            const productDogId = req.params.id
-            await ProductsForDogsModel.updateOne(
+            const productCatId = req.params.id
+            await ProductsForCatsModel.updateOne(
                 {
-                    _id: productDogId
+                    _id: productCatId
                 },
                 {
-                    $push: {toysForDogs: newProductCard._id}
+                    $push: {homeForCats: newProductCard._id}
                 }
             )
         } catch (error) {
@@ -228,7 +162,7 @@ export const toysForDogs = async (req, res) => {
     }
 }
 
-export const carryingForDogs = async (req, res) => {
+export const toysForCats = async (req, res) => {
     try {
 
         const doc = new ProductCardModel({
@@ -245,13 +179,13 @@ export const carryingForDogs = async (req, res) => {
         const newProductCard = await doc.save()
 
         try {
-            const productDogId = req.params.id
-            await ProductsForDogsModel.updateOne(
+            const productCatId = req.params.id
+            await ProductsForCatsModel.updateOne(
                 {
-                    _id: productDogId
+                    _id: productCatId
                 },
                 {
-                    $push: {carryingForDogs: newProductCard._id}
+                    $push: {toysForCats: newProductCard._id}
                 }
             )
         } catch (error) {
@@ -268,7 +202,7 @@ export const carryingForDogs = async (req, res) => {
     }
 }
 
-export const cosmeticsForDogs = async (req, res) => {
+export const carryingForCats = async (req, res) => {
     try {
 
         const doc = new ProductCardModel({
@@ -285,13 +219,13 @@ export const cosmeticsForDogs = async (req, res) => {
         const newProductCard = await doc.save()
 
         try {
-            const productDogId = req.params.id
-            await ProductsForDogsModel.updateOne(
+            const productCatId = req.params.id
+            await ProductsForCatsModel.updateOne(
                 {
-                    _id: productDogId
+                    _id: productCatId
                 },
                 {
-                    $push: {cosmeticsForDogs: newProductCard._id}
+                    $push: {carryingForCats: newProductCard._id}
                 }
             )
         } catch (error) {
@@ -308,7 +242,7 @@ export const cosmeticsForDogs = async (req, res) => {
     }
 }
 
-export const clothesForDogs = async (req, res) => {
+export const cosmeticsForCats = async (req, res) => {
     try {
 
         const doc = new ProductCardModel({
@@ -325,13 +259,13 @@ export const clothesForDogs = async (req, res) => {
         const newProductCard = await doc.save()
 
         try {
-            const productDogId = req.params.id
-            await ProductsForDogsModel.updateOne(
+            const productCatId = req.params.id
+            await ProductsForCatsModel.updateOne(
                 {
-                    _id: productDogId
+                    _id: productCatId
                 },
                 {
-                    $push: {clothesForDogs: newProductCard._id}
+                    $push: {cosmeticsForCats: newProductCard._id}
                 }
             )
         } catch (error) {
@@ -348,7 +282,7 @@ export const clothesForDogs = async (req, res) => {
     }
 }
 
-export const dishesForDogs = async (req, res) => {
+export const scratchingPostsForCats = async (req, res) => {
     try {
 
         const doc = new ProductCardModel({
@@ -365,13 +299,13 @@ export const dishesForDogs = async (req, res) => {
         const newProductCard = await doc.save()
 
         try {
-            const productDogId = req.params.id
-            await ProductsForDogsModel.updateOne(
+            const productCatId = req.params.id
+            await ProductsForCatsModel.updateOne(
                 {
-                    _id: productDogId
+                    _id: productCatId
                 },
                 {
-                    $push: {dishesForDogs: newProductCard._id}
+                    $push: {scratchingPostsForCats: newProductCard._id}
                 }
             )
         } catch (error) {
@@ -388,7 +322,7 @@ export const dishesForDogs = async (req, res) => {
     }
 }
 
-export const ammunitionForDogs = async (req, res) => {
+export const dishesForCats = async (req, res) => {
     try {
 
         const doc = new ProductCardModel({
@@ -405,13 +339,13 @@ export const ammunitionForDogs = async (req, res) => {
         const newProductCard = await doc.save()
 
         try {
-            const productDogId = req.params.id
-            await ProductsForDogsModel.updateOne(
+            const productCatId = req.params.id
+            await ProductsForCatsModel.updateOne(
                 {
-                    _id: productDogId
+                    _id: productCatId
                 },
                 {
-                    $push: {ammunitionForDogs: newProductCard._id}
+                    $push: {dishesForCats: newProductCard._id}
                 }
             )
         } catch (error) {
@@ -428,7 +362,7 @@ export const ammunitionForDogs = async (req, res) => {
     }
 }
 
-export const toiletsForDogs = async (req, res) => {
+export const ammunitionForCats = async (req, res) => {
     try {
 
         const doc = new ProductCardModel({
@@ -445,13 +379,53 @@ export const toiletsForDogs = async (req, res) => {
         const newProductCard = await doc.save()
 
         try {
-            const productDogId = req.params.id
-            await ProductsForDogsModel.updateOne(
+            const productCatId = req.params.id
+            await ProductsForCatsModel.updateOne(
                 {
-                    _id: productDogId
+                    _id: productCatId
                 },
                 {
-                    $push: {toiletsForDogs: newProductCard._id}
+                    $push: {ammunitionForCats: newProductCard._id}
+                }
+            )
+        } catch (error) {
+            console.log(error)
+        }
+
+        res.json(newProductCard)
+
+    } catch(error){
+        console.log(error)
+        res.status(500).json({
+            message: 'Не удалось создать категорию'
+        })
+    }
+}
+
+export const toiletsForCats = async (req, res) => {
+    try {
+
+        const doc = new ProductCardModel({
+            title: req.body.title,
+            productImage: req.body.productImage,
+            weight: req.body.weight,
+            size: req.body.size,
+            type: req.body.type,
+            countryOfManufacture: req.body.countryOfManufacture,
+            description: req.body.description,
+            price: req.body.price,
+        })
+
+        const newProductCard = await doc.save()
+
+        try {
+            const productCatId = req.params.id
+            await ProductsForCatsModel.updateOne(
+                {
+                    _id: productCatId
+                },
+                {
+                    $push: {toiletsForCats: newProductCard._id}
                 }
             )
         } catch (error) {

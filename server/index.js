@@ -12,7 +12,7 @@ import {
 
 import {checkAuth, handleValidationErrors} from "./utils/index.js";
 
-import {UserController, PostController, ServicesController, UserPetController, PetProceduresController, CommentController, CategoryDogController, ShopCategory} from './controllers/index.js'
+import {UserController, PostController, ServicesController, UserPetController, PetProceduresController, CommentController, CategoryDogController, ShopCategory, CategoryCatController} from './controllers/index.js'
 
 mongoose
     .connect('mongodb+srv://AdminS:QQQwww444@pf.9ipuej5.mongodb.net/PF?retryWrites=true&w=majority')
@@ -123,9 +123,32 @@ app.get('/news/comments/:id', checkAuth, CommentController.getComments)
 app.post('/shop/dog', checkAuth, ShopCategory.createDogCategory)
 app.post('/shop/cat', checkAuth, ShopCategory.createCatCategory)
 
+
+// категории для собак
 app.post('/shop/dog/:id/dryFoodDog', checkAuth, CategoryDogController.createDryFood)
 app.post('/shop/dog/:id/preservesForDogs', checkAuth, CategoryDogController.preservesForDogs)
 app.post('/shop/dog/:id/vitaminsForDogs', checkAuth, CategoryDogController.vitaminsForDogs)
+app.post('/shop/dog/:id/homeForDogs', checkAuth, CategoryDogController.homeForDogs)
+app.post('/shop/dog/:id/toysForDogs', checkAuth, CategoryDogController.toysForDogs)
+app.post('/shop/dog/:id/carryingForDogs', checkAuth, CategoryDogController.carryingForDogs)
+app.post('/shop/dog/:id/cosmeticsForDogs', checkAuth, CategoryDogController.cosmeticsForDogs)
+app.post('/shop/dog/:id/clothesForDogs', checkAuth, CategoryDogController.clothesForDogs)
+app.post('/shop/dog/:id/dishesForDogs', checkAuth, CategoryDogController.dishesForDogs)
+app.post('/shop/dog/:id/ammunitionForDogs', checkAuth, CategoryDogController.ammunitionForDogs)
+app.post('/shop/dog/:id/toiletsForDogs', checkAuth, CategoryDogController.toiletsForDogs)
+
+// категории для котов
+app.post('/shop/dog/:id/dryFoodForCats', checkAuth, CategoryCatController.dryFoodForCats)
+app.post('/shop/dog/:id/preservesForCats', checkAuth, CategoryCatController.preservesForCats)
+app.post('/shop/dog/:id/vitaminsForCats', checkAuth, CategoryCatController.vitaminsForCats)
+app.post('/shop/dog/:id/homeForCats', checkAuth, CategoryCatController.homeForCats)
+app.post('/shop/dog/:id/toysForCats', checkAuth, CategoryCatController.toysForCats)
+app.post('/shop/dog/:id/carryingForCats', checkAuth, CategoryCatController.carryingForCats)
+app.post('/shop/dog/:id/cosmeticsForCats', checkAuth, CategoryCatController.cosmeticsForCats)
+app.post('/shop/dog/:id/scratchingPostsForCats', checkAuth, CategoryCatController.scratchingPostsForCats)
+app.post('/shop/dog/:id/dishesForCats', checkAuth, CategoryCatController.dishesForCats)
+app.post('/shop/dog/:id/ammunitionForCats', checkAuth, CategoryCatController.ammunitionForCats)
+app.post('/shop/dog/:id/toiletsForCats', checkAuth, CategoryCatController.toiletsForCats)
 
 
 
