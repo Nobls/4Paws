@@ -125,6 +125,7 @@ app.post('/shop/cat', checkAuth, ShopCategory.createCatCategory)
 
 app.post('/shop/dog/:id/dryFoodDog', checkAuth, CategoryDogController.createDryFood)
 app.post('/shop/dog/:id/preservesForDogs', checkAuth, CategoryDogController.preservesForDogs)
+app.post('/shop/dog/:id/vitaminsForDogs', checkAuth, CategoryDogController.vitaminsForDogs)
 
 
 
