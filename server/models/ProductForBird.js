@@ -22,15 +22,15 @@ const ProductsForBirdSchema = new mongoose.Schema (
             type: mongoose.Schema.Types.ObjectId,
             ref: 'Ссылка на схему игрушки для птиц'
         },
-        fillersAndPadsForCats: {
+        fillersAndPadsForBird: {
             type: mongoose.Schema.Types.ObjectId,
             ref: 'Ссылка на схему наполнители для птиц'
         },
-        accessoriesForCats: {
+        accessoriesForBird: {
             type: mongoose.Schema.Types.ObjectId,
             ref: 'Ссылка на схему аксессуары для птиц'
         },
-        dishesForCats: {
+        dishesForBird: {
             type: mongoose.Schema.Types.ObjectId,
             ref: 'Ссылка на схему посуда для птиц'
         },

@@ -7,3 +7,6 @@ export * as CommentController from './CommentController.js'
 export * as ShopCategory from './ShopCategory.js'
 export * as CategoryDogController from './CategoryDogController.js'
 export * as CategoryCatController from './CategoryCatController.js'
+export * as CategoryBirdController from './CategoryBirdController.js'
+
+

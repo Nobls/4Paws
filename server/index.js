@@ -12,7 +12,7 @@ import {
 
 import {checkAuth, handleValidationErrors} from "./utils/index.js";
 
-import {UserController, PostController, ServicesController, UserPetController, PetProceduresController, CommentController, CategoryDogController, ShopCategory, CategoryCatController} from './controllers/index.js'
+import {UserController, PostController, ServicesController, UserPetController, PetProceduresController, CommentController, CategoryDogController, ShopCategory, CategoryCatController, CategoryBirdController} from './controllers/index.js'
 
 mongoose
     .connect('mongodb+srv://AdminS:QQQwww444@pf.9ipuej5.mongodb.net/PF?retryWrites=true&w=majority')
@@ -149,6 +149,17 @@ app.post('/shop/dog/:id/scratchingPostsForCats', checkAuth, CategoryCatControlle
 app.post('/shop/dog/:id/dishesForCats', checkAuth, CategoryCatController.dishesForCats)
 app.post('/shop/dog/:id/ammunitionForCats', checkAuth, CategoryCatController.ammunitionForCats)
 app.post('/shop/dog/:id/toiletsForCats', checkAuth, CategoryCatController.toiletsForCats)
+
+// категории для птиц
+app.post('/shop/dog/:id/dryFoodForBirds', checkAuth, CategoryBirdController.dryFoodForBirds)
+app.post('/shop/dog/:id/vitaminsForBirds', checkAuth, CategoryBirdController.vitaminsForBirds)
+app.post('/shop/dog/:id/birdcage', checkAuth, CategoryBirdController.birdcage)
+app.post('/shop/dog/:id/bathForBirds', checkAuth, CategoryBirdController.bathForBirds)
+app.post('/shop/dog/:id/toysForBirds', checkAuth, CategoryBirdController.toysForBirds)
+app.post('/shop/dog/:id/fillersAndPadsForBird', checkAuth, CategoryBirdController.fillersAndPadsForBird)
+app.post('/shop/dog/:id/accessoriesForBird', checkAuth, CategoryBirdController.accessoriesForBird)
+app.post('/shop/dog/:id/dishesForBird', checkAuth, CategoryBirdController.dishesForBird)
+
 
 
 

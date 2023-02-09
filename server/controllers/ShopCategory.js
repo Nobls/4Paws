@@ -1,5 +1,6 @@
 import ProductsForDogsModel from "../models/ProductsForDogs.js";
 import ProductsForCatsModel from "../models/ProductsForCats.js";
+import ProductsForBirdModel from "../models/ProductForBird.js";
 
 export const createDogCategory = async (req, res) => {
     try {
@@ -45,6 +46,32 @@ export const createCatCategory = async (req, res) => {
             dishesForCats: req.body.dishesForCats,
             ammunitionForCats: req.body.ammunitionForCats,
             toiletsForCats: req.body.toiletsForCats
+        })
+
+        const catCategory = await doc.save()
+
+        res.json(catCategory)
+
+    } catch(error){
+        console.log(error)
+        res.status(500).json({
+            message: 'Не удалось создать категорию'
+        })
+    }
+}
+
+export const createBirdCategory = async (req, res) => {
+    try {
+
+        const doc = new ProductsForBirdModel({
+            dryFoodForBirds: req.body.dryFoodForBirds,
+            vitaminsForBirds: req.body.vitaminsForBirds,
+            birdcage: req.body.birdcage,
+            bathForBirds: req.body.bathForBirds,
+            toysForBirds: req.body.toysForBirds,
+            fillersAndPadsForBird: req.body.fillersAndPadsForBird,
+            accessoriesForBird: req.body.accessoriesForBird,
+            dishesForBird: req.body.dishesForBird,
         })
 
         const catCategory = await doc.save()
