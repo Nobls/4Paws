@@ -12,7 +12,7 @@ import {
 
 import {checkAuth, handleValidationErrors} from "./utils/index.js";
 
-import {UserController, PostController, ServicesController, UserPetController, PetProceduresController, CommentController, CategoryDogController, ShopCategory, CategoryCatController, CategoryBirdController} from './controllers/index.js'
+import {UserController, PostController, ServicesController, UserPetController, PetProceduresController, CommentController, CategoryDogController, ShopCategory, CategoryCatController, CategoryBirdController, CategoryRodentController, CategoryFishController} from './controllers/index.js'
 
 mongoose
     .connect('mongodb+srv://AdminS:QQQwww444@pf.9ipuej5.mongodb.net/PF?retryWrites=true&w=majority')
@@ -123,6 +123,8 @@ app.get('/news/comments/:id', checkAuth, CommentController.getComments)
 app.post('/shop/dog', checkAuth, ShopCategory.createDogCategory)
 app.post('/shop/cat', checkAuth, ShopCategory.createCatCategory)
 app.post('/shop/bird', checkAuth, ShopCategory.createBirdCategory)
+app.post('/shop/rodent', checkAuth, ShopCategory.createRodentCategory)
+app.post('/shop/fish', checkAuth, ShopCategory.createFishCategory)
 
 
 // категории для собак
@@ -139,27 +141,45 @@ app.post('/shop/dog/:id/ammunitionForDogs', checkAuth, CategoryDogController.amm
 app.post('/shop/dog/:id/toiletsForDogs', checkAuth, CategoryDogController.toiletsForDogs)
 
 // категории для котов
-app.post('/shop/dog/:id/dryFoodForCats', checkAuth, CategoryCatController.dryFoodForCats)
-app.post('/shop/dog/:id/preservesForCats', checkAuth, CategoryCatController.preservesForCats)
-app.post('/shop/dog/:id/vitaminsForCats', checkAuth, CategoryCatController.vitaminsForCats)
-app.post('/shop/dog/:id/homeForCats', checkAuth, CategoryCatController.homeForCats)
-app.post('/shop/dog/:id/toysForCats', checkAuth, CategoryCatController.toysForCats)
-app.post('/shop/dog/:id/carryingForCats', checkAuth, CategoryCatController.carryingForCats)
-app.post('/shop/dog/:id/cosmeticsForCats', checkAuth, CategoryCatController.cosmeticsForCats)
-app.post('/shop/dog/:id/scratchingPostsForCats', checkAuth, CategoryCatController.scratchingPostsForCats)
-app.post('/shop/dog/:id/dishesForCats', checkAuth, CategoryCatController.dishesForCats)
-app.post('/shop/dog/:id/ammunitionForCats', checkAuth, CategoryCatController.ammunitionForCats)
-app.post('/shop/dog/:id/toiletsForCats', checkAuth, CategoryCatController.toiletsForCats)
+app.post('/shop/cat/:id/dryFoodForCats', checkAuth, CategoryCatController.dryFoodForCats)
+app.post('/shop/cat/:id/preservesForCats', checkAuth, CategoryCatController.preservesForCats)
+app.post('/shop/cat/:id/vitaminsForCats', checkAuth, CategoryCatController.vitaminsForCats)
+app.post('/shop/cat/:id/homeForCats', checkAuth, CategoryCatController.homeForCats)
+app.post('/shop/cat/:id/toysForCats', checkAuth, CategoryCatController.toysForCats)
+app.post('/shop/cat/:id/carryingForCats', checkAuth, CategoryCatController.carryingForCats)
+app.post('/shop/cat/:id/cosmeticsForCats', checkAuth, CategoryCatController.cosmeticsForCats)
+app.post('/shop/cat/:id/scratchingPostsForCats', checkAuth, CategoryCatController.scratchingPostsForCats)
+app.post('/shop/cat/:id/dishesForCats', checkAuth, CategoryCatController.dishesForCats)
+app.post('/shop/cat/:id/ammunitionForCats', checkAuth, CategoryCatController.ammunitionForCats)
+app.post('/shop/cat/:id/toiletsForCats', checkAuth, CategoryCatController.toiletsForCats)
 
 // категории для птиц
-app.post('/shop/dog/:id/dryFoodForBirds', checkAuth, CategoryBirdController.dryFoodForBirds)
-app.post('/shop/dog/:id/vitaminsForBirds', checkAuth, CategoryBirdController.vitaminsForBirds)
-app.post('/shop/dog/:id/birdcage', checkAuth, CategoryBirdController.birdcage)
-app.post('/shop/dog/:id/bathForBirds', checkAuth, CategoryBirdController.bathForBirds)
-app.post('/shop/dog/:id/toysForBirds', checkAuth, CategoryBirdController.toysForBirds)
-app.post('/shop/dog/:id/fillersAndPadsForBird', checkAuth, CategoryBirdController.fillersAndPadsForBird)
-app.post('/shop/dog/:id/accessoriesForBird', checkAuth, CategoryBirdController.accessoriesForBird)
-app.post('/shop/dog/:id/dishesForBird', checkAuth, CategoryBirdController.dishesForBird)
+app.post('/shop/bird/:id/dryFoodForBirds', checkAuth, CategoryBirdController.dryFoodForBirds)
+app.post('/shop/bird/:id/vitaminsForBirds', checkAuth, CategoryBirdController.vitaminsForBirds)
+app.post('/shop/bird/:id/birdcage', checkAuth, CategoryBirdController.birdcage)
+app.post('/shop/bird/:id/bathForBirds', checkAuth, CategoryBirdController.bathForBirds)
+app.post('/shop/bird/:id/toysForBirds', checkAuth, CategoryBirdController.toysForBirds)
+app.post('/shop/bird/:id/fillersAndPadsForBird', checkAuth, CategoryBirdController.fillersAndPadsForBird)
+app.post('/shop/bird/:id/accessoriesForBird', checkAuth, CategoryBirdController.accessoriesForBird)
+app.post('/shop/bird/:id/dishesForBird', checkAuth, CategoryBirdController.dishesForBird)
+
+// категории для грызунов
+app.post('/shop/rodent/:id/dryFoodForRodents', checkAuth, CategoryRodentController.createDryFoodForRodents)
+app.post('/shop/rodent/:id/vitaminsForRodents', checkAuth, CategoryRodentController.createVitaminsForRodents)
+app.post('/shop/rodent/:id/accessoriesForRodents', checkAuth, CategoryRodentController.createAccessoriesForRodents)
+app.post('/shop/rodent/:id/cellsForRodents', checkAuth, CategoryRodentController.createCellsForRodents)
+app.post('/shop/rodent/:id/bathingForRodents', checkAuth, CategoryRodentController.createBathingForRodents)
+app.post('/shop/rodent/:id/toysForRodents', checkAuth, CategoryRodentController.createToysForRodents)
+app.post('/shop/rodent/:id/extenderForRodents', checkAuth, CategoryRodentController.createExtenderForRodents)
+app.post('/shop/rodent/:id/dishesForRodents', checkAuth, CategoryRodentController.createDishesForRodents)
+
+// категории ддя рыб
+app.post('/shop/fish/:id/aquariumForFish', checkAuth, CategoryFishController.createAquariumForFish)
+app.post('/shop/fish/:id/liveFish', checkAuth, CategoryFishController.createLiveFish)
+app.post('/shop/fish/:id/foodForFish', checkAuth, CategoryFishController.createFoodForFish)
+app.post('/shop/fish/:id/decorForFish', checkAuth, CategoryFishController.createDecorForFish)
+app.post('/shop/fish/:id/equipmentForFish', checkAuth, CategoryFishController.createEquipmentForFish)
+app.post('/shop/fish/:id/chemistryForFish', checkAuth, CategoryFishController.createChemistryForFish)
 
 
 

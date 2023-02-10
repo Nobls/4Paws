@@ -85,3 +85,53 @@ export const createBirdCategory = async (req, res) => {
         })
     }
 }
+
+export const createRodentCategory = async (req, res) => {
+    try {
+
+        const doc = new ProductsForBirdModel({
+            dryFoodForRodents: req.body.dryFoodForRodents,
+            vitaminsForRodents: req.body.vitaminsForRodents,
+            accessoriesForRodents: req.body.accessoriesForRodents,
+            cellsForRodents: req.body.cellsForRodents,
+            bathingForRodents: req.body.bathingForRodents,
+            toysForRodents: req.body.toysForRodents,
+            extenderForRodents: req.body.extenderForRodents,
+            dishesForRodents: req.body.dishesForRodents,
+        })
+
+        const rodentCategory = await doc.save()
+
+        res.json(rodentCategory)
+
+    } catch(error){
+        console.log(error)
+        res.status(500).json({
+            message: 'Не удалось создать категорию'
+        })
+    }
+}
+
+export const createFishCategory = async (req, res) => {
+    try {
+
+        const doc = new ProductsForBirdModel({
+            aquariumForFish: req.body.aquariumForFish,
+            liveFish: req.body.liveFish,
+            foodForFish: req.body.foodForFish,
+            decorForFish: req.body.decorForFish,
+            equipmentForFish: req.body.equipmentForFish,
+            chemistryForFish: req.body.chemistryForFish,
+        })
+
+        const fishCategory = await doc.save()
+
+        res.json(fishCategory)
+
+    } catch(error){
+        console.log(error)
+        res.status(500).json({
+            message: 'Не удалось создать категорию'
+        })
+    }
+}

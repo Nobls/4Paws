@@ -8,5 +8,7 @@ export * as ShopCategory from './ShopCategory.js'
 export * as CategoryDogController from './CategoryDogController.js'
 export * as CategoryCatController from './CategoryCatController.js'
 export * as CategoryBirdController from './CategoryBirdController.js'
+export * as CategoryRodentController from './CategoryRodentsController.js'
+export * as CategoryFishController from './CategoryFishController.js'
 
 
