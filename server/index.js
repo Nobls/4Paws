@@ -145,6 +145,7 @@ app.post('/shop/dog/:id/toiletsForDogs', checkAuth, CategoryDogController.toilet
 // получение
 
 app.get('/shop/dog/dryFoodDog/:id', checkAuth, CategoryDogController.getDryFood)
+app.get('/shop/dog/preservesForDogs/:id', checkAuth, CategoryDogController.getPreserves)
 app.get('/shop/dog/vitaminsForDogs/:id', checkAuth, CategoryDogController.getVitamins)
 
 // категории для котов

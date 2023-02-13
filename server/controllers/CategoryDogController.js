@@ -1,7 +1,6 @@
 import ProductCardModel from "../models/ProductCard.js";
 import ProductsForDogsModel from "../models/ProductsForDogs.js";
-import UserPetModel from "../models/UserPet.js";
-import PetProceduresModel from "../models/PetProcedures.js";
+
 
 export const createDryFood = async (req, res) => {
 
@@ -93,7 +92,7 @@ export const preservesForDogs = async (req, res) => {
                     _id: productDogId
                 },
                 {
-                    $push: {preservesForCats: newProductCard._id}
+                    $push: {preservesForDogs: newProductCard._id}
                 }
             )
         } catch (error) {
@@ -476,6 +475,23 @@ export const getDryFood = async (req, res) => {
         const dryFood = await ProductsForDogsModel.findById(req.params.id)
         const list = await Promise.all(
             dryFood.dryFoodForDogs.map((p)=>{
+                return ProductCardModel.findById(p)
+            })
+        )
+        res.json(list)
+    } catch (err) {
+        console.log(err)
+        res.status(500).json({
+            message: 'Не удалось получить информацию!',
+        })
+    }
+}
+
+export const getPreserves = async (req, res) => {
+    try {
+        const preserves = await ProductsForDogsModel.findById(req.params.id)
+        const list = await Promise.all(
+            preserves.preservesForDogs.map((p)=>{
                 return ProductCardModel.findById(p)
             })
         )
