@@ -521,3 +521,147 @@ export const getVitamins = async (req, res) => {
         })
     }
 }
+
+export const getHome = async (req, res) => {
+    try {
+
+        const Home = await ProductsForDogsModel.findById(req.params.id)
+        const list = await Promise.all(
+            Home.homeForDogs.map((p)=>{
+                return ProductCardModel.findById(p)
+            })
+        )
+        res.json(list)
+    } catch (err) {
+        console.log(err)
+        res.status(500).json({
+            message: 'Не удалось получить информацию',
+        })
+    }
+}
+
+export const getToys = async (req, res) => {
+    try {
+
+        const Toys = await ProductsForDogsModel.findById(req.params.id)
+        const list = await Promise.all(
+            Toys.toysForDogs.map((p)=>{
+                return ProductCardModel.findById(p)
+            })
+        )
+        res.json(list)
+    } catch (err) {
+        console.log(err)
+        res.status(500).json({
+            message: 'Не удалось получить информацию',
+        })
+    }
+}
+
+export const getCarrying = async (req, res) => {
+    try {
+
+        const Carrying = await ProductsForDogsModel.findById(req.params.id)
+        const list = await Promise.all(
+            Carrying.carryingForDogs.map((p)=>{
+                return ProductCardModel.findById(p)
+            })
+        )
+        res.json(list)
+    } catch (err) {
+        console.log(err)
+        res.status(500).json({
+            message: 'Не удалось получить информацию',
+        })
+    }
+}
+
+export const getCosmetics = async (req, res) => {
+    try {
+
+        const Cosmetics = await ProductsForDogsModel.findById(req.params.id)
+        const list = await Promise.all(
+            Cosmetics.cosmeticsForDogs.map((p)=>{
+                return ProductCardModel.findById(p)
+            })
+        )
+        res.json(list)
+    } catch (err) {
+        console.log(err)
+        res.status(500).json({
+            message: 'Не удалось получить информацию',
+        })
+    }
+}
+
+export const getClothes = async (req, res) => {
+    try {
+
+        const Clothes = await ProductsForDogsModel.findById(req.params.id)
+        const list = await Promise.all(
+            Clothes.clothesForDogs.map((p)=>{
+                return ProductCardModel.findById(p)
+            })
+        )
+        res.json(list)
+    } catch (err) {
+        console.log(err)
+        res.status(500).json({
+            message: 'Не удалось получить информацию',
+        })
+    }
+}
+
+export const getDishes = async (req, res) => {
+    try {
+
+        const Dishes = await ProductsForDogsModel.findById(req.params.id)
+        const list = await Promise.all(
+            Dishes.dishesForDogs.map((p)=>{
+                return ProductCardModel.findById(p)
+            })
+        )
+        res.json(list)
+    } catch (err) {
+        console.log(err)
+        res.status(500).json({
+            message: 'Не удалось получить информацию',
+        })
+    }
+}
+
+export const getAmmunition = async (req, res) => {
+    try {
+
+        const Ammunition = await ProductsForDogsModel.findById(req.params.id)
+        const list = await Promise.all(
+            Ammunition.ammunitionForDogs.map((p)=>{
+                return ProductCardModel.findById(p)
+            })
+        )
+        res.json(list)
+    } catch (err) {
+        console.log(err)
+        res.status(500).json({
+            message: 'Не удалось получить информацию',
+        })
+    }
+}
+
+export const getToilets = async (req, res) => {
+    try {
+
+        const Toilets = await ProductsForDogsModel.findById(req.params.id)
+        const list = await Promise.all(
+            Toilets.toiletsForDogs.map((p)=>{
+                return ProductCardModel.findById(p)
+            })
+        )
+        res.json(list)
+    } catch (err) {
+        console.log(err)
+        res.status(500).json({
+            message: 'Не удалось получить информацию',
+        })
+    }
+}

@@ -14,6 +14,7 @@ import {checkAuth, handleValidationErrors} from "./utils/index.js";
 
 import {UserController, PostController, ServicesController, UserPetController, PetProceduresController, CommentController, CategoryDogController, ShopCategory, CategoryCatController, CategoryBirdController, CategoryRodentController, CategoryFishController} from './controllers/index.js'
 
+
 mongoose
     .connect('mongodb+srv://AdminS:QQQwww444@pf.9ipuej5.mongodb.net/PF?retryWrites=true&w=majority')
     .then(() => console.log('DB Ok'))
@@ -147,6 +148,14 @@ app.post('/shop/dog/:id/toiletsForDogs', checkAuth, CategoryDogController.toilet
 app.get('/shop/dog/dryFoodDog/:id', checkAuth, CategoryDogController.getDryFood)
 app.get('/shop/dog/preservesForDogs/:id', checkAuth, CategoryDogController.getPreserves)
 app.get('/shop/dog/vitaminsForDogs/:id', checkAuth, CategoryDogController.getVitamins)
+app.get('/shop/dog/homeForDogs/:id', checkAuth, CategoryDogController.getHome)
+app.get('/shop/dog/toysForDogs/:id', checkAuth, CategoryDogController.getToys)
+app.get('/shop/dog/carryingForDogs/:id', checkAuth, CategoryDogController.getCarrying)
+app.get('/shop/dog/cosmeticsForDogs/:id', checkAuth, CategoryDogController.getCosmetics)
+app.get('/shop/dog/clothesForDogs/:id', checkAuth, CategoryDogController.getClothes)
+app.get('/shop/dog/dishesForDogs/:id', checkAuth, CategoryDogController.getDishes)
+app.get('/shop/dog/ammunitionForDogs/:id', checkAuth, CategoryDogController.getAmmunition)
+app.get('/shop/dog/toiletsForDogs/:id', checkAuth, CategoryDogController.getToilets)
 
 // категории для котов
 app.post('/shop/cat/:id/dryFoodForCats', checkAuth, CategoryCatController.dryFoodForCats)
