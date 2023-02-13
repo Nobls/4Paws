@@ -128,6 +128,8 @@ app.post('/shop/fish', checkAuth, ShopCategory.createFishCategory)
 
 
 // категории для собак
+
+// создание
 app.post('/shop/dog/:id/dryFoodDog', checkAuth, CategoryDogController.createDryFood)
 app.post('/shop/dog/:id/preservesForDogs', checkAuth, CategoryDogController.preservesForDogs)
 app.post('/shop/dog/:id/vitaminsForDogs', checkAuth, CategoryDogController.vitaminsForDogs)
@@ -139,6 +141,11 @@ app.post('/shop/dog/:id/clothesForDogs', checkAuth, CategoryDogController.clothe
 app.post('/shop/dog/:id/dishesForDogs', checkAuth, CategoryDogController.dishesForDogs)
 app.post('/shop/dog/:id/ammunitionForDogs', checkAuth, CategoryDogController.ammunitionForDogs)
 app.post('/shop/dog/:id/toiletsForDogs', checkAuth, CategoryDogController.toiletsForDogs)
+
+// получение
+
+app.get('/shop/dog/dryFoodDog/:id', checkAuth, CategoryDogController.getDryFood)
+app.get('/shop/dog/vitaminsForDogs/:id', checkAuth, CategoryDogController.getVitamins)
 
 // категории для котов
 app.post('/shop/cat/:id/dryFoodForCats', checkAuth, CategoryCatController.dryFoodForCats)

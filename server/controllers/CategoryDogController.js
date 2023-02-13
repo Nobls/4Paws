@@ -1,5 +1,7 @@
 import ProductCardModel from "../models/ProductCard.js";
 import ProductsForDogsModel from "../models/ProductsForDogs.js";
+import UserPetModel from "../models/UserPet.js";
+import PetProceduresModel from "../models/PetProcedures.js";
 
 export const createDryFood = async (req, res) => {
 
@@ -463,7 +465,43 @@ export const toiletsForDogs = async (req, res) => {
     } catch(error){
         console.log(error)
         res.status(500).json({
-            message: 'Не удалось создать категорию'
+            message: 'Не удалось получить информацию'
+        })
+    }
+}
+
+export const getDryFood = async (req, res) => {
+    try {
+
+        const dryFood = await ProductsForDogsModel.findById(req.params.id)
+        const list = await Promise.all(
+            dryFood.dryFoodForDogs.map((p)=>{
+                return ProductCardModel.findById(p)
+            })
+        )
+        res.json(list)
+    } catch (err) {
+        console.log(err)
+        res.status(500).json({
+            message: 'Не удалось получить информацию!',
+        })
+    }
+}
+
+export const getVitamins = async (req, res) => {
+    try {
+
+        const dryFood = await ProductsForDogsModel.findById(req.params.id)
+        const list = await Promise.all(
+            dryFood.vitaminsForDogs.map((p)=>{
+                return ProductCardModel.findById(p)
+            })
+        )
+        res.json(list)
+    } catch (err) {
+        console.log(err)
+        res.status(500).json({
+            message: 'Не удалось получить информацию',
         })
     }
 }
