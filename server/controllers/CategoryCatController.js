@@ -1,5 +1,6 @@
 import ProductCardModel from "../models/ProductCard.js";
 import ProductsForCatsModel from "../models/ProductsForCats.js";
+import ProductsForDogsModel from "../models/ProductsForDogs.js";
 
 
 export const dryFoodForCats = async (req, res) => {
@@ -438,6 +439,204 @@ export const toiletsForCats = async (req, res) => {
         console.log(error)
         res.status(500).json({
             message: 'Не удалось создать категорию'
+        })
+    }
+}
+
+export const getDryFoodForCats = async (req, res) => {
+    try {
+
+        const dryFood = await ProductsForCatsModel.findById(req.params.id)
+        const list = await Promise.all(
+            dryFood.dryFoodForCats.map((p)=>{
+                return ProductCardModel.findById(p)
+            })
+        )
+        res.json(list)
+    } catch (err) {
+        console.log(err)
+        res.status(500).json({
+            message: 'Не удалось получить информацию!',
+        })
+    }
+}
+
+export const getPreservesForCats = async (req, res) => {
+    try {
+
+        const preserves = await ProductsForCatsModel.findById(req.params.id)
+        const list = await Promise.all(
+            preserves.preservesForCats.map((p)=>{
+                return ProductCardModel.findById(p)
+            })
+        )
+        res.json(list)
+    } catch (err) {
+        console.log(err)
+        res.status(500).json({
+            message: 'Не удалось получить информацию!',
+        })
+    }
+}
+
+export const getVitaminsForCats = async (req, res) => {
+    try {
+
+        const vitamins = await ProductsForCatsModel.findById(req.params.id)
+        const list = await Promise.all(
+            vitamins.vitaminsForCats.map((p)=>{
+                return ProductCardModel.findById(p)
+            })
+        )
+        res.json(list)
+    } catch (err) {
+        console.log(err)
+        res.status(500).json({
+            message: 'Не удалось получить информацию!',
+        })
+    }
+}
+
+export const getHomeForCats = async (req, res) => {
+    try {
+
+        const homeCats = await ProductsForCatsModel.findById(req.params.id)
+        const list = await Promise.all(
+            homeCats.homeForCats.map((p)=>{
+                return ProductCardModel.findById(p)
+            })
+        )
+        res.json(list)
+    } catch (err) {
+        console.log(err)
+        res.status(500).json({
+            message: 'Не удалось получить информацию!',
+        })
+    }
+}
+
+export const getToysForCats = async (req, res) => {
+    try {
+
+        const toysCats = await ProductsForCatsModel.findById(req.params.id)
+        const list = await Promise.all(
+            toysCats.toysForCats.map((p)=>{
+                return ProductCardModel.findById(p)
+            })
+        )
+        res.json(list)
+    } catch (err) {
+        console.log(err)
+        res.status(500).json({
+            message: 'Не удалось получить информацию!',
+        })
+    }
+}
+
+export const getCarryingForCats = async (req, res) => {
+    try {
+
+        const carryingCats = await ProductsForCatsModel.findById(req.params.id)
+        const list = await Promise.all(
+            carryingCats.carryingForCats.map((p)=>{
+                return ProductCardModel.findById(p)
+            })
+        )
+        res.json(list)
+    } catch (err) {
+        console.log(err)
+        res.status(500).json({
+            message: 'Не удалось получить информацию!',
+        })
+    }
+}
+
+export const getCosmeticsForCats = async (req, res) => {
+    try {
+
+        const cosmeticsCats = await ProductsForCatsModel.findById(req.params.id)
+        const list = await Promise.all(
+            cosmeticsCats.cosmeticsForCats.map((p)=>{
+                return ProductCardModel.findById(p)
+            })
+        )
+        res.json(list)
+    } catch (err) {
+        console.log(err)
+        res.status(500).json({
+            message: 'Не удалось получить информацию!',
+        })
+    }
+}
+
+export const getScratchingPostsForCats = async (req, res) => {
+    try {
+
+        const scratchingPostsCats = await ProductsForCatsModel.findById(req.params.id)
+        const list = await Promise.all(
+            scratchingPostsCats.scratchingPostsForCats.map((p)=>{
+                return ProductCardModel.findById(p)
+            })
+        )
+        res.json(list)
+    } catch (err) {
+        console.log(err)
+        res.status(500).json({
+            message: 'Не удалось получить информацию!',
+        })
+    }
+}
+
+export const getDishesForCats = async (req, res) => {
+    try {
+
+        const dishesCats = await ProductsForCatsModel.findById(req.params.id)
+        const list = await Promise.all(
+            dishesCats.dishesForCats.map((p)=>{
+                return ProductCardModel.findById(p)
+            })
+        )
+        res.json(list)
+    } catch (err) {
+        console.log(err)
+        res.status(500).json({
+            message: 'Не удалось получить информацию!',
+        })
+    }
+}
+
+export const getAmmunitionForCats = async (req, res) => {
+    try {
+
+        const ammunitionCats = await ProductsForCatsModel.findById(req.params.id)
+        const list = await Promise.all(
+            ammunitionCats.ammunitionForCats.map((p)=>{
+                return ProductCardModel.findById(p)
+            })
+        )
+        res.json(list)
+    } catch (err) {
+        console.log(err)
+        res.status(500).json({
+            message: 'Не удалось получить информацию!',
+        })
+    }
+}
+
+export const getToiletsForCats = async (req, res) => {
+    try {
+
+        const toiletsCats = await ProductsForCatsModel.findById(req.params.id)
+        const list = await Promise.all(
+            toiletsCats.toiletsForCats.map((p)=>{
+                return ProductCardModel.findById(p)
+            })
+        )
+        res.json(list)
+    } catch (err) {
+        console.log(err)
+        res.status(500).json({
+            message: 'Не удалось получить информацию!',
         })
     }
 }

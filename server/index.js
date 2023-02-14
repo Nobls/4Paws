@@ -13,6 +13,13 @@ import {
 import {checkAuth, handleValidationErrors} from "./utils/index.js";
 
 import {UserController, PostController, ServicesController, UserPetController, PetProceduresController, CommentController, CategoryDogController, ShopCategory, CategoryCatController, CategoryBirdController, CategoryRodentController, CategoryFishController} from './controllers/index.js'
+import {
+    getAmmunitionForCats,
+    getCarryingForCats, getCosmeticsForCats, getDishesForCats,
+    getHomeForCats, getScratchingPostsForCats, getToiletsForCats,
+    getToysForCats,
+    getVitaminsForCats
+} from "./controllers/CategoryCatController.js";
 
 
 mongoose
@@ -158,6 +165,8 @@ app.get('/shop/dog/ammunitionForDogs/:id', checkAuth, CategoryDogController.getA
 app.get('/shop/dog/toiletsForDogs/:id', checkAuth, CategoryDogController.getToilets)
 
 // категории для котов
+
+// создание
 app.post('/shop/cat/:id/dryFoodForCats', checkAuth, CategoryCatController.dryFoodForCats)
 app.post('/shop/cat/:id/preservesForCats', checkAuth, CategoryCatController.preservesForCats)
 app.post('/shop/cat/:id/vitaminsForCats', checkAuth, CategoryCatController.vitaminsForCats)
@@ -169,6 +178,19 @@ app.post('/shop/cat/:id/scratchingPostsForCats', checkAuth, CategoryCatControlle
 app.post('/shop/cat/:id/dishesForCats', checkAuth, CategoryCatController.dishesForCats)
 app.post('/shop/cat/:id/ammunitionForCats', checkAuth, CategoryCatController.ammunitionForCats)
 app.post('/shop/cat/:id/toiletsForCats', checkAuth, CategoryCatController.toiletsForCats)
+
+// получение
+app.get('/shop/cat/dryFoodForCats/:id', checkAuth, CategoryCatController.getDryFoodForCats)
+app.get('/shop/cat/preservesForCats/:id', checkAuth, CategoryCatController.getPreservesForCats)
+app.get('/shop/cat/vitaminsForCats/:id', checkAuth, CategoryCatController.getVitaminsForCats)
+app.get('/shop/cat/homeForCats/:id', checkAuth, CategoryCatController.getHomeForCats)
+app.get('/shop/cat/toysForCats/:id', checkAuth, CategoryCatController.getToysForCats)
+app.get('/shop/cat/carryingForCats/:id', checkAuth, CategoryCatController.getCarryingForCats)
+app.get('/shop/cat/cosmeticsForCats/:id', checkAuth, CategoryCatController.getCosmeticsForCats)
+app.get('/shop/cat/scratchingPostsForCats/:id', checkAuth, CategoryCatController.getScratchingPostsForCats)
+app.get('/shop/cat/dishesForCats/:id', checkAuth, CategoryCatController.getDishesForCats)
+app.get('/shop/cat/ammunitionForCats/:id', checkAuth, CategoryCatController.getAmmunitionForCats)
+app.get('/shop/cat/toiletsForCats/:id', checkAuth, CategoryCatController.getToiletsForCats)
 
 // категории для птиц
 app.post('/shop/bird/:id/dryFoodForBirds', checkAuth, CategoryBirdController.dryFoodForBirds)
