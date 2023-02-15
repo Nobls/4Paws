@@ -13,13 +13,7 @@ import {
 import {checkAuth, handleValidationErrors} from "./utils/index.js";
 
 import {UserController, PostController, ServicesController, UserPetController, PetProceduresController, CommentController, CategoryDogController, ShopCategory, CategoryCatController, CategoryBirdController, CategoryRodentController, CategoryFishController} from './controllers/index.js'
-import {
-    getAmmunitionForCats,
-    getCarryingForCats, getCosmeticsForCats, getDishesForCats,
-    getHomeForCats, getScratchingPostsForCats, getToiletsForCats,
-    getToysForCats,
-    getVitaminsForCats
-} from "./controllers/CategoryCatController.js";
+
 
 
 mongoose
