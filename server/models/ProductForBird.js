@@ -10,7 +10,7 @@ const ProductsForBirdSchema = new mongoose.Schema (
             type: mongoose.Schema.Types.ObjectId,
             ref: 'Ссылка на схему витамины для птиц'
         },
-        birdcage: {
+        birdcageForBirds: {
             type: mongoose.Schema.Types.ObjectId,
             ref: 'Ссылка на схему домики для птиц'
         },

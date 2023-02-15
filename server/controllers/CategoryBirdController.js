@@ -321,3 +321,147 @@ export const dishesForBird = async (req, res) => {
         })
     }
 }
+
+export const getDryFoodForBirds = async (req, res) => {
+    try {
+
+        const dryFood = await ProductsForBirdModel.findById(req.params.id)
+        const list = await Promise.all(
+            dryFood.dryFoodForBirds.map((p)=>{
+                return ProductCardModel.findById(p)
+            })
+        )
+        res.json(list)
+    } catch (err) {
+        console.log(err)
+        res.status(500).json({
+            message: 'Не удалось получить информацию!',
+        })
+    }
+}
+
+export const getVitaminsForBirds = async (req, res) => {
+    try {
+
+        const vitamins = await ProductsForBirdModel.findById(req.params.id)
+        const list = await Promise.all(
+            vitamins.vitaminsForBirds.map((p)=>{
+                return ProductCardModel.findById(p)
+            })
+        )
+        res.json(list)
+    } catch (err) {
+        console.log(err)
+        res.status(500).json({
+            message: 'Не удалось получить информацию!',
+        })
+    }
+}
+
+export const getBirdcage = async (req, res) => {
+    try {
+
+        const birdcage = await ProductsForBirdModel.findById(req.params.id)
+        const list = await Promise.all(
+            birdcage.birdcageForBirds.map((p)=>{
+                return ProductCardModel.findById(p)
+            })
+        )
+        res.json(list)
+    } catch (err) {
+        console.log(err)
+        res.status(500).json({
+            message: 'Не удалось получить информацию!',
+        })
+    }
+}
+
+export const getBathForBirds = async (req, res) => {
+    try {
+
+        const bathForBirds = await ProductsForBirdModel.findById(req.params.id)
+        const list = await Promise.all(
+            bathForBirds.bathForBirds.map((p)=>{
+                return ProductCardModel.findById(p)
+            })
+        )
+        res.json(list)
+    } catch (err) {
+        console.log(err)
+        res.status(500).json({
+            message: 'Не удалось получить информацию!',
+        })
+    }
+}
+
+export const getToysForBirds = async (req, res) => {
+    try {
+
+        const toysForBirds = await ProductsForBirdModel.findById(req.params.id)
+        const list = await Promise.all(
+            toysForBirds.toysForBirds.map((p)=>{
+                return ProductCardModel.findById(p)
+            })
+        )
+        res.json(list)
+    } catch (err) {
+        console.log(err)
+        res.status(500).json({
+            message: 'Не удалось получить информацию!',
+        })
+    }
+}
+
+export const getFillersAndPadsForBird = async (req, res) => {
+    try {
+
+        const fillersAndPadsForBird = await ProductsForBirdModel.findById(req.params.id)
+        const list = await Promise.all(
+            fillersAndPadsForBird.fillersAndPadsForBird.map((p)=>{
+                return ProductCardModel.findById(p)
+            })
+        )
+        res.json(list)
+    } catch (err) {
+        console.log(err)
+        res.status(500).json({
+            message: 'Не удалось получить информацию!',
+        })
+    }
+}
+
+export const getAccessoriesForBird = async (req, res) => {
+    try {
+
+        const accessoriesForBird = await ProductsForBirdModel.findById(req.params.id)
+        const list = await Promise.all(
+            accessoriesForBird.accessoriesForBird.map((p)=>{
+                return ProductCardModel.findById(p)
+            })
+        )
+        res.json(list)
+    } catch (err) {
+        console.log(err)
+        res.status(500).json({
+            message: 'Не удалось получить информацию!',
+        })
+    }
+}
+
+export const getDishesForBird = async (req, res) => {
+    try {
+
+        const dishesForBird = await ProductsForBirdModel.findById(req.params.id)
+        const list = await Promise.all(
+            dishesForBird.dishesForBird.map((p)=>{
+                return ProductCardModel.findById(p)
+            })
+        )
+        res.json(list)
+    } catch (err) {
+        console.log(err)
+        res.status(500).json({
+            message: 'Не удалось получить информацию!',
+        })
+    }
+}
