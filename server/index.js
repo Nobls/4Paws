@@ -13,6 +13,11 @@ import {
 import {checkAuth, handleValidationErrors} from "./utils/index.js";
 
 import {UserController, PostController, ServicesController, UserPetController, PetProceduresController, CommentController, CategoryDogController, ShopCategory, CategoryCatController, CategoryBirdController, CategoryRodentController, CategoryFishController} from './controllers/index.js'
+import {
+    createAquariums,
+    createAquariumsAndPedestals, createChemistryForFish, createDecorations, createEquipment, createFishFood,
+    createLivingInhabitants
+} from "./controllers/CategoryFishController.js";
 
 
 
@@ -220,11 +225,12 @@ app.post('/shop/rodent/:id/extenderForRodents', checkAuth, CategoryRodentControl
 app.post('/shop/rodent/:id/dishesForRodents', checkAuth, CategoryRodentController.createDishesForRodents)
 
 // категории ддя рыб
-app.post('/shop/fish/:id/aquariumForFish', checkAuth, CategoryFishController.createAquariumForFish)
-app.post('/shop/fish/:id/liveFish', checkAuth, CategoryFishController.createLiveFish)
-app.post('/shop/fish/:id/foodForFish', checkAuth, CategoryFishController.createFoodForFish)
-app.post('/shop/fish/:id/decorForFish', checkAuth, CategoryFishController.createDecorForFish)
-app.post('/shop/fish/:id/equipmentForFish', checkAuth, CategoryFishController.createEquipmentForFish)
+app.post('/shop/fish/:id/aquariums', checkAuth, CategoryFishController.createAquariums)
+app.post('/shop/fish/:id/livingInhabitants', checkAuth, CategoryFishController.createLivingInhabitants)
+app.post('/shop/fish/:id/aquariumsAndPedestals', checkAuth, CategoryFishController.createAquariumsAndPedestals)
+app.post('/shop/fish/:id/fishFood', checkAuth, CategoryFishController.createFishFood)
+app.post('/shop/fish/:id/decorations', checkAuth, CategoryFishController.createDecorations)
+app.post('/shop/fish/:id/equipment', checkAuth, CategoryFishController.createEquipment)
 app.post('/shop/fish/:id/chemistryForFish', checkAuth, CategoryFishController.createChemistryForFish)
 
 

@@ -1,7 +1,7 @@
 import ProductCardModel from "../models/ProductCard.js";
 import ProductsForFishModel from "../models/ProductForFish.js";
 
-export const createAquariumForFish = async (req, res) => {
+export const createAquariums = async (req, res) => {
 
     try {
 
@@ -25,7 +25,7 @@ export const createAquariumForFish = async (req, res) => {
                     _id: productDogId
                 },
                 {
-                    $push: {aquariumForFish: newProductCard._id}
+                    $push: {aquariums: newProductCard._id}
                 }
             )
         } catch (error) {
@@ -42,7 +42,7 @@ export const createAquariumForFish = async (req, res) => {
     }
 }
 
-export const createLiveFish = async (req, res) => {
+export const createLivingInhabitants = async (req, res) => {
 
     try {
 
@@ -66,7 +66,7 @@ export const createLiveFish = async (req, res) => {
                     _id: productDogId
                 },
                 {
-                    $push: {liveFish: newProductCard._id}
+                    $push: {livingInhabitants: newProductCard._id}
                 }
             )
         } catch (error) {
@@ -83,7 +83,7 @@ export const createLiveFish = async (req, res) => {
     }
 }
 
-export const createFoodForFish = async (req, res) => {
+export const createAquariumsAndPedestals = async (req, res) => {
 
     try {
 
@@ -107,7 +107,7 @@ export const createFoodForFish = async (req, res) => {
                     _id: productDogId
                 },
                 {
-                    $push: {foodForFish: newProductCard._id}
+                    $push: {aquariumsAndPedestals: newProductCard._id}
                 }
             )
         } catch (error) {
@@ -124,7 +124,7 @@ export const createFoodForFish = async (req, res) => {
     }
 }
 
-export const createDecorForFish = async (req, res) => {
+export const createFishFood = async (req, res) => {
 
     try {
 
@@ -148,7 +148,7 @@ export const createDecorForFish = async (req, res) => {
                     _id: productDogId
                 },
                 {
-                    $push: {decorForFish: newProductCard._id}
+                    $push: {fishFood: newProductCard._id}
                 }
             )
         } catch (error) {
@@ -165,7 +165,7 @@ export const createDecorForFish = async (req, res) => {
     }
 }
 
-export const createEquipmentForFish = async (req, res) => {
+export const createDecorations = async (req, res) => {
 
     try {
 
@@ -189,7 +189,7 @@ export const createEquipmentForFish = async (req, res) => {
                     _id: productDogId
                 },
                 {
-                    $push: {equipmentForFish: newProductCard._id}
+                    $push: {decorations: newProductCard._id}
                 }
             )
         } catch (error) {
@@ -205,6 +205,49 @@ export const createEquipmentForFish = async (req, res) => {
         })
     }
 }
+
+export const createEquipment = async (req, res) => {
+
+    try {
+
+        const doc = new ProductCardModel({
+            title: req.body.title,
+            productImage: req.body.productImage,
+            weight: req.body.weight,
+            size: req.body.size,
+            type: req.body.type,
+            countryOfManufacture: req.body.countryOfManufacture,
+            description: req.body.description,
+            price: req.body.price,
+        })
+
+        const newProductCard = await doc.save()
+
+        try {
+            const productDogId = req.params.id
+            await ProductsForFishModel.updateOne(
+                {
+                    _id: productDogId
+                },
+                {
+                    $push: {equipment: newProductCard._id}
+                }
+            )
+        } catch (error) {
+            console.log(error)
+        }
+
+        res.json(newProductCard)
+
+    } catch (err) {
+        console.log(err)
+        res.status(500).json({
+            message: 'Не удалось создать процедуру',
+        })
+    }
+}
+
+
 
 export const createChemistryForFish = async (req, res) => {
 
@@ -230,7 +273,7 @@ export const createChemistryForFish = async (req, res) => {
                     _id: productDogId
                 },
                 {
-                    $push: {chemistryForFish: newProductCard._id}
+                    $push: {chemistryAndMedicines: newProductCard._id}
                 }
             )
         } catch (error) {
