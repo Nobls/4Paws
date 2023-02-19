@@ -38,7 +38,7 @@ const ProductForFishSchema = new mongoose.Schema(
                 ref: 'ProductCard'
             }
         ],
-        ChemistryAndMedicines: [
+        chemistryAndMedicines: [
             {
                 type: mongoose.Schema.Types.ObjectId,
                 ref: 'ProductCard'

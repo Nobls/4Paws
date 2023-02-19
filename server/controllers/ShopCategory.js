@@ -116,12 +116,13 @@ export const createFishCategory = async (req, res) => {
     try {
 
         const doc = new ProductsForBirdModel({
-            aquariumForFish: req.body.aquariumForFish,
-            liveFish: req.body.liveFish,
-            foodForFish: req.body.foodForFish,
-            decorForFish: req.body.decorForFish,
-            equipmentForFish: req.body.equipmentForFish,
-            chemistryForFish: req.body.chemistryForFish,
+            aquariums: req.body.aquariums,
+            livingInhabitants: req.body.livingInhabitants,
+            aquariumsAndPedestals: req.body.aquariumsAndPedestals,
+            fishFood: req.body.fishFood,
+            decorations: req.body.decorations,
+            equipment: req.body.equipment,
+            chemistryAndMedicines: req.body.chemistryAndMedicines,
         })
 
         const fishCategory = await doc.save()
