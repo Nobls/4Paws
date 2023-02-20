@@ -4,21 +4,31 @@ import multer from "multer";
 import cors from 'cors';
 
 import {
-    registerValidation,
     loginValidation,
+    petProceduresValidation,
     postCreateValidation,
-    servicesCreateValidation, userInfoValidation, userPetValidation, petProceduresValidation
+    registerValidation,
+    servicesCreateValidation,
+    userInfoValidation,
+    userPetValidation
 } from './validations/validations.js'
 
 import {checkAuth, handleValidationErrors} from "./utils/index.js";
 
-import {UserController, PostController, ServicesController, UserPetController, PetProceduresController, CommentController, CategoryDogController, ShopCategory, CategoryCatController, CategoryBirdController, CategoryRodentController, CategoryFishController} from './controllers/index.js'
 import {
-    createAquariums,
-    createAquariumsAndPedestals, createChemistryForFish, createDecorations, createEquipment, createFishFood,
-    createLivingInhabitants
-} from "./controllers/CategoryFishController.js";
-
+    CategoryBirdController,
+    CategoryCatController,
+    CategoryDogController,
+    CategoryFishController,
+    CategoryRodentController,
+    CommentController,
+    PetProceduresController,
+    PostController,
+    ServicesController,
+    ShopCategory,
+    UserController,
+    UserPetController
+} from './controllers/index.js'
 
 
 mongoose
@@ -225,6 +235,8 @@ app.post('/shop/rodent/:id/extenderForRodents', checkAuth, CategoryRodentControl
 app.post('/shop/rodent/:id/dishesForRodents', checkAuth, CategoryRodentController.createDishesForRodents)
 
 // категории ддя рыб
+
+// создание
 app.post('/shop/fish/:id/aquariums', checkAuth, CategoryFishController.createAquariums)
 app.post('/shop/fish/:id/livingInhabitants', checkAuth, CategoryFishController.createLivingInhabitants)
 app.post('/shop/fish/:id/aquariumsAndPedestals', checkAuth, CategoryFishController.createAquariumsAndPedestals)
@@ -232,6 +244,9 @@ app.post('/shop/fish/:id/fishFood', checkAuth, CategoryFishController.createFish
 app.post('/shop/fish/:id/decorations', checkAuth, CategoryFishController.createDecorations)
 app.post('/shop/fish/:id/equipment', checkAuth, CategoryFishController.createEquipment)
 app.post('/shop/fish/:id/chemistryForFish', checkAuth, CategoryFishController.createChemistryForFish)
+
+// получение
+app.get('/shop/fish/aquariums/:id', checkAuth, CategoryFishController.getAquariums)
 
 
 

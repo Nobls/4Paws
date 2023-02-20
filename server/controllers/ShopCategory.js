@@ -1,6 +1,7 @@
 import ProductsForDogsModel from "../models/ProductsForDogs.js";
 import ProductsForCatsModel from "../models/ProductsForCats.js";
 import ProductsForBirdModel from "../models/ProductForBird.js";
+import ProductsForFishModel from "../models/ProductForFish.js";
 
 export const createDogCategory = async (req, res) => {
     try {
@@ -115,7 +116,7 @@ export const createRodentCategory = async (req, res) => {
 export const createFishCategory = async (req, res) => {
     try {
 
-        const doc = new ProductsForBirdModel({
+        const doc = new ProductsForFishModel({
             aquariums: req.body.aquariums,
             livingInhabitants: req.body.livingInhabitants,
             aquariumsAndPedestals: req.body.aquariumsAndPedestals,
@@ -136,3 +137,15 @@ export const createFishCategory = async (req, res) => {
         })
     }
 }
+
+/*
+export const createFishCategory = async (req, res) => {
+    try {
+        const doc = new ProductsForFishModel(req.body);
+        const fishCategory = await doc.save()
+        res.status(201).json(fishCategory);
+    } catch (err) {
+        console.error(err);
+        res.status(500).json({ error: 'Server error' });
+    }
+}*/

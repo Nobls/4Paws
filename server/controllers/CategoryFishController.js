@@ -5,7 +5,7 @@ export const createAquariums = async (req, res) => {
 
     try {
 
-        const doc = new ProductCardModel({
+        const newProductCard = await ProductCardModel.create({
             title: req.body.title,
             productImage: req.body.productImage,
             weight: req.body.weight,
@@ -16,21 +16,16 @@ export const createAquariums = async (req, res) => {
             price: req.body.price,
         })
 
-        const newProductCard = await doc.save()
+        const productFishId = req.params.id
 
-        try {
-            const productDogId = req.params.id
-            await ProductsForFishModel.updateOne(
-                {
-                    _id: productDogId
-                },
-                {
-                    $push: {aquariums: newProductCard._id}
-                }
-            )
-        } catch (error) {
-            console.log(error)
-        }
+        await ProductsForFishModel.updateOne(
+            {
+                _id: productFishId
+            },
+            {
+                $push: {"aquariums.product": newProductCard._id}
+            }
+        )
 
         res.json(newProductCard)
 
@@ -248,7 +243,6 @@ export const createEquipment = async (req, res) => {
 }
 
 
-
 export const createChemistryForFish = async (req, res) => {
 
     try {
@@ -286,6 +280,24 @@ export const createChemistryForFish = async (req, res) => {
         console.log(err)
         res.status(500).json({
             message: 'Не удалось создать процедуру',
+        })
+    }
+}
+
+export const getAquariums = async (req, res) => {
+    try {
+
+        const fishAquariums = await ProductsForFishModel.findById(req.params.id)
+        const list = await Promise.all(
+            fishAquariums.aquariums.map((p) => {
+                return ProductCardModel.findById(p)
+            })
+        )
+        res.json(list)
+    } catch (err) {
+        console.log(err)
+        res.status(500).json({
+            message: 'Не удалось получить информацию',
         })
     }
 }
