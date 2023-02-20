@@ -284,12 +284,12 @@ export const createChemistryForFish = async (req, res) => {
     }
 }
 
-export const getAquariums = async (req, res) => {
+/*export const getAquariums = async (req, res) => {
     try {
 
         const fishAquariums = await ProductsForFishModel.findById(req.params.id)
         const list = await Promise.all(
-            fishAquariums.aquariums.map((p) => {
+            fishAquariums.aquariums.product.map((p) => {
                 return ProductCardModel.findById(p)
             })
         )
@@ -299,5 +299,30 @@ export const getAquariums = async (req, res) => {
         res.status(500).json({
             message: 'Не удалось получить информацию',
         })
+    }
+}*/
+
+
+export const getAquariums = async (req, res, next) => {
+    try {
+        const productForFish = await ProductsForFishModel.findById(req.params.id).populate('aquariums.product');
+
+        if (!productForFish) {
+            const error = new Error('Product for fish not found');
+            error.statusCode = 404;
+            throw error;
+        }
+
+        const aquariumProducts = productForFish.aquariums.product;
+
+        res.status(200).json({
+            message: 'Aquarium products fetched successfully',
+            products: aquariumProducts,
+        });
+    } catch (error) {
+        if (!error.statusCode) {
+            error.statusCode = 500;
+        }
+        next(error);
     }
 }
