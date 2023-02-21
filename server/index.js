@@ -234,7 +234,7 @@ app.post('/shop/rodent/:id/toysForRodents', checkAuth, CategoryRodentController.
 app.post('/shop/rodent/:id/extenderForRodents', checkAuth, CategoryRodentController.createExtenderForRodents)
 app.post('/shop/rodent/:id/dishesForRodents', checkAuth, CategoryRodentController.createDishesForRodents)
 
-// категории ддя рыб
+// категории для рыб
 
 // создание
 app.post('/shop/fish/:id/aquariums', checkAuth, CategoryFishController.createAquariums)
