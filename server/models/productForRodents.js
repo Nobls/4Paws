@@ -1,39 +1,111 @@
 import mongoose from "mongoose";
 
 
-const ProductsForRodentsSchema = new mongoose.Schema (
+const ProductsForRodentsSchema = new mongoose.Schema(
     {
         dryFoodForRodents: {
-            type: mongoose.Schema.Types.ObjectId,
-            ref: 'Ссылка на схему кормов для грызунов'
+
+            _id: {
+                type: mongoose.Schema.Types.ObjectId
+            },
+
+            product: [
+                {
+                    type: mongoose.Schema.Types.ObjectId,
+                    ref: 'ProductCard'
+                }
+            ]
         },
         vitaminsForRodents: {
-            type: mongoose.Schema.Types.ObjectId,
-            ref: 'Ссылка на схему витамины для грызунов'
+
+            _id: {
+                type: mongoose.Schema.Types.ObjectId
+            },
+
+            product: [
+                {
+                    type: mongoose.Schema.Types.ObjectId,
+                    ref: 'ProductCard'
+                }
+            ]
         },
         accessoriesForRodents: {
-            type: mongoose.Schema.Types.ObjectId,
-            ref: 'Ссылка на схему аксессуары для грызунов'
+
+            _id: {
+                type: mongoose.Schema.Types.ObjectId
+            },
+
+            product: [
+                {
+                    type: mongoose.Schema.Types.ObjectId,
+                    ref: 'ProductCard'
+                }
+            ]
         },
         cellsForRodents: {
-            type: mongoose.Schema.Types.ObjectId,
-            ref: 'Ссылка на схему клетки для грызунов'
+
+            _id: {
+                type: mongoose.Schema.Types.ObjectId
+            },
+
+            product: [
+                {
+                    type: mongoose.Schema.Types.ObjectId,
+                    ref: 'ProductCard'
+                }
+            ]
         },
         bathingForRodents: {
-            type: mongoose.Schema.Types.ObjectId,
-            ref: 'Ссылка на схему купалки для грызунов'
+
+            _id: {
+                type: mongoose.Schema.Types.ObjectId
+            },
+
+            product: [
+                {
+                    type: mongoose.Schema.Types.ObjectId,
+                    ref: 'ProductCard'
+                }
+            ]
         },
         toysForRodents: {
-            type: mongoose.Schema.Types.ObjectId,
-            ref: 'Ссылка на схему игрушки для грызунов'
+
+            _id: {
+                type: mongoose.Schema.Types.ObjectId
+            },
+
+            product: [
+                {
+                    type: mongoose.Schema.Types.ObjectId,
+                    ref: 'ProductCard'
+                }
+            ]
         },
         extenderForRodents: {
-            type: mongoose.Schema.Types.ObjectId,
-            ref: 'Ссылка на схему наполнители для грызунов'
+
+            _id: {
+                type: mongoose.Schema.Types.ObjectId
+            },
+
+            product: [
+                {
+                    type: mongoose.Schema.Types.ObjectId,
+                    ref: 'ProductCard'
+                }
+            ]
         },
         dishesForRodents: {
-            type: mongoose.Schema.Types.ObjectId,
-            ref: 'Ссылка на схему посуда для грызунов'
+
+            _id: {
+                type: mongoose.Schema.Types.ObjectId
+            },
+
+            product: [
+                {
+                    type: mongoose.Schema.Types.ObjectId,
+                    ref: 'ProductCard'
+                }
+            ]
         },
     },
 );

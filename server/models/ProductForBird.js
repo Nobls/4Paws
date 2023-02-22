@@ -3,36 +3,108 @@ import mongoose from "mongoose";
 const ProductsForBirdSchema = new mongoose.Schema (
     {
         dryFoodForBirds: {
-            type: mongoose.Schema.Types.ObjectId,
-            ref: 'Ссылка на схему сухих кормов для птиц'
+
+            _id: {
+                type:  mongoose.Schema.Types.ObjectId
+            },
+
+            product: [
+                {
+                    type: mongoose.Schema.Types.ObjectId,
+                    ref: 'ProductCard'
+                }
+            ]
         },
         vitaminsForBirds: {
-            type: mongoose.Schema.Types.ObjectId,
-            ref: 'Ссылка на схему витамины для птиц'
+
+            _id: {
+                type:  mongoose.Schema.Types.ObjectId
+            },
+
+            product: [
+                {
+                    type: mongoose.Schema.Types.ObjectId,
+                    ref: 'ProductCard'
+                }
+            ]
         },
         birdcageForBirds: {
-            type: mongoose.Schema.Types.ObjectId,
-            ref: 'Ссылка на схему домики для птиц'
+
+            _id: {
+                type:  mongoose.Schema.Types.ObjectId
+            },
+
+            product: [
+                {
+                    type: mongoose.Schema.Types.ObjectId,
+                    ref: 'ProductCard'
+                }
+            ]
         },
         bathForBirds: {
-            type: mongoose.Schema.Types.ObjectId,
-            ref: 'Ссылка на схему купалки для птиц'
+
+            _id: {
+                type:  mongoose.Schema.Types.ObjectId
+            },
+
+            product: [
+                {
+                    type: mongoose.Schema.Types.ObjectId,
+                    ref: 'ProductCard'
+                }
+            ]
         },
         toysForBirds: {
-            type: mongoose.Schema.Types.ObjectId,
-            ref: 'Ссылка на схему игрушки для птиц'
+
+            _id: {
+                type:  mongoose.Schema.Types.ObjectId
+            },
+
+            product: [
+                {
+                    type: mongoose.Schema.Types.ObjectId,
+                    ref: 'ProductCard'
+                }
+            ]
         },
         fillersAndPadsForBird: {
-            type: mongoose.Schema.Types.ObjectId,
-            ref: 'Ссылка на схему наполнители для птиц'
+
+            _id: {
+                type:  mongoose.Schema.Types.ObjectId
+            },
+
+            product: [
+                {
+                    type: mongoose.Schema.Types.ObjectId,
+                    ref: 'ProductCard'
+                }
+            ]
         },
         accessoriesForBird: {
-            type: mongoose.Schema.Types.ObjectId,
-            ref: 'Ссылка на схему аксессуары для птиц'
+
+            _id: {
+                type:  mongoose.Schema.Types.ObjectId
+            },
+
+            product: [
+                {
+                    type: mongoose.Schema.Types.ObjectId,
+                    ref: 'ProductCard'
+                }
+            ]
         },
         dishesForBird: {
-            type: mongoose.Schema.Types.ObjectId,
-            ref: 'Ссылка на схему посуда для птиц'
+
+            _id: {
+                type:  mongoose.Schema.Types.ObjectId
+            },
+
+            product: [
+                {
+                    type: mongoose.Schema.Types.ObjectId,
+                    ref: 'ProductCard'
+                }
+            ]
         },
     }
 );

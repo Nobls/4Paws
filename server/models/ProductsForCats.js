@@ -3,75 +3,152 @@ import mongoose from "mongoose";
 
 const ProductsForCatsSchema = new mongoose.Schema(
     {
-        dryFoodForCats: [
-            {
-                type: mongoose.Schema.Types.ObjectId,
-                ref: 'ProductCard'
-            }
-        ],
-        preservesForCats: [
-            {
-                type: mongoose.Schema.Types.ObjectId,
-                ref: 'ProductCard'
-            }
-        ],
-        vitaminsForCats: [
-            {
-                type: mongoose.Schema.Types.ObjectId,
-                ref: 'ProductCard'
-            }
-        ],
+        dryFoodForCats: {
+
+            _id: {
+                type: mongoose.Schema.Types.ObjectId
+            },
+
+            product: [
+                {
+                    type: mongoose.Schema.Types.ObjectId,
+                    ref: 'ProductCard'
+                }
+            ]
+        },
+        preservesForCats: {
+
+            _id: {
+                type: mongoose.Schema.Types.ObjectId
+            },
+
+            product: [
+                {
+                    type: mongoose.Schema.Types.ObjectId,
+                    ref: 'ProductCard'
+                }
+            ]
+        },
+        vitaminsForCats: {
+
+            _id: {
+                type: mongoose.Schema.Types.ObjectId
+            },
+
+            product: [
+                {
+                    type: mongoose.Schema.Types.ObjectId,
+                    ref: 'ProductCard'
+                }
+            ]
+        },
 
         //добавить наполнители
 
-        homeForCats: [
-            {
-                type: mongoose.Schema.Types.ObjectId,
-                ref: 'ProductCard'
-            }
-        ],
-        toysForCats: [
-            {
-                type: mongoose.Schema.Types.ObjectId,
-                ref: 'ProductCard'
-            }
-        ],
-        carryingForCats: [
-            {
-                type: mongoose.Schema.Types.ObjectId,
-                ref: 'ProductCard'
-            }
-        ],
-        cosmeticsForCats: [
-            {
-                type: mongoose.Schema.Types.ObjectId,
-                ref: 'ProductCard'
-            }
-        ],
-        scratchingPostsForCats: [
-            {
-                type: mongoose.Schema.Types.ObjectId,
-                ref: 'ProductCard'
-            }
-        ],
-        dishesForCats: [
-            {
-                type: mongoose.Schema.Types.ObjectId,
-                ref: 'ProductCard'
-            }
-        ],
-        ammunitionForCats: [
-            {
-                type: mongoose.Schema.Types.ObjectId,
-                ref: 'ProductCard'
-            }
-        ],
-        toiletsForCats: [
-            {
-                type: mongoose.Schema.Types.ObjectId,
-                ref: 'ProductCard'
-            }
-        ],
+        homeForCats: {
+
+            _id: {
+                type: mongoose.Schema.Types.ObjectId
+            },
+
+            product: [
+                {
+                    type: mongoose.Schema.Types.ObjectId,
+                    ref: 'ProductCard'
+                }
+            ]
+        },
+        toysForCats: {
+
+            _id: {
+                type: mongoose.Schema.Types.ObjectId
+            },
+
+            product: [
+                {
+                    type: mongoose.Schema.Types.ObjectId,
+                    ref: 'ProductCard'
+                }
+            ]
+        },
+        carryingForCats: {
+
+            _id: {
+                type: mongoose.Schema.Types.ObjectId
+            },
+
+            product: [
+                {
+                    type: mongoose.Schema.Types.ObjectId,
+                    ref: 'ProductCard'
+                }
+            ]
+        },
+        cosmeticsForCats: {
+
+            _id: {
+                type: mongoose.Schema.Types.ObjectId
+            },
+
+            product: [
+                {
+                    type: mongoose.Schema.Types.ObjectId,
+                    ref: 'ProductCard'
+                }
+            ]
+        },
+        scratchingPostsForCats: {
+
+            _id: {
+                type: mongoose.Schema.Types.ObjectId
+            },
+
+            product: [
+                {
+                    type: mongoose.Schema.Types.ObjectId,
+                    ref: 'ProductCard'
+                }
+            ]
+        },
+        dishesForCats: {
+
+            _id: {
+                type: mongoose.Schema.Types.ObjectId
+            },
+
+            product: [
+                {
+                    type: mongoose.Schema.Types.ObjectId,
+                    ref: 'ProductCard'
+                }
+            ]
+        },
+        ammunitionForCats: {
+
+            _id: {
+                type: mongoose.Schema.Types.ObjectId
+            },
+
+            product: [
+                {
+                    type: mongoose.Schema.Types.ObjectId,
+                    ref: 'ProductCard'
+                }
+            ]
+        },
+        toiletsForCats: {
+
+            _id: {
+                type: mongoose.Schema.Types.ObjectId
+            },
+
+            product: [
+                {
+                    type: mongoose.Schema.Types.ObjectId,
+                    ref: 'ProductCard'
+                }
+            ]
+        },
     }
 );
 

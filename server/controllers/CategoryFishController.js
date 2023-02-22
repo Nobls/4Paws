@@ -1,5 +1,6 @@
 import ProductCardModel from "../models/ProductCard.js";
 import ProductsForFishModel from "../models/ProductForFish.js";
+import * as net from "net";
 
 export const createAquariums = async (req, res) => {
 
@@ -41,7 +42,7 @@ export const createLivingInhabitants = async (req, res) => {
 
     try {
 
-        const doc = new ProductCardModel({
+        const newProductCard = await ProductCardModel.create({
             title: req.body.title,
             productImage: req.body.productImage,
             weight: req.body.weight,
@@ -52,21 +53,16 @@ export const createLivingInhabitants = async (req, res) => {
             price: req.body.price,
         })
 
-        const newProductCard = await doc.save()
+        const productFishId = req.params.id
 
-        try {
-            const productDogId = req.params.id
-            await ProductsForFishModel.updateOne(
-                {
-                    _id: productDogId
-                },
-                {
-                    $push: {livingInhabitants: newProductCard._id}
-                }
-            )
-        } catch (error) {
-            console.log(error)
-        }
+        await ProductsForFishModel.updateOne(
+            {
+                _id: productFishId
+            },
+            {
+                $push: {"livingInhabitants.product": newProductCard._id}
+            }
+        )
 
         res.json(newProductCard)
 
@@ -82,7 +78,7 @@ export const createAquariumsAndPedestals = async (req, res) => {
 
     try {
 
-        const doc = new ProductCardModel({
+        const newProductCard = await ProductCardModel.create({
             title: req.body.title,
             productImage: req.body.productImage,
             weight: req.body.weight,
@@ -93,21 +89,16 @@ export const createAquariumsAndPedestals = async (req, res) => {
             price: req.body.price,
         })
 
-        const newProductCard = await doc.save()
+        const productFishId = req.params.id
 
-        try {
-            const productDogId = req.params.id
-            await ProductsForFishModel.updateOne(
-                {
-                    _id: productDogId
-                },
-                {
-                    $push: {aquariumsAndPedestals: newProductCard._id}
-                }
-            )
-        } catch (error) {
-            console.log(error)
-        }
+        await ProductsForFishModel.updateOne(
+            {
+                _id: productFishId
+            },
+            {
+                $push: {"aquariumsAndPedestals.product": newProductCard._id}
+            }
+        )
 
         res.json(newProductCard)
 
@@ -123,7 +114,7 @@ export const createFishFood = async (req, res) => {
 
     try {
 
-        const doc = new ProductCardModel({
+        const newProductCard = await ProductCardModel.create({
             title: req.body.title,
             productImage: req.body.productImage,
             weight: req.body.weight,
@@ -134,21 +125,16 @@ export const createFishFood = async (req, res) => {
             price: req.body.price,
         })
 
-        const newProductCard = await doc.save()
+        const productFishId = req.params.id
 
-        try {
-            const productDogId = req.params.id
-            await ProductsForFishModel.updateOne(
-                {
-                    _id: productDogId
-                },
-                {
-                    $push: {fishFood: newProductCard._id}
-                }
-            )
-        } catch (error) {
-            console.log(error)
-        }
+        await ProductsForFishModel.updateOne(
+            {
+                _id: productFishId
+            },
+            {
+                $push: {"fishFood.product": newProductCard._id}
+            }
+        )
 
         res.json(newProductCard)
 
@@ -164,7 +150,7 @@ export const createDecorations = async (req, res) => {
 
     try {
 
-        const doc = new ProductCardModel({
+        const newProductCard = await ProductCardModel.create({
             title: req.body.title,
             productImage: req.body.productImage,
             weight: req.body.weight,
@@ -175,21 +161,16 @@ export const createDecorations = async (req, res) => {
             price: req.body.price,
         })
 
-        const newProductCard = await doc.save()
+        const productFishId = req.params.id
 
-        try {
-            const productDogId = req.params.id
-            await ProductsForFishModel.updateOne(
-                {
-                    _id: productDogId
-                },
-                {
-                    $push: {decorations: newProductCard._id}
-                }
-            )
-        } catch (error) {
-            console.log(error)
-        }
+        await ProductsForFishModel.updateOne(
+            {
+                _id: productFishId
+            },
+            {
+                $push: {"decorations.product": newProductCard._id}
+            }
+        )
 
         res.json(newProductCard)
 
@@ -205,7 +186,7 @@ export const createEquipment = async (req, res) => {
 
     try {
 
-        const doc = new ProductCardModel({
+        const newProductCard = await ProductCardModel.create({
             title: req.body.title,
             productImage: req.body.productImage,
             weight: req.body.weight,
@@ -216,21 +197,16 @@ export const createEquipment = async (req, res) => {
             price: req.body.price,
         })
 
-        const newProductCard = await doc.save()
+        const productFishId = req.params.id
 
-        try {
-            const productDogId = req.params.id
-            await ProductsForFishModel.updateOne(
-                {
-                    _id: productDogId
-                },
-                {
-                    $push: {equipment: newProductCard._id}
-                }
-            )
-        } catch (error) {
-            console.log(error)
-        }
+        await ProductsForFishModel.updateOne(
+            {
+                _id: productFishId
+            },
+            {
+                $push: {"equipment.product": newProductCard._id}
+            }
+        )
 
         res.json(newProductCard)
 
@@ -247,7 +223,7 @@ export const createChemistryForFish = async (req, res) => {
 
     try {
 
-        const doc = new ProductCardModel({
+        const newProductCard = await ProductCardModel.create({
             title: req.body.title,
             productImage: req.body.productImage,
             weight: req.body.weight,
@@ -258,21 +234,16 @@ export const createChemistryForFish = async (req, res) => {
             price: req.body.price,
         })
 
-        const newProductCard = await doc.save()
+        const productFishId = req.params.id
 
-        try {
-            const productDogId = req.params.id
-            await ProductsForFishModel.updateOne(
-                {
-                    _id: productDogId
-                },
-                {
-                    $push: {chemistryAndMedicines: newProductCard._id}
-                }
-            )
-        } catch (error) {
-            console.log(error)
-        }
+        await ProductsForFishModel.updateOne(
+            {
+                _id: productFishId
+            },
+            {
+                $push: {"chemistryAndMedicines.product": newProductCard._id}
+            }
+        )
 
         res.json(newProductCard)
 
@@ -284,45 +255,74 @@ export const createChemistryForFish = async (req, res) => {
     }
 }
 
-/*export const getAquariums = async (req, res) => {
-    try {
-
-        const fishAquariums = await ProductsForFishModel.findById(req.params.id)
-        const list = await Promise.all(
-            fishAquariums.aquariums.product.map((p) => {
-                return ProductCardModel.findById(p)
-            })
-        )
-        res.json(list)
-    } catch (err) {
-        console.log(err)
-        res.status(500).json({
-            message: 'Не удалось получить информацию',
-        })
-    }
-}*/
-
-
 export const getAquariums = async (req, res, next) => {
     try {
-        const productForFish = await ProductsForFishModel.findById(req.params.id).populate('aquariums.product');
+        const { aquariumId } = req.params;
+
+        const productForFish = await ProductsForFishModel.findOne({
+            "aquariums._id": aquariumId
+        });
 
         if (!productForFish) {
-            const error = new Error('Product for fish not found');
-            error.statusCode = 404;
-            throw error;
+            return res.status(404).json({ error: "Product for fish not found" });
         }
 
-        const aquariumProducts = productForFish.aquariums.product;
+        const aquariumProducts = await Promise.all(
+            productForFish.aquariums.product.map((p) => {
+                return ProductCardModel.findById(p);
+            })
+        );
 
-        res.status(200).json({
-            message: 'Aquarium products fetched successfully',
-            products: aquariumProducts,
-        });
+        res.status(200).json(aquariumProducts);
     } catch (error) {
-        if (!error.statusCode) {
-            error.statusCode = 500;
+        next(error)
+    }
+}
+
+export const getLivingInhabitants = async (req, res, next) => {
+    try {
+        const { livingInhabitantsId } = req.params;
+
+        const productForFish = await ProductsForFishModel.findOne({
+            "livingInhabitants._id": livingInhabitantsId
+        });
+
+        if (!productForFish) {
+            return res.status(404).json({ error: "Product for living inhabitants not found" });
         }
+
+        const livingInhabitantsProducts = await Promise.all(
+            productForFish.livingInhabitants.product.map((p) => {
+                return ProductCardModel.findById(p);
+            })
+        );
+
+        res.status(200).json(livingInhabitantsProducts);
+    } catch (error) {
+        next(error)
+    }
+}
+
+export const getAquariumsAndPedestals = async (req, res, next) => {
+    try {
+        const { aquariumsAndPedestalsId } = req.params;
+
+        const productForFish = await ProductsForFishModel.findOne({
+            "aquariumsAndPedestals._id": aquariumsAndPedestalsId
+        });
+
+        if (!productForFish) {
+            return res.status(404).json({ error: "Product for fish not found" });
+        }
+
+        const aquariumsAndPedestalsProducts = await Promise.all(
+            productForFish.aquariumsAndPedestals.product.map((p) => {
+                return ProductCardModel.findById(p);
+            })
+        );
+
+        res.status(200).json(aquariumsAndPedestalsProducts);
+    } catch (error) {
         next(error);
     }
 }

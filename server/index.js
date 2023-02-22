@@ -246,7 +246,9 @@ app.post('/shop/fish/:id/equipment', checkAuth, CategoryFishController.createEqu
 app.post('/shop/fish/:id/chemistryForFish', checkAuth, CategoryFishController.createChemistryForFish)
 
 // получение
-app.get('/shop/fish/aquariums/:id', checkAuth, CategoryFishController.getAquariums)
+app.get('/shop/fish/aquariums/:aquariumId', checkAuth, CategoryFishController.getAquariums)
+app.get('/shop/fish/livingInhabitants/:livingInhabitantsId', checkAuth, CategoryFishController.getLivingInhabitants)
+app.get('/shop/fish/aquariumsAndPedestals/:aquariumsAndPedestalsId', checkAuth, CategoryFishController.getAquariumsAndPedestals)
 
 
 
