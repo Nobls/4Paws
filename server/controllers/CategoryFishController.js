@@ -326,3 +326,99 @@ export const getAquariumsAndPedestals = async (req, res, next) => {
         next(error);
     }
 }
+
+export const getChemistryAndMedicines = async (req, res, next) => {
+    try {
+        const { chemistryAndMedicinesId } = req.params;
+
+        const productForFish = await ProductsForFishModel.findOne({
+            "chemistryAndMedicines._id": chemistryAndMedicinesId
+        });
+
+        if (!productForFish) {
+            return res.status(404).json({ error: "Product for fish not found" });
+        }
+
+        const chemistryAndMedicinesProducts = await Promise.all(
+            productForFish.chemistryAndMedicines.product.map((p) => {
+                return ProductCardModel.findById(p);
+            })
+        );
+
+        res.status(200).json(chemistryAndMedicinesProducts);
+    } catch (error) {
+        next(error);
+    }
+}
+
+export const getFishFood = async (req, res, next) => {
+    try {
+        const { fishFoodId } = req.params;
+
+        const productForFish = await ProductsForFishModel.findOne({
+            "fishFood._id": fishFoodId
+        });
+
+        if (!productForFish) {
+            return res.status(404).json({ error: "Product for fish not found" });
+        }
+
+        const fishFoodProducts = await Promise.all(
+            productForFish.fishFood.product.map((p) => {
+                return ProductCardModel.findById(p);
+            })
+        );
+
+        res.status(200).json(fishFoodProducts);
+    } catch (error) {
+        next(error);
+    }
+}
+
+export const getDecorations = async (req, res, next) => {
+    try {
+        const { decorationsId } = req.params;
+
+        const productForFish = await ProductsForFishModel.findOne({
+            "decorations._id": decorationsId
+        });
+
+        if (!productForFish) {
+            return res.status(404).json({ error: "Product for fish not found" });
+        }
+
+        const decorationsProducts = await Promise.all(
+            productForFish.decorations.product.map((p) => {
+                return ProductCardModel.findById(p);
+            })
+        );
+
+        res.status(200).json(decorationsProducts);
+    } catch (error) {
+        next(error);
+    }
+}
+
+export const getEquipment = async (req, res, next) => {
+    try {
+        const { equipmentId } = req.params;
+
+        const productForFish = await ProductsForFishModel.findOne({
+            "equipment._id": equipmentId
+        });
+
+        if (!productForFish) {
+            return res.status(404).json({ error: "Product for fish not found" });
+        }
+
+        const equipmentProducts = await Promise.all(
+            productForFish.equipment.product.map((p) => {
+                return ProductCardModel.findById(p);
+            })
+        );
+
+        res.status(200).json(equipmentProducts);
+    } catch (error) {
+        next(error);
+    }
+}

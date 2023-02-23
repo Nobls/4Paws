@@ -249,6 +249,10 @@ app.post('/shop/fish/:id/chemistryForFish', checkAuth, CategoryFishController.cr
 app.get('/shop/fish/aquariums/:aquariumId', checkAuth, CategoryFishController.getAquariums)
 app.get('/shop/fish/livingInhabitants/:livingInhabitantsId', checkAuth, CategoryFishController.getLivingInhabitants)
 app.get('/shop/fish/aquariumsAndPedestals/:aquariumsAndPedestalsId', checkAuth, CategoryFishController.getAquariumsAndPedestals)
+app.get('/shop/fish/fishFood/:fishFoodId', checkAuth, CategoryFishController.getFishFood)
+app.get('/shop/fish/decorations/:decorationsId', checkAuth, CategoryFishController.getDecorations)
+app.get('/shop/fish/equipment/:equipmentId', checkAuth, CategoryFishController.getEquipment)
+app.get('/shop/fish/chemistryForFish/:chemistryForFishId', checkAuth, CategoryFishController.createChemistryForFish)
 
 
 
