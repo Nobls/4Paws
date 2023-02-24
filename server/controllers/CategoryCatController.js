@@ -1,12 +1,10 @@
 import ProductCardModel from "../models/ProductCard.js";
 import ProductsForCatsModel from "../models/ProductsForCats.js";
-import ProductsForDogsModel from "../models/ProductsForDogs.js";
 
 
 export const dryFoodForCats = async (req, res) => {
     try {
-
-        const doc = new ProductCardModel({
+        const newProductCard = await ProductCardModel.create({
             title: req.body.title,
             productImage: req.body.productImage,
             weight: req.body.weight,
@@ -17,25 +15,20 @@ export const dryFoodForCats = async (req, res) => {
             price: req.body.price,
         })
 
-        const newProductCard = await doc.save()
+        const productCatId = req.params.id
 
-        try {
-            const productCatId = req.params.id
-            await ProductsForCatsModel.updateOne(
-                {
-                    _id: productCatId
-                },
-                {
-                    $push: {preservesForCats: newProductCard._id}
-                }
-            )
-        } catch (error) {
-            console.log(error)
-        }
+        await ProductsForCatsModel.updateOne(
+            {
+                _id: productCatId
+            },
+            {
+                $push: {"dryFoodForCats.product": newProductCard._id}
+            }
+        )
 
         res.json(newProductCard)
 
-    } catch(error){
+    } catch (error) {
         console.log(error)
         res.status(500).json({
             message: 'Не удалось создать категорию'
@@ -45,8 +38,7 @@ export const dryFoodForCats = async (req, res) => {
 
 export const preservesForCats = async (req, res) => {
     try {
-
-        const doc = new ProductCardModel({
+        const newProductCard = await ProductCardModel.create({
             title: req.body.title,
             productImage: req.body.productImage,
             weight: req.body.weight,
@@ -57,25 +49,20 @@ export const preservesForCats = async (req, res) => {
             price: req.body.price,
         })
 
-        const newProductCard = await doc.save()
+        const productCatId = req.params.id
 
-        try {
-            const productCatId = req.params.id
-            await ProductsForCatsModel.updateOne(
-                {
-                    _id: productCatId
-                },
-                {
-                    $push: {preservesForCats: newProductCard._id}
-                }
-            )
-        } catch (error) {
-            console.log(error)
-        }
+        await ProductsForCatsModel.updateOne(
+            {
+                _id: productCatId
+            },
+            {
+                $push: {"preservesForCats.product": newProductCard._id}
+            }
+        )
 
         res.json(newProductCard)
 
-    } catch(error){
+    } catch (error) {
         console.log(error)
         res.status(500).json({
             message: 'Не удалось создать категорию'
@@ -85,8 +72,7 @@ export const preservesForCats = async (req, res) => {
 
 export const vitaminsForCats = async (req, res) => {
     try {
-
-        const doc = new ProductCardModel({
+        const newProductCard = await ProductCardModel.create({
             title: req.body.title,
             productImage: req.body.productImage,
             weight: req.body.weight,
@@ -97,25 +83,20 @@ export const vitaminsForCats = async (req, res) => {
             price: req.body.price,
         })
 
-        const newProductCard = await doc.save()
+        const productCatId = req.params.id
 
-        try {
-            const productCatId = req.params.id
-            await ProductsForCatsModel.updateOne(
-                {
-                    _id: productCatId
-                },
-                {
-                    $push: {vitaminsForCats: newProductCard._id}
-                }
-            )
-        } catch (error) {
-            console.log(error)
-        }
+        await ProductsForCatsModel.updateOne(
+            {
+                _id: productCatId
+            },
+            {
+                $push: {"vitaminsForCats.product": newProductCard._id}
+            }
+        )
 
         res.json(newProductCard)
 
-    } catch(error){
+    } catch (error) {
         console.log(error)
         res.status(500).json({
             message: 'Не удалось создать категорию'
@@ -125,8 +106,7 @@ export const vitaminsForCats = async (req, res) => {
 
 export const homeForCats = async (req, res) => {
     try {
-
-        const doc = new ProductCardModel({
+        const newProductCard = await ProductCardModel.create({
             title: req.body.title,
             productImage: req.body.productImage,
             weight: req.body.weight,
@@ -137,25 +117,20 @@ export const homeForCats = async (req, res) => {
             price: req.body.price,
         })
 
-        const newProductCard = await doc.save()
+        const productCatId = req.params.id
 
-        try {
-            const productCatId = req.params.id
-            await ProductsForCatsModel.updateOne(
-                {
-                    _id: productCatId
-                },
-                {
-                    $push: {homeForCats: newProductCard._id}
-                }
-            )
-        } catch (error) {
-            console.log(error)
-        }
+        await ProductsForCatsModel.updateOne(
+            {
+                _id: productCatId
+            },
+            {
+                $push: {"homeForCats.product": newProductCard._id}
+            }
+        )
 
         res.json(newProductCard)
 
-    } catch(error){
+    } catch (error) {
         console.log(error)
         res.status(500).json({
             message: 'Не удалось создать категорию'
@@ -165,8 +140,7 @@ export const homeForCats = async (req, res) => {
 
 export const toysForCats = async (req, res) => {
     try {
-
-        const doc = new ProductCardModel({
+        const newProductCard = await ProductCardModel.create({
             title: req.body.title,
             productImage: req.body.productImage,
             weight: req.body.weight,
@@ -177,25 +151,20 @@ export const toysForCats = async (req, res) => {
             price: req.body.price,
         })
 
-        const newProductCard = await doc.save()
+        const productCatId = req.params.id
 
-        try {
-            const productCatId = req.params.id
-            await ProductsForCatsModel.updateOne(
-                {
-                    _id: productCatId
-                },
-                {
-                    $push: {toysForCats: newProductCard._id}
-                }
-            )
-        } catch (error) {
-            console.log(error)
-        }
+        await ProductsForCatsModel.updateOne(
+            {
+                _id: productCatId
+            },
+            {
+                $push: {"toysForCats.product": newProductCard._id}
+            }
+        )
 
         res.json(newProductCard)
 
-    } catch(error){
+    } catch (error) {
         console.log(error)
         res.status(500).json({
             message: 'Не удалось создать категорию'
@@ -205,8 +174,7 @@ export const toysForCats = async (req, res) => {
 
 export const carryingForCats = async (req, res) => {
     try {
-
-        const doc = new ProductCardModel({
+        const newProductCard = await ProductCardModel.create({
             title: req.body.title,
             productImage: req.body.productImage,
             weight: req.body.weight,
@@ -217,25 +185,21 @@ export const carryingForCats = async (req, res) => {
             price: req.body.price,
         })
 
-        const newProductCard = await doc.save()
 
-        try {
-            const productCatId = req.params.id
-            await ProductsForCatsModel.updateOne(
-                {
-                    _id: productCatId
-                },
-                {
-                    $push: {carryingForCats: newProductCard._id}
-                }
-            )
-        } catch (error) {
-            console.log(error)
-        }
+        const productCatId = req.params.id
+
+        await ProductsForCatsModel.updateOne(
+            {
+                _id: productCatId
+            },
+            {
+                $push: {"carryingForCats.product": newProductCard._id}
+            }
+        )
 
         res.json(newProductCard)
 
-    } catch(error){
+    } catch (error) {
         console.log(error)
         res.status(500).json({
             message: 'Не удалось создать категорию'
@@ -246,7 +210,7 @@ export const carryingForCats = async (req, res) => {
 export const cosmeticsForCats = async (req, res) => {
     try {
 
-        const doc = new ProductCardModel({
+        const newProductCard = await ProductCardModel.create({
             title: req.body.title,
             productImage: req.body.productImage,
             weight: req.body.weight,
@@ -257,25 +221,21 @@ export const cosmeticsForCats = async (req, res) => {
             price: req.body.price,
         })
 
-        const newProductCard = await doc.save()
 
-        try {
-            const productCatId = req.params.id
-            await ProductsForCatsModel.updateOne(
-                {
-                    _id: productCatId
-                },
-                {
-                    $push: {cosmeticsForCats: newProductCard._id}
-                }
-            )
-        } catch (error) {
-            console.log(error)
-        }
+        const productCatId = req.params.id
+
+        await ProductsForCatsModel.updateOne(
+            {
+                _id: productCatId
+            },
+            {
+                $push: {"cosmeticsForCats.product": newProductCard._id}
+            }
+        )
 
         res.json(newProductCard)
 
-    } catch(error){
+    } catch (error) {
         console.log(error)
         res.status(500).json({
             message: 'Не удалось создать категорию'
@@ -286,7 +246,7 @@ export const cosmeticsForCats = async (req, res) => {
 export const scratchingPostsForCats = async (req, res) => {
     try {
 
-        const doc = new ProductCardModel({
+        const newProductCard = await ProductCardModel.create({
             title: req.body.title,
             productImage: req.body.productImage,
             weight: req.body.weight,
@@ -297,25 +257,20 @@ export const scratchingPostsForCats = async (req, res) => {
             price: req.body.price,
         })
 
-        const newProductCard = await doc.save()
+        const productCatId = req.params.id
 
-        try {
-            const productCatId = req.params.id
-            await ProductsForCatsModel.updateOne(
-                {
-                    _id: productCatId
-                },
-                {
-                    $push: {scratchingPostsForCats: newProductCard._id}
-                }
-            )
-        } catch (error) {
-            console.log(error)
-        }
+        await ProductsForCatsModel.updateOne(
+            {
+                _id: productCatId
+            },
+            {
+                $push: {"scratchingPostsForCats.product": newProductCard._id}
+            }
+        )
 
         res.json(newProductCard)
 
-    } catch(error){
+    } catch (error) {
         console.log(error)
         res.status(500).json({
             message: 'Не удалось создать категорию'
@@ -326,7 +281,7 @@ export const scratchingPostsForCats = async (req, res) => {
 export const dishesForCats = async (req, res) => {
     try {
 
-        const doc = new ProductCardModel({
+        const newProductCard = await ProductCardModel.create({
             title: req.body.title,
             productImage: req.body.productImage,
             weight: req.body.weight,
@@ -337,25 +292,19 @@ export const dishesForCats = async (req, res) => {
             price: req.body.price,
         })
 
-        const newProductCard = await doc.save()
-
-        try {
-            const productCatId = req.params.id
-            await ProductsForCatsModel.updateOne(
-                {
-                    _id: productCatId
-                },
-                {
-                    $push: {dishesForCats: newProductCard._id}
-                }
-            )
-        } catch (error) {
-            console.log(error)
-        }
+        const productCatId = req.params.id
+        await ProductsForCatsModel.updateOne(
+            {
+                _id: productCatId
+            },
+            {
+                $push: {"dishesForCats.product": newProductCard._id}
+            }
+        )
 
         res.json(newProductCard)
 
-    } catch(error){
+    } catch (error) {
         console.log(error)
         res.status(500).json({
             message: 'Не удалось создать категорию'
@@ -366,7 +315,7 @@ export const dishesForCats = async (req, res) => {
 export const ammunitionForCats = async (req, res) => {
     try {
 
-        const doc = new ProductCardModel({
+        const newProductCard = await ProductCardModel.create({
             title: req.body.title,
             productImage: req.body.productImage,
             weight: req.body.weight,
@@ -377,25 +326,20 @@ export const ammunitionForCats = async (req, res) => {
             price: req.body.price,
         })
 
-        const newProductCard = await doc.save()
+        const productCatId = req.params.id
 
-        try {
-            const productCatId = req.params.id
-            await ProductsForCatsModel.updateOne(
-                {
-                    _id: productCatId
-                },
-                {
-                    $push: {ammunitionForCats: newProductCard._id}
-                }
-            )
-        } catch (error) {
-            console.log(error)
-        }
+        await ProductsForCatsModel.updateOne(
+            {
+                _id: productCatId
+            },
+            {
+                $push: {"ammunitionForCats.product": newProductCard._id}
+            }
+        )
 
         res.json(newProductCard)
 
-    } catch(error){
+    } catch (error) {
         console.log(error)
         res.status(500).json({
             message: 'Не удалось создать категорию'
@@ -406,7 +350,7 @@ export const ammunitionForCats = async (req, res) => {
 export const toiletsForCats = async (req, res) => {
     try {
 
-        const doc = new ProductCardModel({
+        const newProductCard = await ProductCardModel.create({
             title: req.body.title,
             productImage: req.body.productImage,
             weight: req.body.weight,
@@ -417,25 +361,20 @@ export const toiletsForCats = async (req, res) => {
             price: req.body.price,
         })
 
-        const newProductCard = await doc.save()
+        const productCatId = req.params.id
 
-        try {
-            const productCatId = req.params.id
-            await ProductsForCatsModel.updateOne(
-                {
-                    _id: productCatId
-                },
-                {
-                    $push: {toiletsForCats: newProductCard._id}
-                }
-            )
-        } catch (error) {
-            console.log(error)
-        }
+        await ProductsForCatsModel.updateOne(
+            {
+                _id: productCatId
+            },
+            {
+                $push: {"toiletsForCats.product": newProductCard._id}
+            }
+        )
 
         res.json(newProductCard)
 
-    } catch(error){
+    } catch (error) {
         console.log(error)
         res.status(500).json({
             message: 'Не удалось создать категорию'
@@ -443,200 +382,266 @@ export const toiletsForCats = async (req, res) => {
     }
 }
 
-export const getDryFoodForCats = async (req, res) => {
+export const getDryFoodForCats = async (req, res, next) => {
     try {
+        const {dryFoodForCatsId} = req.params;
 
-        const dryFood = await ProductsForCatsModel.findById(req.params.id)
-        const list = await Promise.all(
-            dryFood.dryFoodForCats.map((p)=>{
-                return ProductCardModel.findById(p)
+        const productForFish = await ProductsForCatsModel.findOne({
+            "dryFoodForCats._id": dryFoodForCatsId
+        });
+
+        if (!productForFish) {
+            return res.status(404).json({error: "Product for fish not found"});
+        }
+
+        const dryFoodForCatsProducts = await Promise.all(
+            productForFish.dryFoodForCats.product.map((p) => {
+                return ProductCardModel.findById(p);
             })
-        )
-        res.json(list)
-    } catch (err) {
-        console.log(err)
-        res.status(500).json({
-            message: 'Не удалось получить информацию!',
-        })
+        );
+
+        res.status(200).json(dryFoodForCatsProducts);
+    } catch (error) {
+        next(error);
     }
 }
 
-export const getPreservesForCats = async (req, res) => {
+export const getPreservesForCats = async (req, res, next) => {
     try {
+        const {preservesForCatsId} = req.params;
 
-        const preserves = await ProductsForCatsModel.findById(req.params.id)
-        const list = await Promise.all(
-            preserves.preservesForCats.map((p)=>{
-                return ProductCardModel.findById(p)
+        const productForFish = await ProductsForCatsModel.findOne({
+            "preservesForCats._id": preservesForCatsId
+        });
+
+        if (!productForFish) {
+            return res.status(404).json({error: "Product for fish not found"});
+        }
+
+        const preservesForCatsProducts = await Promise.all(
+            productForFish.preservesForCats.product.map((p) => {
+                return ProductCardModel.findById(p);
             })
-        )
-        res.json(list)
-    } catch (err) {
-        console.log(err)
-        res.status(500).json({
-            message: 'Не удалось получить информацию!',
-        })
+        );
+
+        res.status(200).json(preservesForCatsProducts);
+    } catch (error) {
+        next(error);
     }
 }
 
-export const getVitaminsForCats = async (req, res) => {
+export const getVitaminsForCats = async (req, res, next) => {
     try {
+        const {vitaminsForCatsId} = req.params;
 
-        const vitamins = await ProductsForCatsModel.findById(req.params.id)
-        const list = await Promise.all(
-            vitamins.vitaminsForCats.map((p)=>{
-                return ProductCardModel.findById(p)
+        const productForFish = await ProductsForCatsModel.findOne({
+            "vitaminsForCats._id": vitaminsForCatsId
+        });
+
+        if (!productForFish) {
+            return res.status(404).json({error: "Product for fish not found"});
+        }
+
+        const vitaminsForCatsProducts = await Promise.all(
+            productForFish.vitaminsForCats.product.map((p) => {
+                return ProductCardModel.findById(p);
             })
-        )
-        res.json(list)
-    } catch (err) {
-        console.log(err)
-        res.status(500).json({
-            message: 'Не удалось получить информацию!',
-        })
+        );
+
+        res.status(200).json(vitaminsForCatsProducts);
+    } catch (error) {
+        next(error);
     }
 }
 
-export const getHomeForCats = async (req, res) => {
+export const getHomeForCats = async (req, res, next) => {
     try {
+        const {homeForCatsId} = req.params;
 
-        const homeCats = await ProductsForCatsModel.findById(req.params.id)
-        const list = await Promise.all(
-            homeCats.homeForCats.map((p)=>{
-                return ProductCardModel.findById(p)
+        const productForFish = await ProductsForCatsModel.findOne({
+            "homeForCats._id": homeForCatsId
+        });
+
+        if (!productForFish) {
+            return res.status(404).json({error: "Product for fish not found"});
+        }
+
+        const homeForCatsProducts = await Promise.all(
+            productForFish.homeForCats.product.map((p) => {
+                return ProductCardModel.findById(p);
             })
-        )
-        res.json(list)
-    } catch (err) {
-        console.log(err)
-        res.status(500).json({
-            message: 'Не удалось получить информацию!',
-        })
+        );
+
+        res.status(200).json(homeForCatsProducts);
+    } catch (error) {
+        next(error);
     }
 }
 
-export const getToysForCats = async (req, res) => {
+export const getToysForCats = async (req, res, next) => {
     try {
+        const {toysForCatsId} = req.params;
 
-        const toysCats = await ProductsForCatsModel.findById(req.params.id)
-        const list = await Promise.all(
-            toysCats.toysForCats.map((p)=>{
-                return ProductCardModel.findById(p)
+        const productForFish = await ProductsForCatsModel.findOne({
+            "toysForCats._id": toysForCatsId
+        });
+
+        if (!productForFish) {
+            return res.status(404).json({error: "Product for fish not found"});
+        }
+
+        const toysForCatsProducts = await Promise.all(
+            productForFish.toysForCats.product.map((p) => {
+                return ProductCardModel.findById(p);
             })
-        )
-        res.json(list)
-    } catch (err) {
-        console.log(err)
-        res.status(500).json({
-            message: 'Не удалось получить информацию!',
-        })
+        );
+
+        res.status(200).json(toysForCatsProducts);
+    } catch (error) {
+        next(error);
     }
 }
 
-export const getCarryingForCats = async (req, res) => {
+export const getCarryingForCats = async (req, res, next) => {
     try {
+        const {carryingForCatsId} = req.params;
 
-        const carryingCats = await ProductsForCatsModel.findById(req.params.id)
-        const list = await Promise.all(
-            carryingCats.carryingForCats.map((p)=>{
-                return ProductCardModel.findById(p)
+        const productForFish = await ProductsForCatsModel.findOne({
+            "carryingForCats._id": carryingForCatsId
+        });
+
+        if (!productForFish) {
+            return res.status(404).json({error: "Product for fish not found"});
+        }
+
+        const carryingForCatsProducts = await Promise.all(
+            productForFish.carryingForCats.product.map((p) => {
+                return ProductCardModel.findById(p);
             })
-        )
-        res.json(list)
-    } catch (err) {
-        console.log(err)
-        res.status(500).json({
-            message: 'Не удалось получить информацию!',
-        })
+        );
+
+        res.status(200).json(carryingForCatsProducts);
+    } catch (error) {
+        next(error);
     }
 }
 
-export const getCosmeticsForCats = async (req, res) => {
+export const getCosmeticsForCats = async (req, res, next) => {
     try {
+        const {cosmeticsForCatsId} = req.params;
 
-        const cosmeticsCats = await ProductsForCatsModel.findById(req.params.id)
-        const list = await Promise.all(
-            cosmeticsCats.cosmeticsForCats.map((p)=>{
-                return ProductCardModel.findById(p)
+        const productForFish = await ProductsForCatsModel.findOne({
+            "cosmeticsForCats._id": cosmeticsForCatsId
+        });
+
+        if (!productForFish) {
+            return res.status(404).json({error: "Product for fish not found"});
+        }
+
+        const cosmeticsForCatsProducts = await Promise.all(
+            productForFish.cosmeticsForCats.product.map((p) => {
+                return ProductCardModel.findById(p);
             })
-        )
-        res.json(list)
-    } catch (err) {
-        console.log(err)
-        res.status(500).json({
-            message: 'Не удалось получить информацию!',
-        })
+        );
+
+        res.status(200).json(cosmeticsForCatsProducts);
+    } catch (error) {
+        next(error);
     }
 }
 
-export const getScratchingPostsForCats = async (req, res) => {
+export const getScratchingPostsForCats = async (req, res, next) => {
     try {
+        const {scratchingPostsForCatsId} = req.params;
 
-        const scratchingPostsCats = await ProductsForCatsModel.findById(req.params.id)
-        const list = await Promise.all(
-            scratchingPostsCats.scratchingPostsForCats.map((p)=>{
-                return ProductCardModel.findById(p)
+        const productForFish = await ProductsForCatsModel.findOne({
+            "scratchingPostsForCats._id": scratchingPostsForCatsId
+        });
+
+        if (!productForFish) {
+            return res.status(404).json({error: "Product for fish not found"});
+        }
+
+        const scratchingPostsForCatsProducts = await Promise.all(
+            productForFish.scratchingPostsForCats.product.map((p) => {
+                return ProductCardModel.findById(p);
             })
-        )
-        res.json(list)
-    } catch (err) {
-        console.log(err)
-        res.status(500).json({
-            message: 'Не удалось получить информацию!',
-        })
+        );
+
+        res.status(200).json(scratchingPostsForCatsProducts);
+    } catch (error) {
+        next(error);
     }
 }
 
-export const getDishesForCats = async (req, res) => {
+export const getDishesForCats = async (req, res, next) => {
     try {
+        const {dishesForCatsId} = req.params;
 
-        const dishesCats = await ProductsForCatsModel.findById(req.params.id)
-        const list = await Promise.all(
-            dishesCats.dishesForCats.map((p)=>{
-                return ProductCardModel.findById(p)
+        const productForFish = await ProductsForCatsModel.findOne({
+            "dishesForCats._id": dishesForCatsId
+        });
+
+        if (!productForFish) {
+            return res.status(404).json({error: "Product for fish not found"});
+        }
+
+        const dishesForCatsProducts = await Promise.all(
+            productForFish.dishesForCats.product.map((p) => {
+                return ProductCardModel.findById(p);
             })
-        )
-        res.json(list)
-    } catch (err) {
-        console.log(err)
-        res.status(500).json({
-            message: 'Не удалось получить информацию!',
-        })
+        );
+
+        res.status(200).json(dishesForCatsProducts);
+    } catch (error) {
+        next(error);
     }
 }
 
-export const getAmmunitionForCats = async (req, res) => {
+export const getAmmunitionForCats = async (req, res, next) => {
     try {
+        const {ammunitionForCatsId} = req.params;
 
-        const ammunitionCats = await ProductsForCatsModel.findById(req.params.id)
-        const list = await Promise.all(
-            ammunitionCats.ammunitionForCats.map((p)=>{
-                return ProductCardModel.findById(p)
+        const productForFish = await ProductsForCatsModel.findOne({
+            "ammunitionForCats._id": ammunitionForCatsId
+        });
+
+        if (!productForFish) {
+            return res.status(404).json({error: "Product for fish not found"});
+        }
+
+        const ammunitionForCatsProducts = await Promise.all(
+            productForFish.ammunitionForCats.product.map((p) => {
+                return ProductCardModel.findById(p);
             })
-        )
-        res.json(list)
-    } catch (err) {
-        console.log(err)
-        res.status(500).json({
-            message: 'Не удалось получить информацию!',
-        })
+        );
+
+        res.status(200).json(ammunitionForCatsProducts);
+    } catch (error) {
+        next(error);
     }
 }
 
-export const getToiletsForCats = async (req, res) => {
+export const getToiletsForCats = async (req, res, next) => {
     try {
+        const {toiletsForCatsId} = req.params;
 
-        const toiletsCats = await ProductsForCatsModel.findById(req.params.id)
-        const list = await Promise.all(
-            toiletsCats.toiletsForCats.map((p)=>{
-                return ProductCardModel.findById(p)
+        const productForFish = await ProductsForCatsModel.findOne({
+            "toiletsForCats._id": toiletsForCatsId
+        });
+
+        if (!productForFish) {
+            return res.status(404).json({error: "Product for fish not found"});
+        }
+
+        const toiletsForCatsProducts = await Promise.all(
+            productForFish.toiletsForCats.product.map((p) => {
+                return ProductCardModel.findById(p);
             })
-        )
-        res.json(list)
-    } catch (err) {
-        console.log(err)
-        res.status(500).json({
-            message: 'Не удалось получить информацию!',
-        })
+        );
+
+        res.status(200).json(toiletsForCatsProducts);
+    } catch (error) {
+        next(error);
     }
 }

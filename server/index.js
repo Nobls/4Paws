@@ -29,6 +29,7 @@ import {
     UserController,
     UserPetController
 } from './controllers/index.js'
+import {getChemistryAndMedicines} from "./controllers/CategoryFishController.js";
 
 
 mongoose
@@ -161,32 +162,32 @@ app.post('/shop/dog/:id/toiletsForDogs', checkAuth, CategoryDogController.toilet
 
 // получение
 
-app.get('/shop/dog/dryFoodDog/:id', checkAuth, CategoryDogController.getDryFood)
-app.get('/shop/dog/preservesForDogs/:id', checkAuth, CategoryDogController.getPreserves)
-app.get('/shop/dog/vitaminsForDogs/:id', checkAuth, CategoryDogController.getVitamins)
-app.get('/shop/dog/homeForDogs/:id', checkAuth, CategoryDogController.getHome)
-app.get('/shop/dog/toysForDogs/:id', checkAuth, CategoryDogController.getToys)
-app.get('/shop/dog/carryingForDogs/:id', checkAuth, CategoryDogController.getCarrying)
-app.get('/shop/dog/cosmeticsForDogs/:id', checkAuth, CategoryDogController.getCosmetics)
-app.get('/shop/dog/clothesForDogs/:id', checkAuth, CategoryDogController.getClothes)
-app.get('/shop/dog/dishesForDogs/:id', checkAuth, CategoryDogController.getDishes)
-app.get('/shop/dog/ammunitionForDogs/:id', checkAuth, CategoryDogController.getAmmunition)
-app.get('/shop/dog/toiletsForDogs/:id', checkAuth, CategoryDogController.getToilets)
+app.get('/shop/dog/dryFoodDog/:dryFoodDogId', checkAuth, CategoryDogController.getDryFood)
+app.get('/shop/dog/preservesForDogs/:preservesForDogsId', checkAuth, CategoryDogController.getPreserves)
+app.get('/shop/dog/vitaminsForDogs/:vitaminsForDogsId', checkAuth, CategoryDogController.getVitamins)
+app.get('/shop/dog/homeForDogs/:homeForDogsId', checkAuth, CategoryDogController.getHome)
+app.get('/shop/dog/toysForDogs/:toysForDogsId', checkAuth, CategoryDogController.getToys)
+app.get('/shop/dog/carryingForDogs/:carryingForDogsId', checkAuth, CategoryDogController.getCarrying)
+app.get('/shop/dog/cosmeticsForDogs/:cosmeticsForDogsId', checkAuth, CategoryDogController.getCosmetics)
+app.get('/shop/dog/clothesForDogs/:clothesForDogsId', checkAuth, CategoryDogController.getClothes)
+app.get('/shop/dog/dishesForDogs/:dishesForDogsId', checkAuth, CategoryDogController.getDishes)
+app.get('/shop/dog/ammunitionForDogs/:ammunitionForDogsId', checkAuth, CategoryDogController.getAmmunition)
+app.get('/shop/dog/toiletsForDogs/:toiletsForDogsId', checkAuth, CategoryDogController.getToilets)
 
 // категории для котов
 
 // создание
-app.post('/shop/cat/:id/dryFoodForCats', checkAuth, CategoryCatController.dryFoodForCats)
-app.post('/shop/cat/:id/preservesForCats', checkAuth, CategoryCatController.preservesForCats)
-app.post('/shop/cat/:id/vitaminsForCats', checkAuth, CategoryCatController.vitaminsForCats)
-app.post('/shop/cat/:id/homeForCats', checkAuth, CategoryCatController.homeForCats)
-app.post('/shop/cat/:id/toysForCats', checkAuth, CategoryCatController.toysForCats)
-app.post('/shop/cat/:id/carryingForCats', checkAuth, CategoryCatController.carryingForCats)
-app.post('/shop/cat/:id/cosmeticsForCats', checkAuth, CategoryCatController.cosmeticsForCats)
-app.post('/shop/cat/:id/scratchingPostsForCats', checkAuth, CategoryCatController.scratchingPostsForCats)
-app.post('/shop/cat/:id/dishesForCats', checkAuth, CategoryCatController.dishesForCats)
-app.post('/shop/cat/:id/ammunitionForCats', checkAuth, CategoryCatController.ammunitionForCats)
-app.post('/shop/cat/:id/toiletsForCats', checkAuth, CategoryCatController.toiletsForCats)
+app.post('/shop/cat/dryFoodForCats/:dryFoodForCatsId', checkAuth, CategoryCatController.dryFoodForCats)
+app.post('/shop/cat/preservesForCats/:preservesForCatsId', checkAuth, CategoryCatController.preservesForCats)
+app.post('/shop/cat/vitaminsForCats/:vitaminsForCatsId', checkAuth, CategoryCatController.vitaminsForCats)
+app.post('/shop/cat/homeForCats/:homeForCatsId', checkAuth, CategoryCatController.homeForCats)
+app.post('/shop/cat/toysForCats/:toysForCatsId', checkAuth, CategoryCatController.toysForCats)
+app.post('/shop/cat/carryingForCats/:carryingForCatsId', checkAuth, CategoryCatController.carryingForCats)
+app.post('/shop/cat/cosmeticsForCats/:cosmeticsForCatsId', checkAuth, CategoryCatController.cosmeticsForCats)
+app.post('/shop/cat/scratchingPostsForCats/:scratchingPostsForCatsId', checkAuth, CategoryCatController.scratchingPostsForCats)
+app.post('/shop/cat/dishesForCats/:dishesForCatsId', checkAuth, CategoryCatController.dishesForCats)
+app.post('/shop/cat/ammunitionForCats/:ammunitionForCatsId', checkAuth, CategoryCatController.ammunitionForCats)
+app.post('/shop/cat/toiletsForCats/:toiletsForCatsId', checkAuth, CategoryCatController.toiletsForCats)
 
 // получение
 app.get('/shop/cat/dryFoodForCats/:id', checkAuth, CategoryCatController.getDryFoodForCats)
@@ -252,7 +253,7 @@ app.get('/shop/fish/aquariumsAndPedestals/:aquariumsAndPedestalsId', checkAuth, 
 app.get('/shop/fish/fishFood/:fishFoodId', checkAuth, CategoryFishController.getFishFood)
 app.get('/shop/fish/decorations/:decorationsId', checkAuth, CategoryFishController.getDecorations)
 app.get('/shop/fish/equipment/:equipmentId', checkAuth, CategoryFishController.getEquipment)
-app.get('/shop/fish/chemistryForFish/:chemistryForFishId', checkAuth, CategoryFishController.createChemistryForFish)
+app.get('/shop/fish/chemistryForFish/:chemistryForFishId', checkAuth, CategoryFishController.getChemistryAndMedicines)
 
 
 

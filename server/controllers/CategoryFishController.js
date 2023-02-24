@@ -1,6 +1,5 @@
 import ProductCardModel from "../models/ProductCard.js";
 import ProductsForFishModel from "../models/ProductForFish.js";
-import * as net from "net";
 
 export const createAquariums = async (req, res) => {
 
