@@ -190,17 +190,17 @@ app.post('/shop/cat/ammunitionForCats/:ammunitionForCatsId', checkAuth, Category
 app.post('/shop/cat/toiletsForCats/:toiletsForCatsId', checkAuth, CategoryCatController.toiletsForCats)
 
 // получение
-app.get('/shop/cat/dryFoodForCats/:id', checkAuth, CategoryCatController.getDryFoodForCats)
-app.get('/shop/cat/preservesForCats/:id', checkAuth, CategoryCatController.getPreservesForCats)
-app.get('/shop/cat/vitaminsForCats/:id', checkAuth, CategoryCatController.getVitaminsForCats)
-app.get('/shop/cat/homeForCats/:id', checkAuth, CategoryCatController.getHomeForCats)
-app.get('/shop/cat/toysForCats/:id', checkAuth, CategoryCatController.getToysForCats)
-app.get('/shop/cat/carryingForCats/:id', checkAuth, CategoryCatController.getCarryingForCats)
-app.get('/shop/cat/cosmeticsForCats/:id', checkAuth, CategoryCatController.getCosmeticsForCats)
-app.get('/shop/cat/scratchingPostsForCats/:id', checkAuth, CategoryCatController.getScratchingPostsForCats)
-app.get('/shop/cat/dishesForCats/:id', checkAuth, CategoryCatController.getDishesForCats)
-app.get('/shop/cat/ammunitionForCats/:id', checkAuth, CategoryCatController.getAmmunitionForCats)
-app.get('/shop/cat/toiletsForCats/:id', checkAuth, CategoryCatController.getToiletsForCats)
+app.get('/shop/cat/dryFoodForCats/:dryFoodForCatsId', checkAuth, CategoryCatController.getDryFoodForCats)
+app.get('/shop/cat/preservesForCats/:preservesForCatsId', checkAuth, CategoryCatController.getPreservesForCats)
+app.get('/shop/cat/vitaminsForCats/:vitaminsForCatsId', checkAuth, CategoryCatController.getVitaminsForCats)
+app.get('/shop/cat/homeForCats/:homeForCatsId', checkAuth, CategoryCatController.getHomeForCats)
+app.get('/shop/cat/toysForCats/:toysForCatsId', checkAuth, CategoryCatController.getToysForCats)
+app.get('/shop/cat/carryingForCats/:carryingForCatsId', checkAuth, CategoryCatController.getCarryingForCats)
+app.get('/shop/cat/cosmeticsForCats/:cosmeticsForCatsId', checkAuth, CategoryCatController.getCosmeticsForCats)
+app.get('/shop/cat/scratchingPostsForCats/:scratchingPostsForCatsId', checkAuth, CategoryCatController.getScratchingPostsForCats)
+app.get('/shop/cat/dishesForCats/:dishesForCatsId', checkAuth, CategoryCatController.getDishesForCats)
+app.get('/shop/cat/ammunitionForCats/:ammunitionForCatsId', checkAuth, CategoryCatController.getAmmunitionForCats)
+app.get('/shop/cat/toiletsForCats/:toiletsForCatsId', checkAuth, CategoryCatController.getToiletsForCats)
 
 // категории для птиц
 
