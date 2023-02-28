@@ -3,7 +3,9 @@ import ProductsForCatsModel from "../models/ProductsForCats.js";
 
 
 export const dryFoodForCats = async (req, res) => {
+
     try {
+
         const newProductCard = await ProductCardModel.create({
             title: req.body.title,
             productImage: req.body.productImage,

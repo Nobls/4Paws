@@ -226,6 +226,8 @@ app.get('/shop/bird/dishesForBirds/:dishesForBirdsId', checkAuth, CategoryBirdCo
 
 
 // категории для грызунов
+
+//создание
 app.post('/shop/rodent/:id/dryFoodForRodents', checkAuth, CategoryRodentController.createDryFoodForRodents)
 app.post('/shop/rodent/:id/vitaminsForRodents', checkAuth, CategoryRodentController.createVitaminsForRodents)
 app.post('/shop/rodent/:id/accessoriesForRodents', checkAuth, CategoryRodentController.createAccessoriesForRodents)
@@ -234,6 +236,16 @@ app.post('/shop/rodent/:id/bathingForRodents', checkAuth, CategoryRodentControll
 app.post('/shop/rodent/:id/toysForRodents', checkAuth, CategoryRodentController.createToysForRodents)
 app.post('/shop/rodent/:id/extenderForRodents', checkAuth, CategoryRodentController.createExtenderForRodents)
 app.post('/shop/rodent/:id/dishesForRodents', checkAuth, CategoryRodentController.createDishesForRodents)
+
+//получение
+app.post('/shop/rodent/dryFoodForRodents/:dryFoodForRodentsId', checkAuth, CategoryRodentController.getDryFoodForRodents)
+app.post('/shop/rodent/vitaminsForRodents/:vitaminsForRodentsId', checkAuth, CategoryRodentController.getVitaminsForRodents)
+app.post('/shop/rodent/accessoriesForRodents/:accessoriesForRodentsId', checkAuth, CategoryRodentController.getAccessoriesForRodents)
+app.post('/shop/rodent/cellsForRodents/:cellsForRodentsId', checkAuth, CategoryRodentController.getCellsForRodents)
+app.post('/shop/rodent/bathingForRodents/:bathingForRodentsId', checkAuth, CategoryRodentController.getBathingForRodents)
+app.post('/shop/rodent/toysForRodents/:toysForRodentsId', checkAuth, CategoryRodentController.getToysForRodents)
+app.post('/shop/rodent/extenderForRodents/:extenderForRodentsId', checkAuth, CategoryRodentController.getExtenderForRodents)
+app.post('/shop/rodent/dishesForRodents/:dishesForRodentsId', checkAuth, CategoryRodentController.getDishesForRodents)
 
 // категории для рыб
 

@@ -1,11 +1,12 @@
 import ProductCardModel from "../models/ProductCard.js";
 import ProductsForRodentModel from "../models/productForRodents.js";
 
+
 export const createDryFoodForRodents = async (req, res) => {
 
     try {
 
-        const doc = new ProductCardModel({
+        const newProductCard = await ProductCardModel.create({
             title: req.body.title,
             productImage: req.body.productImage,
             weight: req.body.weight,
@@ -16,21 +17,15 @@ export const createDryFoodForRodents = async (req, res) => {
             price: req.body.price,
         })
 
-        const newProductCard = await doc.save()
-
-        try {
-            const productDogId = req.params.id
+            const dryFoodForRodentsId = req.params.id
             await ProductsForRodentModel.updateOne(
                 {
-                    _id: productDogId
+                    _id: dryFoodForRodentsId
                 },
                 {
-                    $push: {dryFoodForRodents: newProductCard._id}
+                    $push: {"dryFoodForRodents.product": newProductCard._id}
                 }
             )
-        } catch (error) {
-            console.log(error)
-        }
 
         res.json(newProductCard)
 
@@ -46,7 +41,7 @@ export const createVitaminsForRodents = async (req, res) => {
 
     try {
 
-        const doc = new ProductCardModel({
+        const newProductCard = await ProductCardModel.create({
             title: req.body.title,
             productImage: req.body.productImage,
             weight: req.body.weight,
@@ -57,16 +52,14 @@ export const createVitaminsForRodents = async (req, res) => {
             price: req.body.price,
         })
 
-        const newProductCard = await doc.save()
-
         try {
-            const productDogId = req.params.id
+            const vitaminsForRodentsId = req.params.id
             await ProductsForRodentModel.updateOne(
                 {
-                    _id: productDogId
+                    _id: vitaminsForRodentsId
                 },
                 {
-                    $push: {vitaminsForRodents: newProductCard._id}
+                    $push: {"vitaminsForRodents.product": newProductCard._id}
                 }
             )
         } catch (error) {
@@ -87,7 +80,7 @@ export const createAccessoriesForRodents = async (req, res) => {
 
     try {
 
-        const doc = new ProductCardModel({
+        const newProductCard = await ProductCardModel.create({
             title: req.body.title,
             productImage: req.body.productImage,
             weight: req.body.weight,
@@ -98,21 +91,15 @@ export const createAccessoriesForRodents = async (req, res) => {
             price: req.body.price,
         })
 
-        const newProductCard = await doc.save()
-
-        try {
-            const productDogId = req.params.id
+            const accessoriesForRodentsId = req.params.id
             await ProductsForRodentModel.updateOne(
                 {
-                    _id: productDogId
+                    _id: accessoriesForRodentsId
                 },
                 {
-                    $push: {accessoriesForRodents: newProductCard._id}
+                    $push: {"accessoriesForRodents.product": newProductCard._id}
                 }
             )
-        } catch (error) {
-            console.log(error)
-        }
 
         res.json(newProductCard)
 
@@ -128,7 +115,7 @@ export const createCellsForRodents = async (req, res) => {
 
     try {
 
-        const doc = new ProductCardModel({
+        const newProductCard = new ProductCardModel({
             title: req.body.title,
             productImage: req.body.productImage,
             weight: req.body.weight,
@@ -139,21 +126,15 @@ export const createCellsForRodents = async (req, res) => {
             price: req.body.price,
         })
 
-        const newProductCard = await doc.save()
-
-        try {
-            const productDogId = req.params.id
+            const cellsForRodentsId = req.params.id
             await ProductsForRodentModel.updateOne(
                 {
-                    _id: productDogId
+                    _id: cellsForRodentsId
                 },
                 {
-                    $push: {cellsForRodents: newProductCard._id}
+                    $push: {"cellsForRodents.product": newProductCard._id}
                 }
             )
-        } catch (error) {
-            console.log(error)
-        }
 
         res.json(newProductCard)
 
@@ -169,7 +150,7 @@ export const createBathingForRodents = async (req, res) => {
 
     try {
 
-        const doc = new ProductCardModel({
+        const newProductCard = new ProductCardModel({
             title: req.body.title,
             productImage: req.body.productImage,
             weight: req.body.weight,
@@ -180,21 +161,15 @@ export const createBathingForRodents = async (req, res) => {
             price: req.body.price,
         })
 
-        const newProductCard = await doc.save()
-
-        try {
-            const productDogId = req.params.id
+            const bathingForRodentsId = req.params.id
             await ProductsForRodentModel.updateOne(
                 {
-                    _id: productDogId
+                    _id: bathingForRodentsId
                 },
                 {
-                    $push: {bathingForRodents: newProductCard._id}
+                    $push: {"bathingForRodents.product": newProductCard._id}
                 }
             )
-        } catch (error) {
-            console.log(error)
-        }
 
         res.json(newProductCard)
 
@@ -210,7 +185,7 @@ export const createToysForRodents = async (req, res) => {
 
     try {
 
-        const doc = new ProductCardModel({
+        const newProductCard = new ProductCardModel({
             title: req.body.title,
             productImage: req.body.productImage,
             weight: req.body.weight,
@@ -221,21 +196,15 @@ export const createToysForRodents = async (req, res) => {
             price: req.body.price,
         })
 
-        const newProductCard = await doc.save()
-
-        try {
-            const productDogId = req.params.id
+            const toysForRodentsId = req.params.id
             await ProductsForRodentModel.updateOne(
                 {
-                    _id: productDogId
+                    _id: toysForRodentsId
                 },
                 {
-                    $push: {toysForRodents: newProductCard._id}
+                    $push: {"toysForRodents.product": newProductCard._id}
                 }
             )
-        } catch (error) {
-            console.log(error)
-        }
 
         res.json(newProductCard)
 
@@ -251,7 +220,7 @@ export const createExtenderForRodents = async (req, res) => {
 
     try {
 
-        const doc = new ProductCardModel({
+        const newProductCard = new ProductCardModel({
             title: req.body.title,
             productImage: req.body.productImage,
             weight: req.body.weight,
@@ -262,21 +231,15 @@ export const createExtenderForRodents = async (req, res) => {
             price: req.body.price,
         })
 
-        const newProductCard = await doc.save()
-
-        try {
-            const productDogId = req.params.id
+            const extenderForRodentsId = req.params.id
             await ProductsForRodentModel.updateOne(
                 {
-                    _id: productDogId
+                    _id: extenderForRodentsId
                 },
                 {
-                    $push: {extenderForRodents: newProductCard._id}
+                    $push: {"extenderForRodents.product": newProductCard._id}
                 }
             )
-        } catch (error) {
-            console.log(error)
-        }
 
         res.json(newProductCard)
 
@@ -292,7 +255,7 @@ export const createDishesForRodents = async (req, res) => {
 
     try {
 
-        const doc = new ProductCardModel({
+        const newProductCard = new ProductCardModel({
             title: req.body.title,
             productImage: req.body.productImage,
             weight: req.body.weight,
@@ -303,21 +266,15 @@ export const createDishesForRodents = async (req, res) => {
             price: req.body.price,
         })
 
-        const newProductCard = await doc.save()
-
-        try {
-            const productDogId = req.params.id
+            const dishesForRodentsId = req.params.id
             await ProductsForRodentModel.updateOne(
                 {
-                    _id: productDogId
+                    _id: dishesForRodentsId
                 },
                 {
-                    $push: {dishesForRodents: newProductCard._id}
+                    $push: {"dishesForRodents.product": newProductCard._id}
                 }
             )
-        } catch (error) {
-            console.log(error)
-        }
 
         res.json(newProductCard)
 
