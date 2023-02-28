@@ -215,14 +215,14 @@ app.post('/shop/bird/:id/accessoriesForBird', checkAuth, CategoryBirdController.
 app.post('/shop/bird/:id/dishesForBird', checkAuth, CategoryBirdController.dishesForBird)
 
 //получение
-app.get('/shop/bird/dryFoodForBirds/:id', checkAuth, CategoryBirdController.getDryFoodForBirds)
-app.get('/shop/bird/vitaminsForBirds/:id', checkAuth, CategoryBirdController.getVitaminsForBirds)
-app.get('/shop/bird/birdcageForBirds/:id', checkAuth, CategoryBirdController.getBirdcage)
-app.get('/shop/bird/bathForBirds/:id', checkAuth, CategoryBirdController.getBathForBirds)
-app.get('/shop/bird/toysForBirds/:id', checkAuth, CategoryBirdController.getToysForBirds)
-app.get('/shop/bird/fillersAndPadsForBird/:id', checkAuth, CategoryBirdController.getFillersAndPadsForBird)
-app.get('/shop/bird/accessoriesForBird/:id', checkAuth, CategoryBirdController.getAccessoriesForBird)
-app.get('/shop/bird/dishesForBird/:id', checkAuth, CategoryBirdController.getDishesForBird)
+app.get('/shop/bird/dryFoodForBirds/:dryFoodForBirdsId', checkAuth, CategoryBirdController.getDryFoodForBirds)
+app.get('/shop/bird/vitaminsForBirds/:vitaminsForBirdsId', checkAuth, CategoryBirdController.getVitaminsForBirds)
+app.get('/shop/bird/birdcageForBirds/:birdcageForBirdsId', checkAuth, CategoryBirdController.getBirdcage)
+app.get('/shop/bird/bathForBirds/:bathForBirdsId', checkAuth, CategoryBirdController.getBathForBirds)
+app.get('/shop/bird/toysForBirds/:toysForBirdsId', checkAuth, CategoryBirdController.getToysForBirds)
+app.get('/shop/bird/fillersAndPadsForBirds/:fillersAndPadsForBirdsId', checkAuth, CategoryBirdController.getFillersAndPadsForBird)
+app.get('/shop/bird/accessoriesForBirds/:accessoriesForBirdsId', checkAuth, CategoryBirdController.getAccessoriesForBird)
+app.get('/shop/bird/dishesForBirds/:dishesForBirdsId', checkAuth, CategoryBirdController.getDishesForBird)
 
 
 // категории для грызунов

@@ -67,7 +67,7 @@ const ProductsForBirdSchema = new mongoose.Schema (
                 }
             ]
         },
-        fillersAndPadsForBird: {
+        fillersAndPadsForBirds: {
 
             _id: {
                 type:  mongoose.Schema.Types.ObjectId
@@ -80,7 +80,7 @@ const ProductsForBirdSchema = new mongoose.Schema (
                 }
             ]
         },
-        accessoriesForBird: {
+        accessoriesForBirds: {
 
             _id: {
                 type:  mongoose.Schema.Types.ObjectId
@@ -93,7 +93,7 @@ const ProductsForBirdSchema = new mongoose.Schema (
                 }
             ]
         },
-        dishesForBird: {
+        dishesForBirds: {
 
             _id: {
                 type:  mongoose.Schema.Types.ObjectId
