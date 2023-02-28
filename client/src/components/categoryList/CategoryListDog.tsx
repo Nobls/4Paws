@@ -8,8 +8,8 @@ const CategoryListDog = () => {
         <div className={s.categoryListWrapper}>
             <ul className={s.listItems}>
                 <li className={s.listItem}>
-                        Сухие корма
                     <Link className={s.listItemLink} to={`/shop/dog/dryFoodDog/:dryFoodDogId`}>
+                        Сухие корма
                     </Link>
                 </li>
                 <li className={s.listItem}>
