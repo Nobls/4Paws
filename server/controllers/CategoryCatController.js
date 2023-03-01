@@ -388,16 +388,16 @@ export const getDryFoodForCats = async (req, res, next) => {
     try {
         const {dryFoodForCatsId} = req.params;
 
-        const productForFish = await ProductsForCatsModel.findOne({
+        const productForCats = await ProductsForCatsModel.findOne({
             "dryFoodForCats._id": dryFoodForCatsId
         });
 
-        if (!productForFish) {
+        if (!productForCats) {
             return res.status(404).json({error: "Product for fish not found"});
         }
 
         const dryFoodForCatsProducts = await Promise.all(
-            productForFish.dryFoodForCats.product.map((p) => {
+            productForCats.dryFoodForCats.product.map((p) => {
                 return ProductCardModel.findById(p);
             })
         );
@@ -412,16 +412,16 @@ export const getPreservesForCats = async (req, res, next) => {
     try {
         const {preservesForCatsId} = req.params;
 
-        const productForFish = await ProductsForCatsModel.findOne({
+        const productForCats = await ProductsForCatsModel.findOne({
             "preservesForCats._id": preservesForCatsId
         });
 
-        if (!productForFish) {
+        if (!productForCats) {
             return res.status(404).json({error: "Product for fish not found"});
         }
 
         const preservesForCatsProducts = await Promise.all(
-            productForFish.preservesForCats.product.map((p) => {
+            productForCats.preservesForCats.product.map((p) => {
                 return ProductCardModel.findById(p);
             })
         );
@@ -436,16 +436,16 @@ export const getVitaminsForCats = async (req, res, next) => {
     try {
         const {vitaminsForCatsId} = req.params;
 
-        const productForFish = await ProductsForCatsModel.findOne({
+        const productForCats = await ProductsForCatsModel.findOne({
             "vitaminsForCats._id": vitaminsForCatsId
         });
 
-        if (!productForFish) {
+        if (!productForCats) {
             return res.status(404).json({error: "Product for fish not found"});
         }
 
         const vitaminsForCatsProducts = await Promise.all(
-            productForFish.vitaminsForCats.product.map((p) => {
+            productForCats.vitaminsForCats.product.map((p) => {
                 return ProductCardModel.findById(p);
             })
         );
@@ -460,16 +460,16 @@ export const getHomeForCats = async (req, res, next) => {
     try {
         const {homeForCatsId} = req.params;
 
-        const productForFish = await ProductsForCatsModel.findOne({
+        const productForCats = await ProductsForCatsModel.findOne({
             "homeForCats._id": homeForCatsId
         });
 
-        if (!productForFish) {
+        if (!productForCats) {
             return res.status(404).json({error: "Product for fish not found"});
         }
 
         const homeForCatsProducts = await Promise.all(
-            productForFish.homeForCats.product.map((p) => {
+            productForCats.homeForCats.product.map((p) => {
                 return ProductCardModel.findById(p);
             })
         );
@@ -484,16 +484,16 @@ export const getToysForCats = async (req, res, next) => {
     try {
         const {toysForCatsId} = req.params;
 
-        const productForFish = await ProductsForCatsModel.findOne({
+        const productForCats = await ProductsForCatsModel.findOne({
             "toysForCats._id": toysForCatsId
         });
 
-        if (!productForFish) {
+        if (!productForCats) {
             return res.status(404).json({error: "Product for fish not found"});
         }
 
         const toysForCatsProducts = await Promise.all(
-            productForFish.toysForCats.product.map((p) => {
+            productForCats.toysForCats.product.map((p) => {
                 return ProductCardModel.findById(p);
             })
         );
@@ -508,16 +508,16 @@ export const getCarryingForCats = async (req, res, next) => {
     try {
         const {carryingForCatsId} = req.params;
 
-        const productForFish = await ProductsForCatsModel.findOne({
+        const productForCats = await ProductsForCatsModel.findOne({
             "carryingForCats._id": carryingForCatsId
         });
 
-        if (!productForFish) {
+        if (!productForCats) {
             return res.status(404).json({error: "Product for fish not found"});
         }
 
         const carryingForCatsProducts = await Promise.all(
-            productForFish.carryingForCats.product.map((p) => {
+            productForCats.carryingForCats.product.map((p) => {
                 return ProductCardModel.findById(p);
             })
         );
@@ -532,16 +532,16 @@ export const getCosmeticsForCats = async (req, res, next) => {
     try {
         const {cosmeticsForCatsId} = req.params;
 
-        const productForFish = await ProductsForCatsModel.findOne({
+        const productForCats = await ProductsForCatsModel.findOne({
             "cosmeticsForCats._id": cosmeticsForCatsId
         });
 
-        if (!productForFish) {
+        if (!productForCats) {
             return res.status(404).json({error: "Product for fish not found"});
         }
 
         const cosmeticsForCatsProducts = await Promise.all(
-            productForFish.cosmeticsForCats.product.map((p) => {
+            productForCats.cosmeticsForCats.product.map((p) => {
                 return ProductCardModel.findById(p);
             })
         );
@@ -556,16 +556,16 @@ export const getScratchingPostsForCats = async (req, res, next) => {
     try {
         const {scratchingPostsForCatsId} = req.params;
 
-        const productForFish = await ProductsForCatsModel.findOne({
+        const productForCats = await ProductsForCatsModel.findOne({
             "scratchingPostsForCats._id": scratchingPostsForCatsId
         });
 
-        if (!productForFish) {
+        if (!productForCats) {
             return res.status(404).json({error: "Product for fish not found"});
         }
 
         const scratchingPostsForCatsProducts = await Promise.all(
-            productForFish.scratchingPostsForCats.product.map((p) => {
+            productForCats.scratchingPostsForCats.product.map((p) => {
                 return ProductCardModel.findById(p);
             })
         );
@@ -580,16 +580,16 @@ export const getDishesForCats = async (req, res, next) => {
     try {
         const {dishesForCatsId} = req.params;
 
-        const productForFish = await ProductsForCatsModel.findOne({
+        const productForCats = await ProductsForCatsModel.findOne({
             "dishesForCats._id": dishesForCatsId
         });
 
-        if (!productForFish) {
+        if (!productForCats) {
             return res.status(404).json({error: "Product for fish not found"});
         }
 
         const dishesForCatsProducts = await Promise.all(
-            productForFish.dishesForCats.product.map((p) => {
+            productForCats.dishesForCats.product.map((p) => {
                 return ProductCardModel.findById(p);
             })
         );
@@ -604,16 +604,16 @@ export const getAmmunitionForCats = async (req, res, next) => {
     try {
         const {ammunitionForCatsId} = req.params;
 
-        const productForFish = await ProductsForCatsModel.findOne({
+        const productForCats = await ProductsForCatsModel.findOne({
             "ammunitionForCats._id": ammunitionForCatsId
         });
 
-        if (!productForFish) {
+        if (!productForCats) {
             return res.status(404).json({error: "Product for fish not found"});
         }
 
         const ammunitionForCatsProducts = await Promise.all(
-            productForFish.ammunitionForCats.product.map((p) => {
+            productForCats.ammunitionForCats.product.map((p) => {
                 return ProductCardModel.findById(p);
             })
         );
@@ -628,16 +628,16 @@ export const getToiletsForCats = async (req, res, next) => {
     try {
         const {toiletsForCatsId} = req.params;
 
-        const productForFish = await ProductsForCatsModel.findOne({
+        const productForCats = await ProductsForCatsModel.findOne({
             "toiletsForCats._id": toiletsForCatsId
         });
 
-        if (!productForFish) {
+        if (!productForCats) {
             return res.status(404).json({error: "Product for fish not found"});
         }
 
         const toiletsForCatsProducts = await Promise.all(
-            productForFish.toiletsForCats.product.map((p) => {
+            productForCats.toiletsForCats.product.map((p) => {
                 return ProductCardModel.findById(p);
             })
         );
