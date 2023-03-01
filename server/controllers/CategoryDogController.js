@@ -374,16 +374,16 @@ export const getDryFood = async (req, res, next) => {
     try {
         const {dryFoodForDogsId} = req.params;
 
-        const productForFish = await ProductsForDogsModel.findOne({
+        const productForDogs = await ProductsForDogsModel.findOne({
             "dryFoodForDogs._id": dryFoodForDogsId
         });
 
-        if (!productForFish) {
-            return res.status(404).json({error: "Product for fish not found"});
+        if (!productForDogs) {
+            return res.status(404).json({error: "Product for dogs not found"});
         }
 
         const dryFoodForDogsProducts = await Promise.all(
-            productForFish.dryFoodForDogs.product.map((p) => {
+            productForDogs.dryFoodForDogs.product.map((p) => {
                 return ProductCardModel.findById(p);
             })
         );
@@ -398,16 +398,16 @@ export const getPreserves = async (req, res, next) => {
     try {
         const {preservesForDogsId} = req.params;
 
-        const productForFish = await ProductsForDogsModel.findOne({
+        const productForDogs = await ProductsForDogsModel.findOne({
             "preservesForDogs._id": preservesForDogsId
         });
 
-        if (!productForFish) {
-            return res.status(404).json({error: "Product for fish not found"});
+        if (!productForDogs) {
+            return res.status(404).json({error: "Product for dogs not found"});
         }
 
         const preservesForDogsProducts = await Promise.all(
-            productForFish.preservesForDogs.product.map((p) => {
+            productForDogs.preservesForDogs.product.map((p) => {
                 return ProductCardModel.findById(p);
             })
         );
@@ -422,16 +422,16 @@ export const getVitamins = async (req, res, next) => {
     try {
         const {vitaminsForDogsId} = req.params;
 
-        const productForFish = await ProductsForFishModel.findOne({
+        const productForDogs = await ProductsForFishModel.findOne({
             "vitaminsForDogs._id": vitaminsForDogsId
         });
 
-        if (!productForFish) {
-            return res.status(404).json({error: "Product for fish not found"});
+        if (!productForDogs) {
+            return res.status(404).json({error: "Product for dogs not found"});
         }
 
         const vitaminsForDogsProducts = await Promise.all(
-            productForFish.vitaminsForDogs.product.map((p) => {
+            productForDogs.vitaminsForDogs.product.map((p) => {
                 return ProductCardModel.findById(p);
             })
         );
@@ -446,16 +446,16 @@ export const getHome = async (req, res, next) => {
     try {
         const {homeForDogsId} = req.params;
 
-        const productForFish = await ProductsForDogsModel.findOne({
+        const productForDogs = await ProductsForDogsModel.findOne({
             "homeForDogs._id": homeForDogsId
         });
 
-        if (!productForFish) {
-            return res.status(404).json({error: "Product for fish not found"});
+        if (!productForDogs) {
+            return res.status(404).json({error: "Product for dogs not found"});
         }
 
         const homeForDogsProducts = await Promise.all(
-            productForFish.homeForDogs.product.map((p) => {
+            productForDogs.homeForDogs.product.map((p) => {
                 return ProductCardModel.findById(p);
             })
         );
@@ -470,16 +470,16 @@ export const getToys = async (req, res, next) => {
     try {
         const {toysForDogsId} = req.params;
 
-        const productForFish = await ProductsForDogsModel.findOne({
+        const productForDogs = await ProductsForDogsModel.findOne({
             "toysForDogs._id": toysForDogsId
         });
 
-        if (!productForFish) {
-            return res.status(404).json({error: "Product for fish not found"});
+        if (!productForDogs) {
+            return res.status(404).json({error: "Product for dogs not found"});
         }
 
         const toysForDogsProducts = await Promise.all(
-            productForFish.toysForDogs.product.map((p) => {
+            productForDogs.toysForDogs.product.map((p) => {
                 return ProductCardModel.findById(p);
             })
         );
@@ -494,16 +494,16 @@ export const getCarrying = async (req, res, next) => {
     try {
         const {carryingForDogsId} = req.params;
 
-        const productForFish = await ProductsForDogsModel.findOne({
+        const productForDogs = await ProductsForDogsModel.findOne({
             "carryingForDogs._id": carryingForDogsId
         });
 
-        if (!productForFish) {
-            return res.status(404).json({error: "Product for fish not found"});
+        if (!productForDogs) {
+            return res.status(404).json({error: "Product for dogs not found"});
         }
 
         const carryingForDogsProducts = await Promise.all(
-            productForFish.carryingForDogs.product.map((p) => {
+            productForDogs.carryingForDogs.product.map((p) => {
                 return ProductCardModel.findById(p);
             })
         );
@@ -518,16 +518,16 @@ export const getCosmetics = async (req, res, next) => {
     try {
         const {cosmeticsForDogsId} = req.params;
 
-        const productForFish = await ProductsForDogsModel.findOne({
+        const productForDogs = await ProductsForDogsModel.findOne({
             "cosmeticsForDogs._id": cosmeticsForDogsId
         });
 
-        if (!productForFish) {
-            return res.status(404).json({error: "Product for fish not found"});
+        if (!productForDogs) {
+            return res.status(404).json({error: "Product for dogs not found"});
         }
 
         const cosmeticsForDogsProducts = await Promise.all(
-            productForFish.cosmeticsForDogs.product.map((p) => {
+            productForDogs.cosmeticsForDogs.product.map((p) => {
                 return ProductCardModel.findById(p);
             })
         );
@@ -542,16 +542,16 @@ export const getClothes = async (req, res, next) => {
     try {
         const {clothesForDogsId} = req.params;
 
-        const productForFish = await ProductsForDogsModel.findOne({
+        const productForDogs = await ProductsForDogsModel.findOne({
             "clothesForDogs._id": clothesForDogsId
         });
 
-        if (!productForFish) {
-            return res.status(404).json({error: "Product for fish not found"});
+        if (!productForDogs) {
+            return res.status(404).json({error: "Product for dogs not found"});
         }
 
         const clothesForDogsProducts = await Promise.all(
-            productForFish.clothesForDogs.product.map((p) => {
+            productForDogs.clothesForDogs.product.map((p) => {
                 return ProductCardModel.findById(p);
             })
         );
@@ -566,16 +566,16 @@ export const getDishes = async (req, res, next) => {
     try {
         const {dishesForDogsId} = req.params;
 
-        const productForFish = await ProductsForDogsModel.findOne({
+        const productForDogs = await ProductsForDogsModel.findOne({
             "dishesForDogs._id": dishesForDogsId
         });
 
-        if (!productForFish) {
-            return res.status(404).json({error: "Product for fish not found"});
+        if (!productForDogs) {
+            return res.status(404).json({error: "Product for dogs not found"});
         }
 
         const dishesForDogsProducts = await Promise.all(
-            productForFish.dishesForDogs.product.map((p) => {
+            productForDogs.dishesForDogs.product.map((p) => {
                 return ProductCardModel.findById(p);
             })
         );
@@ -590,16 +590,16 @@ export const getAmmunition = async (req, res, next) => {
     try {
         const {ammunitionForDogsId} = req.params;
 
-        const productForFish = await ProductsForDogsModel.findOne({
+        const productForDogs = await ProductsForDogsModel.findOne({
             "ammunitionForDogs._id": ammunitionForDogsId
         });
 
-        if (!productForFish) {
-            return res.status(404).json({error: "Product for fish not found"});
+        if (!productForDogs) {
+            return res.status(404).json({error: "Product for dogs not found"});
         }
 
         const ammunitionForDogsProducts = await Promise.all(
-            productForFish.ammunitionForDogs.product.map((p) => {
+            productForDogs.ammunitionForDogs.product.map((p) => {
                 return ProductCardModel.findById(p);
             })
         );
@@ -614,16 +614,16 @@ export const getToilets = async (req, res, next) => {
     try {
         const {toiletsForDogsId} = req.params;
 
-        const productForFish = await ProductsForDogsModel.findOne({
+        const productForDogs = await ProductsForDogsModel.findOne({
             "toiletsForDogs._id": toiletsForDogsId
         });
 
-        if (!productForFish) {
-            return res.status(404).json({error: "Product for fish not found"});
+        if (!productForDogs) {
+            return res.status(404).json({error: "Product for dogs not found"});
         }
 
         const toiletsForDogsProducts = await Promise.all(
-            productForFish.toiletsForDogs.product.map((p) => {
+            productForDogs.toiletsForDogs.product.map((p) => {
                 return ProductCardModel.findById(p);
             })
         );

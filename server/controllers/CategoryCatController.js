@@ -393,7 +393,7 @@ export const getDryFoodForCats = async (req, res, next) => {
         });
 
         if (!productForCats) {
-            return res.status(404).json({error: "Product for fish not found"});
+            return res.status(404).json({error: "Product for cats not found"});
         }
 
         const dryFoodForCatsProducts = await Promise.all(
@@ -417,7 +417,7 @@ export const getPreservesForCats = async (req, res, next) => {
         });
 
         if (!productForCats) {
-            return res.status(404).json({error: "Product for fish not found"});
+            return res.status(404).json({error: "Product for cats not found"});
         }
 
         const preservesForCatsProducts = await Promise.all(
@@ -441,7 +441,7 @@ export const getVitaminsForCats = async (req, res, next) => {
         });
 
         if (!productForCats) {
-            return res.status(404).json({error: "Product for fish not found"});
+            return res.status(404).json({error: "Product for cats not found"});
         }
 
         const vitaminsForCatsProducts = await Promise.all(
@@ -465,7 +465,7 @@ export const getHomeForCats = async (req, res, next) => {
         });
 
         if (!productForCats) {
-            return res.status(404).json({error: "Product for fish not found"});
+            return res.status(404).json({error: "Product for cats not found"});
         }
 
         const homeForCatsProducts = await Promise.all(
@@ -489,7 +489,7 @@ export const getToysForCats = async (req, res, next) => {
         });
 
         if (!productForCats) {
-            return res.status(404).json({error: "Product for fish not found"});
+            return res.status(404).json({error: "Product for cats not found"});
         }
 
         const toysForCatsProducts = await Promise.all(
@@ -513,7 +513,7 @@ export const getCarryingForCats = async (req, res, next) => {
         });
 
         if (!productForCats) {
-            return res.status(404).json({error: "Product for fish not found"});
+            return res.status(404).json({error: "Product for cats not found"});
         }
 
         const carryingForCatsProducts = await Promise.all(
@@ -537,7 +537,7 @@ export const getCosmeticsForCats = async (req, res, next) => {
         });
 
         if (!productForCats) {
-            return res.status(404).json({error: "Product for fish not found"});
+            return res.status(404).json({error: "Product for cats not found"});
         }
 
         const cosmeticsForCatsProducts = await Promise.all(
@@ -561,7 +561,7 @@ export const getScratchingPostsForCats = async (req, res, next) => {
         });
 
         if (!productForCats) {
-            return res.status(404).json({error: "Product for fish not found"});
+            return res.status(404).json({error: "Product for cats not found"});
         }
 
         const scratchingPostsForCatsProducts = await Promise.all(
@@ -585,7 +585,7 @@ export const getDishesForCats = async (req, res, next) => {
         });
 
         if (!productForCats) {
-            return res.status(404).json({error: "Product for fish not found"});
+            return res.status(404).json({error: "Product for cats not found"});
         }
 
         const dishesForCatsProducts = await Promise.all(
@@ -609,7 +609,7 @@ export const getAmmunitionForCats = async (req, res, next) => {
         });
 
         if (!productForCats) {
-            return res.status(404).json({error: "Product for fish not found"});
+            return res.status(404).json({error: "Product for cats not found"});
         }
 
         const ammunitionForCatsProducts = await Promise.all(
@@ -633,7 +633,7 @@ export const getToiletsForCats = async (req, res, next) => {
         });
 
         if (!productForCats) {
-            return res.status(404).json({error: "Product for fish not found"});
+            return res.status(404).json({error: "Product for cats not found"});
         }
 
         const toiletsForCatsProducts = await Promise.all(
