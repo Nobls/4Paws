@@ -1,0 +1,11 @@
+@import "src/common/extends";
+@import "src/common/variables";
+
+.editBtn {
+  padding: 7px;
+  color: white;
+  background-color: #b0afaf;
+  border-radius: $borderRadius;
+  border: none;
+  cursor: pointer;
+}

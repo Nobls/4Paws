@@ -8,6 +8,7 @@ export interface PostType {
     tags?: []
     user: User
     imageUrl?: string
+    timestamps: string
 }
 
 export interface User {

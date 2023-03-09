@@ -1,5 +1,6 @@
 import React from 'react';
 import {User} from "../../redux/slices/posts";
+import s from './editButton.module.scss'
 
 type PropsType = {
     user: User
@@ -14,7 +15,7 @@ const EditButtons = ({_id,user,userData, removeNewsHandle, titleButton}: PropsTy
         <>
             {
                 userData?._id === user._id ? <div>
-                    <button onClick={removeNewsHandle}>{titleButton}</button>
+                    <button className={s.editBtn} onClick={removeNewsHandle}>{titleButton}</button>
                 </div> : <div></div>
             }
         </>

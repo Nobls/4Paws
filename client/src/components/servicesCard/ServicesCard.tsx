@@ -45,24 +45,27 @@ export const ServicesCard = ({id, imageUrl, title, description, userData, user}:
             </div>
             <p className={s.servicesDescription}>{description}</p>
             <div className={s.buttonBlock}>
-                <Link to={`/services/${id}`}>
+                <Link className={s.linkMore} to={`/services/${id}`}>
                     <LowercaseButton title={'Узнать больше'}/>
                 </Link>
                 <ButtonStandart title={order}/>
             </div>
-            <a href={`/services/${id}/edit`}>
+            <div className={s.editBtnWrapper}>
+                <a href={`/services/${id}/edit`}>
+                    <EditButtons
+                        userData={userData}
+                        user={user}
+                        titleButton={'Редактировать'}
+                    />
+                </a>
                 <EditButtons
                     userData={userData}
                     user={user}
-                    titleButton={'Редактировать'}
+                    removeNewsHandle={removeServicesHandle}
+                    titleButton={'Удалить'}
                 />
-            </a>
-            <EditButtons
-                userData={userData}
-                user={user}
-                removeNewsHandle={removeServicesHandle}
-                titleButton={'Удалить'}
-            />
+            </div>
+
         </div>
     );
 };
