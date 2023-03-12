@@ -9,6 +9,7 @@ export interface PostType {
     user: User
     imageUrl?: string
     timestamps: string
+    publicationDate: any
 }
 
 export interface User {
