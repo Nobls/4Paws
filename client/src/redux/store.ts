@@ -5,6 +5,7 @@ import {servicesReducer} from "./slices/services";
 import {userPetReducer} from "./slices/userPet";
 import {petProceduresReducer} from "./slices/procedures";
 import {commentReducer} from "./slices/comment";
+import {reviewsReducer} from "./slices/reviews";
 
 const store = configureStore({
     reducer: {
@@ -14,6 +15,7 @@ const store = configureStore({
         userPet: userPetReducer,
         procedures: petProceduresReducer,
         comments: commentReducer,
+        reviews: reviewsReducer,
     },
 })
 

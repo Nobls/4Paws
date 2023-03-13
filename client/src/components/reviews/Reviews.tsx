@@ -1,13 +1,18 @@
 import React from 'react';
-import {reviews} from "../../data/data";
 import s from "./reviews.module.scss";
 import "slick-carousel/slick/slick.scss";
 import "slick-carousel/slick/slick-theme.scss";
 import Slider from "react-slick";
 import {PrevArrow} from "../prevArrow/PrevArrow";
 import {NextArrow} from "../nextArrow/NextArrow";
+import {ReviewsType} from "../../redux/slices/reviews";
 
-const Reviews = () => {
+type PropsType = {
+    reviews: ReviewsType[]
+    userData?: any
+}
+
+const Reviews = ({reviews, userData}: PropsType) => {
 
     function slickNext() {
         return function () {
@@ -24,8 +29,8 @@ const Reviews = () => {
         infinite: true,
         slidesToShow: 2,
         slidesToScroll: 1,
-        nextArrow: <NextArrow className={''} onClick={slickNext()} style={ {color:'#eb5837'} } />,
-        prevArrow: <PrevArrow className={''} onClick={slickPrev()} style={ {color:'#eb5837'} }/>
+        nextArrow: <NextArrow className={''} onClick={slickNext()} style={{color: '#eb5837'}}/>,
+        prevArrow: <PrevArrow className={''} onClick={slickPrev()} style={{color: '#eb5837'}}/>
 
     };
 
@@ -36,21 +41,21 @@ const Reviews = () => {
 
             <Slider {...settings}>
                 {
-                    reviews.map(m => {
+                    reviews.map((m, index) => {
                             return (
-                                <div className={s.reviewInner} key={m.id}>
+                                <div className={s.reviewInner} key={index}>
                                     <div className={s.reviewElements}>
                                         <div>
-                                            <img className={s.reviewUserImage} src={m.image} alt={m.alt}/>
+                                            {/*<img className={s.reviewUserImage} src={`http://localhost:3157${m.user.avatarUrl}`} alt={'User Avatar'}/>*/}
                                         </div>
                                         <div className={s.reviewUser}>
                                             <div className={s.reviewUserName}>
-                                                {m.userName}
+                                                {/*{m.user.fullName}*/}
                                             </div>
                                             <div className={s.reviewDate}>
-                                                {m.date}
+                                                {m.dateReview.toLowerCase().toString().slice(0, 10)}
                                             </div>
-                                            <p className={s.reviewText}>{m.text}</p>
+                                            <p className={s.reviewText}>{m.review}</p>
                                         </div>
                                     </div>
                                 </div>

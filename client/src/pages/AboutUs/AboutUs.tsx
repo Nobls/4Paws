@@ -1,13 +1,24 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import s from './aboutUs.module.scss';
 import paw from '../../images/Vector2.png';
 import {Link} from "react-router-dom";
 import Reviews from "../../components/reviews/Reviews";
 import "react-image-gallery/styles/scss/image-gallery.scss";
 import Gallery from "../../components/Gallery/Gallery";
+import {useAppDispatch, useAppSelector} from "../../redux/hook/hook";
+import {fetchReviews} from "../../redux/slices/reviews";
 
 
 const AboutUs = () => {
+
+    const dispatch = useAppDispatch()
+
+    const {reviews} = useAppSelector((state)=> state.reviews)
+
+    useEffect(()=>{
+        dispatch(fetchReviews())
+    },[dispatch])
+
     return (
         <div>
             <div className={s.aboutUsBg}>
@@ -46,7 +57,7 @@ const AboutUs = () => {
             </div>
 
             <div>
-                <Reviews/>
+                <Reviews reviews={reviews}/>
             </div>
 
             <h2>Галерея</h2>

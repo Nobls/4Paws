@@ -13,17 +13,20 @@ import {useAppDispatch, useAppSelector} from "../../redux/hook/hook";
 import {fetchNews} from "../../redux/slices/posts";
 import {fetchAuthMe} from "../../redux/slices/auth";
 import {Loading} from "../../components/loading/Loading";
+import {fetchReviews} from "../../redux/slices/reviews";
 
 const Homepage = () => {
 
     const dispatch = useAppDispatch()
 
     const {post} = useAppSelector((state) => state.news)
+    const {reviews} = useAppSelector((state) => state.reviews)
     const [loading, setLoading] = useState<boolean>(true)
 
     useEffect(() => {
         dispatch(fetchNews())
         dispatch(fetchAuthMe())
+        dispatch(fetchReviews())
             .then(() => setLoading(false))
     }, [dispatch])
 
@@ -52,7 +55,7 @@ const Homepage = () => {
                 <Populars/>
                 <LastNews post={post}/>
                 <OurTeam/>
-                <Reviews/>
+                <Reviews reviews={reviews}/>
             </div>
             <OurPartners/>
         </div>

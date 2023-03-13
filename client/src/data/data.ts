@@ -275,7 +275,7 @@ export const lastNews: LastNewsType[] = [
     }
 ]
 
-export const reviews = [
+/*export const reviews = [
     {
         id: 1,
         userName: 'Валерий',
@@ -330,7 +330,7 @@ export const reviews = [
         text: 'Несколько лет тому назад, когда я завел собаку, выбор сухих кормов в зоомагазинах был очень скудным. Все корма делились на две категории: обычные корма премиум класса и очень дорогие.',
         rating: 1,
     },
-]
+]*/
 
 export const popularsGoods: PopularsGoodsType[] = [
     {

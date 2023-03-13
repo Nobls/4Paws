@@ -10,5 +10,6 @@ export * as CategoryCatController from './CategoryCatController.js'
 export * as CategoryBirdController from './CategoryBirdController.js'
 export * as CategoryRodentController from './CategoryRodentsController.js'
 export * as CategoryFishController from './CategoryFishController.js'
+export * as ReviewsController from './ReviewsController.js'
 
 

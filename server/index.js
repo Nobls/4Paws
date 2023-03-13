@@ -27,9 +27,9 @@ import {
     ServicesController,
     ShopCategory,
     UserController,
-    UserPetController
+    UserPetController,
+    ReviewsController,
 } from './controllers/index.js'
-import {getChemistryAndMedicines} from "./controllers/CategoryFishController.js";
 
 
 mongoose
@@ -267,6 +267,9 @@ app.get('/shop/fish/decorations/:decorationsId', checkAuth, CategoryFishControll
 app.get('/shop/fish/equipment/:equipmentId', checkAuth, CategoryFishController.getEquipment)
 app.get('/shop/fish/chemistryForFish/:chemistryForFishId', checkAuth, CategoryFishController.getChemistryAndMedicines)
 
+// отзывы
+app.post('/reviews/:id', checkAuth, ReviewsController.createReview)
+app.get('/reviews', ReviewsController.getAllReviews)
 
 
 

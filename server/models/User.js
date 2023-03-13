@@ -103,7 +103,14 @@ const UserSchema = new mongoose.Schema(
                 type: mongoose.Schema.Types.ObjectId,
                 ref: 'Post'
             }
-        ]
+        ],
+
+        reviews: [
+            {
+                type: mongoose.Schema.Types.ObjectId,
+                ref: 'Review'
+            }
+        ],
     },
     {
         timestamps: true,
