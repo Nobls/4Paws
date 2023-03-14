@@ -5,16 +5,14 @@ export const createReview = async (req, res) => {
     try {
         const newReview = await ReviewModel.create({
             review: req.body.review,
-            user: req.body.userId,
+            user: req.userId,
             dateReview: req.body.dateReview
         })
 
         const userReviewId = req.params.id
 
-        await UserModel.updateOne(
-            {
-                _id: userReviewId
-            },
+        await UserModel.findByIdAndUpdate(
+            userReviewId,
             {
                 $push: {reviews: newReview._id}
             }
