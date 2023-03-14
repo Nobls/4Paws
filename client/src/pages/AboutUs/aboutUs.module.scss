@@ -88,30 +88,6 @@ h2 {
   }
 }
 
-.reviewWrapper{
-  @extend .container;
-  position: relative;
-  top: -200px;
-
-  .reviewTitle{
-    font-size: 40px;
-    color: $color-text;
-    margin: 30px 0 30px 0;
-  }
-
-  .reviewForm{
-    display: flex;
-    flex-direction: column;
-    width: 80%;
-
-    .reviewTextarea{
-      margin-bottom: 25px;
-      padding: 15px;
-      @extend .bgInput;
-    }
-  }
-}
-
 
 
 

@@ -21,6 +21,7 @@ const Homepage = () => {
 
     const {post} = useAppSelector((state) => state.news)
     const {reviews} = useAppSelector((state) => state.reviews)
+    const user = useAppSelector((state)=>state.auth.data)
     const [loading, setLoading] = useState<boolean>(true)
 
     useEffect(() => {
@@ -55,7 +56,7 @@ const Homepage = () => {
                 <Populars/>
                 <LastNews post={post}/>
                 <OurTeam/>
-                <Reviews reviews={reviews}/>
+                <Reviews reviews={reviews} user={user}/>
             </div>
             <OurPartners/>
         </div>

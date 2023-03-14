@@ -1,40 +1,20 @@
 import React, {useEffect, useState} from 'react';
 import s from './aboutUs.module.scss';
 import paw from '../../images/Vector2.png';
-import {Link, useParams} from "react-router-dom";
+import {Link} from "react-router-dom";
 import Reviews from "../../components/reviews/Reviews";
 import "react-image-gallery/styles/scss/image-gallery.scss";
 import Gallery from "../../components/Gallery/Gallery";
 import {useAppDispatch, useAppSelector} from "../../redux/hook/hook";
-import {createReview, fetchReviews} from "../../redux/slices/reviews";
-import ButtonStandart from "../../components/buttonStandart/ButtonStandart";
-import {createComment} from "../../redux/slices/comment";
-
+import {fetchReviews} from "../../redux/slices/reviews";
 
 const AboutUs = () => {
 
     const dispatch = useAppDispatch()
 
-    const [data, setData] = useState<any>()
-    const [loading, setLoading] = useState<any>(true)
-
-    const [review, setReview] = useState('')
+    const user = useAppSelector((state)=> state.auth.data)
 
     const {reviews} = useAppSelector((state)=> state.reviews)
-
-
-    const params = useParams()
-
-    const handleSubmit = () => {
-        try {
-        const userId = params.id
-            dispatch(createReview({userId, review}))
-            setReview('')
-        } catch(error){
-            console.log(error)
-        }
-    }
-
 
     useEffect(()=>{
         dispatch(fetchReviews())
@@ -78,26 +58,7 @@ const AboutUs = () => {
             </div>
 
             <div>
-                <Reviews reviews={reviews}/>
-            </div>
-
-            <div className={s.reviewWrapper}>
-                <h3 className={s.reviewTitle}>Оставить отзыв</h3>
-                <form className={s.reviewForm}>
-                    <textarea
-                        value={review}
-                        cols={30}
-                        rows={7}
-                        placeholder={'Ваш отзыв'}
-                        className={s.reviewTextarea}
-                        onChange={event => setReview(event.currentTarget.value)}
-                    >
-
-                    </textarea>
-                    <div>
-                        <ButtonStandart title={'Добавить отзыв'} onclick={handleSubmit}/>
-                    </div>
-                </form>
+                <Reviews reviews={reviews} user={user}/>
             </div>
 
             <h2>Галерея</h2>

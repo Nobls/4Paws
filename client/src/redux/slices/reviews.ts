@@ -6,7 +6,7 @@ import axios from "../../axios/axios";
 export interface ReviewsType {
     review: string
     user: User
-    dateReview: any
+    createdAt: any
 }
 
 type TypeStateReviews = {
