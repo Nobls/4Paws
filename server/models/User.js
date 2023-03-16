@@ -111,6 +111,13 @@ const UserSchema = new mongoose.Schema(
                 ref: 'Review'
             }
         ],
+
+        comments: [
+            {
+                type: mongoose.Schema.Types.ObjectId,
+                ref: 'Comment'
+            }
+        ]
     },
     {
         timestamps: true,

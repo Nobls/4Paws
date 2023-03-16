@@ -1,5 +1,6 @@
 import CommentModel from "../models/Comment.js";
 import PostModel from "../models/Post.js";
+import UserModel from "../models/User.js";
 
 
 /*export const createComment = async (req, res) => {
@@ -28,14 +29,13 @@ import PostModel from "../models/Post.js";
 
 export const createComment = async (req, res) => {
     try {
-        const doc = new CommentModel({
+        const newComment = await CommentModel.create({
             comment: req.body.comment,
             user: req.userId
         })
-        const newComment = await doc.save()
 
-        try {
             const postId = req.params.id
+
             await PostModel.updateOne(
                 {
                     _id: postId
@@ -44,9 +44,15 @@ export const createComment = async (req, res) => {
                     $push: {comments: newComment._id}
                 }
             )
-        } catch (error) {
-            console.log(error)
-        }
+
+        const userCommentId = req.params.id
+
+        await UserModel.findByIdAndUpdate(
+            userCommentId,
+            {
+                $push: {comments: newComment._id}
+            }
+        )
 
         res.json(newComment)
     } catch (error) {

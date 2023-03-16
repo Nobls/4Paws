@@ -21,11 +21,12 @@ const initialState: TypeStateComments = {
 
 export const createComment = createAsyncThunk(
     'comment/createComment',
-    async ({ postId, comment }:any) => {
+    async ({ postId, comment, userId }:any) => {
         try {
             const { data } = await axios.post(`/comments/${postId}`, {
                 postId,
                 comment,
+                userId
             })
             return data
         } catch (error) {

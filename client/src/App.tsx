@@ -32,6 +32,8 @@ function App() {
     const isAuth = useAppSelector(selectedIsAuth)
     const [loading, setLoading] = useState<any>(true)
 
+    const userData = useAppSelector((state)=>state.auth.data)
+
     useEffect(()=>{
         dispatch(fetchAuthMe())
             .then(()=> setLoading(false))
@@ -56,7 +58,7 @@ function App() {
                     <Route path='login' element={<Login/>}/>
                     <Route path='registration' element={<Registration/>}/>
                     <Route path='petInfo/:id' element={<PetInfo/>}/>
-                    <Route path='news/:id' element={<NewsPost/>}/>
+                    <Route path='news/:id' element={<NewsPost userData={userData}/>}/>
                     <Route path='auth/user/:id' element={<UsersAccount/>}/>
                     <Route path='petAccount/:id' element={<PetAccount/>}/>
                     <Route path='adminPanel' element={<AdminPanel/>}/>

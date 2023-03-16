@@ -9,7 +9,11 @@ import {useAppDispatch, useAppSelector} from "../../redux/hook/hook";
 import {createComment, getComments} from "../../redux/slices/comment";
 import CommentItem from "../../components/commentItem/CommentItem";
 
-const NewsPost = () => {
+type PropsType = {
+    userData: any
+}
+
+const NewsPost = ({userData}:PropsType) => {
 
     const dispatch = useAppDispatch()
 
@@ -20,7 +24,7 @@ const NewsPost = () => {
 
     const {comments} = useAppSelector((state) => state.comments)
 
-    const userData = useAppSelector((state)=> state.auth.data)
+    //const userData = useAppSelector((state)=> state.auth.data)
 
     const params = useParams()
 
@@ -40,7 +44,8 @@ const NewsPost = () => {
     const handleSubmit = () => {
         try {
             const postId = params.id
-            dispatch(createComment({postId, comment}))
+            const userId = userData._id
+            dispatch(createComment({postId, comment, userId}))
             setComment('')
         } catch (error) {
             console.log(error)
