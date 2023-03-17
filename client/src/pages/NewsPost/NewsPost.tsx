@@ -24,7 +24,7 @@ const NewsPost = ({userData}:PropsType) => {
 
     const {comments} = useAppSelector((state) => state.comments)
 
-    //const userData = useAppSelector((state)=> state.auth.data)
+    //const user = useAppSelector((state)=> state.auth.data)
 
     const params = useParams()
 
@@ -39,13 +39,13 @@ const NewsPost = ({userData}:PropsType) => {
         }).catch(err => {
             console.warn(err)
         })
-    }, [])
+    }, [params])
 
     const handleSubmit = () => {
         try {
             const postId = params.id
-            const userId = userData._id
-            dispatch(createComment({postId, comment, userId}))
+            /*const userId = userData._id*/
+            dispatch(createComment({postId, comment}))
             setComment('')
         } catch (error) {
             console.log(error)
@@ -58,7 +58,7 @@ const NewsPost = ({userData}:PropsType) => {
         } catch (error) {
             console.log(error)
         }
-    }, [])
+    }, [dispatch, params])
 
     if (loading) {
         return <div>Загрузка...</div>
@@ -88,12 +88,15 @@ const NewsPost = ({userData}:PropsType) => {
             <div className={s.comments}>
                 <h3 className={s.commentsTitle}>Комментарии</h3>
                 {
-                    comments.map((com,index)=> {
+                    comments.map((m,index)=> {
                         return (
-                            <CommentItem key={index} com={com} userData={userData}/>
+                            <CommentItem key={index} m={m} />
                         )
                     })
                 }
+
+                {/*<CommentItem comments={comments}/>*/}
+
             </div>
 
             <div className={s.postComment}>

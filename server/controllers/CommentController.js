@@ -34,25 +34,25 @@ export const createComment = async (req, res) => {
             user: req.userId
         })
 
-            const postId = req.params.id
+        const postId = req.params.id
 
-            await PostModel.updateOne(
-                {
-                    _id: postId
-                },
-                {
-                    $push: {comments: newComment._id}
-                }
-            )
-
-        const userCommentId = req.params.id
-
-        await UserModel.findByIdAndUpdate(
-            userCommentId,
+        await PostModel.updateOne(
+            {
+                _id: postId
+            },
             {
                 $push: {comments: newComment._id}
             }
         )
+
+        /*const userCommentId = req.params.id*/
+
+        /*await UserModel.findByIdAndUpdate(
+            userCommentId,
+            {
+                $push: {comments: newComment._id}
+            }
+        )*/
 
         res.json(newComment)
     } catch (error) {
