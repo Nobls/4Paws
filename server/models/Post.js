@@ -56,7 +56,7 @@ const PostSchema = new mongoose.Schema(
             default: 0
         },
 
-        publicationDate:{
+        publicationDate: {
             type: Date
         },
 

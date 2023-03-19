@@ -32,11 +32,9 @@ function App() {
     const isAuth = useAppSelector(selectedIsAuth)
     const [loading, setLoading] = useState<any>(true)
 
-    const userData = useAppSelector((state)=>state.auth.data)
-
-    useEffect(()=>{
+    useEffect(() => {
         dispatch(fetchAuthMe())
-            .then(()=> setLoading(false))
+            .then(() => setLoading(false))
     }, [dispatch])
 
     if (loading) {
@@ -58,7 +56,7 @@ function App() {
                     <Route path='login' element={<Login/>}/>
                     <Route path='registration' element={<Registration/>}/>
                     <Route path='petInfo/:id' element={<PetInfo/>}/>
-                    <Route path='news/:id' element={<NewsPost userData={userData}/>}/>
+                    <Route path='news/:id' element={<NewsPost/>}/>
                     <Route path='auth/user/:id' element={<UsersAccount/>}/>
                     <Route path='petAccount/:id' element={<PetAccount/>}/>
                     <Route path='adminPanel' element={<AdminPanel/>}/>
@@ -69,7 +67,7 @@ function App() {
                 </Route>
             </Routes>
 
-                <ToastContainer position='bottom-right' />
+            <ToastContainer position='bottom-right'/>
         </div>
     );
 }

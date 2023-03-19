@@ -43,7 +43,7 @@ const Reviews = ({reviews, user}: PropsType) => {
             const userId = user._id
             dispatch(createReview({userId, review}))
             setReview('')
-        } catch(error){
+        } catch (error) {
             console.log(error)
         }
     }
@@ -60,7 +60,8 @@ const Reviews = ({reviews, user}: PropsType) => {
                                 <div className={s.reviewInner} key={index}>
                                     <div className={s.reviewElements}>
                                         <div>
-                                            <img className={s.reviewUserImage} src={`http://localhost:3157${m.user.avatarUrl}`} alt={'User Avatar'}/>
+                                            <img className={s.reviewUserImage}
+                                                 src={`http://localhost:3157${m.user.avatarUrl}`} alt={'User Avatar'}/>
                                         </div>
                                         <div className={s.reviewUser}>
                                             <div className={s.reviewUserName}>

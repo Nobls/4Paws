@@ -12,18 +12,19 @@ const AboutUs = () => {
 
     const dispatch = useAppDispatch()
 
-    const user = useAppSelector((state)=> state.auth.data)
+    const user = useAppSelector((state) => state.auth.data)
 
-    const {reviews} = useAppSelector((state)=> state.reviews)
+    const {reviews} = useAppSelector((state) => state.reviews)
 
-    useEffect(()=>{
+    useEffect(() => {
         dispatch(fetchReviews())
-    },[dispatch])
+    }, [dispatch])
 
     return (
         <div>
             <div className={s.aboutUsBg}>
-                <h1 className={s.aboutUsTitle}>Lorem ipsum dolor sit amet,<br/> consectetur adipisicing elit. <br/> Doloremque, minima.</h1>
+                <h1 className={s.aboutUsTitle}>Lorem ipsum dolor sit amet,<br/> consectetur adipisicing
+                    elit. <br/> Doloremque, minima.</h1>
                 <Link className={s.aboutUsButton} to={'/'}>
                     <span>Связаться с нами</span>
                     <img src={paw} alt=""/>

@@ -1,31 +1,5 @@
 import CommentModel from "../models/Comment.js";
 import PostModel from "../models/Post.js";
-import UserModel from "../models/User.js";
-
-
-/*export const createComment = async (req, res) => {
-    try {
-        const { postId, comment } = req.body
-
-        if (!comment)
-            return res.json({ message: 'Комментарий не может быть пустым' })
-
-        const newComment = new CommentModel({ comment })
-        await newComment.save()
-
-        try {
-            await PostModel.findByIdAndUpdate(postId, {
-                $push: { comments: newComment._id },
-            })
-        } catch (error) {
-            console.log(error)
-        }
-
-        res.json(newComment)
-    } catch (error) {
-        res.json({ message: 'Что-то пошло не так.' })
-    }
-}*/
 
 export const createComment = async (req, res) => {
     try {
@@ -44,16 +18,6 @@ export const createComment = async (req, res) => {
                 $push: {comments: newComment._id}
             }
         )
-
-        /*const userCommentId = req.params.id*/
-
-        /*await UserModel.findByIdAndUpdate(
-            userCommentId,
-            {
-                $push: {comments: newComment._id}
-            }
-        )*/
-
         res.json(newComment)
     } catch (error) {
         console.log(error)
@@ -64,7 +28,7 @@ export const createComment = async (req, res) => {
 }
 
 export const getComments = async (req, res) => {
-    try {
+    /*try {
         const post = await PostModel.findById(req.params.id)
         const list = await Promise.all(
             post.comments.map((comment) => {
@@ -74,5 +38,23 @@ export const getComments = async (req, res) => {
         res.json(list)
     } catch (error) {
         res.json({message: 'Что-то пошло не так.'})
+    }*/
+
+    try {
+        const postId = req.params.id
+
+        const post = await PostModel.findById(postId).populate('comments')
+
+        if (!post) {
+            return res.status(404).json({message: 'Новостной пост не найден'})
+        }
+
+        const comments = await CommentModel.find({_id: {$in: post.comments}}).populate('user')
+
+        res.status(200).json(comments)
+    } catch (err) {
+        console.error(err)
+        res.status(500).json({message: 'Произошла ошибка при получении комментариев'})
     }
+
 }

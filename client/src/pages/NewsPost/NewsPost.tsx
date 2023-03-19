@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import s from "./newsPost.module.scss";
-import {useParams} from "react-router-dom";
+import {useNavigate, useParams} from "react-router-dom";
 import Sidebar from "../../components/sidebar/Sidebar";
 import ButtonStandart from "../../components/buttonStandart/ButtonStandart";
 import axios from "../../axios/axios";
@@ -9,13 +9,11 @@ import {useAppDispatch, useAppSelector} from "../../redux/hook/hook";
 import {createComment, getComments} from "../../redux/slices/comment";
 import CommentItem from "../../components/commentItem/CommentItem";
 
-type PropsType = {
-    userData: any
-}
-
-const NewsPost = ({userData}:PropsType) => {
+const NewsPost = () => {
 
     const dispatch = useAppDispatch()
+
+    const navigate = useNavigate()
 
     const [data, setData] = useState<any>()
     const [loading, setLoading] = useState<any>(true)
@@ -23,8 +21,6 @@ const NewsPost = ({userData}:PropsType) => {
     const [comment, setComment] = useState('')
 
     const {comments} = useAppSelector((state) => state.comments)
-
-    //const user = useAppSelector((state)=> state.auth.data)
 
     const params = useParams()
 
@@ -41,17 +37,6 @@ const NewsPost = ({userData}:PropsType) => {
         })
     }, [params])
 
-    const handleSubmit = () => {
-        try {
-            const postId = params.id
-            /*const userId = userData._id*/
-            dispatch(createComment({postId, comment}))
-            setComment('')
-        } catch (error) {
-            console.log(error)
-        }
-    }
-
     useEffect(() => {
         try {
             dispatch(getComments(params.id))
@@ -59,6 +44,17 @@ const NewsPost = ({userData}:PropsType) => {
             console.log(error)
         }
     }, [dispatch, params])
+
+    const handleSubmit = () => {
+        try {
+            const postId = params.id
+            dispatch(createComment({postId, comment}))
+            setComment('')
+            navigate(0)
+        } catch (error) {
+            console.log(error)
+        }
+    }
 
     if (loading) {
         return <div>Загрузка...</div>
@@ -88,15 +84,12 @@ const NewsPost = ({userData}:PropsType) => {
             <div className={s.comments}>
                 <h3 className={s.commentsTitle}>Комментарии</h3>
                 {
-                    comments.map((m,index)=> {
+                    comments.map((m, index) => {
                         return (
-                            <CommentItem key={index} m={m} />
+                            <CommentItem key={index} m={m}/>
                         )
                     })
                 }
-
-                {/*<CommentItem comments={comments}/>*/}
-
             </div>
 
             <div className={s.postComment}>

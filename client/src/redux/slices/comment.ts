@@ -5,6 +5,7 @@ import {User} from "./posts";
 export interface CommentsType {
     comment: string
     user: User
+    createdAt: any
 }
 
 type TypeStateComments = {
@@ -21,9 +22,9 @@ const initialState: TypeStateComments = {
 
 export const createComment = createAsyncThunk(
     'comment/createComment',
-    async ({ postId, comment}:any) => {
+    async ({postId, comment}: any) => {
         try {
-            const { data } = await axios.post(`/comments/${postId}`, {
+            const {data} = await axios.post(`/comments/${postId}`, {
                 postId,
                 comment,
             })
@@ -36,9 +37,9 @@ export const createComment = createAsyncThunk(
 
 export const getComments = createAsyncThunk(
     'comment/getComments',
-    async (postId:any) => {
+    async (postId: any) => {
         try {
-            const { data } = await axios.get(`/news/comments/${postId}`)
+            const {data} = await axios.get(`/news/comments/${postId}`)
             return data
         } catch (error) {
             console.log(error)
@@ -50,7 +51,7 @@ const commentSlice = createSlice({
     name: 'comment',
     initialState,
     reducers: {},
-    extraReducers: (builder)=>{
+    extraReducers: (builder) => {
         builder.addCase(createComment.pending, (state) => {
             state.loading = true
         })
