@@ -24,7 +24,7 @@ export const LastNews = ({post}:PropsType) => {
                             Открыть
                             <img src={paw} alt=""/>
                         </Link>
-                        <div>{post[0]?.publicationDate.toLowerCase().toString().slice(0, 10)}</div>
+                        <div>{post[0]?.publicationDate?.toLowerCase().toString().slice(0, 10)}</div>
                         <img className={s.lastNewsImageOne} src={`http://localhost:3157${post[0]?.imageUrl}`} alt={'imageNews'}/>
                         <h3 className={s.newsTitle}>{post[0]?.title}</h3>
                         <p className={s.newsText}>{post[0]?.text.substring(0, 100) + '...'}</p>
