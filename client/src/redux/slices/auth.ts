@@ -15,7 +15,7 @@ export type StateType = {
     errors: any
 }
 
-export interface DataType  {
+export interface DataType {
     fullName?: string
     email?: string
     password?: string
@@ -39,21 +39,21 @@ const initialState: StateType = {
 
 export const fetchLogin = createAsyncThunk(
     'auth/fetchLogin',
-    async ({email, password}:DataType) => {
-    try {
-        const {data} = await axios.post('/auth/login',{
-            email,
-            password,
-        })
-        if (data.token){
-            window.localStorage.setItem('token', data.token)
-        }
+    async ({email, password}: DataType) => {
+        try {
+            const {data} = await axios.post('/auth/login', {
+                email,
+                password,
+            })
+            if (data.token) {
+                window.localStorage.setItem('token', data.token)
+            }
 
-        return data
-    } catch(error){
-        console.log(error)
-    }
-})
+            return data
+        } catch (error) {
+            console.log(error)
+        }
+    })
 
 /*export const fetchRegister = createAsyncThunk('auth/fetchRegister', async (params:any)=>{
     const {data} = await axios.post('/auth/registration',params )
@@ -62,7 +62,7 @@ export const fetchLogin = createAsyncThunk(
 
 export const fetchRegister = createAsyncThunk(
     'auth/fetchRegister',
-    async ({fullName, email, password}:DataType) => {
+    async ({fullName, email, password}: DataType) => {
         try {
             const {data} = await axios.post('/auth/registration', {
                 fullName,
@@ -70,7 +70,7 @@ export const fetchRegister = createAsyncThunk(
                 email,
             })
 
-            if (data.token){
+            if (data.token) {
                 window.localStorage.setItem('token', data.token)
             }
 
@@ -106,7 +106,7 @@ const authSlice = createSlice({
             state.data = action.payload
             state.token = action.payload.token
         })
-        builder.addCase(fetchLogin.rejected, (state,action:any) => {
+        builder.addCase(fetchLogin.rejected, (state, action: any) => {
             state.status = action.payload.message
             state.loading = false;
         })
