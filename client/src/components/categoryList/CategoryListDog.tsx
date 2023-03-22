@@ -2,23 +2,29 @@ import React from 'react';
 import s from './categoryList.module.scss';
 import {Link} from "react-router-dom";
 
+type PropsType = {
+    data: any
+}
 
-const CategoryListDog = () => {
+const CategoryListDog = ({data}: PropsType) => {
+
+    console.log(data)
+
     return (
         <div className={s.categoryListWrapper}>
             <ul className={s.listItems}>
                 <li className={s.listItem}>
-                    <Link className={s.listItemLink} to={`/shop/dog/dryFoodDog/:dryFoodDogId`}>
+                    <Link className={s.listItemLink} to={`/shop/dog/dryFoodDog/${data.dryFoodForDogs}`}>
                         Сухие корма
                     </Link>
                 </li>
                 <li className={s.listItem}>
-                    <Link className={s.listItemLink} to={`/shop/dog/preservesForDogs/:preservesForDogsId`}>
+                    <Link className={s.listItemLink} to={`/shop/dog/preservesForDogs/${data}`}>
                         Консервы
                     </Link>
                 </li>
                 <li className={s.listItem}>
-                    <Link className={s.listItemLink} to={`/shop/dog/vitaminsForDogs/:vitaminsForDogsId`}>
+                    <Link className={s.listItemLink} to={`/shop/dog/vitaminsForDogs/${data}`}>
                         Витамины и добавки
                     </Link>
                 </li>

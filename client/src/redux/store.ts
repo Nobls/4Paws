@@ -6,6 +6,7 @@ import {userPetReducer} from "./slices/userPet";
 import {petProceduresReducer} from "./slices/procedures";
 import {commentReducer} from "./slices/comment";
 import {reviewsReducer} from "./slices/reviews";
+import {dogReducer} from "./slices/category/categoryDog";
 
 const store = configureStore({
     reducer: {
@@ -16,6 +17,7 @@ const store = configureStore({
         procedures: petProceduresReducer,
         comments: commentReducer,
         reviews: reviewsReducer,
+        dogCategory: dogReducer,
     },
 })
 

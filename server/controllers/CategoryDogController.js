@@ -633,3 +633,12 @@ export const getToilets = async (req, res, next) => {
         next(error);
     }
 }
+
+export const getAllDogCategory = async (req, res) => {
+    try {
+        const category = await ProductsForDogsModel.find().exec()
+        res.json(category)
+    } catch (error) {
+        console.log(error)
+    }
+}

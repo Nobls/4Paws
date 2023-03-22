@@ -1,5 +1,5 @@
 import s from './shop.module.scss';
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import CategoryListDog from "../../components/categoryList/CategoryListDog";
 import CategoryListCat from "../../components/categoryList/CategoryListCat";
 import CategoryListBird from "../../components/categoryList/CategoryListBird";
@@ -10,6 +10,7 @@ import iconCat from '../../images/icons/cat.svg'
 import iconBird from '../../images/icons/bird.svg'
 import iconRodents from '../../images/icons/rodent.svg'
 import iconFish from '../../images/icons/fish.svg'
+import axios from "../../axios/axios";
 
 const Shop = () => {
 
@@ -17,6 +18,24 @@ const Shop = () => {
 
     const categoryHandler = (category: string | null) => {
         setActiveCategory(category === activeCategory ? null : category);
+    }
+
+    const [data, setData] = useState<any>()
+    const [loading, setLoading] = useState<any>(true)
+
+    useEffect(() => {
+        axios.get('/shop/dog/dryFoodDog').then(res => {
+            setData(res.data)
+            setLoading(false)
+        }).catch(err => {
+            console.warn(err)
+        })
+    }, [])
+
+    //console.log(data)
+
+    if (loading) {
+        return <div>Загрузка...</div>
     }
 
     return (
@@ -38,7 +57,7 @@ const Shop = () => {
                         <div className={s.categoryList}>
                             {
                                 activeCategory === 'dog' && (
-                                    <CategoryListDog/>
+                                    <CategoryListDog data={data}/>
                                 )
                             }
                         </div>

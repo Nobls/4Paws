@@ -30,6 +30,7 @@ import {
     UserPetController,
     ReviewsController,
 } from './controllers/index.js'
+import {getAllDogCategory} from "./controllers/CategoryDogController.js";
 
 
 mongoose
@@ -161,6 +162,8 @@ app.post('/shop/dog/:id/ammunitionForDogs', checkAuth, CategoryDogController.amm
 app.post('/shop/dog/:id/toiletsForDogs', checkAuth, CategoryDogController.toiletsForDogs)
 
 // получение
+
+app.get('/shop/dog/dryFoodDog', checkAuth, CategoryDogController.getAllDogCategory)
 
 app.get('/shop/dog/dryFoodDog/:dryFoodDogId', checkAuth, CategoryDogController.getDryFood)
 app.get('/shop/dog/preservesForDogs/:preservesForDogsId', checkAuth, CategoryDogController.getPreserves)

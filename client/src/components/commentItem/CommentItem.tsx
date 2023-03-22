@@ -4,7 +4,6 @@ import s from "./commentItem.module.scss";
 
 type PropsType = {
     m: any
-    /*comments: CommentsType[]*/
 }
 
 const CommentItem = ({m}: PropsType) => {
