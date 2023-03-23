@@ -56,6 +56,8 @@ const NewsPost = () => {
         }
     }
 
+    console.log(data)
+
     if (loading) {
         return <div>Загрузка...</div>
     }

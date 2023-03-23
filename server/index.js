@@ -163,7 +163,7 @@ app.post('/shop/dog/:id/toiletsForDogs', checkAuth, CategoryDogController.toilet
 
 // получение
 
-app.get('/shop/dog/dryFoodDog', checkAuth, CategoryDogController.getAllDogCategory)
+app.get('/shop/dog/category', checkAuth, CategoryDogController.getAllDogCategory)
 
 app.get('/shop/dog/dryFoodDog/:dryFoodDogId', checkAuth, CategoryDogController.getDryFood)
 app.get('/shop/dog/preservesForDogs/:preservesForDogsId', checkAuth, CategoryDogController.getPreserves)

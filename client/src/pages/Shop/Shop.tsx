@@ -24,15 +24,15 @@ const Shop = () => {
     const [loading, setLoading] = useState<any>(true)
 
     useEffect(() => {
-        axios.get('/shop/dog/dryFoodDog').then(res => {
+        axios.get('/shop/dog/category').then(res => {
             setData(res.data)
             setLoading(false)
         }).catch(err => {
             console.warn(err)
         })
-    }, [])
+    }, [setData])
 
-    //console.log(data)
+    console.log(data)
 
     if (loading) {
         return <div>Загрузка...</div>

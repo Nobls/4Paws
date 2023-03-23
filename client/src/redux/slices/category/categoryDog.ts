@@ -97,18 +97,6 @@ export const getAllDryFoodForDogs = createAsyncThunk(
     }
 )
 
-export const getAllCategoryDogs = createAsyncThunk(
-    'dog/getAllCategoryDogs',
-    async () => {
-        try {
-            const {data} = await axios.get(`/shop/dog/dryFoodDog`)
-            return data
-        } catch (error) {
-            console.log(error)
-        }
-    }
-)
-
 const categoryDodSlice = createSlice({
     name: 'dog',
     initialState,
@@ -122,17 +110,6 @@ const categoryDodSlice = createSlice({
             state.dryFoodForDogs = action.payload
         })
         builder.addCase(getAllDryFoodForDogs.rejected, (state) => {
-            state.loading = true
-        })
-
-        builder.addCase(getAllCategoryDogs.pending, (state) => {
-            state.loading = true
-        })
-        builder.addCase(getAllCategoryDogs.fulfilled, (state, action) => {
-            state.loading = false
-            state.dryFoodForDogs = action.payload
-        })
-        builder.addCase(getAllCategoryDogs.rejected, (state) => {
             state.loading = true
         })
     }

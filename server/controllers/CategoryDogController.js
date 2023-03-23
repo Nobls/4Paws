@@ -636,7 +636,14 @@ export const getToilets = async (req, res, next) => {
 
 export const getAllDogCategory = async (req, res) => {
     try {
-        const category = await ProductsForDogsModel.find().exec()
+        const categoryDog = await ProductsForDogsModel.find().exec()
+
+        const category = await Promise.all(
+            categoryDog.map((p) => {
+                return ProductsForDogsModel.findById(p);
+            })
+        );
+
         res.json(category)
     } catch (error) {
         console.log(error)
