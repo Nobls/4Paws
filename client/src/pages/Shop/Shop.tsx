@@ -30,9 +30,7 @@ const Shop = () => {
         }).catch(err => {
             console.warn(err)
         })
-    }, [setData])
-
-    console.log(data)
+    }, [])
 
     if (loading) {
         return <div>Загрузка...</div>

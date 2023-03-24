@@ -87,7 +87,7 @@ const initialState: AllCategoryDog = {
 
 export const getAllDryFoodForDogs = createAsyncThunk(
     'dog/getAllDryFoodForDogs',
-    async (dryFoodDogId:string) => {
+    async (dryFoodDogId:string | undefined) => {
         try {
             const {data} = await axios.get(`/shop/dog/dryFoodDog/${dryFoodDogId}`)
             return data
