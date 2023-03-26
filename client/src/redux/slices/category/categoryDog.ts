@@ -15,12 +15,14 @@ interface ProductCard {
     tags: string,
 }
 
-interface CategoryDog {
-    _id: string,
-    product: ProductCard[]
+export interface CategoryDog {
+    _id: string;
+    product: ProductCard[];
+    loading: boolean;
+    errors: string | null;
 }
 
-interface AllCategoryDog {
+/*export interface AllCategoryDog {
     dryFoodForDogs: CategoryDog
     preservesForDogs: CategoryDog
     vitaminsForDogs: CategoryDog
@@ -34,71 +36,101 @@ interface AllCategoryDog {
     toiletsForDogs: CategoryDog
     loading: boolean
     errors: any
+}*/
+
+interface ProductsState {
+    products: CategoryDog | null;
+    loading: boolean;
+    error: string | null;
 }
 
-const initialState: AllCategoryDog = {
+/*const initialState: AllCategoryDog = {
     dryFoodForDogs: {
         _id: '',
-        product: []
+        product: [],
+        loading: false,
+        errors: null,
     },
     preservesForDogs: {
         _id: '',
-        product: []
+        product: [],
+        loading: false,
+        errors: null,
     },
     vitaminsForDogs: {
         _id: '',
-        product: []
+        product: [],
+        loading: false,
+        errors: null,
     },
     homeForDogs: {
         _id: '',
-        product: []
+        product: [],
+        loading: false,
+        errors: null,
     },
     toysForDogs: {
         _id: '',
-        product: []
+        product: [],
+        loading: false,
+        errors: null,
     },
     carryingForDogs: {
         _id: '',
-        product: []
+        product: [],
+        loading: false,
+        errors: null,
     },
     cosmeticsForDogs: {
         _id: '',
-        product: []
+        product: [],
+        loading: false,
+        errors: null,
     },
     clothesForDogs: {
         _id: '',
-        product: []
+        product: [],
+        loading: false,
+        errors: null,
     },
     dishesForDogs: {
         _id: '',
-        product: []
+        product: [],
+        loading: false,
+        errors: null,
     },
     ammunitionForDogs: {
         _id: '',
-        product: []
+        product: [],
+        loading: false,
+        errors: null,
     },
     toiletsForDogs: {
         _id: '',
-        product: []
+        product: [],
+        loading: false,
+        errors: null,
     },
     loading: false,
     errors: null,
-}
+}*/
+
+const initialState: ProductsState = {
+    products: null,
+    loading: false,
+    error: null,
+};
 
 export const getAllDryFoodForDogs = createAsyncThunk(
-    'dog/getAllDryFoodForDogs',
-    async (dryFoodDogId:string | undefined) => {
-        try {
-            const {data} = await axios.get(`/shop/dog/dryFoodDog/${dryFoodDogId}`)
-            return data
-        } catch (error) {
-            console.log(error)
-        }
+    'products/getAllDryFoodForDogs',
+    async (dryFoodDogId:string ) => {
+        const response = await axios.get(`/shop/dog/dryFoodDog/${dryFoodDogId}`);
+        return response.data;
     }
 )
 
 const categoryDodSlice = createSlice({
-    name: 'dog',
+    name: 'products',
     initialState,
     reducers: {},
     extraReducers: (builder) => {
@@ -106,8 +138,8 @@ const categoryDodSlice = createSlice({
             state.loading = true
         })
         builder.addCase(getAllDryFoodForDogs.fulfilled, (state, action) => {
+            state.products = action.payload
             state.loading = false
-            state.dryFoodForDogs = action.payload
         })
         builder.addCase(getAllDryFoodForDogs.rejected, (state) => {
             state.loading = true

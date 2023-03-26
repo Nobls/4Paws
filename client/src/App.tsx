@@ -62,7 +62,7 @@ function App() {
                     <Route path='adminPanel' element={<AdminPanel/>}/>
                     <Route path='news/:id/edit' element={<AdminNews/>}/>
                     <Route path='services/:id/edit' element={<AdminServices/>}/>
-                    <Route path='shop/dog/dryFoodDog/:dryFoodForDogsId' element={<Product/>}/>
+                    <Route path='shop/dog/dryFoodDog/:dryFoodDogId' element={<Product/>}/>
 
                 </Route>
             </Routes>
