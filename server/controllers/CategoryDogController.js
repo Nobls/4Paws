@@ -372,10 +372,10 @@ export const toiletsForDogs = async (req, res) => {
 
 export const getDryFood = async (req, res, next) => {
     try {
-        const {dryFoodForDogsId} = req.params;
+        const {dryFoodDogId} = req.params;
 
         const productForDogs = await ProductsForDogsModel.findOne({
-            "dryFoodForDogs._id": dryFoodForDogsId
+            "dryFoodForDogs._id": dryFoodDogId
         });
 
         if (!productForDogs) {

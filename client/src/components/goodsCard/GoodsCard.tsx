@@ -1,8 +1,23 @@
 import React from 'react';
 import s from './goodsCard.module.scss'
-import {PopularsGoodsType} from "../../data/data";
+//import {PopularsGoodsType} from "../../data/data";
 import {Link} from "react-router-dom";
 import ButtonStandart from "../buttonStandart/ButtonStandart";
+
+
+type PopularsGoodsType = {
+    id?: number
+    title?: string
+    image?: any
+    alt?: string
+    weight?: string
+    type?: string
+    country?: string
+    compound?: string
+    price?: number
+    descriptions?: string
+}
+
 
 const GoodsCard = ({title,image,alt, weight, type, country, price,descriptions}:PopularsGoodsType) => {
     return (

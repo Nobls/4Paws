@@ -1,17 +1,21 @@
 import React, {useEffect} from 'react';
 import {useParams} from "react-router-dom";
-import {useAppDispatch} from "../../redux/hook/hook";
+import {useAppDispatch, useAppSelector} from "../../redux/hook/hook";
 import {getAllDryFoodForDogs} from "../../redux/slices/category/categoryDog";
 
 const Product = () => {
 
-    const {id} = useParams()
-    console.log(id)
+    const {dryFoodForDogsId} = useParams()
+
     const dispatch = useAppDispatch()
 
+    const dryFoodDog = useAppSelector((state)=>state.dogCategory.dryFoodForDogs.product)
+
+    console.log(dryFoodDog)
+
     useEffect(()=>{
-        dispatch(getAllDryFoodForDogs(id))
-    },[])
+        dispatch(getAllDryFoodForDogs(dryFoodForDogsId))
+    },[dispatch])
 
     return (
         <div>
