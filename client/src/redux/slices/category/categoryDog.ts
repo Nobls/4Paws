@@ -116,7 +116,7 @@ interface ProductsState {
 }*/
 
 const initialState: ProductsState = {
-    products: null,
+    products:  null,
     loading: false,
     error: null,
 };
@@ -125,6 +125,14 @@ export const getAllDryFoodForDogs = createAsyncThunk(
     'products/getAllDryFoodForDogs',
     async (dryFoodDogId:string ) => {
         const response = await axios.get(`/shop/dog/dryFoodDog/${dryFoodDogId}`);
+        return response.data;
+    }
+)
+
+export const getAllPreservesForDogs = createAsyncThunk(
+    'products/getAllPreservesForDogs',
+    async (preservesForDogsId:string ) => {
+        const response = await axios.get(`/shop/dog/preservesForDogs/${preservesForDogsId}`);
         return response.data;
     }
 )
@@ -142,6 +150,17 @@ const categoryDodSlice = createSlice({
             state.loading = false
         })
         builder.addCase(getAllDryFoodForDogs.rejected, (state) => {
+            state.loading = true
+        })
+
+        builder.addCase(getAllPreservesForDogs.pending, (state) => {
+            state.loading = true
+        })
+        builder.addCase(getAllPreservesForDogs.fulfilled, (state, action) => {
+            state.products = action.payload
+            state.loading = false
+        })
+        builder.addCase(getAllPreservesForDogs.rejected, (state) => {
             state.loading = true
         })
     }

@@ -1,23 +1,30 @@
 import React, {useEffect} from 'react';
 import {useParams} from "react-router-dom";
 import {useAppDispatch, useAppSelector} from "../../redux/hook/hook";
-import {getAllDryFoodForDogs} from "../../redux/slices/category/categoryDog";
+import {getAllDryFoodForDogs, getAllPreservesForDogs} from "../../redux/slices/category/categoryDog";
 import s from './product.module.scss'
+import {Test} from "../../components/test/Test";
 
 const Product = () => {
 
     const dispatch = useAppDispatch()
 
-    const {dryFoodDogId} = useParams<{ dryFoodDogId: string }>();
+    const {dryFoodDogId, preservesForDogsId} = useParams<{ dryFoodDogId: string,  preservesForDogsId: string  }>();
     //console.log(dryFoodDogId)
+    //console.log(preservesForDogsId)
 
     const {products,loading,error} = useAppSelector((state) => state.dogCategory);
 
     console.log(products)
 
     useEffect(() => {
-        if (dryFoodDogId) {
-            dispatch(getAllDryFoodForDogs(dryFoodDogId));
+        if (dryFoodDogId || preservesForDogsId) {
+            if (dryFoodDogId != null) {
+                dispatch(getAllDryFoodForDogs(dryFoodDogId));
+            }
+            if (preservesForDogsId != null) {
+                dispatch(getAllPreservesForDogs(preservesForDogsId));
+            }
         }
     }, [dispatch, dryFoodDogId])
 
@@ -49,6 +56,7 @@ const Product = () => {
                             </div>
                         )
                     })}
+                    <Test products={products}/>
                 </div>
             </div>
         </div>

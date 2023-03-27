@@ -63,6 +63,7 @@ function App() {
                     <Route path='news/:id/edit' element={<AdminNews/>}/>
                     <Route path='services/:id/edit' element={<AdminServices/>}/>
                     <Route path='shop/dog/dryFoodDog/:dryFoodDogId' element={<Product/>}/>
+                    <Route path='/shop/dog/preservesForDogs/:preservesForDogsId' element={<Product/>}/>
 
                 </Route>
             </Routes>
