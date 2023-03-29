@@ -21,7 +21,7 @@ const Homepage = () => {
 
     const {post} = useAppSelector((state) => state.news)
     const {reviews} = useAppSelector((state) => state.reviews)
-    const user = useAppSelector((state)=>state.auth.data)
+    const user = useAppSelector((state) => state.auth.data)
     const [loading, setLoading] = useState<boolean>(true)
 
     useEffect(() => {

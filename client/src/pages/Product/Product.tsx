@@ -3,8 +3,10 @@ import {useParams} from "react-router-dom";
 import {useAppDispatch, useAppSelector} from "../../redux/hook/hook";
 import {getAllDryFoodForDogs, getAllPreservesForDogs} from "../../redux/slices/category/categoryDog";
 import s from './product.module.scss'
+import GoodsCard from "../../components/goodsCard/GoodsCard";
+import {Loading} from "../../components/loading/Loading";
 
-const Product = () => {
+const ProductsDog = () => {
 
     const dispatch = useAppDispatch()
 
@@ -23,10 +25,10 @@ const Product = () => {
                 dispatch(getAllPreservesForDogs(preservesForDogsId));
             }
         }
-    }, [dispatch, dryFoodDogId])
+    }, [dispatch, dryFoodDogId, preservesForDogsId])
 
     if (loading) {
-        return <div>Loading...</div>;
+        return <Loading/>;
     }
 
     if (error) {
@@ -44,13 +46,28 @@ const Product = () => {
                     {
                         products.map((m) => {
                             return (
-                                <div key={m._id}>
+                                /*<div key={m._id}>
                                     <h3>{m.title}</h3>
                                     <img src={m.productImage} alt={m.title}/>
                                     <p>{m.description}</p>
                                     <p>Price: {m.price}</p>
                                     <p>Weight: {m.weight}</p>
-                                </div>
+                                </div>*/
+
+                                <GoodsCard
+                                    key={m._id}
+                                    title={m.title}
+                                    productImage={m.productImage}
+                                    weight={m.weight}
+                                    quantity={m.quantity}
+                                    category={m.category}
+                                    countryOfManufacture={m.countryOfManufacture}
+                                    description={m.description}
+                                    price={m.price}
+                                    brand={m.brand}
+                                    tags={m.tags}
+                                    _id={m._id}
+                                />
                             )
                         })}
                 </div>
@@ -59,4 +76,4 @@ const Product = () => {
     );
 };
 
-export default Product;
+export default ProductsDog;

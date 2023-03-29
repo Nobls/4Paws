@@ -37,7 +37,7 @@ export const LastNews = ({post}: PropsType) => {
                             Открыть
                             <img src={paw} alt="paws"/>
                         </Link>
-                        <div>{post[1]?.publicationDate.toLowerCase().toString().slice(0, 10)}</div>
+                        <div>{post[1]?.publicationDate?.toLowerCase().toString().slice(0, 10)}</div>
                         <img className={s.lastNewsImageTwo} src={`http://localhost:3157${post[1]?.imageUrl}`}
                              alt={lastNews[1].alt}/>
                         <h3 className={s.newsTitle}>{post[1]?.title}</h3>
@@ -50,7 +50,7 @@ export const LastNews = ({post}: PropsType) => {
                             Открыть
                             <img src={paw} alt="paws"/>
                         </Link>
-                        <div>{post[2]?.publicationDate.toLowerCase().toString().slice(0, 10)}</div>
+                        <div>{post[2]?.publicationDate?.toLowerCase().toString().slice(0, 10)}</div>
                         <img className={s.lastNewsImageThree} src={`http://localhost:3157${post[2]?.imageUrl}`}
                              alt={lastNews[2].alt}/>
                         <h3 className={s.newsTitle}>{post[2]?.title}</h3>
@@ -63,7 +63,7 @@ export const LastNews = ({post}: PropsType) => {
                             Открыть
                             <img src={paw} alt="paws"/>
                         </Link>
-                        <div>{post[3]?.publicationDate.toLowerCase().toString().slice(0, 10)}</div>
+                        <div>{post[3]?.publicationDate?.toLowerCase().toString().slice(0, 10)}</div>
                         <img className={s.lastNewsImageFour} src={`http://localhost:3157${post[3]?.imageUrl}`}
                              alt={lastNews[3].alt}/>
                         <h3 className={s.newsTitle}>{post[3]?.title}</h3>
@@ -76,7 +76,7 @@ export const LastNews = ({post}: PropsType) => {
                             Открыть
                             <img src={paw} alt="paws"/>
                         </Link>
-                        <div>{post[4]?.publicationDate.toLowerCase().toString().slice(0, 10)}</div>
+                        <div>{post[4]?.publicationDate?.toLowerCase().toString().slice(0, 10)}</div>
                         <img className={s.lastNewsImageFour} src={`http://localhost:3157${post[4]?.imageUrl}`}
                              alt={lastNews[4].alt}/>
                         <h3 className={s.newsTitle}>{post[4]?.title}</h3>

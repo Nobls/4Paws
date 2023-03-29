@@ -8,23 +8,23 @@ const Populars = () => {
         <div className={s.popularsContainer}>
             <h3 className={s.popularsTile}>Популярные товары</h3>
             <div className={s.wrapper}>
-                {
+                {/*{
                     popularsGoods.map(m => {
                         return (
                             <GoodsCard key={m.id}
                                        title={m.title}
-                                       image={m.image}
+                                       productImage={m.productImage}
                                        alt={m.alt}
                                        weight={m.weight}
-                                       type={m.type}
-                                       country={m.country}
+                                       category={m.category}
+                                       countryOfManufacture={m.countryOfManufacture}
                                        compound={m.compound}
                                        price={m.price}
                                        descriptions={m.descriptions}
                             />
                         );
                     })
-                }
+                }*/}
             </div>
         </div>
     );

@@ -36,7 +36,7 @@ export const getLastTags = async (req, res) => {
     try {
         const posts = await PostModel.find().limit(5).exec();
 
-        const tags = posts.map(m=> m.tags).flat().slice(0,5)
+        const tags = posts.map(m => m.tags).flat().slice(0, 5)
 
         res.json(tags);
     } catch (err) {

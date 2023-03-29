@@ -274,8 +274,6 @@ app.post('/reviews/:id', checkAuth, ReviewsController.createReview)
 app.get('/reviews', ReviewsController.getAllReviews)
 
 
-
-
 app.listen(3157, (err) => {
     if (err) {
         return console.log(err)

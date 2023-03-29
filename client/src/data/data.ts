@@ -90,13 +90,13 @@ export type LastNewsType = {
 export type PopularsGoodsType = {
     id?: number
     title: string
-    image: any
+    productImage: any
     alt: string
     weight: string
     type: string
     country: string
     compound: string
-    price: number
+    price: string
     descriptions: string
 }
 export type PopularsGoodsPriceType = {
@@ -336,7 +336,7 @@ export const popularsGoods: PopularsGoodsType[] = [
     {
         id: 1,
         title: 'ACANA BOUNTIFUL CATCH Cat (Рыба)',
-        image: imageGoods1,
+        productImage: imageGoods1,
         alt: 'ACANA',
         weight: '0,34 кг',
         type: 'Сухой корм',
@@ -346,13 +346,13 @@ export const popularsGoods: PopularsGoodsType[] = [
             'цельная зеленая чечевица, цельный нут, цельная красная чечевица, сырая радужная форель (2%), ' +
             'масло лосося (2%), подсолнечное масло, сушеные водоросли, свежая мускатная тыква, свежая тыква, ' +
             'цельная свежая клюква, цельная свежая черника.',
-        price: 18.09,
+        price: "18.09",
         descriptions: 'Низкозерновой корм для взрослых кошек всех пород.',
     },
     {
         id: 2,
         title: 'ACANA INDOOR ENTRÉE Cat (Курица, сельдь, индейка)',
-        image: imageGoods2,
+        productImage: imageGoods2,
         alt: 'ACANA',
         weight: '0,34 кг',
         type: 'Сухой корм',
@@ -362,13 +362,13 @@ export const popularsGoods: PopularsGoodsType[] = [
             'свежее мясо индейки (4%), сырая цельная сельдь (4%), цельный нут, цельная красная чечевица, чечевица, ' +
             'сырой кролик (1%), свежие легкие и сердце курицы (1%), свежие легкие и сердце индейки, куриный хрящ (1%), ' +
             'сушеные водоросли, свежая мускатная тыква, свежая столовая тыква, свежая цельная клюква, свежая цельная черника.',
-        price: 18.09,
+        price: "18.09",
         descriptions: 'Низкозерновой корм для стерилизованных кошек.',
     },
     {
         id: 3,
         title: 'Farmina N&D Cat Quinoa Skin & Coat (Сельдь и кокос)',
-        image: imageGoods3,
+        productImage: imageGoods3,
         alt: 'Farmina',
         weight: '0,3 кг',
         type: 'Сухой корм',
@@ -377,13 +377,13 @@ export const popularsGoods: PopularsGoodsType[] = [
             'рыбий жир (от сельди), льняное семя, сушеный кокос (2,5%), куркума (2,5%), инулин, фруктолигосахариды, ' +
             'маннано олигосахариды, подорожник, карбонат кальция, дикальция фосфат, хлорид калия, хлорид натрия, ' +
             'сульфат кальция дигидрат, сухие пивные дрожжи, глюкозамин, хондроитинсульфат, экстракт календулы (источник лютеина).',
-        price: 35.19,
+        price: "35.19",
         descriptions: 'Беззерновой корм для взрослых кошек.',
     },
     {
         id: 4,
         title: 'Farmina N&D GF Adult Mini (Кабан и яблоко)',
-        image: imageGoods4,
+        productImage: imageGoods4,
         alt: 'Farmina',
         weight: '0,8 кг',
         type: 'Сухой корм',
@@ -394,13 +394,13 @@ export const popularsGoods: PopularsGoodsType[] = [
             'маннанолигосахариды, дегидратированные яблоки (0,5%), порошок граната, дегидратированный сладкий апельсин, ' +
             'порошок шпината, семена подорожника (0,3%), порошок черной смородины (0,3%), порошок черники, хлорид натрия, ' +
             'дрожжи сухие пивные, корень куркумы (0,2%), глюкозамин, хондроитин сульфат, экстракт календулы (источник лютеина).',
-        price: 60.79,
+        price: "60.79",
         descriptions: 'Беззерновой корм для взрослых собак мелких пород.',
     },
     {
         id: 5,
         title: 'GOSBI Exclusive Grain Free',
-        image: imageGoods5,
+        productImage: imageGoods5,
         alt: 'Gosbi',
         weight: '12 кг',
         type: 'Сухой корм',
@@ -418,13 +418,13 @@ export const popularsGoods: PopularsGoodsType[] = [
             'высушенная ромашка, экстракт лимонных плодов, экстракт виноград, масло огуречника, экстракт красных фруктов, ' +
             'экстракт чеснока, экстракт тимьяна, экстракт орегана o, экстракт семян расторопши, экстракт юкки, экстракт розмарина, ' +
             'экстракт алоэ вера, клюква, FOS, MOS.',
-        price: 375.48,
+        price: "375.48",
         descriptions: 'Корм собак всех пород, беззерновой с уткой.',
     },
     {
         id: 6,
         title: 'Royal Canin Maltese Adult',
-        image: imageGoods6,
+        productImage: imageGoods6,
         alt: 'Royal Canin',
         weight: '1,5 кг',
         type: 'Сухой корм',
@@ -436,7 +436,7 @@ export const popularsGoods: PopularsGoodsType[] = [
             'экстракт бархатцев прямостоячих (источник лютеина), экстракты зеленого чая и винограда (источники полифенолов), ' +
             'гидролизат из панциря ракообразных (источник глюкозамина), гидролизат из хряща (источник хондроитина). ' +
             '* L.I.P. (Low Indigestible Protein) - белки, отобранные по принципу максимальной усвояемости.',
-        price: 31.19,
+        price: "31.19",
         descriptions: 'Корм для собак породы Мальтийская болонка от 10 месяцев.',
     },
 ]

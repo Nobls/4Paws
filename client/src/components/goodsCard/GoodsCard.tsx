@@ -6,36 +6,51 @@ import ButtonStandart from "../buttonStandart/ButtonStandart";
 
 
 type PopularsGoodsType = {
-    id?: number
-    title?: string
-    image?: any
+    _id?: string
+    title: string,
+    productImage: string,
+    weight: string,
+    quantity: string,
+    category: string,
+    countryOfManufacture: string,
+    description: string,
+    price: string,
+    brand: string,
+    tags: string,
     alt?: string
-    weight?: string
-    type?: string
-    country?: string
-    compound?: string
-    price?: number
-    descriptions?: string
 }
 
 
-const GoodsCard = ({title,image,alt, weight, type, country, price,descriptions}:PopularsGoodsType) => {
+const GoodsCard = ({
+                       title,
+                       brand,
+                       countryOfManufacture,
+                       tags,
+                       quantity,
+                       weight,
+                       description,
+                       price,
+                       productImage,
+                       category,
+                       _id
+                   }: PopularsGoodsType) => {
+
     return (
         <div className={s.goodsCardWrapper}>
-            <Link className={s.goodsTitleWrapper} to={"/"}>
+            <Link className={s.goodsTitleWrapper} to={`/${_id}`}>
                 <h4 className={s.goodsTitle}>{title}</h4>
             </Link>
 
             <div className={s.goodsInner}>
                 <div>
-                    <img className={s.goodsImage} src={image} alt={alt}/>
+                    <img className={s.goodsImage} src={productImage} alt={title}/>
                 </div>
                 <div className={s.goodsPriceItems}>
                     <span className={s.goodsPriceItem}>вес: {weight}</span>
-                    <span className={s.goodsPriceItem}>тип: {type}</span>
-                    <span className={s.goodsPriceItem}>страна производитель: {country}</span>
+                    <span className={s.goodsPriceItem}>тип: {category}</span>
+                    <span className={s.goodsPriceItem}>страна производитель: {countryOfManufacture}</span>
 
-                    <span className={s.goodsPriceItem}>описание: {descriptions}</span>
+                    <span className={s.goodsPriceItem}>описание: {description}</span>
                 </div>
             </div>
             <div className={s.goodsButtonPriceBlock}>
