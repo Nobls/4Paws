@@ -65,6 +65,7 @@ function App() {
                     <Route path='services/:id/edit' element={<AdminServices/>}/>
                     <Route path='shop/dog/dryFoodDog/:dryFoodDogId' element={<ProductsDog/>}/>
                     <Route path='/shop/dog/preservesForDogs/:preservesForDogsId' element={<ProductsDog/>}/>
+                    <Route path='/shop/dog/vitaminsForDogs/:vitaminsForDogsId' element={<ProductsDog/>}/>
 
                 </Route>
             </Routes>

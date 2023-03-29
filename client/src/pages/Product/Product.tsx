@@ -1,7 +1,11 @@
 import React, {useEffect} from 'react';
 import {useParams} from "react-router-dom";
 import {useAppDispatch, useAppSelector} from "../../redux/hook/hook";
-import {getAllDryFoodForDogs, getAllPreservesForDogs} from "../../redux/slices/category/categoryDog";
+import {
+    getAllDryFoodForDogs,
+    getAllPreservesForDogs,
+    getAllVitaminsForDogs
+} from "../../redux/slices/category/categoryDog";
 import s from './product.module.scss'
 import GoodsCard from "../../components/goodsCard/GoodsCard";
 import {Loading} from "../../components/loading/Loading";
@@ -10,19 +14,28 @@ const ProductsDog = () => {
 
     const dispatch = useAppDispatch()
 
-    const {dryFoodDogId, preservesForDogsId} = useParams<{ dryFoodDogId: string, preservesForDogsId: string }>();
+    const {dryFoodDogId, preservesForDogsId, vitaminsForDogsId} = useParams<{
+        dryFoodDogId: string,
+        preservesForDogsId: string,
+        vitaminsForDogsId: string,
+        }>
+    ();
 
     const {products, loading, error} = useAppSelector((state) => state.dogCategory);
 
     console.log(products)
 
     useEffect(() => {
-        if (dryFoodDogId || preservesForDogsId) {
+        if (dryFoodDogId || preservesForDogsId || vitaminsForDogsId) {
             if (dryFoodDogId != null) {
                 dispatch(getAllDryFoodForDogs(dryFoodDogId));
             }
             if (preservesForDogsId != null) {
                 dispatch(getAllPreservesForDogs(preservesForDogsId));
+            }
+
+            if (vitaminsForDogsId != null) {
+                dispatch(getAllVitaminsForDogs(vitaminsForDogsId));
             }
         }
     }, [dispatch, dryFoodDogId, preservesForDogsId])
