@@ -3,17 +3,14 @@ import {useParams} from "react-router-dom";
 import {useAppDispatch, useAppSelector} from "../../redux/hook/hook";
 import {getAllDryFoodForDogs, getAllPreservesForDogs} from "../../redux/slices/category/categoryDog";
 import s from './product.module.scss'
-import {Test} from "../../components/test/Test";
 
 const Product = () => {
 
     const dispatch = useAppDispatch()
 
-    const {dryFoodDogId, preservesForDogsId} = useParams<{ dryFoodDogId: string,  preservesForDogsId: string  }>();
-    //console.log(dryFoodDogId)
-    //console.log(preservesForDogsId)
+    const {dryFoodDogId, preservesForDogsId} = useParams<{ dryFoodDogId: string, preservesForDogsId: string }>();
 
-    const {products,loading,error} = useAppSelector((state) => state.dogCategory);
+    const {products, loading, error} = useAppSelector((state) => state.dogCategory);
 
     console.log(products)
 
@@ -44,19 +41,18 @@ const Product = () => {
                 <div>sidebar</div>
                 <div>product cards</div>
                 <div className={s.productsWrapper}>
-                    {products?.product && products.product.map((m, index) => {
-                        console.log(products)
-                        return (
-                            <div key={index}>
-                                <h3>{m.title}</h3>
-                                <img src={m.productImage} alt={m.title}/>
-                                <p>{m.description}</p>
-                                <p>Price: {m.price}</p>
-                                <p>Weight: {m.weight}</p>
-                            </div>
-                        )
-                    })}
-                    <Test products={products}/>
+                    {
+                        products.map((m) => {
+                            return (
+                                <div key={m._id}>
+                                    <h3>{m.title}</h3>
+                                    <img src={m.productImage} alt={m.title}/>
+                                    <p>{m.description}</p>
+                                    <p>Price: {m.price}</p>
+                                    <p>Weight: {m.weight}</p>
+                                </div>
+                            )
+                        })}
                 </div>
             </div>
         </div>

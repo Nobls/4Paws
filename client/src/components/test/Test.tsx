@@ -1,9 +1,9 @@
 import React from 'react';
-import {CategoryDog} from "../../redux/slices/category/categoryDog";
+//import {CategoryDog} from "../../redux/slices/category/categoryDog";
 
 type PropsType = {
     m?: any
-    products: CategoryDog | null
+    products?: any
 }
 
 export const Test = ({products}: PropsType) => {
@@ -12,7 +12,7 @@ export const Test = ({products}: PropsType) => {
 
     return (
         <div>
-            {
+            {/*{
                 products?.product && products.product.map((m, index) => {
                     console.log(products)
                     return (
@@ -25,7 +25,7 @@ export const Test = ({products}: PropsType) => {
                         </div>
                     )
                 })
-            }
+            }*/}
             {/*<div>
             <h3>{m.title}</h3>
             <img src={m.productImage} alt={m.title} />

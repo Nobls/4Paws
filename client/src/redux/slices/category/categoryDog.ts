@@ -2,7 +2,8 @@ import {createAsyncThunk, createSlice} from "@reduxjs/toolkit";
 import axios from "../../../axios/axios";
 
 
-interface ProductCard {
+export interface ProductCard {
+    _id?: string
     title: string,
     productImage: string,
     weight: string,
@@ -15,12 +16,12 @@ interface ProductCard {
     tags: string,
 }
 
-export interface CategoryDog {
+/*export interface CategoryDog {
     _id: string;
     product: ProductCard[];
     loading: boolean;
     errors: string | null;
-}
+}*/
 
 /*export interface AllCategoryDog {
     dryFoodForDogs: CategoryDog
@@ -38,8 +39,14 @@ export interface CategoryDog {
     errors: any
 }*/
 
-interface ProductsState {
+/*interface ProductsState {
     products: CategoryDog | null;
+    loading: boolean;
+    error: string | null;
+}*/
+
+interface ProductsState {
+    products: ProductCard[];
     loading: boolean;
     error: string | null;
 }
@@ -116,7 +123,7 @@ interface ProductsState {
 }*/
 
 const initialState: ProductsState = {
-    products:  null,
+    products: [],
     loading: false,
     error: null,
 };
