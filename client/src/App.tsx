@@ -66,6 +66,10 @@ function App() {
                     <Route path='shop/dog/dryFoodDog/:dryFoodDogId' element={<ProductsDog/>}/>
                     <Route path='/shop/dog/preservesForDogs/:preservesForDogsId' element={<ProductsDog/>}/>
                     <Route path='/shop/dog/vitaminsForDogs/:vitaminsForDogsId' element={<ProductsDog/>}/>
+                    <Route path='/shop/dog/homeForDogs/:homeForDogsId' element={<ProductsDog/>}/>
+                    <Route path='/shop/dog/toysForDogs/:toysForDogsId' element={<ProductsDog/>}/>
+                    <Route path='/shop/dog/carryingForDogs/:carryingForDogsId' element={<ProductsDog/>}/>
+                    <Route path='/shop/dog/cosmeticsForDogs/:cosmeticsForDogsId' element={<ProductsDog/>}/>
 
                 </Route>
             </Routes>

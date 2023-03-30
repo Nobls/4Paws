@@ -2,8 +2,9 @@ import React, {useEffect} from 'react';
 import {useParams} from "react-router-dom";
 import {useAppDispatch, useAppSelector} from "../../redux/hook/hook";
 import {
-    getAllDryFoodForDogs,
-    getAllPreservesForDogs,
+    getAllCarryingForDogs, getAllCosmeticsForDogs,
+    getAllDryFoodForDogs, getAllHomeForDogs,
+    getAllPreservesForDogs, getAllToysForDogs,
     getAllVitaminsForDogs
 } from "../../redux/slices/category/categoryDog";
 import s from './product.module.scss'
@@ -14,11 +15,18 @@ const ProductsDog = () => {
 
     const dispatch = useAppDispatch()
 
-    const {dryFoodDogId, preservesForDogsId, vitaminsForDogsId} = useParams<{
+    const {
+        dryFoodDogId, preservesForDogsId, vitaminsForDogsId, homeForDogsId, toysForDogsId, carryingForDogsId,
+        cosmeticsForDogsId
+    } = useParams<{
         dryFoodDogId: string,
         preservesForDogsId: string,
         vitaminsForDogsId: string,
-        }>
+        homeForDogsId: string,
+        toysForDogsId: string,
+        carryingForDogsId: string,
+        cosmeticsForDogsId: string,
+    }>
     ();
 
     const {products, loading, error} = useAppSelector((state) => state.dogCategory);
@@ -26,19 +34,31 @@ const ProductsDog = () => {
     console.log(products)
 
     useEffect(() => {
-        if (dryFoodDogId || preservesForDogsId || vitaminsForDogsId) {
+        if (dryFoodDogId || preservesForDogsId || vitaminsForDogsId || homeForDogsId || toysForDogsId || carryingForDogsId || cosmeticsForDogsId) {
             if (dryFoodDogId != null) {
                 dispatch(getAllDryFoodForDogs(dryFoodDogId));
             }
             if (preservesForDogsId != null) {
                 dispatch(getAllPreservesForDogs(preservesForDogsId));
             }
-
             if (vitaminsForDogsId != null) {
                 dispatch(getAllVitaminsForDogs(vitaminsForDogsId));
             }
+            if (homeForDogsId != null) {
+                dispatch(getAllHomeForDogs(homeForDogsId));
+            }
+            if (toysForDogsId != null) {
+                dispatch(getAllToysForDogs(toysForDogsId));
+            }
+
+            if (carryingForDogsId != null) {
+                dispatch(getAllCarryingForDogs(carryingForDogsId));
+            }
+            if (cosmeticsForDogsId != null) {
+                dispatch(getAllCosmeticsForDogs(cosmeticsForDogsId));
+            }
         }
-    }, [dispatch, dryFoodDogId, preservesForDogsId])
+    }, [dispatch, dryFoodDogId, preservesForDogsId, vitaminsForDogsId, homeForDogsId, toysForDogsId, carryingForDogsId, cosmeticsForDogsId])
 
     if (loading) {
         return <Loading/>;
