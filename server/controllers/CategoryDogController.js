@@ -422,7 +422,7 @@ export const getVitamins = async (req, res, next) => {
     try {
         const {vitaminsForDogsId} = req.params;
 
-        const productForDogs = await ProductsForFishModel.findOne({
+        const productForDogs = await ProductsForDogsModel.findOne({
             "vitaminsForDogs._id": vitaminsForDogsId
         });
 
