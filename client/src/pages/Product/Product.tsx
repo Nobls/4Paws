@@ -5,7 +5,7 @@ import {
     getAllCarryingForDogs, getAllCosmeticsForDogs,
     getAllDryFoodForDogs, getAllHomeForDogs,
     getAllPreservesForDogs, getAllToysForDogs,
-    getAllVitaminsForDogs, getAllСlothesForDogs
+    getAllVitaminsForDogs, getAllClothesForDogs
 } from "../../redux/slices/category/categoryDog";
 import s from './product.module.scss'
 import GoodsCard from "../../components/goodsCard/GoodsCard";
@@ -59,7 +59,7 @@ const ProductsDog = () => {
                 dispatch(getAllCosmeticsForDogs(cosmeticsForDogsId));
             }
             if (clothesForDogsId != null) {
-                dispatch(getAllСlothesForDogs(clothesForDogsId));
+                dispatch(getAllClothesForDogs(clothesForDogsId));
             }
         }
     }, [dispatch, dryFoodDogId, preservesForDogsId, vitaminsForDogsId, homeForDogsId, toysForDogsId, carryingForDogsId, cosmeticsForDogsId, clothesForDogsId])
