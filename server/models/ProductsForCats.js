@@ -43,8 +43,6 @@ const ProductsForCatsSchema = new mongoose.Schema(
             ]
         },
 
-        //добавить наполнители
-
         homeForCats: {
 
             _id: {

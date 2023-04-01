@@ -21,6 +21,7 @@ const Shop = () => {
     }
 
     const [data, setData] = useState<any>()
+    //const [dataCat, setDataCat] = useState<any>()
     const [loading, setLoading] = useState<any>(true)
 
     useEffect(() => {
@@ -31,6 +32,17 @@ const Shop = () => {
             console.warn(err)
         })
     }, [])
+
+    useEffect(() => {
+        axios.get('/shop/cat/category').then(res => {
+            setData(res.data)
+            setLoading(false)
+        }).catch(err => {
+            console.warn(err)
+        })
+    }, [])
+
+    console.log(data)
 
     if (loading) {
         return <div>Загрузка...</div>
@@ -73,7 +85,7 @@ const Shop = () => {
                         <div className={s.categoryList}>
                             {
                                 activeCategory === 'cat' && (
-                                    <CategoryListCat/>
+                                    <CategoryListCat data={data}/>
                                 )
                             }
                         </div>

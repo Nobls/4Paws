@@ -7,6 +7,7 @@ import {petProceduresReducer} from "./slices/procedures";
 import {commentReducer} from "./slices/comment";
 import {reviewsReducer} from "./slices/reviews";
 import {dogReducer} from "./slices/category/categoryDog";
+import {catReducer} from "./slices/category/categoryCat";
 
 const store = configureStore({
     reducer: {
@@ -18,6 +19,7 @@ const store = configureStore({
         comments: commentReducer,
         reviews: reviewsReducer,
         dogCategory: dogReducer,
+        catCategory: catReducer,
     },
 })
 

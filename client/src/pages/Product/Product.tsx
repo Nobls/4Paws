@@ -5,11 +5,12 @@ import {
     getAllCarryingForDogs, getAllCosmeticsForDogs,
     getAllDryFoodForDogs, getAllHomeForDogs,
     getAllPreservesForDogs, getAllToysForDogs,
-    getAllVitaminsForDogs, getAllClothesForDogs
+    getAllVitaminsForDogs, getAllClothesForDogs, getAllDishesForDogs, getAllAmmunitionForDogs, getAllToiletsForDogs
 } from "../../redux/slices/category/categoryDog";
 import s from './product.module.scss'
 import GoodsCard from "../../components/goodsCard/GoodsCard";
 import {Loading} from "../../components/loading/Loading";
+import {getAllDryFoodForCats, getAllPreservesForCats} from "../../redux/slices/category/categoryCat";
 
 const ProductsDog = () => {
 
@@ -17,7 +18,8 @@ const ProductsDog = () => {
 
     const {
         dryFoodDogId, preservesForDogsId, vitaminsForDogsId, homeForDogsId, toysForDogsId, carryingForDogsId,
-        cosmeticsForDogsId, clothesForDogsId,
+        cosmeticsForDogsId, clothesForDogsId, dishesForDogsId, ammunitionForDogsId, toiletsForDogsId,
+        dryFoodForCatsId, preservesForCatsId
     } = useParams<{
         dryFoodDogId: string,
         preservesForDogsId: string,
@@ -27,6 +29,12 @@ const ProductsDog = () => {
         carryingForDogsId: string,
         cosmeticsForDogsId: string,
         clothesForDogsId: string,
+        dishesForDogsId: string,
+        ammunitionForDogsId: string,
+        toiletsForDogsId: string,
+
+        dryFoodForCatsId: string,
+        preservesForCatsId: string,
     }>
     ();
 
@@ -35,7 +43,9 @@ const ProductsDog = () => {
     console.log(products)
 
     useEffect(() => {
-        if (dryFoodDogId || preservesForDogsId || vitaminsForDogsId || homeForDogsId || toysForDogsId || carryingForDogsId || cosmeticsForDogsId || clothesForDogsId) {
+        if (dryFoodDogId || preservesForDogsId || vitaminsForDogsId || homeForDogsId || toysForDogsId || carryingForDogsId ||
+            cosmeticsForDogsId || clothesForDogsId || dishesForDogsId || ammunitionForDogsId || toiletsForDogsId
+        || dryFoodForCatsId || preservesForCatsId ) {
             if (dryFoodDogId != null) {
                 dispatch(getAllDryFoodForDogs(dryFoodDogId));
             }
@@ -61,8 +71,27 @@ const ProductsDog = () => {
             if (clothesForDogsId != null) {
                 dispatch(getAllClothesForDogs(clothesForDogsId));
             }
+            if (dishesForDogsId != null) {
+                dispatch(getAllDishesForDogs(dishesForDogsId));
+            }
+            if (ammunitionForDogsId != null) {
+                dispatch(getAllAmmunitionForDogs(ammunitionForDogsId));
+            }
+            if (toiletsForDogsId != null) {
+                dispatch(getAllToiletsForDogs(toiletsForDogsId));
+            }
+
+
+            if (dryFoodForCatsId != null) {
+                dispatch(getAllDryFoodForCats(dryFoodForCatsId));
+            }
+            if (preservesForCatsId != null) {
+                dispatch(getAllPreservesForCats(preservesForCatsId));
+            }
         }
-    }, [dispatch, dryFoodDogId, preservesForDogsId, vitaminsForDogsId, homeForDogsId, toysForDogsId, carryingForDogsId, cosmeticsForDogsId, clothesForDogsId])
+    }, [dispatch, dryFoodDogId, preservesForDogsId, vitaminsForDogsId, homeForDogsId,
+        toysForDogsId, carryingForDogsId, cosmeticsForDogsId, clothesForDogsId, dishesForDogsId,
+        ammunitionForDogsId, toiletsForDogsId, dryFoodForCatsId, preservesForCatsId])
 
     if (loading) {
         return <Loading/>;

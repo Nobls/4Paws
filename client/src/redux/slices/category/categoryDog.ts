@@ -186,7 +186,28 @@ export const getAllCosmeticsForDogs = createAsyncThunk(
 export const getAllClothesForDogs = createAsyncThunk(
     'products/getAllClothesForDogs',
     async (clothesForDogsId:string ) => {
-        const response = await axios.get(`/shop/dog/cosmeticsForDogs/${clothesForDogsId}`);
+        const response = await axios.get(`/shop/dog/clothesForDogs/${clothesForDogsId}`);
+        return response.data;
+    }
+)
+export const getAllDishesForDogs = createAsyncThunk(
+    'products/getAllDishesForDogs',
+    async (dishesForDogsId:string ) => {
+        const response = await axios.get(`/shop/dog/dishesForDogs/${dishesForDogsId}`);
+        return response.data;
+    }
+)
+export const getAllAmmunitionForDogs = createAsyncThunk(
+    'products/getAllAmmunitionForDogs',
+    async (ammunitionForDogsId:string ) => {
+        const response = await axios.get(`/shop/dog/ammunitionForDogs/${ammunitionForDogsId}`);
+        return response.data;
+    }
+)
+export const getAllToiletsForDogs = createAsyncThunk(
+    'products/getAllToiletsForDogs',
+    async (toiletsForDogsId:string ) => {
+        const response = await axios.get(`/shop/dog/toiletsForDogs/${toiletsForDogsId}`);
         return response.data;
     }
 )
@@ -280,6 +301,36 @@ const categoryDodSlice = createSlice({
             state.loading = false
         })
         builder.addCase(getAllClothesForDogs.rejected, (state) => {
+            state.loading = true
+        })
+        builder.addCase(getAllDishesForDogs.pending, (state) => {
+            state.loading = true
+        })
+        builder.addCase(getAllDishesForDogs.fulfilled, (state, action) => {
+            state.products = action.payload
+            state.loading = false
+        })
+        builder.addCase(getAllDishesForDogs.rejected, (state) => {
+            state.loading = true
+        })
+        builder.addCase(getAllAmmunitionForDogs.pending, (state) => {
+            state.loading = true
+        })
+        builder.addCase(getAllAmmunitionForDogs.fulfilled, (state, action) => {
+            state.products = action.payload
+            state.loading = false
+        })
+        builder.addCase(getAllAmmunitionForDogs.rejected, (state) => {
+            state.loading = true
+        })
+        builder.addCase(getAllToiletsForDogs.pending, (state) => {
+            state.loading = true
+        })
+        builder.addCase(getAllToiletsForDogs.fulfilled, (state, action) => {
+            state.products = action.payload
+            state.loading = false
+        })
+        builder.addCase(getAllToiletsForDogs.rejected, (state) => {
             state.loading = true
         })
     }

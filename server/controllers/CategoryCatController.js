@@ -1,5 +1,7 @@
 import ProductCardModel from "../models/ProductCard.js";
 import ProductsForCatsModel from "../models/ProductsForCats.js";
+import ProductsForDogsModel from "../models/ProductsForDogs.js";
+import ProductsForCats from "../models/ProductsForCats.js";
 
 
 export const dryFoodForCats = async (req, res) => {
@@ -645,5 +647,21 @@ export const getToiletsForCats = async (req, res, next) => {
         res.status(200).json(toiletsForCatsProducts);
     } catch (error) {
         next(error);
+    }
+}
+
+export const getAllCatCategory = async (req, res) => {
+    try {
+        const categoryCat = await ProductsForCatsModel.find().exec()
+
+        const category = await Promise.all(
+            categoryCat.map((p) => {
+                return ProductsForCatsModel.findById(p);
+            })
+        );
+
+        res.json(category)
+    } catch (error) {
+        console.log(error)
     }
 }

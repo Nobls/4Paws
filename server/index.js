@@ -192,6 +192,9 @@ app.post('/shop/cat/ammunitionForCats/:ammunitionForCatsId', checkAuth, Category
 app.post('/shop/cat/toiletsForCats/:toiletsForCatsId', checkAuth, CategoryCatController.toiletsForCats)
 
 // получение
+
+app.get('/shop/cat/category', checkAuth, CategoryCatController.getAllCatCategory)
+
 app.get('/shop/cat/dryFoodForCats/:dryFoodForCatsId', checkAuth, CategoryCatController.getDryFoodForCats)
 app.get('/shop/cat/preservesForCats/:preservesForCatsId', checkAuth, CategoryCatController.getPreservesForCats)
 app.get('/shop/cat/vitaminsForCats/:vitaminsForCatsId', checkAuth, CategoryCatController.getVitaminsForCats)
