@@ -77,6 +77,7 @@ function App() {
 
                     <Route path='/shop/cat/dryFoodForCats/:dryFoodForCatsId' element={<ProductsDog/>}/>
                     <Route path='/shop/cat/preservesForCats/:preservesForCatsId' element={<ProductsDog/>}/>
+                    <Route path='/shop/cat/vitaminsForCats/:vitaminsForCatsId' element={<ProductsDog/>}/>
                 </Route>
             </Routes>
 
