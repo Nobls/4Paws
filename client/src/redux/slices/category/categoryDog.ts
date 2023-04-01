@@ -183,6 +183,13 @@ export const getAllCosmeticsForDogs = createAsyncThunk(
         return response.data;
     }
 )
+export const getAllСlothesForDogs = createAsyncThunk(
+    'products/getAllСlothesForDogs',
+    async (clothesForDogsId:string ) => {
+        const response = await axios.get(`/shop/dog/cosmeticsForDogs/${clothesForDogsId}`);
+        return response.data;
+    }
+)
 
 const categoryDodSlice = createSlice({
     name: 'products',
@@ -263,6 +270,16 @@ const categoryDodSlice = createSlice({
             state.loading = false
         })
         builder.addCase(getAllCosmeticsForDogs.rejected, (state) => {
+            state.loading = true
+        })
+        builder.addCase(getAllСlothesForDogs.pending, (state) => {
+            state.loading = true
+        })
+        builder.addCase(getAllСlothesForDogs.fulfilled, (state, action) => {
+            state.products = action.payload
+            state.loading = false
+        })
+        builder.addCase(getAllСlothesForDogs.rejected, (state) => {
             state.loading = true
         })
     }

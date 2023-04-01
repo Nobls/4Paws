@@ -70,6 +70,7 @@ function App() {
                     <Route path='/shop/dog/toysForDogs/:toysForDogsId' element={<ProductsDog/>}/>
                     <Route path='/shop/dog/carryingForDogs/:carryingForDogsId' element={<ProductsDog/>}/>
                     <Route path='/shop/dog/cosmeticsForDogs/:cosmeticsForDogsId' element={<ProductsDog/>}/>
+                    <Route path='/shop/dog/clothesForDogs/:clothesForDogsId' element={<ProductsDog/>}/>
 
                 </Route>
             </Routes>

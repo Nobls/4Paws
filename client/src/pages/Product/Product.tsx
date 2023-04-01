@@ -5,7 +5,7 @@ import {
     getAllCarryingForDogs, getAllCosmeticsForDogs,
     getAllDryFoodForDogs, getAllHomeForDogs,
     getAllPreservesForDogs, getAllToysForDogs,
-    getAllVitaminsForDogs
+    getAllVitaminsForDogs, getAllСlothesForDogs
 } from "../../redux/slices/category/categoryDog";
 import s from './product.module.scss'
 import GoodsCard from "../../components/goodsCard/GoodsCard";
@@ -17,7 +17,7 @@ const ProductsDog = () => {
 
     const {
         dryFoodDogId, preservesForDogsId, vitaminsForDogsId, homeForDogsId, toysForDogsId, carryingForDogsId,
-        cosmeticsForDogsId
+        cosmeticsForDogsId, clothesForDogsId,
     } = useParams<{
         dryFoodDogId: string,
         preservesForDogsId: string,
@@ -26,6 +26,7 @@ const ProductsDog = () => {
         toysForDogsId: string,
         carryingForDogsId: string,
         cosmeticsForDogsId: string,
+        clothesForDogsId: string,
     }>
     ();
 
@@ -34,7 +35,7 @@ const ProductsDog = () => {
     console.log(products)
 
     useEffect(() => {
-        if (dryFoodDogId || preservesForDogsId || vitaminsForDogsId || homeForDogsId || toysForDogsId || carryingForDogsId || cosmeticsForDogsId) {
+        if (dryFoodDogId || preservesForDogsId || vitaminsForDogsId || homeForDogsId || toysForDogsId || carryingForDogsId || cosmeticsForDogsId || clothesForDogsId) {
             if (dryFoodDogId != null) {
                 dispatch(getAllDryFoodForDogs(dryFoodDogId));
             }
@@ -57,8 +58,11 @@ const ProductsDog = () => {
             if (cosmeticsForDogsId != null) {
                 dispatch(getAllCosmeticsForDogs(cosmeticsForDogsId));
             }
+            if (clothesForDogsId != null) {
+                dispatch(getAllСlothesForDogs(clothesForDogsId));
+            }
         }
-    }, [dispatch, dryFoodDogId, preservesForDogsId, vitaminsForDogsId, homeForDogsId, toysForDogsId, carryingForDogsId, cosmeticsForDogsId])
+    }, [dispatch, dryFoodDogId, preservesForDogsId, vitaminsForDogsId, homeForDogsId, toysForDogsId, carryingForDogsId, cosmeticsForDogsId, clothesForDogsId])
 
     if (loading) {
         return <Loading/>;
