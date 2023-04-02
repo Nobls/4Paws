@@ -149,6 +149,62 @@ export const getAllVitaminsForCats = createAsyncThunk(
         return response.data;
     }
 )
+export const getAllHomeForCats = createAsyncThunk(
+    'products/getAllHomeForCats',
+    async (homeForCatsId:string ) => {
+        const response = await axios.get(`/shop/cat/homeForCats/${homeForCatsId}`);
+        return response.data;
+    }
+)
+export const getAllToysForCats = createAsyncThunk(
+    'products/getAllToysForCats',
+    async (toysForCatsId:string ) => {
+        const response = await axios.get(`/shop/cat/toysForCats/${toysForCatsId}`);
+        return response.data;
+    }
+)
+export const getAllCarryingForCats = createAsyncThunk(
+    'products/getAllCarryingForCats',
+    async (carryingForCatsId:string ) => {
+        const response = await axios.get(`/shop/cat/carryingForCats/${carryingForCatsId}`);
+        return response.data;
+    }
+)
+export const getAllCosmeticsForCats = createAsyncThunk(
+    'products/getAllCosmeticsForCats',
+    async (cosmeticsForCatsId:string ) => {
+        const response = await axios.get(`/shop/cat/cosmeticsForCats/${cosmeticsForCatsId}`);
+        return response.data;
+    }
+)
+export const getAllScratchingPostsForCats = createAsyncThunk(
+    'products/getAllScratchingPostsForCats',
+    async (scratchingPostsForCatsId:string ) => {
+        const response = await axios.get(`/shop/cat/scratchingPostsForCats/${scratchingPostsForCatsId}`);
+        return response.data;
+    }
+)
+export const getAllDishesForCats = createAsyncThunk(
+    'products/getAllDishesForCats',
+    async (dishesForCatsId:string ) => {
+        const response = await axios.get(`/shop/cat/dishesForCats/${dishesForCatsId}`);
+        return response.data;
+    }
+)
+export const getAllAmmunitionForCats = createAsyncThunk(
+    'products/getAllAmmunitionForCats',
+    async (ammunitionForCatsId:string ) => {
+        const response = await axios.get(`/shop/cat/ammunitionForCats/${ammunitionForCatsId}`);
+        return response.data;
+    }
+)
+export const getAllToiletsForCats = createAsyncThunk(
+    'products/getAllToiletsForCats',
+    async (toiletsForCatsId:string ) => {
+        const response = await axios.get(`/shop/cat/toiletsForCats/${toiletsForCatsId}`);
+        return response.data;
+    }
+)
 
 const categoryCatSlice = createSlice({
     name: 'products',
@@ -184,6 +240,86 @@ const categoryCatSlice = createSlice({
             state.loading = false
         })
         builder.addCase(getAllVitaminsForCats.rejected, (state) => {
+            state.loading = true
+        })
+        builder.addCase(getAllHomeForCats.pending, (state) => {
+            state.loading = true
+        })
+        builder.addCase(getAllHomeForCats.fulfilled, (state, action) => {
+            state.products = action.payload
+            state.loading = false
+        })
+        builder.addCase(getAllHomeForCats.rejected, (state) => {
+            state.loading = true
+        })
+        builder.addCase(getAllToysForCats.pending, (state) => {
+            state.loading = true
+        })
+        builder.addCase(getAllToysForCats.fulfilled, (state, action) => {
+            state.products = action.payload
+            state.loading = false
+        })
+        builder.addCase(getAllToysForCats.rejected, (state) => {
+            state.loading = true
+        })
+        builder.addCase(getAllCarryingForCats.pending, (state) => {
+            state.loading = true
+        })
+        builder.addCase(getAllCarryingForCats.fulfilled, (state, action) => {
+            state.products = action.payload
+            state.loading = false
+        })
+        builder.addCase(getAllCarryingForCats.rejected, (state) => {
+            state.loading = true
+        })
+        builder.addCase(getAllCosmeticsForCats.pending, (state) => {
+            state.loading = true
+        })
+        builder.addCase(getAllCosmeticsForCats.fulfilled, (state, action) => {
+            state.products = action.payload
+            state.loading = false
+        })
+        builder.addCase(getAllCosmeticsForCats.rejected, (state) => {
+            state.loading = true
+        })
+        builder.addCase(getAllScratchingPostsForCats.pending, (state) => {
+            state.loading = true
+        })
+        builder.addCase(getAllScratchingPostsForCats.fulfilled, (state, action) => {
+            state.products = action.payload
+            state.loading = false
+        })
+        builder.addCase(getAllScratchingPostsForCats.rejected, (state) => {
+            state.loading = true
+        })
+        builder.addCase(getAllDishesForCats.pending, (state) => {
+            state.loading = true
+        })
+        builder.addCase(getAllDishesForCats.fulfilled, (state, action) => {
+            state.products = action.payload
+            state.loading = false
+        })
+        builder.addCase(getAllDishesForCats.rejected, (state) => {
+            state.loading = true
+        })
+        builder.addCase(getAllAmmunitionForCats.pending, (state) => {
+            state.loading = true
+        })
+        builder.addCase(getAllAmmunitionForCats.fulfilled, (state, action) => {
+            state.products = action.payload
+            state.loading = false
+        })
+        builder.addCase(getAllAmmunitionForCats.rejected, (state) => {
+            state.loading = true
+        })
+        builder.addCase(getAllToiletsForCats.pending, (state) => {
+            state.loading = true
+        })
+        builder.addCase(getAllToiletsForCats.fulfilled, (state, action) => {
+            state.products = action.payload
+            state.loading = false
+        })
+        builder.addCase(getAllToiletsForCats.rejected, (state) => {
             state.loading = true
         })
     }

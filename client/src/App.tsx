@@ -78,6 +78,14 @@ function App() {
                     <Route path='/shop/cat/dryFoodForCats/:dryFoodForCatsId' element={<ProductsDog/>}/>
                     <Route path='/shop/cat/preservesForCats/:preservesForCatsId' element={<ProductsDog/>}/>
                     <Route path='/shop/cat/vitaminsForCats/:vitaminsForCatsId' element={<ProductsDog/>}/>
+                    <Route path='/shop/cat/homeForCats/:homeForCatsId' element={<ProductsDog/>}/>
+                    <Route path='/shop/cat/toysForCats/:toysForCatsId' element={<ProductsDog/>}/>
+                    <Route path='/shop/cat/carryingForCats/:carryingForCatsId' element={<ProductsDog/>}/>
+                    <Route path='/shop/cat/cosmeticsForCats/:cosmeticsForCatsId' element={<ProductsDog/>}/>
+                    <Route path='/shop/cat/scratchingPostsForCats/:scratchingPostsForCatsId' element={<ProductsDog/>}/>
+                    <Route path='/shop/cat/dishesForCats/:dishesForCatsId' element={<ProductsDog/>}/>
+                    <Route path='/shop/cat/ammunitionForCats/:ammunitionForCatsId' element={<ProductsDog/>}/>
+                    <Route path='/shop/cat/toiletsForCats/:toiletsForCatsId' element={<ProductsDog/>}/>
                 </Route>
             </Routes>
 
