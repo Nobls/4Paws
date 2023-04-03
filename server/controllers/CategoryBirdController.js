@@ -468,3 +468,20 @@ export const getDishesForBird = async (req, res, next) => {
         next(error);
     }
 }
+
+
+export const getAllCategoryBirds = async (req, res) => {
+    try {
+        const categoryBirds = await ProductsForBirdModel.find().exec()
+
+        const category = await Promise.all(
+            categoryBirds.map((p) => {
+                return ProductsForBirdModel.findById(p);
+            })
+        );
+
+        res.json(category)
+    } catch (error) {
+        console.log(error)
+    }
+}
