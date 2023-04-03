@@ -26,6 +26,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import {Loading} from "./components/loading/Loading";
 import ProductsDog from "./pages/Product/ProductDog";
 import ProductsCat from "./pages/Product/ProductCat";
+import ProductsBird from "./pages/Product/ProductBird";
 
 function App() {
 
@@ -87,6 +88,10 @@ function App() {
                     <Route path='/shop/cat/dishesForCats/:dishesForCatsId' element={<ProductsCat/>}/>
                     <Route path='/shop/cat/ammunitionForCats/:ammunitionForCatsId' element={<ProductsCat/>}/>
                     <Route path='/shop/cat/toiletsForCats/:toiletsForCatsId' element={<ProductsCat/>}/>
+
+                    <Route path='/shop/bird/dryFoodForBirds/:dryFoodForBirdsId' element={<ProductsBird/>}/>
+                    <Route path='/shop/bird/vitaminsForBirds/:vitaminsForBirdsId' element={<ProductsBird/>}/>
+
                 </Route>
             </Routes>
 

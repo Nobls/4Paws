@@ -128,10 +128,17 @@ const initialState: ProductsState = {
     error: null,
 };
 
-export const getAllDryFoodForCats = createAsyncThunk(
-    'products/getAllDryFoodForCats',
-    async (dryFoodForCatsId:string ) => {
-        const response = await axios.get(`/shop/cat/dryFoodForCats/${dryFoodForCatsId}`);
+export const getAllDryFoodForBirds = createAsyncThunk(
+    'products/getAllDryFoodForBirds',
+    async (dryFoodForBirdsId:string ) => {
+        const response = await axios.get(`/shop/bird/dryFoodForBirds/${dryFoodForBirdsId}`);
+        return response.data;
+    }
+)
+export const getAllVitaminsForBirds = createAsyncThunk(
+    'products/getAllVitaminsForBirds',
+    async (vitaminsForBirdsId:string ) => {
+        const response = await axios.get(`/shop/bird/vitaminsForBirds/${vitaminsForBirdsId}`);
         return response.data;
     }
 )
@@ -141,14 +148,26 @@ const categoryBirdSlice = createSlice({
     initialState,
     reducers: {},
     extraReducers: (builder) => {
-        builder.addCase(getAllDryFoodForCats.pending, (state) => {
+
+        builder.addCase(getAllDryFoodForBirds.pending, (state) => {
             state.loading = true
         })
-        builder.addCase(getAllDryFoodForCats.fulfilled, (state, action) => {
+        builder.addCase(getAllDryFoodForBirds.fulfilled, (state, action) => {
             state.products = action.payload
             state.loading = false
         })
-        builder.addCase(getAllDryFoodForCats.rejected, (state) => {
+        builder.addCase(getAllDryFoodForBirds.rejected, (state) => {
+            state.loading = true
+        })
+
+        builder.addCase(getAllVitaminsForBirds.pending, (state) => {
+            state.loading = true
+        })
+        builder.addCase(getAllVitaminsForBirds.fulfilled, (state, action) => {
+            state.products = action.payload
+            state.loading = false
+        })
+        builder.addCase(getAllVitaminsForBirds.rejected, (state) => {
             state.loading = true
         })
     }
