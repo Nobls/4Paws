@@ -21,11 +21,10 @@ const Shop = () => {
     }
 
     const [data, setData] = useState<any>()
-    //const [dataCat, setDataCat] = useState<any>()
     const [loading, setLoading] = useState<any>(true)
 
     useEffect(() => {
-        axios.get('/shop/dog/category').then(res => {
+        axios.get('/shop/dog/categoryDog').then(res => {
             setData(res.data)
             setLoading(false)
         }).catch(err => {
@@ -34,7 +33,7 @@ const Shop = () => {
     }, [])
 
     useEffect(() => {
-        axios.get('/shop/cat/category').then(res => {
+        axios.get('/shop/cat/categoryCat').then(res => {
             setData(res.data)
             setLoading(false)
         }).catch(err => {

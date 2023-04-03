@@ -63,9 +63,7 @@ const ProductsDog = () => {
 
     useEffect(() => {
         if (dryFoodDogId || preservesForDogsId || vitaminsForDogsId || homeForDogsId || toysForDogsId || carryingForDogsId ||
-            cosmeticsForDogsId || clothesForDogsId || dishesForDogsId || ammunitionForDogsId || toiletsForDogsId
-        || dryFoodForCatsId || preservesForCatsId || vitaminsForCatsId || homeForCatsId || toysForCatsId || carryingForCatsId
-        || cosmeticsForCatsId || scratchingPostsForCatsId || dishesForCatsId || ammunitionForCatsId || toiletsForCatsId ) {
+            cosmeticsForDogsId || clothesForDogsId || dishesForDogsId || ammunitionForDogsId || toiletsForDogsId) {
             if (dryFoodDogId != null) {
                 dispatch(getAllDryFoodForDogs(dryFoodDogId));
             }
@@ -103,6 +101,18 @@ const ProductsDog = () => {
 
             // ---------------------------------------------------------------------------
 
+
+        }
+    }, [dispatch, dryFoodDogId, preservesForDogsId, vitaminsForDogsId, homeForDogsId,
+        toysForDogsId, carryingForDogsId, cosmeticsForDogsId, clothesForDogsId, dishesForDogsId,
+        ammunitionForDogsId, toiletsForDogsId,
+    ])
+
+    useEffect(() => {
+
+        if (dryFoodForCatsId || preservesForCatsId || vitaminsForCatsId || homeForCatsId || toysForCatsId || carryingForCatsId
+            || cosmeticsForCatsId || scratchingPostsForCatsId || dishesForCatsId || ammunitionForCatsId || toiletsForCatsId) {
+
             if (dryFoodForCatsId != null) {
                 dispatch(getAllDryFoodForCats(dryFoodForCatsId));
             }
@@ -136,13 +146,12 @@ const ProductsDog = () => {
             if (toiletsForCatsId != null) {
                 dispatch(getAllToiletsForCats(toiletsForCatsId));
             }
+
         }
-    }, [dispatch, dryFoodDogId, preservesForDogsId, vitaminsForDogsId, homeForDogsId,
-        toysForDogsId, carryingForDogsId, cosmeticsForDogsId, clothesForDogsId, dishesForDogsId,
-        ammunitionForDogsId, toiletsForDogsId, dryFoodForCatsId, preservesForCatsId, vitaminsForCatsId, homeForCatsId,
+
+    }, [dispatch, dryFoodForCatsId, preservesForCatsId, vitaminsForCatsId, homeForCatsId,
         toysForCatsId, carryingForCatsId, cosmeticsForCatsId, scratchingPostsForCatsId, dishesForCatsId, ammunitionForCatsId,
-        toiletsForCatsId
-    ])
+        toiletsForCatsId])
 
     if (loading) {
         return <Loading/>;

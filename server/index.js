@@ -162,7 +162,7 @@ app.post('/shop/dog/:id/toiletsForDogs', checkAuth, CategoryDogController.toilet
 
 // получение
 
-app.get('/shop/dog/category', checkAuth, CategoryDogController.getAllDogCategory)
+app.get('/shop/dog/categoryDog', checkAuth, CategoryDogController.getAllDogCategory)
 
 app.get('/shop/dog/dryFoodDog/:dryFoodDogId', checkAuth, CategoryDogController.getDryFood)
 app.get('/shop/dog/preservesForDogs/:preservesForDogsId', checkAuth, CategoryDogController.getPreserves)
@@ -193,7 +193,7 @@ app.post('/shop/cat/toiletsForCats/:toiletsForCatsId', checkAuth, CategoryCatCon
 
 // получение
 
-app.get('/shop/cat/category', checkAuth, CategoryCatController.getAllCatCategory)
+app.get('/shop/cat/categoryCat', checkAuth, CategoryCatController.getAllCatCategory)
 
 app.get('/shop/cat/dryFoodForCats/:dryFoodForCatsId', checkAuth, CategoryCatController.getDryFoodForCats)
 app.get('/shop/cat/preservesForCats/:preservesForCatsId', checkAuth, CategoryCatController.getPreservesForCats)
