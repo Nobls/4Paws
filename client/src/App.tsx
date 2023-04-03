@@ -24,7 +24,8 @@ import {AdminServices} from "./admin/AdminServices";
 import {ToastContainer} from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 import {Loading} from "./components/loading/Loading";
-import ProductsDog from "./pages/Product/Product";
+import ProductsDog from "./pages/Product/ProductDog";
+import ProductsCat from "./pages/Product/ProductCat";
 
 function App() {
 
@@ -75,17 +76,17 @@ function App() {
                     <Route path='/shop/dog/ammunitionForDogs/:ammunitionForDogsId' element={<ProductsDog/>}/>
                     <Route path='/shop/dog/toiletsForDogs/:toiletsForDogsId' element={<ProductsDog/>}/>
 
-                    <Route path='/shop/cat/dryFoodForCats/:dryFoodForCatsId' element={<ProductsDog/>}/>
-                    <Route path='/shop/cat/preservesForCats/:preservesForCatsId' element={<ProductsDog/>}/>
-                    <Route path='/shop/cat/vitaminsForCats/:vitaminsForCatsId' element={<ProductsDog/>}/>
-                    <Route path='/shop/cat/homeForCats/:homeForCatsId' element={<ProductsDog/>}/>
-                    <Route path='/shop/cat/toysForCats/:toysForCatsId' element={<ProductsDog/>}/>
-                    <Route path='/shop/cat/carryingForCats/:carryingForCatsId' element={<ProductsDog/>}/>
-                    <Route path='/shop/cat/cosmeticsForCats/:cosmeticsForCatsId' element={<ProductsDog/>}/>
-                    <Route path='/shop/cat/scratchingPostsForCats/:scratchingPostsForCatsId' element={<ProductsDog/>}/>
-                    <Route path='/shop/cat/dishesForCats/:dishesForCatsId' element={<ProductsDog/>}/>
-                    <Route path='/shop/cat/ammunitionForCats/:ammunitionForCatsId' element={<ProductsDog/>}/>
-                    <Route path='/shop/cat/toiletsForCats/:toiletsForCatsId' element={<ProductsDog/>}/>
+                    <Route path='/shop/cat/dryFoodForCats/:dryFoodForCatsId' element={<ProductsCat/>}/>
+                    <Route path='/shop/cat/preservesForCats/:preservesForCatsId' element={<ProductsCat/>}/>
+                    <Route path='/shop/cat/vitaminsForCats/:vitaminsForCatsId' element={<ProductsCat/>}/>
+                    <Route path='/shop/cat/homeForCats/:homeForCatsId' element={<ProductsCat/>}/>
+                    <Route path='/shop/cat/toysForCats/:toysForCatsId' element={<ProductsCat/>}/>
+                    <Route path='/shop/cat/carryingForCats/:carryingForCatsId' element={<ProductsCat/>}/>
+                    <Route path='/shop/cat/cosmeticsForCats/:cosmeticsForCatsId' element={<ProductsCat/>}/>
+                    <Route path='/shop/cat/scratchingPostsForCats/:scratchingPostsForCatsId' element={<ProductsCat/>}/>
+                    <Route path='/shop/cat/dishesForCats/:dishesForCatsId' element={<ProductsCat/>}/>
+                    <Route path='/shop/cat/ammunitionForCats/:ammunitionForCatsId' element={<ProductsCat/>}/>
+                    <Route path='/shop/cat/toiletsForCats/:toiletsForCatsId' element={<ProductsCat/>}/>
                 </Route>
             </Routes>
 

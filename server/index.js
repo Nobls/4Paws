@@ -30,7 +30,6 @@ import {
     UserPetController,
     ReviewsController,
 } from './controllers/index.js'
-import {getAllCategoryBirds} from "./controllers/CategoryCatController.js";
 
 
 mongoose

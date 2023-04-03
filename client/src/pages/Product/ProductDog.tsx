@@ -10,16 +10,6 @@ import {
 import s from './product.module.scss'
 import GoodsCard from "../../components/goodsCard/GoodsCard";
 import {Loading} from "../../components/loading/Loading";
-import {
-    getAllDryFoodForCats,
-    getAllPreservesForCats,
-    getAllVitaminsForCats,
-    getAllHomeForCats,
-    getAllToysForCats,
-    getAllCarryingForCats,
-    getAllCosmeticsForCats,
-    getAllScratchingPostsForCats, getAllDishesForCats, getAllAmmunitionForCats, getAllToiletsForCats
-} from "../../redux/slices/category/categoryCat";
 
 const ProductsDog = () => {
 
@@ -27,9 +17,7 @@ const ProductsDog = () => {
 
     const {
         dryFoodDogId, preservesForDogsId, vitaminsForDogsId, homeForDogsId, toysForDogsId, carryingForDogsId,
-        cosmeticsForDogsId, clothesForDogsId, dishesForDogsId, ammunitionForDogsId, toiletsForDogsId,
-        dryFoodForCatsId, preservesForCatsId, vitaminsForCatsId, homeForCatsId, toysForCatsId, carryingForCatsId,
-        cosmeticsForCatsId, scratchingPostsForCatsId, dishesForCatsId, ammunitionForCatsId, toiletsForCatsId
+        cosmeticsForDogsId, clothesForDogsId, dishesForDogsId, ammunitionForDogsId, toiletsForDogsId
     } = useParams<{
         dryFoodDogId: string,
         preservesForDogsId: string,
@@ -42,18 +30,6 @@ const ProductsDog = () => {
         dishesForDogsId: string,
         ammunitionForDogsId: string,
         toiletsForDogsId: string,
-
-        dryFoodForCatsId: string,
-        preservesForCatsId: string,
-        vitaminsForCatsId: string,
-        homeForCatsId: string,
-        toysForCatsId: string,
-        carryingForCatsId: string,
-        cosmeticsForCatsId: string,
-        scratchingPostsForCatsId: string,
-        dishesForCatsId: string,
-        ammunitionForCatsId: string,
-        toiletsForCatsId: string,
     }>
     ();
 
@@ -98,60 +74,11 @@ const ProductsDog = () => {
             if (toiletsForDogsId != null) {
                 dispatch(getAllToiletsForDogs(toiletsForDogsId));
             }
-
-            // ---------------------------------------------------------------------------
-
-
         }
     }, [dispatch, dryFoodDogId, preservesForDogsId, vitaminsForDogsId, homeForDogsId,
         toysForDogsId, carryingForDogsId, cosmeticsForDogsId, clothesForDogsId, dishesForDogsId,
         ammunitionForDogsId, toiletsForDogsId,
     ])
-
-    useEffect(() => {
-
-        if (dryFoodForCatsId || preservesForCatsId || vitaminsForCatsId || homeForCatsId || toysForCatsId || carryingForCatsId
-            || cosmeticsForCatsId || scratchingPostsForCatsId || dishesForCatsId || ammunitionForCatsId || toiletsForCatsId) {
-
-            if (dryFoodForCatsId != null) {
-                dispatch(getAllDryFoodForCats(dryFoodForCatsId));
-            }
-            if (preservesForCatsId != null) {
-                dispatch(getAllPreservesForCats(preservesForCatsId));
-            }
-            if (vitaminsForCatsId != null) {
-                dispatch(getAllVitaminsForCats(vitaminsForCatsId));
-            }
-            if (homeForCatsId != null) {
-                dispatch(getAllHomeForCats(homeForCatsId));
-            }
-            if (toysForCatsId != null) {
-                dispatch(getAllToysForCats(toysForCatsId));
-            }
-            if (carryingForCatsId != null) {
-                dispatch(getAllCarryingForCats(carryingForCatsId));
-            }
-            if (cosmeticsForCatsId != null) {
-                dispatch(getAllCosmeticsForCats(cosmeticsForCatsId));
-            }
-            if (scratchingPostsForCatsId != null) {
-                dispatch(getAllScratchingPostsForCats(scratchingPostsForCatsId));
-            }
-            if (dishesForCatsId != null) {
-                dispatch(getAllDishesForCats(dishesForCatsId));
-            }
-            if (ammunitionForCatsId != null) {
-                dispatch(getAllAmmunitionForCats(ammunitionForCatsId));
-            }
-            if (toiletsForCatsId != null) {
-                dispatch(getAllToiletsForCats(toiletsForCatsId));
-            }
-
-        }
-
-    }, [dispatch, dryFoodForCatsId, preservesForCatsId, vitaminsForCatsId, homeForCatsId,
-        toysForCatsId, carryingForCatsId, cosmeticsForCatsId, scratchingPostsForCatsId, dishesForCatsId, ammunitionForCatsId,
-        toiletsForCatsId])
 
     if (loading) {
         return <Loading/>;
