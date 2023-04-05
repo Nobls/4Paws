@@ -76,8 +76,14 @@ const ProductsRodent = () => {
 
     }, [
         dispatch,
-        dryFoodForRodentsId, vitaminsForRodentsId, accessoriesForRodentsId, cellsForRodentsId, bathingForRodentsId,
-        toysForRodentsId, extenderForRodentsId, dishesForRodentsId
+        dryFoodForRodentsId,
+        vitaminsForRodentsId,
+        accessoriesForRodentsId,
+        cellsForRodentsId,
+        bathingForRodentsId,
+        toysForRodentsId,
+        extenderForRodentsId,
+        dishesForRodentsId
     ])
 
     if (loading) {

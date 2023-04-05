@@ -248,7 +248,7 @@ app.post('/shop/rodent/:id/dishesForRodents', checkAuth, CategoryRodentControlle
 
 //получение
 
-app.post('/shop/rodent/cate', checkAuth, CategoryRodentController.getAllRodentCategory)
+app.post('/shop/rodent/categoryRodent', checkAuth, CategoryRodentController.getAllRodentCategory)
 
 app.post('/shop/rodent/dryFoodForRodents/:dryFoodForRodentsId', checkAuth, CategoryRodentController.getDryFoodForRodents)
 app.post('/shop/rodent/vitaminsForRodents/:vitaminsForRodentsId', checkAuth, CategoryRodentController.getVitaminsForRodents)

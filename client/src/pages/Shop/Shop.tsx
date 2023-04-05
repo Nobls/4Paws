@@ -1,11 +1,13 @@
 import s from './shop.module.scss';
 import React, {useState} from "react";
-import iconDog from '../../images/icons/dog.svg'
-import iconCat from '../../images/icons/cat.svg'
-import iconBird from '../../images/icons/bird.svg'
+import iconDog from '../../images/icons/dog.svg';
+import iconCat from '../../images/icons/cat.svg';
+import iconBird from '../../images/icons/bird.svg';
+import iconRodent from '../../images/icons/rodent.svg';
 import ShopDog from "./ShopDog";
 import ShopCat from "./ShopCat";
 import ShopBird from "./ShopBird";
+import ShopRodent from "./ShopRodent";
 
 const Shop = () => {
 
@@ -59,6 +61,8 @@ const Shop = () => {
                         </div>
                     </div>
 
+
+
                     {/*<div className={s.category}>*/}
                     {/*    <div className={s.categoryWrapper} onClick={() => categoryHandler('cat')}>*/}
                     {/*        <div>*/}
@@ -90,6 +94,25 @@ const Shop = () => {
                             {
                                 activeCategory === 'bird' && (
                                     <ShopBird/>
+                                )
+                            }
+                        </div>
+                    </div>
+
+                    <div className={s.category}>
+                        <div className={s.categoryWrapper} onClick={() => categoryHandler('rodent')}>
+                            <div>
+                                <p className={s.categoryTitle}>Грызуны</p>
+                            </div>
+                            <div className={s.categoryImage}>
+                                <img className={s.categoryIcon} src={iconRodent} alt="rodent"/>
+                            </div>
+                        </div>
+                        <div className={s.categoryList}>
+                            {
+                                activeCategory === 'rodent' && (
+                                    // <CategoryListCat data={data}/>
+                                    <ShopRodent/>
                                 )
                             }
                         </div>

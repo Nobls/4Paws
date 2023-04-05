@@ -83,7 +83,7 @@ const ProductsBird = () => {
         vitaminsForBirdsId,
         birdcageForBirdsId,
         bathForBirdsId,
-        bathForBirdsId,
+        toysForBirdsId,
         fillersAndPadsForBirdsId,
         accessoriesForBirdsId,
         dishesForBirdsId

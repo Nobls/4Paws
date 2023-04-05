@@ -27,6 +27,7 @@ import {Loading} from "./components/loading/Loading";
 import ProductsDog from "./pages/Product/ProductDog";
 import ProductsCat from "./pages/Product/ProductCat";
 import ProductsBird from "./pages/Product/ProductBird";
+import ProductsRodent from "./pages/Product/ProductRodent";
 
 function App() {
 
@@ -97,6 +98,15 @@ function App() {
                     <Route path='/shop/bird/fillersAndPadsForBirds/:fillersAndPadsForBirdsId' element={<ProductsBird/>}/>
                     <Route path='/shop/bird/accessoriesForBirds/:accessoriesForBirdsId' element={<ProductsBird/>}/>
                     <Route path='/shop/bird/dishesForBirds/:dishesForBirdsId' element={<ProductsBird/>}/>
+
+                    <Route path='/shop/rodent/dryFoodForRodents/:dryFoodForRodentsId' element={<ProductsRodent/>}/>
+                    <Route path='/shop/rodent/vitaminsForRodents/:vitaminsForRodentsId' element={<ProductsRodent/>}/>
+                    <Route path='/shop/rodent/accessoriesForRodents/:accessoriesForRodentsId' element={<ProductsRodent/>}/>
+                    <Route path='/shop/rodent/cellsForRodents/:cellsForRodentsId' element={<ProductsRodent/>}/>
+                    <Route path='/shop/rodent/bathingForRodents/:bathingForRodentsId' element={<ProductsRodent/>}/>
+                    <Route path='/shop/rodent/toysForRodents/:toysForRodentsId' element={<ProductsRodent/>}/>
+                    <Route path='/shop/rodent/extenderForRodents/:extenderForRodentsId' element={<ProductsRodent/>}/>
+                    <Route path='/shop/rodent/dishesForRodents/:dishesForRodentsId' element={<ProductsRodent/>}/>
 
                 </Route>
             </Routes>
