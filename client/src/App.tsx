@@ -91,6 +91,12 @@ function App() {
 
                     <Route path='/shop/bird/dryFoodForBirds/:dryFoodForBirdsId' element={<ProductsBird/>}/>
                     <Route path='/shop/bird/vitaminsForBirds/:vitaminsForBirdsId' element={<ProductsBird/>}/>
+                    <Route path='/shop/bird/birdcageForBirds/:birdcageForBirdsId' element={<ProductsBird/>}/>
+                    <Route path='/shop/bird/bathForBirds/:bathForBirdsId' element={<ProductsBird/>}/>
+                    <Route path='/shop/bird/toysForBirds/:toysForBirdsId' element={<ProductsBird/>}/>
+                    <Route path='/shop/bird/fillersAndPadsForBirds/:fillersAndPadsForBirdsId' element={<ProductsBird/>}/>
+                    <Route path='/shop/bird/accessoriesForBirds/:accessoriesForBirdsId' element={<ProductsBird/>}/>
+                    <Route path='/shop/bird/dishesForBirds/:dishesForBirdsId' element={<ProductsBird/>}/>
 
                 </Route>
             </Routes>

@@ -2,8 +2,10 @@ import s from './shop.module.scss';
 import React, {useState} from "react";
 import iconDog from '../../images/icons/dog.svg'
 import iconCat from '../../images/icons/cat.svg'
+import iconBird from '../../images/icons/bird.svg'
 import ShopDog from "./ShopDog";
 import ShopCat from "./ShopCat";
+import ShopBird from "./ShopBird";
 
 const Shop = () => {
 
@@ -75,23 +77,23 @@ const Shop = () => {
                     {/*    </div>*/}
                     {/*</div>*/}
 
-                    {/*<div className={s.category}>*/}
-                    {/*    <div className={s.categoryWrapper} onClick={() => categoryHandler('bird')}>*/}
-                    {/*        <div>*/}
-                    {/*            <p className={s.categoryTitle}>Птицы</p>*/}
-                    {/*        </div>*/}
-                    {/*        <div className={s.categoryImage}>*/}
-                    {/*            <img className={s.categoryIcon} src={iconBird} alt="bird"/>*/}
-                    {/*        </div>*/}
-                    {/*    </div>*/}
-                    {/*    <div>*/}
-                    {/*        {*/}
-                    {/*            activeCategory === 'bird' && (*/}
-                    {/*                <CategoryListBird/>*/}
-                    {/*            )*/}
-                    {/*        }*/}
-                    {/*    </div>*/}
-                    {/*</div>*/}
+                    <div className={s.category}>
+                        <div className={s.categoryWrapper} onClick={() => categoryHandler('bird')}>
+                            <div>
+                                <p className={s.categoryTitle}>Птицы</p>
+                            </div>
+                            <div className={s.categoryImage}>
+                                <img className={s.categoryIcon} src={iconBird} alt="bird"/>
+                            </div>
+                        </div>
+                        <div>
+                            {
+                                activeCategory === 'bird' && (
+                                    <ShopBird/>
+                                )
+                            }
+                        </div>
+                    </div>
 
                     {/*<div className={s.category}>*/}
                     {/*    <div className={s.categoryWrapper} onClick={() => categoryHandler('rodents')}>*/}

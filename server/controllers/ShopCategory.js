@@ -65,18 +65,16 @@ export const createCatCategory = async (req, res) => {
 export const createBirdCategory = async (req, res) => {
     try {
 
-        const doc = new ProductsForBirdModel({
+        const birdCategory = await ProductsForBirdModel.create({
             dryFoodForBirds: req.body.dryFoodForBirds,
             vitaminsForBirds: req.body.vitaminsForBirds,
-            birdcage: req.body.birdcage,
+            birdcageForBirds: req.body.birdcageForBirds,
             bathForBirds: req.body.bathForBirds,
             toysForBirds: req.body.toysForBirds,
-            fillersAndPadsForBird: req.body.fillersAndPadsForBird,
-            accessoriesForBird: req.body.accessoriesForBird,
-            dishesForBird: req.body.dishesForBird,
+            fillersAndPadsForBirds: req.body.fillersAndPadsForBirds,
+            accessoriesForBirds: req.body.accessoriesForBirds,
+            dishesForBirds: req.body.dishesForBirds,
         })
-
-        const birdCategory = await doc.save()
 
         res.json(birdCategory)
 
