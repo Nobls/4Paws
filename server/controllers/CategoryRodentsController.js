@@ -1,5 +1,6 @@
 import ProductCardModel from "../models/ProductCard.js";
 import ProductsForRodentModel from "../models/productForRodents.js";
+import ProductsForCatsModel from "../models/ProductsForCats.js";
 
 
 export const createDryFoodForRodents = async (req, res) => {
@@ -483,5 +484,22 @@ export const getDishesForRodents = async (req, res, next) => {
         res.status(200).json(dishesForRodentsProducts);
     } catch (error) {
         next(error);
+    }
+}
+
+
+export const getAllRodentCategory = async (req, res) => {
+    try {
+        const categoryRodent = await ProductsForRodentModel.find().exec()
+
+        const category = await Promise.all(
+            categoryRodent.map((p) => {
+                return ProductsForRodentModel.findById(p);
+            })
+        );
+
+        res.json(category)
+    } catch (error) {
+        console.log(error)
     }
 }

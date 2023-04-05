@@ -30,6 +30,7 @@ import {
     UserPetController,
     ReviewsController,
 } from './controllers/index.js'
+import {getAllRodentCategory} from "./controllers/CategoryRodentsController.js";
 
 
 mongoose
@@ -246,6 +247,9 @@ app.post('/shop/rodent/:id/extenderForRodents', checkAuth, CategoryRodentControl
 app.post('/shop/rodent/:id/dishesForRodents', checkAuth, CategoryRodentController.createDishesForRodents)
 
 //получение
+
+app.post('/shop/rodent/cate', checkAuth, CategoryRodentController.getAllRodentCategory)
+
 app.post('/shop/rodent/dryFoodForRodents/:dryFoodForRodentsId', checkAuth, CategoryRodentController.getDryFoodForRodents)
 app.post('/shop/rodent/vitaminsForRodents/:vitaminsForRodentsId', checkAuth, CategoryRodentController.getVitaminsForRodents)
 app.post('/shop/rodent/accessoriesForRodents/:accessoriesForRodentsId', checkAuth, CategoryRodentController.getAccessoriesForRodents)
