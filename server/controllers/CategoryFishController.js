@@ -421,3 +421,19 @@ export const getEquipment = async (req, res, next) => {
         next(error);
     }
 }
+
+export const getAllFishCategory = async (req, res) => {
+    try {
+        const categoryRodent = await ProductsForFishModel.find().exec()
+
+        const category = await Promise.all(
+            categoryRodent.map((p) => {
+                return ProductsForFishModel.findById(p);
+            })
+        );
+
+        res.json(category)
+    } catch (error) {
+        console.log(error)
+    }
+}
