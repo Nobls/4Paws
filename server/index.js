@@ -248,16 +248,16 @@ app.post('/shop/rodent/:id/dishesForRodents', checkAuth, CategoryRodentControlle
 
 //получение
 
-app.post('/shop/rodent/categoryRodent', checkAuth, CategoryRodentController.getAllRodentCategory)
+app.get('/shop/rodent/categoryRodent', checkAuth, CategoryRodentController.getAllRodentCategory)
 
-app.post('/shop/rodent/dryFoodForRodents/:dryFoodForRodentsId', checkAuth, CategoryRodentController.getDryFoodForRodents)
-app.post('/shop/rodent/vitaminsForRodents/:vitaminsForRodentsId', checkAuth, CategoryRodentController.getVitaminsForRodents)
-app.post('/shop/rodent/accessoriesForRodents/:accessoriesForRodentsId', checkAuth, CategoryRodentController.getAccessoriesForRodents)
-app.post('/shop/rodent/cellsForRodents/:cellsForRodentsId', checkAuth, CategoryRodentController.getCellsForRodents)
-app.post('/shop/rodent/bathingForRodents/:bathingForRodentsId', checkAuth, CategoryRodentController.getBathingForRodents)
-app.post('/shop/rodent/toysForRodents/:toysForRodentsId', checkAuth, CategoryRodentController.getToysForRodents)
-app.post('/shop/rodent/extenderForRodents/:extenderForRodentsId', checkAuth, CategoryRodentController.getExtenderForRodents)
-app.post('/shop/rodent/dishesForRodents/:dishesForRodentsId', checkAuth, CategoryRodentController.getDishesForRodents)
+app.get('/shop/rodent/dryFoodForRodents/:dryFoodForRodentsId', checkAuth, CategoryRodentController.getDryFoodForRodents)
+app.get('/shop/rodent/vitaminsForRodents/:vitaminsForRodentsId', checkAuth, CategoryRodentController.getVitaminsForRodents)
+app.get('/shop/rodent/accessoriesForRodents/:accessoriesForRodentsId', checkAuth, CategoryRodentController.getAccessoriesForRodents)
+app.get('/shop/rodent/cellsForRodents/:cellsForRodentsId', checkAuth, CategoryRodentController.getCellsForRodents)
+app.get('/shop/rodent/bathingForRodents/:bathingForRodentsId', checkAuth, CategoryRodentController.getBathingForRodents)
+app.get('/shop/rodent/toysForRodents/:toysForRodentsId', checkAuth, CategoryRodentController.getToysForRodents)
+app.get('/shop/rodent/extenderForRodents/:extenderForRodentsId', checkAuth, CategoryRodentController.getExtenderForRodents)
+app.get('/shop/rodent/dishesForRodents/:dishesForRodentsId', checkAuth, CategoryRodentController.getDishesForRodents)
 
 // категории для рыб
 
