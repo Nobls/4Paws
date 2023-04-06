@@ -259,6 +259,7 @@ app.get('/shop/rodent/toysForRodents/:toysForRodentsId', checkAuth, CategoryRode
 app.get('/shop/rodent/extenderForRodents/:extenderForRodentsId', checkAuth, CategoryRodentController.getExtenderForRodents)
 app.get('/shop/rodent/dishesForRodents/:dishesForRodentsId', checkAuth, CategoryRodentController.getDishesForRodents)
 
+
 // категории для рыб
 
 // создание
