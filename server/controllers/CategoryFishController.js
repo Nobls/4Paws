@@ -424,10 +424,10 @@ export const getEquipment = async (req, res, next) => {
 
 export const getAllFishCategory = async (req, res) => {
     try {
-        const categoryRodent = await ProductsForFishModel.find().exec()
+        const categoryFish = await ProductsForFishModel.find().exec()
 
         const category = await Promise.all(
-            categoryRodent.map((p) => {
+            categoryFish.map((p) => {
                 return ProductsForFishModel.findById(p);
             })
         );

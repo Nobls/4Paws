@@ -2,7 +2,11 @@ import React from 'react';
 import s from './categoryList.module.scss';
 import {Link} from "react-router-dom";
 
-const CategoryListDog = () => {
+type PropsType = {
+    data: any
+}
+
+const CategoryListDog = ({data}:PropsType) => {
     return (
         <div className={s.categoryListWrapper}>
             <ul className={s.listItems}>

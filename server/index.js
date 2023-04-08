@@ -273,7 +273,7 @@ app.post('/shop/fish/:id/chemistryForFish', checkAuth, CategoryFishController.cr
 
 // получение
 
-app.post('/shop/rodent/categoryFish', checkAuth, CategoryFishController.getAllFishCategory)
+app.get('/shop/fish/categoryFish', checkAuth, CategoryFishController.getAllFishCategory)
 
 app.get('/shop/fish/aquariums/:aquariumId', checkAuth, CategoryFishController.getAquariums)
 app.get('/shop/fish/livingInhabitants/:livingInhabitantsId', checkAuth, CategoryFishController.getLivingInhabitants)
