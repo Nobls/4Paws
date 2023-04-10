@@ -7,6 +7,9 @@ type PropsType = {
 }
 
 const CategoryListRodents = ({data}: PropsType) => {
+
+    console.log(data)
+
     return (
         <div className={s.categoryListWrapper}>
             <ul className={s.listItems}>
