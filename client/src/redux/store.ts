@@ -10,6 +10,7 @@ import {dogReducer} from "./slices/category/categoryDog";
 import {catReducer} from "./slices/category/categoryCat";
 import {birdReducer} from "./slices/category/categoryBird";
 import {rodentReducer} from "./slices/category/categoryRodent";
+import {fishReducer} from "./slices/category/categoryFish";
 
 const store = configureStore({
     reducer: {
@@ -24,6 +25,7 @@ const store = configureStore({
         catCategory: catReducer,
         birdCategory: birdReducer,
         rodentCategory: rodentReducer,
+        fishCategory: fishReducer,
     },
 })
 
