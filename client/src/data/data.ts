@@ -126,17 +126,6 @@ export type OurParntersType = {
     link: string
 }
 
-/*export type ServicesType = {
-    id: number
-    title: string
-    description: string
-    descriptionModal: string
-    image: any
-    date: boolean,
-    alt: string
-}*/
-
-export type Gallery = string[]
 
 
 export const banner: BannerType[] = [
@@ -274,63 +263,6 @@ export const lastNews: LastNewsType[] = [
             '\n',
     }
 ]
-
-/*export const reviews = [
-    {
-        id: 1,
-        userName: 'Валерий',
-        date: ' 15.09.2022',
-        image: reviewsImage1,
-        alt: 'userPhoto',
-        text: 'Несколько лет тому назад, когда я завел собаку, выбор сухих кормов в зоомагазинах был очень скудным. Все корма делились на две категории: обычные корма премиум класса и очень дорогие.',
-        rating: 1,
-    },
-    {
-        id: 2,
-        userName: 'Екатерина',
-        date: ' 15.09.2022',
-        image: reviewsImage2,
-        alt: 'userPhoto',
-        text: 'Несколько лет тому назад, когда я завел собаку, выбор сухих кормов в зоомагазинах был очень скудным. Все корма делились на две категории: обычные корма премиум класса и очень дорогие.',
-        rating: 5,
-    },
-    {
-        id: 3,
-        userName: 'Виктория',
-        date: ' 15.09.2022',
-        image: reviewsImage3,
-        alt: 'userPhoto',
-        text: 'Несколько лет тому назад, когда я завел собаку, выбор сухих кормов в зоомагазинах был очень скудным. Все корма делились на две категории: обычные корма премиум класса и очень дорогие.',
-        rating: 1,
-    },
-    {
-        id: 4,
-        userName: 'Игорь',
-        date: ' 15.09.2022',
-        image: reviewsImage4,
-        alt: 'userPhoto',
-        text: 'Несколько лет тому назад, когда я завел собаку, выбор сухих кормов в зоомагазинах был очень скудным. Все корма делились на две категории: обычные корма премиум класса и очень дорогие.',
-        rating: 4,
-    },
-    {
-        id: 5,
-        userName: 'Виктор',
-        date: ' 15.09.2022',
-        image: reviewsImage5,
-        alt: 'userPhoto',
-        text: 'Несколько лет тому назад, когда я завел собаку, выбор сухих кормов в зоомагазинах был очень скудным. Все корма делились на две категории: обычные корма премиум класса и очень дорогие.',
-        rating: 1,
-    },
-    {
-        id: 6,
-        userName: 'Евгений',
-        date: ' 15.09.2022',
-        image: reviewsImage6,
-        alt: 'userPhoto',
-        text: 'Несколько лет тому назад, когда я завел собаку, выбор сухих кормов в зоомагазинах был очень скудным. Все корма делились на две категории: обычные корма премиум класса и очень дорогие.',
-        rating: 1,
-    },
-]*/
 
 export const popularsGoods: PopularsGoodsType[] = [
     {
