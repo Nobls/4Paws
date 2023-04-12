@@ -20,9 +20,6 @@ const ShopRodent = () => {
         return <div>Загрузка...</div>
     }
 
-
-    console.log(data)
-
     return (
         <>
             <CategoryListRodents data={data}/>
