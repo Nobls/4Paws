@@ -31,6 +31,7 @@ import {
     ReviewsController,
 } from './controllers/index.js'
 import {getAllRodentCategory} from "./controllers/CategoryRodentsController.js";
+import {getOneProduct} from "./controllers/CategoryDogController.js";
 
 
 mongoose
@@ -177,6 +178,8 @@ app.get('/shop/dog/dishesForDogs/:dishesForDogsId', checkAuth, CategoryDogContro
 app.get('/shop/dog/ammunitionForDogs/:ammunitionForDogsId', checkAuth, CategoryDogController.getAmmunition)
 app.get('/shop/dog/toiletsForDogs/:toiletsForDogsId', checkAuth, CategoryDogController.getToilets)
 
+app.get('/shop/dog/product/:productId', checkAuth, CategoryDogController.getOneProduct)
+
 // категории для котов
 
 // создание
@@ -286,7 +289,7 @@ app.get('/shop/fish/chemistryForFish/:chemistryForFishId', checkAuth, CategoryFi
 
 // получение одного товара
 
-app.get('/shop/:id/:id', getOne)
+//app.get('/shop/:id/:id', getOne)
 
 
 

@@ -1,5 +1,6 @@
 import ProductCardModel from "../models/ProductCard.js";
 import ProductsForDogsModel from "../models/ProductsForDogs.js";
+import UserPetModel from "../models/UserPet.js";
 
 
 export const createDryFood = async (req, res) => {
@@ -645,6 +646,41 @@ export const getAllDogCategory = async (req, res) => {
         );
 
         res.json(category)
+    } catch (error) {
+        console.log(error)
+    }
+}
+
+export const getOneProduct = async (req, res) => {
+    try {
+        const productId = req.params.id
+
+        ProductCardModel.findOneAndUpdate(
+            {
+                _id: productId
+            },
+            {},
+            {
+                returnDocument: 'after',
+            },
+            (err, doc) => {
+                if (err) {
+                    console.log(err)
+                    return res.status(500).json({
+                        message: 'Не удалось получить продукт',
+                    })
+                }
+                if (!doc) {
+                    res.status(404).json({
+                        message: 'Продукт не найден'
+                    })
+                }
+
+                res.json(doc)
+            }
+        )
+
+
     } catch (error) {
         console.log(error)
     }
