@@ -240,6 +240,17 @@ const categoryDodSlice = createSlice({
         builder.addCase(getAllToiletsForDogs.rejected, (state) => {
             state.loading = true
         })
+
+        builder.addCase(getOneProduct.pending, (state) => {
+            state.loading = true
+        })
+        builder.addCase(getOneProduct.fulfilled, (state, action) => {
+            state.products = action.payload
+            state.loading = false
+        })
+        builder.addCase(getOneProduct.rejected, (state) => {
+            state.loading = true
+        })
     }
 })
 
