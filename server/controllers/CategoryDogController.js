@@ -1,7 +1,5 @@
 import ProductCardModel from "../models/ProductCard.js";
 import ProductsForDogsModel from "../models/ProductsForDogs.js";
-import UserPetModel from "../models/UserPet.js";
-import PostModel from "../models/Post.js";
 
 
 export const createDryFood = async (req, res) => {

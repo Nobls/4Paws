@@ -212,7 +212,7 @@ app.get('/shop/cat/ammunitionForCats/:ammunitionForCatsId', checkAuth, CategoryC
 app.get('/shop/cat/toiletsForCats/:toiletsForCatsId', checkAuth, CategoryCatController.getToiletsForCats)
 
 // получение одного продукта
-app.get('/shop/cat/product/:id', checkAuth, CategoryCatController.getOneProduct)
+app.get('/shop/cat/product/:id', checkAuth, CategoryDogController.getOneProduct)
 
 // категории для птиц
 
