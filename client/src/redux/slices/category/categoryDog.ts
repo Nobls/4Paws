@@ -111,6 +111,14 @@ export const getAllToiletsForDogs = createAsyncThunk(
     }
 )
 
+export const getOneProduct = createAsyncThunk(
+    'products/getOneProduct',
+    async (id:any) => {
+        const response = await axios.get(`/shop/product/${id}`)
+        return response.data
+    }
+)
+
 const categoryDodSlice = createSlice({
     name: 'products',
     initialState,

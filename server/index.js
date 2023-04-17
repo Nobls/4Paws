@@ -178,7 +178,7 @@ app.get('/shop/dog/toiletsForDogs/:toiletsForDogsId', checkAuth, CategoryDogCont
 
 
 // получение одного продукта
-app.get('/shop/dog/product/:id', checkAuth, CategoryDogController.getOneProduct)
+app.get('/shop/product/:id', checkAuth, CategoryDogController.getOneProduct)
 
 // категории для котов
 

@@ -37,7 +37,7 @@ const GoodsCard = ({
 
     return (
         <div className={s.goodsCardWrapper}>
-            <Link className={s.goodsTitleWrapper} to={`/${_id}`}>
+            <Link className={s.goodsTitleWrapper} to={`/shop/product/${_id}`}>
                 <h4 className={s.goodsTitle}>{title}</h4>
             </Link>
 

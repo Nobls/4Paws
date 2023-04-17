@@ -28,6 +28,7 @@ import ProductsDog from "./pages/Product/ProductDog";
 import ProductsCat from "./pages/Product/ProductCat";
 import ProductsBird from "./pages/Product/ProductBird";
 import ProductsRodent from "./pages/Product/ProductRodent";
+import {ProductPage} from "./pages/Product/ProductPage";
 
 function App() {
 
@@ -77,6 +78,7 @@ function App() {
                     <Route path='/shop/dog/dishesForDogs/:dishesForDogsId' element={<ProductsDog/>}/>
                     <Route path='/shop/dog/ammunitionForDogs/:ammunitionForDogsId' element={<ProductsDog/>}/>
                     <Route path='/shop/dog/toiletsForDogs/:toiletsForDogsId' element={<ProductsDog/>}/>
+                    <Route path='/shop/product/:id' element={<ProductPage/>}/>
 
                     <Route path='/shop/cat/dryFoodForCats/:dryFoodForCatsId' element={<ProductsCat/>}/>
                     <Route path='/shop/cat/preservesForCats/:preservesForCatsId' element={<ProductsCat/>}/>
