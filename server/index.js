@@ -176,6 +176,8 @@ app.get('/shop/dog/dishesForDogs/:dishesForDogsId', checkAuth, CategoryDogContro
 app.get('/shop/dog/ammunitionForDogs/:ammunitionForDogsId', checkAuth, CategoryDogController.getAmmunition)
 app.get('/shop/dog/toiletsForDogs/:toiletsForDogsId', checkAuth, CategoryDogController.getToilets)
 
+
+// получение одного продукта
 app.get('/shop/dog/product/:id', checkAuth, CategoryDogController.getOneProduct)
 
 // категории для котов
@@ -208,6 +210,9 @@ app.get('/shop/cat/scratchingPostsForCats/:scratchingPostsForCatsId', checkAuth,
 app.get('/shop/cat/dishesForCats/:dishesForCatsId', checkAuth, CategoryCatController.getDishesForCats)
 app.get('/shop/cat/ammunitionForCats/:ammunitionForCatsId', checkAuth, CategoryCatController.getAmmunitionForCats)
 app.get('/shop/cat/toiletsForCats/:toiletsForCatsId', checkAuth, CategoryCatController.getToiletsForCats)
+
+// получение одного продукта
+app.get('/shop/cat/product/:id', checkAuth, CategoryCatController.getOneProduct)
 
 // категории для птиц
 
