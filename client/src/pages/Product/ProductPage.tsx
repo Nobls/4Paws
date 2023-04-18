@@ -1,8 +1,8 @@
-import React, {useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 import s from './prductPage.module.scss'
 import {useParams} from "react-router-dom";
-import {useAppDispatch} from "../../redux/hook/hook";
-import {getOneProduct} from "../../redux/slices/category/categoryDog";
+import {useAppDispatch, useAppSelector} from "../../redux/hook/hook";
+import {getOneProduct} from "../../redux/slices/product";
 
 export const ProductPage = () => {
 
@@ -10,17 +10,26 @@ export const ProductPage = () => {
 
     const dispatch = useAppDispatch()
 
-    useEffect(()=>{
+    useEffect(() => {
         dispatch(getOneProduct(id))
-    },[dispatch])
+    }, [dispatch])
+
+    const product = useAppSelector((state) => state.product.product)
+
+    const [productData, setProductData] = useState(product)
+
+    useEffect(() => {
+        setProductData(product)
+    }, [product])
 
     return (
         <div className={s.productPageWrapper}>
-            <h3>Title</h3>
+            <h3>{productData?.title}</h3>
             <div className={s.productInfoWrapper}>
                 <div><img src="" alt=""/></div>
                 <div className={s.productInfo}>
                     <span className={s.productDescription}>
+                        {productData?.description}
                     </span>
                     <span className={s.productDescription}>
 
