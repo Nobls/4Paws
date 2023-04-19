@@ -32,10 +32,10 @@ export const ProductPage = () => {
                         {productData?.description}
                     </span>
                     <span className={s.productDescription}>
-
+                        {productData?.countryOfManufacture}
                     </span>
                     <span className={s.productDescription}>
-
+                        {productData?.weight}
                     </span>
                     <span className={s.productDescription}>
 
@@ -43,7 +43,7 @@ export const ProductPage = () => {
                 </div>
             </div>
             <div className={s.productOrderWrapper}>
-                <p className={s.productPrice}>Price</p>
+                <p className={s.productPrice}>{productData?.price}</p>
                 <button className={s.productOrder}>Order</button>
             </div>
         </div>
