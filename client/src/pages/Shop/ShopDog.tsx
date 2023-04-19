@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import CategoryListDog from "../../components/categoryList/CategoryListDog";
 import axios from "../../axios/axios";
+import OneProduct from "../OneProduct/OneProduct";
 
 const ShopDog = () => {
 
@@ -19,6 +20,7 @@ const ShopDog = () => {
     if (loading) {
         return <div>Загрузка...</div>
     }
+
 
     return (
         <>

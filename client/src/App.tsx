@@ -110,6 +110,7 @@ function App() {
                     <Route path='/shop/rodent/extenderForRodents/:extenderForRodentsId' element={<ProductsRodent/>}/>
                     <Route path='/shop/rodent/dishesForRodents/:dishesForRodentsId' element={<ProductsRodent/>}/>
 
+
                 </Route>
             </Routes>
 
