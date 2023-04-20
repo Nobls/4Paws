@@ -29,6 +29,7 @@ import ProductsCat from "./pages/Product/ProductCat";
 import ProductsBird from "./pages/Product/ProductBird";
 import ProductsRodent from "./pages/Product/ProductRodent";
 import {ProductPage} from "./pages/Product/ProductPage";
+import {ProductFish} from "./pages/Product/ProductFish";
 
 function App() {
 
@@ -109,6 +110,14 @@ function App() {
                     <Route path='/shop/rodent/toysForRodents/:toysForRodentsId' element={<ProductsRodent/>}/>
                     <Route path='/shop/rodent/extenderForRodents/:extenderForRodentsId' element={<ProductsRodent/>}/>
                     <Route path='/shop/rodent/dishesForRodents/:dishesForRodentsId' element={<ProductsRodent/>}/>
+
+                    <Route path='/shop/fish/aquariums/:aquariumId' element={<ProductFish/>}/>
+                    <Route path='/shop/fish/livingInhabitants/:livingInhabitantsId' element={<ProductFish/>}/>
+                    <Route path='/shop/fish/aquariumsAndPedestals/:aquariumsAndPedestalsId' element={<ProductFish/>}/>
+                    <Route path='/shop/fish/fishFood/:fishFoodId' element={<ProductFish/>}/>
+                    <Route path='/shop/fish/decorations/:decorationsId' element={<ProductFish/>}/>
+                    <Route path='/shop/fish/equipment/:equipmentId' element={<ProductFish/>}/>
+                    <Route path='/shop/fish/chemistryForFish/:chemistryForFishId' element={<ProductFish/>}/>
 
 
                 </Route>

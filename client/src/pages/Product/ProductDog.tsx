@@ -114,14 +114,6 @@ const ProductsDog = () => {
                     {
                         products.map((m) => {
                             return (
-                                /*<div key={m._id}>
-                                    <h3>{m.title}</h3>
-                                    <img src={m.productImage} alt={m.title}/>
-                                    <p>{m.description}</p>
-                                    <p>Price: {m.price}</p>
-                                    <p>Weight: {m.weight}</p>
-                                </div>*/
-
                                 <GoodsCard
                                     key={m._id}
                                     title={m.title}

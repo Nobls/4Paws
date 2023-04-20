@@ -4,10 +4,12 @@ import iconDog from '../../images/icons/dog.svg';
 import iconCat from '../../images/icons/cat.svg';
 import iconBird from '../../images/icons/bird.svg';
 import iconRodent from '../../images/icons/rodent.svg';
+import iconFish from '../../images/icons/fish.svg';
 import ShopDog from "./ShopDog";
 import ShopCat from "./ShopCat";
 import ShopBird from "./ShopBird";
 import ShopRodent from "./ShopRodent";
+import ShopFish from "./ShopFish";
 
 const Shop = () => {
 
@@ -54,32 +56,11 @@ const Shop = () => {
                         <div className={s.categoryList}>
                             {
                                 activeCategory === 'cat' && (
-                                    // <CategoryListCat data={data}/>
                                 <ShopCat/>
                                 )
                             }
                         </div>
                     </div>
-
-
-
-                    {/*<div className={s.category}>*/}
-                    {/*    <div className={s.categoryWrapper} onClick={() => categoryHandler('cat')}>*/}
-                    {/*        <div>*/}
-                    {/*            <p className={s.categoryTitle}>Коты</p>*/}
-                    {/*        </div>*/}
-                    {/*        <div className={s.categoryImage}>*/}
-                    {/*            <img className={s.categoryIcon} src={iconCat} alt="cat"/>*/}
-                    {/*        </div>*/}
-                    {/*    </div>*/}
-                    {/*    <div className={s.categoryList}>*/}
-                    {/*        {*/}
-                    {/*            activeCategory === 'cat' && (*/}
-                    {/*                <CategoryListCat data={data}/>*/}
-                    {/*            )*/}
-                    {/*        }*/}
-                    {/*    </div>*/}
-                    {/*</div>*/}
 
                     <div className={s.category}>
                         <div className={s.categoryWrapper} onClick={() => categoryHandler('bird')}>
@@ -111,48 +92,29 @@ const Shop = () => {
                         <div className={s.categoryList}>
                             {
                                 activeCategory === 'rodent' && (
-                                    // <CategoryListCat data={data}/>
                                     <ShopRodent/>
                                 )
                             }
                         </div>
                     </div>
 
-                    {/*<div className={s.category}>*/}
-                    {/*    <div className={s.categoryWrapper} onClick={() => categoryHandler('rodents')}>*/}
-                    {/*        <div>*/}
-                    {/*            <p className={s.categoryTitle}>Грызуны</p>*/}
-                    {/*        </div>*/}
-                    {/*        <div className={s.categoryImage}>*/}
-                    {/*            <img className={s.categoryIcon} src={iconRodents} alt="rodents"/>*/}
-                    {/*        </div>*/}
-                    {/*    </div>*/}
-                    {/*    <div>*/}
-                    {/*        {*/}
-                    {/*            activeCategory === 'rodents' && (*/}
-                    {/*                <CategoryListRodents/>*/}
-                    {/*            )*/}
-                    {/*        }*/}
-                    {/*    </div>*/}
-                    {/*</div>*/}
-
-                    {/*<div className={s.category}>*/}
-                    {/*    <div className={s.categoryWrapper} onClick={() => categoryHandler('fish')}>*/}
-                    {/*        <div>*/}
-                    {/*            <p className={s.categoryTitle}>Рыбки</p>*/}
-                    {/*        </div>*/}
-                    {/*        <div className={s.categoryImage}>*/}
-                    {/*            <img className={s.categoryIcon} src={iconFish} alt="fish"/>*/}
-                    {/*        </div>*/}
-                    {/*    </div>*/}
-                    {/*    <div>*/}
-                    {/*        {*/}
-                    {/*            activeCategory === 'fish' && (*/}
-                    {/*                <CategoryListFish/>*/}
-                    {/*            )*/}
-                    {/*        }*/}
-                    {/*    </div>*/}
-                    {/*</div>*/}
+                    <div className={s.category}>
+                        <div className={s.categoryWrapper} onClick={() => categoryHandler('fish')}>
+                            <div>
+                                <p className={s.categoryTitle}>Рыбки</p>
+                            </div>
+                            <div className={s.categoryImage}>
+                                <img className={s.categoryIcon} src={iconFish} alt="fish"/>
+                            </div>
+                        </div>
+                        <div>
+                            {
+                                activeCategory === 'fish' && (
+                                    <ShopFish/>
+                                )
+                            }
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
