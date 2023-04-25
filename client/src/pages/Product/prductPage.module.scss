@@ -1,2 +1,6 @@
 @import "../../common/extends";
 @import "../../common/variables";
+
+.productPageWrapper {
+  @extend .container;
+}

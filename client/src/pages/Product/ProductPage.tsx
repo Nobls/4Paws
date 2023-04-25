@@ -23,28 +23,30 @@ export const ProductPage = () => {
     }, [product])
 
     return (
-        <div className={s.productPageWrapper}>
-            <h3>{productData?.title}</h3>
-            <div className={s.productInfoWrapper}>
-                <div><img src="" alt=""/></div>
-                <div className={s.productInfo}>
+        <div>
+            <div className={s.productPageWrapper}>
+                <h3>{productData?.title}</h3>
+                <div className={s.productInfoWrapper}>
+                    <div><img src="" alt=""/></div>
+                    <div className={s.productInfo}>
                     <span className={s.productDescription}>
                         {productData?.description}
                     </span>
-                    <span className={s.productDescription}>
+                        <span className={s.productDescription}>
                         {productData?.countryOfManufacture}
                     </span>
-                    <span className={s.productDescription}>
+                        <span className={s.productDescription}>
                         {productData?.weight}
                     </span>
-                    <span className={s.productDescription}>
+                        <span className={s.productDescription}>
 
                     </span>
+                    </div>
                 </div>
-            </div>
-            <div className={s.productOrderWrapper}>
-                <p className={s.productPrice}>{productData?.price}</p>
-                <button className={s.productOrder}>Order</button>
+                <div className={s.productOrderWrapper}>
+                    <p className={s.productPrice}>{productData?.price}</p>
+                    <button className={s.productOrder}>Order</button>
+                </div>
             </div>
         </div>
     );
