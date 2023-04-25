@@ -25,9 +25,11 @@ export const ProductPage = () => {
     return (
         <div>
             <div className={s.productPageWrapper}>
-                <h3>{productData?.title}</h3>
+                <h3 className={s.productTitle}>{productData?.title}</h3>
                 <div className={s.productInfoWrapper}>
-                    <div><img src="" alt=""/></div>
+                    <div className={s.productImageWrapper}>
+                        <img className={s.productImage} src="https://images.deal.by/363669748_w640_h640_acana-korm-acana.jpg" alt="title"/>
+                    </div>
                     <div className={s.productInfo}>
                     <span className={s.productDescription}>
                         {productData?.description}

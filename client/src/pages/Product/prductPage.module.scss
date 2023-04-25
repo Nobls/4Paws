@@ -4,3 +4,24 @@
 .productPageWrapper {
   @extend .container;
 }
+
+.productTitle {
+  text-align: center;
+  margin: 70px 0;
+  font-size: 25px;
+}
+
+.productInfoWrapper {
+  font-size: 20px;
+  display: flex;
+
+}
+
+.productImageWrapper {
+
+}
+
+.productImage {
+  width: 250px;
+  margin: 0 100px 0 200px;
+}
