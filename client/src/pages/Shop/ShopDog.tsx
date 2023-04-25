@@ -1,7 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import CategoryListDog from "../../components/categoryList/CategoryListDog";
 import axios from "../../axios/axios";
-import OneProduct from "../OneProduct/OneProduct";
 
 const ShopDog = () => {
 

@@ -10,23 +10,8 @@ import {
 import s from './product.module.scss'
 import GoodsCard from "../../components/goodsCard/GoodsCard";
 import {Loading} from "../../components/loading/Loading";
-import OneProduct from "../OneProduct/OneProduct";
 
 const ProductsDog = () => {
-
-
-
-    const OpenOneProduct = () => {
-
-        return (
-            <div>
-                <OneProduct/>
-            </div>
-        )
-
-    }
-
-
 
     const dispatch = useAppDispatch()
 
@@ -131,12 +116,6 @@ const ProductsDog = () => {
                             )
                         })}
                 </div>
-
-
-                <button onClick={OpenOneProduct}>
-                    OpenOneProduct
-                </button>
-
             </div>
         </div>
     );
