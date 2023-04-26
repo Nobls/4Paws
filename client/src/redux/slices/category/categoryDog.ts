@@ -111,14 +111,6 @@ export const getAllToiletsForDogs = createAsyncThunk(
     }
 )
 
-/*export const getOneProduct = createAsyncThunk(
-    'products/getOneProduct',
-    async (id:any) => {
-        const response = await axios.get(`/shop/product/${id}`)
-        return response.data
-    }
-)*/
-
 const categoryDodSlice = createSlice({
     name: 'products',
     initialState,
@@ -240,17 +232,6 @@ const categoryDodSlice = createSlice({
         builder.addCase(getAllToiletsForDogs.rejected, (state) => {
             state.loading = true
         })
-
-        /*builder.addCase(getOneProduct.pending, (state) => {
-            state.loading = true
-        })
-        builder.addCase(getOneProduct.fulfilled, (state, action) => {
-            state.products = action.payload
-            state.loading = false
-        })
-        builder.addCase(getOneProduct.rejected, (state) => {
-            state.loading = true
-        })*/
     }
 })
 
