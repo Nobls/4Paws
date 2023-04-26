@@ -28,26 +28,31 @@ export const ProductPage = () => {
                 <h3 className={s.productTitle}>{productData?.title}</h3>
                 <div className={s.productInfoWrapper}>
                     <div className={s.productImageWrapper}>
-                        <img className={s.productImage} src="https://images.deal.by/363669748_w640_h640_acana-korm-acana.jpg" alt="title"/>
+                        <img className={s.productImage}
+                             src="https://images.deal.by/363669748_w640_h640_acana-korm-acana.jpg" alt="title"/>
                     </div>
                     <div className={s.productInfo}>
-                    <span className={s.productDescription}>
-                        {productData?.description}
-                    </span>
-                        <span className={s.productDescription}>
-                        {productData?.countryOfManufacture}
-                    </span>
-                        <span className={s.productDescription}>
-                        {productData?.weight}
-                    </span>
-                        <span className={s.productDescription}>
+                        <div className={s.productDescription}>Артикул: Добавить артикул!
+                            <span>{productData?.code}</span>
+                        </div>
+                        <div className={s.productDescription}>Описание:
+                            <span>{productData?.description}</span>
+                        </div>
+                        <div className={s.productDescription}>Страна производитель:
+                            <span>{productData?.countryOfManufacture}</span>
+                        </div>
+                        <div className={s.productDescription}>Вес:
+                            <span>{productData?.weight}</span>
+                        </div>
 
-                    </span>
+                        <div className={s.productPrice}>Цена:
+                            <span>{productData?.price}</span>
+                        </div>
+
+                        <div className={s.productOrderWrapper}>
+                            <button className={s.productOrder}>В корзину</button>
+                        </div>
                     </div>
-                </div>
-                <div className={s.productOrderWrapper}>
-                    <p className={s.productPrice}>{productData?.price}</p>
-                    <button className={s.productOrder}>Order</button>
                 </div>
             </div>
         </div>

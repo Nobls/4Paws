@@ -14,6 +14,7 @@ export interface ProductCard {
     price: string,
     brand: string,
     tags: string,
+    code: string,
 }
 
 export interface ProductState {
@@ -34,6 +35,7 @@ const initialState: ProductState = {
         price: '',
         brand: '',
         tags: '',
+        code: '',
     },
     loading: false,
     error: null,
