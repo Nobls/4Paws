@@ -14,20 +14,6 @@ import {Loading} from "../../components/loading/Loading";
 
 const ProductsDog = () => {
 
-
-
-    const OpenOneProduct = () => {
-
-        return (
-            <div>
-
-            </div>
-        )
-
-    }
-
-
-
     const dispatch = useAppDispatch()
 
     const {
@@ -48,9 +34,11 @@ const ProductsDog = () => {
     }>
     ();
 
-    const {products, loading, error} = useAppSelector((state) => state.dogCategory);
+    const {products, loading, error, category} = useAppSelector((state) => state.dogCategory);
 
     console.log(products)
+
+    console.log(category)
 
     useEffect(() => {
         if (dryFoodDogId || preservesForDogsId || vitaminsForDogsId || homeForDogsId || toysForDogsId || carryingForDogsId ||
@@ -105,7 +93,7 @@ const ProductsDog = () => {
     return (
         <div>
             <h1>
-                Собаки, корм
+                {category}
             </h1>
             <div>
                 <div>sidebar</div>
@@ -114,13 +102,6 @@ const ProductsDog = () => {
                     {
                         products.map((m) => {
                             return (
-                                /*<div key={m._id}>
-                                    <h3>{m.title}</h3>
-                                    <img src={m.productImage} alt={m.title}/>
-                                    <p>{m.description}</p>
-                                    <p>Price: {m.price}</p>
-                                    <p>Weight: {m.weight}</p>
-                                </div>*/
 
                                 <GoodsCard
                                     key={m._id}
@@ -139,11 +120,6 @@ const ProductsDog = () => {
                             )
                         })}
                 </div>
-
-
-                <button onClick={OpenOneProduct}>
-                    OpenOneProduct
-                </button>
 
             </div>
         </div>

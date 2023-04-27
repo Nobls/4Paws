@@ -17,12 +17,14 @@ export interface ProductCard {
 
 interface ProductsState {
     products: ProductCard[];
+    category: string;
     loading: boolean;
     error: string | null;
 }
 
 const initialState: ProductsState = {
     products: [],
+    category: '',
     loading: false,
     error: null,
 };
