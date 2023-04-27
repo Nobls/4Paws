@@ -3,6 +3,7 @@ import s from './prductPage.module.scss'
 import {useParams} from "react-router-dom";
 import {useAppDispatch, useAppSelector} from "../../redux/hook/hook";
 import {getOneProduct} from "../../redux/slices/product";
+import ButtonStandart from "../../components/buttonStandart/ButtonStandart";
 
 export const ProductPage = () => {
 
@@ -29,28 +30,37 @@ export const ProductPage = () => {
                 <div className={s.productInfoWrapper}>
                     <div className={s.productImageWrapper}>
                         <img className={s.productImage}
-                             src="https://images.deal.by/363669748_w640_h640_acana-korm-acana.jpg" alt="title"/>
+                             src="https://images.deal.by/363669748_w640_h640_acana-korm-acana.jpg" alt={productData?.title}/>
                     </div>
                     <div className={s.productInfo}>
                         <div className={s.productDescription}>Артикул: Добавить артикул!
                             <span>{productData?.code}</span>
                         </div>
+                        <div className={s.productDescription}>Категория: сухой корм для собак
+                            <span>{productData?.category}</span>
+                        </div>
+                        <div className={s.productDescription}>Бренд: Acana
+                            <span>{productData?.brand}</span>
+                        </div>
                         <div className={s.productDescription}>Описание:
-                            <span>{productData?.description}</span>
+                            <span>{productData?.description} Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                                Blanditiis consequuntur dicta in iure necessitatibus provident, soluta? Blanditiis ducimus ipsam
+                                libero officiis quam quidem repellat velit vitae voluptate. Aspernatur, impedit, incidunt.</span>
                         </div>
                         <div className={s.productDescription}>Страна производитель:
                             <span>{productData?.countryOfManufacture}</span>
                         </div>
                         <div className={s.productDescription}>Вес:
-                            <span>{productData?.weight}</span>
+                            <span>{productData?.weight} гр.</span>
                         </div>
 
                         <div className={s.productPrice}>Цена:
-                            <span>{productData?.price}</span>
+                            <span>{productData?.price} руб.</span>
                         </div>
 
                         <div className={s.productOrderWrapper}>
-                            <button className={s.productOrder}>В корзину</button>
+                            {/*<button className={s.productOrder}>В корзину</button>*/}
+                            <ButtonStandart title={'В корзину'}/>
                         </div>
                     </div>
                 </div>
