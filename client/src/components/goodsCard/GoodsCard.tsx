@@ -36,10 +36,10 @@ const GoodsCard = ({
                    }: PopularsGoodsType) => {
 
     return (
-        <div className={s.goodsCardWrapper}>
-            <Link className={s.goodsTitleWrapper} to={`/shop/product/${_id}`}>
+        <Link className={s.goodsCardWrapper} to={`/shop/product/${_id}`}>
+            <div className={s.goodsTitleWrapper}>
                 <h4 className={s.goodsTitle}>{title}</h4>
-            </Link>
+            </div>
 
             <div className={s.goodsInner}>
                 <div>
@@ -60,8 +60,7 @@ const GoodsCard = ({
                 </div>
             </div>
             {/*<p className={s.goodsDescription}>{descriptions}</p>*/}
-
-        </div>
+        </Link>
     );
 };
 
