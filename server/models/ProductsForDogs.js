@@ -24,6 +24,8 @@ const ProductsForDogsSchema = new mongoose.Schema (
                 type:  mongoose.Schema.Types.ObjectId
             },
 
+            category: String,
+
             product: [
                 {
                     type: mongoose.Schema.Types.ObjectId,
@@ -36,6 +38,8 @@ const ProductsForDogsSchema = new mongoose.Schema (
             _id: {
                 type:  mongoose.Schema.Types.ObjectId
             },
+
+            category: String,
 
             product: [
                 {
@@ -50,6 +54,8 @@ const ProductsForDogsSchema = new mongoose.Schema (
                 type:  mongoose.Schema.Types.ObjectId
             },
 
+            category: String,
+
             product: [
                 {
                     type: mongoose.Schema.Types.ObjectId,
@@ -62,6 +68,8 @@ const ProductsForDogsSchema = new mongoose.Schema (
             _id: {
                 type:  mongoose.Schema.Types.ObjectId
             },
+
+            category: String,
 
             product: [
                 {
@@ -76,6 +84,8 @@ const ProductsForDogsSchema = new mongoose.Schema (
                 type:  mongoose.Schema.Types.ObjectId
             },
 
+            category: String,
+
             product: [
                 {
                     type: mongoose.Schema.Types.ObjectId,
@@ -88,6 +98,8 @@ const ProductsForDogsSchema = new mongoose.Schema (
             _id: {
                 type:  mongoose.Schema.Types.ObjectId
             },
+
+            category: String,
 
             product: [
                 {
@@ -102,6 +114,8 @@ const ProductsForDogsSchema = new mongoose.Schema (
                 type:  mongoose.Schema.Types.ObjectId
             },
 
+            category: String,
+
             product: [
                 {
                     type: mongoose.Schema.Types.ObjectId,
@@ -114,6 +128,8 @@ const ProductsForDogsSchema = new mongoose.Schema (
             _id: {
                 type:  mongoose.Schema.Types.ObjectId
             },
+
+            category: String,
 
             product: [
                 {
@@ -128,6 +144,8 @@ const ProductsForDogsSchema = new mongoose.Schema (
                 type:  mongoose.Schema.Types.ObjectId
             },
 
+            category: String,
+
             product: [
                 {
                     type: mongoose.Schema.Types.ObjectId,
@@ -140,6 +158,8 @@ const ProductsForDogsSchema = new mongoose.Schema (
             _id: {
                 type:  mongoose.Schema.Types.ObjectId
             },
+
+            category: String,
 
             product: [
                 {
