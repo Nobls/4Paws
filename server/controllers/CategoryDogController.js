@@ -394,6 +394,26 @@ export const getDryFood = async (req, res, next) => {
     }
 }
 
+export const getCategoryById = async (req, res) => {
+    const {dryFoodDogId} = req.params;
+
+    try {
+        const product = await ProductsForDogsModel.findOne({
+            'dryFoodForDogs._id': dryFoodDogId
+        }).select('dryFoodForDogs.category');
+
+        if (product) {
+            const category = product.dryFoodForDogs.category;
+            res.status(200).json({ category });
+        } else {
+            res.status(404).json({ message: 'Product not found' });
+        }
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ message: 'Server error' });
+    }
+}
+
 export const getPreserves = async (req, res, next) => {
     try {
         const {preservesForDogsId} = req.params;

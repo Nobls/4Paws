@@ -164,6 +164,8 @@ app.post('/shop/dog/:id/toiletsForDogs', checkAuth, CategoryDogController.toilet
 
 app.get('/shop/dog/categoryDog', checkAuth, CategoryDogController.getAllDogCategory)
 
+app.get('/shop/dog/product/dryFoodDog/:dryFoodDogId', checkAuth, CategoryDogController.getCategoryById)
+
 app.get('/shop/dog/dryFoodDog/:dryFoodDogId', checkAuth, CategoryDogController.getDryFood)
 app.get('/shop/dog/preservesForDogs/:preservesForDogsId', checkAuth, CategoryDogController.getPreserves)
 app.get('/shop/dog/vitaminsForDogs/:vitaminsForDogsId', checkAuth, CategoryDogController.getVitamins)
