@@ -15,16 +15,22 @@ export interface ProductCard {
     tags: string,
 }
 
+type CategoryObject = {
+    category: string;
+}
+
 interface ProductsState {
     products: ProductCard[];
-    category: string;
+    category: CategoryObject;
     loading: boolean;
     error: string | null;
 }
 
 const initialState: ProductsState = {
     products: [],
-    category: '',
+    category: {
+        category: ''
+    },
     loading: false,
     error: null,
 };
@@ -33,6 +39,14 @@ export const getAllDryFoodForDogs = createAsyncThunk(
     'products/getAllDryFoodForDogs',
     async (dryFoodDogId:string ) => {
         const response = await axios.get(`/shop/dog/dryFoodDog/${dryFoodDogId}`);
+        return response.data;
+    }
+)
+
+export const getCategoryDryFoodForDogs = createAsyncThunk(
+    'products/getCategoryDryFoodForDogs',
+    async (dryFoodDogId:string ) => {
+        const response = await axios.get(`/shop/dog/product/dryFoodDog/${dryFoodDogId}`);
         return response.data;
     }
 )
@@ -232,6 +246,17 @@ const categoryDodSlice = createSlice({
             state.loading = false
         })
         builder.addCase(getAllToiletsForDogs.rejected, (state) => {
+            state.loading = true
+        })
+        //
+        builder.addCase(getCategoryDryFoodForDogs.pending, (state) => {
+            state.loading = true
+        })
+        builder.addCase(getCategoryDryFoodForDogs.fulfilled, (state, action) => {
+            state.category = action.payload
+            state.loading = false
+        })
+        builder.addCase(getCategoryDryFoodForDogs.rejected, (state) => {
             state.loading = true
         })
     }

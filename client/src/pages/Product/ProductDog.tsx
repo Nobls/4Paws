@@ -1,11 +1,19 @@
-import React, {useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 import {useParams} from "react-router-dom";
 import {useAppDispatch, useAppSelector} from "../../redux/hook/hook";
 import {
-    getAllCarryingForDogs, getAllCosmeticsForDogs,
-    getAllDryFoodForDogs, getAllHomeForDogs,
-    getAllPreservesForDogs, getAllToysForDogs,
-    getAllVitaminsForDogs, getAllClothesForDogs, getAllDishesForDogs, getAllAmmunitionForDogs, getAllToiletsForDogs
+    getAllCarryingForDogs,
+    getAllCosmeticsForDogs,
+    getAllDryFoodForDogs,
+    getAllHomeForDogs,
+    getAllPreservesForDogs,
+    getAllToysForDogs,
+    getAllVitaminsForDogs,
+    getAllClothesForDogs,
+    getAllDishesForDogs,
+    getAllAmmunitionForDogs,
+    getAllToiletsForDogs,
+    getCategoryDryFoodForDogs
 } from "../../redux/slices/category/categoryDog";
 import s from './product.module.scss'
 import GoodsCard from "../../components/goodsCard/GoodsCard";
@@ -36,8 +44,6 @@ const ProductsDog = () => {
 
     const {products, loading, error, category} = useAppSelector((state) => state.dogCategory);
 
-    console.log(products)
-
     console.log(category)
 
     useEffect(() => {
@@ -45,6 +51,7 @@ const ProductsDog = () => {
             cosmeticsForDogsId || clothesForDogsId || dishesForDogsId || ammunitionForDogsId || toiletsForDogsId) {
             if (dryFoodDogId != null) {
                 dispatch(getAllDryFoodForDogs(dryFoodDogId));
+                dispatch((getCategoryDryFoodForDogs(dryFoodDogId)))
             }
             if (preservesForDogsId != null) {
                 dispatch(getAllPreservesForDogs(preservesForDogsId));
@@ -93,7 +100,7 @@ const ProductsDog = () => {
     return (
         <div>
             <h1>
-                {category}
+                {category?.category}
             </h1>
             <div>
                 <div>sidebar</div>
