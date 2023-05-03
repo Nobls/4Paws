@@ -42,7 +42,6 @@ export const getAllDryFoodForDogs = createAsyncThunk(
         return response.data;
     }
 )
-
 export const getCategoryDryFoodForDogs = createAsyncThunk(
     'products/getCategoryDryFoodForDogs',
     async (dryFoodDogId:string ) => {
@@ -55,6 +54,13 @@ export const getAllPreservesForDogs = createAsyncThunk(
     'products/getAllPreservesForDogs',
     async (preservesForDogsId:string ) => {
         const response = await axios.get(`/shop/dog/preservesForDogs/${preservesForDogsId}`);
+        return response.data;
+    }
+)
+export const getCategoryPreservesForDogs = createAsyncThunk(
+    'products/getCategoryPreservesForDogs',
+    async (preservesForDogsId:string ) => {
+        const response = await axios.get(`/shop/dog/product/preservesForDogs/${preservesForDogsId}`);
         return response.data;
     }
 )
@@ -257,6 +263,17 @@ const categoryDodSlice = createSlice({
             state.loading = false
         })
         builder.addCase(getCategoryDryFoodForDogs.rejected, (state) => {
+            state.loading = true
+        })
+
+        builder.addCase(getCategoryPreservesForDogs.pending, (state) => {
+            state.loading = true
+        })
+        builder.addCase(getCategoryPreservesForDogs.fulfilled, (state, action) => {
+            state.category = action.payload
+            state.loading = false
+        })
+        builder.addCase(getCategoryPreservesForDogs.rejected, (state) => {
             state.loading = true
         })
     }

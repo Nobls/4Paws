@@ -394,7 +394,7 @@ export const getDryFood = async (req, res, next) => {
     }
 }
 
-export const getCategoryById = async (req, res) => {
+export const getCategoryDryFoodById = async (req, res) => {
     const {dryFoodDogId} = req.params;
 
     try {
@@ -435,6 +435,26 @@ export const getPreserves = async (req, res, next) => {
         res.status(200).json(preservesForDogsProducts);
     } catch (error) {
         next(error);
+    }
+}
+
+export const getCategoryPreservesById = async (req, res) => {
+    const {preservesForDogsId} = req.params;
+
+    try {
+        const product = await ProductsForDogsModel.findOne({
+            'preservesForDogsId._id': preservesForDogsId
+        }).select('preservesForDogs.category');
+
+        if (product) {
+            const category = product.preservesForDogs.category;
+            res.status(200).json({ category });
+        } else {
+            res.status(404).json({ message: 'Product not found' });
+        }
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ message: 'Server error' });
     }
 }
 

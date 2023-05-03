@@ -1,19 +1,20 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect} from 'react';
 import {useParams} from "react-router-dom";
 import {useAppDispatch, useAppSelector} from "../../redux/hook/hook";
 import {
+    getAllAmmunitionForDogs,
     getAllCarryingForDogs,
+    getAllClothesForDogs,
     getAllCosmeticsForDogs,
+    getAllDishesForDogs,
     getAllDryFoodForDogs,
     getAllHomeForDogs,
     getAllPreservesForDogs,
+    getAllToiletsForDogs,
     getAllToysForDogs,
     getAllVitaminsForDogs,
-    getAllClothesForDogs,
-    getAllDishesForDogs,
-    getAllAmmunitionForDogs,
-    getAllToiletsForDogs,
-    getCategoryDryFoodForDogs
+    getCategoryDryFoodForDogs,
+    getCategoryPreservesForDogs
 } from "../../redux/slices/category/categoryDog";
 import s from './product.module.scss'
 import GoodsCard from "../../components/goodsCard/GoodsCard";
@@ -55,6 +56,7 @@ const ProductsDog = () => {
             }
             if (preservesForDogsId != null) {
                 dispatch(getAllPreservesForDogs(preservesForDogsId));
+                dispatch(getCategoryPreservesForDogs(preservesForDogsId))
             }
             if (vitaminsForDogsId != null) {
                 dispatch(getAllVitaminsForDogs(vitaminsForDogsId));
@@ -102,9 +104,9 @@ const ProductsDog = () => {
 
     return (
         <div>
-            <h1>
+            <h3>
                 {category?.category}
-            </h1>
+            </h3>
             <div>
                 <div>sidebar</div>
                 <div>product cards</div>
@@ -114,13 +116,6 @@ const ProductsDog = () => {
 
                         products.map((m) => {
                             return (
-                                    <>
-                                        {products.map((m) => {
-                                            return (
-                                                <h3>{m.category}</h3>
-                                            )
-
-                                        })}
                                         <GoodsCard
                                             key={m._id}
                                             title={m.title}
@@ -135,8 +130,6 @@ const ProductsDog = () => {
                                             tags={m.tags}
                                             _id={m._id}
                                         />
-                                    </>
-
                             )
                         })}
                 </div>
