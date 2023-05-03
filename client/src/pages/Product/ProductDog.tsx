@@ -97,6 +97,9 @@ const ProductsDog = () => {
     if (error) {
         return <div>{error}</div>;
     }
+
+    console.log(category)
+
     return (
         <div>
             <h1>
@@ -106,24 +109,34 @@ const ProductsDog = () => {
                 <div>sidebar</div>
                 <div>product cards</div>
                 <div className={s.productsWrapper}>
+
                     {
+
                         products.map((m) => {
                             return (
+                                    <>
+                                        {products.map((m) => {
+                                            return (
+                                                <h3>{m.category}</h3>
+                                            )
 
-                                <GoodsCard
-                                    key={m._id}
-                                    title={m.title}
-                                    productImage={m.productImage}
-                                    weight={m.weight}
-                                    quantity={m.quantity}
-                                    category={m.category}
-                                    countryOfManufacture={m.countryOfManufacture}
-                                    description={m.description}
-                                    price={m.price}
-                                    brand={m.brand}
-                                    tags={m.tags}
-                                    _id={m._id}
-                                />
+                                        })}
+                                        <GoodsCard
+                                            key={m._id}
+                                            title={m.title}
+                                            productImage={m.productImage}
+                                            weight={m.weight}
+                                            quantity={m.quantity}
+                                            category={m.category}
+                                            countryOfManufacture={m.countryOfManufacture}
+                                            description={m.description}
+                                            price={m.price}
+                                            brand={m.brand}
+                                            tags={m.tags}
+                                            _id={m._id}
+                                        />
+                                    </>
+
                             )
                         })}
                 </div>
