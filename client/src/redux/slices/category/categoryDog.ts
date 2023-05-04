@@ -73,10 +73,26 @@ export const getAllVitaminsForDogs = createAsyncThunk(
     }
 )
 
+export const getCategoryVitaminsForDogs = createAsyncThunk(
+    'products/getCategoryVitaminsForDogs',
+    async (vitaminsForDogsId:string ) => {
+        const response = await axios.get(`/shop/dog/product/vitaminsForDogs/${vitaminsForDogsId}`);
+        return response.data;
+    }
+)
+
 export const getAllHomeForDogs = createAsyncThunk(
     'products/getAllHomeForDogs',
     async (homeForDogsId:string ) => {
         const response = await axios.get(`/shop/dog/homeForDogs/${homeForDogsId}`);
+        return response.data;
+    }
+)
+
+export const getCategoryHomeForDogs = createAsyncThunk(
+    'products/getCategoryHomeForDogs',
+    async (homeForDogsId:string ) => {
+        const response = await axios.get(`/shop/dog/product/homeForDogs/${homeForDogsId}`);
         return response.data;
     }
 )
@@ -89,10 +105,26 @@ export const getAllToysForDogs = createAsyncThunk(
     }
 )
 
+export const getCategoryToysForDogs = createAsyncThunk(
+    'products/getCategoryToysForDogs',
+    async (toysForDogsId:string ) => {
+        const response = await axios.get(`/shop/dog/product/toysForDogs/${toysForDogsId}`);
+        return response.data;
+    }
+)
+
 export const getAllCarryingForDogs = createAsyncThunk(
     'products/getAllCarryingForDogs',
     async (carryingForDogsId:string ) => {
         const response = await axios.get(`/shop/dog/carryingForDogs/${carryingForDogsId}`);
+        return response.data;
+    }
+)
+
+export const getCategoryCarryingForDogs = createAsyncThunk(
+    'products/getCategoryCarryingForDogs',
+    async (carryingForDogsId:string ) => {
+        const response = await axios.get(`/shop/dog/product/carryingForDogs/${carryingForDogsId}`);
         return response.data;
     }
 )
@@ -104,6 +136,15 @@ export const getAllCosmeticsForDogs = createAsyncThunk(
         return response.data;
     }
 )
+
+export const getCategoryCosmeticsForDogs = createAsyncThunk(
+    'products/getCategoryCosmeticsForDogs',
+    async (cosmeticsForDogsId:string ) => {
+        const response = await axios.get(`/shop/dog/product/cosmeticsForDogs/${cosmeticsForDogsId}`);
+        return response.data;
+    }
+)
+
 export const getAllClothesForDogs = createAsyncThunk(
     'products/getAllClothesForDogs',
     async (clothesForDogsId:string ) => {
@@ -274,6 +315,61 @@ const categoryDodSlice = createSlice({
             state.loading = false
         })
         builder.addCase(getCategoryPreservesForDogs.rejected, (state) => {
+            state.loading = true
+        })
+
+        builder.addCase(getCategoryVitaminsForDogs.pending, (state) => {
+            state.loading = true
+        })
+        builder.addCase(getCategoryVitaminsForDogs.fulfilled, (state, action) => {
+            state.category = action.payload
+            state.loading = false
+        })
+        builder.addCase(getCategoryVitaminsForDogs.rejected, (state) => {
+            state.loading = true
+        })
+
+        builder.addCase(getCategoryHomeForDogs.pending, (state) => {
+            state.loading = true
+        })
+        builder.addCase(getCategoryHomeForDogs.fulfilled, (state, action) => {
+            state.category = action.payload
+            state.loading = false
+        })
+        builder.addCase(getCategoryHomeForDogs.rejected, (state) => {
+            state.loading = true
+        })
+
+        builder.addCase(getCategoryToysForDogs.pending, (state) => {
+            state.loading = true
+        })
+        builder.addCase(getCategoryToysForDogs.fulfilled, (state, action) => {
+            state.category = action.payload
+            state.loading = false
+        })
+        builder.addCase(getCategoryToysForDogs.rejected, (state) => {
+            state.loading = true
+        })
+
+        builder.addCase(getCategoryCarryingForDogs.pending, (state) => {
+            state.loading = true
+        })
+        builder.addCase(getCategoryCarryingForDogs.fulfilled, (state, action) => {
+            state.category = action.payload
+            state.loading = false
+        })
+        builder.addCase(getCategoryCarryingForDogs.rejected, (state) => {
+            state.loading = true
+        })
+
+        builder.addCase(getCategoryCosmeticsForDogs.pending, (state) => {
+            state.loading = true
+        })
+        builder.addCase(getCategoryCosmeticsForDogs.fulfilled, (state, action) => {
+            state.category = action.payload
+            state.loading = false
+        })
+        builder.addCase(getCategoryCosmeticsForDogs.rejected, (state) => {
             state.loading = true
         })
     }

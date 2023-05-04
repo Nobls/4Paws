@@ -1,20 +1,23 @@
-import React, {useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 import {useParams} from "react-router-dom";
 import {useAppDispatch, useAppSelector} from "../../redux/hook/hook";
 import {
-    getAllAmmunitionForDogs,
     getAllCarryingForDogs,
-    getAllClothesForDogs,
     getAllCosmeticsForDogs,
-    getAllDishesForDogs,
     getAllDryFoodForDogs,
     getAllHomeForDogs,
     getAllPreservesForDogs,
-    getAllToiletsForDogs,
     getAllToysForDogs,
     getAllVitaminsForDogs,
+    getAllClothesForDogs,
+    getAllDishesForDogs,
+    getAllAmmunitionForDogs,
+    getAllToiletsForDogs,
     getCategoryDryFoodForDogs,
-    getCategoryPreservesForDogs
+    getCategoryPreservesForDogs,
+    getCategoryVitaminsForDogs,
+    getCategoryHomeForDogs,
+    getCategoryToysForDogs, getCategoryCarryingForDogs, getCategoryCosmeticsForDogs
 } from "../../redux/slices/category/categoryDog";
 import s from './product.module.scss'
 import GoodsCard from "../../components/goodsCard/GoodsCard";
@@ -56,23 +59,28 @@ const ProductsDog = () => {
             }
             if (preservesForDogsId != null) {
                 dispatch(getAllPreservesForDogs(preservesForDogsId));
-                dispatch(getCategoryPreservesForDogs(preservesForDogsId))
+                dispatch((getCategoryPreservesForDogs(preservesForDogsId)))
             }
             if (vitaminsForDogsId != null) {
                 dispatch(getAllVitaminsForDogs(vitaminsForDogsId));
+                dispatch((getCategoryVitaminsForDogs(vitaminsForDogsId)))
             }
             if (homeForDogsId != null) {
                 dispatch(getAllHomeForDogs(homeForDogsId));
+                dispatch(getCategoryHomeForDogs(homeForDogsId));
             }
             if (toysForDogsId != null) {
                 dispatch(getAllToysForDogs(toysForDogsId));
+                dispatch(getCategoryToysForDogs(toysForDogsId));
             }
 
             if (carryingForDogsId != null) {
                 dispatch(getAllCarryingForDogs(carryingForDogsId));
+                dispatch(getCategoryCarryingForDogs(carryingForDogsId));
             }
             if (cosmeticsForDogsId != null) {
                 dispatch(getAllCosmeticsForDogs(cosmeticsForDogsId));
+                dispatch(getCategoryCosmeticsForDogs(cosmeticsForDogsId));
             }
             if (clothesForDogsId != null) {
                 dispatch(getAllClothesForDogs(clothesForDogsId));
@@ -104,9 +112,9 @@ const ProductsDog = () => {
 
     return (
         <div>
-            <h3>
+            <h1>
                 {category?.category}
-            </h3>
+            </h1>
             <div>
                 <div>sidebar</div>
                 <div>product cards</div>
@@ -116,6 +124,13 @@ const ProductsDog = () => {
 
                         products.map((m) => {
                             return (
+                                    <>
+                                        {products.map((m) => {
+                                            return (
+                                                <h3>{m.category}</h3>
+                                            )
+
+                                        })}
                                         <GoodsCard
                                             key={m._id}
                                             title={m.title}
@@ -130,6 +145,8 @@ const ProductsDog = () => {
                                             tags={m.tags}
                                             _id={m._id}
                                         />
+                                    </>
+
                             )
                         })}
                 </div>

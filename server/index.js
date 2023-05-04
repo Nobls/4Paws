@@ -30,6 +30,12 @@ import {
     UserPetController,
     ReviewsController,
 } from './controllers/index.js'
+import {
+    getCategoryCarryingById, getCategoryCosmeticsById,
+    getCategoryHomeById,
+    getCategoryToysById,
+    getCategoryVitaminsById
+} from "./controllers/CategoryDogController.js";
 
 
 mongoose
@@ -164,17 +170,27 @@ app.post('/shop/dog/:id/toiletsForDogs', checkAuth, CategoryDogController.toilet
 
 app.get('/shop/dog/categoryDog', checkAuth, CategoryDogController.getAllDogCategory)
 
-app.get('/shop/dog/product/dryFoodDog/:dryFoodDogId', checkAuth, CategoryDogController.getCategoryDryFoodById)
 app.get('/shop/dog/dryFoodDog/:dryFoodDogId', checkAuth, CategoryDogController.getDryFood)
+app.get('/shop/dog/product/dryFoodDog/:dryFoodDogId', checkAuth, CategoryDogController.getCategoryDryFoodById)
 
 app.get('/shop/dog/preservesForDogs/:preservesForDogsId', checkAuth, CategoryDogController.getPreserves)
 app.get('/shop/dog/product/preservesForDogs/:preservesForDogsId', checkAuth, CategoryDogController.getCategoryPreservesById)
 
 app.get('/shop/dog/vitaminsForDogs/:vitaminsForDogsId', checkAuth, CategoryDogController.getVitamins)
+app.get('/shop/dog/product/vitaminsForDogs/:vitaminsForDogsId', checkAuth, CategoryDogController.getCategoryVitaminsById)
+
 app.get('/shop/dog/homeForDogs/:homeForDogsId', checkAuth, CategoryDogController.getHome)
+app.get('/shop/dog/product/homeForDogs/:homeForDogsId', checkAuth, CategoryDogController.getCategoryHomeById)
+
 app.get('/shop/dog/toysForDogs/:toysForDogsId', checkAuth, CategoryDogController.getToys)
+app.get('/shop/dog/product/toysForDogs/:toysForDogsId', checkAuth, CategoryDogController.getCategoryToysById)
+
 app.get('/shop/dog/carryingForDogs/:carryingForDogsId', checkAuth, CategoryDogController.getCarrying)
+app.get('/shop/dog/product/carryingForDogs/:carryingForDogsId', checkAuth, CategoryDogController.getCategoryCarryingById)
+
 app.get('/shop/dog/cosmeticsForDogs/:cosmeticsForDogsId', checkAuth, CategoryDogController.getCosmetics)
+app.get('/shop/dog/product/cosmeticsForDogs/:cosmeticsForDogsId', checkAuth, CategoryDogController.getCategoryCosmeticsById)
+
 app.get('/shop/dog/clothesForDogs/:clothesForDogsId', checkAuth, CategoryDogController.getClothes)
 app.get('/shop/dog/dishesForDogs/:dishesForDogsId', checkAuth, CategoryDogController.getDishes)
 app.get('/shop/dog/ammunitionForDogs/:ammunitionForDogsId', checkAuth, CategoryDogController.getAmmunition)

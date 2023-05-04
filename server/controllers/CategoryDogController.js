@@ -482,6 +482,27 @@ export const getVitamins = async (req, res, next) => {
     }
 }
 
+export const getCategoryVitaminsById = async (req, res) => {
+    const {vitaminsForDogsId} = req.params;
+
+    try {
+        const product = await ProductsForDogsModel.findOne({
+            'vitaminsForDogsId._id': vitaminsForDogsId
+        }).select('vitaminsForDogs.category');
+
+        if (product) {
+            const category = product.vitaminsForDogs.category;
+            res.status(200).json({ category });
+        }
+        else {
+            res.status(404).json({ message: 'Product not found' });
+        }
+    } catch (error) {
+        console.error(error);
+        res.status(500).json ({ message: 'Server error' });
+    }
+}
+
 export const getHome = async (req, res, next) => {
     try {
         const {homeForDogsId} = req.params;
@@ -503,6 +524,27 @@ export const getHome = async (req, res, next) => {
         res.status(200).json(homeForDogsProducts);
     } catch (error) {
         next(error);
+    }
+}
+
+export const getCategoryHomeById = async (req, res) => {
+    const {homeForDogsId} = req.params;
+
+    try {
+        const product = await ProductsForDogsModel.findOne({
+            'homeForDogsId._id': homeForDogsId
+        }).select('homeForDogs.category');
+
+        if (product) {
+            const category = product.homeForDogs.category;
+            res.status(200).json({ category });
+        }
+        else {
+            res.status(404).json({ message: 'Product not found' });
+        }
+    } catch (error) {
+        console.error(error);
+        res.status(500).json ({ message: 'Server error' });
     }
 }
 
@@ -530,6 +572,27 @@ export const getToys = async (req, res, next) => {
     }
 }
 
+export const getCategoryToysById = async (req, res) => {
+    const {toysForDogsId} = req.params;
+
+    try {
+        const product = await ProductsForDogsModel.findOne({
+            'toysForDogsId._id': toysForDogsId
+        }).select('toysForDogs.category');
+
+        if (product) {
+            const category = product.toysForDogs.category;
+            res.status(200).json({ category });
+        }
+        else {
+            res.status(404).json({ message: 'Product not found' });
+        }
+    } catch (error) {
+        console.error(error);
+        res.status(500).json ({ message: 'Server error' });
+    }
+}
+
 export const getCarrying = async (req, res, next) => {
     try {
         const {carryingForDogsId} = req.params;
@@ -554,6 +617,27 @@ export const getCarrying = async (req, res, next) => {
     }
 }
 
+export const getCategoryCarryingById = async (req, res) => {
+    const {carryingForDogsId} = req.params;
+
+    try {
+        const product = await ProductsForDogsModel.findOne({
+            'carryingForDogsId._id': carryingForDogsId
+        }).select('carryingForDogs.category');
+
+        if (product) {
+            const category = product.carryingForDogs.category;
+            res.status(200).json({ category });
+        }
+        else {
+            res.status(404).json({ message: 'Product not found' });
+        }
+    } catch (error) {
+        console.error(error);
+        res.status(500).json ({ message: 'Server error' });
+    }
+}
+
 export const getCosmetics = async (req, res, next) => {
     try {
         const {cosmeticsForDogsId} = req.params;
@@ -575,6 +659,27 @@ export const getCosmetics = async (req, res, next) => {
         res.status(200).json(cosmeticsForDogsProducts);
     } catch (error) {
         next(error);
+    }
+}
+
+export const getCategoryCosmeticsById = async (req, res) => {
+    const {cosmeticsForDogsId} = req.params;
+
+    try {
+        const product = await ProductsForDogsModel.findOne({
+            'cosmeticsForDogsId._id': cosmeticsForDogsId
+        }).select('cosmeticsForDogs.category');
+
+        if (product) {
+            const category = product.cosmeticsForDogs.category;
+            res.status(200).json({ category });
+        }
+        else {
+            res.status(404).json({ message: 'Product not found' });
+        }
+    } catch (error) {
+        console.error(error);
+        res.status(500).json ({ message: 'Server error' });
     }
 }
 
