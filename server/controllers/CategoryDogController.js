@@ -622,7 +622,7 @@ export const getCategoryCarryingById = async (req, res) => {
 
     try {
         const product = await ProductsForDogsModel.findOne({
-            'carryingForDogsId._id': carryingForDogsId
+            'carryingForDogs._id': carryingForDogsId
         }).select('carryingForDogs.category');
 
         if (product) {
@@ -667,7 +667,7 @@ export const getCategoryCosmeticsById = async (req, res) => {
 
     try {
         const product = await ProductsForDogsModel.findOne({
-            'cosmeticsForDogsId._id': cosmeticsForDogsId
+            'cosmeticsForDogs._id': cosmeticsForDogsId
         }).select('cosmeticsForDogs.category');
 
         if (product) {
