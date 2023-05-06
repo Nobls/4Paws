@@ -17,7 +17,11 @@ import {
     getCategoryPreservesForDogs,
     getCategoryVitaminsForDogs,
     getCategoryHomeForDogs,
-    getCategoryToysForDogs, getCategoryCarryingForDogs, getCategoryCosmeticsForDogs
+    getCategoryToysForDogs,
+    getCategoryCarryingForDogs,
+    getCategoryCosmeticsForDogs,
+    getCategoryClothesForDogs,
+    getCategoryDishesForDogs, getCategoryAmmunitionForDogs, getCategoryToiletsForDogs
 } from "../../redux/slices/category/categoryDog";
 import s from './product.module.scss'
 import GoodsCard from "../../components/goodsCard/GoodsCard";
@@ -84,15 +88,19 @@ const ProductsDog = () => {
             }
             if (clothesForDogsId != null) {
                 dispatch(getAllClothesForDogs(clothesForDogsId));
+                dispatch(getCategoryClothesForDogs(clothesForDogsId));
             }
             if (dishesForDogsId != null) {
                 dispatch(getAllDishesForDogs(dishesForDogsId));
+                dispatch(getCategoryDishesForDogs(dishesForDogsId));
             }
             if (ammunitionForDogsId != null) {
                 dispatch(getAllAmmunitionForDogs(ammunitionForDogsId));
+                dispatch(getCategoryAmmunitionForDogs(ammunitionForDogsId));
             }
             if (toiletsForDogsId != null) {
                 dispatch(getAllToiletsForDogs(toiletsForDogsId));
+                dispatch(getCategoryToiletsForDogs(toiletsForDogsId));
             }
         }
     }, [dispatch, dryFoodDogId, preservesForDogsId, vitaminsForDogsId, homeForDogsId,

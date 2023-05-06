@@ -152,6 +152,15 @@ export const getAllClothesForDogs = createAsyncThunk(
         return response.data;
     }
 )
+
+export const getCategoryClothesForDogs = createAsyncThunk(
+    'products/getCategoryClothesForDogs',
+    async (clothesForDogsId:string ) => {
+        const response = await axios.get(`/shop/dog/product/clothesForDogs/${clothesForDogsId}`);
+        return response.data;
+    }
+)
+
 export const getAllDishesForDogs = createAsyncThunk(
     'products/getAllDishesForDogs',
     async (dishesForDogsId:string ) => {
@@ -159,6 +168,15 @@ export const getAllDishesForDogs = createAsyncThunk(
         return response.data;
     }
 )
+
+export const getCategoryDishesForDogs = createAsyncThunk(
+    'products/getCategoryDishesForDogs',
+    async (dishesForDogsId:string ) => {
+        const response = await axios.get(`/shop/dog/product/dishesForDogs/${dishesForDogsId}`);
+        return response.data;
+    }
+)
+
 export const getAllAmmunitionForDogs = createAsyncThunk(
     'products/getAllAmmunitionForDogs',
     async (ammunitionForDogsId:string ) => {
@@ -166,10 +184,27 @@ export const getAllAmmunitionForDogs = createAsyncThunk(
         return response.data;
     }
 )
+
+export const getCategoryAmmunitionForDogs = createAsyncThunk(
+    'products/getCategoryAmmunitionForDogs',
+    async (ammunitionForDogsId:string ) => {
+        const response = await axios.get(`/shop/dog/product/ammunitionForDogs/${ammunitionForDogsId}`);
+        return response.data;
+    }
+)
+
 export const getAllToiletsForDogs = createAsyncThunk(
     'products/getAllToiletsForDogs',
     async (toiletsForDogsId:string ) => {
         const response = await axios.get(`/shop/dog/toiletsForDogs/${toiletsForDogsId}`);
+        return response.data;
+    }
+)
+
+export const getCategoryToiletsForDogs = createAsyncThunk(
+    'products/getCategoryToiletsForDogs',
+    async (toiletsForDogsId:string ) => {
+        const response = await axios.get(`/shop/dog/product/toiletsForDogs/${toiletsForDogsId}`);
         return response.data;
     }
 )
@@ -370,6 +405,50 @@ const categoryDodSlice = createSlice({
             state.loading = false
         })
         builder.addCase(getCategoryCosmeticsForDogs.rejected, (state) => {
+            state.loading = true
+        })
+
+        builder.addCase(getCategoryClothesForDogs.pending, (state) => {
+            state.loading = true
+        })
+        builder.addCase(getCategoryClothesForDogs.fulfilled, (state, action) => {
+            state.category = action.payload
+            state.loading = false
+        })
+        builder.addCase(getCategoryClothesForDogs.rejected, (state) => {
+            state.loading = true
+        })
+
+        builder.addCase(getCategoryDishesForDogs.pending, (state) => {
+            state.loading = true
+        })
+        builder.addCase(getCategoryDishesForDogs.fulfilled, (state, action) => {
+            state.category = action.payload
+            state.loading = false
+        })
+        builder.addCase(getCategoryDishesForDogs.rejected, (state) => {
+            state.loading = true
+        })
+
+        builder.addCase(getCategoryAmmunitionForDogs.pending, (state) => {
+            state.loading = true
+        })
+        builder.addCase(getCategoryAmmunitionForDogs.fulfilled, (state, action) => {
+            state.category = action.payload
+            state.loading = false
+        })
+        builder.addCase(getCategoryAmmunitionForDogs.rejected, (state) => {
+            state.loading = true
+        })
+
+        builder.addCase(getCategoryToiletsForDogs.pending, (state) => {
+            state.loading = true
+        })
+        builder.addCase(getCategoryToiletsForDogs.fulfilled, (state, action) => {
+            state.category = action.payload
+            state.loading = false
+        })
+        builder.addCase(getCategoryToiletsForDogs.rejected, (state) => {
             state.loading = true
         })
     }

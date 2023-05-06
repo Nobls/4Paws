@@ -707,6 +707,28 @@ export const getClothes = async (req, res, next) => {
     }
 }
 
+export const getCategoryClothesById = async (req, res) => {
+    const {clothesForDogsId} = req.params;
+
+    try {
+        const product = await ProductsForDogsModel.findOne({
+            'clothesForDogs._id': clothesForDogsId
+        }).select('clothesForDogs.category');
+
+        if (product) {
+            const category = product.clothesForDogs.category;
+            res.status(200).json({ category });
+        }
+        else {
+            res.status(404).json({ message: 'Product not found' });
+        }
+    } catch (error) {
+        console.error(error);
+        res.status(500).json ({ message: 'Server error' });
+    }
+}
+
+
 export const getDishes = async (req, res, next) => {
     try {
         const {dishesForDogsId} = req.params;
@@ -728,6 +750,27 @@ export const getDishes = async (req, res, next) => {
         res.status(200).json(dishesForDogsProducts);
     } catch (error) {
         next(error);
+    }
+}
+
+export const getCategoryDishesById = async (req, res) => {
+    const {dishesForDogsId} = req.params;
+
+    try {
+        const product = await ProductsForDogsModel.findOne({
+            'dishesForDogs._id': dishesForDogsId
+        }).select('dishesForDogs.category');
+
+        if (product) {
+            const category = product.dishesForDogs.category;
+            res.status(200).json({ category });
+        }
+        else {
+            res.status(404).json({ message: 'Product not found' });
+        }
+    } catch (error) {
+        console.error(error);
+        res.status(500).json ({ message: 'Server error' });
     }
 }
 
@@ -755,6 +798,27 @@ export const getAmmunition = async (req, res, next) => {
     }
 }
 
+export const getCategoryAmmunitionById = async (req, res) => {
+    const {ammunitionForDogsId} = req.params;
+
+    try {
+        const product = await ProductsForDogsModel.findOne({
+            'ammunitionForDogs._id': ammunitionForDogsId
+        }).select('ammunitionForDogs.category');
+
+        if (product) {
+            const category = product.ammunitionForDogs.category;
+            res.status(200).json({ category });
+        }
+        else {
+            res.status(404).json({ message: 'Product not found' });
+        }
+    } catch (error) {
+        console.error(error);
+        res.status(500).json ({ message: 'Server error' });
+    }
+}
+
 export const getToilets = async (req, res, next) => {
     try {
         const {toiletsForDogsId} = req.params;
@@ -776,6 +840,27 @@ export const getToilets = async (req, res, next) => {
         res.status(200).json(toiletsForDogsProducts);
     } catch (error) {
         next(error);
+    }
+}
+
+export const getCategoryToiletsById = async (req, res) => {
+    const {toiletsForDogsId} = req.params;
+
+    try {
+        const product = await ProductsForDogsModel.findOne({
+            'toiletsForDogs._id': toiletsForDogsId
+        }).select('toiletsForDogs.category');
+
+        if (product) {
+            const category = product.toiletsForDogs.category;
+            res.status(200).json({ category });
+        }
+        else {
+            res.status(404).json({ message: 'Product not found' });
+        }
+    } catch (error) {
+        console.error(error);
+        res.status(500).json ({ message: 'Server error' });
     }
 }
 

@@ -186,9 +186,16 @@ app.get('/shop/dog/cosmeticsForDogs/:cosmeticsForDogsId', checkAuth, CategoryDog
 app.get('/shop/dog/product/cosmeticsForDogs/:cosmeticsForDogsId', checkAuth, CategoryDogController.getCategoryCosmeticsById)
 
 app.get('/shop/dog/clothesForDogs/:clothesForDogsId', checkAuth, CategoryDogController.getClothes)
+app.get('/shop/dog/product/clothesForDogs/:clothesForDogsId', checkAuth, CategoryDogController.getCategoryClothesById)
+
 app.get('/shop/dog/dishesForDogs/:dishesForDogsId', checkAuth, CategoryDogController.getDishes)
+app.get('/shop/dog/product/dishesForDogs/:dishesForDogsId', checkAuth, CategoryDogController.getCategoryDishesById)
+
 app.get('/shop/dog/ammunitionForDogs/:ammunitionForDogsId', checkAuth, CategoryDogController.getAmmunition)
+app.get('/shop/dog/product/ammunitionForDogs/:ammunitionForDogsId', checkAuth, CategoryDogController.getCategoryAmmunitionById)
+
 app.get('/shop/dog/toiletsForDogs/:toiletsForDogsId', checkAuth, CategoryDogController.getToilets)
+app.get('/shop/dog/product/toiletsForDogs/:toiletsForDogsId', checkAuth, CategoryDogController.getCategoryToiletsById)
 
 
 // получение одного продукта
