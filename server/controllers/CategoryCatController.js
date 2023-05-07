@@ -408,6 +408,26 @@ export const getDryFoodForCats = async (req, res, next) => {
     }
 }
 
+export const getCategoryDryFoodForCatsById = async (req, res) => {
+    const {dryFoodCatsId} = req.params;
+
+    try {
+        const product = await ProductsForCatsModel.findOne({
+            'dryFoodForCats._id': dryFoodCatsId
+        }).select('dryFoodForCats.category');
+
+        if (product) {
+            const category = product.dryFoodForCats.category;
+            res.status(200).json({ category });
+        } else {
+            res.status(404).json({ message: 'Product not found' });
+        }
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ message: 'Server error' });
+    }
+}
+
 export const getPreservesForCats = async (req, res, next) => {
     try {
         const {preservesForCatsId} = req.params;

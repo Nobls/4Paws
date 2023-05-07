@@ -30,6 +30,7 @@ import {
     UserPetController,
     ReviewsController,
 } from './controllers/index.js'
+import {getCategoryDryFoodForCatsById} from "./controllers/CategoryCatController.js";
 
 
 mongoose
@@ -205,6 +206,7 @@ app.get('/shop/product/:id', checkAuth, CategoryDogController.getOneProduct)
 
 // создание
 app.post('/shop/cat/dryFoodForCats/:dryFoodForCatsId', checkAuth, CategoryCatController.dryFoodForCats)
+
 app.post('/shop/cat/preservesForCats/:preservesForCatsId', checkAuth, CategoryCatController.preservesForCats)
 app.post('/shop/cat/vitaminsForCats/:vitaminsForCatsId', checkAuth, CategoryCatController.vitaminsForCats)
 app.post('/shop/cat/homeForCats/:homeForCatsId', checkAuth, CategoryCatController.homeForCats)
@@ -221,6 +223,8 @@ app.post('/shop/cat/toiletsForCats/:toiletsForCatsId', checkAuth, CategoryCatCon
 app.get('/shop/cat/categoryCat', checkAuth, CategoryCatController.getAllCatCategory)
 
 app.get('/shop/cat/dryFoodForCats/:dryFoodForCatsId', checkAuth, CategoryCatController.getDryFoodForCats)
+app.get('/shop/cat/product/dryFoodForCats/:dryFoodForCatsId', checkAuth, CategoryCatController.getCategoryDryFoodForCatsById)
+
 app.get('/shop/cat/preservesForCats/:preservesForCatsId', checkAuth, CategoryCatController.getPreservesForCats)
 app.get('/shop/cat/vitaminsForCats/:vitaminsForCatsId', checkAuth, CategoryCatController.getVitaminsForCats)
 app.get('/shop/cat/homeForCats/:homeForCatsId', checkAuth, CategoryCatController.getHomeForCats)
