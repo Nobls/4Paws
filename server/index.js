@@ -226,6 +226,8 @@ app.get('/shop/cat/dryFoodForCats/:dryFoodForCatsId', checkAuth, CategoryCatCont
 app.get('/shop/cat/product/dryFoodForCats/:dryFoodForCatsId', checkAuth, CategoryCatController.getCategoryDryFoodForCatsById)
 
 app.get('/shop/cat/preservesForCats/:preservesForCatsId', checkAuth, CategoryCatController.getPreservesForCats)
+app.get('/shop/cat/product/preservesForCats/:preservesForCatsId', checkAuth, CategoryCatController.getCategoryPreservesForCatsById)
+
 app.get('/shop/cat/vitaminsForCats/:vitaminsForCatsId', checkAuth, CategoryCatController.getVitaminsForCats)
 app.get('/shop/cat/homeForCats/:homeForCatsId', checkAuth, CategoryCatController.getHomeForCats)
 app.get('/shop/cat/toysForCats/:toysForCatsId', checkAuth, CategoryCatController.getToysForCats)
