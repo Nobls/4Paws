@@ -30,7 +30,7 @@ import {
     UserPetController,
     ReviewsController,
 } from './controllers/index.js'
-import {getCategoryDryFoodForCatsById} from "./controllers/CategoryCatController.js";
+import {getCategoryDryFoodForCatsById, getCategoryPreservesForCatsById} from "./controllers/CategoryCatController.js";
 
 
 mongoose
@@ -227,6 +227,8 @@ app.get('/shop/cat/product/dryFoodForCats/:dryFoodForCatsId', checkAuth, Categor
 
 app.get('/shop/cat/preservesForCats/:preservesForCatsId', checkAuth, CategoryCatController.getPreservesForCats)
 app.get('/shop/cat/product/preservesForCats/:preservesForCatsId', checkAuth, CategoryCatController.getCategoryPreservesForCatsById)
+
+
 
 app.get('/shop/cat/vitaminsForCats/:vitaminsForCatsId', checkAuth, CategoryCatController.getVitaminsForCats)
 app.get('/shop/cat/homeForCats/:homeForCatsId', checkAuth, CategoryCatController.getHomeForCats)
