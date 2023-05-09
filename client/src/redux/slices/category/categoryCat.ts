@@ -51,6 +51,15 @@ export const getAllPreservesForCats = createAsyncThunk(
         return response.data;
     }
 )
+
+export const getCategoryPreservesForCats = createAsyncThunk(
+    'products/getCategoryPreservesForCats',
+    async (preservesForCatsId:string ) => {
+        const response = await axios.get(`/shop/cat/product/preservesForCats/${preservesForCatsId}`);
+        return response.data;
+    }
+)
+
 export const getAllVitaminsForCats = createAsyncThunk(
     'products/getAllVitaminsForCats',
     async (vitaminsForCatsId:string ) => {
@@ -240,6 +249,17 @@ const categoryCatSlice = createSlice({
             state.loading = false
         })
         builder.addCase(getCategoryDryFoodForCats.rejected, (state) => {
+            state.loading = true
+        })
+
+        builder.addCase(getCategoryPreservesForCats.pending, (state) => {
+            state.loading = true
+        })
+        builder.addCase(getCategoryPreservesForCats.fulfilled, (state, action) => {
+            state.products = action.payload
+            state.loading = false
+        })
+        builder.addCase(getCategoryPreservesForCats.rejected, (state) => {
             state.loading = true
         })
     }

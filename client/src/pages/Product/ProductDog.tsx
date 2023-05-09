@@ -21,7 +21,9 @@ import {
     getCategoryCarryingForDogs,
     getCategoryCosmeticsForDogs,
     getCategoryClothesForDogs,
-    getCategoryDishesForDogs, getCategoryAmmunitionForDogs, getCategoryToiletsForDogs
+    getCategoryDishesForDogs,
+    getCategoryAmmunitionForDogs,
+    getCategoryToiletsForDogs
 } from "../../redux/slices/category/categoryDog";
 import s from './product.module.scss'
 import GoodsCard from "../../components/goodsCard/GoodsCard";

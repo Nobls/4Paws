@@ -16,7 +16,7 @@ import {
     getAllDishesForCats,
     getAllAmmunitionForCats,
     getAllToiletsForCats,
-    getCategoryDryFoodForCats
+    getCategoryDryFoodForCats, getCategoryPreservesForCats,
 } from "../../redux/slices/category/categoryCat";
 
 const ProductsCat = () => {
@@ -57,6 +57,7 @@ const ProductsCat = () => {
             }
             if (preservesForCatsId != null) {
                 dispatch(getAllPreservesForCats(preservesForCatsId));
+                dispatch(getCategoryPreservesForCats(preservesForCatsId));
             }
             if (vitaminsForCatsId != null) {
                 dispatch(getAllVitaminsForCats(vitaminsForCatsId));

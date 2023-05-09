@@ -452,6 +452,26 @@ export const getPreservesForCats = async (req, res, next) => {
     }
 }
 
+export const getCategoryPreservesForCatsById = async (req, res) => {
+    const {preservesCatsId} = req.params;
+
+    try {
+        const product = await ProductsForCatsModel.findOne({
+            'preservesForCats._id': preservesCatsId
+        }).select('preservesForCats.category');
+
+        if (product) {
+            const category = product.preservesForCats.category;
+            res.status(200).json({ category });
+        } else {
+            res.status(404).json({ message: 'Product not found' });
+        }
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ message: 'Server error' });
+    }
+}
+
 export const getVitaminsForCats = async (req, res, next) => {
     try {
         const {vitaminsForCatsId} = req.params;
