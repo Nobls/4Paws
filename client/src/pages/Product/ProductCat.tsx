@@ -42,7 +42,7 @@ const ProductsCat = () => {
     }>
     ();
 
-    const {products, loading, error} = useAppSelector((state) => state.catCategory);
+    const {products, loading, error, category} = useAppSelector((state) => state.catCategory);
 
     console.log(products)
 
@@ -103,7 +103,7 @@ const ProductsCat = () => {
     return (
         <div>
             <h1>
-                Коты, корм
+                {category?.category}
             </h1>
             <div>
                 <div>sidebar</div>

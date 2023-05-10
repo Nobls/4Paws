@@ -42,7 +42,7 @@ const CategoryListDog = ({data}: PropsType) => {
                     </Link>
                 </li>
                 <li className={s.listItem}>
-                    <Link className={s.listItemLink} to={`'/shop/dog/cosmeticsForDogs/${data[0].cosmeticsForDogs._id}`}>
+                    <Link className={s.listItemLink} to={`/shop/dog/cosmeticsForDogs/${data[0].cosmeticsForDogs._id}`}>
                         Гигиена и косметика
                     </Link>
                 </li>
