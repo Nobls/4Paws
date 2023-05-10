@@ -409,11 +409,11 @@ export const getDryFoodForCats = async (req, res, next) => {
 }
 
 export const getCategoryDryFoodForCatsById = async (req, res) => {
-    const {dryFoodCatsId} = req.params;
+    const {dryFoodForCatsId} = req.params;
 
     try {
         const product = await ProductsForCatsModel.findOne({
-            'dryFoodForCats._id': dryFoodCatsId
+            'dryFoodForCats._id': dryFoodForCatsId
         }).select('dryFoodForCats.category');
 
         if (product) {
@@ -453,11 +453,11 @@ export const getPreservesForCats = async (req, res, next) => {
 }
 
 export const getCategoryPreservesForCatsById = async (req, res) => {
-    const {preservesCatsId} = req.params;
+    const {preservesForCatsId} = req.params;
 
     try {
         const product = await ProductsForCatsModel.findOne({
-            'preservesForCats._id': preservesCatsId
+            'preservesForCats._id': preservesForCatsId
         }).select('preservesForCats.category');
 
         if (product) {

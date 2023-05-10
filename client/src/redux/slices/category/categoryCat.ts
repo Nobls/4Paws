@@ -16,14 +16,22 @@ export interface ProductCard {
     tags: string,
 }
 
+type CategoryObject = {
+    category: string;
+}
+
 interface ProductsState {
     products: ProductCard[];
+    category: CategoryObject;
     loading: boolean;
     error: string | null;
 }
 
 const initialState: ProductsState = {
     products: [],
+    category: {
+        category: ''
+    },
     loading: false,
     error: null,
 };
@@ -245,7 +253,7 @@ const categoryCatSlice = createSlice({
             state.loading = true
         })
         builder.addCase(getCategoryDryFoodForCats.fulfilled, (state, action) => {
-            state.products = action.payload
+            state.category = action.payload
             state.loading = false
         })
         builder.addCase(getCategoryDryFoodForCats.rejected, (state) => {
@@ -256,7 +264,7 @@ const categoryCatSlice = createSlice({
             state.loading = true
         })
         builder.addCase(getCategoryPreservesForCats.fulfilled, (state, action) => {
-            state.products = action.payload
+            state.category = action.payload
             state.loading = false
         })
         builder.addCase(getCategoryPreservesForCats.rejected, (state) => {
