@@ -39,6 +39,8 @@ const ProductsForCatsSchema = new mongoose.Schema(
                 type: mongoose.Schema.Types.ObjectId
             },
 
+            category: String,
+
             product: [
                 {
                     type: mongoose.Schema.Types.ObjectId,
@@ -53,6 +55,8 @@ const ProductsForCatsSchema = new mongoose.Schema(
                 type: mongoose.Schema.Types.ObjectId
             },
 
+            category: String,
+
             product: [
                 {
                     type: mongoose.Schema.Types.ObjectId,
@@ -66,6 +70,8 @@ const ProductsForCatsSchema = new mongoose.Schema(
                 type: mongoose.Schema.Types.ObjectId
             },
 
+            category: String,
+
             product: [
                 {
                     type: mongoose.Schema.Types.ObjectId,
@@ -78,6 +84,8 @@ const ProductsForCatsSchema = new mongoose.Schema(
             _id: {
                 type: mongoose.Schema.Types.ObjectId
             },
+
+            category: String,
 
             product: [
                 {
