@@ -31,8 +31,16 @@ import {
     ReviewsController,
 } from './controllers/index.js'
 import {
-    getCategoryDryFoodForCatsById, getCategoryHomeForCatsById,
-    getCategoryPreservesForCatsById, getCategoryToysForCatsById,
+    getCategoryAmmunitionForCatsById,
+    getCategoryCarryingForCatsById,
+    getCategoryCosmeticsForCatsById,
+    getCategoryDishesForCatsById,
+    getCategoryDryFoodForCatsById,
+    getCategoryHomeForCatsById,
+    getCategoryPreservesForCatsById,
+    getCategoryScratchingPostsForCatsById,
+    getCategoryToiletsForCatsById,
+    getCategoryToysForCatsById,
     getCategoryVitaminsForCatsById
 } from "./controllers/CategoryCatController.js";
 
@@ -242,13 +250,22 @@ app.get('/shop/cat/toysForCats/:toysForCatsId', checkAuth, CategoryCatController
 app.get('/shop/cat/product/toysForCats/:toysForCatsId', checkAuth, CategoryCatController.getCategoryToysForCatsById)
 
 app.get('/shop/cat/carryingForCats/:carryingForCatsId', checkAuth, CategoryCatController.getCarryingForCats)
-app.get('/shop/cat/product/carryingForCats/:carryingForCatsId', checkAuth, CategoryCatController.getCarryingForCats)
+app.get('/shop/cat/product/carryingForCats/:carryingForCatsId', checkAuth, CategoryCatController.getCategoryCarryingForCatsById)
 
 app.get('/shop/cat/cosmeticsForCats/:cosmeticsForCatsId', checkAuth, CategoryCatController.getCosmeticsForCats)
+app.get('/shop/cat/product/cosmeticsForCats/:cosmeticsForCatsId', checkAuth, CategoryCatController.getCategoryCosmeticsForCatsById)
+
 app.get('/shop/cat/scratchingPostsForCats/:scratchingPostsForCatsId', checkAuth, CategoryCatController.getScratchingPostsForCats)
+app.get('/shop/cat/product/scratchingPostsForCats/:scratchingPostsForCatsId', checkAuth, CategoryCatController.getCategoryScratchingPostsForCatsById)
+
 app.get('/shop/cat/dishesForCats/:dishesForCatsId', checkAuth, CategoryCatController.getDishesForCats)
+app.get('/shop/cat/product/dishesForCats/:dishesForCatsId', checkAuth, CategoryCatController.getCategoryDishesForCatsById)
+
 app.get('/shop/cat/ammunitionForCats/:ammunitionForCatsId', checkAuth, CategoryCatController.getAmmunitionForCats)
+app.get('/shop/cat/product/ammunitionForCats/:ammunitionForCatsId', checkAuth, CategoryCatController.getCategoryAmmunitionForCatsById)
+
 app.get('/shop/cat/toiletsForCats/:toiletsForCatsId', checkAuth, CategoryCatController.getToiletsForCats)
+app.get('/shop/cat/product/toiletsForCats/:toiletsForCatsId', checkAuth, CategoryCatController.getCategoryToiletsForCatsById)
 
 // получение одного продукта
 app.get('/shop/cat/product/:id', checkAuth, CategoryDogController.getOneProduct)

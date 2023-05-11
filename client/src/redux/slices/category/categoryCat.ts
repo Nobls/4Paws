@@ -123,6 +123,15 @@ export const getAllCarryingForCats = createAsyncThunk(
         return response.data;
     }
 )
+
+export const getCategoryCarryingForCats = createAsyncThunk(
+    'products/getCategoryCarryingForCats',
+    async (carryingForCatsId:string ) => {
+        const response = await axios.get(`/shop/cat/product/carryingForCats/${carryingForCatsId}`);
+        return response.data;
+    }
+)
+
 export const getAllCosmeticsForCats = createAsyncThunk(
     'products/getAllCosmeticsForCats',
     async (cosmeticsForCatsId:string ) => {
@@ -130,6 +139,15 @@ export const getAllCosmeticsForCats = createAsyncThunk(
         return response.data;
     }
 )
+
+export const getCategoryCosmeticsForCats = createAsyncThunk(
+    'products/getCategoryCosmeticsForCats',
+    async (cosmeticsForCatsId:string ) => {
+        const response = await axios.get(`/shop/cat/product/cosmeticsForCats/${cosmeticsForCatsId}`);
+        return response.data;
+    }
+)
+
 export const getAllScratchingPostsForCats = createAsyncThunk(
     'products/getAllScratchingPostsForCats',
     async (scratchingPostsForCatsId:string ) => {
@@ -137,6 +155,15 @@ export const getAllScratchingPostsForCats = createAsyncThunk(
         return response.data;
     }
 )
+
+export const getCategoryScratchingPostsForCats = createAsyncThunk(
+    'products/getCategoryScratchingPostsForCats',
+    async (scratchingPostsForCatsId:string ) => {
+        const response = await axios.get(`/shop/cat/product/scratchingPostsForCats/${scratchingPostsForCatsId}`);
+        return response.data;
+    }
+)
+
 export const getAllDishesForCats = createAsyncThunk(
     'products/getAllDishesForCats',
     async (dishesForCatsId:string ) => {
@@ -144,6 +171,15 @@ export const getAllDishesForCats = createAsyncThunk(
         return response.data;
     }
 )
+
+export const getCategoryDishesForCats = createAsyncThunk(
+    'products/getCategoryDishesForCats',
+    async (dishesForCatsId:string ) => {
+        const response = await axios.get(`/shop/cat/product/dishesForCats/${dishesForCatsId}`);
+        return response.data;
+    }
+)
+
 export const getAllAmmunitionForCats = createAsyncThunk(
     'products/getAllAmmunitionForCats',
     async (ammunitionForCatsId:string ) => {
@@ -151,10 +187,27 @@ export const getAllAmmunitionForCats = createAsyncThunk(
         return response.data;
     }
 )
+
+export const getCategoryAmmunitionForCats = createAsyncThunk(
+    'products/getCategoryAmmunitionForCats',
+    async (ammunitionForCatsId:string ) => {
+        const response = await axios.get(`/shop/cat/product/ammunitionForCats/${ammunitionForCatsId}`);
+        return response.data;
+    }
+)
+
 export const getAllToiletsForCats = createAsyncThunk(
     'products/getAllToiletsForCats',
     async (toiletsForCatsId:string ) => {
         const response = await axios.get(`/shop/cat/toiletsForCats/${toiletsForCatsId}`);
+        return response.data;
+    }
+)
+
+export const getCategoryToiletsForCats = createAsyncThunk(
+    'products/getCategoryToiletsForCats',
+    async (toiletsForCatsId:string ) => {
+        const response = await axios.get(`/shop/cat/product/toiletsForCats/${toiletsForCatsId}`);
         return response.data;
     }
 )
@@ -328,6 +381,72 @@ const categoryCatSlice = createSlice({
             state.loading = false
         })
         builder.addCase(getCategoryToysForCats.rejected, (state) => {
+            state.loading = true
+        })
+
+        builder.addCase(getCategoryCarryingForCats.pending, (state) => {
+            state.loading = true
+        })
+        builder.addCase(getCategoryCarryingForCats.fulfilled, (state, action) => {
+            state.category = action.payload
+            state.loading = false
+        })
+        builder.addCase(getCategoryCarryingForCats.rejected, (state) => {
+            state.loading = true
+        })
+
+        builder.addCase(getCategoryCosmeticsForCats.pending, (state) => {
+            state.loading = true
+        })
+        builder.addCase(getCategoryCosmeticsForCats.fulfilled, (state, action) => {
+            state.category = action.payload
+            state.loading = false
+        })
+        builder.addCase(getCategoryCosmeticsForCats.rejected, (state) => {
+            state.loading = true
+        })
+
+        builder.addCase(getCategoryScratchingPostsForCats.pending, (state) => {
+            state.loading = true
+        })
+        builder.addCase(getCategoryScratchingPostsForCats.fulfilled, (state, action) => {
+            state.category = action.payload
+            state.loading = false
+        })
+        builder.addCase(getCategoryScratchingPostsForCats.rejected, (state) => {
+            state.loading = true
+        })
+
+        builder.addCase(getCategoryDishesForCats.pending, (state) => {
+            state.loading = true
+        })
+        builder.addCase(getCategoryDishesForCats.fulfilled, (state, action) => {
+            state.category = action.payload
+            state.loading = false
+        })
+        builder.addCase(getCategoryDishesForCats.rejected, (state) => {
+            state.loading = true
+        })
+
+        builder.addCase(getCategoryAmmunitionForCats.pending, (state) => {
+            state.loading = true
+        })
+        builder.addCase(getCategoryAmmunitionForCats.fulfilled, (state, action) => {
+            state.category = action.payload
+            state.loading = false
+        })
+        builder.addCase(getCategoryAmmunitionForCats.rejected, (state) => {
+            state.loading = true
+        })
+
+        builder.addCase(getCategoryToiletsForCats.pending, (state) => {
+            state.loading = true
+        })
+        builder.addCase(getCategoryToiletsForCats.fulfilled, (state, action) => {
+            state.category = action.payload
+            state.loading = false
+        })
+        builder.addCase(getCategoryToiletsForCats.rejected, (state) => {
             state.loading = true
         })
     }

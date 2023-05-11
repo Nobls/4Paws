@@ -21,6 +21,10 @@ import {
     getCategoryVitaminsForCats,
     getCategoryHomeForCats,
     getCategoryToysForCats,
+    getCategoryCarryingForCats,
+    getCategoryCosmeticsForCats,
+    getCategoryScratchingPostsForCats,
+    getCategoryDishesForCats, getCategoryAmmunitionForCats, getCategoryToiletsForCats,
 } from "../../redux/slices/category/categoryCat";
 
 const ProductsCat = () => {
@@ -77,21 +81,27 @@ const ProductsCat = () => {
             }
             if (carryingForCatsId != null) {
                 dispatch(getAllCarryingForCats(carryingForCatsId));
+                dispatch(getCategoryCarryingForCats(carryingForCatsId));
             }
             if (cosmeticsForCatsId != null) {
                 dispatch(getAllCosmeticsForCats(cosmeticsForCatsId));
+                dispatch(getCategoryCosmeticsForCats(cosmeticsForCatsId));
             }
             if (scratchingPostsForCatsId != null) {
                 dispatch(getAllScratchingPostsForCats(scratchingPostsForCatsId));
+                dispatch(getCategoryScratchingPostsForCats(scratchingPostsForCatsId));
             }
             if (dishesForCatsId != null) {
                 dispatch(getAllDishesForCats(dishesForCatsId));
+                dispatch(getCategoryDishesForCats(dishesForCatsId));
             }
             if (ammunitionForCatsId != null) {
                 dispatch(getAllAmmunitionForCats(ammunitionForCatsId));
+                dispatch(getCategoryAmmunitionForCats(ammunitionForCatsId));
             }
             if (toiletsForCatsId != null) {
                 dispatch(getAllToiletsForCats(toiletsForCatsId));
+                dispatch(getCategoryToiletsForCats(toiletsForCatsId));
             }
 
         }
