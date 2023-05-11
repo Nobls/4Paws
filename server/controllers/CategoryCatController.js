@@ -496,6 +496,26 @@ export const getVitaminsForCats = async (req, res, next) => {
     }
 }
 
+export const getCategoryVitaminsForCatsById = async (req, res) => {
+    const {vitaminsForCatsId} = req.params;
+
+    try {
+        const product = await ProductsForCatsModel.findOne({
+            'vitaminsForCats._id': vitaminsForCatsId
+        }).select('vitaminsForCats.category');
+
+        if (product) {
+            const category = product.vitaminsForCats.category;
+            res.status(200).json({ category });
+        } else {
+            res.status(404).json({ message: 'Product not found' });
+        }
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ message: 'Server error' });
+    }
+}
+
 export const getHomeForCats = async (req, res, next) => {
     try {
         const {homeForCatsId} = req.params;
@@ -517,6 +537,26 @@ export const getHomeForCats = async (req, res, next) => {
         res.status(200).json(homeForCatsProducts);
     } catch (error) {
         next(error);
+    }
+}
+
+export const getCategoryHomeForCatsById = async (req, res) => {
+    const {homeForCatsId} = req.params;
+
+    try {
+        const product = await ProductsForCatsModel.findOne({
+            'homeForCats._id': homeForCatsId
+        }).select('homeForCats.category');
+
+        if (product) {
+            const category = product.homeForCats.category;
+            res.status(200).json({ category });
+        } else {
+            res.status(404).json({ message: 'Product not found' });
+        }
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ message: 'Server error' });
     }
 }
 
@@ -544,6 +584,26 @@ export const getToysForCats = async (req, res, next) => {
     }
 }
 
+export const getCategoryToysForCatsById = async (req, res) => {
+    const {toysForCatsId} = req.params;
+
+    try {
+        const product = await ProductsForCatsModel.findOne({
+            'toysForCats._id': toysForCatsId
+        }).select('toysForCats.category');
+
+        if (product) {
+            const category = product.toysForCats.category;
+            res.status(200).json({ category });
+        } else {
+            res.status(404).json({ message: 'Product not found' });
+        }
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ message: 'Server error' });
+    }
+}
+
 export const getCarryingForCats = async (req, res, next) => {
     try {
         const {carryingForCatsId} = req.params;
@@ -565,6 +625,26 @@ export const getCarryingForCats = async (req, res, next) => {
         res.status(200).json(carryingForCatsProducts);
     } catch (error) {
         next(error);
+    }
+}
+
+export const getCategoryCarryingForCatsById = async (req, res) => {
+    const {carryingForCatsId} = req.params;
+
+    try {
+        const product = await ProductsForCatsModel.findOne({
+            'carryingForCats._id': carryingForCatsId
+        }).select('carryingForCats.category');
+
+        if (product) {
+            const category = product.carryingForCats.category;
+            res.status(200).json({ category });
+        } else {
+            res.status(404).json({ message: 'Product not found' });
+        }
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ message: 'Server error' });
     }
 }
 

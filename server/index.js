@@ -30,7 +30,11 @@ import {
     UserPetController,
     ReviewsController,
 } from './controllers/index.js'
-import {getCategoryDryFoodForCatsById, getCategoryPreservesForCatsById} from "./controllers/CategoryCatController.js";
+import {
+    getCategoryDryFoodForCatsById, getCategoryHomeForCatsById,
+    getCategoryPreservesForCatsById, getCategoryToysForCatsById,
+    getCategoryVitaminsForCatsById
+} from "./controllers/CategoryCatController.js";
 
 
 mongoose
@@ -228,12 +232,18 @@ app.get('/shop/cat/product/dryFoodForCats/:dryFoodForCatsId', checkAuth, Categor
 app.get('/shop/cat/preservesForCats/:preservesForCatsId', checkAuth, CategoryCatController.getPreservesForCats)
 app.get('/shop/cat/product/preservesForCats/:preservesForCatsId', checkAuth, CategoryCatController.getCategoryPreservesForCatsById)
 
-
-
 app.get('/shop/cat/vitaminsForCats/:vitaminsForCatsId', checkAuth, CategoryCatController.getVitaminsForCats)
+app.get('/shop/cat/product/vitaminsForCats/:vitaminsForCatsId', checkAuth, CategoryCatController.getCategoryVitaminsForCatsById)
+
 app.get('/shop/cat/homeForCats/:homeForCatsId', checkAuth, CategoryCatController.getHomeForCats)
+app.get('/shop/cat/product/homeForCats/:homeForCatsId', checkAuth, CategoryCatController.getCategoryHomeForCatsById)
+
 app.get('/shop/cat/toysForCats/:toysForCatsId', checkAuth, CategoryCatController.getToysForCats)
+app.get('/shop/cat/product/toysForCats/:toysForCatsId', checkAuth, CategoryCatController.getCategoryToysForCatsById)
+
 app.get('/shop/cat/carryingForCats/:carryingForCatsId', checkAuth, CategoryCatController.getCarryingForCats)
+app.get('/shop/cat/product/carryingForCats/:carryingForCatsId', checkAuth, CategoryCatController.getCarryingForCats)
+
 app.get('/shop/cat/cosmeticsForCats/:cosmeticsForCatsId', checkAuth, CategoryCatController.getCosmeticsForCats)
 app.get('/shop/cat/scratchingPostsForCats/:scratchingPostsForCatsId', checkAuth, CategoryCatController.getScratchingPostsForCats)
 app.get('/shop/cat/dishesForCats/:dishesForCatsId', checkAuth, CategoryCatController.getDishesForCats)

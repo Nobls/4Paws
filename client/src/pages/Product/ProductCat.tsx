@@ -16,7 +16,11 @@ import {
     getAllDishesForCats,
     getAllAmmunitionForCats,
     getAllToiletsForCats,
-    getCategoryDryFoodForCats, getCategoryPreservesForCats,
+    getCategoryDryFoodForCats,
+    getCategoryPreservesForCats,
+    getCategoryVitaminsForCats,
+    getCategoryHomeForCats,
+    getCategoryToysForCats,
 } from "../../redux/slices/category/categoryCat";
 
 const ProductsCat = () => {
@@ -61,12 +65,15 @@ const ProductsCat = () => {
             }
             if (vitaminsForCatsId != null) {
                 dispatch(getAllVitaminsForCats(vitaminsForCatsId));
+                dispatch(getCategoryVitaminsForCats(vitaminsForCatsId));
             }
             if (homeForCatsId != null) {
                 dispatch(getAllHomeForCats(homeForCatsId));
+                dispatch(getCategoryHomeForCats(homeForCatsId));
             }
             if (toysForCatsId != null) {
                 dispatch(getAllToysForCats(toysForCatsId));
+                dispatch(getCategoryToysForCats(toysForCatsId));
             }
             if (carryingForCatsId != null) {
                 dispatch(getAllCarryingForCats(carryingForCatsId));
