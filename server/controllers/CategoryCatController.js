@@ -883,17 +883,3 @@ export const getAllCatCategory = async (req, res) => {
         console.log(error)
     }
 }
-
-
-// export const getOneProduct = async (req, res) => {
-//     const productId  = req.params.id
-//     try {
-//         const product = await ProductCardModel.findById(productId)
-//         if (!product) {
-//             return res.status(404).json({ error: 'Продукт не найден' })
-//         }
-//         res.status(200).json(product)
-//     } catch (err) {
-//         res.status(500).json({ error: 'Server Error' })
-//     }
-// }
