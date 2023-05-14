@@ -301,6 +301,26 @@ export const getDryFoodForBirds = async (req, res, next) => {
     }
 }
 
+export const getCategoryDryFoodForBirdById = async (req, res) => {
+    const {dryFoodForBirdId} = req.params;
+
+    try {
+        const product = await ProductsForBirdModel.findOne({
+            'dryFoodForBird._id': dryFoodForBirdId
+        }).select('dryFoodForBird.category');
+
+        if (product) {
+            const category = product.dryFoodForBird.category;
+            res.status(200).json({ category });
+        } else {
+            res.status(404).json({ message: 'Product not found' });
+        }
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ message: 'Server error' });
+    }
+}
+
 export const getVitaminsForBirds = async (req, res, next) => {
     try {
         const {vitaminsForBirdsId} = req.params;

@@ -8,6 +8,8 @@ const ProductsForBirdSchema = new mongoose.Schema (
                 type:  mongoose.Schema.Types.ObjectId
             },
 
+            category: String,
+
             product: [
                 {
                     type: mongoose.Schema.Types.ObjectId,

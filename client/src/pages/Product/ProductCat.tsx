@@ -32,8 +32,17 @@ const ProductsCat = () => {
     const dispatch = useAppDispatch()
 
     const {
-        dryFoodForCatsId, preservesForCatsId, vitaminsForCatsId, homeForCatsId, toysForCatsId, carryingForCatsId,
-        cosmeticsForCatsId, scratchingPostsForCatsId, dishesForCatsId, ammunitionForCatsId, toiletsForCatsId
+        dryFoodForCatsId,
+        preservesForCatsId,
+        vitaminsForCatsId,
+        homeForCatsId,
+        toysForCatsId,
+        carryingForCatsId,
+        cosmeticsForCatsId,
+        scratchingPostsForCatsId,
+        dishesForCatsId,
+        ammunitionForCatsId,
+        toiletsForCatsId
     } = useParams<{
 
         dryFoodForCatsId: string,
@@ -56,8 +65,9 @@ const ProductsCat = () => {
 
     useEffect(() => {
 
-        if (dryFoodForCatsId || preservesForCatsId || vitaminsForCatsId || homeForCatsId || toysForCatsId || carryingForCatsId
-            || cosmeticsForCatsId || scratchingPostsForCatsId || dishesForCatsId || ammunitionForCatsId || toiletsForCatsId) {
+        if (dryFoodForCatsId || preservesForCatsId || vitaminsForCatsId || homeForCatsId ||
+            toysForCatsId || carryingForCatsId || cosmeticsForCatsId ||
+            scratchingPostsForCatsId || dishesForCatsId || ammunitionForCatsId || toiletsForCatsId) {
 
             if (dryFoodForCatsId != null) {
                 dispatch(getAllDryFoodForCats(dryFoodForCatsId));

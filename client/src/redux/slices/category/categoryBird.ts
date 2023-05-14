@@ -45,6 +45,14 @@ export const getAllDryFoodForBirds = createAsyncThunk(
         return response.data;
     }
 )
+export const getCategoryDryFoodForBird = createAsyncThunk(
+    'products/getCategoryDishesForBird',
+    async (dryFoodForBirdsId:string ) => {
+        const response = await axios.get(`/shop/bird/product/dryFoodForBirds/${dryFoodForBirdsId}`);
+        return response.data;
+    }
+)
+
 export const getAllVitaminsForBirds = createAsyncThunk(
     'products/getAllVitaminsForBirds',
     async (vitaminsForBirdsId:string ) => {
@@ -192,6 +200,17 @@ const categoryBirdSlice = createSlice({
             state.loading = false
         })
         builder.addCase(getAllDishesForBirds.rejected, (state) => {
+            state.loading = true
+        })
+
+        builder.addCase(getCategoryDryFoodForBird.pending, (state) => {
+            state.loading = true
+        })
+        builder.addCase(getCategoryDryFoodForBird.fulfilled, (state, action) => {
+            state.products = action.payload
+            state.loading = false
+        })
+        builder.addCase(getCategoryDryFoodForBird.rejected, (state) => {
             state.loading = true
         })
     }

@@ -10,7 +10,7 @@ import {
     getAllDryFoodForBirds,
     getAllFillersAndPadsForBirds,
     getAllToysForBirds,
-    getAllVitaminsForBirds
+    getAllVitaminsForBirds, getCategoryDryFoodForBird
 } from "../../redux/slices/category/categoryBird";
 import s from "./product.module.scss";
 import GoodsCard from "../../components/goodsCard/GoodsCard";
@@ -42,17 +42,20 @@ const ProductsBird = () => {
     }>
     ();
 
-    const {products, loading, error} = useAppSelector((state) => state.birdCategory);
+    const {products, loading, error, category} = useAppSelector((state) => state.birdCategory);
 
     console.log(products)
 
     useEffect(() => {
 
-        if (dryFoodForBirdsId || vitaminsForBirdsId || birdcageForBirdsId || bathForBirdsId || toysForBirdsId || fillersAndPadsForBirdsId || accessoriesForBirdsId || dishesForBirdsId
-        ) {
+        if (dryFoodForBirdsId || vitaminsForBirdsId || birdcageForBirdsId ||
+            bathForBirdsId || toysForBirdsId || fillersAndPadsForBirdsId ||
+            accessoriesForBirdsId || dishesForBirdsId)
+        {
 
             if (dryFoodForBirdsId != null) {
                 dispatch(getAllDryFoodForBirds(dryFoodForBirdsId));
+                dispatch(getCategoryDryFoodForBird(dryFoodForBirdsId));
             }
             if (vitaminsForBirdsId != null) {
                 dispatch(getAllVitaminsForBirds(vitaminsForBirdsId));
@@ -100,7 +103,7 @@ const ProductsBird = () => {
     return (
         <div>
             <h1>
-                Птицы, корм
+                {category?.category}
             </h1>
             <div>
                 <div>sidebar</div>

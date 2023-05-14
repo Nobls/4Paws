@@ -43,6 +43,7 @@ import {
     getCategoryToysForCatsById,
     getCategoryVitaminsForCatsById
 } from "./controllers/CategoryCatController.js";
+import {getCategoryDryFoodForBirdById} from "./controllers/CategoryBirdController.js";
 
 
 mongoose
@@ -287,6 +288,8 @@ app.post('/shop/bird/:id/dishesForBird', checkAuth, CategoryBirdController.dishe
 app.get('/shop/bird/categoryBirds', checkAuth, CategoryBirdController.getAllCategoryBirds)
 
 app.get('/shop/bird/dryFoodForBirds/:dryFoodForBirdsId', checkAuth, CategoryBirdController.getDryFoodForBirds)
+app.get('/shop/bird/product/dryFoodForBirds/:dryFoodForBirdsId', checkAuth, CategoryBirdController.getCategoryDryFoodForBirdById)
+
 app.get('/shop/bird/vitaminsForBirds/:vitaminsForBirdsId', checkAuth, CategoryBirdController.getVitaminsForBirds)
 app.get('/shop/bird/birdcageForBirds/:birdcageForBirdsId', checkAuth, CategoryBirdController.getBirdcage)
 app.get('/shop/bird/bathForBirds/:bathForBirdsId', checkAuth, CategoryBirdController.getBathForBirds)
