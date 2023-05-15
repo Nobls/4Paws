@@ -23,6 +23,8 @@ const ProductsForBirdSchema = new mongoose.Schema (
                 type:  mongoose.Schema.Types.ObjectId
             },
 
+            category: String,
+
             product: [
                 {
                     type: mongoose.Schema.Types.ObjectId,
@@ -35,6 +37,8 @@ const ProductsForBirdSchema = new mongoose.Schema (
             _id: {
                 type:  mongoose.Schema.Types.ObjectId
             },
+
+            category: String,
 
             product: [
                 {
@@ -49,6 +53,8 @@ const ProductsForBirdSchema = new mongoose.Schema (
                 type:  mongoose.Schema.Types.ObjectId
             },
 
+            category: String,
+
             product: [
                 {
                     type: mongoose.Schema.Types.ObjectId,
@@ -61,6 +67,8 @@ const ProductsForBirdSchema = new mongoose.Schema (
             _id: {
                 type:  mongoose.Schema.Types.ObjectId
             },
+
+            category: String,
 
             product: [
                 {
@@ -75,6 +83,8 @@ const ProductsForBirdSchema = new mongoose.Schema (
                 type:  mongoose.Schema.Types.ObjectId
             },
 
+            category: String,
+
             product: [
                 {
                     type: mongoose.Schema.Types.ObjectId,
@@ -88,6 +98,8 @@ const ProductsForBirdSchema = new mongoose.Schema (
                 type:  mongoose.Schema.Types.ObjectId
             },
 
+            category: String,
+
             product: [
                 {
                     type: mongoose.Schema.Types.ObjectId,
@@ -100,6 +112,8 @@ const ProductsForBirdSchema = new mongoose.Schema (
             _id: {
                 type:  mongoose.Schema.Types.ObjectId
             },
+
+            category: String,
 
             product: [
                 {
