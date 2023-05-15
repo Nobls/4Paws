@@ -10,7 +10,8 @@ import {
     getAllDryFoodForBirds,
     getAllFillersAndPadsForBirds,
     getAllToysForBirds,
-    getAllVitaminsForBirds, getCategoryDryFoodForBird
+    getAllVitaminsForBirds,
+    getCategoryDryFoodForBird
 } from "../../redux/slices/category/categoryBird";
 import s from "./product.module.scss";
 import GoodsCard from "../../components/goodsCard/GoodsCard";

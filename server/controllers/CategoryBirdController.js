@@ -1,6 +1,5 @@
 import ProductCardModel from "../models/ProductCard.js";
 import ProductsForBirdModel from "../models/ProductForBird.js";
-import ProductsForCatsModel from "../models/ProductsForCats.js";
 
 
 export const dryFoodForBirds = async (req, res) => {

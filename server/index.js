@@ -30,20 +30,20 @@ import {
     UserPetController,
     ReviewsController,
 } from './controllers/index.js'
-import {
-    getCategoryAmmunitionForCatsById,
-    getCategoryCarryingForCatsById,
-    getCategoryCosmeticsForCatsById,
-    getCategoryDishesForCatsById,
-    getCategoryDryFoodForCatsById,
-    getCategoryHomeForCatsById,
-    getCategoryPreservesForCatsById,
-    getCategoryScratchingPostsForCatsById,
-    getCategoryToiletsForCatsById,
-    getCategoryToysForCatsById,
-    getCategoryVitaminsForCatsById
-} from "./controllers/CategoryCatController.js";
-import {getCategoryDryFoodForBirdById} from "./controllers/CategoryBirdController.js";
+// import {
+//     getCategoryAmmunitionForCatsById,
+//     getCategoryCarryingForCatsById,
+//     getCategoryCosmeticsForCatsById,
+//     getCategoryDishesForCatsById,
+//     getCategoryDryFoodForCatsById,
+//     getCategoryHomeForCatsById,
+//     getCategoryPreservesForCatsById,
+//     getCategoryScratchingPostsForCatsById,
+//     getCategoryToiletsForCatsById,
+//     getCategoryToysForCatsById,
+//     getCategoryVitaminsForCatsById
+// } from "./controllers/CategoryCatController.js";
+//import {getCategoryDryFoodForBirdsById} from "./controllers/CategoryBirdController.js";
 
 
 mongoose
