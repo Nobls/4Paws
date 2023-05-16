@@ -207,7 +207,7 @@ const categoryBirdSlice = createSlice({
             state.loading = true
         })
         builder.addCase(getCategoryDryFoodForBird.fulfilled, (state, action) => {
-            state.products = action.payload
+            state.category = action.payload
             state.loading = false
         })
         builder.addCase(getCategoryDryFoodForBird.rejected, (state) => {

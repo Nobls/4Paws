@@ -301,15 +301,15 @@ export const getDryFoodForBirds = async (req, res, next) => {
 }
 
 export const getCategoryDryFoodForBirdById = async (req, res) => {
-    const {dryFoodForBirdId} = req.params;
+    const {dryFoodForBirdsId} = req.params;
 
     try {
         const product = await ProductsForBirdModel.findOne({
-            'dryFoodForBird._id': dryFoodForBirdId
-        }).select('dryFoodForBird.category');
+            'dryFoodForBirds._id': dryFoodForBirdsId
+        }).select('dryFoodForBirds.category');
 
         if (product) {
-            const category = product.dryFoodForBird.category;
+            const category = product.dryFoodForBirds.category;
             res.status(200).json({ category });
         } else {
             res.status(404).json({ message: 'Product not found' });
