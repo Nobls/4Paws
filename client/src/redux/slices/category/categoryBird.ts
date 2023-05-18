@@ -77,10 +77,26 @@ export const getAllBirdcageForBirds = createAsyncThunk(
     }
 )
 
+export const getCategoryBirdcageForBird = createAsyncThunk(
+    'products/getCategoryBirdcageForBird',
+    async (birdcageForBirdsId:string ) => {
+        const response = await axios.get(`/shop/bird/product/birdcageForBirds/${birdcageForBirdsId}`);
+        return response.data;
+    }
+)
+
 export const getAllBathForBirds = createAsyncThunk(
     'products/getAllBathForBirds',
     async (bathForBirdsId:string ) => {
         const response = await axios.get(`/shop/bird/bathForBirds/${bathForBirdsId}`);
+        return response.data;
+    }
+)
+
+export const getCategoryBathForBird = createAsyncThunk(
+    'products/getCategoryBathForBird',
+    async (bathForBirdsId:string ) => {
+        const response = await axios.get(`/shop/bird/product/bathForBirds/${bathForBirdsId}`);
         return response.data;
     }
 )
@@ -93,10 +109,26 @@ export const getAllToysForBirds = createAsyncThunk(
     }
 )
 
+export const getCategoryToysForBird = createAsyncThunk(
+    'products/getCategoryToysForBird',
+    async (toysForBirdsId:string ) => {
+        const response = await axios.get(`/shop/bird/product/toysForBirds/${toysForBirdsId}`);
+        return response.data;
+    }
+)
+
 export const getAllFillersAndPadsForBirds = createAsyncThunk(
     'products/getAllFillersAndPadsForBirds',
     async (fillersAndPadsForBirdsId:string ) => {
         const response = await axios.get(`/shop/bird/fillersAndPadsForBirds/${fillersAndPadsForBirdsId}`);
+        return response.data;
+    }
+)
+
+export const getCategoryFillersAndPadsForBird = createAsyncThunk(
+    'products/getCategoryFillersAndPadsForBird',
+    async (fillersAndPadsForBirdsId:string ) => {
+        const response = await axios.get(`/shop/bird/product/fillersAndPadsForBirds/${fillersAndPadsForBirdsId}`);
         return response.data;
     }
 )
@@ -109,10 +141,26 @@ export const getAllAccessoriesForBirds = createAsyncThunk(
     }
 )
 
+export const getCategoryAccessoriesForBird = createAsyncThunk(
+    'products/getCategoryAccessoriesForBird',
+    async (accessoriesForBirdsId:string ) => {
+        const response = await axios.get(`/shop/bird/product/accessoriesForBirds/${accessoriesForBirdsId}`);
+        return response.data;
+    }
+)
+
 export const getAllDishesForBirds = createAsyncThunk(
     'products/getAllDishesForBirds',
     async (dishesForBirdsId:string ) => {
         const response = await axios.get(`/shop/bird/dishesForBirds/${dishesForBirdsId}`);
+        return response.data;
+    }
+)
+
+export const getCategoryDishesForBird = createAsyncThunk(
+    'products/getCategoryDishesForBird',
+    async (dishesForBirdsId:string ) => {
+        const response = await axios.get(`/shop/bird/product/dishesForBirds/${dishesForBirdsId}`);
         return response.data;
     }
 )
@@ -232,6 +280,74 @@ const categoryBirdSlice = createSlice({
         builder.addCase(getCategoryVitaminsForBird.rejected, (state) => {
             state.loading = true
         })
+
+        builder.addCase(getCategoryBirdcageForBird.pending, (state) => {
+            state.loading = true
+        })
+        builder.addCase(getCategoryBirdcageForBird.fulfilled, (state, action) => {
+            state.category = action.payload
+            state.loading = false
+        })
+        builder.addCase(getCategoryBirdcageForBird.rejected, (state) => {
+            state.loading = true
+        })
+
+        builder.addCase(getCategoryBathForBird.pending, (state) => {
+            state.loading = true
+        })
+        builder.addCase(getCategoryBathForBird.fulfilled, (state, action) => {
+            state.category = action.payload
+            state.loading = false
+        })
+        builder.addCase(getCategoryBathForBird.rejected, (state) => {
+            state.loading = true
+        })
+
+        builder.addCase(getCategoryToysForBird.pending, (state) => {
+            state.loading = true
+        })
+        builder.addCase(getCategoryToysForBird.fulfilled, (state, action) => {
+            state.category = action.payload
+            state.loading = false
+        })
+        builder.addCase(getCategoryToysForBird.rejected, (state) => {
+            state.loading = true
+        })
+
+        builder.addCase(getCategoryFillersAndPadsForBird.pending, (state) => {
+            state.loading = true
+        })
+        builder.addCase(getCategoryFillersAndPadsForBird.fulfilled, (state, action) => {
+            state.category = action.payload
+            state.loading = false
+        })
+        builder.addCase(getCategoryFillersAndPadsForBird.rejected, (state) => {
+            state.loading = true
+        })
+
+        builder.addCase(getCategoryAccessoriesForBird.pending, (state) => {
+            state.loading = true
+        })
+        builder.addCase(getCategoryAccessoriesForBird.fulfilled, (state, action) => {
+            state.category = action.payload
+            state.loading = false
+        })
+        builder.addCase(getCategoryAccessoriesForBird.rejected, (state) => {
+            state.loading = true
+        })
+
+        builder.addCase(getCategoryDishesForBird.pending, (state) => {
+            state.loading = true
+        })
+        builder.addCase(getCategoryDishesForBird.fulfilled, (state, action) => {
+            state.category = action.payload
+            state.loading = false
+        })
+        builder.addCase(getCategoryDishesForBird.rejected, (state) => {
+            state.loading = true
+        })
+
+
     }
 })
 

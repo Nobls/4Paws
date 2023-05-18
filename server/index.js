@@ -30,7 +30,15 @@ import {
     UserPetController,
     ReviewsController,
 } from './controllers/index.js'
-import {getCategoryVitaminsForBirdById} from "./controllers/CategoryBirdController.js";
+import {
+    getCategoryAccessoriesForBirdById,
+    getCategoryBathForBirdById,
+    getCategoryBirdcageForBirdById,
+    getCategoryDishesForBirdById,
+    getCategoryFillersAndPadsForBirdById,
+    getCategoryToysForBirdById,
+    getCategoryVitaminsForBirdById
+} from "./controllers/CategoryBirdController.js";
 // import {
 //     getCategoryAmmunitionForCatsById,
 //     getCategoryCarryingForCatsById,
@@ -295,11 +303,22 @@ app.get('/shop/bird/vitaminsForBirds/:vitaminsForBirdsId', checkAuth, CategoryBi
 app.get('/shop/bird/product/vitaminsForBirds/:vitaminsForBirdsId', checkAuth, CategoryBirdController.getCategoryVitaminsForBirdById)
 
 app.get('/shop/bird/birdcageForBirds/:birdcageForBirdsId', checkAuth, CategoryBirdController.getBirdcage)
+app.get('/shop/bird/product/birdcageForBirds/:birdcageForBirdsId', checkAuth, CategoryBirdController.getCategoryBirdcageForBirdById)
+
 app.get('/shop/bird/bathForBirds/:bathForBirdsId', checkAuth, CategoryBirdController.getBathForBirds)
+app.get('/shop/bird/product/bathForBirds/:bathForBirdsId', checkAuth, CategoryBirdController.getCategoryBathForBirdById)
+
 app.get('/shop/bird/toysForBirds/:toysForBirdsId', checkAuth, CategoryBirdController.getToysForBirds)
+app.get('/shop/bird/product/toysForBirds/:toysForBirdsId', checkAuth, CategoryBirdController.getCategoryToysForBirdById)
+
 app.get('/shop/bird/fillersAndPadsForBirds/:fillersAndPadsForBirdsId', checkAuth, CategoryBirdController.getFillersAndPadsForBird)
+app.get('/shop/bird/product/fillersAndPadsForBirds/:fillersAndPadsForBirdsId', checkAuth, CategoryBirdController.getCategoryFillersAndPadsForBirdById)
+
 app.get('/shop/bird/accessoriesForBirds/:accessoriesForBirdsId', checkAuth, CategoryBirdController.getAccessoriesForBird)
+app.get('/shop/bird/product/accessoriesForBirds/:accessoriesForBirdsId', checkAuth, CategoryBirdController.getCategoryAccessoriesForBirdById)
+
 app.get('/shop/bird/dishesForBirds/:dishesForBirdsId', checkAuth, CategoryBirdController.getDishesForBird)
+app.get('/shop/bird/product/dishesForBirds/:dishesForBirdsId', checkAuth, CategoryBirdController.getCategoryDishesForBirdById)
 
 
 // категории для грызунов

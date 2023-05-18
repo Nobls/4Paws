@@ -11,7 +11,13 @@ import {
     getAllFillersAndPadsForBirds,
     getAllToysForBirds,
     getAllVitaminsForBirds,
+    getCategoryAccessoriesForBird,
+    getCategoryBathForBird,
+    getCategoryBirdcageForBird,
+    getCategoryDishesForBird,
     getCategoryDryFoodForBird,
+    getCategoryFillersAndPadsForBird,
+    getCategoryToysForBird,
     getCategoryVitaminsForBird
 } from "../../redux/slices/category/categoryBird";
 import s from "./product.module.scss";
@@ -63,21 +69,27 @@ const ProductsBird = () => {
             }
             if (birdcageForBirdsId != null) {
                 dispatch(getAllBirdcageForBirds(birdcageForBirdsId));
+                dispatch(getCategoryBirdcageForBird(birdcageForBirdsId));
             }
             if (bathForBirdsId != null) {
                 dispatch(getAllBathForBirds(bathForBirdsId));
+                dispatch(getCategoryBathForBird(bathForBirdsId));
             }
             if (toysForBirdsId != null) {
                 dispatch(getAllToysForBirds(toysForBirdsId));
+                dispatch(getCategoryToysForBird(toysForBirdsId));
             }
             if (fillersAndPadsForBirdsId != null) {
                 dispatch(getAllFillersAndPadsForBirds(fillersAndPadsForBirdsId));
+                dispatch(getCategoryFillersAndPadsForBird(fillersAndPadsForBirdsId));
             }
             if (accessoriesForBirdsId != null) {
                 dispatch(getAllAccessoriesForBirds(accessoriesForBirdsId));
+                dispatch(getCategoryAccessoriesForBird(accessoriesForBirdsId));
             }
             if (dishesForBirdsId != null) {
                 dispatch(getAllDishesForBirds(dishesForBirdsId));
+                dispatch(getCategoryDishesForBird(dishesForBirdsId));
             }
         }
 

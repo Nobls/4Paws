@@ -388,6 +388,26 @@ export const getBirdcage = async (req, res, next) => {
     }
 }
 
+export const getCategoryBirdcageForBirdById = async (req, res) => {
+    const {birdcageForBirdsId} = req.params;
+
+    try {
+        const product = await ProductsForBirdModel.findOne({
+            'birdcageForBirds._id': birdcageForBirdsId
+        }).select('birdcageForBirds.category');
+
+        if (product) {
+            const category = product.birdcageForBirds.category;
+            res.status(200).json({ category });
+        } else {
+            res.status(404).json({ message: 'Product not found' });
+        }
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ message: 'Server error' });
+    }
+}
+
 export const getBathForBirds = async (req, res, next) => {
     try {
         const {bathForBirdsId} = req.params;
@@ -409,6 +429,26 @@ export const getBathForBirds = async (req, res, next) => {
         res.status(200).json(bathForBirdsProducts);
     } catch (error) {
         next(error);
+    }
+}
+
+export const getCategoryBathForBirdById = async (req, res) => {
+    const {bathForBirdsId} = req.params;
+
+    try {
+        const product = await ProductsForBirdModel.findOne({
+            'bathForBirds._id': bathForBirdsId
+        }).select('bathForBirds.category');
+
+        if (product) {
+            const category = product.bathForBirds.category;
+            res.status(200).json({ category });
+        } else {
+            res.status(404).json({ message: 'Product not found' });
+        }
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ message: 'Server error' });
     }
 }
 
@@ -436,6 +476,26 @@ export const getToysForBirds = async (req, res, next) => {
     }
 }
 
+export const getCategoryToysForBirdById = async (req, res) => {
+    const {toysForBirdsId} = req.params;
+
+    try {
+        const product = await ProductsForBirdModel.findOne({
+            'toysForBirds._id': toysForBirdsId
+        }).select('toysForBirds.category');
+
+        if (product) {
+            const category = product.toysForBirds.category;
+            res.status(200).json({ category });
+        } else {
+            res.status(404).json({ message: 'Product not found' });
+        }
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ message: 'Server error' });
+    }
+}
+
 export const getFillersAndPadsForBird = async (req, res, next) => {
     try {
         const {fillersAndPadsForBirdsId} = req.params;
@@ -457,6 +517,26 @@ export const getFillersAndPadsForBird = async (req, res, next) => {
         res.status(200).json(fillersAndPadsForBirdsProducts);
     } catch (error) {
         next(error);
+    }
+}
+
+export const getCategoryFillersAndPadsForBirdById = async (req, res) => {
+    const {fillersAndPadsForBirdsId} = req.params;
+
+    try {
+        const product = await ProductsForBirdModel.findOne({
+            'fillersAndPadsForBirds._id': fillersAndPadsForBirdsId
+        }).select('fillersAndPadsForBirds.category');
+
+        if (product) {
+            const category = product.fillersAndPadsForBirds.category;
+            res.status(200).json({ category });
+        } else {
+            res.status(404).json({ message: 'Product not found' });
+        }
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ message: 'Server error' });
     }
 }
 
@@ -484,6 +564,26 @@ export const getAccessoriesForBird = async (req, res, next) => {
     }
 }
 
+export const getCategoryAccessoriesForBirdById = async (req, res) => {
+    const {accessoriesForBirdsId} = req.params;
+
+    try {
+        const product = await ProductsForBirdModel.findOne({
+            'accessoriesForBirds._id': accessoriesForBirdsId
+        }).select('accessoriesForBirds.category');
+
+        if (product) {
+            const category = product.accessoriesForBirds.category;
+            res.status(200).json({ category });
+        } else {
+            res.status(404).json({ message: 'Product not found' });
+        }
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ message: 'Server error' });
+    }
+}
+
 export const getDishesForBird = async (req, res, next) => {
     try {
         const {dishesForBirdsId} = req.params;
@@ -505,6 +605,26 @@ export const getDishesForBird = async (req, res, next) => {
         res.status(200).json(dishesForBirdsProducts);
     } catch (error) {
         next(error);
+    }
+}
+
+export const getCategoryDishesForBirdById = async (req, res) => {
+    const {dishesForBirdsId} = req.params;
+
+    try {
+        const product = await ProductsForBirdModel.findOne({
+            'dishesForBirds._id': dishesForBirdsId
+        }).select('dishesForBirds.category');
+
+        if (product) {
+            const category = product.dishesForBirds.category;
+            res.status(200).json({ category });
+        } else {
+            res.status(404).json({ message: 'Product not found' });
+        }
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ message: 'Server error' });
     }
 }
 
