@@ -15,8 +15,13 @@ export interface ProductCard {
     tags: string,
 }
 
+type CategoryObject = {
+    category: string;
+}
+
 interface ProductsState {
     products: ProductCard[];
+    category: CategoryObject;
     loading: boolean;
     error: string | null;
 }
@@ -24,6 +29,9 @@ interface ProductsState {
 
 const initialState: ProductsState = {
     products: [],
+    category: {
+        category: ''
+    },
     loading: false,
     error: null,
 };
