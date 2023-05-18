@@ -11,7 +11,8 @@ import {
     getAllFillersAndPadsForBirds,
     getAllToysForBirds,
     getAllVitaminsForBirds,
-    getCategoryDryFoodForBird
+    getCategoryDryFoodForBird,
+    getCategoryVitaminsForBird
 } from "../../redux/slices/category/categoryBird";
 import s from "./product.module.scss";
 import GoodsCard from "../../components/goodsCard/GoodsCard";
@@ -45,8 +46,6 @@ const ProductsBird = () => {
 
     const {products, loading, error, category} = useAppSelector((state) => state.birdCategory);
 
-    console.log(products)
-
     useEffect(() => {
 
         if (dryFoodForBirdsId || vitaminsForBirdsId || birdcageForBirdsId ||
@@ -60,6 +59,7 @@ const ProductsBird = () => {
             }
             if (vitaminsForBirdsId != null) {
                 dispatch(getAllVitaminsForBirds(vitaminsForBirdsId));
+                dispatch(getCategoryVitaminsForBird(vitaminsForBirdsId));
             }
             if (birdcageForBirdsId != null) {
                 dispatch(getAllBirdcageForBirds(birdcageForBirdsId));
@@ -100,6 +100,8 @@ const ProductsBird = () => {
     if (error) {
         return <div>{error}</div>;
     }
+
+
 
     return (
         <div>

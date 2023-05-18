@@ -344,6 +344,26 @@ export const getVitaminsForBirds = async (req, res, next) => {
     }
 }
 
+export const getCategoryVitaminsForBirdById = async (req, res) => {
+    const {vitaminsForBirdsId} = req.params;
+
+    try {
+        const product = await ProductsForBirdModel.findOne({
+            'vitaminsForBirds._id': vitaminsForBirdsId
+        }).select('vitaminsForBirds.category');
+
+        if (product) {
+            const category = product.vitaminsForBirds.category;
+            res.status(200).json({ category });
+        } else {
+            res.status(404).json({ message: 'Product not found' });
+        }
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ message: 'Server error' });
+    }
+}
+
 export const getBirdcage = async (req, res, next) => {
     try {
         const {birdcageForBirdsId} = req.params;

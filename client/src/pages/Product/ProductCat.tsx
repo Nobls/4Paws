@@ -60,8 +60,7 @@ const ProductsCat = () => {
     ();
 
     const {products, loading, error, category} = useAppSelector((state) => state.catCategory);
-
-    console.log(products)
+    
 
     useEffect(() => {
 

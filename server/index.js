@@ -30,6 +30,7 @@ import {
     UserPetController,
     ReviewsController,
 } from './controllers/index.js'
+import {getCategoryVitaminsForBirdById} from "./controllers/CategoryBirdController.js";
 // import {
 //     getCategoryAmmunitionForCatsById,
 //     getCategoryCarryingForCatsById,
@@ -291,6 +292,8 @@ app.get('/shop/bird/dryFoodForBirds/:dryFoodForBirdsId', checkAuth, CategoryBird
 app.get('/shop/bird/product/dryFoodForBirds/:dryFoodForBirdsId', checkAuth, CategoryBirdController.getCategoryDryFoodForBirdById)
 
 app.get('/shop/bird/vitaminsForBirds/:vitaminsForBirdsId', checkAuth, CategoryBirdController.getVitaminsForBirds)
+app.get('/shop/bird/product/vitaminsForBirds/:vitaminsForBirdsId', checkAuth, CategoryBirdController.getCategoryVitaminsForBirdById)
+
 app.get('/shop/bird/birdcageForBirds/:birdcageForBirdsId', checkAuth, CategoryBirdController.getBirdcage)
 app.get('/shop/bird/bathForBirds/:bathForBirdsId', checkAuth, CategoryBirdController.getBathForBirds)
 app.get('/shop/bird/toysForBirds/:toysForBirdsId', checkAuth, CategoryBirdController.getToysForBirds)
