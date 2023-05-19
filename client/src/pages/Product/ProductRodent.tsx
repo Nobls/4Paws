@@ -5,9 +5,22 @@ import {Loading} from "../../components/loading/Loading";
 import s from "./product.module.scss";
 import GoodsCard from "../../components/goodsCard/GoodsCard";
 import {
-    getAllAccessoriesForRodents, getAllBathingForRodents, getAllCellsForRodents, getAllDishesForRodents,
-    getAllDryFoodForRodents, getAllExtenderForRodents, getAllToysForRodents,
-    getAllVitaminsForRodents
+    getAllAccessoriesForRodents,
+    getAllBathingForRodents,
+    getAllCellsForRodents,
+    getAllDishesForRodents,
+    getAllDryFoodForRodents,
+    getAllExtenderForRodents,
+    getAllToysForRodents,
+    getAllVitaminsForRodents,
+    getCategoryAccessoriesForRodents,
+    getCategoryBathingForRodents,
+    getCategoryCellsForRodents,
+    getCategoryDishesForRodents,
+    getCategoryDryFoodForRodents,
+    getCategoryExtenderForRodents,
+    getCategoryToysForRodents,
+    getCategoryVitaminsForRodents
 } from "../../redux/slices/category/categoryRodent";
 
 const ProductsRodent = () => {
@@ -37,7 +50,7 @@ const ProductsRodent = () => {
     }>
     ();
 
-    const {products, loading, error} = useAppSelector((state) => state.rodentCategory);
+    const {products, loading, error, category} = useAppSelector((state) => state.rodentCategory);
 
     console.log(products)
 
@@ -49,27 +62,35 @@ const ProductsRodent = () => {
 
             if (dryFoodForRodentsId != null) {
                 dispatch(getAllDryFoodForRodents(dryFoodForRodentsId));
+                dispatch(getCategoryDryFoodForRodents(dryFoodForRodentsId));
             }
             if (vitaminsForRodentsId != null) {
                 dispatch(getAllVitaminsForRodents(vitaminsForRodentsId));
+                dispatch(getCategoryVitaminsForRodents(vitaminsForRodentsId));
             }
             if (accessoriesForRodentsId != null) {
                 dispatch(getAllAccessoriesForRodents(accessoriesForRodentsId));
+                dispatch(getCategoryAccessoriesForRodents(accessoriesForRodentsId));
             }
             if (cellsForRodentsId != null) {
                 dispatch(getAllCellsForRodents(cellsForRodentsId));
+                dispatch(getCategoryCellsForRodents(cellsForRodentsId));
             }
             if (bathingForRodentsId != null) {
                 dispatch(getAllBathingForRodents(bathingForRodentsId));
+                dispatch(getCategoryBathingForRodents(bathingForRodentsId));
             }
             if (toysForRodentsId != null) {
                 dispatch(getAllToysForRodents(toysForRodentsId));
+                dispatch(getCategoryToysForRodents(toysForRodentsId));
             }
             if (extenderForRodentsId != null) {
                 dispatch(getAllExtenderForRodents(extenderForRodentsId));
+                dispatch(getCategoryExtenderForRodents(extenderForRodentsId));
             }
             if (dishesForRodentsId != null) {
                 dispatch(getAllDishesForRodents(dishesForRodentsId));
+                dispatch(getCategoryDishesForRodents(dishesForRodentsId));
             }
 
         }
@@ -97,7 +118,7 @@ const ProductsRodent = () => {
     return (
         <div>
             <h1>
-                Грызуны, корм
+                {category?.category}
             </h1>
             <div>
                 <div>sidebar</div>

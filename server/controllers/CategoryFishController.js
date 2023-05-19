@@ -278,6 +278,26 @@ export const getAquariums = async (req, res, next) => {
     }
 }
 
+export const getCategoryAquariums = async (req, res) => {
+    try {
+        const {aquariumId} = req.params;
+
+        const product = await ProductsForFishModel.findOne({
+            "aquariums._id": aquariumId
+        }).select('aquariums.category');
+
+        if (product) {
+            const category = product.aquariums.category;
+            res.status(200).json({ category });
+        } else {
+            res.status(404).json({ message: 'Product not found' });
+        }
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ message: 'Server error' });
+    }
+}
+
 export const getLivingInhabitants = async (req, res, next) => {
     try {
         const { livingInhabitantsId } = req.params;
@@ -301,6 +321,26 @@ export const getLivingInhabitants = async (req, res, next) => {
         next(error)
     }
 }
+export const getCategoryLivingInhabitants = async (req, res) => {
+    try {
+        const {livingInhabitantsId} = req.params;
+
+        const product = await ProductsForFishModel.findOne({
+            "livingInhabitants._id": livingInhabitantsId
+        }).select('livingInhabitants.category');
+
+        if (product) {
+            const category = product.livingInhabitants.category;
+            res.status(200).json({ category });
+        } else {
+            res.status(404).json({ message: 'Product not found' });
+        }
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ message: 'Server error' });
+    }
+}
+
 
 export const getAquariumsAndPedestals = async (req, res, next) => {
     try {
@@ -325,13 +365,33 @@ export const getAquariumsAndPedestals = async (req, res, next) => {
         next(error);
     }
 }
+export const getCategoryAquariumsAndPedestals = async (req, res) => {
+    try {
+        const {aquariumsAndPedestalsId} = req.params;
+
+        const product = await ProductsForFishModel.findOne({
+            "aquariumsAndPedestals._id": aquariumsAndPedestalsId
+        }).select('aquariumsAndPedestals.category');
+
+        if (product) {
+            const category = product.aquariumsAndPedestals.category;
+            res.status(200).json({ category });
+        } else {
+            res.status(404).json({ message: 'Product not found' });
+        }
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ message: 'Server error' });
+    }
+}
+
 
 export const getChemistryAndMedicines = async (req, res, next) => {
     try {
-        const { chemistryAndMedicinesId } = req.params;
+        const { chemistryForFishId } = req.params;
 
         const productForFish = await ProductsForFishModel.findOne({
-            "chemistryAndMedicines._id": chemistryAndMedicinesId
+            "chemistryAndMedicines._id": chemistryForFishId
         });
 
         if (!productForFish) {
@@ -349,6 +409,26 @@ export const getChemistryAndMedicines = async (req, res, next) => {
         next(error);
     }
 }
+export const getCategoryChemistryAndMedicines = async (req, res) => {
+    try {
+        const {chemistryForFishId} = req.params;
+
+        const product = await ProductsForFishModel.findOne({
+            "chemistryAndMedicines._id": chemistryForFishId
+        }).select('chemistryAndMedicines.category');
+
+        if (product) {
+            const category = product.chemistryAndMedicines.category;
+            res.status(200).json({ category });
+        } else {
+            res.status(404).json({ message: 'Product not found' });
+        }
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ message: 'Server error' });
+    }
+}
+
 
 export const getFishFood = async (req, res, next) => {
     try {
@@ -373,6 +453,26 @@ export const getFishFood = async (req, res, next) => {
         next(error);
     }
 }
+export const getCategoryFishFood = async (req, res) => {
+    try {
+        const {fishFoodId} = req.params;
+
+        const product = await ProductsForFishModel.findOne({
+            "fishFood._id": fishFoodId
+        }).select('fishFood.category');
+
+        if (product) {
+            const category = product.fishFood.category;
+            res.status(200).json({ category });
+        } else {
+            res.status(404).json({ message: 'Product not found' });
+        }
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ message: 'Server error' });
+    }
+}
+
 
 export const getDecorations = async (req, res, next) => {
     try {
@@ -397,6 +497,26 @@ export const getDecorations = async (req, res, next) => {
         next(error);
     }
 }
+export const getCategoryDecorations = async (req, res) => {
+    try {
+        const {decorationsId} = req.params;
+
+        const product = await ProductsForFishModel.findOne({
+            "decorations._id": decorationsId
+        }).select('decorations.category');
+
+        if (product) {
+            const category = product.decorations.category;
+            res.status(200).json({ category });
+        } else {
+            res.status(404).json({ message: 'Product not found' });
+        }
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ message: 'Server error' });
+    }
+}
+
 
 export const getEquipment = async (req, res, next) => {
     try {
@@ -421,6 +541,26 @@ export const getEquipment = async (req, res, next) => {
         next(error);
     }
 }
+export const getCategoryEquipment = async (req, res) => {
+    try {
+        const {equipmentId} = req.params;
+
+        const product = await ProductsForFishModel.findOne({
+            "equipment._id": equipmentId
+        }).select('equipment.category');
+
+        if (product) {
+            const category = product.equipment.category;
+            res.status(200).json({ category });
+        } else {
+            res.status(404).json({ message: 'Product not found' });
+        }
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ message: 'Server error' });
+    }
+}
+
 
 export const getAllFishCategory = async (req, res) => {
     try {

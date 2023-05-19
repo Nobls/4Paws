@@ -43,6 +43,14 @@ export const getAllDryFoodForRodents = createAsyncThunk(
         return response.data
     }
 )
+export const getCategoryDryFoodForRodents = createAsyncThunk(
+    'products/getCategoryDryFoodForRodents',
+    async (dryFoodForRodentsId:string ) => {
+        const response = await axios.get(`/shop/rodent/product/dryFoodForRodents/${dryFoodForRodentsId}`);
+        return response.data;
+    }
+)
+
 export const getAllVitaminsForRodents = createAsyncThunk(
     'products/getAllVitaminsForRodents',
     async (vitaminsForRodentsId: string) => {
@@ -50,6 +58,14 @@ export const getAllVitaminsForRodents = createAsyncThunk(
         return response.data
     }
 )
+export const getCategoryVitaminsForRodents = createAsyncThunk(
+    'products/getCategoryVitaminsForRodents',
+    async (vitaminsForRodentsId: string) => {
+        const response = await axios.get(`/shop/rodent/product/vitaminsForRodents/${vitaminsForRodentsId}`);
+        return response.data
+    }
+)
+
 export const getAllAccessoriesForRodents = createAsyncThunk(
     'products/getAllAccessoriesForRodents',
     async (accessoriesForRodentsId: string) => {
@@ -57,6 +73,14 @@ export const getAllAccessoriesForRodents = createAsyncThunk(
         return response.data
     }
 )
+export const getCategoryAccessoriesForRodents = createAsyncThunk(
+    'products/getCategoryAccessoriesForRodents',
+    async (accessoriesForRodentsId: string) => {
+        const response = await axios.get(`/shop/rodent/product/accessoriesForRodents/${accessoriesForRodentsId}`);
+        return response.data
+    }
+)
+
 export const getAllCellsForRodents = createAsyncThunk(
     'products/getAllCellsForRodents',
     async (cellsForRodentsId: string) => {
@@ -64,6 +88,14 @@ export const getAllCellsForRodents = createAsyncThunk(
         return response.data
     }
 )
+export const getCategoryCellsForRodents = createAsyncThunk(
+    'products/getCategoryCellsForRodents',
+    async (cellsForRodentsId: string) => {
+        const response = await axios.get(`/shop/rodent/product/cellsForRodents/${cellsForRodentsId}`);
+        return response.data
+    }
+)
+
 export const getAllBathingForRodents = createAsyncThunk(
     'products/getAllBathingForRodents',
     async (bathingForRodentsId: string) => {
@@ -71,6 +103,14 @@ export const getAllBathingForRodents = createAsyncThunk(
         return response.data
     }
 )
+export const getCategoryBathingForRodents = createAsyncThunk(
+    'products/getCategoryBathingForRodents',
+    async (bathingForRodentsId: string) => {
+        const response = await axios.get(`/shop/rodent/product/bathingForRodents/${bathingForRodentsId}`);
+        return response.data
+    }
+)
+
 export const getAllToysForRodents = createAsyncThunk(
     'products/getAllToysForRodents',
     async (toysForRodentsId: string) => {
@@ -78,6 +118,14 @@ export const getAllToysForRodents = createAsyncThunk(
         return response.data
     }
 )
+export const getCategoryToysForRodents = createAsyncThunk(
+    'products/getCategoryToysForRodents',
+    async (toysForRodentsId: string) => {
+        const response = await axios.get(`/shop/rodent/product/toysForRodents/${toysForRodentsId}`);
+        return response.data
+    }
+)
+
 export const getAllExtenderForRodents = createAsyncThunk(
     'products/getAllExtenderForRodents',
     async (extenderForRodentsId: string) => {
@@ -85,10 +133,25 @@ export const getAllExtenderForRodents = createAsyncThunk(
         return response.data
     }
 )
+export const getCategoryExtenderForRodents = createAsyncThunk(
+    'products/getCategoryExtenderForRodents',
+    async (extenderForRodentsId: string) => {
+        const response = await axios.get(`/shop/rodent/product/extenderForRodents/${extenderForRodentsId}`);
+        return response.data
+    }
+)
+
 export const getAllDishesForRodents = createAsyncThunk(
     'products/getAllDishesForRodents',
     async (dishesForRodentsId: string) => {
         const response = await axios.get(`/shop/rodent/dishesForRodents/${dishesForRodentsId}`);
+        return response.data
+    }
+)
+export const getCategoryDishesForRodents = createAsyncThunk(
+    'products/getCategoryDishesForRodents',
+    async (dishesForRodentsId: string) => {
+        const response = await axios.get(`/shop/rodent/product/dishesForRodents/${dishesForRodentsId}`);
         return response.data
     }
 )
@@ -184,6 +247,94 @@ const CategoryRodentSlice = createSlice({
                 state.loading = false
             })
             builder.addCase(getAllDishesForRodents.rejected, (state) => {
+                state.loading = true
+            })
+
+            builder.addCase(getCategoryDryFoodForRodents.pending, (state) => {
+                state.loading = true
+            })
+            builder.addCase(getCategoryDryFoodForRodents.fulfilled, (state, action) => {
+                state.category = action.payload
+                state.loading = false
+            })
+            builder.addCase(getCategoryDryFoodForRodents.rejected, (state) => {
+                state.loading = true
+            })
+
+            builder.addCase(getCategoryVitaminsForRodents.pending, (state) => {
+                state.loading = true
+            })
+            builder.addCase(getCategoryVitaminsForRodents.fulfilled, (state, action) => {
+                state.category = action.payload
+                state.loading = false
+            })
+            builder.addCase(getCategoryVitaminsForRodents.rejected, (state) => {
+                state.loading = true
+            })
+
+            builder.addCase(getCategoryAccessoriesForRodents.pending, (state) => {
+                state.loading = true
+            })
+            builder.addCase(getCategoryAccessoriesForRodents.fulfilled, (state, action) => {
+                state.category = action.payload
+                state.loading = false
+            })
+            builder.addCase(getCategoryAccessoriesForRodents.rejected, (state) => {
+                state.loading = true
+            })
+
+            builder.addCase(getCategoryCellsForRodents.pending, (state) => {
+                state.loading = true
+            })
+            builder.addCase(getCategoryCellsForRodents.fulfilled, (state, action) => {
+                state.category = action.payload
+                state.loading = false
+            })
+            builder.addCase(getCategoryCellsForRodents.rejected, (state) => {
+                state.loading = true
+            })
+
+            builder.addCase(getCategoryBathingForRodents.pending, (state) => {
+                state.loading = true
+            })
+            builder.addCase(getCategoryBathingForRodents.fulfilled, (state, action) => {
+                state.category = action.payload
+                state.loading = false
+            })
+            builder.addCase(getCategoryBathingForRodents.rejected, (state) => {
+                state.loading = true
+            })
+
+            builder.addCase(getCategoryToysForRodents.pending, (state) => {
+                state.loading = true
+            })
+            builder.addCase(getCategoryToysForRodents.fulfilled, (state, action) => {
+                state.category = action.payload
+                state.loading = false
+            })
+            builder.addCase(getCategoryToysForRodents.rejected, (state) => {
+                state.loading = true
+            })
+
+            builder.addCase(getCategoryExtenderForRodents.pending, (state) => {
+                state.loading = true
+            })
+            builder.addCase(getCategoryExtenderForRodents.fulfilled, (state, action) => {
+                state.category = action.payload
+                state.loading = false
+            })
+            builder.addCase(getCategoryExtenderForRodents.rejected, (state) => {
+                state.loading = true
+            })
+
+            builder.addCase(getCategoryDishesForRodents.pending, (state) => {
+                state.loading = true
+            })
+            builder.addCase(getCategoryDishesForRodents.fulfilled, (state, action) => {
+                state.category = action.payload
+                state.loading = false
+            })
+            builder.addCase(getCategoryDishesForRodents.rejected, (state) => {
                 state.loading = true
             })
 

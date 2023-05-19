@@ -1,29 +1,29 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect} from 'react';
 import {useParams} from "react-router-dom";
 import {useAppDispatch, useAppSelector} from "../../redux/hook/hook";
 import {
+    getAllAmmunitionForDogs,
     getAllCarryingForDogs,
+    getAllClothesForDogs,
     getAllCosmeticsForDogs,
+    getAllDishesForDogs,
     getAllDryFoodForDogs,
     getAllHomeForDogs,
     getAllPreservesForDogs,
+    getAllToiletsForDogs,
     getAllToysForDogs,
     getAllVitaminsForDogs,
-    getAllClothesForDogs,
-    getAllDishesForDogs,
-    getAllAmmunitionForDogs,
-    getAllToiletsForDogs,
-    getCategoryDryFoodForDogs,
-    getCategoryPreservesForDogs,
-    getCategoryVitaminsForDogs,
-    getCategoryHomeForDogs,
-    getCategoryToysForDogs,
-    getCategoryCarryingForDogs,
-    getCategoryCosmeticsForDogs,
-    getCategoryClothesForDogs,
-    getCategoryDishesForDogs,
     getCategoryAmmunitionForDogs,
-    getCategoryToiletsForDogs
+    getCategoryCarryingForDogs,
+    getCategoryClothesForDogs,
+    getCategoryCosmeticsForDogs,
+    getCategoryDishesForDogs,
+    getCategoryDryFoodForDogs,
+    getCategoryHomeForDogs,
+    getCategoryPreservesForDogs,
+    getCategoryToiletsForDogs,
+    getCategoryToysForDogs,
+    getCategoryVitaminsForDogs
 } from "../../redux/slices/category/categoryDog";
 import s from './product.module.scss'
 import GoodsCard from "../../components/goodsCard/GoodsCard";

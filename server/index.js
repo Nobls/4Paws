@@ -31,28 +31,20 @@ import {
     ReviewsController,
 } from './controllers/index.js'
 import {
-    getCategoryAccessoriesForBirdById,
-    getCategoryBathForBirdById,
-    getCategoryBirdcageForBirdById,
-    getCategoryDishesForBirdById,
-    getCategoryFillersAndPadsForBirdById,
-    getCategoryToysForBirdById,
-    getCategoryVitaminsForBirdById
-} from "./controllers/CategoryBirdController.js";
-// import {
-//     getCategoryAmmunitionForCatsById,
-//     getCategoryCarryingForCatsById,
-//     getCategoryCosmeticsForCatsById,
-//     getCategoryDishesForCatsById,
-//     getCategoryDryFoodForCatsById,
-//     getCategoryHomeForCatsById,
-//     getCategoryPreservesForCatsById,
-//     getCategoryScratchingPostsForCatsById,
-//     getCategoryToiletsForCatsById,
-//     getCategoryToysForCatsById,
-//     getCategoryVitaminsForCatsById
-// } from "./controllers/CategoryCatController.js";
-//import {getCategoryDryFoodForBirdsById} from "./controllers/CategoryBirdController.js";
+    getCategoryBathingForRodents, getCategoryDishesForRodents,
+    getCategoryExtenderForRodents,
+    getCategoryToysForRodents
+} from "./controllers/CategoryRodentsController.js";
+import {
+    getCategoryAquariums,
+    getCategoryAquariumsAndPedestals,
+    getCategoryChemistryAndMedicines,
+    getCategoryDecorations,
+    getCategoryEquipment,
+    getCategoryFishFood,
+    getCategoryLivingInhabitants
+} from "./controllers/CategoryFishController.js";
+
 
 
 mongoose
@@ -338,13 +330,28 @@ app.post('/shop/rodent/:id/dishesForRodents', checkAuth, CategoryRodentControlle
 app.get('/shop/rodent/categoryRodent', checkAuth, CategoryRodentController.getAllRodentCategory)
 
 app.get('/shop/rodent/dryFoodForRodents/:dryFoodForRodentsId', checkAuth, CategoryRodentController.getDryFoodForRodents)
+app.get('/shop/rodent/product/dryFoodForRodents/:dryFoodForRodentsId', checkAuth, CategoryRodentController.getCategoryDryFoodForRodents)
+
 app.get('/shop/rodent/vitaminsForRodents/:vitaminsForRodentsId', checkAuth, CategoryRodentController.getVitaminsForRodents)
+app.get('/shop/rodent/product/vitaminsForRodents/:vitaminsForRodentsId', checkAuth, CategoryRodentController.getCategoryVitaminsForRodents)
+
 app.get('/shop/rodent/accessoriesForRodents/:accessoriesForRodentsId', checkAuth, CategoryRodentController.getAccessoriesForRodents)
+app.get('/shop/rodent/product/accessoriesForRodents/:accessoriesForRodentsId', checkAuth, CategoryRodentController.getCategoryAccessoriesForRodents)
+
 app.get('/shop/rodent/cellsForRodents/:cellsForRodentsId', checkAuth, CategoryRodentController.getCellsForRodents)
+app.get('/shop/rodent/product/cellsForRodents/:cellsForRodentsId', checkAuth, CategoryRodentController.getCategoryCellsForRodents)
+
 app.get('/shop/rodent/bathingForRodents/:bathingForRodentsId', checkAuth, CategoryRodentController.getBathingForRodents)
+app.get('/shop/rodent/product/bathingForRodents/:bathingForRodentsId', checkAuth, CategoryRodentController.getCategoryBathingForRodents)
+
 app.get('/shop/rodent/toysForRodents/:toysForRodentsId', checkAuth, CategoryRodentController.getToysForRodents)
+app.get('/shop/rodent/product/toysForRodents/:toysForRodentsId', checkAuth, CategoryRodentController.getCategoryToysForRodents)
+
 app.get('/shop/rodent/extenderForRodents/:extenderForRodentsId', checkAuth, CategoryRodentController.getExtenderForRodents)
+app.get('/shop/rodent/product/extenderForRodents/:extenderForRodentsId', checkAuth, CategoryRodentController.getCategoryExtenderForRodents)
+
 app.get('/shop/rodent/dishesForRodents/:dishesForRodentsId', checkAuth, CategoryRodentController.getDishesForRodents)
+app.get('/shop/rodent/product/dishesForRodents/:dishesForRodentsId', checkAuth, CategoryRodentController.getCategoryDishesForRodents)
 
 
 // категории для рыб
@@ -363,22 +370,25 @@ app.post('/shop/fish/:id/chemistryForFish', checkAuth, CategoryFishController.cr
 app.get('/shop/fish/categoryFish', checkAuth, CategoryFishController.getAllFishCategory)
 
 app.get('/shop/fish/aquariums/:aquariumId', checkAuth, CategoryFishController.getAquariums)
+app.get('/shop/fish/product/aquariums/:aquariumId', checkAuth, CategoryFishController.getCategoryAquariums)
+
 app.get('/shop/fish/livingInhabitants/:livingInhabitantsId', checkAuth, CategoryFishController.getLivingInhabitants)
+app.get('/shop/fish/product/livingInhabitants/:livingInhabitantsId', checkAuth, CategoryFishController.getCategoryLivingInhabitants)
+
 app.get('/shop/fish/aquariumsAndPedestals/:aquariumsAndPedestalsId', checkAuth, CategoryFishController.getAquariumsAndPedestals)
+app.get('/shop/fish/product/aquariumsAndPedestals/:aquariumsAndPedestalsId', checkAuth, CategoryFishController.getCategoryAquariumsAndPedestals)
+
 app.get('/shop/fish/fishFood/:fishFoodId', checkAuth, CategoryFishController.getFishFood)
+app.get('/shop/fish/product/fishFood/:fishFoodId', checkAuth, CategoryFishController.getCategoryFishFood)
+
 app.get('/shop/fish/decorations/:decorationsId', checkAuth, CategoryFishController.getDecorations)
+app.get('/shop/fish/product/decorations/:decorationsId', checkAuth, CategoryFishController.getCategoryDecorations)
+
 app.get('/shop/fish/equipment/:equipmentId', checkAuth, CategoryFishController.getEquipment)
+app.get('/shop/fish/product/equipment/:equipmentId', checkAuth, CategoryFishController.getCategoryEquipment)
+
 app.get('/shop/fish/chemistryForFish/:chemistryForFishId', checkAuth, CategoryFishController.getChemistryAndMedicines)
-
-
-// получение одного товара
-
-//app.get('/shop/:id/:id', getOne)
-
-
-
-
-
+app.get('/shop/fish/product/chemistryForFish/:chemistryForFishId', checkAuth, CategoryFishController.getCategoryChemistryAndMedicines)
 
 
 // отзывы

@@ -11,7 +11,11 @@ import {
     getAllDecorations,
     getAllEquipment,
     getAllFishFood,
-    getAllLivingInhabitants
+    getAllLivingInhabitants,
+    getCategoryAquariums,
+    getCategoryAquariumsAndPedestals, getCategoryChemistryForFish, getCategoryDecorations, getCategoryEquipment,
+    getCategoryFishFood,
+    getCategoryLivingInhabitants
 } from "../../redux/slices/category/categoryFish";
 
 export const ProductFish = () => {
@@ -38,7 +42,7 @@ export const ProductFish = () => {
     }>
     ();
 
-    const {products, loading, error} = useAppSelector((state) => state.fishCategory);
+    const {products, loading, error, category} = useAppSelector((state) => state.fishCategory);
 
     useEffect(() => {
 
@@ -48,24 +52,31 @@ export const ProductFish = () => {
 
             if (aquariumId != null) {
                 dispatch(getAllAquariums(aquariumId));
+                dispatch(getCategoryAquariums(aquariumId));
             }
             if (livingInhabitantsId != null) {
                 dispatch(getAllLivingInhabitants(livingInhabitantsId));
+                dispatch(getCategoryLivingInhabitants(livingInhabitantsId));
             }
             if (aquariumsAndPedestalsId != null) {
                 dispatch(getAllAquariumsAndPedestals(aquariumsAndPedestalsId));
+                dispatch(getCategoryAquariumsAndPedestals(aquariumsAndPedestalsId));
             }
             if (fishFoodId != null) {
                 dispatch(getAllFishFood(fishFoodId));
+                dispatch(getCategoryFishFood(fishFoodId));
             }
             if (decorationsId != null) {
                 dispatch(getAllDecorations(decorationsId));
+                dispatch(getCategoryDecorations(decorationsId));
             }
             if (equipmentId != null) {
                 dispatch(getAllEquipment(equipmentId));
+                dispatch(getCategoryEquipment(equipmentId));
             }
             if (chemistryForFishId != null) {
                 dispatch(getAllChemistryForFish(chemistryForFishId));
+                dispatch(getCategoryChemistryForFish(chemistryForFishId));
             }
         }
 
@@ -91,7 +102,7 @@ export const ProductFish = () => {
     return (
         <div>
             <h1>
-                Рыбы, корм
+                {category?.category}
             </h1>
             <div>
                 <div>sidebar</div>

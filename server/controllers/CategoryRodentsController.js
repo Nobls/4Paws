@@ -1,6 +1,6 @@
 import ProductCardModel from "../models/ProductCard.js";
 import ProductsForRodentModel from "../models/productForRodents.js";
-import ProductsForCatsModel from "../models/ProductsForCats.js";
+import {getCategoryDryFoodForBirdById} from "./CategoryBirdController.js";
 
 
 export const createDryFoodForRodents = async (req, res) => {
@@ -313,6 +313,27 @@ export const getDryFoodForRodents = async (req, res, next) => {
     }
 }
 
+export const getCategoryDryFoodForRodents = async (req, res) => {
+    try {
+        const {dryFoodForRodentsId} = req.params;
+
+        const product = await ProductsForRodentModel.findOne({
+            "dryFoodForRodents._id": dryFoodForRodentsId
+        }).select('dryFoodForRodents.category');
+
+        if (product) {
+            const category = product.dryFoodForRodents.category;
+            res.status(200).json({ category });
+        } else {
+            res.status(404).json({ message: 'Product not found' });
+        }
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ message: 'Server error' });
+    }
+}
+
+
 export const getVitaminsForRodents = async (req, res, next) => {
     try {
         const {vitaminsForRodentsId} = req.params;
@@ -337,8 +358,28 @@ export const getVitaminsForRodents = async (req, res, next) => {
     }
 }
 
+export const getCategoryVitaminsForRodents = async (req, res) => {
+    try {
+        const {vitaminsForRodentsId} = req.params;
 
-export const getAccessoriesForRodents = async (req, res, next) => {
+        const product = await ProductsForRodentModel.findOne({
+            "vitaminsForRodents._id": vitaminsForRodentsId
+        }).select('vitaminsForRodents.category');
+
+        if (product) {
+            const category = product.vitaminsForRodents.category;
+            res.status(200).json({ category });
+        } else {
+            res.status(404).json({ message: 'Product not found' });
+        }
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ message: 'Server error' });
+    }
+}
+
+
+export const getAccessoriesForRodents = async (req, res) => {
     try {
         const {accessoriesForRodentsId} = req.params;
 
@@ -359,6 +400,25 @@ export const getAccessoriesForRodents = async (req, res, next) => {
         res.status(200).json(accessoriesForRodentsProducts);
     } catch (error) {
         next(error);
+    }
+}
+export const getCategoryAccessoriesForRodents = async (req, res) => {
+    try {
+        const {accessoriesForRodentsId} = req.params;
+
+        const product = await ProductsForRodentModel.findOne({
+            "accessoriesForRodents._id": accessoriesForRodentsId
+        }).select('accessoriesForRodents.category');
+
+        if (product) {
+            const category = product.accessoriesForRodents.category;
+            res.status(200).json({ category });
+        } else {
+            res.status(404).json({ message: 'Product not found' });
+        }
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ message: 'Server error' });
     }
 }
 
@@ -386,6 +446,25 @@ export const getCellsForRodents = async (req, res, next) => {
         next(error);
     }
 }
+export const getCategoryCellsForRodents = async (req, res) => {
+    try {
+        const {cellsForRodentsId} = req.params;
+
+        const product = await ProductsForRodentModel.findOne({
+            "cellsForRodents._id": cellsForRodentsId
+        }).select('cellsForRodents.category');
+
+        if (product) {
+            const category = product.cellsForRodents.category;
+            res.status(200).json({ category });
+        } else {
+            res.status(404).json({ message: 'Product not found' });
+        }
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ message: 'Server error' });
+    }
+}
 
 
 export const getBathingForRodents = async (req, res, next) => {
@@ -409,6 +488,25 @@ export const getBathingForRodents = async (req, res, next) => {
         res.status(200).json(bathingForRodentsProducts);
     } catch (error) {
         next(error);
+    }
+}
+export const getCategoryBathingForRodents = async (req, res) => {
+    try {
+        const {bathingForRodentsId} = req.params;
+
+        const product = await ProductsForRodentModel.findOne({
+            "bathingForRodents._id": bathingForRodentsId
+        }).select('bathingForRodents.category');
+
+        if (product) {
+            const category = product.bathingForRodents.category;
+            res.status(200).json({ category });
+        } else {
+            res.status(404).json({ message: 'Product not found' });
+        }
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ message: 'Server error' });
     }
 }
 
@@ -436,6 +534,25 @@ export const getToysForRodents = async (req, res, next) => {
         next(error);
     }
 }
+export const getCategoryToysForRodents = async (req, res) => {
+    try {
+        const {toysForRodentsId} = req.params;
+
+        const product = await ProductsForRodentModel.findOne({
+            "toysForRodents._id": toysForRodentsId
+        }).select('toysForRodents.category');
+
+        if (product) {
+            const category = product.toysForRodents.category;
+            res.status(200).json({ category });
+        } else {
+            res.status(404).json({ message: 'Product not found' });
+        }
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ message: 'Server error' });
+    }
+}
 
 
 export const getExtenderForRodents = async (req, res, next) => {
@@ -461,6 +578,25 @@ export const getExtenderForRodents = async (req, res, next) => {
         next(error);
     }
 }
+export const getCategoryExtenderForRodents = async (req, res) => {
+    try {
+        const {extenderForRodentsId} = req.params;
+
+        const product = await ProductsForRodentModel.findOne({
+            "extenderForRodents._id": extenderForRodentsId
+        }).select('extenderForRodents.category');
+
+        if (product) {
+            const category = product.extenderForRodents.category;
+            res.status(200).json({ category });
+        } else {
+            res.status(404).json({ message: 'Product not found' });
+        }
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ message: 'Server error' });
+    }
+}
 
 
 export const getDishesForRodents = async (req, res, next) => {
@@ -484,6 +620,25 @@ export const getDishesForRodents = async (req, res, next) => {
         res.status(200).json(dishesForRodentsProducts);
     } catch (error) {
         next(error);
+    }
+}
+export const getCategoryDishesForRodents = async (req, res, next) => {
+    try {
+        const {dishesForRodentsId} = req.params;
+
+        const product = await ProductsForRodentModel.findOne({
+            "dishesForRodents._id": dishesForRodentsId
+        }).select('dishesForRodents.category');
+
+        if (product) {
+            const category = product.dishesForRodents.category;
+            res.status(200).json({ category });
+        } else {
+            res.status(404).json({ message: 'Product not found' });
+        }
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ message: 'Server error' });
     }
 }
 
