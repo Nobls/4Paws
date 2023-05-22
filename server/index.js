@@ -30,21 +30,6 @@ import {
     UserPetController,
     ReviewsController,
 } from './controllers/index.js'
-import {
-    getCategoryBathingForRodents, getCategoryDishesForRodents,
-    getCategoryExtenderForRodents,
-    getCategoryToysForRodents
-} from "./controllers/CategoryRodentsController.js";
-import {
-    getCategoryAquariums,
-    getCategoryAquariumsAndPedestals,
-    getCategoryChemistryAndMedicines,
-    getCategoryDecorations,
-    getCategoryEquipment,
-    getCategoryFishFood,
-    getCategoryLivingInhabitants
-} from "./controllers/CategoryFishController.js";
-
 
 
 mongoose
