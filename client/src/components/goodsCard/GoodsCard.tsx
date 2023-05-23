@@ -1,6 +1,5 @@
 import React from 'react';
 import s from './goodsCard.module.scss'
-//import {PopularsGoodsType} from "../../data/data";
 import {Link} from "react-router-dom";
 import ButtonStandart from "../buttonStandart/ButtonStandart";
 
