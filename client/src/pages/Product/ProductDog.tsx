@@ -135,12 +135,6 @@ const ProductsDog = () => {
                         products.map((m) => {
                             return (
                                     <>
-                                        {products.map((m) => {
-                                            return (
-                                                <h3>{m.category}</h3>
-                                            )
-
-                                        })}
                                         <GoodsCard
                                             key={m._id}
                                             title={m.title}

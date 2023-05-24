@@ -42,7 +42,7 @@ const GoodsCard = ({
 
             <div className={s.goodsInner}>
                 <div>
-                    <img className={s.goodsImage} src={productImage} alt={title}/>
+                    <img className={s.goodsImage} src={`http://localhost:3157${productImage}`} alt={title}/>
                 </div>
                 <div className={s.goodsPriceItems}>
                     <span className={s.goodsPriceItem}>Бренд: {brand}</span>
