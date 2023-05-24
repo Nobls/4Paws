@@ -45,11 +45,11 @@ const GoodsCard = ({
                     <img className={s.goodsImage} src={productImage} alt={title}/>
                 </div>
                 <div className={s.goodsPriceItems}>
-                    <span className={s.goodsPriceItem}>вес: {weight}</span>
-                    <span className={s.goodsPriceItem}>тип: {category}</span>
-                    <span className={s.goodsPriceItem}>страна производитель: {countryOfManufacture}</span>
-
-                    <span className={s.goodsPriceItem}>описание: {description}</span>
+                    <span className={s.goodsPriceItem}>Бренд: {brand}</span>
+                    <span className={s.goodsPriceItem}>Тип: {category}</span>
+                    <span className={s.goodsPriceItem}>Вес: {weight}</span>
+                    <span className={s.goodsPriceItem}>Количество: {quantity}</span>
+                    <span className={s.goodsPriceItem}>Страна производитель: {countryOfManufacture}</span>
                 </div>
             </div>
             <div className={s.goodsButtonPriceBlock}>
@@ -58,7 +58,6 @@ const GoodsCard = ({
                     <ButtonStandart title={'Добавить в корзину'}/>
                 </div>
             </div>
-            {/*<p className={s.goodsDescription}>{descriptions}</p>*/}
         </Link>
     );
 };

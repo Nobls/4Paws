@@ -8,11 +8,14 @@ export const createDryFood = async (req, res) => {
             title: req.body.title,
             productImage: req.body.productImage,
             weight: req.body.weight,
-            size: req.body.size,
-            type: req.body.type,
+            quantity: req.body.quantity,
+            category: req.body.category,
             countryOfManufacture: req.body.countryOfManufacture,
             description: req.body.description,
             price: req.body.price,
+            brand: req.body.brand,
+            type: req.body.type,
+            tags: req.body.tags,
         })
 
         const productDogId = req.params.id
