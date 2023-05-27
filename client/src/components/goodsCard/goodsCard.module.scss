@@ -4,8 +4,8 @@
 .goodsCardWrapper {
   position: relative;
   width: 400px;
-  height: 400px;
-  margin: 10px;
+  height: 450px;
+  margin: 30px;
   padding: 15px;
   background-color: $backgroundCart;
   border-radius: $borderRadius;
@@ -39,6 +39,7 @@
       text-align: center;
       font-size: 18px;
       font-weight: bold;
+      margin-right: 50px
     }
 
     .goodsButtonWrapper {
