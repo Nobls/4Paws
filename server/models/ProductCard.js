@@ -12,6 +12,7 @@ const ProductCardSchema = new mongoose.Schema(
         description: String,
         price: Number,
         brand: String,
+        type: String,
         tags: String,
     },
     {

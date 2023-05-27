@@ -13,6 +13,9 @@
   transition: $transition03;
   text-decoration: none;
   color: $color-text;
+  display: flex;
+  flex-wrap: wrap;
+
 
   .goodsTitleWrapper {
     text-decoration: none;
@@ -95,5 +98,8 @@
         }
       }
     }
+
   }
+
+
 }
