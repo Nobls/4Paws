@@ -5,7 +5,7 @@
   position: relative;
   width: 400px;
   height: 450px;
-  margin: 10px;
+  margin: 30px;
   padding: 15px;
   background-color: $backgroundCart;
   border-radius: $borderRadius;
@@ -13,6 +13,9 @@
   transition: $transition03;
   text-decoration: none;
   color: $color-text;
+  display: flex;
+  flex-wrap: wrap;
+
 
   .goodsTitleWrapper {
     text-decoration: none;
