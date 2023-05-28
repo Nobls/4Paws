@@ -121,20 +121,16 @@ const ProductsDog = () => {
     console.log(category)
 
     return (
-        <div>
+        <div className={s.product}>
             <h1>
                 {category?.category}
             </h1>
             <div>
                 <div>sidebar</div>
-                <div>product cards</div>
                 <div className={s.productsWrapper}>
-
                     {
-
                         products.map((m) => {
                             return (
-                                    <>
                                         <GoodsCard
                                             key={m._id}
                                             title={m.title}
@@ -149,10 +145,9 @@ const ProductsDog = () => {
                                             tags={m.tags}
                                             _id={m._id}
                                         />
-                                    </>
-
                             )
-                        })}
+                        })
+                    }
                 </div>
 
             </div>

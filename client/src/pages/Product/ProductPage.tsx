@@ -30,7 +30,7 @@ export const ProductPage = () => {
                 <div className={s.productInfoWrapper}>
                     <div className={s.productImageWrapper}>
                         <img className={s.productImage}
-                             src="https://images.deal.by/363669748_w640_h640_acana-korm-acana.jpg" alt={productData?.title}/>
+                             src={`http://localhost:3157${productData?.productImage}`} alt={productData?.title}/>
                     </div>
                     <div className={s.productInfo}>
                         <div className={s.productDescription}>Артикул: Добавить артикул!
