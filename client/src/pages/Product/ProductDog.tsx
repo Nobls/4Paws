@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React, {ChangeEvent, useEffect, useState} from 'react';
 import {useParams} from "react-router-dom";
 import {useAppDispatch, useAppSelector} from "../../redux/hook/hook";
 import {
@@ -33,6 +33,14 @@ import {Loading} from "../../components/loading/Loading";
 const ProductsDog = () => {
 
     const dispatch = useAppDispatch()
+
+    let [paddock, setPaddock] = useState(true)
+
+    const paddockHandler = (e:ChangeEvent<HTMLInputElement>) => {
+        let changeCheckboxPaddock = e.target.checked;
+        setPaddock(!changeCheckboxPaddock)
+        paddock = changeCheckboxPaddock
+    }
 
     const {
         dryFoodDogId, preservesForDogsId, vitaminsForDogsId, homeForDogsId, toysForDogsId, carryingForDogsId,
@@ -125,8 +133,20 @@ const ProductsDog = () => {
             <h1>
                 {category?.category}
             </h1>
-            <div>
-                <div>sidebar</div>
+            <div className={s.productWrapper}>
+                <div className={s.sideBarWrapper}>
+                        <form action="" className={s.productForm}>
+                            <label className={s.productLabel}>
+                                <label className={s.productCheck}>
+                                    <input className={s.productCheckInput} type="checkbox" onChange={paddockHandler}/>
+                                    <span className={s.productCheckBox}>
+                                    </span>
+                                </label>
+                                <span className={s.productLabelTitle}>Акции и скидки</span>
+                            </label>
+                        </form>
+                </div>
+
                 <div className={s.productsWrapper}>
                     {
                         products.map((m) => {
