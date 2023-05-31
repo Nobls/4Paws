@@ -144,6 +144,15 @@ const ProductsDog = () => {
                                 </label>
                                 <span className={s.productLabelTitle}>Акции и скидки</span>
                             </label>
+
+                            <label className={s.productLabel}>
+                                <label className={s.productCheck}>
+                                    <input className={s.productCheckInput} type="checkbox" onChange={paddockHandler}/>
+                                    <span className={s.productCheckBox}>
+                                    </span>
+                                </label>
+                                <span className={s.productLabelTitle}>Есть в наличии</span>
+                            </label>
                         </form>
                 </div>
 
