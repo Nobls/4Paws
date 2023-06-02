@@ -7,63 +7,6 @@
 
   .productWrapper{
     display: flex;
-    .sideBarWrapper{
-      margin: 100px 0;
-      width: 300px;
-      border: 1px solid $color-text;
-      border-radius: $borderRadius;
-      padding: 5px;
-      .productForm{
-        position: relative;
-        display: flex;
-        flex-direction: column;
-        margin-bottom: 20px;
-        .productLabel{
-          display: flex;
-          padding: 10px 15px;
-          border-bottom: 1px solid $color-text;
-          margin-bottom: 15px;
-          .productCheck{
-            padding-left: 25px;
-            .productCheckInput{
-              position: absolute;
-              -webkit-appearance: none;
-              -moz-appearance: none;
-              appearance: none;
-            }
-
-            .productCheckBox{
-              position: absolute;
-              width: 25px;
-              height: 25px;
-              margin-left: -25px;
-              background-image: url("../../images/pawBig.png");
-              //background-size: cover;
-              //background-color: $backgroundSidebar;
-              border: 2px solid $color-text;
-              border-radius: 4px;
-            }
-
-            .productCheckInput:checked + .productCheckBox {
-              background-image: url("../../images/pawBig.png");
-              background-size: 68%;
-              background-position: center;
-              background-repeat: no-repeat;
-            }
-
-            .productCheckInput:focus + .productCheckBox {
-              border: 2px solid $color-title;
-            }
-          }
-          .productLabelTitle{
-            margin-top: 2px;
-            font-size: 20px;
-            font-weight: 500;
-            margin-left: 10px;
-          }
-        }
-      }
-    }
 
     .productsWrapper {
       margin: 100px 0;

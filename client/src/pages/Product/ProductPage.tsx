@@ -39,7 +39,7 @@ export const ProductPage = () => {
                         <div className={s.productDescription}>Категория: сухой корм для собак
                             <span>{productData?.category}</span>
                         </div>
-                        <div className={s.productDescription}>Бренд: Acana
+                        <div className={s.productDescription}>Бренд:
                             <span>{productData?.brand}</span>
                         </div>
                         <div className={s.productDescription}>Описание:

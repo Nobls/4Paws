@@ -1,44 +1,73 @@
-import React from 'react';
+import React, {ChangeEvent, useState} from 'react';
 import s from './shopSidebar.module.scss';
-import {Link} from "react-router-dom";
-import paw from '../../images/pawBigWhite.png';
+import {AllBrands} from "./brands/AllBrands";
 
 const ShopSidebar = () => {
-    return (
-        <div className={s.shopSidebar}>
-            <ul className={s.shopSidebarItems}>
-                <Link to={'/'} className={s.sidebarItemLink}>
-                    <li className={s.shopSidebarItem}>
-                        <img className={s.shopSidebarPaw} src={paw} alt="paw"/>
-                           Для собак
-                    </li>
-                </Link>
 
-                <Link to={'/'} className={s.sidebarItemLink}>
-                    <li className={s.shopSidebarItem}>
-                        <img className={s.shopSidebarPaw} src={paw} alt="paw"/>
-                        Для котов
-                    </li>
-                </Link>
-                <Link to={'/'} className={s.sidebarItemLink}>
-                    <li className={s.shopSidebarItem}>
-                        <img className={s.shopSidebarPaw} src={paw} alt="paw"/>
-                        Для грызунов
-                    </li>
-                </Link>
-                <Link to={'/'} className={s.sidebarItemLink}>
-                    <li className={s.shopSidebarItem}>
-                        <img className={s.shopSidebarPaw} src={paw} alt="paw"/>
-                        Для птиц
-                    </li>
-                </Link>
-                <Link to={'/'} className={s.sidebarItemLink}>
-                    <li className={s.shopSidebarItem}>
-                        <img className={s.shopSidebarPaw} src={paw} alt="paw"/>
-                        Для рыб
-                    </li>
-                </Link>
-            </ul>
+    let [paddock, setPaddock] = useState(true)
+
+    const [brand, setBrand] = useState(false)
+
+    const paddockHandler = (e:ChangeEvent<HTMLInputElement>) => {
+        let changeCheckboxPaddock = e.target.checked;
+        setPaddock(!changeCheckboxPaddock)
+        paddock = changeCheckboxPaddock
+    }
+
+    const showBrand = (e:any)=>{
+        setBrand(!brand)
+        e.preventDefault()
+    }
+
+    return (
+        <div className={s.sideBarWrapper}>
+            <form action="" className={s.productForm}>
+                <label className={s.productLabel}>
+                    <label className={s.productCheck}>
+                        <input className={s.productCheckInput} type="checkbox" onChange={paddockHandler}/>
+                        <span className={s.productCheckBox}>
+                                    </span>
+                    </label>
+                    <span className={s.productLabelTitle}>Акции и скидки</span>
+                </label>
+
+                <label className={s.productLabel}>
+                    <label className={s.productCheck}>
+                        <input className={s.productCheckInput} type="checkbox" onChange={paddockHandler}/>
+                        <span className={s.productCheckBox}>
+                                    </span>
+                    </label>
+                    <span className={s.productLabelTitle}>Есть в наличии</span>
+                </label>
+
+                <h3 className={s.brandTitle}>Бренд</h3>
+
+                <div>
+                    <div className={s.brands}>
+                        <form action="" className={s.productForm}>
+                            <label className={s.productLabel}>
+                                <label className={s.productCheck}>
+                                    <input className={s.productCheckInput} type="checkbox" onChange={paddockHandler}/>
+                                    <span className={s.productCheckBox}>
+                                    </span>
+                                </label>
+                                <span className={s.productLabelTitle}>Acana</span>
+                            </label>
+                            <label className={s.productLabel}>
+                                <label className={s.productCheck}>
+                                    <input className={s.productCheckInput} type="checkbox" onChange={paddockHandler}/>
+                                    <span className={s.productCheckBox}>
+                                    </span>
+                                </label>
+                                <span className={s.productLabelTitle}>Brit</span>
+                            </label>
+                        </form>
+                    </div>
+                    {brand && <AllBrands/>}
+                </div>
+                <button onClick={showBrand} >Показать еще</button>
+
+            </form>
         </div>
     );
 };

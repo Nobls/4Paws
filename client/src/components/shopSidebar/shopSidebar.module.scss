@@ -1,40 +1,60 @@
 @import "src/common/extends";
 @import "src/common/variables";
 
-
-.shopSidebar {
-  width: 100%;
-
-  .shopSidebarItems {
-    list-style: none;
-    margin-top: 290px;
-
-    .sidebarItemLink {
-      text-decoration: none;
-      color: white;
-      font-size: 25px;
-      font-weight: 900;
-
-      .shopSidebarItem {
-        list-style: none;
-        margin: 25px 0;
-
-        &:hover {
-          .shopSidebarPaw {
-            display: initial;
-            width: 20px;
-            height: 20px;
-            z-index: 1;
-            transition: all .3s;
-            margin-right: 7px;
-          }
+.sideBarWrapper{
+  margin: 100px 0;
+  width: 300px;
+  border: 1px solid $color-text;
+  border-radius: $borderRadius;
+  padding: 0 15px 0 15px;
+  .productForm{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+    .productLabel{
+      position: relative;
+      display: flex;
+      padding: 15px 0;
+      border-bottom: 1px solid $color-text;
+      margin-bottom: 15px;
+      .productCheck{
+        padding-left: 25px;
+        .productCheckInput{
+          position: absolute;
+          -webkit-appearance: none;
+          -moz-appearance: none;
+          appearance: none;
         }
 
-        .shopSidebarPaw {
-          display: none;
-          z-index: 0;
-          transition: all .3s;
+        .productCheckBox{
+          position: absolute;
+          width: 25px;
+          height: 25px;
+          margin-left: -25px;
+          background-image: url("../../images/pawBig.png");
+          //background-size: cover;
+          //background-color: $backgroundSidebar;
+          border: 2px solid $color-text;
+          border-radius: 4px;
         }
+
+        .productCheckInput:checked + .productCheckBox {
+          background-image: url("../../images/pawBig.png");
+          background-size: 68%;
+          background-position: center;
+          background-repeat: no-repeat;
+        }
+
+        .productCheckInput:focus + .productCheckBox {
+          border: 2px solid $color-title;
+        }
+      }
+      .productLabelTitle{
+        margin-top: 2px;
+        font-size: 20px;
+        font-weight: 500;
+        margin-left: 10px;
       }
     }
   }
