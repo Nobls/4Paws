@@ -61,6 +61,14 @@ const ShopSidebar = () => {
                                 </label>
                                 <span className={s.productLabelTitle}>Brit</span>
                             </label>
+                            <label className={s.productLabel}>
+                                <label className={s.productCheck}>
+                                    <input className={s.productCheckInput} type="checkbox" onChange={paddockHandler}/>
+                                    <span className={s.productCheckBox}>
+                                    </span>
+                                </label>
+                                <span className={s.productLabelTitle}>Gemon</span>
+                            </label>
                         </form>
                     </div>
                     {brand && <AllBrands/>}
