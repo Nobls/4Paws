@@ -73,7 +73,49 @@ const ShopSidebar = () => {
                     </div>
                     {brand && <AllBrands/>}
                 </div>
+
                 <button onClick={showBrand} >Показать еще</button>
+
+                <h3 className={s.brandTitle}>Возраст питомца</h3>
+                <div className={s.petsAge}>
+                    <form action="" className={s.productForm}>
+                        <label className={s.productLabel}>
+                            <label className={s.productCheck}>
+                                <input className={s.productCheckInput} type="checkbox" onChange={paddockHandler}/>
+                                <span className={s.productCheckBox}>
+                                    </span>
+                            </label>
+                            <span className={s.productLabelTitle}>Для всех возрастов</span>
+                        </label>
+                        <label className={s.productLabel}>
+                            <label className={s.productCheck}>
+                                <input className={s.productCheckInput} type="checkbox" onChange={paddockHandler}/>
+                                <span className={s.productCheckBox}>
+                                    </span>
+                            </label>
+                            <span className={s.productLabelTitle}>До года</span>
+                        </label>
+                        <label className={s.productLabel}>
+                            <label className={s.productCheck}>
+                                <input className={s.productCheckInput} type="checkbox" onChange={paddockHandler}/>
+                                <span className={s.productCheckBox}>
+                                    </span>
+                            </label>
+                            <span className={s.productLabelTitle}>Старше года</span>
+                        </label>
+                        <label className={s.productLabel}>
+                            <label className={s.productCheck}>
+                                <input className={s.productCheckInput} type="checkbox" onChange={paddockHandler}/>
+                                <span className={s.productCheckBox}>
+                                    </span>
+                            </label>
+                            <span className={s.productLabelTitle}>Старше 10 лет</span>
+                        </label>
+                    </form>
+                </div>
+
+
+
 
             </form>
         </div>
